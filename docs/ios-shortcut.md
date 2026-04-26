@@ -1,75 +1,312 @@
-# iOS Shortcut: Send bet365 screenshot to GitHub
+# iOS Genvej på dansk: Send bet365 screenshot til GitHub
 
-## Formål
+Denne guide er skrevet til din iPhone 17 med dansk iOS / appen **Genveje**.
 
-Denne genvej sender et screenshot fra iPhone til repoet `Bendecks/Odds`.
+Målet er:
 
-Du vælger selv om billedet er:
+1. Du tager et screenshot på iPhone.
+2. Du trykker **Del**.
+3. Du vælger genvejen **Send bet365 til Odds**.
+4. Du vælger om billedet er **Mulige bets** eller **Historik**.
+5. Billedet uploades til GitHub-repoet `Bendecks/Odds`.
 
-- `possible_bets` = odds/markeder der skal vurderes
-- `history` = bet365-historik der skal bogføres
+## Før du bygger genvejen
 
-## Du skal bruge
+Du skal bruge en GitHub fine-grained token.
 
-1. En GitHub Personal Access Token med adgang til repoet `Bendecks/Odds`.
-2. iOS Shortcuts appen.
-3. Repoet skal være privat, og token skal ikke deles i ChatGPT.
+Lav den i GitHub:
 
-## GitHub token
+**GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens**
 
-Lav token her:
+Anbefalet opsætning:
 
-GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens
-
-Anbefalet:
-
-- Repository access: Only selected repositories
-- Repository: `Bendecks/Odds`
+- Repository access: **Only selected repositories**
+- Repository: **Bendecks/Odds**
 - Permissions:
-  - Contents: Read and write
-  - Metadata: Read-only
+  - **Contents: Read and write**
+  - **Metadata: Read-only**
 
-Gem token sikkert. Den skal indsættes i genvejen som tekstvariabel.
+Gem token sikkert. Del den ikke med ChatGPT og læg den ikke i repoet.
 
-## Shortcut-flow
+---
 
-Navn: `Send bet365 til Odds`
+# Byg genvejen på dansk i iOS
 
-### Handlinger
+## 1. Opret genvej
 
-1. **Take Screenshot**
-2. **Choose from Menu**
-   - `Mulige bets`
-   - `Historik`
-3. Hvis `Mulige bets`:
-   - Sæt variabel `Type` til `possible_bets`
-4. Hvis `Historik`:
-   - Sæt variabel `Type` til `history`
-5. **Get Current Date**
-6. **Format Date**
-   - Format: `yyyy-MM-dd_HHmmss`
-7. **Set Variable**
-   - `Filename` = `[Formatted Date]_[Type].png`
-8. **Base64 Encode** screenshot
-9. **Text** med JSON-body:
+Åbn appen **Genveje**.
+
+Tryk **+**.
+
+Navngiv genvejen:
+
+```text
+Send bet365 til Odds
+```
+
+Tryk på **i** / informationsknappen nederst eller øverst afhængigt af din iOS-version.
+
+Slå til:
+
+```text
+Vis i Delingsark
+```
+
+Under inputtyper skal den acceptere:
+
+```text
+Billeder
+```
+
+Hvis du kan vælge flere typer, så vælg også:
+
+```text
+Filer
+```
+
+---
+
+## 2. Modtag input fra Delingsark
+
+Første handling skal være:
+
+```text
+Modtag [Billeder] fra Delingsark
+```
+
+På nogle danske iOS-versioner står der i stedet noget tæt på:
+
+```text
+Modtag input fra Delingsark
+```
+
+Det vigtige er, at genvejen bruger det billede, du deler ind i genvejen.
+
+---
+
+## 3. Vælg type screenshot
+
+Tilføj handlingen:
+
+```text
+Vælg fra menu
+```
+
+Opret to valg:
+
+```text
+Mulige bets
+Historik
+```
+
+Under **Mulige bets** tilføjer du handlingen:
+
+```text
+Tekst
+```
+
+Tekstindhold:
+
+```text
+possible_bets
+```
+
+Tilføj derefter:
+
+```text
+Indstil variabel
+```
+
+Variabelnavn:
+
+```text
+Type
+```
+
+Under **Historik** gør du det samme, men tekstindholdet skal være:
+
+```text
+history
+```
+
+og variablen skal igen hedde:
+
+```text
+Type
+```
+
+---
+
+## 4. Lav dato til filnavn
+
+Efter menuen tilføjer du:
+
+```text
+Aktuel dato
+```
+
+Tilføj derefter:
+
+```text
+Formatér dato
+```
+
+Tryk på formatet og vælg **Specielt** / **Brugerdefineret**, hvis iOS tilbyder det.
+
+Brug formatet:
+
+```text
+yyyy-MM-dd_HHmmss
+```
+
+Tilføj handlingen:
+
+```text
+Tekst
+```
+
+Teksten skal sammensættes af variabler sådan her:
+
+```text
+[Formateret dato]_[Type].png
+```
+
+Du skal ikke skrive klammerne. Indsæt variablerne fra Genveje.
+
+Tilføj:
+
+```text
+Indstil variabel
+```
+
+Variabelnavn:
+
+```text
+Filename
+```
+
+---
+
+## 5. Base64-kod billedet
+
+Tilføj handlingen:
+
+```text
+Base64-kod
+```
+
+Hvis handlingen viser valg mellem kod/afkod, skal den stå til:
+
+```text
+Kod
+```
+
+Input skal være:
+
+```text
+Genvejsinput
+```
+
+altså billedet fra Delingsark.
+
+Tilføj:
+
+```text
+Indstil variabel
+```
+
+Variabelnavn:
+
+```text
+Base64
+```
+
+---
+
+## 6. Lav JSON til GitHub
+
+Tilføj handlingen:
+
+```text
+Tekst
+```
+
+Indhold:
 
 ```json
 {
   "message": "Upload bet365 screenshot",
-  "content": "BASE64_HER"
+  "content": "[Base64]"
 }
 ```
 
-10. Erstat `BASE64_HER` med base64-output fra screenshot.
-11. **Get Contents of URL**
+Du skal indsætte **Base64** som variabel i stedet for `[Base64]`.
 
-URL:
+Tilføj:
+
+```text
+Indstil variabel
+```
+
+Variabelnavn:
+
+```text
+Body
+```
+
+---
+
+## 7. Lav upload-URL
+
+Tilføj handlingen:
+
+```text
+Tekst
+```
+
+Indhold:
 
 ```text
 https://api.github.com/repos/Bendecks/Odds/contents/inbox/[Type]/[Filename]
 ```
 
-Method: `PUT`
+Du skal indsætte **Type** og **Filename** som variabler i stedet for `[Type]` og `[Filename]`.
+
+Tilføj:
+
+```text
+Indstil variabel
+```
+
+Variabelnavn:
+
+```text
+UploadURL
+```
+
+---
+
+## 8. Upload til GitHub
+
+Tilføj handlingen:
+
+```text
+Hent indhold af URL
+```
+
+URL skal være variablen:
+
+```text
+UploadURL
+```
+
+Tryk **Vis mere**.
+
+Sæt metode til:
+
+```text
+PUT
+```
 
 Headers:
 
@@ -80,26 +317,69 @@ Content-Type: application/json
 X-GitHub-Api-Version: 2022-11-28
 ```
 
-Request Body: JSON fra trin 9.
+Erstat `DIN_GITHUB_TOKEN` med din rigtige token direkte i genvejen.
 
-## Filnavne
-
-Eksempler:
+Body / Anmodningstekst skal være:
 
 ```text
-inbox/possible_bets/2026-04-26_114100_possible_bets.png
-inbox/history/2026-04-26_181500_history.png
+JSON
 ```
 
-## Når filerne ligger i repoet
+Indsæt variablen:
 
-Skriv i ChatGPT:
+```text
+Body
+```
 
-- `scan repo nu`
-- `scan striks repo nu`
-- `bogfør repo`
-- `status repo`
+Hvis Genveje ikke vil acceptere Body som JSON direkte, så vælg i stedet **Fil** eller **Tekst** som anmodningstekst og brug variablen **Body**. Det afhænger lidt af dansk iOS-version.
 
-## Vigtigt
+---
 
-Upload aldrig din GitHub token til repoet eller til ChatGPT.
+## 9. Slut med besked
+
+Tilføj handlingen:
+
+```text
+Vis notifikation
+```
+
+Tekst:
+
+```text
+Sendt til Odds
+```
+
+---
+
+# Brug
+
+1. Åbn bet365.
+2. Tag screenshot.
+3. Åbn screenshotet.
+4. Tryk **Del**.
+5. Vælg **Send bet365 til Odds**.
+6. Vælg **Mulige bets** eller **Historik**.
+
+Filen lander i en af disse mapper:
+
+```text
+inbox/possible_bets/
+inbox/history/
+```
+
+# ChatGPT-kommandoer
+
+Når der er uploads i repoet, kan du skrive:
+
+```text
+scan repo nu
+scan striks repo nu
+bogfør repo
+status repo
+```
+
+# Vigtigt
+
+- Upload aldrig token til repoet.
+- Send aldrig token i ChatGPT.
+- Hvis upload fejler, er det næsten altid enten token-rettigheder, forkert URL, eller Body der ikke er sendt som gyldig JSON.
