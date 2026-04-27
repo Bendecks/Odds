@@ -1,0 +1,548 @@
+[
+  {
+    "source": "the_odds_api_sports",
+    "ok": true,
+    "status_code": 200,
+    "error": null,
+    "sample": [
+      {
+        "key": "americanfootball_ncaaf",
+        "group": "American Football",
+        "title": "NCAAF",
+        "description": "US College Football",
+        "active": true,
+        "has_outrights": false
+      },
+      {
+        "key": "americanfootball_ncaaf_championship_winner",
+        "group": "American Football",
+        "title": "NCAAF Championship Winner",
+        "description": "US College Football Championship Winner",
+        "active": true,
+        "has_outrights": true
+      }
+    ]
+  },
+  {
+    "source": "the_odds_api_upcoming_h2h_eu",
+    "ok": true,
+    "status_code": 200,
+    "error": null,
+    "sample": [
+      {
+        "id": "41653e5ff2659f25c8d53f1652244bb6",
+        "sport_key": "soccer_spain_segunda_division",
+        "sport_title": "La Liga 2 - Spain",
+        "commence_time": "2026-04-27T18:30:00Z",
+        "home_team": "Cádiz CF",
+        "away_team": "Las Palmas",
+        "bookmakers": [
+          {
+            "key": "betsson",
+            "title": "Betsson",
+            "last_update": "2026-04-27T20:26:28Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:26:28Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 101.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.0
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 15.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "winamax_de",
+            "title": "Winamax (DE)",
+            "last_update": "2026-04-27T20:25:40Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:25:40Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 1000.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.01
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 24.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "nordicbet",
+            "title": "Nordic Bet",
+            "last_update": "2026-04-27T20:26:12Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:26:12Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 101.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.0
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 15.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "winamax_fr",
+            "title": "Winamax (FR)",
+            "last_update": "2026-04-27T20:25:01Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:25:01Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 1000.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.03
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 19.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "tipico_de",
+            "title": "Tipico",
+            "last_update": "2026-04-27T20:26:26Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:26:26Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 400.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.01
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 25.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "betclic_fr",
+            "title": "Betclic (FR)",
+            "last_update": "2026-04-27T20:20:12Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:20:12Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 40.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.04
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 5.75
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "betfair_ex_eu",
+            "title": "Betfair",
+            "last_update": "2026-04-27T20:25:37Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:25:37Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 1000.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.03
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 21.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "coolbet",
+            "title": "Coolbet",
+            "last_update": "2026-04-27T20:25:38Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:25:38Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 125.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.01
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 13.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "leovegas_se",
+            "title": "LeoVegas (SE)",
+            "last_update": "2026-04-27T20:22:25Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:22:25Z",
+                "outcomes": [
+                  {
+                    "name": "Cádiz CF",
+                    "price": 91.0
+                  },
+                  {
+                    "name": "Las Palmas",
+                    "price": 1.02
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 10.0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2d8fa7e4d0f737df2603098867824b7d",
+        "sport_key": "soccer_france_ligue_two",
+        "sport_title": "Ligue 2 - France",
+        "commence_time": "2026-04-27T18:45:00Z",
+        "home_team": "Boulogne",
+        "away_team": "USL Dunkerque",
+        "bookmakers": [
+          {
+            "key": "winamax_fr",
+            "title": "Winamax (FR)",
+            "last_update": "2026-04-27T20:23:02Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:23:02Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 55.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.12
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 6.5
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "betsson",
+            "title": "Betsson",
+            "last_update": "2026-04-27T20:26:12Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:26:12Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 46.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.0
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 19.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "betclic_fr",
+            "title": "Betclic (FR)",
+            "last_update": "2026-04-27T20:22:41Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:22:41Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 50.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.09
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 7.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "winamax_de",
+            "title": "Winamax (DE)",
+            "last_update": "2026-04-27T20:22:49Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:22:49Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 55.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.09
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 6.75
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "nordicbet",
+            "title": "Nordic Bet",
+            "last_update": "2026-04-27T20:26:25Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:26:25Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 46.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.0
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 19.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "sport888",
+            "title": "888sport",
+            "last_update": "2026-04-27T20:26:25Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:26:25Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 151.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.0
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 56.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "coolbet",
+            "title": "Coolbet",
+            "last_update": "2026-04-27T20:25:26Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:25:26Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 50.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.0
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 18.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "betfair_ex_eu",
+            "title": "Betfair",
+            "last_update": "2026-04-27T20:25:01Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:25:01Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 65.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.15
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 7.2
+                  }
+                ]
+              },
+              {
+                "key": "h2h_lay",
+                "last_update": "2026-04-27T20:25:01Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 140.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.18
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 8.2
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "leovegas_se",
+            "title": "LeoVegas (SE)",
+            "last_update": "2026-04-27T20:23:14Z",
+            "markets": [
+              {
+                "key": "h2h",
+                "last_update": "2026-04-27T20:23:14Z",
+                "outcomes": [
+                  {
+                    "name": "Boulogne",
+                    "price": 46.0
+                  },
+                  {
+                    "name": "USL Dunkerque",
+                    "price": 1.07
+                  },
+                  {
+                    "name": "Draw",
+                    "price": 6.75
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "odds_api_io_status",
+    "ok": true,
+    "status_code": 200,
+    "error": null,
+    "sample": [
+      {
+        "name": "Football",
+        "slug": "football"
+      },
+      {
+        "name": "Basketball",
+        "slug": "basketball"
+      }
+    ]
+  },
+  {
+    "source": "football_data",
+    "ok": false,
+    "error": "Missing FOOTBALL_DATA_API_KEY secret"
+  },
+  {
+    "source": "balldontlie",
+    "ok": false,
+    "error": "Missing BALLDONTLIE_API_KEY secret"
+  }
+]
