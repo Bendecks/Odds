@@ -1,0 +1,25 @@
+name: OCR Process
+on:
+  push:
+    paths:
+      - 'inbox/**'
+  workflow_dispatch:
+jobs:
+  ocr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tesseract
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scripts/ocr_process.py
+      - name: Commit OCR log
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/ocr_log.csv || true
+          git diff --cached --quiet || git commit -m "Update OCR log"
+          git push
