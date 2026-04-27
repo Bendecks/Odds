@@ -1,22 +1,54 @@
 {
-  "mode": "TEST_LOOSE",
-  "summary": "ingen test-kandidater fundet",
-  "picks": [],
-  "rejections_sample": [
+  "mode": "FLOODGATES_DEBUG",
+  "summary": "FLOODGATES_DEBUG: 3 rå kandidater vist — ikke automatisk spil",
+  "picks": [
     {
       "event": "Pittsburgh Penguins vs Philadelphia Flyers",
       "selection": "Philadelphia Flyers",
-      "reason": "no-vig value gap too small"
+      "odds": 2.9,
+      "median_market_odds": 2.5,
+      "avg_market_odds": 2.45,
+      "edge_pct": 16.0,
+      "value_gap_pct": 0.9,
+      "spread_ratio": 1.16,
+      "bookmakers_count": 33,
+      "sport": "icehockey_nhl",
+      "commence_time": "2026-04-27T23:10:00Z",
+      "test_stake_kr": 0,
+      "mode": "FLOODGATES_DEBUG",
+      "debug_score": 16.86
     },
     {
       "event": "Pittsburgh Penguins vs Philadelphia Flyers",
       "selection": "Pittsburgh Penguins",
-      "reason": "no-vig value gap too small"
+      "odds": 2.29,
+      "median_market_odds": 2.05,
+      "avg_market_odds": 1.98,
+      "edge_pct": 11.7,
+      "value_gap_pct": -0.6,
+      "spread_ratio": 1.12,
+      "bookmakers_count": 33,
+      "sport": "icehockey_nhl",
+      "commence_time": "2026-04-27T23:10:00Z",
+      "test_stake_kr": 0,
+      "mode": "FLOODGATES_DEBUG",
+      "debug_score": 11.14
     },
     {
       "event": "Pittsburgh Penguins vs Philadelphia Flyers",
       "selection": "Draw",
-      "reason": "no-vig value gap too small"
+      "odds": 4.21,
+      "median_market_odds": 4.1,
+      "avg_market_odds": 4.1,
+      "edge_pct": 2.7,
+      "value_gap_pct": -2.2,
+      "spread_ratio": 1.03,
+      "bookmakers_count": 17,
+      "sport": "icehockey_nhl",
+      "commence_time": "2026-04-27T23:10:00Z",
+      "test_stake_kr": 0,
+      "mode": "FLOODGATES_DEBUG",
+      "debug_score": 0.48
     }
   ]
 }
