@@ -10,7 +10,7 @@ API_KEY = os.getenv('THE_ODDS_API_KEY','')
 # Do not treat these as automatic bets until we tighten the model again.
 MODE = 'TEST_LOOSE'
 
-SPORT_ALLOW = [
+SPORT_PREFIX_ALLOW = [
   'tennis_atp', 'tennis_wta', 'basketball_nba', 'icehockey_nhl',
   'soccer_epl', 'soccer_spain_la_liga', 'soccer_germany_bundesliga',
   'soccer_italy_serie_a', 'soccer_uefa_champs_league', 'soccer_denmark_superliga'
@@ -27,6 +27,9 @@ MIN_VALUE_GAP = 0.003
 results = []
 rejections = []
 summary = 'ingen spil nu'
+
+def sport_allowed(sport_key):
+    return any(sport_key.startswith(prefix) for prefix in SPORT_PREFIX_ALLOW)
 
 def reject(event, selection, reason):
     rejections.append({'event': event, 'selection': selection, 'reason': reason})
@@ -62,7 +65,7 @@ if API_KEY:
             sk = game.get('sport_key','')
             event = f"{game.get('home_team')} vs {game.get('away_team')}"
             commence = parse_time(game.get('commence_time',''))
-            if sk not in SPORT_ALLOW:
+            if not sport_allowed(sk):
                 continue
             if not commence:
                 continue
