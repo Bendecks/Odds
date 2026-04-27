@@ -6,18 +6,23 @@ OUT = BASE / 'output'
 OUT.mkdir(exist_ok=True)
 API_KEY = os.getenv('THE_ODDS_API_KEY','')
 
+# TEST MODE: looser filters so we can inspect whether the feed produces realistic candidates.
+# Do not treat these as automatic bets until we tighten the model again.
+MODE = 'TEST_LOOSE'
+
 SPORT_ALLOW = [
   'tennis_atp', 'tennis_wta', 'basketball_nba', 'icehockey_nhl',
   'soccer_epl', 'soccer_spain_la_liga', 'soccer_germany_bundesliga',
   'soccer_italy_serie_a', 'soccer_uefa_champs_league', 'soccer_denmark_superliga'
 ]
 
-MIN_BOOKS = 4
+MIN_BOOKS = 3
 MIN_ODDS = 1.25
-MAX_ODDS = 4.00
-MIN_EDGE = 0.04
-MAX_SPREAD_RATIO = 1.35  # best odds must not be a crazy outlier vs median
-MAX_HOURS_AHEAD = 96
+MAX_ODDS = 6.00
+MIN_EDGE = 0.015
+MAX_SPREAD_RATIO = 1.75
+MAX_HOURS_AHEAD = 120
+MIN_VALUE_GAP = 0.003
 
 results = []
 rejections = []
@@ -33,7 +38,6 @@ def parse_time(s):
         return None
 
 def no_vig_probs(outcome_prices):
-    # outcome_prices = dict name -> representative odds
     implied = {k: 1/v for k,v in outcome_prices.items() if v and v > 1}
     total = sum(implied.values())
     if total <= 0:
@@ -63,9 +67,7 @@ if API_KEY:
             if not commence:
                 continue
             hours_ahead = (commence - now).total_seconds() / 3600
-            if hours_ahead <= 0:
-                continue
-            if hours_ahead > MAX_HOURS_AHEAD:
+            if hours_ahead <= 0 or hours_ahead > MAX_HOURS_AHEAD:
                 continue
 
             books = game.get('bookmakers', [])
@@ -81,10 +83,9 @@ if API_KEY:
                                 price = float(o['price'])
                             except Exception:
                                 continue
-                            if 1.01 <= price <= 25:
+                            if 1.01 <= price <= 20:
                                 market_prices.setdefault(o['name'], []).append(price)
 
-            # representative market probability uses median odds per outcome, more robust than mean
             medians = {name: statistics.median(prices) for name, prices in market_prices.items() if len(prices) >= MIN_BOOKS}
             fair_probs = no_vig_probs(medians)
 
@@ -97,10 +98,10 @@ if API_KEY:
                 median = statistics.median(prices)
                 avg = statistics.mean(prices)
                 if best < MIN_ODDS or best > MAX_ODDS:
-                    reject(event, team, 'odds outside safe range')
+                    reject(event, team, 'odds outside test range')
                     continue
                 if median < MIN_ODDS or median > MAX_ODDS:
-                    reject(event, team, 'median odds outside safe range')
+                    reject(event, team, 'median odds outside test range')
                     continue
                 if best / median > MAX_SPREAD_RATIO:
                     reject(event, team, 'outlier best price')
@@ -115,11 +116,10 @@ if API_KEY:
                     continue
                 implied_at_best = 1 / best
                 value_gap = fair_prob - implied_at_best
-                if value_gap < 0.015:
+                if value_gap < MIN_VALUE_GAP:
                     reject(event, team, 'no-vig value gap too small')
                     continue
-                conf = round(min(8.5, 5.5 + edge_vs_median*25 + value_gap*20), 1)
-                stake = 2 if conf < 7 else 3
+                conf = round(min(8.0, 5.0 + edge_vs_median*18 + value_gap*15), 1)
                 results.append({
                     'event': event,
                     'selection': team,
@@ -131,27 +131,28 @@ if API_KEY:
                     'sport': sk,
                     'commence_time': game.get('commence_time'),
                     'confidence': conf,
-                    'stake_kr': stake
+                    'stake_kr': 1,
+                    'mode': MODE
                 })
-        results = sorted(results, key=lambda x:(x['confidence'], x['value_gap_pct'], x['edge_pct']), reverse=True)[:10]
+        results = sorted(results, key=lambda x:(x['confidence'], x['value_gap_pct'], x['edge_pct']), reverse=True)[:15]
         if results:
-            summary = f"{len(results)} safer value spots fundet via odds feed"
+            summary = f"TEST_LOOSE: {len(results)} kandidater fundet via odds feed — ikke automatisk spil"
         else:
-            summary = 'ingen spil nu — ingen feed-spots bestod safe filters'
+            summary = 'ingen test-kandidater fundet'
     except Exception as e:
         summary = f'Feed error: {e}'
 else:
     summary = 'Missing THE_ODDS_API_KEY'
 
-payload = {'summary': summary, 'picks': results, 'rejections_sample': rejections[:50]}
+payload = {'mode': MODE, 'summary': summary, 'picks': results, 'rejections_sample': rejections[:50]}
 with open(OUT/'odds_feed.json','w',encoding='utf-8') as f:
     json.dump(payload, f, ensure_ascii=False, indent=2)
 
 with open(OUT/'odds_feed.md','w',encoding='utf-8') as f:
-    f.write('# ODDS FEED PICKS\n\n'+summary+'\n\n')
+    f.write('# ODDS FEED PICKS — TEST LOOSE\n\n'+summary+'\n\n')
     if not results:
-        f.write('Ingen spil nu. Feedet er aktivt, men safe filters afviste alle spots.\n\n')
+        f.write('Ingen kandidater.\n\n')
     for i,p in enumerate(results,1):
         f.write(f"## {i}. {p['event']}\n")
-        f.write(f"- Pick: {p['selection']}\n- Odds: {p['odds']}\n- Median market: {p['median_market_odds']}\n- Edge vs median: {p['edge_pct']}%\n- No-vig value gap: {p['value_gap_pct']}%\n- Confidence: {p['confidence']}/10\n- Stake: {p['stake_kr']} kr\n- Sport: {p['sport']}\n- Start: {p['commence_time']}\n\n")
+        f.write(f"- Pick: {p['selection']}\n- Odds: {p['odds']}\n- Median market: {p['median_market_odds']}\n- Edge vs median: {p['edge_pct']}%\n- No-vig value gap: {p['value_gap_pct']}%\n- Confidence: {p['confidence']}/10\n- Test stake: {p['stake_kr']} kr\n- Sport: {p['sport']}\n- Start: {p['commence_time']}\n- Mode: {p['mode']}\n\n")
 print(summary)
