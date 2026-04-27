@@ -1,105 +1,21 @@
 {
-  "summary": "10 value spots fundet via odds feed",
-  "picks": [
-    {
-      "event": "Lazio vs Udinese",
-      "selection": "Udinese",
-      "odds": 65.0,
-      "avg_market_odds": 11.85,
-      "edge_pct": 448.7,
-      "sport": "soccer_italy_serie_a",
-      "commence_time": "2026-04-27T18:45:00Z",
-      "confidence": 9.5
-    },
-    {
-      "event": "Lazio vs Udinese",
-      "selection": "Draw",
-      "odds": 6.8,
-      "avg_market_odds": 1.65,
-      "edge_pct": 313.0,
-      "sport": "soccer_italy_serie_a",
-      "commence_time": "2026-04-27T18:45:00Z",
-      "confidence": 9.5
-    },
-    {
-      "event": "Manchester United vs Brentford",
-      "selection": "Brentford",
-      "odds": 210.0,
-      "avg_market_odds": 85.31,
-      "edge_pct": 146.2,
-      "sport": "soccer_epl",
-      "commence_time": "2026-04-27T19:00:00Z",
-      "confidence": 9.5
-    },
-    {
-      "event": "Lazio vs Udinese",
-      "selection": "Lazio",
-      "odds": 8.8,
-      "avg_market_odds": 6.86,
-      "edge_pct": 28.4,
-      "sport": "soccer_italy_serie_a",
-      "commence_time": "2026-04-27T18:45:00Z",
-      "confidence": 9.5
-    },
-    {
-      "event": "Manchester United vs Brentford",
-      "selection": "Draw",
-      "odds": 20.0,
-      "avg_market_odds": 16.54,
-      "edge_pct": 20.9,
-      "sport": "soccer_epl",
-      "commence_time": "2026-04-27T19:00:00Z",
-      "confidence": 9.5
-    },
-    {
-      "event": "Espanyol vs Levante",
-      "selection": "Levante",
-      "odds": 6.8,
-      "avg_market_odds": 5.73,
-      "edge_pct": 18.7,
-      "sport": "soccer_spain_la_liga",
-      "commence_time": "2026-04-27T19:00:00Z",
-      "confidence": 9.5
-    },
+  "summary": "ingen spil nu — ingen feed-spots bestod safe filters",
+  "picks": [],
+  "rejections_sample": [
     {
       "event": "Pittsburgh Penguins vs Philadelphia Flyers",
       "selection": "Philadelphia Flyers",
-      "odds": 2.9,
-      "avg_market_odds": 2.47,
-      "edge_pct": 17.2,
-      "sport": "icehockey_nhl",
-      "commence_time": "2026-04-27T23:10:00Z",
-      "confidence": 9.5
-    },
-    {
-      "event": "Espanyol vs Levante",
-      "selection": "Draw",
-      "odds": 2.0,
-      "avg_market_odds": 1.71,
-      "edge_pct": 17.0,
-      "sport": "soccer_spain_la_liga",
-      "commence_time": "2026-04-27T19:00:00Z",
-      "confidence": 9.5
+      "reason": "no-vig value gap too small"
     },
     {
       "event": "Pittsburgh Penguins vs Philadelphia Flyers",
       "selection": "Pittsburgh Penguins",
-      "odds": 2.29,
-      "avg_market_odds": 2.0,
-      "edge_pct": 14.2,
-      "sport": "icehockey_nhl",
-      "commence_time": "2026-04-27T23:10:00Z",
-      "confidence": 9.5
+      "reason": "no-vig value gap too small"
     },
     {
-      "event": "Espanyol vs Levante",
-      "selection": "Espanyol",
-      "odds": 3.5,
-      "avg_market_odds": 3.26,
-      "edge_pct": 7.3,
-      "sport": "soccer_spain_la_liga",
-      "commence_time": "2026-04-27T19:00:00Z",
-      "confidence": 8.9
+      "event": "Pittsburgh Penguins vs Philadelphia Flyers",
+      "selection": "Draw",
+      "reason": "odds outside safe range"
     }
   ]
 }
