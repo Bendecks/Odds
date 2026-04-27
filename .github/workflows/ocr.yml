@@ -21,12 +21,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt requests
       - run: python scripts/ocr_process.py
-      - name: Commit OCR log
+      - run: python scripts/gemini_pick_engine.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ocr_log.csv || true
-          git diff --cached --quiet || git commit -m "Update OCR log"
+          git add data/ocr_log.csv output/* || true
+          git diff --cached --quiet || git commit -m "Update OCR + Picks"
           git push
