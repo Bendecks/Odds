@@ -1,6 +1,6 @@
-# ODDS FEED PICKS
+# ODDS FEED PICKS — TEST LOOSE
 
-ingen spil nu — ingen feed-spots bestod safe filters
+ingen test-kandidater fundet
 
-Ingen spil nu. Feedet er aktivt, men safe filters afviste alle spots.
+Ingen kandidater.
 

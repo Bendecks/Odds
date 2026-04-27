@@ -1,5 +1,6 @@
 {
-  "summary": "ingen spil nu — ingen feed-spots bestod safe filters",
+  "mode": "TEST_LOOSE",
+  "summary": "ingen test-kandidater fundet",
   "picks": [],
   "rejections_sample": [
     {
@@ -15,7 +16,7 @@
     {
       "event": "Pittsburgh Penguins vs Philadelphia Flyers",
       "selection": "Draw",
-      "reason": "odds outside safe range"
+      "reason": "no-vig value gap too small"
     }
   ]
 }
