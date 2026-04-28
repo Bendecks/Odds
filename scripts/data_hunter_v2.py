@@ -1,157 +1,133 @@
 import os, json, pathlib, requests, re, statistics
 from datetime import datetime, timezone, date
 
-BASE = pathlib.Path('.')
-OUT = BASE / 'output'
-OUT.mkdir(exist_ok=True)
+BASE=pathlib.Path('.')
+OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
+GEMINI=os.getenv('GEMINI_API_KEY','')
+ODDS=os.getenv('THE_ODDS_API_KEY','')
+FD=os.getenv('FOOTBALL_DATA_API_KEY','')
+MODEL='gemini-2.5-flash'
+ALLOWED_PREFIXES=('tennis_atp','tennis_wta','basketball_nba','icehockey_nhl','soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga')
+MAX_HOURS=72
 
-GEMINI = os.getenv('GEMINI_API_KEY','')
-ODDS = os.getenv('THE_ODDS_API_KEY','')
-FD = os.getenv('FOOTBALL_DATA_API_KEY','')
-MODEL = 'gemini-2.5-flash'
+def odds_penalty(o):
+    if o>=5: return -2.0
+    if o>=4: return -1.2
+    if o>=3.5: return -0.6
+    return 0
 
-ALLOWED_PREFIXES = (
-    'tennis_atp','tennis_wta','basketball_nba','icehockey_nhl',
-    'soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga',
-    'soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga'
-)
+def required_edge(o):
+    if o>=5: return 0.08
+    if o>=4: return 0.06
+    if o>=3: return 0.04
+    return 0.025
 
-MAX_HOURS = 72
-MAX_STAKE = 5
+def stake(conf,odds):
+    base=5 if conf>=8.5 else 4 if conf>=7.5 else 3 if conf>=6.5 else 2
+    if odds>=4: return 1
+    if odds>=3.5: return min(base,2)
+    return base
 
-def get_json(url, headers=None, params=None):
-    r = requests.get(url, headers=headers or {}, params=params or {}, timeout=45)
-    r.raise_for_status()
-    return r.json()
+def get_json(url,headers=None,params=None):
+    r=requests.get(url,headers=headers or {},params=params or {},timeout=45)
+    r.raise_for_status(); return r.json()
 
-
-def allowed_sport(sk):
-    return any(sk.startswith(p) for p in ALLOWED_PREFIXES)
-
+def allowed_sport(sk): return any(sk.startswith(p) for p in ALLOWED_PREFIXES)
 
 def upcoming(g):
     try:
-        t = datetime.fromisoformat(g.get('commence_time','').replace('Z','+00:00'))
-        hrs = (t - datetime.now(timezone.utc)).total_seconds()/3600
-        return 0 < hrs <= MAX_HOURS
-    except:
+        t=datetime.fromisoformat(g.get('commence_time','').replace('Z','+00:00'))
+        hrs=(t-datetime.now(timezone.utc)).total_seconds()/3600
+        return 0<hrs<=MAX_HOURS
+    except Exception:
         return False
 
-
 def build_games():
-    games = []
-    if not ODDS:
-        return games
-
-    raw = get_json('https://api.the-odds-api.com/v4/sports/upcoming/odds',
-        params={'apiKey':ODDS,'regions':'eu,uk','markets':'h2h','oddsFormat':'decimal'})
-
+    games=[]
+    if not ODDS: return games
+    raw=get_json('https://api.the-odds-api.com/v4/sports/upcoming/odds',params={'apiKey':ODDS,'regions':'eu,uk','markets':'h2h','oddsFormat':'decimal'})
     for g in raw:
-        sk = g.get('sport_key','')
-        if not allowed_sport(sk) or not upcoming(g):
-            continue
-
-        books = g.get('bookmakers',[])
-        if len(books) < 3:
-            continue
-
-        prices = {}
+        sk=g.get('sport_key','')
+        if not allowed_sport(sk) or not upcoming(g): continue
+        books=g.get('bookmakers',[])
+        if len(books)<3: continue
+        prices={}
         for b in books:
             for m in b.get('markets',[]):
                 if m.get('key')!='h2h': continue
                 for o in m.get('outcomes',[]):
                     try:
-                        p=float(o['price'])
-                        prices.setdefault(o['name'],[]).append(p)
-                    except:
-                        continue
-
+                        p=float(o['price']); prices.setdefault(o['name'],[]).append(p)
+                    except Exception: pass
         selections=[]
         for name,arr in prices.items():
             if len(arr)<3 or name.lower()=='draw': continue
-            best=max(arr)
-            med=statistics.median(arr)
-            edge=(best/med)-1 if med else 0
-            selections.append({
-                'team':name,
-                'best_odds':round(best,2),
-                'median_odds':round(med,2),
-                'edge_pct':round(edge*100,1),
-                'books':len(arr)
-            })
-
+            best=max(arr); med=statistics.median(arr); edge=(best/med)-1 if med else 0
+            if edge<required_edge(best): continue
+            if best>3.5 and edge<0.05: continue
+            conf=5+edge*20+(len(arr)/20)+odds_penalty(best)
+            selections.append({'team':name,'odds':round(best,2),'median_odds':round(med,2),'edge_pct':round(edge*100,1),'books':len(arr),'confidence':round(conf,1),'stake_kr':stake(conf,best)})
         if selections:
-            games.append({
-                'event': f"{g.get('home_team')} vs {g.get('away_team')}",
-                'sport': sk,
-                'start': g.get('commence_time'),
-                'selections': sorted(selections, key=lambda x:x['edge_pct'], reverse=True)[:3]
-            })
-
-    return games[:40]
-
+            games.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':sk,'start':g.get('commence_time'),'selections':sorted(selections,key=lambda x:x['confidence'],reverse=True)[:2]})
+    return games[:30]
 
 def get_football_context():
     if not FD: return {}
     try:
         d=date.today().isoformat()
-        return get_json('https://api.football-data.org/v4/matches',
-            headers={'X-Auth-Token':FD},
-            params={'dateFrom':d,'dateTo':d})
-    except:
+        return get_json('https://api.football-data.org/v4/matches',headers={'X-Auth-Token':FD},params={'dateFrom':d,'dateTo':d})
+    except Exception:
         return {}
 
+def sanitize(result):
+    for sec in ['top_bets','watchlist','pass']:
+        result[sec]=result.get(sec,[])
+    clean=[]
+    for x in result.get('top_bets',[]):
+        try: odds=float(str(x.get('odds')).replace(',','.'))
+        except Exception: continue
+        try: st=int(float(str(x.get('stake_kr',1)).replace(',','.')))
+        except Exception: st=1
+        if odds>=4: st=1
+        elif odds>=3.5: st=min(st,2)
+        else: st=min(st,5)
+        x['stake_kr']=max(1,st)
+        clean.append(x)
+    result['top_bets']=clean[:5]
+    return result
 
-def run_gemini(games, football):
-    if not GEMINI:
-        return {'summary':'Missing GEMINI','top_bets':[],'watchlist':[],'pass':[]}
-
-    payload = {'games':games,'football':football}
-
-    prompt = '''You are a sharp betting analyst.
-Rules:
-- Max stake 5 kr
-- Prefer NHL, NBA, ATP/WTA, top football
-- Only pick if value exists (edge + context)
-- Use rest, schedule, form if possible
-- If no value: return no bets
-Return JSON only: summary, top_bets, watchlist, pass
-Each bet: event,pick,odds,confidence,stake_kr,reason
-Data:\n'''+json.dumps(payload)[:200000]
-
+def run_gemini(games,football):
+    if not GEMINI: return {'summary':'Missing GEMINI','top_bets':[],'watchlist':[],'pass':[]}
+    payload={'games':games,'football':football,'v3_rules':{'max_stake':5,'high_odds_stake_cap':'odds>=3.5 max 2 kr, odds>=4 max 1 kr','prefer':'lower variance value'}}
+    prompt='''Du er Bendix konservative betting-analytiker.
+Regler:
+- Svar på dansk JSON only: summary, top_bets, watchlist, pass.
+- Maks stake 5 kr.
+- Odds >= 3.5 må maksimalt få stake 2 kr.
+- Odds >= 4 må maksimalt få stake 1 kr.
+- Vælg kun spil med value og rimelig risiko. Hvis der ikke er spil: ingen spil nu.
+- Hvert item: event,pick,odds,confidence,stake_kr,reason.
+Data:\n'''+json.dumps(payload,ensure_ascii=False)[:200000]
     url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={GEMINI}'
     body={"contents":[{"parts":[{"text":prompt}]}]}
-
     try:
-        r=requests.post(url,json=body,timeout=90)
-        r.raise_for_status()
+        r=requests.post(url,json=body,timeout=90); r.raise_for_status()
         txt=r.json()['candidates'][0]['content']['parts'][0]['text']
         m=re.search(r'\{.*\}',txt,re.S)
-        if m:
-            return json.loads(m.group(0))
+        if m: return sanitize(json.loads(m.group(0)))
     except Exception as e:
         return {'summary':f'error {e}','top_bets':[],'watchlist':[],'pass':[]}
-
     return {'summary':'no parse','top_bets':[],'watchlist':[],'pass':[]}
 
-
 def main():
-    games = build_games()
-    football = get_football_context()
-    result = run_gemini(games, football)
-
-    (OUT/'data_hunter_v2.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
-
+    result=run_gemini(build_games(),get_football_context())
+    (OUT/'data_hunter_v2.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     with open(OUT/'data_hunter_v2.md','w',encoding='utf-8') as f:
-        f.write('# DATA HUNTER V2\n\n'+result.get('summary','')+'\n\n')
+        f.write('# DATA HUNTER V3\n\n'+result.get('summary','')+'\n\n')
         for sec in ['top_bets','watchlist','pass']:
             f.write('## '+sec.upper()+'\n')
             for x in result.get(sec,[]):
                 f.write(f"- {x.get('event')} | {x.get('pick')} | {x.get('odds')} | stake {x.get('stake_kr')} | {x.get('reason')}\n")
             f.write('\n')
-
     print(result.get('summary','done'))
-
-
-if __name__ == '__main__':
-    main()
+if __name__=='__main__': main()
