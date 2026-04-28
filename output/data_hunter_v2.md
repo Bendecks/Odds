@@ -1,12 +1,13 @@
-# DATA HUNTER V2
+# DATA HUNTER V3
 
-Two strong value plays identified in the ATP Madrid Open. Stefanos Tsitsipas presents the highest edge against Casper Ruud, while Vit Kopriva offers solid value as an underdog against Rafael Jodar.
+Som Bendix har jeg analyseret dagens muligheder. Fokus er på spil med beviselig værdi ('edge') og et kontrolleret risikoniveau. Dagens tennisudbud giver flere interessante favoritter med solid værdi, samt et højere odds-spil med exceptionel edge. Alle valg overholder vores strenge indsatsgrænser og konservative principper.
 
 ## TOP_BETS
-- Stefanos Tsitsipas vs Casper Ruud | Stefanos Tsitsipas | 3.1 | stake 5 | Outstanding edge of 14.8% indicates significant market undervaluation for Tsitsipas. While Ruud is a clay specialist, Tsitsipas is a formidable opponent on this surface and the odds are highly attractive given the calculated edge.
+- Vit Kopriva vs Rafael Jodar | Rafael Jodar | 1.22 | stake 3 | Solid værdi med en pæn edge (3.4%) på en favorit med lav risiko, hvilket stemmer overens med Bendix's konservative strategi.
+- Francisco Cerundolo vs Alexander Blockx | Alexander Blockx | 3.2 | stake 5 | Fremragende værdi (edge 10.3%) og høj tillid, hvilket opvejer de højere odds. Selvom oddsene er højere, gør den markante edge og tillid dette til et værdifuldt spil inden for vores risikorammer.
+- Francisco Cerundolo vs Alexander Blockx | Francisco Cerundolo | 1.47 | stake 4 | God værdi (edge 4.3%) og høj tillid til favoritten. Et stabilt valg, der passer til en konservativ portefølje.
 
 ## WATCHLIST
-- Vit Kopriva vs Rafael Jodar | Vit Kopriva | 5.5 | stake 4 | A solid 10.0% edge on Vit Kopriva as a substantial underdog. This suggests a good opportunity for an upset or a closer match than the market expects, offering excellent value at these high odds.
 
 ## PASS
 
