@@ -1,12 +1,12 @@
 # DATA HUNTER V1 — SAFETY FIXED
 
-Én kamp fundet med værdi. Tomas Martin Etcheverry på grus i Madrid Masters giver god værdi mod Arthur Fils, da Etcheverry er en stærk grusspiller og oddsene på ham virker for høje.
+Her er dagens spilforslag baseret på de givne odds. Vi fokuserer strengt på at finde eksplicit værdi i markedet, overholde de konservative bankroll-regler og undgå ugunstige væddemål.
 
 ## TOP BETS
-1. ATP Madrid Open: Tomas Martin Etcheverry vs Arthur Fils | Tomas Martin Etcheverry | 3.85 | stake 2 | conf Medium-Høj | Etcheverry er en etableret grusspiller, der har vist gode præstationer på denne overflade. Fils er talentfuld, men ikke en udpræget grusspecialist. Odds på 3.85 (tilgængelig hos Betfair og Matchbook) for Etcheverry virker for høje i en kamp, hvor han har gode chancer for at presse favoritten eller endda vinde.
+1. ATP Madrid Open: Tomas Martin Etcheverry vs. Arthur Fils | Tomas Martin Etcheverry | 3.85 | stake 2 | conf Medium | Etcheverry er en dygtig grusspiller, og vi vurderer, at hans reelle vinderchance mod Arthur Fils er undervurderet af markedet. Odds 3.85 hos Betfair giver en tydelig værdi, da vi anser hans sandsynlighed for at vinde for at være højere end de implicitte 25.9%.
 
 ## WATCHLIST
 
 ## PASS
-1. ATP Madrid Open: Jannik Sinner vs Cameron Norrie | None | None | stake None | conf None | Jannik Sinner er en overvældende favorit med ekstremt lave odds (omkring 1.01-1.04), hvilket ikke giver nogen værdi for en konservativ bankroll. Selvom Cameron Norrie er en solid spiller, er Sinner i øjeblikket for dominerende til at oddsene på Norrie giver tilstrækkelig værdi til at retfærdiggøre et væddemål. Ingen klar værdi fundet i markedet for denne kamp.
+1. ATP Madrid Open: Jannik Sinner vs. Cameron Norrie | None | None | stake None | conf None | Jannik Sinner er en overvældende favorit med odds helt ned til 1.01. Der er ingen reel værdi i at spille på Sinner til så lave odds. Selvom oddsene på Norrie er høje (op til 26.0), er sandsynligheden for, at han vinder, så lav, at det ikke er et forsvarligt spil ifølge vores konservative strategi, medmindre der er overbevisende og kvantificerbar værdi, som ikke er til stede her.
 
