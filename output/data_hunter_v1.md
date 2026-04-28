@@ -1,21 +1,12 @@
-# DATA HUNTER V1
+# DATA HUNTER V1 — SAFETY FIXED
 
-Conservative approach, prioritizing NHL, ATP/WTA, and top football. Identified several strong favorites in preferred sports for top bets and one match for the watchlist. No live bets or parlays placed.
+Én kamp fundet med værdi. Tomas Martin Etcheverry på grus i Madrid Masters giver god værdi mod Arthur Fils, da Etcheverry er en stærk grusspiller og oddsene på ham virker for høje.
 
 ## TOP BETS
-1. Velez Sarsfield BA vs Union Santa Fe (Primera División - Argentina) | Velez Sarsfield BA | 2.15 | stake 250 | conf Medium | Home favorite in a preferred top football league.
-2. Cleveland Guardians vs Tampa Bay Rays (MLB) | Cleveland Guardians | 1.73 | stake 500 | conf High | Clear favorite in a preferred MLB match.
-3. Pittsburgh Pirates vs St. Louis Cardinals (MLB) | Pittsburgh Pirates | 1.84 | stake 250 | conf Medium | Slight home favorite in a preferred MLB match.
-4. Toronto Blue Jays vs Boston Red Sox (MLB) | Toronto Blue Jays | 1.71 | stake 500 | conf High | Clear favorite in a preferred MLB match.
-5. Pittsburgh Penguins vs Philadelphia Flyers (NHL) | Pittsburgh Penguins | 1.75 | stake 500 | conf High | Clear favorite in a highly preferred NHL match (moneyline, including overtime).
-6. Minnesota Twins vs Seattle Mariners (MLB) | Seattle Mariners | 1.75 | stake 500 | conf High | Clear favorite in a preferred MLB match.
+1. ATP Madrid Open: Tomas Martin Etcheverry vs Arthur Fils | Tomas Martin Etcheverry | 3.85 | stake 2 | conf Medium-Høj | Etcheverry er en etableret grusspiller, der har vist gode præstationer på denne overflade. Fils er talentfuld, men ikke en udpræget grusspecialist. Odds på 3.85 (tilgængelig hos Betfair og Matchbook) for Etcheverry virker for høje i en kamp, hvor han har gode chancer for at presse favoritten eller endda vinde.
 
 ## WATCHLIST
-1. Chicago White Sox vs Los Angeles Angels (MLB) | monitor | no odds available | stake 0 | conf Low | No clear favorite for a conservative bet; monitoring for potential value shifts.
 
 ## PASS
-1. Gil Vicente vs Casa Pia (Primeira Liga - Portugal) | no bets | no odds available | stake 0 | conf N/A | Event already commenced, no live bets.
-2. Grand Canyon Antelopes vs BYU Cougars (NCAA Baseball) | no bets | no odds available | stake 0 | conf N/A | Event already commenced, no live bets.
-3. Anastasia Potapova vs Elena Rybakina (WTA Madrid Open) | no bets | no odds available | stake 0 | conf N/A | Event already commenced, no live bets.
-4. Athletic Club (MG) vs Nautico PE (Brazil Série B) | no bets | no odds available | stake 0 | conf N/A | Less preferred league and no clear favorite for a conservative bet.
+1. ATP Madrid Open: Jannik Sinner vs Cameron Norrie | None | None | stake None | conf None | Jannik Sinner er en overvældende favorit med ekstremt lave odds (omkring 1.01-1.04), hvilket ikke giver nogen værdi for en konservativ bankroll. Selvom Cameron Norrie er en solid spiller, er Sinner i øjeblikket for dominerende til at oddsene på Norrie giver tilstrækkelig værdi til at retfærdiggøre et væddemål. Ingen klar værdi fundet i markedet for denne kamp.
 
