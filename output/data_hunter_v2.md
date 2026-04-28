@@ -1,13 +1,12 @@
 # DATA HUNTER V2
 
-Analyzing the provided data, a significant value opportunity has been identified in the ATP Madrid Open. The primary focus is on a strong underdog pick with a substantial market edge. Other potential value picks are placed on the watchlist due to higher variance or requiring further context.
+Two strong value plays identified in the ATP Madrid Open. Stefanos Tsitsipas presents the highest edge against Casper Ruud, while Vit Kopriva offers solid value as an underdog against Rafael Jodar.
 
 ## TOP_BETS
-- Stefanos Tsitsipas vs Casper Ruud | Stefanos Tsitsipas | 3.4 | stake 5 | Exceptional value identified with a 15.8% edge against the median market odds. Tsitsipas is being significantly undervalued at 3.4. While Ruud is strong on clay, Tsitsipas has proven his capability on the surface and against top opponents, making this a legitimate value play where the market discrepancy offers a strong positive expected value.
+- Stefanos Tsitsipas vs Casper Ruud | Stefanos Tsitsipas | 3.1 | stake 5 | Outstanding edge of 14.8% indicates significant market undervaluation for Tsitsipas. While Ruud is a clay specialist, Tsitsipas is a formidable opponent on this surface and the odds are highly attractive given the calculated edge.
 
 ## WATCHLIST
-- Vit Kopriva vs Rafael Jodar | Vit Kopriva | 5.5 | stake 0 | A positive edge of 10.0% suggests value on the underdog at high odds. While attractive for its potential payout, the odds of 5.5 indicate a higher variance play. This bet warrants further observation and deeper analysis of current form and specific clay court conditions before a stake is placed, making it suitable for the watchlist.
+- Vit Kopriva vs Rafael Jodar | Vit Kopriva | 5.5 | stake 4 | A solid 10.0% edge on Vit Kopriva as a substantial underdog. This suggests a good opportunity for an upset or a closer match than the market expects, offering excellent value at these high odds.
 
 ## PASS
-- None | None | None | stake None | No football matches were available in the provided data for analysis.
 
