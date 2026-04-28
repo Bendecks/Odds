@@ -10,7 +10,7 @@
 - Stake: 5 kr
 - Edge: 11.4%
 - Value: 1.4%
-- Books: 35
+- Books: 34
 - Sport: tennis_atp_madrid_open
 - Start: 2026-04-28T09:00:00Z
 
