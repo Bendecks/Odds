@@ -1,16 +1,16 @@
 # V4 MARKET ENGINE
 
-Bendix V4 har behandlet kandidaterne og identificeret to stærke enkeltspil med høj værdi og solid markedskonsensus, som er inkluderet i 'top_bets'. Yderligere et spil er placeret på 'watchlist' grundet god, men marginalt lavere værdi. Et spil er frasorteret, da det ikke lever op til de konservative krav om tilstrækkelig edge.
+Bendix V4 Market Engine har analyseret de beståede kandidater. Der er fundet ét topvalg og to interessante spil på watchlist, baseret på værdi og sandsynlighed.
 
 Candidates: 4
 
 ## TOP_BETS
-1. Atlético Madrid vs Arsenal | Arsenal | odds 2.43 | stake 3 | conf Høj | Fremragende værdi (5.7% edge) ift. markedet med god spread ratio (1.06) og mange bookmakere (39) bag medianen, hvilket indikerer lav variance og høj sandsynlighed for overværdi.
-2. Marta Kostyuk vs Linda Noskova | Linda Noskova | odds 2.8 | stake 3 | conf Høj | Solid værdi (5.7% edge) i forhold til markedskonsensus (35 bookmakere) og god spread ratio (1.06), hvilket giver høj tillid til værdien og lav variance.
+1. Atlético Madrid vs Arsenal | Atlético Madrid | odds 3.3 | stake 2 | conf Høj | Højeste value ifølge markedsdata med en solid edge på 6.5%. Oddset er under 3.5, hvilket muliggør en indsats på op til 5 kr, her med en forsigtig anbefalet indsats på 2 kr.
 
 ## WATCHLIST
-1. Atlético Madrid vs Arsenal | Atlético Madrid | odds 3.37 | stake 1 | conf Middel | God værdi (5.3% edge) med solid spread ratio (1.05). Placeret på watchlist grundet marginalt lavere edge end 'top_bets' og da modparten også er et stærkt spil med endnu højere værdi, i tråd med en konservativ strategi.
+1. Atlético Madrid vs Arsenal | Arsenal | odds 2.43 | stake 3 | conf Medium-Høj | God value ifølge markedsdata med en edge på 5.7%. Oddset er under 3.5, hvilket tillader en indsats på 3 kr. Et potentielt stabilt valg med en god balance mellem risiko og belønning.
+2. Marta Kostyuk vs Linda Noskova | Linda Noskova | odds 2.8 | stake 3 | conf Medium-Høj | God value ifølge markedsdata med en edge på 5.7%. Oddset er under 3.5, hvilket tillader en indsats på 3 kr. Et solidt spil med en attraktiv værdi.
 
 ## PASS
-1. Marta Kostyuk vs Linda Noskova | Marta Kostyuk | odds 1.54 | stake 1 | conf Lav | For lav edge (2.7%) til at retfærdiggøre et spil under en konservativ strategi. Prioriterer højere værdi og et bedre forhold mellem sandsynlighed, værdi og lav variance.
+1. Marta Kostyuk vs Linda Noskova | Marta Kostyuk | odds 1.56 | stake 1 | conf Medium | Positiv value med en edge på 4.7%, men lavere end de andre kandidater. Dette gør den mindre attraktiv i forhold til de højere værdi-spil.
 

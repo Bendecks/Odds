@@ -1,41 +1,41 @@
 {
-  "summary": "Bendix V4 har behandlet kandidaterne og identificeret to stærke enkeltspil med høj værdi og solid markedskonsensus, som er inkluderet i 'top_bets'. Yderligere et spil er placeret på 'watchlist' grundet god, men marginalt lavere værdi. Et spil er frasorteret, da det ikke lever op til de konservative krav om tilstrækkelig edge.",
+  "summary": "Bendix V4 Market Engine har analyseret de beståede kandidater. Der er fundet ét topvalg og to interessante spil på watchlist, baseret på værdi og sandsynlighed.",
   "top_bets": [
+    {
+      "event": "Atlético Madrid vs Arsenal",
+      "pick": "Atlético Madrid",
+      "odds": 3.3,
+      "stake_kr": 2,
+      "confidence": "Høj",
+      "reason": "Højeste value ifølge markedsdata med en solid edge på 6.5%. Oddset er under 3.5, hvilket muliggør en indsats på op til 5 kr, her med en forsigtig anbefalet indsats på 2 kr."
+    }
+  ],
+  "watchlist": [
     {
       "event": "Atlético Madrid vs Arsenal",
       "pick": "Arsenal",
       "odds": 2.43,
       "stake_kr": 3,
-      "confidence": "Høj",
-      "reason": "Fremragende værdi (5.7% edge) ift. markedet med god spread ratio (1.06) og mange bookmakere (39) bag medianen, hvilket indikerer lav variance og høj sandsynlighed for overværdi."
+      "confidence": "Medium-Høj",
+      "reason": "God value ifølge markedsdata med en edge på 5.7%. Oddset er under 3.5, hvilket tillader en indsats på 3 kr. Et potentielt stabilt valg med en god balance mellem risiko og belønning."
     },
     {
       "event": "Marta Kostyuk vs Linda Noskova",
       "pick": "Linda Noskova",
       "odds": 2.8,
       "stake_kr": 3,
-      "confidence": "Høj",
-      "reason": "Solid værdi (5.7% edge) i forhold til markedskonsensus (35 bookmakere) og god spread ratio (1.06), hvilket giver høj tillid til værdien og lav variance."
-    }
-  ],
-  "watchlist": [
-    {
-      "event": "Atlético Madrid vs Arsenal",
-      "pick": "Atlético Madrid",
-      "odds": 3.37,
-      "stake_kr": 1,
-      "confidence": "Middel",
-      "reason": "God værdi (5.3% edge) med solid spread ratio (1.05). Placeret på watchlist grundet marginalt lavere edge end 'top_bets' og da modparten også er et stærkt spil med endnu højere værdi, i tråd med en konservativ strategi."
+      "confidence": "Medium-Høj",
+      "reason": "God value ifølge markedsdata med en edge på 5.7%. Oddset er under 3.5, hvilket tillader en indsats på 3 kr. Et solidt spil med en attraktiv værdi."
     }
   ],
   "pass": [
     {
       "event": "Marta Kostyuk vs Linda Noskova",
       "pick": "Marta Kostyuk",
-      "odds": 1.54,
+      "odds": 1.56,
       "stake_kr": 1,
-      "confidence": "Lav",
-      "reason": "For lav edge (2.7%) til at retfærdiggøre et spil under en konservativ strategi. Prioriterer højere værdi og et bedre forhold mellem sandsynlighed, værdi og lav variance."
+      "confidence": "Medium",
+      "reason": "Positiv value med en edge på 4.7%, men lavere end de andre kandidater. Dette gør den mindre attraktiv i forhold til de højere værdi-spil."
     }
   ],
   "mode": "V4_MARKET_ENGINE",

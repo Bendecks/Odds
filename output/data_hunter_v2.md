@@ -1,10 +1,10 @@
 # DATA HUNTER V3
 
-Bendix har fundet to solide spil med god værdi i dagens udvalg. Begge er inden for rammerne for 'top_bets' med attraktive odds og god 'confidence'. Der er særligt god værdi i Arsenal mod Atlético Madrid.
+Bendix' analyse identificerer to solide værdibet for i dag. Begge picks viser god 'edge' og 'confidence' inden for vores konservative rammer, med odds under 3.5 og et passende stake-niveau.
 
 ## TOP_BETS
-- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.82 | stake 4 | Værdi identficeret i Noskova mod Kostyuk. God 'edge_pct' og 'confidence' indikerer et fordelagtigt spil.
-- Atlético Madrid vs Arsenal | Arsenal | 2.5 | stake 5 | Fremragende værdi på Arsenal, der er undervurderet i denne kamp. Høj 'edge_pct' og 'confidence' gør dette til dagens stærkeste spil.
+- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.8 | stake 4 | Solid værdi baseret på odds-analyse, og god selvtillid i valget. Noskova vurderes til at have bedre chancer end bookmakerne indikerer.
+- Atlético Madrid vs Arsenal | Atlético Madrid | 3.3 | stake 4 | Høj værdi og stærk selvtillid for Atlético Madrid på hjemmebane. De er ofte undervurderet i vigtige kampe, og 'edgen' er markant.
 
 ## WATCHLIST
 
