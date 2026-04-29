@@ -1,9 +1,8 @@
 # DATA HUNTER V3
 
-Analyser af markedet i dag viser en solid værdimulighed i tenniskampen mellem Fils og Lehecka. Fodboldkampen mangler odds og kan derfor ikke vurderes.
+Jeg har gennemgået de tilgængelige kampe, men jeg kan desværre ikke fremsætte konkrete betting-anbefalinger. Dataene indeholder ikke odds for den angivne kamp, hvilket er essentielt for at vurdere værdi og risiko ifølge mine konservative principper. Derfor er der ingen spil at placere på nuværende tidspunkt.
 
 ## TOP_BETS
-- Arthur Fils vs Jiri Lehecka | Arthur Fils | 1.68 | stake 4 | Stærk værdi identificeret med en god edge_pct på 8.4% og odds der er markant højere end medianen. Dette er en solid 'top bet' givet den konservative strategi.
 
 ## WATCHLIST
 
