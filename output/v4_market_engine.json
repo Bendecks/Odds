@@ -1,34 +1,26 @@
 {
-  "summary": "Bendix V4 Market Engine har identificeret 2 stærke værdibet til top-anbefalinger og 1 spil til overvågningslisten baseret på konservative principper og lav risiko.",
+  "summary": "Analyse af markedsdata har identificeret et stærkt værdispil med lav risiko i tennis. Yderligere spil med positiv forventet værdi er placeret på overvågningslisten for fremtidig vurdering, men prioriteres lavere i henhold til konservativ strategi og lav variance.",
   "top_bets": [
     {
-      "event": "Marta Kostyuk vs Linda Noskova",
-      "pick": "Linda Noskova",
-      "odds": 2.72,
-      "stake_kr": 3,
-      "confidence": "Meget Høj",
-      "reason": "Meget høj forventet værdi (28.3% edge) med et signifikant spread i forhold til medianen (1.28). Robust marked med 33 bookmakere, der indikerer klar værdi og en god sandsynlighed for gevinst."
-    },
-    {
-      "event": "Marta Kostyuk vs Linda Noskova",
-      "pick": "Marta Kostyuk",
-      "odds": 1.85,
+      "event": "Arthur Fils vs Jiri Lehecka",
+      "pick": "Arthur Fils",
+      "odds": 1.68,
       "stake_kr": 3,
       "confidence": "Høj",
-      "reason": "God forventet værdi (10.1% edge) og et tydeligt spread i markedet (1.1). Stærk markedskonsensus fra 33 bookmakere understøtter værdien ved lavere odds, hvilket reducerer variance og øger sandsynligheden for stabil profit."
+      "reason": "Høj positiv forventet værdi (edge_pct 8.4%), lav risiko med odds 1.68, stærk markedskonsensus (34 books) og god spredningsratio (1.08), passer perfekt til konservativ strategi og lav variance."
     }
   ],
   "watchlist": [
     {
-      "event": "Atlético Madrid vs Arsenal",
-      "pick": "Arsenal",
-      "odds": 2.48,
+      "event": "Arthur Fils vs Jiri Lehecka",
+      "pick": "Jiri Lehecka",
+      "odds": 2.6,
       "stake_kr": 3,
       "confidence": "Middel",
-      "reason": "Solid forventet værdi (7.8% edge) og et fornuftigt spread (1.08). Markedet er robust med 40 bookmakere, men værdien er ikke tilstrækkelig for en top-anbefaling i henhold til vores konservative profil. Overvåges for forbedrede forhold."
+      "reason": "Positiv forventet værdi (edge_pct 6.6%) og god markedskonsensus (34 books), men med højere odds og dermed lidt højere risiko sammenlignet med Arthur Fils, hvilket prioriteres lavere under konservative vilkår."
     }
   ],
   "pass": [],
   "mode": "V4_MARKET_ENGINE",
-  "candidate_count": 3
+  "candidate_count": 2
 }

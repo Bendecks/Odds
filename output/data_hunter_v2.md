@@ -1,10 +1,9 @@
 # DATA HUNTER V3
 
-To stærke væddemål fundet med solid værdi og acceptable odds. Begge opfylder Bendix' kriterier for lav risiko og høj værdi.
+Analyser af markedet i dag viser en solid værdimulighed i tenniskampen mellem Fils og Lehecka. Fodboldkampen mangler odds og kan derfor ikke vurderes.
 
 ## TOP_BETS
-- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.72 | stake 5 | Meget høj 'edge_pct' på 29.5% og solid confidence indikerer stærk værdi på Noskova til en attraktiv odds.
-- Atlético Madrid vs Arsenal | Arsenal | 2.48 | stake 5 | Arsenal tilbyder god værdi med en 'edge_pct' på 7.8% og en fornuftig confidence. Oddset er inden for grænsen for 'top_bets'.
+- Arthur Fils vs Jiri Lehecka | Arthur Fils | 1.68 | stake 4 | Stærk værdi identificeret med en god edge_pct på 8.4% og odds der er markant højere end medianen. Dette er en solid 'top bet' givet den konservative strategi.
 
 ## WATCHLIST
 
