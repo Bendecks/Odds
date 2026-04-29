@@ -2,15 +2,15 @@
 
 1 prioriterede picks fundet
 
-## 1. Atlético Madrid vs Arsenal
-- Market type: 1X2_3WAY_REGULATION
-- Pick: Arsenal
-- Odds: 2.43
-- Confidence: 9.5/10
+## 1. Arthur Fils vs Jiri Lehecka
+- Market type: MATCH_WINNER_2WAY
+- Pick: Jiri Lehecka
+- Odds: 2.66
+- Confidence: 9.1/10
 - Stake: 5 kr
-- Edge: 5.7%
-- Value: 16.6%
-- Books: 40
-- Sport: soccer_uefa_champs_league
-- Start: 2026-04-29T19:00:00Z
+- Edge: 9.0%
+- Value: 1.4%
+- Books: 35
+- Sport: tennis_atp_madrid_open
+- Start: 2026-04-29T19:30:00Z
 
