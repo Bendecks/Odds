@@ -21,30 +21,24 @@ def upcoming(g):
         return 0<h<=MAX_HOURS
     except Exception: return False
 
+def text(v):
+    if isinstance(v,str): return v
+    if v is None: return ''
+    return json.dumps(v,ensure_ascii=False)
+
 def score_candidate(odds,median,books,market):
     edge=(odds/median)-1 if median else 0
     variance_penalty=2.5 if odds>=5 else 1.5 if odds>=4 else 0.8 if odds>=3.5 else 0
     market_bonus=0.8 if market in ('spreads','totals') else 0
     return round(edge*100 + min(books,20)/5 + market_bonus - variance_penalty,2), edge
 
-def side_group(market,selection,point):
-    s=str(selection).lower()
-    if market=='totals':
-        return f"totals:{point}"
-    if market=='spreads':
-        return f"spreads:{point}"
-    return 'h2h'
-
-def candidate_key(c):
-    return (c['event'], c['market'], str(c.get('point')))
-
 def conflicts(a,b):
-    if a['event']!=b['event']: return False
-    if a['market']=='h2h' and b['market']=='h2h': return True
-    if a['market']=='totals' and b['market']=='totals' and str(a.get('point'))==str(b.get('point')):
-        return str(a['selection']).lower()!=str(b['selection']).lower()
-    if a['market']=='spreads' and b['market']=='spreads' and str(a.get('point'))==str(b.get('point')):
-        return str(a['selection']).lower()!=str(b['selection']).lower()
+    if a.get('event')!=b.get('event'): return False
+    if a.get('market')=='h2h' and b.get('market')=='h2h': return True
+    if a.get('market')=='totals' and b.get('market')=='totals' and str(a.get('point'))==str(b.get('point')):
+        return str(a.get('selection')).lower()!=str(b.get('selection')).lower()
+    if a.get('market')=='spreads' and b.get('market')=='spreads' and str(a.get('point'))==str(b.get('point')):
+        return str(a.get('selection')).lower()!=str(b.get('selection')).lower()
     return False
 
 def add_candidate(cands,g,market,selection,odds_list,point=None):
@@ -78,32 +72,28 @@ def collect_candidates():
                     except Exception: continue
                     point=o.get('point')
                     buckets.setdefault((mk,name,point),[]).append(price)
-        for (mk,name,point),prices in buckets.items():
-            add_candidate(cands,g,mk,name,prices,point)
+        for (mk,name,point),prices in buckets.items(): add_candidate(cands,g,mk,name,prices,point)
     return sorted(cands,key=lambda x:(x['pre_score'],x['books'],x['edge_pct']),reverse=True)
 
 def pre_resolve(cands):
     selected=[]; watch=[]
     for c in cands:
         if any(conflicts(c,s) for s in selected):
-            watch.append({**c,'conflict_status':'watchlist_conflict'})
-            continue
+            watch.append({**c,'conflict_status':'watchlist_conflict'}); continue
         selected.append({**c,'conflict_status':'clear'})
-    return selected, watch
+    return selected,watch
 
 def gemini_rank(cands,conflict_watch):
-    if not GEMINI:
-        return {'summary':'Missing GEMINI_API_KEY','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
+    if not GEMINI: return {'summary':'Missing GEMINI_API_KEY','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
     prompt='''Du er Bendix V6 Conflict Resolver.
-Du får kandidater der allerede er konfliktløst præsorteret.
 Regler:
 - Kvalitet over kvantitet, men ingen hard cap på top_bets hvis de alle er gode.
 - Singles only, ingen livebetting, ingen parlays.
 - ALDRIG modsatrettede picks i samme kamp.
 - ALDRIG både over og under samme total-linje.
 - ALDRIG begge handicap-sider på samme linje.
-- Hvis et pick ikke matcher typisk bet365-marked, sæt det watchlist.
 - Stake 1-5 kr, high odds normalt 1 kr.
+- summary skal være en kort tekststreng, ikke et objekt.
 - Hvert item: event, market, pick, point, odds, stake_kr, confidence, reason.
 - Returner dansk JSON only: summary, top_bets, watchlist, pass.
 Data:\n'''+json.dumps({'candidate_count':len(cands),'candidates':cands[:120],'conflict_watchlist':conflict_watch[:50]},ensure_ascii=False)
@@ -138,25 +128,24 @@ def sanitize(res):
         elif odds>=3.5: st=min(st,2)
         else: st=min(st,5)
         x['stake_kr']=max(1,st)
-        if any(conflicts({'event':x.get('event'),'market':x.get('market'),'selection':x.get('pick'),'point':x.get('point')},{'event':y.get('event'),'market':y.get('market'),'selection':y.get('pick'),'point':y.get('point')}) for y in clean):
-            x['stake_kr']=0; x['reason']=str(x.get('reason',''))+' | Flyttet til watchlist: konflikt med bedre top bet.'; res['watchlist'].append(x); continue
+        item={'event':x.get('event'),'market':x.get('market'),'selection':x.get('pick'),'point':x.get('point')}
+        if any(conflicts(item,{'event':y.get('event'),'market':y.get('market'),'selection':y.get('pick'),'point':y.get('point')}) for y in clean):
+            x['stake_kr']=0; x['reason']=text(x.get('reason'))+' | Flyttet til watchlist: konflikt med bedre top bet.'; res['watchlist'].append(x); continue
         clean.append(x)
     res['top_bets']=clean
     res['watchlist']=res['watchlist'][:50]
     res['pass']=res['pass'][:50]
-    res['summary']=res.get('summary') or ('ingen spil nu' if not clean else f'{len(clean)} top bets')
+    summary=res.get('summary')
+    res['summary']=summary if isinstance(summary,str) else (json.dumps(summary,ensure_ascii=False) if summary else ('ingen spil nu' if not clean else f'{len(clean)} top bets'))
     return res
 
-raw_cands=collect_candidates()
-resolved, conflict_watch=pre_resolve(raw_cands)
-res=sanitize(gemini_rank(resolved,conflict_watch))
+raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch))
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch)
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — CONFLICT RESOLVER\n\n'+res.get('summary','')+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
+    f.write('# V6 EXPANSION ENGINE — CONFLICT RESOLVER\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
-        for i,x in enumerate(as_list(res.get(sec)),1):
-            f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | conf {x.get('confidence')} | {x.get('reason')}\n")
+        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
         f.write('\n')
-print(res.get('summary','done'))
+print(text(res.get('summary')))
