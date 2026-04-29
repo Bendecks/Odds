@@ -6,7 +6,7 @@ OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_EXPANSION_ENGINE'
+MODE='V6_EXPANSION_ENGINE_CONFLICT_RESOLVER'
 MAX_HOURS=120
 SPORTS=('tennis_atp','tennis_wta','basketball_nba','icehockey_nhl','soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga','soccer_france_ligue_one','soccer_portugal_primeira_liga')
 MARKETS=('h2h','spreads','totals')
@@ -23,12 +23,29 @@ def upcoming(g):
 
 def score_candidate(odds,median,books,market):
     edge=(odds/median)-1 if median else 0
-    variance_penalty=0
-    if odds>=5: variance_penalty=2.5
-    elif odds>=4: variance_penalty=1.5
-    elif odds>=3.5: variance_penalty=0.8
+    variance_penalty=2.5 if odds>=5 else 1.5 if odds>=4 else 0.8 if odds>=3.5 else 0
     market_bonus=0.8 if market in ('spreads','totals') else 0
     return round(edge*100 + min(books,20)/5 + market_bonus - variance_penalty,2), edge
+
+def side_group(market,selection,point):
+    s=str(selection).lower()
+    if market=='totals':
+        return f"totals:{point}"
+    if market=='spreads':
+        return f"spreads:{point}"
+    return 'h2h'
+
+def candidate_key(c):
+    return (c['event'], c['market'], str(c.get('point')))
+
+def conflicts(a,b):
+    if a['event']!=b['event']: return False
+    if a['market']=='h2h' and b['market']=='h2h': return True
+    if a['market']=='totals' and b['market']=='totals' and str(a.get('point'))==str(b.get('point')):
+        return str(a['selection']).lower()!=str(b['selection']).lower()
+    if a['market']=='spreads' and b['market']=='spreads' and str(a.get('point'))==str(b.get('point')):
+        return str(a['selection']).lower()!=str(b['selection']).lower()
+    return False
 
 def add_candidate(cands,g,market,selection,odds_list,point=None):
     if len(odds_list)<2: return
@@ -38,20 +55,7 @@ def add_candidate(cands,g,market,selection,odds_list,point=None):
     if spread_ratio>1.8: return
     score,edge=score_candidate(best,med,len(odds_list),market)
     if score<1.0: return
-    cands.append({
-        'event':f"{g.get('home_team')} vs {g.get('away_team')}",
-        'sport':g.get('sport_key'),
-        'start':g.get('commence_time'),
-        'market':market,
-        'selection':selection,
-        'point':point,
-        'odds':round(best,2),
-        'median':round(med,2),
-        'edge_pct':round(edge*100,1),
-        'books':len(odds_list),
-        'spread_ratio':round(spread_ratio,2),
-        'pre_score':score
-    })
+    cands.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':g.get('sport_key'),'start':g.get('commence_time'),'market':market,'selection':selection,'point':point,'odds':round(best,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':len(odds_list),'spread_ratio':round(spread_ratio,2),'pre_score':score})
 
 def collect_candidates():
     if not ODDS: return []
@@ -73,27 +77,36 @@ def collect_candidates():
                     try: price=float(o['price'])
                     except Exception: continue
                     point=o.get('point')
-                    key=(mk,name,point)
-                    buckets.setdefault(key,[]).append(price)
+                    buckets.setdefault((mk,name,point),[]).append(price)
         for (mk,name,point),prices in buckets.items():
             add_candidate(cands,g,mk,name,prices,point)
     return sorted(cands,key=lambda x:(x['pre_score'],x['books'],x['edge_pct']),reverse=True)
 
-def gemini_rank(cands):
+def pre_resolve(cands):
+    selected=[]; watch=[]
+    for c in cands:
+        if any(conflicts(c,s) for s in selected):
+            watch.append({**c,'conflict_status':'watchlist_conflict'})
+            continue
+        selected.append({**c,'conflict_status':'clear'})
+    return selected, watch
+
+def gemini_rank(cands,conflict_watch):
     if not GEMINI:
-        return {'summary':'Missing GEMINI_API_KEY','top_bets':[],'watchlist':cands[:30],'pass':[]}
-    prompt='''Du er Bendix V6 Expansion Engine.
-Du får mange præscreenede kandidater. Din opgave er at rangere, ikke kvæle volumen.
+        return {'summary':'Missing GEMINI_API_KEY','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
+    prompt='''Du er Bendix V6 Conflict Resolver.
+Du får kandidater der allerede er konfliktløst præsorteret.
 Regler:
-- Kvalitet over kvantitet, men INGEN hard cap på gode top_bets.
+- Kvalitet over kvantitet, men ingen hard cap på top_bets hvis de alle er gode.
 - Singles only, ingen livebetting, ingen parlays.
-- Top_bets må gerne være mange, hvis de alle er gode.
-- Sorter top_bets bedst først.
-- Odds >=4 må kun være top_bets ved meget stærk edge; ellers watchlist.
-- Stake konservativt: 1-5 kr. High odds normalt 1 kr.
+- ALDRIG modsatrettede picks i samme kamp.
+- ALDRIG både over og under samme total-linje.
+- ALDRIG begge handicap-sider på samme linje.
+- Hvis et pick ikke matcher typisk bet365-marked, sæt det watchlist.
+- Stake 1-5 kr, high odds normalt 1 kr.
 - Hvert item: event, market, pick, point, odds, stake_kr, confidence, reason.
 - Returner dansk JSON only: summary, top_bets, watchlist, pass.
-Data:\n'''+json.dumps({'candidate_count':len(cands),'candidates':cands[:120]},ensure_ascii=False)
+Data:\n'''+json.dumps({'candidate_count':len(cands),'candidates':cands[:120],'conflict_watchlist':conflict_watch[:50]},ensure_ascii=False)
     url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={GEMINI}'
     try:
         r=requests.post(url,json={"contents":[{"parts":[{"text":prompt}]}]},timeout=90); r.raise_for_status()
@@ -101,18 +114,22 @@ Data:\n'''+json.dumps({'candidate_count':len(cands),'candidates':cands[:120]},en
         m=re.search(r'\{.*\}',txt,re.S)
         if m: return json.loads(m.group(0))
     except Exception as e:
-        return {'summary':f'Gemini error: {e}','top_bets':[],'watchlist':cands[:30],'pass':[]}
-    return {'summary':'No parse','top_bets':[],'watchlist':cands[:30],'pass':[]}
+        return {'summary':f'Gemini error: {e}','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
+    return {'summary':'No parse','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
 
 def as_list(v): return v if isinstance(v,list) else []
+def normalize_item(x):
+    if not isinstance(x,dict): return None
+    if 'selection' in x and 'pick' not in x: x['pick']=x.get('selection')
+    return x
+
 def sanitize(res):
     if not isinstance(res,dict): res={}
-    res['top_bets']=as_list(res.get('top_bets'))
-    res['watchlist']=as_list(res.get('watchlist'))
-    res['pass']=as_list(res.get('pass'))
+    for sec in ['top_bets','watchlist','pass']:
+        res[sec]=[normalize_item(x) for x in as_list(res.get(sec))]
+        res[sec]=[x for x in res[sec] if isinstance(x,dict)]
     clean=[]
     for x in res['top_bets']:
-        if not isinstance(x,dict): continue
         try: odds=float(str(x.get('odds')).replace(',','.'))
         except Exception: continue
         try: st=int(float(str(x.get('stake_kr',1)).replace(',','.')))
@@ -121,19 +138,22 @@ def sanitize(res):
         elif odds>=3.5: st=min(st,2)
         else: st=min(st,5)
         x['stake_kr']=max(1,st)
+        if any(conflicts({'event':x.get('event'),'market':x.get('market'),'selection':x.get('pick'),'point':x.get('point')},{'event':y.get('event'),'market':y.get('market'),'selection':y.get('pick'),'point':y.get('point')}) for y in clean):
+            x['stake_kr']=0; x['reason']=str(x.get('reason',''))+' | Flyttet til watchlist: konflikt med bedre top bet.'; res['watchlist'].append(x); continue
         clean.append(x)
     res['top_bets']=clean
-    res['watchlist']=[x for x in res['watchlist'] if isinstance(x,dict)][:50]
-    res['pass']=[x for x in res['pass'] if isinstance(x,dict)][:50]
+    res['watchlist']=res['watchlist'][:50]
+    res['pass']=res['pass'][:50]
     res['summary']=res.get('summary') or ('ingen spil nu' if not clean else f'{len(clean)} top bets')
     return res
 
-cands=collect_candidates()
-res=sanitize(gemini_rank(cands))
-res['mode']=MODE; res['candidate_count']=len(cands)
+raw_cands=collect_candidates()
+resolved, conflict_watch=pre_resolve(raw_cands)
+res=sanitize(gemini_rank(resolved,conflict_watch))
+res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch)
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE\n\n'+res.get('summary','')+f"\n\nCandidates scanned: {len(cands)}\n\n")
+    f.write('# V6 EXPANSION ENGINE — CONFLICT RESOLVER\n\n'+res.get('summary','')+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
         for i,x in enumerate(as_list(res.get(sec)),1):
