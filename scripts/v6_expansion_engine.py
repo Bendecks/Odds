@@ -6,11 +6,15 @@ OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_EXPANSION_ENGINE_CONFLICT_RESOLVER'
+MODE='V6_CORRELATION_RESOLVER'
 MAX_HOURS=120
 SPORTS=('tennis_atp','tennis_wta','basketball_nba','icehockey_nhl','soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga','soccer_france_ligue_one','soccer_portugal_primeira_liga')
 MARKETS=('h2h','spreads','totals')
 
+def text(v):
+    if isinstance(v,str): return v
+    if v is None: return ''
+    return json.dumps(v,ensure_ascii=False)
 def ok_sport(k): return any(k.startswith(p) for p in SPORTS)
 def get_json(url,params=None):
     r=requests.get(url,params=params or {},timeout=60); r.raise_for_status(); return r.json()
@@ -20,11 +24,6 @@ def upcoming(g):
         h=(t-datetime.now(timezone.utc)).total_seconds()/3600
         return 0<h<=MAX_HOURS
     except Exception: return False
-
-def text(v):
-    if isinstance(v,str): return v
-    if v is None: return ''
-    return json.dumps(v,ensure_ascii=False)
 
 def score_candidate(odds,median,books,market):
     edge=(odds/median)-1 if median else 0
@@ -79,24 +78,24 @@ def pre_resolve(cands):
     selected=[]; watch=[]
     for c in cands:
         if any(conflicts(c,s) for s in selected):
-            watch.append({**c,'conflict_status':'watchlist_conflict'}); continue
+            watch.append({**c,'conflict_status':'market_conflict'}); continue
         selected.append({**c,'conflict_status':'clear'})
     return selected,watch
 
 def gemini_rank(cands,conflict_watch):
-    if not GEMINI: return {'summary':'Missing GEMINI_API_KEY','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
-    prompt='''Du er Bendix V6 Conflict Resolver.
+    if not GEMINI: return {'summary':'Missing GEMINI_API_KEY','top_bets':cands[:10],'watchlist':conflict_watch[:20],'pass':[]}
+    prompt='''Du er Bendix V6 Correlation Resolver.
 Regler:
-- Kvalitet over kvantitet, men ingen hard cap på top_bets hvis de alle er gode.
+- Kvalitet over kvantitet, men maks 1 TOP_BET pr event/kamp.
+- Øvrige gode picks fra samme kamp skal i watchlist som secondary leans.
 - Singles only, ingen livebetting, ingen parlays.
 - ALDRIG modsatrettede picks i samme kamp.
-- ALDRIG både over og under samme total-linje.
-- ALDRIG begge handicap-sider på samme linje.
-- Stake 1-5 kr, high odds normalt 1 kr.
-- summary skal være en kort tekststreng, ikke et objekt.
-- Hvert item: event, market, pick, point, odds, stake_kr, confidence, reason.
+- Hvis h2h-underdog vælges, må favorit-spread ikke være top_bet.
+- Hvis h2h vælges, må totals fra samme kamp kun være watchlist, ikke top_bet.
+- Hvert item: event, market, pick, point, odds, stake_kr, confidence, role, reason.
+- role skal være PRIMARY eller WATCHLIST.
 - Returner dansk JSON only: summary, top_bets, watchlist, pass.
-Data:\n'''+json.dumps({'candidate_count':len(cands),'candidates':cands[:120],'conflict_watchlist':conflict_watch[:50]},ensure_ascii=False)
+Data:\n'''+json.dumps({'candidates':cands[:120],'conflict_watchlist':conflict_watch[:50]},ensure_ascii=False)
     url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={GEMINI}'
     try:
         r=requests.post(url,json={"contents":[{"parts":[{"text":prompt}]}]},timeout=90); r.raise_for_status()
@@ -104,8 +103,8 @@ Data:\n'''+json.dumps({'candidate_count':len(cands),'candidates':cands[:120],'co
         m=re.search(r'\{.*\}',txt,re.S)
         if m: return json.loads(m.group(0))
     except Exception as e:
-        return {'summary':f'Gemini error: {e}','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
-    return {'summary':'No parse','top_bets':[],'watchlist':cands[:30]+conflict_watch[:20],'pass':[]}
+        return {'summary':f'Gemini error: {e}','top_bets':cands[:5],'watchlist':conflict_watch[:20],'pass':[]}
+    return {'summary':'No parse','top_bets':cands[:5],'watchlist':conflict_watch[:20],'pass':[]}
 
 def as_list(v): return v if isinstance(v,list) else []
 def normalize_item(x):
@@ -118,8 +117,11 @@ def sanitize(res):
     for sec in ['top_bets','watchlist','pass']:
         res[sec]=[normalize_item(x) for x in as_list(res.get(sec))]
         res[sec]=[x for x in res[sec] if isinstance(x,dict)]
-    clean=[]
+    clean=[]; seen_events=set(); moved=[]
     for x in res['top_bets']:
+        event=x.get('event')
+        if event in seen_events:
+            x['stake_kr']=0; x['role']='WATCHLIST'; x['reason']=text(x.get('reason'))+' | Flyttet til watchlist: maks 1 top_bet pr kamp.'; moved.append(x); continue
         try: odds=float(str(x.get('odds')).replace(',','.'))
         except Exception: continue
         try: st=int(float(str(x.get('stake_kr',1)).replace(',','.')))
@@ -127,25 +129,25 @@ def sanitize(res):
         if odds>=4: st=min(st,1)
         elif odds>=3.5: st=min(st,2)
         else: st=min(st,5)
-        x['stake_kr']=max(1,st)
-        item={'event':x.get('event'),'market':x.get('market'),'selection':x.get('pick'),'point':x.get('point')}
+        x['stake_kr']=max(1,st); x['role']='PRIMARY'
+        item={'event':event,'market':x.get('market'),'selection':x.get('pick'),'point':x.get('point')}
         if any(conflicts(item,{'event':y.get('event'),'market':y.get('market'),'selection':y.get('pick'),'point':y.get('point')}) for y in clean):
-            x['stake_kr']=0; x['reason']=text(x.get('reason'))+' | Flyttet til watchlist: konflikt med bedre top bet.'; res['watchlist'].append(x); continue
-        clean.append(x)
+            x['stake_kr']=0; x['role']='WATCHLIST'; x['reason']=text(x.get('reason'))+' | Flyttet til watchlist: konflikt.'; moved.append(x); continue
+        clean.append(x); seen_events.add(event)
     res['top_bets']=clean
-    res['watchlist']=res['watchlist'][:50]
+    res['watchlist']=(moved+res['watchlist'])[:50]
     res['pass']=res['pass'][:50]
     summary=res.get('summary')
-    res['summary']=summary if isinstance(summary,str) else (json.dumps(summary,ensure_ascii=False) if summary else ('ingen spil nu' if not clean else f'{len(clean)} top bets'))
+    res['summary']=summary if isinstance(summary,str) else (json.dumps(summary,ensure_ascii=False) if summary else ('ingen spil nu' if not clean else f'{len(clean)} primary top bets'))
     return res
 
 raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch))
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch)
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — CONFLICT RESOLVER\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
+    f.write('# V6 EXPANSION ENGINE — CORRELATION RESOLVER\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
-        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
+        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
         f.write('\n')
 print(text(res.get('summary')))
