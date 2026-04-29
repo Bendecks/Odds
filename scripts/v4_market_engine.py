@@ -10,6 +10,11 @@ MAX_HOURS=72
 MODE='V4_MARKET_ENGINE'
 SPORTS=('tennis_atp','tennis_wta','basketball_nba','icehockey_nhl','soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga')
 
+def text(v):
+    if isinstance(v,str): return v
+    if v is None: return ''
+    return json.dumps(v,ensure_ascii=False)
+def as_list(v): return v if isinstance(v,list) else []
 def ok_sport(k): return any(k.startswith(p) for p in SPORTS)
 def get_json(url,params=None):
     r=requests.get(url,params=params or {},timeout=60); r.raise_for_status(); return r.json()
@@ -20,15 +25,9 @@ def upcoming(g):
         return 0<h<=MAX_HOURS
     except Exception: return False
 
-def implied(o): return 1/o if o and o>1 else 0
-
 def consensus(prices):
     if len(prices)<4: return None
-    prices=sorted(prices)
-    med=statistics.median(prices)
-    avg=statistics.mean(prices)
-    best=max(prices)
-    spread=best/med if med else 99
+    prices=sorted(prices); med=statistics.median(prices); avg=statistics.mean(prices); best=max(prices); spread=best/med if med else 99
     if spread>1.35: return None
     return {'best':best,'median':med,'avg':avg,'spread_ratio':spread,'books':len(prices)}
 
@@ -67,18 +66,13 @@ def build_market():
             if odds>=4 and edge<0.08: continue
             if odds>=3 and edge<0.05: continue
             if odds<3 and edge<0.025: continue
-            candidates.append({
-                'event':f"{g.get('home_team')} vs {g.get('away_team')}",
-                'pick':sel,'odds':round(odds,2),'median':round(med,2),
-                'edge_pct':round(edge*100,1),'books':c['books'],'spread_ratio':round(c['spread_ratio'],2),
-                'sport':sk,'start':g.get('commence_time'),'suggested_stake_kr':risk_stake(odds,edge,c['books'])
-            })
+            candidates.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'pick':sel,'odds':round(odds,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':c['books'],'spread_ratio':round(c['spread_ratio'],2),'sport':sk,'start':g.get('commence_time'),'suggested_stake_kr':risk_stake(odds,edge,c['books'])})
     return sorted(candidates,key=lambda x:(x['edge_pct'],x['books']),reverse=True)[:25]
 
 def gemini_rank(cands):
     if not GEMINI: return {'summary':'Missing GEMINI_API_KEY','top_bets':[],'watchlist':cands[:10],'pass':[]}
     prompt='''Du er Bendix V4 Market Engine. Du får kun kandidater der allerede har bestået markedsfiltre.
-Regler: konservativ, singles only, ingen livebetting, ingen parlays. Maks stake 5 kr. Odds >=3.5 maks 2 kr, odds >=4 maks 1 kr. Prioriter sandsynlighed + value + lav variance. Returner dansk JSON only: summary, top_bets, watchlist, pass. Hvert item: event,pick,odds,stake_kr,confidence,reason. Hvis ingen stærke spil: top_bets tom.
+Regler: konservativ, singles only, ingen livebetting, ingen parlays. Maks stake 5 kr. Odds >=3.5 maks 2 kr, odds >=4 maks 1 kr. Prioriter sandsynlighed + value + lav variance. Returner dansk JSON only: summary, top_bets, watchlist, pass. top_bets, watchlist og pass skal altid være arrays. Hvert item: event,pick,odds,stake_kr,confidence,reason. Hvis ingen stærke spil: top_bets tom.
 Data:\n'''+json.dumps({'candidates':cands},ensure_ascii=False)
     url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={GEMINI}'
     try:
@@ -91,8 +85,10 @@ Data:\n'''+json.dumps({'candidates':cands},ensure_ascii=False)
     return {'summary':'No parse','top_bets':[],'watchlist':cands[:10],'pass':[]}
 
 def sanitize(res):
+    if not isinstance(res,dict): res={}
     clean=[]
-    for x in res.get('top_bets',[]):
+    for x in as_list(res.get('top_bets')):
+        if not isinstance(x,dict): continue
         try: odds=float(str(x.get('odds')).replace(',','.'))
         except Exception: continue
         try: st=int(float(str(x.get('stake_kr',1)).replace(',','.')))
@@ -100,23 +96,26 @@ def sanitize(res):
         if odds>=4: st=min(st,1)
         elif odds>=3.5: st=min(st,2)
         else: st=min(st,5)
-        x['stake_kr']=max(1,st)
-        clean.append(x)
+        x['stake_kr']=max(1,st); clean.append(x)
     res['top_bets']=clean[:5]
-    res['watchlist']=res.get('watchlist',[])[:10]
-    res['pass']=res.get('pass',[])[:10]
+    wl=[]
+    for x in as_list(res.get('watchlist')):
+        if isinstance(x,dict): x['stake_kr']=0; wl.append(x)
+    ps=[]
+    for x in as_list(res.get('pass')):
+        if isinstance(x,dict): x['stake_kr']=0; ps.append(x)
+    res['watchlist']=wl[:10]
+    res['pass']=ps[:10]
+    res['summary']=text(res.get('summary')) or ('ingen spil nu' if not clean else f'{len(clean)} top bets')
     return res
 
-cands=build_market()
-res=sanitize(gemini_rank(cands))
-res['mode']=MODE
-res['candidate_count']=len(cands)
+cands=build_market(); res=sanitize(gemini_rank(cands)); res['mode']=MODE; res['candidate_count']=len(cands)
 (OUT/'v4_market_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v4_market_engine.md','w',encoding='utf-8') as f:
-    f.write('# V4 MARKET ENGINE\n\n'+res.get('summary','')+f"\n\nCandidates: {len(cands)}\n\n")
+    f.write('# V4 MARKET ENGINE\n\n'+text(res.get('summary'))+f"\n\nCandidates: {len(cands)}\n\n")
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
-        for i,x in enumerate(res.get(sec,[]),1):
-            f.write(f"{i}. {x.get('event')} | {x.get('pick')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | conf {x.get('confidence')} | {x.get('reason')}\n")
+        for i,x in enumerate(as_list(res.get(sec)),1):
+            f.write(f"{i}. {x.get('event')} | {x.get('pick')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
         f.write('\n')
-print(res.get('summary','done'))
+print(text(res.get('summary')))
