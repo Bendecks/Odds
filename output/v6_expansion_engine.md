@@ -1,30 +1,32 @@
-# V6 EXPANSION ENGINE
+# V6 EXPANSION ENGINE — CONFLICT RESOLVER
 
-Som Bendix V6 Expansion Engine har jeg evalueret de 18 præscreenede kandidater. Fokus er på kvalitet over kvantitet, men uden en streng grænse for antallet af top_bets, så længe de opfylder kravene til stærk værdi. Odds over 4.0 er kun inkluderet i top_bets ved ekstremt høj edge, ellers placeres de på watchlist. Satsninger holdes konservative fra 1-5 kr.
+Analysen viser 5 stærke bets med god value og høj sandsynlighed, herunder et topvalg i tennis med markant fordel til Linda Noskova. Fodboldkampen mellem Atlético Madrid og Arsenal byder på solide picks for Arsenal og over 2.5 mål. De resterende valg er primært tennis spreads og totals med god score.
 
-Candidates scanned: 18
+Candidates scanned: 20 | Resolved: 13 | Conflict watchlist: 7
 
 ## TOP_BETS
-1. Marta Kostyuk vs Linda Noskova | h2h | Linda Noskova | None | odds 2.9 | stake 4 | conf Meget høj | Fremragende værdi med stærk markedskonsensus fra 35 bookmakere og en solid edge på 6.6%.
-2. Atlético Madrid vs Arsenal | h2h | Arsenal | None | odds 2.43 | stake 4 | conf Høj | Meget god værdi og bred markedssupport fra 40 bookmakere, understøttet af en edge på 5.7%.
-3. Atlético Madrid vs Arsenal | h2h | Atlético Madrid | None | odds 3.35 | stake 3 | conf Høj | Solid værdi for hjemmeholdet med stærk enighed blandt 40 bookmakere og en edge på 4.7%.
-4. Atlético Madrid vs Arsenal | totals | Under | 2.5 | odds 1.73 | stake 5 | conf Medium-høj | God værdi i et marked, der ofte forventer en defensiv tilgang fra Atlético, med 14 bookmakere og en edge på 3.9%.
-5. Marta Kostyuk vs Linda Noskova | h2h | Marta Kostyuk | None | odds 1.52 | stake 5 | conf Medium-høj | Solid værdi på favoritten med bred markedssupport fra 35 bookmakere og en edge på 3.4%.
-6. Marta Kostyuk vs Linda Noskova | spreads | Marta Kostyuk | -3.5 | odds 2.05 | stake 4 | conf Medium-høj | Stærk værdi på handicap, indikerer en forventet klar sejr for favoritten, med en edge på 4.6%.
-7. Atlético Madrid vs Arsenal | totals | Over | 2.5 | odds 2.29 | stake 4 | conf Medium-høj | Fair værdi på et opgør, der potentielt kan åbne sig op, med 14 bookmakere og en edge på 3.2%.
+1. Marta Kostyuk vs Linda Noskova | h2h | Linda Noskova | None | odds 2.8 | stake 1 | conf Meget Høj | Højeste pre_score og fremragende value på underdog. Systemet vurderer en klar fordel til Noskova i denne kamp.
+2. Atlético Madrid vs Arsenal | h2h | Arsenal | None | odds 2.43 | stake 2 | conf Høj | Stærk pre_score og solid value på udeholdet. Forventning om, at Arsenal kan levere en vinderpræstation.
+3. Atlético Madrid vs Arsenal | totals | Over | 2.5 | odds 2.31 | stake 2 | conf Middel | God pre_score og value for et spil med forventning om, at kampen vil indeholde mindst 3 mål.
+4. Marta Kostyuk vs Linda Noskova | totals | Over | 22.5 | odds 2.06 | stake 3 | conf Middel | God pre_score og fin value. Indikerer en tæt tenniskamp med mange partier.
+5. Marta Kostyuk vs Linda Noskova | spreads | Marta Kostyuk | -3.5 | odds 2.05 | stake 3 | conf Middel | Solid pre_score og value for Marta Kostyuk til at vinde med mindst 4 partier.
 
 ## WATCHLIST
-1. Marta Kostyuk vs Linda Noskova | totals | Under | 21.5 | odds 2.06 | stake 2 | conf Medium | God værdi (edge 3.5%), men færre bookmakere (6) for dette specifikke marked kan indikere mere volatilitet. Overvejes ved nærmere analyse.
-2. Marta Kostyuk vs Linda Noskova | spreads | Marta Kostyuk | -3.0 | odds 1.97 | stake 1 | conf Medium | Stærk værdi (edge 4.2%), men ekstremt lavt antal bookmakere (2) indikerer ustabilitet eller nichemarked. Kræver forsigtighed.
-3. Marta Kostyuk vs Linda Noskova | totals | Over | 22.0 | odds 1.94 | stake 1 | conf Medium | Solid værdi (edge 3.7%), men lavt antal bookmakere (2) gør dette til et mere risikabelt spil. Følg udviklingen.
-4. Marta Kostyuk vs Linda Noskova | totals | Under | 22.0 | odds 1.94 | stake 1 | conf Medium | Fornuftig værdi (edge 3.5%), men meget få bookmakere (2) gør markedet skrøbeligt. Hold øje.
-5. Marta Kostyuk vs Linda Noskova | spreads | Linda Noskova | 3.0 | odds 1.92 | stake 1 | conf Medium | Acceptabel værdi (edge 3.2%), men ustabilt marked grundet få udbydere (2). Vær forsigtig.
-6. Marta Kostyuk vs Linda Noskova | spreads | Linda Noskova | 3.5 | odds 1.84 | stake 1 | conf Medium | Lille værdi (edge 1.7%), men bredere markedskonsensus (9 bookmakere). Mindre tiltalende end top_bets.
-7. Atlético Madrid vs Arsenal | spreads | Atlético Madrid | 0.0 | odds 2.35 | stake 1 | conf Lav | Begrænset værdi (edge 2.2%) i et marked med få bookmakere (3). Ikke robust nok for et top_bet.
-8. Atlético Madrid vs Arsenal | spreads | Arsenal | 0.0 | odds 1.7 | stake 1 | conf Lav | Minimal værdi (edge 1.8%) i et smalt marked (3 bookmakere). For lav edge til at anbefale stærkt.
-9. Marta Kostyuk vs Linda Noskova | totals | Over | 21.5 | odds 1.83 | stake 1 | conf Lav | Meget lille værdi (edge 0.5%), knap nok værd at overveje på trods af 6 bookmakere. Lige på grænsen til pass.
+1. Marta Kostyuk vs Linda Noskova | totals | Over | 22.0 | odds 1.94 | stake 1 | conf Middel | God score, men Over 22.5 blev valgt med en bedre pre_score for samme kamp.
+2. Marta Kostyuk vs Linda Noskova | spreads | Marta Kostyuk | -2.5 | odds 1.8 | stake 1 | conf Lav | Acceptabel score, men et stærkere spread på Marta Kostyuk (-3.5) blev valgt.
+3. Marta Kostyuk vs Linda Noskova | totals | Over | 21.5 | odds 1.83 | stake 1 | conf Lav | Lavere pre_score end andre 'Over' bets for samme kamp, men stadig en potentiel mulighed.
 
 ## PASS
-1. Marta Kostyuk vs Linda Noskova | totals | Over | 22.5 | odds 2.0 | stake 0 | conf Meget lav | Ingen påvist værdi (edge 0.0%). Ignoreres.
-2. Marta Kostyuk vs Linda Noskova | totals | Under | 22.5 | odds 1.78 | stake 0 | conf Meget lav | Ingen påvist værdi (edge 0.0%). Ignoreres.
+1. Marta Kostyuk vs Linda Noskova | spreads | Linda Noskova | 3.5 | odds 1.85 | stake None | conf None | Modsatrettet pick til Marta Kostyuk -3.5, som havde en højere pre_score.
+2. Marta Kostyuk vs Linda Noskova | totals | Under | 21.5 | odds 2.02 | stake None | conf None | Modsatrettet pick til valgte 'Over' bets for samme kamp (Over 22.5 og Over 22.0).
+3. Atlético Madrid vs Arsenal | spreads | Atlético Madrid | 0.0 | odds 2.39 | stake None | conf None | Modsatrettet pick til Arsenal h2h, som havde en signifikant højere pre_score.
+4. Atlético Madrid vs Arsenal | spreads | Atlético Madrid | 0.5 | odds 1.69 | stake None | conf None | Modsatrettet pick til Arsenal h2h.
+5. Marta Kostyuk vs Linda Noskova | spreads | Linda Noskova | 2.5 | odds 2.06 | stake None | conf None | Modsatrettet pick til Marta Kostyuk -2.5 (og Marta Kostyuk -3.5).
+6. Atlético Madrid vs Arsenal | spreads | Arsenal | -0.5 | odds 2.29 | stake None | conf None | Redundant og svagere pick sammenlignet med Arsenal h2h, som allerede er valgt.
+7. Atlético Madrid vs Arsenal | h2h | Atlético Madrid | None | odds 3.37 | stake None | conf None | Modsatrettet pick til Arsenal h2h, som havde en højere pre_score og blev valgt.
+8. Marta Kostyuk vs Linda Noskova | h2h | Marta Kostyuk | None | odds 1.55 | stake None | conf None | Modsatrettet pick til Linda Noskova h2h, som havde en signifikant højere pre_score og blev valgt.
+9. Atlético Madrid vs Arsenal | totals | Under | 2.5 | odds 1.72 | stake None | conf None | Modsatrettet pick til Over 2.5, som havde en højere pre_score og blev valgt.
+10. Marta Kostyuk vs Linda Noskova | totals | Under | 22.0 | odds 1.94 | stake None | conf None | Modsatrettet pick til Over 22.5 (og Over 22.0), som havde en højere pre_score og blev valgt/overvejet.
+11. Marta Kostyuk vs Linda Noskova | totals | Under | 22.5 | odds 1.83 | stake None | conf None | Modsatrettet pick til Over 22.5, som havde en højere pre_score og blev valgt.
+12. Atlético Madrid vs Arsenal | spreads | Arsenal | 0.0 | odds 1.68 | stake None | conf None | Redundant og signifikant svagere pick sammenlignet med Arsenal h2h, som allerede er valgt.
 
