@@ -8,8 +8,8 @@
 - Odds: 1.45
 - Confidence: 9.5/10
 - Stake: 5 kr
-- Edge: 3.6%
-- Value: 12.0%
+- Edge: 6.6%
+- Value: 12.6%
 - Books: 17
 - Sport: soccer_germany_bundesliga_women
 - Start: 2026-04-29T16:00:00Z
