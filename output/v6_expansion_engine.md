@@ -1,20 +1,22 @@
-# V6 EXPANSION ENGINE — CORRELATION RESOLVER
+# V6 EXPANSION ENGINE — STAKE + CORRELATION RESOLVER
 
-Bendix V6 Correlation Resolver har behandlet de tilgængelige data og identificeret top-væddemål samt secondary leans til watchlist, baseret på 'pre_score' og de definerede regler for at undgå konflikter.
+Bendix V6 Correlation Resolver har analyseret kandidaterne og fundet 3 PRIMARY picks samt 7 WATCHLIST picks, baseret på høj værdi, fordel i odds (edge_pct) og stringente korrelationsregler. Prioritering af kvalitet sikrer kun ét hovedvalg pr. kamp, med sekundære forslag til overvågning. Picks med lav værdi (edge < 2.0% eller pre_score < 3.0) eller direkte konflikt er fravalgt. Alle picks er 'singles only' og er forud for kampstart.
 
 Candidates scanned: 22 | Resolved: 14 | Conflict watchlist: 8
 
 ## TOP_BETS
-1. Arthur Fils vs Jiri Lehecka | h2h | Jiri Lehecka | None | odds 2.66 | stake 5 | role PRIMARY | conf Høj | Højeste pre_score for eventet (14.83) med betydelig edge (10.8%). Jiri Lehecka er underdog, hvilket giver god værdi.
-2. Sporting Lisbon vs Tondela | totals | Under | 3.5 | odds 2.05 | stake 5 | role PRIMARY | conf Høj | Højeste pre_score for eventet (12.04) med en god edge (9.0%). Indikerer værdi i et kamp med færre mål.
-3. Atlético Madrid vs Arsenal | h2h | Arsenal | None | odds 2.48 | stake 5 | role PRIMARY | conf Høj | Højeste pre_score for eventet (11.83) med solid edge (7.8%). Arsenal vurderes til at have værdi i H2H-markedet.
+1. Sporting Lisbon vs Tondela | totals | Under | 3.5 | odds 2.06 | stake 4 | role PRIMARY | edge 9.6 | books 11 | score 12.57 | conf 9.6 | Højeste værdi fundet i Sporting Lisbon vs Tondela med 9.6% edge.
+2. Marta Kostyuk vs Linda Noskova | totals | Under | 21.5 | odds 2.15 | stake 3 | role PRIMARY | edge 10.3 | books 6 | score 12.26 | conf 10.3 | Højeste værdi fundet i Marta Kostyuk vs Linda Noskova med 10.3% edge. Valgt frem for H2H Linda Noskova for at overholde prioritering af edge_pct.
+3. Atlético Madrid vs Arsenal | h2h | Arsenal | None | odds 2.48 | stake 2 | role PRIMARY | edge 7.8 | books 40 | score 11.83 | conf 7.8 | Højeste værdi fundet i Atlético Madrid vs Arsenal med 7.8% edge.
 
 ## WATCHLIST
-1. Arthur Fils vs Jiri Lehecka | spreads | Jiri Lehecka | 2.5 | odds 1.9 | stake 200 | role WATCHLIST | conf Medium | Understøtter det primære H2H-pick på Jiri Lehecka med en god pre_score (6.43) og er ikke i konflikt.
-2. Arthur Fils vs Jiri Lehecka | totals | Under | 22.5 | odds 2.05 | stake 200 | role WATCHLIST | conf Medium | God pre_score (6.86). Ifølge reglerne kan totals være på watchlist, når H2H er primær.
-3. Sporting Lisbon vs Tondela | spreads | Sporting Lisbon | -2.5 | odds 2.05 | stake 200 | role WATCHLIST | conf Medium | God pre_score (6.39) og forenelig med primær pick 'Under 3.5 mål' (f.eks. en 3-0 sejr).
-4. Atlético Madrid vs Arsenal | totals | Under | 2.5 | odds 1.72 | stake 200 | role WATCHLIST | conf Medium | God pre_score (7.84). Ifølge reglerne kan totals være på watchlist, når H2H er primær.
-5. Atlético Madrid vs Arsenal | spreads | Arsenal | 0.0 | odds 1.72 | stake 100 | role WATCHLIST | conf Lav | Konsistent med primær pick på Arsenal H2H. Har en lavere pre_score (3.78).
+1. Marta Kostyuk vs Linda Noskova | h2h | Linda Noskova | None | odds 2.8 | stake 0 | role WATCHLIST | edge 8.1 | books 35 | score 12.11 | conf 8.1 | Sekundært pick for Marta Kostyuk vs Linda Noskova, kompatibelt med hovedvalg (Under 21.5 totals) og god værdi.
+2. Marta Kostyuk vs Linda Noskova | spreads | Marta Kostyuk | -3.5 | odds 2.14 | stake 0 | role WATCHLIST | edge 9.2 | books 7 | score 11.38 | conf 9.2 | Sekundært pick for Marta Kostyuk vs Linda Noskova, kompatibelt med hovedvalg (Under 21.5 totals) og god værdi.
+3. Sporting Lisbon vs Tondela | spreads | Sporting Lisbon | -2.5 | odds 2.05 | stake 0 | role WATCHLIST | edge 4.6 | books 5 | score 6.39 | conf 4.6 | Sekundært pick for Sporting Lisbon vs Tondela, kompatibelt med hovedvalg (Under 3.5 totals) og god værdi.
+4. Sporting Lisbon vs Tondela | totals | Under | 2.5 | odds 3.5 | stake 0 | role WATCHLIST | edge 4.5 | books 3 | score 5.08 | conf 4.5 | Sekundært pick for Sporting Lisbon vs Tondela, kompatibelt med hovedvalg (Under 3.5 totals) og god værdi.
+5. Atlético Madrid vs Arsenal | totals | Over | 2.5 | odds 2.31 | stake 0 | role WATCHLIST | edge 3.8 | books 14 | score 7.42 | conf 3.8 | Sekundært pick for Atlético Madrid vs Arsenal. H2H-hovedvalg betyder totals kun kan være watchlist.
+6. Atlético Madrid vs Arsenal | spreads | Arsenal | 0.0 | odds 1.72 | stake 0 | role WATCHLIST | edge 3.0 | books 3 | score 4.39 | conf 3.0 | Sekundært pick for Atlético Madrid vs Arsenal, kompatibelt med hovedvalg (Arsenal H2H) og god værdi.
+7. Marta Kostyuk vs Linda Noskova | spreads | Linda Noskova | 3.5 | odds 1.85 | stake 0 | role WATCHLIST | edge 2.8 | books 7 | score 4.98 | conf 2.8 | Sekundært pick for Marta Kostyuk vs Linda Noskova, kompatibelt med hovedvalg (Under 21.5 totals) og god værdi.
 
 ## PASS
 
