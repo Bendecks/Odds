@@ -6,7 +6,7 @@ OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_TOP_BET_GOVERNOR'
+MODE='V6_TOP_BET_GOVERNOR_DIAGNOSTICS'
 MAX_HOURS=168
 MAX_TOP_BETS=12
 MIN_TOP_SCORE=14.0
@@ -14,6 +14,7 @@ MAX_AUTO_ODDS=6.0
 SPORT_PREFIXES=('tennis_','basketball_','icehockey_','soccer_')
 SPORT_DENY=('soccer_esports','basketball_esports','tennis_esports')
 MARKETS=('h2h','spreads','totals')
+DIAG={'api_errors':[],'sports_found':0,'sports_used':0,'upcoming_raw_games':0,'sport_endpoint_raw_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0}
 
 def text(v):
     if isinstance(v,str): return v
@@ -22,7 +23,14 @@ def text(v):
 def as_list(v): return v if isinstance(v,list) else []
 def ok_sport(k): return any(k.startswith(p) for p in SPORT_PREFIXES) and not any(k.startswith(d) for d in SPORT_DENY)
 def get_json(url,params=None):
-    r=requests.get(url,params=params or {},timeout=60); r.raise_for_status(); return r.json()
+    r=requests.get(url,params=params or {},timeout=60)
+    if not r.ok:
+        raise RuntimeError(f'{r.status_code} {r.text[:300]}')
+    return r.json()
+def safe_get(label,url,params=None):
+    try: return get_json(url,params)
+    except Exception as e:
+        DIAG['api_errors'].append({'label':label,'error':str(e)[:500]}); return []
 def upcoming(g):
     try:
         t=datetime.fromisoformat(g.get('commence_time','').replace('Z','+00:00'))
@@ -31,11 +39,13 @@ def upcoming(g):
     except Exception: return False
 
 def list_sports():
-    if not ODDS: return []
-    try:
-        sports=get_json('https://api.the-odds-api.com/v4/sports',{'apiKey':ODDS})
-        return [s.get('key') for s in sports if s.get('active') and ok_sport(s.get('key',''))]
-    except Exception: return []
+    if not ODDS:
+        DIAG['api_errors'].append({'label':'secrets','error':'Missing THE_ODDS_API_KEY'})
+        return []
+    sports=safe_get('sports','https://api.the-odds-api.com/v4/sports',{'apiKey':ODDS})
+    out=[s.get('key') for s in sports if isinstance(s,dict) and s.get('active') and ok_sport(s.get('key',''))]
+    DIAG['sports_found']=len(out)
+    return out
 
 def market_weight(market,books,point):
     base=3.0 if market=='h2h' else 1.2 if market=='totals' else 0.8 if market=='spreads' else 0
@@ -102,9 +112,10 @@ def add_candidate(cands,g,market,selection,odds_list,point=None):
     cands.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':g.get('sport_key'),'start':g.get('commence_time'),'market':market,'selection':selection,'point':point,'odds':round(best,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':len(odds_list),'spread_ratio':round(spread_ratio,2),'market_weight':robust,'pre_score':score})
 
 def parse_games(raw):
-    cands=[]
+    cands=[]; games_ok=0
     for g in raw:
         if not ok_sport(g.get('sport_key','')) or not upcoming(g): continue
+        games_ok+=1
         buckets={}
         for b in g.get('bookmakers',[]):
             for m in b.get('markets',[]):
@@ -121,23 +132,31 @@ def parse_games(raw):
                     point=o.get('point')
                     buckets.setdefault((mk,name,point),[]).append(price)
         for (mk,name,point),prices in buckets.items(): add_candidate(cands,g,mk,name,prices,point)
+    DIAG['games_after_filter']=games_ok
+    DIAG['candidate_count_before_sort']=len(cands)
     return cands
 
 def collect_candidates():
     if not ODDS: return []
     all_games=[]
-    try: all_games+=get_json('https://api.the-odds-api.com/v4/sports/upcoming/odds',{'apiKey':ODDS,'regions':'eu,uk,us','markets':','.join(MARKETS),'oddsFormat':'decimal'})
-    except Exception: pass
-    for sk in list_sports()[:80]:
-        try: all_games+=get_json(f'https://api.the-odds-api.com/v4/sports/{sk}/odds',{'apiKey':ODDS,'regions':'eu,uk,us','markets':','.join(MARKETS),'oddsFormat':'decimal'})
-        except Exception: continue
+    up=safe_get('upcoming','https://api.the-odds-api.com/v4/sports/upcoming/odds',{'apiKey':ODDS,'regions':'eu,uk,us','markets':','.join(MARKETS),'oddsFormat':'decimal'})
+    DIAG['upcoming_raw_games']=len(up) if isinstance(up,list) else 0
+    all_games+=up if isinstance(up,list) else []
+    sports=list_sports()[:80]; DIAG['sports_used']=len(sports)
+    for sk in sports:
+        rows=safe_get(f'sport:{sk}',f'https://api.the-odds-api.com/v4/sports/{sk}/odds',{'apiKey':ODDS,'regions':'eu,uk,us','markets':','.join(MARKETS),'oddsFormat':'decimal'})
+        if isinstance(rows,list):
+            DIAG['sport_endpoint_raw_games']+=len(rows); all_games+=rows
     seen=set(); uniq=[]
     for g in all_games:
         gid=g.get('id') or (g.get('sport_key'),g.get('commence_time'),g.get('home_team'),g.get('away_team'))
         if str(gid) in seen: continue
         seen.add(str(gid)); uniq.append(g)
+    DIAG['unique_games']=len(uniq)
     cands=parse_games(uniq)
-    return sorted(cands,key=lambda x:(x['pre_score'],x['books'],x['edge_pct']),reverse=True)
+    out=sorted(cands,key=lambda x:(x['pre_score'],x['books'],x['edge_pct']),reverse=True)
+    DIAG['top_eligible_count']=len([c for c in out if is_top_eligible(c)])
+    return out
 
 def pre_resolve(cands):
     selected=[]; watch=[]
@@ -148,8 +167,7 @@ def pre_resolve(cands):
 
 def fallback_rank(cands):
     out=[]; seen=set()
-    eligible=[c for c in cands if is_top_eligible(c)]
-    for c in eligible:
+    for c in [x for x in cands if is_top_eligible(x)]:
         if c.get('event') in seen: continue
         out.append({'event':c['event'],'market':c['market'],'pick':c['selection'],'point':c.get('point'),'odds':c['odds'],'confidence':'auto','role':'PRIMARY','reason':f"Auto-valgt af Top Bet Governor: score {c.get('pre_score')}, edge {c.get('edge_pct')}%, books {c.get('books')}."})
         seen.add(c.get('event'))
@@ -202,10 +220,8 @@ def sanitize(res, all_candidates):
     for sec in ['top_bets','watchlist','pass']:
         res[sec]=[normalize_item(x) for x in as_list(res.get(sec))]
         res[sec]=[x for x in res[sec] if isinstance(x,dict)]
-    # force governor fallback to avoid Gemini over/under-selecting
     top=res['top_bets']
-    if len(top)==0 or len(top)>MAX_TOP_BETS:
-        top=fallback_rank(all_candidates)
+    if len(top)==0 or len(top)>MAX_TOP_BETS: top=fallback_rank(all_candidates)
     clean=[]; seen_events=set(); moved=[]
     for x in top:
         x=apply_candidate_metrics(x,lookup); event=x.get('event')
@@ -231,11 +247,12 @@ def sanitize(res, all_candidates):
     return res
 
 raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch),raw_cands)
-res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch)
+res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch); res['diagnostics']=DIAG
 res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS}
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — TOP BET GOVERNOR\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
+    f.write('# V6 EXPANSION ENGINE — TOP BET GOVERNOR + DIAGNOSTICS\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
+    f.write('## DIAGNOSTICS\n```json\n'+json.dumps(DIAG,ensure_ascii=False,indent=2)+'\n```\n\n')
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
         for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | edge {x.get('edge_pct')} | books {x.get('books')} | market_weight {x.get('market_weight')} | score {x.get('pre_score')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
