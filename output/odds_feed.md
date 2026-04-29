@@ -2,15 +2,15 @@
 
 1 prioriterede picks fundet
 
-## 1. Werder Bremen vs Bayern Munich
-- Market type: 1X2_3WAY_REGULATION
-- Pick: Bayern Munich
-- Odds: 1.45
-- Confidence: 9.5/10
-- Stake: 5 kr
-- Edge: 6.6%
-- Value: 12.6%
-- Books: 17
-- Sport: soccer_germany_bundesliga_women
-- Start: 2026-04-29T16:00:00Z
+## 1. Marta Kostyuk vs Linda Noskova
+- Market type: MATCH_WINNER_2WAY
+- Pick: Linda Noskova
+- Odds: 2.9
+- Confidence: 8.2/10
+- Stake: 4 kr
+- Edge: 6.2%
+- Value: 0.5%
+- Books: 35
+- Sport: tennis_wta_madrid_open
+- Start: 2026-04-29T18:00:00Z
 
