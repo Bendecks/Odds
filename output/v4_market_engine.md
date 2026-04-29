@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Tekstanalyse af markedsdata er fuldført. Ingen kandidater blev fundet til evaluering. Ingen stærke spil kunne identificeres baseret på de givne kriterier og den tomme kandidatliste.
+Ingen kandidater blev fundet til evaluering i denne runde. Venter på nye potentielle spil.
 
 Candidates: 0
 
