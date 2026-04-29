@@ -1,6 +1,6 @@
 # V6 EXPANSION ENGINE — TOP BET GOVERNOR
 
-Ingen stærke top_bets eller interessante kampe til watchlist blev fundet i den leverede shortlist. Data var tom.
+Bendix V6 har gennemgået de tilgængelige data. Da shortlisten er tom, er der ingen top bets at vælge for denne periode.
 
 Candidates scanned: 0 | Resolved: 0 | Conflict watchlist: 0 | Governor max top bets: 12
 
