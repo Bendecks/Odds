@@ -3,18 +3,20 @@ from datetime import datetime, timezone
 
 BASE=pathlib.Path('.')
 OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
+CACHE=OUT/'odds_cache_raw.json'
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_TOP_BET_GOVERNOR_DIAGNOSTICS'
+MODE='V6_TOP_BET_GOVERNOR_QUOTA_GUARD'
 MAX_HOURS=168
 MAX_TOP_BETS=12
 MIN_TOP_SCORE=14.0
 MAX_AUTO_ODDS=6.0
+LOW_CREDIT_MODE=os.getenv('LOW_CREDIT_MODE','1')=='1'
 SPORT_PREFIXES=('tennis_','basketball_','icehockey_','soccer_')
 SPORT_DENY=('soccer_esports','basketball_esports','tennis_esports')
 MARKETS=('h2h','spreads','totals')
-DIAG={'api_errors':[],'sports_found':0,'sports_used':0,'upcoming_raw_games':0,'sport_endpoint_raw_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0}
+DIAG={'api_errors':[],'quota_exhausted':False,'cache_used':False,'cache_written':False,'sports_found':0,'sports_used':0,'upcoming_raw_games':0,'sport_endpoint_raw_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0}
 
 def text(v):
     if isinstance(v,str): return v
@@ -22,15 +24,33 @@ def text(v):
     return json.dumps(v,ensure_ascii=False)
 def as_list(v): return v if isinstance(v,list) else []
 def ok_sport(k): return any(k.startswith(p) for p in SPORT_PREFIXES) and not any(k.startswith(d) for d in SPORT_DENY)
+def mark_error(label,e):
+    s=str(e)[:700]
+    if 'OUT_OF_USAGE_CREDITS' in s: DIAG['quota_exhausted']=True
+    DIAG['api_errors'].append({'label':label,'error':s})
 def get_json(url,params=None):
     r=requests.get(url,params=params or {},timeout=60)
-    if not r.ok:
-        raise RuntimeError(f'{r.status_code} {r.text[:300]}')
+    if not r.ok: raise RuntimeError(f'{r.status_code} {r.text[:500]}')
     return r.json()
 def safe_get(label,url,params=None):
+    if DIAG['quota_exhausted']: return []
     try: return get_json(url,params)
     except Exception as e:
-        DIAG['api_errors'].append({'label':label,'error':str(e)[:500]}); return []
+        mark_error(label,e); return []
+def load_cache():
+    try:
+        if CACHE.exists():
+            data=json.loads(CACHE.read_text(encoding='utf-8'))
+            DIAG['cache_used']=True
+            return data if isinstance(data,list) else []
+    except Exception as e: mark_error('cache_read',e)
+    return []
+def save_cache(games):
+    try:
+        if games:
+            CACHE.write_text(json.dumps(games,ensure_ascii=False),encoding='utf-8')
+            DIAG['cache_written']=True
+    except Exception as e: mark_error('cache_write',e)
 def upcoming(g):
     try:
         t=datetime.fromisoformat(g.get('commence_time','').replace('Z','+00:00'))
@@ -39,9 +59,11 @@ def upcoming(g):
     except Exception: return False
 
 def list_sports():
-    if not ODDS:
-        DIAG['api_errors'].append({'label':'secrets','error':'Missing THE_ODDS_API_KEY'})
+    if LOW_CREDIT_MODE:
+        DIAG['sports_found']=0; DIAG['sports_used']=0
         return []
+    if not ODDS:
+        mark_error('secrets','Missing THE_ODDS_API_KEY'); return []
     sports=safe_get('sports','https://api.the-odds-api.com/v4/sports',{'apiKey':ODDS})
     out=[s.get('key') for s in sports if isinstance(s,dict) and s.get('active') and ok_sport(s.get('key',''))]
     DIAG['sports_found']=len(out)
@@ -115,8 +137,7 @@ def parse_games(raw):
     cands=[]; games_ok=0
     for g in raw:
         if not ok_sport(g.get('sport_key','')) or not upcoming(g): continue
-        games_ok+=1
-        buckets={}
+        games_ok+=1; buckets={}
         for b in g.get('bookmakers',[]):
             for m in b.get('markets',[]):
                 mk=m.get('key')
@@ -132,21 +153,23 @@ def parse_games(raw):
                     point=o.get('point')
                     buckets.setdefault((mk,name,point),[]).append(price)
         for (mk,name,point),prices in buckets.items(): add_candidate(cands,g,mk,name,prices,point)
-    DIAG['games_after_filter']=games_ok
-    DIAG['candidate_count_before_sort']=len(cands)
+    DIAG['games_after_filter']=games_ok; DIAG['candidate_count_before_sort']=len(cands)
     return cands
 
 def collect_candidates():
     if not ODDS: return []
     all_games=[]
-    up=safe_get('upcoming','https://api.the-odds-api.com/v4/sports/upcoming/odds',{'apiKey':ODDS,'regions':'eu,uk,us','markets':','.join(MARKETS),'oddsFormat':'decimal'})
+    up=safe_get('upcoming','https://api.the-odds-api.com/v4/sports/upcoming/odds',{'apiKey':ODDS,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'})
     DIAG['upcoming_raw_games']=len(up) if isinstance(up,list) else 0
-    all_games+=up if isinstance(up,list) else []
-    sports=list_sports()[:80]; DIAG['sports_used']=len(sports)
-    for sk in sports:
-        rows=safe_get(f'sport:{sk}',f'https://api.the-odds-api.com/v4/sports/{sk}/odds',{'apiKey':ODDS,'regions':'eu,uk,us','markets':','.join(MARKETS),'oddsFormat':'decimal'})
-        if isinstance(rows,list):
-            DIAG['sport_endpoint_raw_games']+=len(rows); all_games+=rows
+    if isinstance(up,list): all_games+=up
+    if all_games and not DIAG['quota_exhausted']: save_cache(all_games)
+    if not LOW_CREDIT_MODE and not DIAG['quota_exhausted']:
+        sports=list_sports()[:10]; DIAG['sports_used']=len(sports)
+        for sk in sports:
+            rows=safe_get(f'sport:{sk}',f'https://api.the-odds-api.com/v4/sports/{sk}/odds',{'apiKey':ODDS,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'})
+            if isinstance(rows,list): DIAG['sport_endpoint_raw_games']+=len(rows); all_games+=rows
+    if not all_games:
+        all_games=load_cache()
     seen=set(); uniq=[]
     for g in all_games:
         gid=g.get('id') or (g.get('sport_key'),g.get('commence_time'),g.get('home_team'),g.get('away_team'))
@@ -247,11 +270,12 @@ def sanitize(res, all_candidates):
     return res
 
 raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch),raw_cands)
+if DIAG.get('cache_used'): res['summary']='CACHE/STale odds used. '+text(res.get('summary'))
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch); res['diagnostics']=DIAG
-res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS}
+res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS,'low_credit_mode':LOW_CREDIT_MODE}
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — TOP BET GOVERNOR + DIAGNOSTICS\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
+    f.write('# V6 EXPANSION ENGINE — QUOTA GUARD + CACHE\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
     f.write('## DIAGNOSTICS\n```json\n'+json.dumps(DIAG,ensure_ascii=False,indent=2)+'\n```\n\n')
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
