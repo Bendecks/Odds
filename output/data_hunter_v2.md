@@ -1,9 +1,10 @@
 # DATA HUNTER V3
 
-Et solidt konservativt væddemål i NHL, der prioriterer lavere varians og god value.
+Analysen viser to spil med god værdi og kontrolleret risiko, der tilsammen udnytter den maksimale indsats på 5 kr. Vi fokuserer på undervurderede spillere med tydelig value.
 
 ## TOP_BETS
-- Edmonton Oilers vs Anaheim Ducks | Edmonton Oilers | 2.02 | stake 5 | Dette spil på Edmonton Oilers som favorit tilbyder solid value med odds 2.02 mod median 1.83 (10.4% kant) og høj tillid (8.7). Valget stemmer overens med Bendix's præference for lavere varians og rimelig risiko, da favoritten giver en højere sandsynlighed for succes, samtidig med at der opnås en attraktiv kant.
+- Karolina Pliskova vs Anastasia Potapova | Karolina Pliskova | 2.64 | stake 4 | Pliskova er undervurderet med en solid 'edge' på 7.8% og høj tillid (8.3). Odds 2.64 giver god værdi med en acceptabel risiko inden for vores conservative rammer.
+- Jannik Sinner vs Rafael Jodar | Rafael Jodar | 6.8 | stake 1 | Trods de høje odds er der en meget attraktiv 'edge' på 11.5%, hvilket indikerer betydelig værdi. Som konservativ analytiker begrænser vi indsatsen til 1 kr. grundet odds >= 4, for at kontrollere risikoen på denne højrisikobet.
 
 ## WATCHLIST
 
