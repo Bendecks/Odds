@@ -28,6 +28,9 @@ def stake(conf,odds):
     if odds>=3.5: return min(base,2)
     return base
 
+def as_list(v):
+    return v if isinstance(v,list) else []
+
 def get_json(url,headers=None,params=None):
     r=requests.get(url,headers=headers or {},params=params or {},timeout=45)
     r.raise_for_status(); return r.json()
@@ -80,10 +83,12 @@ def get_football_context():
         return {}
 
 def sanitize(result):
+    if not isinstance(result,dict): result={}
     for sec in ['top_bets','watchlist','pass']:
-        result[sec]=result.get(sec,[])
+        result[sec]=as_list(result.get(sec))
     clean=[]
     for x in result.get('top_bets',[]):
+        if not isinstance(x,dict): continue
         try: odds=float(str(x.get('odds')).replace(',','.'))
         except Exception: continue
         try: st=int(float(str(x.get('stake_kr',1)).replace(',','.')))
@@ -94,6 +99,9 @@ def sanitize(result):
         x['stake_kr']=max(1,st)
         clean.append(x)
     result['top_bets']=clean[:5]
+    result['watchlist']=[x for x in result['watchlist'] if isinstance(x,dict)][:10]
+    result['pass']=[x for x in result['pass'] if isinstance(x,dict)][:10]
+    result['summary']=result.get('summary') or 'ingen spil nu'
     return result
 
 def run_gemini(games,football):
@@ -102,6 +110,7 @@ def run_gemini(games,football):
     prompt='''Du er Bendix konservative betting-analytiker.
 Regler:
 - Svar på dansk JSON only: summary, top_bets, watchlist, pass.
+- top_bets, watchlist og pass skal altid være arrays, aldrig null.
 - Maks stake 5 kr.
 - Odds >= 3.5 må maksimalt få stake 2 kr.
 - Odds >= 4 må maksimalt få stake 1 kr.
@@ -120,13 +129,13 @@ Data:\n'''+json.dumps(payload,ensure_ascii=False)[:200000]
     return {'summary':'no parse','top_bets':[],'watchlist':[],'pass':[]}
 
 def main():
-    result=run_gemini(build_games(),get_football_context())
+    result=sanitize(run_gemini(build_games(),get_football_context()))
     (OUT/'data_hunter_v2.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     with open(OUT/'data_hunter_v2.md','w',encoding='utf-8') as f:
         f.write('# DATA HUNTER V3\n\n'+result.get('summary','')+'\n\n')
         for sec in ['top_bets','watchlist','pass']:
             f.write('## '+sec.upper()+'\n')
-            for x in result.get(sec,[]):
+            for x in as_list(result.get(sec)):
                 f.write(f"- {x.get('event')} | {x.get('pick')} | {x.get('odds')} | stake {x.get('stake_kr')} | {x.get('reason')}\n")
             f.write('\n')
     print(result.get('summary','done'))
