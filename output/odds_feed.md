@@ -2,15 +2,15 @@
 
 1 prioriterede picks fundet
 
-## 1. Marta Kostyuk vs Linda Noskova
-- Market type: MATCH_WINNER_2WAY
-- Pick: Linda Noskova
-- Odds: 2.9
-- Confidence: 8.2/10
-- Stake: 4 kr
-- Edge: 6.2%
-- Value: 0.5%
-- Books: 35
-- Sport: tennis_wta_madrid_open
-- Start: 2026-04-29T18:00:00Z
+## 1. Atlético Madrid vs Arsenal
+- Market type: 1X2_3WAY_REGULATION
+- Pick: Arsenal
+- Odds: 2.43
+- Confidence: 9.5/10
+- Stake: 5 kr
+- Edge: 5.7%
+- Value: 16.6%
+- Books: 40
+- Sport: soccer_uefa_champs_league
+- Start: 2026-04-29T19:00:00Z
 
