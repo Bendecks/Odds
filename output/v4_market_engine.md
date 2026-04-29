@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater blev modtaget til analyse. Der er derfor ingen spilforslag på nuværende tidspunkt.
+Tekstanalyse af markedsdata er fuldført. Ingen kandidater blev fundet til evaluering. Ingen stærke spil kunne identificeres baseret på de givne kriterier og den tomme kandidatliste.
 
 Candidates: 0
 
