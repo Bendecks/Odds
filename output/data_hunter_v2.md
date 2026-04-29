@@ -1,10 +1,10 @@
 # DATA HUNTER V3
 
-Som Bendix, den konservative analytiker, har jeg gennemgået dagens spil. Jeg har fundet to kampe, hvor der er klar 'value' og en fornuftig risiko, hvilket gør dem egnede til 'top_bets' kategorien. Min analyse fokuserer altid på at maksimere værdien, mens risikoen holdes lav, og dagens udvalg afspejler dette princip.
+To stærke væddemål fundet med solid værdi og acceptable odds. Begge opfylder Bendix' kriterier for lav risiko og høj værdi.
 
 ## TOP_BETS
-- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.8 | stake 4 | Value fundet på Linda Noskova mod Marta Kostyuk i WTA Madrid. Høj 'edge' og god 'confidence' gør dette til et attraktivt spil med lav risiko.
-- Atlético Madrid vs Arsenal | Arsenal | 2.48 | stake 5 | Arsenal vurderes til at have betydelig værdi mod Atlético Madrid i Champions League. Høj 'edge' og 'confidence' understøtter et solidt spil med den maksimale tilladte indsats.
+- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.72 | stake 5 | Meget høj 'edge_pct' på 29.5% og solid confidence indikerer stærk værdi på Noskova til en attraktiv odds.
+- Atlético Madrid vs Arsenal | Arsenal | 2.48 | stake 5 | Arsenal tilbyder god værdi med en 'edge_pct' på 7.8% og en fornuftig confidence. Oddset er inden for grænsen for 'top_bets'.
 
 ## WATCHLIST
 
