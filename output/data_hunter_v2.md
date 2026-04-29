@@ -1,10 +1,10 @@
 # DATA HUNTER V3
 
-Analyseret de tilgængelige spil og fundet to solide væddemål inden for tennis og fodbold, som tilbyder god værdi med rimelig risiko. Begge picks har høj tillid og odds under 3.5, hvilket gør dem egnede til vores top bets.
+Bendix har analyseret dagens spil og fundet to værdifulde picks med solid edge og høj konfidens, der passer perfekt til en konservativ strategi. Begge ligger inden for Bendix' kriterier for top-spil.
 
 ## TOP_BETS
-- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.9 | stake 4 | Høj tillid og god værdi (6.6% edge) på Linda Noskova mod Kostyuk i WTA Madrid Open. Odds er under 3.5, hvilket er inden for konservative rammer.
-- Atlético Madrid vs Arsenal | Arsenal | 2.43 | stake 4 | Arsenal vurderes til at have god værdi (5.7% edge) mod Atlético Madrid i Champions League. Høj tillid og acceptable odds under 3.5.
+- Marta Kostyuk vs Linda Noskova | Linda Noskova | 2.9 | stake 4 | Noskova viser stærk form, og oddset på 2.9 giver en betydelig edge (8.8%) over medianen. Med en høj konfidens på 8.5 er dette et solidt spil, der tilbyder god værdi.
+- Atlético Madrid vs Arsenal | Arsenal | 2.48 | stake 5 | Arsenal er undervurderet i denne kamp. Oddset på 2.48 giver en attraktiv 7.8% edge mod medianen, og med en konfidens på 8.6 er dette et stærkt value bet, selv på udebane i en svær Champions League-kamp.
 
 ## WATCHLIST
 
