@@ -6,7 +6,7 @@ OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_MARKET_PREFERENCE_SCORING'
+MODE='V6_MARKET_PREFERENCE_MULTI_EVENT'
 MAX_HOURS=120
 SPORTS=('tennis_atp','tennis_wta','basketball_nba','icehockey_nhl','soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga','soccer_france_ligue_one','soccer_portugal_primeira_liga')
 MARKETS=('h2h','spreads','totals')
@@ -114,11 +114,24 @@ def pre_resolve(cands):
         selected.append({**c,'conflict_status':'clear'})
     return selected,watch
 
+def fallback_rank(cands):
+    # one primary per event, but multiple events allowed
+    out=[]; seen=set()
+    for c in cands:
+        if c.get('event') in seen: continue
+        if c.get('pre_score',0) < 8: continue
+        out.append({'event':c['event'],'market':c['market'],'pick':c['selection'],'point':c.get('point'),'odds':c['odds'],'confidence':'auto','role':'PRIMARY','reason':f"Auto-valgt: score {c.get('pre_score')}, edge {c.get('edge_pct')}%, books {c.get('books')}."})
+        seen.add(c.get('event'))
+    return out
+
 def gemini_rank(cands,conflict_watch):
-    if not GEMINI: return {'summary':'Missing GEMINI_API_KEY','top_bets':cands[:10],'watchlist':conflict_watch[:20],'pass':[]}
+    if not GEMINI: return {'summary':'Missing GEMINI_API_KEY','top_bets':fallback_rank(cands),'watchlist':conflict_watch[:20],'pass':[]}
     prompt='''Du er Bendix V6 Market Preference Scorer.
 Regler:
-- Kvalitet over kvantitet, men maks 1 TOP_BET pr event/kamp.
+- Kvalitet over kvantitet.
+- Der er INGEN samlet max-grænse for top_bets.
+- Maks 1 TOP_BET pr event/kamp, men vælg gerne top_bets fra flere forskellige events.
+- Hvis 3 forskellige events alle er stærke, skal der være 3 top_bets.
 - H2H med mange bookmakere prioriteres over totals/spreads med få bookmakere.
 - Totals/spreads fra samme kamp som et stærkt H2H-pick skal normalt watchlist.
 - Singles only, ingen livebetting, ingen parlays.
@@ -135,8 +148,8 @@ Data:\n'''+json.dumps({'candidates':cands[:120],'conflict_watchlist':conflict_wa
         m=re.search(r'\{.*\}',txt,re.S)
         if m: return json.loads(m.group(0))
     except Exception as e:
-        return {'summary':f'Gemini error: {e}','top_bets':cands[:5],'watchlist':conflict_watch[:20],'pass':[]}
-    return {'summary':'No parse','top_bets':cands[:5],'watchlist':conflict_watch[:20],'pass':[]}
+        return {'summary':f'Gemini error: {e}','top_bets':fallback_rank(cands),'watchlist':conflict_watch[:20],'pass':[]}
+    return {'summary':'No parse','top_bets':fallback_rank(cands),'watchlist':conflict_watch[:20],'pass':[]}
 
 def as_list(v): return v if isinstance(v,list) else []
 def normalize_item(x):
@@ -159,6 +172,11 @@ def sanitize(res, all_candidates):
         res[sec]=[normalize_item(x) for x in as_list(res.get(sec))]
         res[sec]=[x for x in res[sec] if isinstance(x,dict)]
     clean=[]; seen_events=set(); moved=[]
+    # If Gemini under-selects, add strong missing events from fallback.
+    chosen_events={x.get('event') for x in res['top_bets'] if isinstance(x,dict)}
+    for fb in fallback_rank(all_candidates):
+        if fb.get('event') not in chosen_events:
+            res['top_bets'].append(fb); chosen_events.add(fb.get('event'))
     for x in res['top_bets']:
         x=apply_candidate_metrics(x,lookup)
         event=x.get('event')
@@ -176,7 +194,8 @@ def sanitize(res, all_candidates):
     for x in moved+res['watchlist']:
         x=apply_candidate_metrics(x,lookup); x['stake_kr']=0; x['role']='WATCHLIST'; watch.append(x)
     for x in res['pass']: x['stake_kr']=0
-    res['top_bets']=clean; res['watchlist']=watch[:50]; res['pass']=res['pass'][:50]
+    res['top_bets']=sorted(clean,key=lambda x:(float(x.get('pre_score') or 0), int(x.get('books') or 0)),reverse=True)
+    res['watchlist']=watch[:50]; res['pass']=res['pass'][:50]
     summary=res.get('summary')
     res['summary']=summary if isinstance(summary,str) else (json.dumps(summary,ensure_ascii=False) if summary else ('ingen spil nu' if not clean else f'{len(clean)} primary top bets'))
     return res
@@ -185,7 +204,7 @@ raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); 
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch)
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — MARKET PREFERENCE SCORING\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
+    f.write('# V6 EXPANSION ENGINE — MARKET PREFERENCE MULTI EVENT\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
         for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | edge {x.get('edge_pct')} | books {x.get('books')} | market_weight {x.get('market_weight')} | score {x.get('pre_score')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
