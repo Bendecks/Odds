@@ -6,7 +6,7 @@ OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_CORRELATION_RESOLVER'
+MODE='V6_CORRELATION_RESOLVER_STAKE_ENGINE'
 MAX_HOURS=120
 SPORTS=('tennis_atp','tennis_wta','basketball_nba','icehockey_nhl','soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a','soccer_uefa_champs_league','soccer_denmark_superliga','soccer_france_ligue_one','soccer_portugal_primeira_liga')
 MARKETS=('h2h','spreads','totals')
@@ -30,6 +30,26 @@ def score_candidate(odds,median,books,market):
     variance_penalty=2.5 if odds>=5 else 1.5 if odds>=4 else 0.8 if odds>=3.5 else 0
     market_bonus=0.8 if market in ('spreads','totals') else 0
     return round(edge*100 + min(books,20)/5 + market_bonus - variance_penalty,2), edge
+
+def deterministic_stake(odds,edge_pct,books,pre_score,role='PRIMARY'):
+    if role!='PRIMARY': return 0
+    try:
+        odds=float(odds); edge=float(edge_pct); books=int(books or 0); pre=float(pre_score or 0)
+    except Exception:
+        return 1
+    if odds>=4.0: return 1
+    if odds>=3.5: return 1 if edge<10 else 2
+    if odds>=3.0: return 1 if edge<7 else 2
+    if odds>=2.4: return 2 if edge>=6 and books>=8 else 1
+    if odds>=1.8:
+        if edge>=8 and books>=10 and pre>=10: return 4
+        if edge>=5 and books>=6: return 3
+        return 2
+    if odds>=1.35:
+        if edge>=7 and books>=10 and pre>=10: return 4
+        if edge>=4 and books>=8: return 3
+        return 2
+    return 1
 
 def conflicts(a,b):
     if a.get('event')!=b.get('event'): return False
@@ -92,7 +112,8 @@ Regler:
 - ALDRIG modsatrettede picks i samme kamp.
 - Hvis h2h-underdog vælges, må favorit-spread ikke være top_bet.
 - Hvis h2h vælges, må totals fra samme kamp kun være watchlist, ikke top_bet.
-- Hvert item: event, market, pick, point, odds, stake_kr, confidence, role, reason.
+- Stake er kun vejledende; Python overskriver stakes deterministisk bagefter.
+- Hvert item: event, market, pick, point, odds, confidence, role, reason.
 - role skal være PRIMARY eller WATCHLIST.
 - Returner dansk JSON only: summary, top_bets, watchlist, pass.
 Data:\n'''+json.dumps({'candidates':cands[:120],'conflict_watchlist':conflict_watch[:50]},ensure_ascii=False)
@@ -112,42 +133,54 @@ def normalize_item(x):
     if 'selection' in x and 'pick' not in x: x['pick']=x.get('selection')
     return x
 
-def sanitize(res):
+def apply_candidate_metrics(item, lookup):
+    key=(item.get('event'), item.get('market'), str(item.get('pick')), str(item.get('point')))
+    c=lookup.get(key)
+    if c:
+        item['edge_pct']=c.get('edge_pct'); item['books']=c.get('books'); item['pre_score']=c.get('pre_score'); item['median']=c.get('median')
+    return item
+
+def sanitize(res, all_candidates):
+    lookup={(c.get('event'),c.get('market'),str(c.get('selection')),str(c.get('point'))):c for c in all_candidates}
     if not isinstance(res,dict): res={}
     for sec in ['top_bets','watchlist','pass']:
         res[sec]=[normalize_item(x) for x in as_list(res.get(sec))]
         res[sec]=[x for x in res[sec] if isinstance(x,dict)]
     clean=[]; seen_events=set(); moved=[]
     for x in res['top_bets']:
+        x=apply_candidate_metrics(x,lookup)
         event=x.get('event')
         if event in seen_events:
             x['stake_kr']=0; x['role']='WATCHLIST'; x['reason']=text(x.get('reason'))+' | Flyttet til watchlist: maks 1 top_bet pr kamp.'; moved.append(x); continue
         try: odds=float(str(x.get('odds')).replace(',','.'))
         except Exception: continue
-        try: st=int(float(str(x.get('stake_kr',1)).replace(',','.')))
-        except Exception: st=1
-        if odds>=4: st=min(st,1)
-        elif odds>=3.5: st=min(st,2)
-        else: st=min(st,5)
-        x['stake_kr']=max(1,st); x['role']='PRIMARY'
+        x['role']='PRIMARY'
+        x['stake_kr']=deterministic_stake(odds,x.get('edge_pct',0),x.get('books',0),x.get('pre_score',0),'PRIMARY')
         item={'event':event,'market':x.get('market'),'selection':x.get('pick'),'point':x.get('point')}
         if any(conflicts(item,{'event':y.get('event'),'market':y.get('market'),'selection':y.get('pick'),'point':y.get('point')}) for y in clean):
             x['stake_kr']=0; x['role']='WATCHLIST'; x['reason']=text(x.get('reason'))+' | Flyttet til watchlist: konflikt.'; moved.append(x); continue
         clean.append(x); seen_events.add(event)
+    watch=[]
+    for x in moved+res['watchlist']:
+        x=apply_candidate_metrics(x,lookup)
+        x['stake_kr']=0; x['role']='WATCHLIST'
+        watch.append(x)
+    for x in res['pass']:
+        x['stake_kr']=0
     res['top_bets']=clean
-    res['watchlist']=(moved+res['watchlist'])[:50]
+    res['watchlist']=watch[:50]
     res['pass']=res['pass'][:50]
     summary=res.get('summary')
     res['summary']=summary if isinstance(summary,str) else (json.dumps(summary,ensure_ascii=False) if summary else ('ingen spil nu' if not clean else f'{len(clean)} primary top bets'))
     return res
 
-raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch))
+raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch),raw_cands)
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch)
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — CORRELATION RESOLVER\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
+    f.write('# V6 EXPANSION ENGINE — STAKE + CORRELATION RESOLVER\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)}\n\n")
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
-        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
+        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | edge {x.get('edge_pct')} | books {x.get('books')} | score {x.get('pre_score')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
         f.write('\n')
 print(text(res.get('summary')))
