@@ -1,6 +1,6 @@
 # V6 EXPANSION ENGINE — MULTI SOURCE FALLBACK
 
-Shortlisten var tom. Ingen potentielle top_bets eller watchlist-emner kunne identificeres ud fra de leverede data.
+Ingen stærke top_bets fundet i den tomme shortlist. Ingen bets er blevet udvalgt. Watchlist er også tom, da der ingen frødata var.
 
 Candidates scanned: 0 | Resolved: 0 | Conflict watchlist: 0 | Governor max top bets: 12
 
