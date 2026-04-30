@@ -1,8 +1,14 @@
 {
-  "summary": "Den leverede 'shortlist' var tom, hvilket betyder, at der ikke var nogen stærke top_bets at vælge imellem. Ligeledes var 'watch_seed' tom, så overvågningslisten er også tom.",
+  "summary": "Ingen tilgængelige top-bets eller watchlist-kandidater fra den tomme shortlist. Systemet afventer en shortlist med potentielle væddemål.",
   "top_bets": [],
   "watchlist": [],
-  "pass": [],
+  "pass": [
+    {
+      "role": "Bendix V6 Top Bet Governor",
+      "reason": "Den leverede 'shortlist' er tom (shortlist_count: 0). Ifølge reglerne kan jeg kun vælge de stærkeste top-bets fra en eksisterende shortlist. Da der ikke er nogen shortlist-items at vurdere, er der ingen top-bets at præsentere på nuværende tidspunkt. Ligeledes er 'watch_seed' også tom, hvorfor der ingen kandidater er til 'watchlist'.",
+      "stake_kr": 0
+    }
+  ],
   "mode": "V6_TOP_BET_GOVERNOR_QUOTA_GUARD",
   "candidate_count": 0,
   "resolved_count": 0,
