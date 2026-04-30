@@ -1,6 +1,6 @@
 # V6 EXPANSION ENGINE — MULTI SOURCE FALLBACK
 
-{"title": "Bendix V6 Top Bet Governor Rapport", "message": "Ingen top bets blev identificeret i denne kørsel, da shortlisten var tom. Derfor er der ingen anbefalinger til væddemål på nuværende tidspunkt."}
+Shortlisten var tom. Ingen potentielle top_bets eller watchlist-emner kunne identificeres ud fra de leverede data.
 
 Candidates scanned: 0 | Resolved: 0 | Conflict watchlist: 0 | Governor max top bets: 12
 
@@ -13,8 +13,16 @@ Candidates scanned: 0 | Resolved: 0 | Conflict watchlist: 0 | Governor max top b
       "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
     },
     {
-      "label": "secrets",
-      "error": "Missing ODDS_API_IO_KEY"
+      "label": "odds-api.io",
+      "error": "404 404 page not found"
+    },
+    {
+      "label": "odds-api.io",
+      "error": "400 {\"error\":\"Missing eventId\"}"
+    },
+    {
+      "label": "odds-api.io",
+      "error": "404 404 page not found"
     }
   ],
   "quota_exhausted": true,
