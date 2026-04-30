@@ -6,8 +6,9 @@ OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
 CACHE=OUT/'odds_cache_raw.json'
 GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
+ODDS_IO=os.getenv('ODDS_API_IO_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_TOP_BET_GOVERNOR_QUOTA_GUARD'
+MODE='V6_TOP_BET_GOVERNOR_MULTI_SOURCE'
 MAX_HOURS=168
 MAX_TOP_BETS=12
 MIN_TOP_SCORE=14.0
@@ -16,25 +17,25 @@ LOW_CREDIT_MODE=os.getenv('LOW_CREDIT_MODE','1')=='1'
 SPORT_PREFIXES=('tennis_','basketball_','icehockey_','soccer_')
 SPORT_DENY=('soccer_esports','basketball_esports','tennis_esports')
 MARKETS=('h2h','spreads','totals')
-DIAG={'api_errors':[],'quota_exhausted':False,'cache_used':False,'cache_written':False,'sports_found':0,'sports_used':0,'upcoming_raw_games':0,'sport_endpoint_raw_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0}
+DIAG={'api_errors':[],'quota_exhausted':False,'cache_used':False,'cache_written':False,'odds_api_io_used':False,'odds_api_io_raw_games':0,'sports_found':0,'sports_used':0,'upcoming_raw_games':0,'sport_endpoint_raw_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0}
 
 def text(v):
     if isinstance(v,str): return v
     if v is None: return ''
     return json.dumps(v,ensure_ascii=False)
 def as_list(v): return v if isinstance(v,list) else []
-def ok_sport(k): return any(k.startswith(p) for p in SPORT_PREFIXES) and not any(k.startswith(d) for d in SPORT_DENY)
+def ok_sport(k): return any(str(k).startswith(p) for p in SPORT_PREFIXES) and not any(str(k).startswith(d) for d in SPORT_DENY)
 def mark_error(label,e):
     s=str(e)[:700]
     if 'OUT_OF_USAGE_CREDITS' in s: DIAG['quota_exhausted']=True
     DIAG['api_errors'].append({'label':label,'error':s})
-def get_json(url,params=None):
-    r=requests.get(url,params=params or {},timeout=60)
+def get_json(url,params=None,headers=None):
+    r=requests.get(url,params=params or {},headers=headers or {},timeout=60)
     if not r.ok: raise RuntimeError(f'{r.status_code} {r.text[:500]}')
     return r.json()
-def safe_get(label,url,params=None):
-    if DIAG['quota_exhausted']: return []
-    try: return get_json(url,params)
+def safe_get(label,url,params=None,headers=None):
+    if DIAG['quota_exhausted'] and label.startswith('theodds'): return []
+    try: return get_json(url,params,headers)
     except Exception as e:
         mark_error(label,e); return []
 def load_cache():
@@ -51,9 +52,11 @@ def save_cache(games):
             CACHE.write_text(json.dumps(games,ensure_ascii=False),encoding='utf-8')
             DIAG['cache_written']=True
     except Exception as e: mark_error('cache_write',e)
+def norm_time(v):
+    return v or None
 def upcoming(g):
     try:
-        t=datetime.fromisoformat(g.get('commence_time','').replace('Z','+00:00'))
+        t=datetime.fromisoformat(str(g.get('commence_time','')).replace('Z','+00:00'))
         h=(t-datetime.now(timezone.utc)).total_seconds()/3600
         return 0<h<=MAX_HOURS
     except Exception: return False
@@ -64,10 +67,76 @@ def list_sports():
         return []
     if not ODDS:
         mark_error('secrets','Missing THE_ODDS_API_KEY'); return []
-    sports=safe_get('sports','https://api.the-odds-api.com/v4/sports',{'apiKey':ODDS})
+    sports=safe_get('theodds:sports','https://api.the-odds-api.com/v4/sports',{'apiKey':ODDS})
     out=[s.get('key') for s in sports if isinstance(s,dict) and s.get('active') and ok_sport(s.get('key',''))]
     DIAG['sports_found']=len(out)
     return out
+
+def normalize_odds_api_io(data):
+    rows=data.get('data',data) if isinstance(data,dict) else data
+    games=[]
+    if not isinstance(rows,list): return games
+    for g in rows:
+        if not isinstance(g,dict): continue
+        sport=str(g.get('sport') or g.get('sport_key') or g.get('league') or '').lower()
+        if sport and not any(x in sport for x in ['soccer','football','tennis','basketball','hockey','icehockey']): continue
+        home=g.get('home_team') or g.get('home') or g.get('homeTeam')
+        away=g.get('away_team') or g.get('away') or g.get('awayTeam')
+        start=g.get('commence_time') or g.get('start_time') or g.get('startTime') or g.get('starts')
+        books=[]
+        raw_books=g.get('bookmakers') or g.get('books') or g.get('odds') or []
+        if isinstance(raw_books,dict): raw_books=list(raw_books.values())
+        for b in raw_books if isinstance(raw_books,list) else []:
+            if not isinstance(b,dict): continue
+            markets=[]
+            raw_markets=b.get('markets') or b.get('odds') or []
+            if isinstance(raw_markets,dict):
+                tmp=[]
+                for mk,outs in raw_markets.items(): tmp.append({'key':mk,'outcomes':outs})
+                raw_markets=tmp
+            for m in raw_markets if isinstance(raw_markets,list) else []:
+                if not isinstance(m,dict): continue
+                mk=str(m.get('key') or m.get('market') or m.get('name') or '').lower()
+                if mk in ['moneyline','winner','match_winner']: mk='h2h'
+                if mk in ['spread','handicap']: mk='spreads'
+                if mk in ['total','over_under','overunder']: mk='totals'
+                if mk not in MARKETS: continue
+                outcomes=[]
+                raw_out=m.get('outcomes') or m.get('prices') or []
+                if isinstance(raw_out,dict): raw_out=list(raw_out.values())
+                for o in raw_out if isinstance(raw_out,list) else []:
+                    if not isinstance(o,dict): continue
+                    name=o.get('name') or o.get('selection') or o.get('team')
+                    price=o.get('price') or o.get('odds') or o.get('decimal')
+                    point=o.get('point') or o.get('line')
+                    if name and price: outcomes.append({'name':name,'price':price,'point':point})
+                if outcomes: markets.append({'key':mk,'outcomes':outcomes})
+            if markets: books.append({'key':b.get('key') or b.get('name') or 'odds-api.io','markets':markets})
+        if home and away and start and books:
+            sk='soccer_fallback'
+            if 'tennis' in sport: sk='tennis_fallback'
+            elif 'basket' in sport: sk='basketball_fallback'
+            elif 'hockey' in sport: sk='icehockey_fallback'
+            games.append({'id':g.get('id'),'sport_key':sk,'home_team':home,'away_team':away,'commence_time':norm_time(start),'bookmakers':books})
+    return games
+
+def fetch_odds_api_io():
+    if not ODDS_IO:
+        mark_error('secrets','Missing ODDS_API_IO_KEY')
+        return []
+    urls=[
+        'https://api.odds-api.io/v1/odds',
+        'https://api.odds-api.io/v3/odds',
+        'https://api.odds-api.io/v1/events/odds'
+    ]
+    params={'apiKey':ODDS_IO,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'}
+    for url in urls:
+        data=safe_get('odds-api.io',url,params)
+        games=normalize_odds_api_io(data)
+        if games:
+            DIAG['odds_api_io_used']=True; DIAG['odds_api_io_raw_games']=len(games)
+            return games
+    return []
 
 def market_weight(market,books,point):
     base=3.0 if market=='h2h' else 1.2 if market=='totals' else 0.8 if market=='spreads' else 0
@@ -143,11 +212,11 @@ def parse_games(raw):
                 mk=m.get('key')
                 if mk not in MARKETS: continue
                 outcomes=m.get('outcomes',[])
-                names=[o.get('name','').lower() for o in outcomes]
-                if g.get('sport_key','').startswith('icehockey_') and mk=='h2h' and 'draw' in names: continue
+                names=[str(o.get('name','')).lower() for o in outcomes]
+                if str(g.get('sport_key','')).startswith('icehockey_') and mk=='h2h' and 'draw' in names: continue
                 for o in outcomes:
                     name=o.get('name','')
-                    if name.lower()=='draw': continue
+                    if str(name).lower()=='draw': continue
                     try: price=float(o['price'])
                     except Exception: continue
                     point=o.get('point')
@@ -157,17 +226,20 @@ def parse_games(raw):
     return cands
 
 def collect_candidates():
-    if not ODDS: return []
     all_games=[]
-    up=safe_get('upcoming','https://api.the-odds-api.com/v4/sports/upcoming/odds',{'apiKey':ODDS,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'})
-    DIAG['upcoming_raw_games']=len(up) if isinstance(up,list) else 0
-    if isinstance(up,list): all_games+=up
-    if all_games and not DIAG['quota_exhausted']: save_cache(all_games)
-    if not LOW_CREDIT_MODE and not DIAG['quota_exhausted']:
-        sports=list_sports()[:10]; DIAG['sports_used']=len(sports)
-        for sk in sports:
-            rows=safe_get(f'sport:{sk}',f'https://api.the-odds-api.com/v4/sports/{sk}/odds',{'apiKey':ODDS,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'})
-            if isinstance(rows,list): DIAG['sport_endpoint_raw_games']+=len(rows); all_games+=rows
+    if ODDS:
+        up=safe_get('theodds:upcoming','https://api.the-odds-api.com/v4/sports/upcoming/odds',{'apiKey':ODDS,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'})
+        DIAG['upcoming_raw_games']=len(up) if isinstance(up,list) else 0
+        if isinstance(up,list): all_games+=up
+        if all_games and not DIAG['quota_exhausted']: save_cache(all_games)
+        if not LOW_CREDIT_MODE and not DIAG['quota_exhausted']:
+            sports=list_sports()[:10]; DIAG['sports_used']=len(sports)
+            for sk in sports:
+                rows=safe_get(f'theodds:sport:{sk}',f'https://api.the-odds-api.com/v4/sports/{sk}/odds',{'apiKey':ODDS,'regions':'eu,uk','markets':','.join(MARKETS),'oddsFormat':'decimal'})
+                if isinstance(rows,list): DIAG['sport_endpoint_raw_games']+=len(rows); all_games+=rows
+    if not all_games:
+        alt=fetch_odds_api_io()
+        if alt: all_games=alt; save_cache(all_games)
     if not all_games:
         all_games=load_cache()
     seen=set(); uniq=[]
@@ -271,11 +343,12 @@ def sanitize(res, all_candidates):
 
 raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); res=sanitize(gemini_rank(resolved,conflict_watch),raw_cands)
 if DIAG.get('cache_used'): res['summary']='CACHE/STale odds used. '+text(res.get('summary'))
+if DIAG.get('odds_api_io_used'): res['summary']='odds-api.io fallback used. '+text(res.get('summary'))
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch); res['diagnostics']=DIAG
 res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS,'low_credit_mode':LOW_CREDIT_MODE}
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — QUOTA GUARD + CACHE\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
+    f.write('# V6 EXPANSION ENGINE — MULTI SOURCE FALLBACK\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
     f.write('## DIAGNOSTICS\n```json\n'+json.dumps(DIAG,ensure_ascii=False,indent=2)+'\n```\n\n')
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
