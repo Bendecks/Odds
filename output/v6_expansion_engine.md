@@ -1,6 +1,6 @@
 # V6 EXPANSION ENGINE — MULTI SOURCE FALLBACK
 
-Ingen væddemål er blevet valgt, da shortlist er tom. Der er ingen top_bets eller watchlist-kandidater at behandle.
+{"title": "Bendix V6 Top Bet Governor Rapport", "message": "Ingen top bets blev identificeret i denne kørsel, da shortlisten var tom. Derfor er der ingen anbefalinger til væddemål på nuværende tidspunkt."}
 
 Candidates scanned: 0 | Resolved: 0 | Conflict watchlist: 0 | Governor max top bets: 12
 
