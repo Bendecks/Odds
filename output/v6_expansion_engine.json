@@ -1,22 +1,28 @@
 {
-  "summary": "Bendix V6 Top Bet Governor har grundigt evalueret den tilgængelige data. Da shortlisten er tom, kan der desværre ikke anbefales nogen top-bets på nuværende tidspunkt. Vi afventer nye muligheder.",
+  "summary": "Ingen væddemål er blevet valgt, da shortlist er tom. Der er ingen top_bets eller watchlist-kandidater at behandle.",
   "top_bets": [],
   "watchlist": [],
   "pass": [],
-  "mode": "V6_TOP_BET_GOVERNOR_QUOTA_GUARD",
+  "mode": "V6_TOP_BET_GOVERNOR_MULTI_SOURCE",
   "candidate_count": 0,
   "resolved_count": 0,
   "conflict_watch_count": 0,
   "diagnostics": {
     "api_errors": [
       {
-        "label": "upcoming",
+        "label": "theodds:upcoming",
         "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+      },
+      {
+        "label": "secrets",
+        "error": "Missing ODDS_API_IO_KEY"
       }
     ],
     "quota_exhausted": true,
     "cache_used": false,
     "cache_written": false,
+    "odds_api_io_used": false,
+    "odds_api_io_raw_games": 0,
     "sports_found": 0,
     "sports_used": 0,
     "upcoming_raw_games": 0,
