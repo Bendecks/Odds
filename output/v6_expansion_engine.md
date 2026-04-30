@@ -1,6 +1,6 @@
 # V6 EXPANSION ENGINE — MULTI SOURCE FALLBACK
 
-Ingen stærke top_bets fundet i den tomme shortlist. Ingen bets er blevet udvalgt. Watchlist er også tom, da der ingen frødata var.
+Bendix V6 har gennemgået de tilgængelige data. Da 'shortlist' var tom, er der ikke identificeret nogen top_bets for denne runde.
 
 Candidates scanned: 0 | Resolved: 0 | Conflict watchlist: 0 | Governor max top bets: 12
 
