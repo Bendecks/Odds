@@ -1,4 +1,16 @@
 # SMART ENGINE V1 — MARKET TYPES FIXED
 
-Feed error: 401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/upcoming/odds?apiKey=83c3ace7f9c92d51d4f4bb44b4424117&regions=eu%2Cuk&markets=h2h&oddsFormat=decimal
+1 prioriterede picks fundet
+
+## 1. Minnesota Timberwolves vs Denver Nuggets
+- Market type: MONEYLINE_2WAY
+- Pick: Minnesota Timberwolves
+- Odds: 3.6
+- Confidence: 9.2/10
+- Stake: 5 kr
+- Edge: 9.1%
+- Value: 1.3%
+- Books: 37
+- Sport: basketball_nba
+- Start: 2026-05-01T01:40:00Z
 
