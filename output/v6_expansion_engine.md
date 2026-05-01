@@ -1,8 +1,8 @@
 # V6 EXPANSION ENGINE — MULTI SOURCE FALLBACK
 
-Gemini error: Expecting ',' delimiter: line 13 column 5 (char 808)
+Bendix V6 Top Bet Governor har udvalgt 3 stærke top-bets fra shortlisten, alle H2H med høj værdi og bred dækning. Yderligere 2 spil er placeret på overvågningslisten for fremtidig vurdering. Alle potentielt modsatrettede picks eller picks for allerede dækkede events er sorteret fra.
 
-Candidates scanned: 30 | Resolved: 17 | Conflict watchlist: 13 | Governor max top bets: 12
+Candidates scanned: 25 | Resolved: 17 | Conflict watchlist: 8 | Governor max top bets: 12
 
 ## DIAGNOSTICS
 ```json
@@ -15,48 +15,43 @@ Candidates scanned: 30 | Resolved: 17 | Conflict watchlist: 13 | Governor max to
   "odds_api_io_raw_games": 0,
   "sports_found": 0,
   "sports_used": 0,
-  "upcoming_raw_games": 21,
+  "upcoming_raw_games": 20,
   "sport_endpoint_raw_games": 0,
-  "unique_games": 21,
-  "games_after_filter": 6,
-  "candidate_count_before_sort": 30,
-  "top_eligible_count": 5
+  "unique_games": 20,
+  "games_after_filter": 5,
+  "candidate_count_before_sort": 25,
+  "top_eligible_count": 4
 }
 ```
 
 ## TOP_BETS
-1. Empoli vs Avellino | h2h | Avellino | None | odds 3.8 | stake 2 | role PRIMARY | edge 15.2 | books 36 | market_weight 5.0 | score 19.35 | conf auto | Auto-valgt af Top Bet Governor: score 19.35, edge 15.2%, books 36.
-2. Dalian Yingbo vs Chongqing Tonglianglong FC | h2h | Chongqing Tonglianglong FC | None | odds 4.33 | stake 1 | role PRIMARY | edge 15.5 | books 32 | market_weight 5.0 | score 18.97 | conf auto | Auto-valgt af Top Bet Governor: score 18.97, edge 15.5%, books 32.
-3. Tianjin Jinmen Tiger FC vs Wuhan Three Towns | h2h | Wuhan Three Towns | None | odds 4.1 | stake 1 | role PRIMARY | edge 13.9 | books 33 | market_weight 5.0 | score 17.39 | conf auto | Auto-valgt af Top Bet Governor: score 17.39, edge 13.9%, books 33.
-4. Henan FC vs Liaoning Tieren FC | h2h | Liaoning Tieren FC | None | odds 4.5 | stake 1 | role PRIMARY | edge 12.5 | books 29 | market_weight 5.0 | score 16.0 | conf auto | Auto-valgt af Top Bet Governor: score 16.0, edge 12.5%, books 29.
-5. Shanghai Shenhua FC vs Chengdu Rongcheng FC | h2h | Chengdu Rongcheng FC | None | odds 3.65 | stake 2 | role PRIMARY | edge 10.6 | books 33 | market_weight 5.0 | score 14.81 | conf auto | Auto-valgt af Top Bet Governor: score 14.81, edge 10.6%, books 33.
+1. Çaykur Rizespor vs Torku Konyaspor | h2h | Torku Konyaspor | None | odds 5.3 | stake 1 | role PRIMARY | edge 21.8 | books 37 | market_weight 5.0 | score 24.34 | conf Meget høj | Stærkt H2H underdog pick med meget høj værdi (odds 5.3, edge 21.8%) og dækning fra 37 bookmakere. Højeste pre_score.
+2. Andorra CF vs Albacete | h2h | Albacete | None | odds 5.7 | stake 1 | role PRIMARY | edge 16.3 | books 36 | market_weight 5.0 | score 18.83 | conf Høj | Værdifuldt H2H underdog pick med høj odds (5.7) og solidt edge (16.3%) fra 36 bookmakere.
+3. Korona Kielce vs Piast Gliwice | h2h | Piast Gliwice | None | odds 3.4 | stake 2 | role PRIMARY | edge 13.3 | books 36 | market_weight 5.0 | score 18.33 | conf Høj | Stærkt H2H pick med solid værdi (odds 3.4, edge 13.3%) og dækning fra 36 bookmakere.
 
 ## WATCHLIST
-1. Shandong Luneng Taishan FC vs Qingdao West Coast FC | h2h | Qingdao West Coast FC | None | odds 7.0 | stake 0 | role WATCHLIST | edge 21.7 | books 33 | market_weight 5.0 | score 24.24 | conf None | 
-2. Dalian Yingbo vs Chongqing Tonglianglong FC | totals | Over | 2.5 | odds 2.46 | stake 0 | role WATCHLIST | edge 11.1 | books 12 | market_weight 2.2 | score 13.26 | conf None | 
-3. Empoli vs Avellino | totals | Over | 2.5 | odds 2.24 | stake 0 | role WATCHLIST | edge 9.3 | books 13 | market_weight 2.2 | score 11.47 | conf None | 
-4. Henan FC vs Liaoning Tieren FC | totals | Over | 2.5 | odds 1.94 | stake 0 | role WATCHLIST | edge 7.5 | books 12 | market_weight 2.2 | score 9.68 | conf None | 
-5. Shanghai Shenhua FC vs Chengdu Rongcheng FC | totals | Under | 3.5 | odds 1.74 | stake 0 | role WATCHLIST | edge 7.4 | books 9 | market_weight 1.2 | score 8.61 | conf None | 
-6. Tianjin Jinmen Tiger FC vs Wuhan Three Towns | totals | Over | 2.5 | odds 2.04 | stake 0 | role WATCHLIST | edge 6.2 | books 15 | market_weight 2.2 | score 8.45 | conf None | 
-7. Shandong Luneng Taishan FC vs Qingdao West Coast FC | totals | Over | 3.5 | odds 2.5 | stake 0 | role WATCHLIST | edge 6.4 | books 5 | market_weight 0.4 | score 6.78 | conf None | 
-8. Shandong Luneng Taishan FC vs Qingdao West Coast FC | totals | Over | 2.5 | odds 1.55 | stake 0 | role WATCHLIST | edge 3.3 | books 7 | market_weight 1.2 | score 4.53 | conf None | 
-9. Dalian Yingbo vs Chongqing Tonglianglong FC | spreads | Chongqing Tonglianglong FC | 0.5 | odds 1.92 | stake 0 | role WATCHLIST | edge 3.5 | books 2 | market_weight -1.5 | score 2.0 | conf None | 
-10. Shanghai Shenhua FC vs Chengdu Rongcheng FC | spreads | Chengdu Rongcheng FC | 0.5 | odds 1.94 | stake 0 | role WATCHLIST | edge 2.6 | books 3 | market_weight -1.5 | score 1.15 | conf None | 
-11. Shandong Luneng Taishan FC vs Qingdao West Coast FC | totals | Over | 3.0 | odds 1.93 | stake 0 | role WATCHLIST | edge 2.1 | books 2 | market_weight -1.1 | score 1.02 | conf None | 
-12. Shanghai Shenhua FC vs Chengdu Rongcheng FC | spreads | Shanghai Shenhua FC | -0.5 | odds 2.04 | stake 0 | role WATCHLIST | edge 2.0 | books 3 | market_weight -1.5 | score 0.5 | conf None | 
-13. Dalian Yingbo vs Chongqing Tonglianglong FC | h2h | Dalian Yingbo | None | odds 2.14 | stake 0 | role WATCHLIST | edge 7.0 | books 32 | market_weight 5.0 | score 12.0 | conf None | 
-14. Empoli vs Avellino | h2h | Empoli | None | odds 2.22 | stake 0 | role WATCHLIST | edge 4.7 | books 36 | market_weight 5.0 | score 9.72 | conf None | 
-15. Tianjin Jinmen Tiger FC vs Wuhan Three Towns | h2h | Tianjin Jinmen Tiger FC | None | odds 2.04 | stake 0 | role WATCHLIST | edge 4.6 | books 33 | market_weight 5.0 | score 9.62 | conf None | 
-16. Shanghai Shenhua FC vs Chengdu Rongcheng FC | h2h | Shanghai Shenhua FC | None | odds 2.04 | stake 0 | role WATCHLIST | edge 4.6 | books 33 | market_weight 5.0 | score 9.62 | conf None | 
-17. Shandong Luneng Taishan FC vs Qingdao West Coast FC | h2h | Shandong Luneng Taishan FC | None | odds 1.51 | stake 0 | role WATCHLIST | edge 3.4 | books 33 | market_weight 5.0 | score 8.42 | conf None | 
-18. Empoli vs Avellino | totals | Under | 2.5 | odds 1.78 | stake 0 | role WATCHLIST | edge 6.0 | books 13 | market_weight 2.2 | score 8.15 | conf None | 
-19. Henan FC vs Liaoning Tieren FC | h2h | Henan FC | None | odds 1.87 | stake 0 | role WATCHLIST | edge 2.7 | books 29 | market_weight 5.0 | score 7.75 | conf None | 
-20. Henan FC vs Liaoning Tieren FC | totals | Under | 2.5 | odds 2.02 | stake 0 | role WATCHLIST | edge 4.9 | books 12 | market_weight 2.2 | score 7.14 | conf None | 
-21. Tianjin Jinmen Tiger FC vs Wuhan Three Towns | totals | Under | 2.5 | odds 1.92 | stake 0 | role WATCHLIST | edge 3.8 | books 15 | market_weight 2.2 | score 5.98 | conf None | 
-22. Shanghai Shenhua FC vs Chengdu Rongcheng FC | totals | Over | 3.5 | odds 2.32 | stake 0 | role WATCHLIST | edge 4.0 | books 9 | market_weight 1.2 | score 5.24 | conf None | 
-23. Shandong Luneng Taishan FC vs Qingdao West Coast FC | totals | Under | 3.5 | odds 1.64 | stake 0 | role WATCHLIST | edge 4.5 | books 5 | market_weight 0.4 | score 4.86 | conf None | 
-24. Dalian Yingbo vs Chongqing Tonglianglong FC | totals | Under | 2.5 | odds 1.66 | stake 0 | role WATCHLIST | edge 2.2 | books 12 | market_weight 2.2 | score 4.35 | conf None | 
-25. Shandong Luneng Taishan FC vs Qingdao West Coast FC | totals | Under | 2.5 | odds 2.35 | stake 0 | role WATCHLIST | edge 0.0 | books 7 | market_weight 1.2 | score 1.2 | conf None | 
+1. Jannik Sinner vs Arthur Fils | h2h | Arthur Fils | None | odds 6.4 | stake 0 | role WATCHLIST | edge 15.8 | books 34 | market_weight 5.0 | score 18.34 | conf Mellem | Stærk H2H underdog med meget høj odds og god værdi (pre_score 18.34, edge 15.8%), placeret på watchlist som høj odds underdog fra watch_seed.
+2. Kryliya Sovetov vs Spartak Moscow | h2h | Spartak Moscow | None | odds 1.79 | stake 0 | role WATCHLIST | edge 1.4 | books 4 | market_weight 1.5 | score 2.92 | conf Lav | Lavere edge (1.4%) og få bookmakere (4), men klar H2H pick for yderligere overvågning.
 
 ## PASS
+1. Andorra CF vs Albacete | totals | Under | 2.5 | odds 2.44 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+2. Korona Kielce vs Piast Gliwice | totals | Under | 2.5 | odds 2.14 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+3. Çaykur Rizespor vs Torku Konyaspor | totals | Under | 2.5 | odds 2.5 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+4. Jannik Sinner vs Arthur Fils | spreads | Arthur Fils | 4.5 | odds 1.83 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et stærkere pick på watchlist. Mindre prioriteret market (spreads) med færre bookmakere.
+5. Jannik Sinner vs Arthur Fils | totals | Over | 21.5 | odds 1.96 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et stærkere pick på watchlist.
+6. Jannik Sinner vs Arthur Fils | spreads | Jannik Sinner | -4.5 | odds 2.23 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt watchlist pick. Mindre prioriteret market.
+7. Andorra CF vs Albacete | spreads | Albacete | 1.0 | odds 1.92 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+8. Andorra CF vs Albacete | spreads | Andorra CF | -1.0 | odds 2.06 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt TOP_BET.
+9. Andorra CF vs Albacete | totals | Over | 3.0 | odds 2.02 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+10. Korona Kielce vs Piast Gliwice | spreads | Korona Kielce | -0.25 | odds 1.99 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt TOP_BET.
+11. Çaykur Rizespor vs Torku Konyaspor | spreads | Torku Konyaspor | 0.75 | odds 2.02 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+12. Kryliya Sovetov vs Spartak Moscow | totals | Under | 2.75 | odds 1.89 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et pick på watchlist. Lav værdi og få bookmakere.
+13. Çaykur Rizespor vs Torku Konyaspor | h2h | Çaykur Rizespor | None | odds 1.78 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt TOP_BET.
+14. Korona Kielce vs Piast Gliwice | h2h | Korona Kielce | None | odds 2.35 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt TOP_BET.
+15. Çaykur Rizespor vs Torku Konyaspor | totals | Over | 2.5 | odds 1.65 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+16. Andorra CF vs Albacete | h2h | Andorra CF | None | odds 1.64 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt TOP_BET.
+17. Korona Kielce vs Piast Gliwice | totals | Over | 2.5 | odds 1.87 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+18. Jannik Sinner vs Arthur Fils | totals | Under | 21.5 | odds 2.0 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et pick på watchlist.
+19. Andorra CF vs Albacete | totals | Over | 2.5 | odds 1.68 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Event har allerede et valgt TOP_BET.
+20. Kryliya Sovetov vs Spartak Moscow | h2h | Kryliya Sovetov | None | odds 4.6 | stake 0 | role PASS | edge None | books None | market_weight None | score None | conf Pass | Modsatrettet pick til valgt watchlist pick.
 
