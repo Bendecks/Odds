@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater blev fundet eller behandlet i denne kørselsperiode. Der er derfor ingen spilforslag at vise.
+Nul kandidater at evaluere. Ingen stærke spil fundet på nuværende tidspunkt.
 
 Candidates: 0
 
