@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Nul kandidater at evaluere. Ingen stærke spil fundet på nuværende tidspunkt.
+Ingen kandidater modtaget. Bendix V4 Market Engine kan ikke finde potentielle væddemål baseret på de givne input.
 
 Candidates: 0
 
