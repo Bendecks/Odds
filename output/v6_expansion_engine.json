@@ -1,43 +1,104 @@
 {
-  "summary": "Bendix V6 Top Bet Governor har evalueret den tilgængelige data. Da 'shortlist' er tom, er der ingen top_bets at vælge. Jeg har passet på alle potentielle valgmuligheder, da der ikke blev fundet stærke kandidater i henhold til mine regler og data.",
+  "summary": "Bendix V6 har identificeret én stærk top_bet for den kommende periode, med fokus på en klar underdog-værdi i et H2H-marked med bred bookmaker-konsensus. Flere andre bets fra samme event er placeret på watchlist grundet moderate værdier eller som 'pass' ved lav værdi/konflikt.",
   "top_bets": [],
-  "watchlist": [],
-  "pass": [],
+  "watchlist": [
+    {
+      "event": "Jannik Sinner vs Arthur Fils",
+      "market": "h2h",
+      "pick": "Arthur Fils",
+      "point": null,
+      "odds": 6.8,
+      "confidence": "Høj",
+      "role": "WATCHLIST",
+      "reason": "Stærkt værdi på Arthur Fils som underdog i H2H-markedet med solid bookmaker-konsensus (34 books) og høj pre_score (28.43). Prioriteres over andre markeder med færre bookmakere for samme event. Opfylder kriterierne for en stærk underdog. | Flyttet til watchlist af Top Bet Governor.",
+      "edge_pct": 25.9,
+      "books": 34,
+      "pre_score": 28.43,
+      "median": 5.4,
+      "market_weight": 5.0,
+      "sport": "tennis_atp_madrid_open",
+      "start": "2026-05-01T09:00:00Z",
+      "stake_kr": 0
+    },
+    {
+      "event": "Jannik Sinner vs Arthur Fils",
+      "market": "spreads",
+      "pick": "Arthur Fils",
+      "point": 4.5,
+      "odds": 1.83,
+      "confidence": "Moderat",
+      "role": "WATCHLIST",
+      "reason": "Moderat værdi på Fils' handicap, men H2H-markedet er den foretrukne top_bet for denne event grundet højere pre_score og flere bookmakere.",
+      "edge_pct": 8.3,
+      "books": 9,
+      "pre_score": 9.08,
+      "median": 1.69,
+      "market_weight": 0.8,
+      "sport": "tennis_atp_madrid_open",
+      "start": "2026-05-01T09:00:00Z",
+      "stake_kr": 0
+    },
+    {
+      "event": "Jannik Sinner vs Arthur Fils",
+      "market": "totals",
+      "pick": "Over",
+      "point": 21.5,
+      "odds": 2.0,
+      "confidence": "Moderat",
+      "role": "WATCHLIST",
+      "reason": "Moderat værdi i totals-markedet, men H2H-markedet er den foretrukne top_bet for denne event. Vælges over 'Under 21.5' grundet højere pre_score.",
+      "edge_pct": 6.1,
+      "books": 12,
+      "pre_score": 8.3,
+      "median": 1.89,
+      "market_weight": 2.2,
+      "sport": "tennis_atp_madrid_open",
+      "start": "2026-05-01T09:00:00Z",
+      "stake_kr": 0
+    }
+  ],
+  "pass": [
+    {
+      "event": "Jannik Sinner vs Arthur Fils",
+      "market": "spreads",
+      "pick": "Jannik Sinner",
+      "point": -4.5,
+      "odds": 2.2,
+      "confidence": "Lav",
+      "role": "Pass",
+      "reason": "Lav værdi og svag pre_score. Ikke stærk nok til top_bet eller watchlist.",
+      "stake_kr": 0
+    },
+    {
+      "event": "Jannik Sinner vs Arthur Fils",
+      "market": "totals",
+      "pick": "Under",
+      "point": 21.5,
+      "odds": 2.02,
+      "confidence": "Lav",
+      "role": "Pass",
+      "reason": "Konflikterer med 'Over 21.5 Games' for samme event, og 'Over' har en højere pre_score og prioriteres derfor.",
+      "stake_kr": 0
+    }
+  ],
   "mode": "V6_TOP_BET_GOVERNOR_MULTI_SOURCE",
-  "candidate_count": 0,
-  "resolved_count": 0,
-  "conflict_watch_count": 0,
+  "candidate_count": 5,
+  "resolved_count": 4,
+  "conflict_watch_count": 1,
   "diagnostics": {
-    "api_errors": [
-      {
-        "label": "theodds:upcoming",
-        "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
-      },
-      {
-        "label": "odds-api.io",
-        "error": "404 404 page not found"
-      },
-      {
-        "label": "odds-api.io",
-        "error": "400 {\"error\":\"Missing eventId\"}"
-      },
-      {
-        "label": "odds-api.io",
-        "error": "404 404 page not found"
-      }
-    ],
-    "quota_exhausted": true,
+    "api_errors": [],
+    "quota_exhausted": false,
     "cache_used": false,
-    "cache_written": false,
+    "cache_written": true,
     "odds_api_io_used": false,
     "odds_api_io_raw_games": 0,
     "sports_found": 0,
     "sports_used": 0,
-    "upcoming_raw_games": 0,
+    "upcoming_raw_games": 10,
     "sport_endpoint_raw_games": 0,
-    "unique_games": 0,
-    "games_after_filter": 0,
-    "candidate_count_before_sort": 0,
+    "unique_games": 10,
+    "games_after_filter": 1,
+    "candidate_count_before_sort": 5,
     "top_eligible_count": 0
   },
   "top_bet_governor": {
