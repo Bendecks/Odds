@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater modtaget. Bendix V4 Market Engine kan ikke finde potentielle væddemål baseret på de givne input.
+Ingen kandidater blev leveret, eller ingen kandidater bestod de indledende markedsfiltre. Der er derfor ingen spil at anbefale på nuværende tidspunkt.
 
 Candidates: 0
 
