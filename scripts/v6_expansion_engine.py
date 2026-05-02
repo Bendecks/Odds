@@ -1,5 +1,6 @@
 import os, json, pathlib, requests, statistics, re
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 BASE=pathlib.Path('.')
 OUT=BASE/'output'; OUT.mkdir(exist_ok=True)
@@ -8,7 +9,7 @@ GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 ODDS_IO=os.getenv('ODDS_API_IO_KEY','')
 MODEL='gemini-2.5-flash'
-MODE='V6_ODDS_API_IO_INTEGRATION'
+MODE='V6_ODDS_API_IO_INTEGRATION_SHOW_KICKOFF'
 MAX_HOURS=168
 MAX_TOP_BETS=12
 MIN_TOP_SCORE=8.0
@@ -21,6 +22,7 @@ ODDS_IO_BASE='https://api.odds-api.io/v3'
 ODDS_IO_BOOKMAKER=os.getenv('ODDS_API_IO_BOOKMAKER','1xbet')
 ODDS_IO_SPORT=os.getenv('ODDS_API_IO_SPORT','football')
 ODDS_IO_MAX_EVENTS=int(os.getenv('ODDS_API_IO_MAX_EVENTS','8'))
+DISPLAY_TZ=os.getenv('DISPLAY_TZ','Europe/Copenhagen')
 DIAG={'api_errors':[],'quota_exhausted':False,'cache_used':False,'cache_written':False,'odds_api_io_used':False,'odds_api_io_raw_games':0,'odds_api_io_events':0,'odds_api_io_odds_calls':0,'sports_found':0,'sports_used':0,'upcoming_raw_games':0,'sport_endpoint_raw_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0}
 
 def text(v):
@@ -28,6 +30,13 @@ def text(v):
     if v is None: return ''
     return json.dumps(v,ensure_ascii=False)
 def as_list(v): return v if isinstance(v,list) else []
+def fmt_start(v):
+    if not v: return ''
+    try:
+        dt=datetime.fromisoformat(str(v).replace('Z','+00:00'))
+        return dt.astimezone(ZoneInfo(DISPLAY_TZ)).strftime('%Y-%m-%d %H:%M')
+    except Exception:
+        return str(v)
 def ok_sport(k): return any(str(k).startswith(p) for p in SPORT_PREFIXES) and not any(str(k).startswith(d) for d in SPORT_DENY)
 def mark_error(label,e):
     s=str(e)[:700]
@@ -207,7 +216,7 @@ def add_candidate(cands,g,market,selection,odds_list,point=None):
     if spread_ratio>2.0: return
     score,edge,robust=score_candidate(best,med,len(odds_list),market,point)
     if score<0.5: return
-    cands.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':g.get('sport_key'),'start':g.get('commence_time'),'market':market,'selection':selection,'point':point,'odds':round(best,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':len(odds_list),'spread_ratio':round(spread_ratio,2),'market_weight':robust,'pre_score':score})
+    cands.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':g.get('sport_key'),'start':g.get('commence_time'),'start_local':fmt_start(g.get('commence_time')),'market':market,'selection':selection,'point':point,'odds':round(best,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':len(odds_list),'spread_ratio':round(spread_ratio,2),'market_weight':robust,'pre_score':score})
 
 def parse_games(raw):
     cands=[]; games_ok=0
@@ -289,7 +298,7 @@ def apply_candidate_metrics(item, lookup):
     key=(item.get('event'), item.get('market'), str(item.get('pick')), str(item.get('point')))
     c=lookup.get(key)
     if c:
-        for k in ['edge_pct','books','pre_score','median','market_weight','sport','start']: item[k]=c.get(k)
+        for k in ['edge_pct','books','pre_score','median','market_weight','sport','start','start_local']: item[k]=c.get(k)
     return item
 
 def sanitize(res, all_candidates):
@@ -323,13 +332,13 @@ raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); 
 if DIAG.get('cache_used'): res['summary']='CACHE/STale odds used. '+text(res.get('summary'))
 if DIAG.get('odds_api_io_used'): res['summary']='odds-api.io fallback used. '+text(res.get('summary'))
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch); res['diagnostics']=DIAG
-res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS,'low_credit_mode':LOW_CREDIT_MODE,'odds_api_io_bookmaker':ODDS_IO_BOOKMAKER}
+res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS,'low_credit_mode':LOW_CREDIT_MODE,'odds_api_io_bookmaker':ODDS_IO_BOOKMAKER,'display_tz':DISPLAY_TZ}
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V6 EXPANSION ENGINE — ODDS-API.IO INTEGRATION\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS}\n\n")
+    f.write('# V6 EXPANSION ENGINE — ODDS-API.IO INTEGRATION + KICKOFF\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS} | Timezone: {DISPLAY_TZ}\n\n")
     f.write('## DIAGNOSTICS\n```json\n'+json.dumps(DIAG,ensure_ascii=False,indent=2)+'\n```\n\n')
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
-        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | edge {x.get('edge_pct')} | books {x.get('books')} | market_weight {x.get('market_weight')} | score {x.get('pre_score')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
+        for i,x in enumerate(as_list(res.get(sec)),1): f.write(f"{i}. {x.get('event')} | start {x.get('start_local') or fmt_start(x.get('start'))} | {x.get('market')} | {x.get('pick')} | {x.get('point')} | odds {x.get('odds')} | stake {x.get('stake_kr')} | role {x.get('role')} | edge {x.get('edge_pct')} | books {x.get('books')} | market_weight {x.get('market_weight')} | score {x.get('pre_score')} | conf {x.get('confidence')} | {text(x.get('reason'))}\n")
         f.write('\n')
 print(text(res.get('summary')))
