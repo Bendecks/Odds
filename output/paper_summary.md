@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-02T14:42:09.377110+00:00
+Generated: 2026-05-02T15:41:35.389018+00:00
 
 Source mode: V7_MULTI_SPORT_RISK_GOVERNOR+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 4 | Skipped duplicates: 9 | Skipped exposure cap: 0
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 22,
+  "open_count": 26,
   "settled_count": 0,
   "won": 0,
   "lost": 0,
   "push_void": 0,
-  "open_stake": 48.0,
-  "available_exposure_kr": 202.0,
+  "open_stake": 128.0,
+  "available_exposure_kr": 122.0,
   "settled_stake": 0,
   "profit": 0,
   "roi_pct": 0,
@@ -40,11 +40,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00007 | 2026-05-02 15:45 | mma_mixed_martial_arts | Carlos Prates vs Jack Della Maddalena | h2h | Jack Della Maddalena None | odds 2.1 | units None | stake 1.0 kr | edge 9.1 | score 14.09
 - PB-00021 | 2026-05-02 19:36 | baseball_mlb | New York Yankees vs Baltimore Orioles | h2h | Baltimore Orioles None | odds 2.5 | units None | stake 2.0 kr | edge 6.4 | score 11.38
 - PB-00014 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None | odds 2.26 | units None | stake 3.0 kr | edge 6.6 | score 11.6
+- PB-00023 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None | odds 2.25 | units 3.0 | stake 30.0 kr | edge 6.1 | score 11.13
 - PB-00013 | 2026-05-02 22:11 | baseball_mlb | Boston Red Sox vs Houston Astros | h2h | Houston Astros None | odds 2.16 | units None | stake 3.0 kr | edge 6.9 | score 11.93
 - PB-00010 | 2026-05-03 00:11 | baseball_mlb | Tampa Bay Rays vs San Francisco Giants | h2h | San Francisco Giants None | odds 1.99 | units None | stake 4.0 kr | edge 7.6 | score 12.57
 - PB-00001 | 2026-05-03 02:00 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.88 | units None | stake 2.0 kr | edge 23.8 | score 27.96
 - PB-00002 | 2026-05-03 02:00 | mma_mixed_martial_arts | Joel Alvarez vs Bryce Logan | h2h | Bryce Logan None | odds 3.5 | units None | stake 1.0 kr | edge 20.7 | score 22.89
 - PB-00015 | 2026-05-03 02:10 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.9 | units None | stake 2.0 kr | edge 19.4 | score 23.65
+- PB-00024 | 2026-05-03 02:50 | mma_mixed_martial_arts | Humberto Bandenay vs Sang Won Kim | h2h | Sang Won Kim None | odds 2.65 | units 1.0 | stake 10.0 kr | edge 8.2 | score 11.16
 - PB-00006 | 2026-05-03 15:00 | soccer_epl | Bournemouth vs Crystal Palace | h2h | Crystal Palace None | odds 5.6 | units None | stake 1.0 kr | edge 12.0 | score 14.5
 - PB-00019 | 2026-05-03 15:30 | soccer_germany_bundesliga | FC St. Pauli vs FSV Mainz 05 | h2h | FC St. Pauli None | odds 2.94 | units None | stake 2.0 kr | edge 6.9 | score 11.91
 - PB-00004 | 2026-05-03 16:15 | soccer_spain_la_liga | Getafe vs Rayo Vallecano | h2h | Rayo Vallecano None | odds 5.0 | units None | stake 1.0 kr | edge 13.6 | score 16.14
@@ -54,6 +56,8 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00009 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None | odds 3.88 | units None | stake 2.0 kr | edge 9.3 | score 13.5
 - PB-00008 | 2026-05-04 03:10 | icehockey_nhl | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None | odds 3.5 | units None | stake 2.0 kr | edge 9.4 | score 13.57
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
+- PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
+- PB-00026 | 2026-05-09 15:30 | soccer_germany_bundesliga | VfB Stuttgart vs Bayer Leverkusen | h2h | Bayer Leverkusen None | odds 3.25 | units 2.0 | stake 20.0 kr | edge 8.3 | score 13.33
 
 ## SETTLED PAPER BETS — SORTED BY KICKOFF
 No settled paper bets yet.
