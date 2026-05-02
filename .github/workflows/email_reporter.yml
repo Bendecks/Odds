@@ -1,0 +1,51 @@
+name: Email Reporter V1
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'   # daily 05:00 UTC (~07:00 DK)
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: email-reporter
+  cancel-in-progress: false
+
+jobs:
+  run-email-reporter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Email Reporter
+        env:
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_SEND_MODE: daily_or_new
+        run: python scripts/email_reporter.py
+
+      - name: Commit state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/email_reporter_*.json output/email_reporter_*.md || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Update email reporter state"
+          git pull --rebase origin main
+          git push
