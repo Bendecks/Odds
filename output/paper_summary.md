@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-02T19:52:28.635517+00:00
+Generated: 2026-05-02T20:37:22.676887+00:00
 
 Source mode: V7_MULTI_SPORT_RISK_GOVERNOR+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 2 | Skipped duplicates: 5 | Skipped exposure cap: 0
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 26,
+  "open_count": 28,
   "settled_count": 1,
   "won": 1,
   "lost": 0,
   "push_void": 0,
-  "open_stake": 144.0,
-  "available_exposure_kr": 106.0,
+  "open_stake": 194.0,
+  "available_exposure_kr": 56.0,
   "settled_stake": 4.0,
   "profit": 2.8,
   "roi_pct": 70.0,
@@ -42,6 +42,7 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00023 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None | odds 2.25 | units 3.0 | stake 30.0 kr | edge 6.1 | score 11.13
 - PB-00013 | 2026-05-02 22:11 | baseball_mlb | Boston Red Sox vs Houston Astros | h2h | Houston Astros None | odds 2.16 | units None | stake 3.0 kr | edge 6.9 | score 11.93
 - PB-00010 | 2026-05-03 00:11 | baseball_mlb | Tampa Bay Rays vs San Francisco Giants | h2h | San Francisco Giants None | odds 1.99 | units None | stake 4.0 kr | edge 7.6 | score 12.57
+- PB-00028 | 2026-05-03 01:16 | baseball_mlb | St. Louis Cardinals vs Los Angeles Dodgers | h2h | Los Angeles Dodgers None | odds 1.77 | units 3.0 | stake 30.0 kr | edge 6.0 | score 10.99
 - PB-00001 | 2026-05-03 02:00 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.88 | units None | stake 2.0 kr | edge 23.8 | score 27.96
 - PB-00002 | 2026-05-03 02:00 | mma_mixed_martial_arts | Joel Alvarez vs Bryce Logan | h2h | Bryce Logan None | odds 3.5 | units None | stake 1.0 kr | edge 20.7 | score 22.89
 - PB-00015 | 2026-05-03 02:10 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.9 | units None | stake 2.0 kr | edge 19.4 | score 23.65
@@ -53,6 +54,7 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00018 | 2026-05-03 19:30 | soccer_germany_bundesliga | SC Freiburg vs VfL Wolfsburg | h2h | SC Freiburg None | odds 2.66 | units None | stake 2.0 kr | edge 7.3 | score 12.26
 - PB-00003 | 2026-05-04 00:10 | icehockey_nhl | Tampa Bay Lightning vs Montréal Canadiens | h2h | Montréal Canadiens None | odds 3.24 | units None | stake 2.0 kr | edge 16.8 | score 21.76
 - PB-00009 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None | odds 3.88 | units None | stake 2.0 kr | edge 9.3 | score 13.5
+- PB-00029 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None | odds 3.81 | units 2.0 | stake 20.0 kr | edge 7.3 | score 11.52
 - PB-00008 | 2026-05-04 03:10 | icehockey_nhl | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None | odds 3.5 | units None | stake 2.0 kr | edge 9.4 | score 13.57
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
