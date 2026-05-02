@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater er blevet fundet at behandle. Derfor er der ingen spil at placere eller overvåge på nuværende tidspunkt. Vi afventer nye forslag.
+Ingen kandidater blev modtaget til evaluering i denne runde.
 
 Candidates: 0
 
