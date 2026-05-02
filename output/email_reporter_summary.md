@@ -2,8 +2,8 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 26
-Åben eksponering: 128.0 / 250.0 kr
+Åbne spil: 27
+Åben eksponering: 148.0 / 250.0 kr
 Profit: 0 kr
 ROI: 0%
 Hitrate: 0%
@@ -11,36 +11,6 @@ Hitrate: 0%
 NYE/TOP PICKS
 
 BET 1
-Kampstart: 2026-05-02 19:36
-Sport: Baseball
-Kamp: New York Yankees vs Baltimore Orioles
-Marked: Kampvinder
-Spillet er: Baltimore Orioles vinder kampen mod modstanderen i: New York Yankees vs Baltimore Orioles.
-Odds: 2.5
-Foreslået styrke: 2 units
-Edge/score: 6.4% / 11.38
-
-BET 2
-Kampstart: 2026-05-02 22:06
-Sport: Baseball
-Kamp: Athletics vs Cleveland Guardians
-Marked: Kampvinder
-Spillet er: Cleveland Guardians vinder kampen mod modstanderen i: Athletics vs Cleveland Guardians.
-Odds: 2.25
-Foreslået styrke: 3 units
-Edge/score: 6.1% / 11.13
-
-BET 3
-Kampstart: 2026-05-03 02:00
-Sport: MMA
-Kamp: Joel Alvarez vs Bryce Logan
-Marked: Kampvinder
-Spillet er: Bryce Logan vinder kampen mod modstanderen i: Joel Alvarez vs Bryce Logan.
-Odds: 3.5
-Foreslået styrke: 1 units
-Edge/score: 20.7% / 22.89
-
-BET 4
 Kampstart: 2026-05-03 02:10
 Sport: Ishockey
 Kamp: Carolina Hurricanes vs Philadelphia Flyers
@@ -50,47 +20,7 @@ Odds: 3.9
 Foreslået styrke: 2 units
 Edge/score: 19.4% / 23.65
 
-BET 5
-Kampstart: 2026-05-03 02:50
-Sport: MMA
-Kamp: Humberto Bandenay vs Sang Won Kim
-Marked: Kampvinder
-Spillet er: Sang Won Kim vinder kampen mod modstanderen i: Humberto Bandenay vs Sang Won Kim.
-Odds: 2.65
-Foreslået styrke: 1 units
-Edge/score: 8.2% / 11.16
-
-BET 6
-Kampstart: 2026-05-03 15:00
-Sport: Fodbold
-Kamp: Bournemouth vs Crystal Palace
-Marked: Kampvinder
-Spillet er: Crystal Palace vinder kampen mod modstanderen i: Bournemouth vs Crystal Palace.
-Odds: 5.6
-Foreslået styrke: 1 units
-Edge/score: 12.0% / 14.5
-
-BET 7
-Kampstart: 2026-05-03 15:30
-Sport: Fodbold
-Kamp: FC St. Pauli vs FSV Mainz 05
-Marked: Kampvinder
-Spillet er: FC St. Pauli vinder kampen mod modstanderen i: FC St. Pauli vs FSV Mainz 05.
-Odds: 2.94
-Foreslået styrke: 2 units
-Edge/score: 6.9% / 11.91
-
-BET 8
-Kampstart: 2026-05-03 19:30
-Sport: Fodbold
-Kamp: SC Freiburg vs VfL Wolfsburg
-Marked: Kampvinder
-Spillet er: SC Freiburg vinder kampen mod modstanderen i: SC Freiburg vs VfL Wolfsburg.
-Odds: 2.66
-Foreslået styrke: 2 units
-Edge/score: 7.3% / 12.26
-
-BET 9
+BET 2
 Kampstart: 2026-05-04 00:10
 Sport: Ishockey
 Kamp: Tampa Bay Lightning vs Montréal Canadiens
@@ -100,7 +30,7 @@ Odds: 3.24
 Foreslået styrke: 2 units
 Edge/score: 16.8% / 21.76
 
-BET 10
+BET 3
 Kampstart: 2026-05-04 03:10
 Sport: Ishockey
 Kamp: Colorado Avalanche vs Minnesota Wild
@@ -110,7 +40,7 @@ Odds: 3.5
 Foreslået styrke: 2 units
 Edge/score: 12.0% / 16.2
 
-BET 11
+BET 4
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -119,26 +49,6 @@ Spillet er: CA Osasuna vinder kampen mod modstanderen i: Levante vs CA Osasuna.
 Odds: 3.05
 Foreslået styrke: 2 units
 Edge/score: 10.9% / 15.91
-
-BET 12
-Kampstart: 2026-05-09 14:00
-Sport: Fodbold
-Kamp: Elche CF vs Alavés
-Marked: Kampvinder
-Spillet er: Alavés vinder kampen mod modstanderen i: Elche CF vs Alavés.
-Odds: 3.4
-Foreslået styrke: 2 units
-Edge/score: 7.9% / 12.94
-
-BET 13
-Kampstart: 2026-05-09 15:30
-Sport: Fodbold
-Kamp: VfB Stuttgart vs Bayer Leverkusen
-Marked: Kampvinder
-Spillet er: Bayer Leverkusen vinder kampen mod modstanderen i: VfB Stuttgart vs Bayer Leverkusen.
-Odds: 3.25
-Foreslået styrke: 2 units
-Edge/score: 8.3% / 13.33
 
 ÅBNE PAPER BETS
 
@@ -401,3 +311,13 @@ Spillet er: Bayer Leverkusen vinder kampen mod modstanderen i: VfB Stuttgart vs 
 Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
+
+BET 27
+Kampstart: 2026-05-09 15:30
+Sport: Fodbold
+Kamp: Augsburg vs Borussia Monchengladbach
+Marked: Kampvinder
+Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: Augsburg vs Borussia Monchengladbach.
+Odds: 3.07
+Indsats: 20.0 kr (2.0 units)
+Edge/score: 7.7% / 12.72
