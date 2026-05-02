@@ -1,6 +1,6 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T21:07:17.902127+00:00
+Generated: 2026-05-02T22:03:44.728010+00:00
 
 Checked open bets: 28 | Auto-settled: 0 | Pending/not finished: 23 | Unmatched: 5
 
