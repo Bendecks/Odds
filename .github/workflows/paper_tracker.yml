@@ -1,0 +1,34 @@
+name: Paper Tracker V1
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  run-paper-tracker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Paper Tracker
+        run: python scripts/paper_tracker.py
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/paper_*.json output/paper_*.md || true
+          git diff --cached --quiet || git commit -m "Update paper tracker"
+          git pull --rebase || true
+          git push
