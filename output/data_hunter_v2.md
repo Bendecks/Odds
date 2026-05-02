@@ -1,6 +1,6 @@
 # DATA HUNTER V3
 
-Ingen tilgængelige spil fundet for den angivne periode. Bendix anbefaler at afvente bedre muligheder med klar værdi.
+Ingen kampe tilgængelige for analyse på de specificerede datoer (2026-05-02). Derfor er der ingen anbefalinger i dag. Bendix fastholder princippet om kun at spille, når der er klar value og tilstrækkelig information.
 
 ## TOP_BETS
 

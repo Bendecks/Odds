@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater blev fundet i denne runde. Ingen spil er blevet placeret eller anbefalet.
+Ingen kandidater blev modtaget, derfor ingen spilforslag.
 
 Candidates: 0
 
