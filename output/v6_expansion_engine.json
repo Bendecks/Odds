@@ -1,12 +1,159 @@
 {
-  "summary": "Ingen top_bets er valgt, da den tilgængelige shortlist er tom. Der er heller ingen emner tilføjet til watchlist, da watch_seed er tom.",
-  "top_bets": [],
-  "watchlist": [],
-  "pass": [],
+  "summary": "Bendix V6 har identificeret en meget stærk værdi-underdog fra shortlisten som dagens top_bet. Derudover er der udvalgt flere interessante picks til watchlist, hvor der er lagt vægt på høj pre_score og 'clear' konfliktstatus. Alle modsatrettede eller svage picks er fravalgt. Prioritering af H2H med mange bookmakere er fulgt.",
+  "top_bets": [
+    {
+      "event": "FC Seoul vs Sangju Sangmu FC",
+      "market": "h2h",
+      "pick": "Sangju Sangmu FC",
+      "point": null,
+      "odds": 5.6,
+      "confidence": "Meget høj",
+      "role": "PRIMARY",
+      "reason": "Dette er dagens klarer standout pick. En exceptionel pre_score (26.26), meget høj edge (23.8%) og dækning fra 34 bookmakere gør dette til et ekstremt attraktivt værdispil på en underdog. Den eneste fra shortlisten og derfor et 'must-pick'.",
+      "edge_pct": 23.8,
+      "books": 34,
+      "pre_score": 26.26,
+      "median": 4.53,
+      "market_weight": 5.0,
+      "sport": "soccer_korea_kleague1",
+      "start": "2026-05-02T05:00:00Z",
+      "stake_kr": 1
+    }
+  ],
+  "watchlist": [
+    {
+      "event": "Auckland FC vs Melbourne City",
+      "market": "h2h",
+      "pick": "Melbourne City",
+      "point": null,
+      "odds": 3.3,
+      "confidence": "Middel til høj",
+      "role": "WATCHLIST",
+      "reason": "Solid værdi på H2H med en god pre_score (13.2) og høj dækning fra 32 bookmakere. Klar til potentielt at rykke op, hvis betingelserne forbedres.",
+      "edge_pct": 8.2,
+      "books": 32,
+      "pre_score": 13.2,
+      "median": 3.05,
+      "market_weight": 5.0,
+      "sport": "soccer_australia_aleague",
+      "start": "2026-05-02T05:00:00Z",
+      "stake_kr": 0
+    },
+    {
+      "event": "Auckland FC vs Melbourne City",
+      "market": "totals",
+      "pick": "Under",
+      "point": 2.5,
+      "odds": 1.98,
+      "confidence": "Middel",
+      "role": "WATCHLIST",
+      "reason": "God værdi på totalen (pre_score 10.4, edge 8.2%). Vær opmærksom på, at dette er for den samme kamp som Melbourne City H2H, men betragtes ikke som modsatrettet.",
+      "edge_pct": 8.2,
+      "books": 14,
+      "pre_score": 10.4,
+      "median": 1.83,
+      "market_weight": 2.2,
+      "sport": "soccer_australia_aleague",
+      "start": "2026-05-02T05:00:00Z",
+      "stake_kr": 0
+    },
+    {
+      "event": "FC Tokyo vs Kawasaki Frontale",
+      "market": "h2h",
+      "pick": "FC Tokyo",
+      "point": null,
+      "odds": 1.89,
+      "confidence": "Middel",
+      "role": "WATCHLIST",
+      "reason": "Acceptabel værdi med en pre_score på 8.42 og dækning fra 17 bookmakere. Det stærkeste H2H pick for denne kamp uden konflikter.",
+      "edge_pct": 4.4,
+      "books": 17,
+      "pre_score": 8.42,
+      "median": 1.81,
+      "market_weight": 4.0,
+      "sport": "soccer_japan_j_league",
+      "start": "2026-05-02T05:00:00Z",
+      "stake_kr": 0
+    }
+  ],
+  "pass": [
+    {
+      "event": "FC Seoul vs Sangju Sangmu FC",
+      "market": "totals",
+      "pick": "Over",
+      "point": 2.5,
+      "odds": 2.06,
+      "reason": "Fravalgt for at undgå enhver potentiel konflikt med TOP_BET i samme kamp (Sangju Sangmu FC H2H), selvom konfliktstatus var 'clear'. Vores TOP_BET er signifikant stærkere.",
+      "stake_kr": 0
+    },
+    {
+      "event": "FC Tokyo vs Kawasaki Frontale",
+      "market": "totals",
+      "pick": "Over",
+      "point": 2.75,
+      "odds": 2.03,
+      "reason": "For lav pre_score (1.95) og for få bookmakere (2) til at være en stærk kandidat for hverken top_bet eller watchlist.",
+      "stake_kr": 0
+    },
+    {
+      "event": "FC Tokyo vs Kawasaki Frontale",
+      "market": "spreads",
+      "pick": "Kawasaki Frontale",
+      "point": 0.5,
+      "odds": 2.0,
+      "reason": "For lav pre_score (1.86) og for få bookmakere (2) til at være en stærk kandidat for hverken top_bet eller watchlist.",
+      "stake_kr": 0
+    },
+    {
+      "event": "Auckland FC vs Melbourne City",
+      "market": "h2h",
+      "pick": "Auckland FC",
+      "point": null,
+      "odds": 2.36,
+      "reason": "Direkte modsatrettet pick til et stærkere H2H pick (Melbourne City) i watchlist for samme kamp, samt 'market_conflict' status.",
+      "stake_kr": 0
+    },
+    {
+      "event": "FC Seoul vs Sangju Sangmu FC",
+      "market": "totals",
+      "pick": "Under",
+      "point": 2.5,
+      "odds": 1.9,
+      "reason": "Fravalgt for at undgå enhver potentiel konflikt med TOP_BET i samme kamp (Sangju Sangmu FC H2H). Desuden havde den 'market_conflict' status.",
+      "stake_kr": 0
+    },
+    {
+      "event": "FC Tokyo vs Kawasaki Frontale",
+      "market": "h2h",
+      "pick": "Kawasaki Frontale",
+      "point": null,
+      "odds": 4.13,
+      "reason": "Modsatrettet pick til et stærkere H2H pick (FC Tokyo) i watchlist for samme kamp, samt 'market_conflict' status.",
+      "stake_kr": 0
+    },
+    {
+      "event": "FC Seoul vs Sangju Sangmu FC",
+      "market": "h2h",
+      "pick": "FC Seoul",
+      "point": null,
+      "odds": 1.75,
+      "reason": "Direkte modsatrettet pick til vores TOP_BET (Sangju Sangmu FC H2H). Udelukket for at opretholde reglen om 'ALDRIG modsatrettede picks i samme kamp'.",
+      "stake_kr": 0
+    },
+    {
+      "event": "Auckland FC vs Melbourne City",
+      "market": "totals",
+      "pick": "Over",
+      "point": 2.5,
+      "odds": 2.01,
+      "reason": "Modsatrettet pick til et stærkere totals pick (Under 2.5) i watchlist for samme kamp, samt 'market_conflict' status.",
+      "stake_kr": 0
+    }
+  ],
   "mode": "V6_TOP_BET_GOVERNOR_MULTI_SOURCE",
-  "candidate_count": 0,
-  "resolved_count": 0,
-  "conflict_watch_count": 0,
+  "candidate_count": 12,
+  "resolved_count": 7,
+  "conflict_watch_count": 5,
   "diagnostics": {
     "api_errors": [],
     "quota_exhausted": false,
@@ -16,12 +163,12 @@
     "odds_api_io_raw_games": 0,
     "sports_found": 0,
     "sports_used": 0,
-    "upcoming_raw_games": 13,
+    "upcoming_raw_games": 19,
     "sport_endpoint_raw_games": 0,
-    "unique_games": 13,
-    "games_after_filter": 0,
-    "candidate_count_before_sort": 0,
-    "top_eligible_count": 0
+    "unique_games": 19,
+    "games_after_filter": 3,
+    "candidate_count_before_sort": 12,
+    "top_eligible_count": 1
   },
   "top_bet_governor": {
     "max_top_bets": 12,
