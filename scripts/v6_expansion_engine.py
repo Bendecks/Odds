@@ -9,7 +9,7 @@ GEMINI=os.getenv('GEMINI_API_KEY','')
 ODDS=os.getenv('THE_ODDS_API_KEY','')
 ODDS_IO=os.getenv('ODDS_API_IO_KEY','')
 MODEL=os.getenv('GEMINI_MODEL','gemini-2.5-flash')
-MODE='V7_MULTI_SPORT_ENGINE_FIXED'
+MODE='V7_MULTI_SPORT_RISK_GOVERNOR'
 MAX_HOURS=int(os.getenv('MAX_HOURS','168'))
 MAX_TOP_BETS=int(os.getenv('MAX_TOP_BETS','20'))
 MIN_TOP_SCORE=float(os.getenv('MIN_TOP_SCORE','7.0'))
@@ -18,7 +18,6 @@ DISPLAY_TZ=os.getenv('DISPLAY_TZ','Europe/Copenhagen')
 MARKETS=('h2h','spreads','totals')
 SPORT_PREFIXES=('soccer_','tennis_','basketball_','icehockey_','baseball_','americanfootball_','mma_')
 SPORT_DENY=('soccer_esports','basketball_esports','tennis_esports')
-# Removed invalid The Odds API keys tennis_atp/tennis_wta. Tennis comes from odds-api.io instead.
 THEODDS_SPORTS=os.getenv('THEODDS_SPORTS','soccer_epl,soccer_spain_la_liga,soccer_germany_bundesliga,basketball_nba,icehockey_nhl,baseball_mlb,americanfootball_nfl,mma_mixed_martial_arts').split(',')
 ODDS_IO_BASE='https://api.odds-api.io/v3'
 ODDS_IO_BOOKMAKER=os.getenv('ODDS_API_IO_BOOKMAKER','1xbet')
@@ -26,7 +25,14 @@ ODDS_IO_SPORTS=os.getenv('ODDS_IO_SPORTS','tennis,football,basketball,ice-hockey
 ODDS_IO_MAX_EVENTS=int(os.getenv('ODDS_API_IO_MAX_EVENTS','4'))
 GEMINI_SHORTLIST=int(os.getenv('GEMINI_SHORTLIST','30'))
 GEMINI_WATCH=int(os.getenv('GEMINI_WATCH','30'))
-DIAG={'api_errors':[],'quota_exhausted':False,'cache_used':False,'cache_written':False,'odds_api_io_used':False,'odds_api_io_raw_games':0,'odds_api_io_events':0,'odds_api_io_odds_calls':0,'theodds_sports_used':0,'theodds_sport_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0,'gemini_shortlist':0,'gemini_timeout_guard':True}
+MAX_LONGSHOT_TOP=int(os.getenv('MAX_LONGSHOT_TOP','4'))          # odds >= 4.00
+MAX_HIGH_ODDS_TOP=int(os.getenv('MAX_HIGH_ODDS_TOP','8'))        # odds >= 3.00
+MAX_LOW_BOOKS_TOP=int(os.getenv('MAX_LOW_BOOKS_TOP','3'))        # books < 8
+MAX_MMA_TOP=int(os.getenv('MAX_MMA_TOP','3'))
+MAX_TOTALS_TOP=int(os.getenv('MAX_TOTALS_TOP','5'))
+MAX_SPREADS_TOP=int(os.getenv('MAX_SPREADS_TOP','4'))
+SPORT_CAPS={'soccer':7,'baseball':4,'basketball':4,'icehockey':4,'mma':MAX_MMA_TOP,'tennis':3,'americanfootball':3,'other':2}
+DIAG={'api_errors':[],'quota_exhausted':False,'cache_used':False,'cache_written':False,'odds_api_io_used':False,'odds_api_io_raw_games':0,'odds_api_io_events':0,'odds_api_io_odds_calls':0,'theodds_sports_used':0,'theodds_sport_games':0,'unique_games':0,'games_after_filter':0,'candidate_count_before_sort':0,'top_eligible_count':0,'gemini_shortlist':0,'gemini_timeout_guard':True,'risk_governor':True,'risk_moved_to_watchlist':0}
 
 def text(v):
     if isinstance(v,str): return v
@@ -39,6 +45,16 @@ def fmt_start(v):
         dt=datetime.fromisoformat(str(v).replace('Z','+00:00'))
         return dt.astimezone(ZoneInfo(DISPLAY_TZ)).strftime('%Y-%m-%d %H:%M')
     except Exception: return str(v)
+def sport_bucket(s):
+    s=str(s or '').lower()
+    if s.startswith('soccer_'): return 'soccer'
+    if s.startswith('baseball_'): return 'baseball'
+    if s.startswith('basketball_'): return 'basketball'
+    if s.startswith('icehockey_'): return 'icehockey'
+    if s.startswith('mma_'): return 'mma'
+    if s.startswith('tennis_'): return 'tennis'
+    if s.startswith('americanfootball_'): return 'americanfootball'
+    return 'other'
 def ok_sport(k):
     s=str(k)
     return any(s.startswith(p) for p in SPORT_PREFIXES) and not any(s.startswith(d) for d in SPORT_DENY)
@@ -81,12 +97,7 @@ def odds_io_get(path,params=None):
     return safe_get('odds-api.io',ODDS_IO_BASE+path,p)
 def odds_io_pick_league(leagues,sport):
     if not isinstance(leagues,list): return None
-    preferred={
-        'football':['england-premier-league','spain-laliga','germany-bundesliga','denmark-superliga'],
-        'tennis':['atp-atp-rome-italy-men-singles','wta-wta-rome-italy-women-singles','atp-atp-madrid-spain-men-singles','wta-wta-madrid-spain-women-singles'],
-        'basketball':['usa-nba','euroleague'],
-        'ice-hockey':['usa-nhl']
-    }.get(sport,[])
+    preferred={'football':['england-premier-league','spain-laliga','germany-bundesliga','denmark-superliga'],'tennis':['atp-atp-rome-italy-men-singles','wta-wta-rome-italy-women-singles','atp-atp-madrid-spain-men-singles','wta-wta-madrid-spain-women-singles'],'basketball':['usa-nba','euroleague'],'ice-hockey':['usa-nhl']}.get(sport,[])
     by_slug={x.get('slug'):x for x in leagues if isinstance(x,dict)}
     for slug in preferred:
         if slug in by_slug and int(by_slug[slug].get('eventsCount') or 0)>0: return slug
@@ -165,21 +176,23 @@ def score_candidate(odds,median,books,market,point=None):
     penalty=2.5 if odds>=5 else 1.5 if odds>=4 else 0.8 if odds>=3.5 else 0
     robust=market_weight(market,books,point)
     return round(edge*100+robust-penalty,2),edge,round(robust,2)
-def deterministic_stake(odds,edge_pct,books,pre_score,market,role='PRIMARY'):
+def deterministic_stake(odds,edge_pct,books,pre_score,market,role='PRIMARY',sport=''):
     if role!='PRIMARY': return 0
     try: odds=float(odds); edge=float(edge_pct); books=int(books or 0); pre=float(pre_score or 0)
     except Exception: return 1
-    if odds>=4: return 1
+    bucket=sport_bucket(sport)
+    if bucket=='mma' or books<8 or odds>=4: return 1
     if odds>=3: return 1 if edge<7 else 2
     if odds>=2.4: return 2 if edge>=6 else 1
     if edge>=7 and books>=10 and pre>=10: return 4
     if edge>=5 and books>=8: return 3
     return 2
 def is_top_eligible(c):
-    try: odds=float(c.get('odds')); score=float(c.get('pre_score') or 0); edge=float(c.get('edge_pct') or 0)
+    try: odds=float(c.get('odds')); score=float(c.get('pre_score') or 0); edge=float(c.get('edge_pct') or 0); books=int(c.get('books') or 0)
     except Exception: return False
     if score<MIN_TOP_SCORE or odds>MAX_AUTO_ODDS: return False
     if odds>=4 and edge<12: return False
+    if sport_bucket(c.get('sport'))=='mma' and books<6: return False
     return True
 def conflicts(a,b):
     if a.get('event')!=b.get('event'): return False
@@ -194,7 +207,7 @@ def add_candidate(cands,g,market,selection,odds_list,point=None):
     if best<1.2 or best>8.0 or (med and best/med>2.0): return
     score,edge,robust=score_candidate(best,med,len(odds_list),market,point)
     if score<0.5: return
-    cands.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':g.get('sport_key'),'start':g.get('commence_time'),'start_local':fmt_start(g.get('commence_time')),'market':market,'selection':selection,'point':point,'odds':round(best,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':len(odds_list),'spread_ratio':round(best/med,2) if med else None,'market_weight':robust,'pre_score':score})
+    cands.append({'event':f"{g.get('home_team')} vs {g.get('away_team')}",'sport':g.get('sport_key'),'sport_bucket':sport_bucket(g.get('sport_key')),'start':g.get('commence_time'),'start_local':fmt_start(g.get('commence_time')),'market':market,'selection':selection,'point':point,'odds':round(best,2),'median':round(med,2),'edge_pct':round(edge*100,1),'books':len(odds_list),'spread_ratio':round(best/med,2) if med else None,'market_weight':robust,'pre_score':score})
 def parse_games(raw):
     cands=[]; games_ok=0
     for g in raw:
@@ -256,8 +269,8 @@ def gemini_rank(cands,conflict_watch):
     watch_seed=([c for c in cands if not is_top_eligible(c)][:GEMINI_WATCH]+conflict_watch[:GEMINI_WATCH])[:GEMINI_WATCH]
     DIAG['gemini_shortlist']=len(shortlist)
     if not GEMINI or not shortlist: return {'summary':'fallback ranking','top_bets':fallback_rank(cands),'watchlist':watch_seed,'pass':[]}
-    slim=[{k:x.get(k) for k in ['event','sport','start_local','market','selection','point','odds','edge_pct','books','pre_score']} for x in shortlist]
-    prompt='''V7 Top Bet Governor. Pick max 20 singles. Max 1 pr event. JSON only: {"summary":"...","top_bets":[],"watchlist":[],"pass":[]}. Item fields: event, market, pick, point, odds, confidence, role, reason. Data:\n'''+json.dumps(slim,ensure_ascii=False)
+    slim=[{k:x.get(k) for k in ['event','sport','sport_bucket','start_local','market','selection','point','odds','edge_pct','books','pre_score']} for x in shortlist]
+    prompt='''V7 Risk Governor. Pick strong singles only. Respect risk balance: not too many MMA, longshots, low-bookmaker picks, totals or spreads. Max 1 pr event. JSON only: {"summary":"...","top_bets":[],"watchlist":[],"pass":[]}. Item fields: event, market, pick, point, odds, confidence, role, reason. Data:\n'''+json.dumps(slim,ensure_ascii=False)
     url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={GEMINI}'
     try:
         r=requests.post(url,json={'contents':[{'parts':[{'text':prompt}]}]},timeout=45); r.raise_for_status()
@@ -275,8 +288,32 @@ def apply_candidate_metrics(item,lookup):
     key=(item.get('event'),item.get('market'),str(item.get('pick')),str(item.get('point')))
     c=lookup.get(key)
     if c:
-        for k in ['edge_pct','books','pre_score','median','market_weight','sport','start','start_local']: item[k]=c.get(k)
+        for k in ['edge_pct','books','pre_score','median','market_weight','sport','sport_bucket','start','start_local']: item[k]=c.get(k)
     return item
+def risk_accept(x,counts):
+    bucket=sport_bucket(x.get('sport'))
+    try: odds=float(x.get('odds') or 0); books=int(x.get('books') or 0)
+    except Exception: odds=0; books=0
+    market=x.get('market')
+    if counts['sport'].get(bucket,0) >= SPORT_CAPS.get(bucket,SPORT_CAPS['other']): return False,'sport_cap_'+bucket
+    if odds>=4 and counts['longshot']>=MAX_LONGSHOT_TOP: return False,'longshot_cap'
+    if odds>=3 and counts['high_odds']>=MAX_HIGH_ODDS_TOP: return False,'high_odds_cap'
+    if books<8 and counts['low_books']>=MAX_LOW_BOOKS_TOP: return False,'low_books_cap'
+    if market=='totals' and counts['totals']>=MAX_TOTALS_TOP: return False,'totals_cap'
+    if market=='spreads' and counts['spreads']>=MAX_SPREADS_TOP: return False,'spreads_cap'
+    return True,''
+def risk_count(x,counts):
+    bucket=sport_bucket(x.get('sport'))
+    try: odds=float(x.get('odds') or 0); books=int(x.get('books') or 0)
+    except Exception: odds=0; books=0
+    market=x.get('market')
+    counts['sport'][bucket]=counts['sport'].get(bucket,0)+1
+    if odds>=4: counts['longshot']+=1
+    if odds>=3: counts['high_odds']+=1
+    if books<8: counts['low_books']+=1
+    if market=='totals': counts['totals']+=1
+    if market=='spreads': counts['spreads']+=1
+
 def sanitize(res,all_candidates):
     lookup={(c.get('event'),c.get('market'),str(c.get('selection')),str(c.get('point'))):c for c in all_candidates}
     if not isinstance(res,dict): res={}
@@ -284,15 +321,18 @@ def sanitize(res,all_candidates):
         res[sec]=[normalize_item(x) for x in as_list(res.get(sec))]
         res[sec]=[x for x in res[sec] if isinstance(x,dict)]
     top=res['top_bets'] if 0<len(res['top_bets'])<=MAX_TOP_BETS else fallback_rank(all_candidates)
-    clean=[]; seen=set(); moved=[]
+    clean=[]; seen=set(); moved=[]; counts={'sport':{},'longshot':0,'high_odds':0,'low_books':0,'totals':0,'spreads':0}
     for x in top:
         x=apply_candidate_metrics(x,lookup); event=x.get('event')
         try: odds=float(str(x.get('odds')).replace(',','.'))
         except Exception: continue
         if event in seen:
-            x['stake_kr']=0; x['role']='WATCHLIST'; moved.append(x); continue
-        x['role']='PRIMARY'; x['stake_kr']=deterministic_stake(odds,x.get('edge_pct',0),x.get('books',0),x.get('pre_score',0),x.get('market'),'PRIMARY')
-        clean.append(x); seen.add(event)
+            x['stake_kr']=0; x['role']='WATCHLIST'; x['reason']=text(x.get('reason'))+' | Risk governor: duplicate event.'; moved.append(x); continue
+        ok,why=risk_accept(x,counts)
+        if not ok:
+            x['stake_kr']=0; x['role']='WATCHLIST'; x['reason']=text(x.get('reason'))+f' | Risk governor: {why}.'; moved.append(x); DIAG['risk_moved_to_watchlist']+=1; continue
+        x['role']='PRIMARY'; x['stake_kr']=deterministic_stake(odds,x.get('edge_pct',0),x.get('books',0),x.get('pre_score',0),x.get('market'),'PRIMARY',x.get('sport'))
+        clean.append(x); seen.add(event); risk_count(x,counts)
         if len(clean)>=MAX_TOP_BETS: break
     watch=[]
     for x in moved+res['watchlist']:
@@ -300,6 +340,7 @@ def sanitize(res,all_candidates):
     for x in res['pass']: x['stake_kr']=0
     res['top_bets']=sorted(clean,key=lambda x:(float(x.get('pre_score') or 0),int(x.get('books') or 0)),reverse=True)
     res['watchlist']=watch[:80]; res['pass']=res['pass'][:80]
+    res['risk_counts']=counts
     res['summary']=text(res.get('summary')) or ('ingen spil nu' if not clean else f'{len(clean)} primary top bets')
     return res
 
@@ -307,10 +348,11 @@ raw_cands=collect_candidates(); resolved,conflict_watch=pre_resolve(raw_cands); 
 if DIAG.get('cache_used'): res['summary']='CACHE/STale odds used. '+text(res.get('summary'))
 if DIAG.get('odds_api_io_used'): res['summary']='odds-api.io included. '+text(res.get('summary'))
 res['mode']=MODE; res['candidate_count']=len(raw_cands); res['resolved_count']=len(resolved); res['conflict_watch_count']=len(conflict_watch); res['diagnostics']=DIAG
-res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS,'gemini_shortlist':GEMINI_SHORTLIST,'display_tz':DISPLAY_TZ}
+res['top_bet_governor']={'max_top_bets':MAX_TOP_BETS,'min_top_score':MIN_TOP_SCORE,'max_auto_odds':MAX_AUTO_ODDS,'gemini_shortlist':GEMINI_SHORTLIST,'display_tz':DISPLAY_TZ,'sport_caps':SPORT_CAPS,'max_longshot_top':MAX_LONGSHOT_TOP,'max_high_odds_top':MAX_HIGH_ODDS_TOP,'max_low_books_top':MAX_LOW_BOOKS_TOP,'max_totals_top':MAX_TOTALS_TOP,'max_spreads_top':MAX_SPREADS_TOP}
 (OUT/'v6_expansion_engine.json').write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 with open(OUT/'v6_expansion_engine.md','w',encoding='utf-8') as f:
-    f.write('# V7 MULTI-SPORT ENGINE — FIXED\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS} | Timezone: {DISPLAY_TZ}\n\n")
+    f.write('# V7 MULTI-SPORT ENGINE — RISK GOVERNOR\n\n'+text(res.get('summary'))+f"\n\nCandidates scanned: {len(raw_cands)} | Resolved: {len(resolved)} | Conflict watchlist: {len(conflict_watch)} | Governor max top bets: {MAX_TOP_BETS} | Timezone: {DISPLAY_TZ}\n\n")
+    f.write('## RISK COUNTS\n```json\n'+json.dumps(res.get('risk_counts',{}),ensure_ascii=False,indent=2)+'\n```\n\n')
     f.write('## DIAGNOSTICS\n```json\n'+json.dumps(DIAG,ensure_ascii=False,indent=2)+'\n```\n\n')
     for sec in ['top_bets','watchlist','pass']:
         f.write('## '+sec.upper()+'\n')
