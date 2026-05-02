@@ -1,10 +1,10 @@
 # PAPER TRACKER V1
 
-Generated: 2026-05-02T11:23:00.821193+00:00
+Generated: 2026-05-02T12:05:37.256956+00:00
 
 Source mode: V7_MULTI_SPORT_RISK_GOVERNOR
 
-Added this run: 8 | Skipped duplicates: 6
+Added this run: 0 | Skipped duplicates: 14
 
 ## SUMMARY
 ```json
