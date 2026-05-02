@@ -1,15 +1,15 @@
 # PAPER AUTO SETTLER V1
 
-Generated: 2026-05-02T15:09:00.698819+00:00
+Generated: 2026-05-02T16:04:54.285590+00:00
 
-Checked open bets: 22 | Auto-settled: 0 | Unmatched/pending: 22
+Checked open bets: 26 | Auto-settled: 0 | Unmatched/pending: 26
 
 Source sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
 ## SUMMARY
 ```json
 {
-  "open_count": 22,
+  "open_count": 26,
   "settled_count": 0,
   "won": 0,
   "lost": 0,
@@ -46,3 +46,7 @@ Source sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_li
 - PB-00020 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under @ 2.2
 - PB-00021 | 2026-05-02 19:36 | baseball_mlb | New York Yankees vs Baltimore Orioles | h2h | Baltimore Orioles @ 2.5
 - PB-00022 | 2026-05-02 15:30 | soccer_germany_bundesliga | Eintracht Frankfurt vs Hamburger SV | totals | Under @ 1.7
+- PB-00023 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians @ 2.25
+- PB-00024 | 2026-05-03 02:50 | mma_mixed_martial_arts | Humberto Bandenay vs Sang Won Kim | h2h | Sang Won Kim @ 2.65
+- PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés @ 3.4
+- PB-00026 | 2026-05-09 15:30 | soccer_germany_bundesliga | VfB Stuttgart vs Bayer Leverkusen | h2h | Bayer Leverkusen @ 3.25
