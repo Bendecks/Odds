@@ -1,6 +1,15 @@
 {
-  "generated_at": "2026-05-02T19:42:12.011324+00:00",
-  "results": [],
+  "generated_at": "2026-05-02T19:43:43.992011+00:00",
+  "results": [
+    {
+      "id": "PB-00022",
+      "result": "win",
+      "profit": 2.8,
+      "note": "Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5",
+      "settled_at": "2026-05-02T19:43:43.991080+00:00",
+      "source": "odds-api.io"
+    }
+  ],
   "diagnostics": [
     {
       "id": "PB-00001",
@@ -152,9 +161,9 @@
     {
       "id": "PB-00022",
       "event": "Eintracht Frankfurt vs Hamburger SV",
-      "status": "unmatched",
+      "status": "settled",
       "source": "odds-api.io",
-      "note": "no_matching_score_game"
+      "note": "Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5"
     },
     {
       "id": "PB-00023",
@@ -192,5 +201,5 @@
       "note": "kampen forventes ikke færdig endnu"
     }
   ],
-  "odds_io_events_loaded": 0
+  "odds_io_events_loaded": 216
 }

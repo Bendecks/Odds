@@ -1,25 +1,25 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T19:42:12.011611+00:00
+Generated: 2026-05-02T19:43:43.992361+00:00
 
-Checked open bets: 27 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 5
+Checked open bets: 27 | Auto-settled: 1 | Pending/not finished: 22 | Unmatched: 4
 
 The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 0
+odds-api.io fallback events loaded: 216
 
 ## SUMMARY
 ```json
 {
-  "open_count": 27,
-  "settled_count": 0,
-  "won": 0,
+  "open_count": 26,
+  "settled_count": 1,
+  "won": 1,
   "lost": 0,
   "push_void": 0,
-  "settled_stake": 0,
-  "profit": 0,
-  "roi_pct": 0,
-  "hitrate_pct": 0
+  "settled_stake": 4.0,
+  "profit": 2.8,
+  "roi_pct": 70.0,
+  "hitrate_pct": 100.0
 }
 ```
 
@@ -45,7 +45,7 @@ odds-api.io fallback events loaded: 0
 - PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | time | kampen forventes ikke færdig endnu
 - PB-00020 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
 - PB-00021 | New York Yankees vs Baltimore Orioles | pending | time | kampen forventes ikke færdig endnu
-- PB-00022 | Eintracht Frankfurt vs Hamburger SV | unmatched | odds-api.io | no_matching_score_game
+- PB-00022 | Eintracht Frankfurt vs Hamburger SV | settled | odds-api.io | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5
 - PB-00023 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | pending | time | kampen forventes ikke færdig endnu
 - PB-00025 | Elche CF vs Alavés | pending | time | kampen forventes ikke færdig endnu
@@ -53,6 +53,7 @@ odds-api.io fallback events loaded: 0
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
+- PB-00022 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | totals | Under @ 1.7 | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5 | odds-api.io
 
 ## OPEN
 - PB-00001 | 2026-05-03 02:00 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.88
@@ -76,7 +77,6 @@ odds-api.io fallback events loaded: 0
 - PB-00019 | 2026-05-03 15:30 | soccer_germany_bundesliga | FC St. Pauli vs FSV Mainz 05 | h2h | FC St. Pauli None @ 2.94
 - PB-00020 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 @ 2.2
 - PB-00021 | 2026-05-02 19:36 | baseball_mlb | New York Yankees vs Baltimore Orioles | h2h | Baltimore Orioles None @ 2.5
-- PB-00022 | 2026-05-02 15:30 | soccer_germany_bundesliga | Eintracht Frankfurt vs Hamburger SV | totals | Under 3.5 @ 1.7
 - PB-00023 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None @ 2.25
 - PB-00024 | 2026-05-03 02:50 | mma_mixed_martial_arts | Humberto Bandenay vs Sang Won Kim | h2h | Sang Won Kim None @ 2.65
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None @ 3.4
