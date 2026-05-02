@@ -1,102 +1,43 @@
-# odds-api.io probe v3
+# odds-api.io probe v4 — low request
 
-Generated: 2026-05-02T04:30:47.750866+00:00
+Generated: 2026-05-02T06:45:43.827189+00:00
 
-Tests: 259 | Useful 2xx: 0 | Event IDs: 10
+Tests: 5 | Useful 2xx: 3
 
-## League samples
+## Selected league
+{
+  "name": "Finland - Kolmonen",
+  "slug": "finland-kolmonen",
+  "eventsCount": 307
+}
 
-## Event IDs found
-- 66053430
-- 68643372
-- 70379124
-- 68687616
-- 67149472
-- 67698134
-- 68042456
-- 71204436
-- 71188222
-- 67171884
+## Event IDs
+- 69921736
+- 69923654
+- 69924470
 
 ## Useful responses
-## Failure sample
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=68643372&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 56 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=68643372&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 56 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=68643372&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=68643372&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 56 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/68643372?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 56 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/68643372/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/68643372?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/68643372/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=70379124&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 55 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=70379124&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 55 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=70379124&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 55 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=70379124&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=70379124&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 55 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/70379124?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 55 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/70379124/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/70379124?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/70379124/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=68687616&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 54 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=68687616&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 54 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=68687616&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 54 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=68687616&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=68687616&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 53 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/68687616?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 53 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/68687616/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/68687616?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/68687616/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=67149472&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 53 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=67149472&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 53 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=67149472&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 52 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=67149472&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=67149472&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 52 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/67149472?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 52 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/67149472/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/67149472?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/67149472/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=67698134&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 51 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=67698134&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 51 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=67698134&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 51 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=67698134&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=67698134&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 51 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/67698134?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 51 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/67698134/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/67698134?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/67698134/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=68042456&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 50 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=68042456&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 50 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=68042456&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 50 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=68042456&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=68042456&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 50 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/68042456?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 49 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/68042456/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/68042456?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/68042456/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=71204436&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 49 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=71204436&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 49 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=71204436&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 48 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=71204436&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=71204436&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 48 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/71204436?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 48 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/71204436/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/71204436?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/71204436/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=71188222&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 47 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=71188222&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 47 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=71188222&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 47 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=71188222&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=71188222&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 47 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/71188222?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 47 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/71188222/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/71188222?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/71188222/odds?apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=67171884&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 46 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?id=67171884&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 46 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/odds?eventId=67171884&markets=h2h%2Cspreads%2Ctotals&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 46 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/markets?eventId=67171884&apiKey=*** | 404 page not found
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events?eventId=67171884&apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 46 seconds."}
-- 429 | event_odds_probe | https://api.odds-api.io/v3/events/67171884?apiKey=*** | {"error": "You have exceeded your rate limit of 100 requests per hour. It resets in 49 minutes and 46 seconds."}
-- 404 | event_odds_probe | https://api.odds-api.io/v3/events/67171884/odds?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/odds/67171884?apiKey=*** | 404 page not found
-- 404 | event_odds_probe | https://api.odds-api.io/v3/matches/67171884/odds?apiKey=*** | 404 page not found
+1. 200 | league_list | https://api.odds-api.io/v3/leagues?sport=football&apiKey=***
+Params: `{"sport": "football"}`
+```
+[{"name": "Albania - Kategoria e Pare", "slug": "albania-kategoria-e-pare", "eventsCount": 6}, {"name": "Albania - Kategoria Superiore", "slug": "albania-kategoria-superiore", "eventsCount": 15}, {"name": "Algeria - Ligue 1", "slug": "algeria-ligue-1", "eventsCount": 4}, {"name": "Algeria - Ligue 2", "slug": "algeria-ligue-2", "eventsCount": 24}, {"name": "Andorra - Primera Divisio", "slug": "andorra-primera-divisio", "eventsCount": 9}, {"name": "Andorra - Second Divisio", "slug": "andorra-second-divisio", "eventsCount": 4}, {"name": "Angola - Girabola", "slug": "angola-girabola", "eventsCount": 31}, {"name": "Argentina - Copa Argentina", "slug": "argentina-copa-argentina", "eventsCount": 2}, {"name": "Argentina - Copa Proyeccion Final, Reserves", "slug": "argentina-copa-proyeccion-final-reserves", "eventsCount": 72}, {"name": "Argentina - Liga Profesional", "slug": "argentina-liga-profesional", "eventsCount": 15}, {"name": "Argentina - Primera B", "slug": "argentina-primera-b", "eventsCount": 67}, {"name": "Argentina - Primera C", "slug": "argentina-primera-c", "eventsCount": 82}, {"name": "Argentina - Primera Division, Women", "slug": "argentina-primera-division-women", "eventsCount": 8}, {"name": "Argentina - Primera Nacional", "slug": "argentina-primera-nacional", "eventsCount": 89}, {"name": "Argentina - Torneo Federal A", "slug": "argentina-torneo-federal-a", "eventsCount
+```
+
+2. 200 | league_to_events_or_odds | https://api.odds-api.io/v3/events?sport=football&league=finland-kolmonen&apiKey=***
+Params: `{"sport": "football", "league": "finland-kolmonen"}`
+```
+[{"id": 69921736, "home": "MK United", "away": "IF Sibbo Vargarna", "homeId": 1114065, "awayId": 283509, "date": "2026-05-02T11:15:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69923654, "home": "Ylojarvi United FC", "away": "NOPS", "homeId": 1007057, "awayId": 50019, "date": "2026-05-02T11:30:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69924470, "home": "Yllatys", "away": "SC Zulimanit", "homeId": 1131349, "awayId": 2285, "date": "2026-05-02T12:00:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69924642, "home": "Kjp Kouvola", "away": "Ips", "homeId": 889967, "awayId": 283541, "date": "2026-05-02T12:00:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69921092, "home": "Vjs/Akatemia", "away": "Ppj/Lauttasaari", "homeId": 1335286, "awayId": 1124271, "date": "2026-05-02T12:15:00Z", "sport": {"name": "Football", "slug"
+```
+
+3. 200 | event_to_odds | https://api.odds-api.io/v3/events/69921736?apiKey=***
+Params: `{}`
+```
+{"id": 69921736, "home": "MK United", "away": "IF Sibbo Vargarna", "homeId": 1114065, "awayId": 283509, "date": "2026-05-02T11:15:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}
+```
+
+## All results
+- 200 | league_list | https://api.odds-api.io/v3/leagues?sport=football&apiKey=*** | [{"name": "Albania - Kategoria e Pare", "slug": "albania-kategoria-e-pare", "eventsCount": 6}, {"name": "Albania - Kategoria Superiore", "slug": "albania-kategoria-superiore", "eventsCount": 15}, {"name": "Algeria - Ligue 1", "slug": "algeria-ligue-1", "eventsCount": 4}, {"name": "Algeria - Ligue 2", "slug": "algeria-ligue-2", "eventsCount": 24}, {"name": "Andorra - Primera Divisio", "slug": "andorra-primera-divisio", "eventsCount": 9}, {"name": "Andorra - Second Divisio", "slug": "andorra-second-divisio", "eventsCount": 4}, {"name": "Angola - Girabola", "slug": "angola-girabola", "eventsCount": 31}, {"name": "Argentina - Copa Argentina", "slug": "argentina-copa-argentina", "eventsCount": 2}, {"name": "Argentina - Copa Proyeccion Final, Reserves", "slug": "argentina-copa-proyeccion-final-reserves", "eventsCount": 72}, {"name": "Argentina - Liga Profesional", "slug": "argentina-liga-profesional", "eventsCount": 15}, {"name": "Argentina - Primera B", "slug": "argentina-primera-b", "eventsCount": 67}, {"name": "Argentina - Primera C", "slug": "argentina-primera-c", "eventsCount": 82}, {"name": "Argentina - Primera Division, Women", "slug": "argentina-primera-division-women", "eventsCount": 8}, {"name": "Argentina - Primera Nacional", "slug": "argentina-primera-nacional", "eventsCount": 89}, {"name": "Argentina - Torneo Federal A", "slug": "argentina-torneo-federal-a", "eventsCount
+- 200 | league_to_events_or_odds | https://api.odds-api.io/v3/events?sport=football&league=finland-kolmonen&apiKey=*** | [{"id": 69921736, "home": "MK United", "away": "IF Sibbo Vargarna", "homeId": 1114065, "awayId": 283509, "date": "2026-05-02T11:15:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69923654, "home": "Ylojarvi United FC", "away": "NOPS", "homeId": 1007057, "awayId": 50019, "date": "2026-05-02T11:30:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69924470, "home": "Yllatys", "away": "SC Zulimanit", "homeId": 1131349, "awayId": 2285, "date": "2026-05-02T12:00:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69924642, "home": "Kjp Kouvola", "away": "Ips", "homeId": 889967, "awayId": 283541, "date": "2026-05-02T12:00:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}, {"id": 69921092, "home": "Vjs/Akatemia", "away": "Ppj/Lauttasaari", "homeId": 1335286, "awayId": 1124271, "date": "2026-05-02T12:15:00Z", "sport": {"name": "Football", "slug"
+- 400 | event_to_odds | https://api.odds-api.io/v3/odds?eventId=69921736&apiKey=*** | {"error": "Missing bookmakers"}
+- 400 | event_to_odds | https://api.odds-api.io/v3/events?eventId=69921736&apiKey=*** | {"error": "Sport is required"}
+- 200 | event_to_odds | https://api.odds-api.io/v3/events/69921736?apiKey=*** | {"id": 69921736, "home": "MK United", "away": "IF Sibbo Vargarna", "homeId": 1114065, "awayId": 283509, "date": "2026-05-02T11:15:00Z", "sport": {"name": "Football", "slug": "football"}, "league": {"name": "Finland - Kolmonen", "slug": "finland-kolmonen"}, "status": "pending", "scores": {"home": 0, "away": 0}}
