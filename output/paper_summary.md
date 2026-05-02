@@ -1,6 +1,6 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-02T19:42:10.685770+00:00
+Generated: 2026-05-02T19:52:28.635517+00:00
 
 Source mode: V7_MULTI_SPORT_RISK_GOVERNOR+V10_ADAPTIVE_FEEDBACK
 
@@ -17,24 +17,23 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 27,
-  "settled_count": 0,
-  "won": 0,
+  "open_count": 26,
+  "settled_count": 1,
+  "won": 1,
   "lost": 0,
   "push_void": 0,
-  "open_stake": 148.0,
-  "available_exposure_kr": 102.0,
-  "settled_stake": 0,
-  "profit": 0,
-  "roi_pct": 0,
-  "hitrate_pct": 0
+  "open_stake": 144.0,
+  "available_exposure_kr": 106.0,
+  "settled_stake": 4.0,
+  "profit": 2.8,
+  "roi_pct": 70.0,
+  "hitrate_pct": 100.0
 }
 ```
 
 ## OPEN PAPER BETS — SORTED BY KICKOFF
 - PB-00016 | 2026-05-02 13:15 | mma_mixed_martial_arts | Louie Sutherland vs Tai Tuivasa | h2h | Louie Sutherland None | odds 3.1 | units None | stake 1.0 kr | edge 10.7 | score 15.71
 - PB-00011 | 2026-05-02 14:15 | mma_mixed_martial_arts | Stephen Erceg vs Tim Elliott | h2h | Tim Elliott None | odds 2.66 | units None | stake 1.0 kr | edge 7.5 | score 12.47
-- PB-00022 | 2026-05-02 15:30 | soccer_germany_bundesliga | Eintracht Frankfurt vs Hamburger SV | totals | Under 3.5 | odds 1.7 | units None | stake 4.0 kr | edge 9.0 | score 11.17
 - PB-00012 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 | odds 2.16 | units None | stake 4.0 kr | edge 10.2 | score 12.4
 - PB-00020 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 | odds 2.2 | units None | stake 4.0 kr | edge 9.5 | score 11.65
 - PB-00007 | 2026-05-02 15:45 | mma_mixed_martial_arts | Carlos Prates vs Jack Della Maddalena | h2h | Jack Della Maddalena None | odds 2.1 | units None | stake 1.0 kr | edge 9.1 | score 14.09
@@ -61,4 +60,4 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00026 | 2026-05-09 15:30 | soccer_germany_bundesliga | VfB Stuttgart vs Bayer Leverkusen | h2h | Bayer Leverkusen None | odds 3.25 | units 2.0 | stake 20.0 kr | edge 8.3 | score 13.33
 
 ## SETTLED PAPER BETS — SORTED BY KICKOFF
-No settled paper bets yet.
+- PB-00022 | 2026-05-02 15:30 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | Under @ 1.7
