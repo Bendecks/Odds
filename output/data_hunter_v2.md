@@ -1,6 +1,6 @@
 # DATA HUNTER V3
 
-Ingen spil tilgængelige for analyse i den angivne periode. Venter på nye data.
+Ingen kampe tilgængelige for analyse på nuværende tidspunkt. Der er ingen væddemål, der opfylder Bendix' stringente krav til value og risiko. Vi afventer bedre muligheder.
 
 ## TOP_BETS
 
