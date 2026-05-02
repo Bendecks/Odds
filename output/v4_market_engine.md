@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater blev leveret til analyse. Der er derfor ingen spilforslag på nuværende tidspunkt.
+Ingen kandidater blev leveret til evaluering. Ingen spil kan anbefales på nuværende tidspunkt.
 
 Candidates: 0
 
