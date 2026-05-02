@@ -1,38 +1,49 @@
 name: V6 Expansion Engine
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 */4 * * *'
+    - cron: '*/30 * * * *'
+
 permissions:
   contents: write
+
 concurrency:
   group: v6-expansion-engine
-  cancel-in-progress: true
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests
-      - run: python scripts/v6_expansion_engine.py
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run V6/V7 Expansion Engine
+        run: python scripts/v6_expansion_engine.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
+
       - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/v6_expansion_engine.* || true
-          if git diff --cached --quiet; then
-            echo "No output changes"
-            exit 0
-          fi
+          git add output/v6_expansion_engine.* output/odds_cache_raw.json || true
+          git diff --cached --quiet && exit 0
           git commit -m "Update V6 Expansion Engine"
           git pull --rebase origin main
           git push
