@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen stærke spil fundet efter filtrering. Kandidatlisten var tom.
+Ingen kandidater blev leveret til analyse. Der er derfor ingen spilforslag på nuværende tidspunkt.
 
 Candidates: 0
 
