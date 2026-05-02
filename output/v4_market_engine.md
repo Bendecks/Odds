@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen stærke spil fundet ud fra de givne kriterier og data. Ingen kandidater blev modtaget til evaluering.
+Ingen kandidater modtaget til evaluering. Der er derfor ingen potentielle spil at analysere eller anbefale på nuværende tidspunkt.
 
 Candidates: 0
 

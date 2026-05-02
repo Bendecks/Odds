@@ -1,6 +1,6 @@
 # DATA HUNTER V3
 
-Ingen tilgængelige spil med tilstrækkelig value eller rimelig risiko at analysere på nuværende tidspunkt. Vi afventer bedre muligheder.
+Ingen tilgængelige kampe at analysere for spil i den givne periode. Der er derfor ingen anbefalinger at give lige nu.
 
 ## TOP_BETS
 
