@@ -4,9 +4,9 @@ from datetime import datetime, timezone
 OUT=pathlib.Path('output'); OUT.mkdir(exist_ok=True)
 KEY=os.getenv('ODDS_API_IO_KEY','')
 BASE='https://api.odds-api.io/v3'
-SEED_IDS=['66053430','68643372','70379124']
+BOOKMAKER_TESTS=['bet365','pinnacle','bet365,pinnacle','all','1xbet','unibet','bwin']
 
-def preview(x,n=1400):
+def preview(x,n=1600):
     try: s=json.dumps(x,ensure_ascii=False) if not isinstance(x,str) else x
     except Exception: s=str(x)
     return s[:n]
@@ -51,47 +51,37 @@ def main():
     results=[]; good=[]; ids=[]
     if not KEY:
         results.append({'error':'Missing ODDS_API_IO_KEY'}); write(results,good,ids,None); return
-    # Max ~10 calls. Designed for 100/hour limit.
     r=call(BASE+'/leagues',{'sport':'football'},'league_list')
     results.append(strip(r))
     if useful(r): good.append(r)
     league=pick_league(r.get('body')) if useful(r) else None
-    slug=league.get('slug') if league else 'england-premier-league'
-    event_tests=[
-        (BASE+'/events',{'sport':'football','league':slug}),
-        (BASE+'/events',{'sport':'football','leagueSlug':slug}),
-        (BASE+'/odds',{'sport':'football','league':slug}),
-        (BASE+f'/leagues/{slug}/events',{'sport':'football'}),
-        (BASE+f'/leagues/{slug}/odds',{'sport':'football'}),
-    ]
-    for url,p in event_tests:
-        r=call(url,p,'league_to_events_or_odds')
-        results.append(strip(r))
-        if useful(r):
-            good.append(r); ids += event_ids(r.get('body'),3)
-            if ids: break
-    ids=list(dict.fromkeys(ids+SEED_IDS))[:3]
-    odds_tests=[]
-    for eid in ids[:1]:
-        odds_tests=[
-            (BASE+'/odds',{'eventId':eid}),
-            (BASE+'/events',{'eventId':eid}),
-            (BASE+f'/events/{eid}',{}),
-            (BASE+'/odds',{'id':eid}),
+    slug=league.get('slug') if league else 'finland-kolmonen'
+    r=call(BASE+'/events',{'sport':'football','league':slug},'events')
+    results.append(strip(r))
+    if useful(r):
+        good.append(r); ids=event_ids(r.get('body'),3)
+    if not ids: ids=['69921736']
+    eid=ids[0]
+    for bm in BOOKMAKER_TESTS:
+        variants=[
+            (BASE+'/odds',{'eventId':eid,'bookmakers':bm}),
+            (BASE+'/odds',{'eventId':eid,'bookmakers':bm,'markets':'h2h,spreads,totals'}),
+            (BASE+'/odds',{'id':eid,'bookmakers':bm}),
         ]
-    for url,p in odds_tests:
-        r=call(url,p,'event_to_odds')
-        results.append(strip(r))
-        if useful(r):
-            good.append(r)
-            break
+        for url,p in variants:
+            r=call(url,p,'odds_bookmaker_probe')
+            results.append(strip(r))
+            if useful(r):
+                good.append(r)
+                write(results,good,ids,league)
+                return
     write(results,good,ids,league)
 
 def write(results,good,ids,league):
-    data={'generated_at':datetime.now(timezone.utc).isoformat(),'probe_version':'v4_low_request','total_tests':len(results),'useful_count':len(good),'league':league,'event_ids':ids,'useful':[strip(r) for r in good],'all_results':results}
+    data={'generated_at':datetime.now(timezone.utc).isoformat(),'probe_version':'v5_bookmaker_param','total_tests':len(results),'useful_count':len(good),'league':league,'event_ids':ids,'bookmakers_tested':BOOKMAKER_TESTS,'useful':[strip(r) for r in good],'all_results':results}
     (OUT/'odds_api_io_probe.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
     with open(OUT/'odds_api_io_probe.md','w',encoding='utf-8') as f:
-        f.write('# odds-api.io probe v4 — low request\n\n')
+        f.write('# odds-api.io probe v5 — bookmaker parameter\n\n')
         f.write(f"Generated: {data['generated_at']}\n\nTests: {len(results)} | Useful 2xx: {len(good)}\n\n")
         f.write('## Selected league\n')
         f.write(json.dumps(league,ensure_ascii=False,indent=2) if league else 'None')
@@ -102,6 +92,6 @@ def write(results,good,ids,league):
         f.write('## All results\n')
         for r in results:
             f.write(f"- {r.get('status')} | {r.get('kind')} | {r.get('url')} | {r.get('preview')}\n")
-    print(f"probe v4 done tests={len(results)} useful={len(good)} ids={len(ids)}")
+    print(f"probe v5 done tests={len(results)} useful={len(good)} ids={len(ids)}")
 
 if __name__=='__main__': main()
