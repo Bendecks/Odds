@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T19:43:43.992361+00:00
+Generated: 2026-05-02T20:28:59.564879+00:00
 
-Checked open bets: 27 | Auto-settled: 1 | Pending/not finished: 22 | Unmatched: 4
+Checked open bets: 26 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 4
 
 The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 216
+odds-api.io fallback events loaded: 243
 
 ## SUMMARY
 ```json
@@ -45,7 +45,6 @@ odds-api.io fallback events loaded: 216
 - PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | time | kampen forventes ikke færdig endnu
 - PB-00020 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
 - PB-00021 | New York Yankees vs Baltimore Orioles | pending | time | kampen forventes ikke færdig endnu
-- PB-00022 | Eintracht Frankfurt vs Hamburger SV | settled | odds-api.io | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5
 - PB-00023 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | pending | time | kampen forventes ikke færdig endnu
 - PB-00025 | Elche CF vs Alavés | pending | time | kampen forventes ikke færdig endnu
