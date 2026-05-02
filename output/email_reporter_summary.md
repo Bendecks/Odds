@@ -10,36 +10,6 @@ Hitrate: 0%
 
 NYE/TOP PICKS
 
-BET 1
-Kampstart: 2026-05-03 02:10
-Sport: Ishockey
-Kamp: Carolina Hurricanes vs Philadelphia Flyers
-Marked: Kampvinder
-Spillet er: Philadelphia Flyers vinder kampen mod modstanderen i: Carolina Hurricanes vs Philadelphia Flyers.
-Odds: 3.9
-Foreslået styrke: 2 units
-Edge/score: 19.4% / 23.65
-
-BET 2
-Kampstart: 2026-05-04 00:10
-Sport: Ishockey
-Kamp: Tampa Bay Lightning vs Montréal Canadiens
-Marked: Kampvinder
-Spillet er: Montréal Canadiens vinder kampen mod modstanderen i: Tampa Bay Lightning vs Montréal Canadiens.
-Odds: 3.24
-Foreslået styrke: 2 units
-Edge/score: 16.8% / 21.76
-
-BET 3
-Kampstart: 2026-05-08 21:00
-Sport: Fodbold
-Kamp: Levante vs CA Osasuna
-Marked: Kampvinder
-Spillet er: CA Osasuna vinder kampen mod modstanderen i: Levante vs CA Osasuna.
-Odds: 3.05
-Foreslået styrke: 2 units
-Edge/score: 10.9% / 15.91
-
 ÅBNE PAPER BETS
 
 BET 1
