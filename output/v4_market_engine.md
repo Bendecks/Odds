@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater modtaget til analyse. Der er ingen spil at evaluere eller anbefale på nuværende tidspunkt.
+Ingen kandidater er modtaget efter markedsfiltrene, så der er ingen spil at analysere eller anbefale på nuværende tidspunkt.
 
 Candidates: 0
 

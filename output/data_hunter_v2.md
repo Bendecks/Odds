@@ -1,6 +1,6 @@
 # DATA HUNTER V3
 
-Ingen spil tilgængelige baseret på de leverede data for d. 2026-05-02. Der er ingen kampe at analysere for nuværende.
+Ingen spil fundet for i dag. Data indeholder ingen kampe at analysere.
 
 ## TOP_BETS
 
