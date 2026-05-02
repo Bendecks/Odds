@@ -1,17 +1,17 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T20:28:59.564879+00:00
+Generated: 2026-05-02T21:07:17.902127+00:00
 
-Checked open bets: 26 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 4
+Checked open bets: 28 | Auto-settled: 0 | Pending/not finished: 23 | Unmatched: 5
 
 The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 243
+odds-api.io fallback events loaded: 207
 
 ## SUMMARY
 ```json
 {
-  "open_count": 26,
+  "open_count": 28,
   "settled_count": 1,
   "won": 1,
   "lost": 0,
@@ -30,7 +30,7 @@ odds-api.io fallback events loaded: 243
 - PB-00004 | Getafe vs Rayo Vallecano | pending | time | kampen forventes ikke færdig endnu
 - PB-00005 | Levante vs CA Osasuna | pending | time | kampen forventes ikke færdig endnu
 - PB-00006 | Bournemouth vs Crystal Palace | pending | time | kampen forventes ikke færdig endnu
-- PB-00007 | Carlos Prates vs Jack Della Maddalena | pending | time | kampen forventes ikke færdig endnu
+- PB-00007 | Carlos Prates vs Jack Della Maddalena | unmatched | odds-api.io | no_matching_score_game
 - PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | time | kampen forventes ikke færdig endnu
 - PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
 - PB-00010 | Tampa Bay Rays vs San Francisco Giants | pending | time | kampen forventes ikke færdig endnu
@@ -50,6 +50,8 @@ odds-api.io fallback events loaded: 243
 - PB-00025 | Elche CF vs Alavés | pending | time | kampen forventes ikke færdig endnu
 - PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | time | kampen forventes ikke færdig endnu
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
+- PB-00028 | St. Louis Cardinals vs Los Angeles Dodgers | pending | time | kampen forventes ikke færdig endnu
+- PB-00029 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 - PB-00022 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | totals | Under @ 1.7 | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5 | odds-api.io
@@ -81,3 +83,5 @@ odds-api.io fallback events loaded: 243
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None @ 3.4
 - PB-00026 | 2026-05-09 15:30 | soccer_germany_bundesliga | VfB Stuttgart vs Bayer Leverkusen | h2h | Bayer Leverkusen None @ 3.25
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None @ 3.07
+- PB-00028 | 2026-05-03 01:16 | baseball_mlb | St. Louis Cardinals vs Los Angeles Dodgers | h2h | Los Angeles Dodgers None @ 1.77
+- PB-00029 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None @ 3.81
