@@ -1,6 +1,6 @@
 # DATA HUNTER V3
 
-Ingen kampe tilgængelige for analyse i dag. Bendix anbefaler at vente på bedre muligheder og kun placere væddemål med tydelig værdi og kontrolleret risiko.
+Ingen spil tilgængelige baseret på de leverede data for d. 2026-05-02. Der er ingen kampe at analysere for nuværende.
 
 ## TOP_BETS
 
