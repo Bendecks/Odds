@@ -1,10 +1,12 @@
-# PAPER AUTO SETTLER V2
+# PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T19:36:17.857934+00:00
+Generated: 2026-05-02T19:42:12.011611+00:00
 
 Checked open bets: 27 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 5
 
-Source sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
+The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
+
+odds-api.io fallback events loaded: 0
 
 ## SUMMARY
 ```json
@@ -22,33 +24,33 @@ Source sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_li
 ```
 
 ## DIAGNOSTICS
-- PB-00001 | Carolina Hurricanes vs Philadelphia Flyers | pending | kampen forventes ikke færdig endnu
-- PB-00002 | Joel Alvarez vs Bryce Logan | pending | kampen forventes ikke færdig endnu
-- PB-00003 | Tampa Bay Lightning vs Montréal Canadiens | pending | kampen forventes ikke færdig endnu
-- PB-00004 | Getafe vs Rayo Vallecano | pending | kampen forventes ikke færdig endnu
-- PB-00005 | Levante vs CA Osasuna | pending | kampen forventes ikke færdig endnu
-- PB-00006 | Bournemouth vs Crystal Palace | pending | kampen forventes ikke færdig endnu
-- PB-00007 | Carlos Prates vs Jack Della Maddalena | pending | kampen forventes ikke færdig endnu
-- PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | kampen forventes ikke færdig endnu
-- PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | kampen forventes ikke færdig endnu
-- PB-00010 | Tampa Bay Rays vs San Francisco Giants | pending | kampen forventes ikke færdig endnu
-- PB-00011 | Stephen Erceg vs Tim Elliott | unmatched | no_matching_score_game
-- PB-00012 | Union Berlin vs 1. FC Köln | unmatched | no_matching_score_game
-- PB-00013 | Boston Red Sox vs Houston Astros | pending | kampen forventes ikke færdig endnu
-- PB-00014 | Athletics vs Cleveland Guardians | pending | kampen forventes ikke færdig endnu
-- PB-00015 | Carolina Hurricanes vs Philadelphia Flyers | pending | kampen forventes ikke færdig endnu
-- PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | no_matching_score_game
-- PB-00017 | Borussia Monchengladbach vs Borussia Dortmund | pending | kampen forventes ikke færdig endnu
-- PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | kampen forventes ikke færdig endnu
-- PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | kampen forventes ikke færdig endnu
-- PB-00020 | Union Berlin vs 1. FC Köln | unmatched | no_matching_score_game
-- PB-00021 | New York Yankees vs Baltimore Orioles | pending | kampen forventes ikke færdig endnu
-- PB-00022 | Eintracht Frankfurt vs Hamburger SV | unmatched | no_matching_score_game
-- PB-00023 | Athletics vs Cleveland Guardians | pending | kampen forventes ikke færdig endnu
-- PB-00024 | Humberto Bandenay vs Sang Won Kim | pending | kampen forventes ikke færdig endnu
-- PB-00025 | Elche CF vs Alavés | pending | kampen forventes ikke færdig endnu
-- PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | kampen forventes ikke færdig endnu
-- PB-00027 | Augsburg vs Borussia Monchengladbach | pending | kampen forventes ikke færdig endnu
+- PB-00001 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00002 | Joel Alvarez vs Bryce Logan | pending | time | kampen forventes ikke færdig endnu
+- PB-00003 | Tampa Bay Lightning vs Montréal Canadiens | pending | time | kampen forventes ikke færdig endnu
+- PB-00004 | Getafe vs Rayo Vallecano | pending | time | kampen forventes ikke færdig endnu
+- PB-00005 | Levante vs CA Osasuna | pending | time | kampen forventes ikke færdig endnu
+- PB-00006 | Bournemouth vs Crystal Palace | pending | time | kampen forventes ikke færdig endnu
+- PB-00007 | Carlos Prates vs Jack Della Maddalena | pending | time | kampen forventes ikke færdig endnu
+- PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | time | kampen forventes ikke færdig endnu
+- PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
+- PB-00010 | Tampa Bay Rays vs San Francisco Giants | pending | time | kampen forventes ikke færdig endnu
+- PB-00011 | Stephen Erceg vs Tim Elliott | unmatched | odds-api.io | no_matching_score_game
+- PB-00012 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
+- PB-00013 | Boston Red Sox vs Houston Astros | pending | time | kampen forventes ikke færdig endnu
+- PB-00014 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
+- PB-00015 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | odds-api.io | no_matching_score_game
+- PB-00017 | Borussia Monchengladbach vs Borussia Dortmund | pending | time | kampen forventes ikke færdig endnu
+- PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | time | kampen forventes ikke færdig endnu
+- PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | time | kampen forventes ikke færdig endnu
+- PB-00020 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
+- PB-00021 | New York Yankees vs Baltimore Orioles | pending | time | kampen forventes ikke færdig endnu
+- PB-00022 | Eintracht Frankfurt vs Hamburger SV | unmatched | odds-api.io | no_matching_score_game
+- PB-00023 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
+- PB-00024 | Humberto Bandenay vs Sang Won Kim | pending | time | kampen forventes ikke færdig endnu
+- PB-00025 | Elche CF vs Alavés | pending | time | kampen forventes ikke færdig endnu
+- PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | time | kampen forventes ikke færdig endnu
+- PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 
