@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-02T06:45:43.827189+00:00",
-  "probe_version": "v4_low_request",
-  "total_tests": 5,
+  "generated_at": "2026-05-02T06:48:08.588774+00:00",
+  "probe_version": "v5_bookmaker_param",
+  "total_tests": 15,
   "useful_count": 3,
   "league": {
     "name": "Finland - Kolmonen",
@@ -13,35 +13,47 @@
     "69923654",
     "69924470"
   ],
+  "bookmakers_tested": [
+    "bet365",
+    "pinnacle",
+    "bet365,pinnacle",
+    "all",
+    "1xbet",
+    "unibet",
+    "bwin"
+  ],
   "useful": [
     {
       "kind": "league_list",
       "url": "https://api.odds-api.io/v3/leagues?sport=football&apiKey=***",
       "status": 200,
       "ok": true,
-      "preview": "[{\"name\": \"Albania - Kategoria e Pare\", \"slug\": \"albania-kategoria-e-pare\", \"eventsCount\": 6}, {\"name\": \"Albania - Kategoria Superiore\", \"slug\": \"albania-kategoria-superiore\", \"eventsCount\": 15}, {\"name\": \"Algeria - Ligue 1\", \"slug\": \"algeria-ligue-1\", \"eventsCount\": 4}, {\"name\": \"Algeria - Ligue 2\", \"slug\": \"algeria-ligue-2\", \"eventsCount\": 24}, {\"name\": \"Andorra - Primera Divisio\", \"slug\": \"andorra-primera-divisio\", \"eventsCount\": 9}, {\"name\": \"Andorra - Second Divisio\", \"slug\": \"andorra-second-divisio\", \"eventsCount\": 4}, {\"name\": \"Angola - Girabola\", \"slug\": \"angola-girabola\", \"eventsCount\": 31}, {\"name\": \"Argentina - Copa Argentina\", \"slug\": \"argentina-copa-argentina\", \"eventsCount\": 2}, {\"name\": \"Argentina - Copa Proyeccion Final, Reserves\", \"slug\": \"argentina-copa-proyeccion-final-reserves\", \"eventsCount\": 72}, {\"name\": \"Argentina - Liga Profesional\", \"slug\": \"argentina-liga-profesional\", \"eventsCount\": 15}, {\"name\": \"Argentina - Primera B\", \"slug\": \"argentina-primera-b\", \"eventsCount\": 67}, {\"name\": \"Argentina - Primera C\", \"slug\": \"argentina-primera-c\", \"eventsCount\": 82}, {\"name\": \"Argentina - Primera Division, Women\", \"slug\": \"argentina-primera-division-women\", \"eventsCount\": 8}, {\"name\": \"Argentina - Primera Nacional\", \"slug\": \"argentina-primera-nacional\", \"eventsCount\": 89}, {\"name\": \"Argentina - Torneo Federal A\", \"slug\": \"argentina-torneo-federal-a\", \"eventsCount",
+      "preview": "[{\"name\": \"Albania - Kategoria e Pare\", \"slug\": \"albania-kategoria-e-pare\", \"eventsCount\": 6}, {\"name\": \"Albania - Kategoria Superiore\", \"slug\": \"albania-kategoria-superiore\", \"eventsCount\": 15}, {\"name\": \"Algeria - Ligue 1\", \"slug\": \"algeria-ligue-1\", \"eventsCount\": 4}, {\"name\": \"Algeria - Ligue 2\", \"slug\": \"algeria-ligue-2\", \"eventsCount\": 24}, {\"name\": \"Andorra - Primera Divisio\", \"slug\": \"andorra-primera-divisio\", \"eventsCount\": 9}, {\"name\": \"Andorra - Second Divisio\", \"slug\": \"andorra-second-divisio\", \"eventsCount\": 4}, {\"name\": \"Angola - Girabola\", \"slug\": \"angola-girabola\", \"eventsCount\": 31}, {\"name\": \"Argentina - Copa Argentina\", \"slug\": \"argentina-copa-argentina\", \"eventsCount\": 2}, {\"name\": \"Argentina - Copa Proyeccion Final, Reserves\", \"slug\": \"argentina-copa-proyeccion-final-reserves\", \"eventsCount\": 72}, {\"name\": \"Argentina - Liga Profesional\", \"slug\": \"argentina-liga-profesional\", \"eventsCount\": 15}, {\"name\": \"Argentina - Primera B\", \"slug\": \"argentina-primera-b\", \"eventsCount\": 67}, {\"name\": \"Argentina - Primera C\", \"slug\": \"argentina-primera-c\", \"eventsCount\": 82}, {\"name\": \"Argentina - Primera Division, Women\", \"slug\": \"argentina-primera-division-women\", \"eventsCount\": 8}, {\"name\": \"Argentina - Primera Nacional\", \"slug\": \"argentina-primera-nacional\", \"eventsCount\": 89}, {\"name\": \"Argentina - Torneo Federal A\", \"slug\": \"argentina-torneo-federal-a\", \"eventsCount\": 85}, {\"name\": \"Armenia - Armenian Cup\", \"slug\": \"armenia-armenian-cup\", \"eventsCount\": 1}, {\"name\": \"Armenia - First League\", \"slug\": \"armenia-first-league\", \"eventsCount\": 8}, {\"name\": \"Armenia - ",
       "params": {
         "sport": "football"
       }
     },
     {
-      "kind": "league_to_events_or_odds",
+      "kind": "events",
       "url": "https://api.odds-api.io/v3/events?sport=football&league=finland-kolmonen&apiKey=***",
       "status": 200,
       "ok": true,
-      "preview": "[{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"homeId\": 1114065, \"awayId\": 283509, \"date\": \"2026-05-02T11:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69923654, \"home\": \"Ylojarvi United FC\", \"away\": \"NOPS\", \"homeId\": 1007057, \"awayId\": 50019, \"date\": \"2026-05-02T11:30:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924470, \"home\": \"Yllatys\", \"away\": \"SC Zulimanit\", \"homeId\": 1131349, \"awayId\": 2285, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924642, \"home\": \"Kjp Kouvola\", \"away\": \"Ips\", \"homeId\": 889967, \"awayId\": 283541, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69921092, \"home\": \"Vjs/Akatemia\", \"away\": \"Ppj/Lauttasaari\", \"homeId\": 1335286, \"awayId\": 1124271, \"date\": \"2026-05-02T12:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\"",
+      "preview": "[{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"homeId\": 1114065, \"awayId\": 283509, \"date\": \"2026-05-02T11:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69923654, \"home\": \"Ylojarvi United FC\", \"away\": \"NOPS\", \"homeId\": 1007057, \"awayId\": 50019, \"date\": \"2026-05-02T11:30:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924470, \"home\": \"Yllatys\", \"away\": \"SC Zulimanit\", \"homeId\": 1131349, \"awayId\": 2285, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924642, \"home\": \"Kjp Kouvola\", \"away\": \"Ips\", \"homeId\": 889967, \"awayId\": 283541, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69921092, \"home\": \"Vjs/Akatemia\", \"away\": \"Ppj/Lauttasaari\", \"homeId\": 1335286, \"awayId\": 1124271, \"date\": \"2026-05-02T12:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 70684158, \"home\": \"Ppj/Lauttasaari\", \"away\": \"Toukol",
       "params": {
         "sport": "football",
         "league": "finland-kolmonen"
       }
     },
     {
-      "kind": "event_to_odds",
-      "url": "https://api.odds-api.io/v3/events/69921736?apiKey=***",
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=1xbet&apiKey=***",
       "status": 200,
       "ok": true,
-      "preview": "{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"homeId\": 1114065, \"awayId\": 283509, \"date\": \"2026-05-02T11:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}",
-      "params": {}
+      "preview": "{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"date\": \"2026-05-02T11:15:00Z\", \"status\": \"pending\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"urls\": {\"1xbet\": \"https://1xbet.com/en/line/Football/1001057-Finland-Kolmonen-Division-3/328901358-MK-United-SibboV\"}, \"bookmakerIds\": {\"1xbet\": \"411931376\"}, \"bookmakers\": {\"1xbet\": [{\"name\": \"ML\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"home\": \"2.470\", \"draw\": \"4.200\", \"away\": \"2.130\"}]}, {\"name\": \"Double Chance\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"1X\": \"1.560\", \"12\": \"1.145\", \"X2\": \"1.420\"}]}, {\"name\": \"Spread\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"hdp\": 1.75, \"home\": \"1.145\", \"away\": \"4.295\"}, {\"hdp\": 1.5, \"home\": \"1.220\", \"away\": \"3.500\"}, {\"hdp\": -1.5, \"home\": \"4.250\", \"away\": \"1.150\"}, {\"hdp\": 0.75, \"home\": \"1.482\", \"away\": \"2.410\"}, {\"hdp\": 1.25, \"home\": \"1.261\", \"away\": \"3.200\"}, {\"hdp\": 2.5, \"home\": \"1.054\", \"away\": \"6.400\"}, {\"hdp\": 0.25, \"home\": \"1.740\", \"away\": \"1.890\"}, {\"hdp\": -0.25, \"home\": \"2.173\", \"away\": \"1.552\"}, {\"hdp\": -1, \"home\": \"3.580\", \"away\": \"1.210\"}, {\"hdp\": 0, \"home\": \"1.950\", \"away\": \"1.690\"}, {\"hdp\": 2, \"home\": \"1.073\", \"away\": \"5.750\"}, {\"hdp\": 1, \"home\": \"1.330\", \"away\": \"2.960\"}, {\"hdp\": -0.75, \"home\": \"3.100\", \"away\": \"1.330\"}]}, {\"name\": \"Totals\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"hdp\": 4.25, \"over\": \"2.060\", \"under\": \"1.615\"}, {\"hdp\": 2.75, \"over\": \"1.229\", \"under\": \"3.415\"}, {\"hdp\": 3.5, \"over\": \"1.590\", \"under\": \"2.190\"}, {\"hdp\": 3.25, ",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "1xbet"
+      }
     }
   ],
   "all_results": [
@@ -50,49 +62,168 @@
       "url": "https://api.odds-api.io/v3/leagues?sport=football&apiKey=***",
       "status": 200,
       "ok": true,
-      "preview": "[{\"name\": \"Albania - Kategoria e Pare\", \"slug\": \"albania-kategoria-e-pare\", \"eventsCount\": 6}, {\"name\": \"Albania - Kategoria Superiore\", \"slug\": \"albania-kategoria-superiore\", \"eventsCount\": 15}, {\"name\": \"Algeria - Ligue 1\", \"slug\": \"algeria-ligue-1\", \"eventsCount\": 4}, {\"name\": \"Algeria - Ligue 2\", \"slug\": \"algeria-ligue-2\", \"eventsCount\": 24}, {\"name\": \"Andorra - Primera Divisio\", \"slug\": \"andorra-primera-divisio\", \"eventsCount\": 9}, {\"name\": \"Andorra - Second Divisio\", \"slug\": \"andorra-second-divisio\", \"eventsCount\": 4}, {\"name\": \"Angola - Girabola\", \"slug\": \"angola-girabola\", \"eventsCount\": 31}, {\"name\": \"Argentina - Copa Argentina\", \"slug\": \"argentina-copa-argentina\", \"eventsCount\": 2}, {\"name\": \"Argentina - Copa Proyeccion Final, Reserves\", \"slug\": \"argentina-copa-proyeccion-final-reserves\", \"eventsCount\": 72}, {\"name\": \"Argentina - Liga Profesional\", \"slug\": \"argentina-liga-profesional\", \"eventsCount\": 15}, {\"name\": \"Argentina - Primera B\", \"slug\": \"argentina-primera-b\", \"eventsCount\": 67}, {\"name\": \"Argentina - Primera C\", \"slug\": \"argentina-primera-c\", \"eventsCount\": 82}, {\"name\": \"Argentina - Primera Division, Women\", \"slug\": \"argentina-primera-division-women\", \"eventsCount\": 8}, {\"name\": \"Argentina - Primera Nacional\", \"slug\": \"argentina-primera-nacional\", \"eventsCount\": 89}, {\"name\": \"Argentina - Torneo Federal A\", \"slug\": \"argentina-torneo-federal-a\", \"eventsCount",
+      "preview": "[{\"name\": \"Albania - Kategoria e Pare\", \"slug\": \"albania-kategoria-e-pare\", \"eventsCount\": 6}, {\"name\": \"Albania - Kategoria Superiore\", \"slug\": \"albania-kategoria-superiore\", \"eventsCount\": 15}, {\"name\": \"Algeria - Ligue 1\", \"slug\": \"algeria-ligue-1\", \"eventsCount\": 4}, {\"name\": \"Algeria - Ligue 2\", \"slug\": \"algeria-ligue-2\", \"eventsCount\": 24}, {\"name\": \"Andorra - Primera Divisio\", \"slug\": \"andorra-primera-divisio\", \"eventsCount\": 9}, {\"name\": \"Andorra - Second Divisio\", \"slug\": \"andorra-second-divisio\", \"eventsCount\": 4}, {\"name\": \"Angola - Girabola\", \"slug\": \"angola-girabola\", \"eventsCount\": 31}, {\"name\": \"Argentina - Copa Argentina\", \"slug\": \"argentina-copa-argentina\", \"eventsCount\": 2}, {\"name\": \"Argentina - Copa Proyeccion Final, Reserves\", \"slug\": \"argentina-copa-proyeccion-final-reserves\", \"eventsCount\": 72}, {\"name\": \"Argentina - Liga Profesional\", \"slug\": \"argentina-liga-profesional\", \"eventsCount\": 15}, {\"name\": \"Argentina - Primera B\", \"slug\": \"argentina-primera-b\", \"eventsCount\": 67}, {\"name\": \"Argentina - Primera C\", \"slug\": \"argentina-primera-c\", \"eventsCount\": 82}, {\"name\": \"Argentina - Primera Division, Women\", \"slug\": \"argentina-primera-division-women\", \"eventsCount\": 8}, {\"name\": \"Argentina - Primera Nacional\", \"slug\": \"argentina-primera-nacional\", \"eventsCount\": 89}, {\"name\": \"Argentina - Torneo Federal A\", \"slug\": \"argentina-torneo-federal-a\", \"eventsCount\": 85}, {\"name\": \"Armenia - Armenian Cup\", \"slug\": \"armenia-armenian-cup\", \"eventsCount\": 1}, {\"name\": \"Armenia - First League\", \"slug\": \"armenia-first-league\", \"eventsCount\": 8}, {\"name\": \"Armenia - ",
       "params": {
         "sport": "football"
       }
     },
     {
-      "kind": "league_to_events_or_odds",
+      "kind": "events",
       "url": "https://api.odds-api.io/v3/events?sport=football&league=finland-kolmonen&apiKey=***",
       "status": 200,
       "ok": true,
-      "preview": "[{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"homeId\": 1114065, \"awayId\": 283509, \"date\": \"2026-05-02T11:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69923654, \"home\": \"Ylojarvi United FC\", \"away\": \"NOPS\", \"homeId\": 1007057, \"awayId\": 50019, \"date\": \"2026-05-02T11:30:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924470, \"home\": \"Yllatys\", \"away\": \"SC Zulimanit\", \"homeId\": 1131349, \"awayId\": 2285, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924642, \"home\": \"Kjp Kouvola\", \"away\": \"Ips\", \"homeId\": 889967, \"awayId\": 283541, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69921092, \"home\": \"Vjs/Akatemia\", \"away\": \"Ppj/Lauttasaari\", \"homeId\": 1335286, \"awayId\": 1124271, \"date\": \"2026-05-02T12:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\"",
+      "preview": "[{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"homeId\": 1114065, \"awayId\": 283509, \"date\": \"2026-05-02T11:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69923654, \"home\": \"Ylojarvi United FC\", \"away\": \"NOPS\", \"homeId\": 1007057, \"awayId\": 50019, \"date\": \"2026-05-02T11:30:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924470, \"home\": \"Yllatys\", \"away\": \"SC Zulimanit\", \"homeId\": 1131349, \"awayId\": 2285, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69924642, \"home\": \"Kjp Kouvola\", \"away\": \"Ips\", \"homeId\": 889967, \"awayId\": 283541, \"date\": \"2026-05-02T12:00:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 69921092, \"home\": \"Vjs/Akatemia\", \"away\": \"Ppj/Lauttasaari\", \"homeId\": 1335286, \"awayId\": 1124271, \"date\": \"2026-05-02T12:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}, {\"id\": 70684158, \"home\": \"Ppj/Lauttasaari\", \"away\": \"Toukol",
       "params": {
         "sport": "football",
         "league": "finland-kolmonen"
       }
     },
     {
-      "kind": "event_to_odds",
-      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&apiKey=***",
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=bet365&apiKey=***",
       "status": 400,
       "ok": false,
-      "preview": "{\"error\": \"Missing bookmakers\"}",
+      "preview": "{\"error\": \"bet365 is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
       "params": {
-        "eventId": "69921736"
+        "eventId": "69921736",
+        "bookmakers": "bet365"
       }
     },
     {
-      "kind": "event_to_odds",
-      "url": "https://api.odds-api.io/v3/events?eventId=69921736&apiKey=***",
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=bet365&markets=h2h%2Cspreads%2Ctotals&apiKey=***",
       "status": 400,
       "ok": false,
-      "preview": "{\"error\": \"Sport is required\"}",
+      "preview": "{\"error\": \"bet365 is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
       "params": {
-        "eventId": "69921736"
+        "eventId": "69921736",
+        "bookmakers": "bet365",
+        "markets": "h2h,spreads,totals"
       }
     },
     {
-      "kind": "event_to_odds",
-      "url": "https://api.odds-api.io/v3/events/69921736?apiKey=***",
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?id=69921736&bookmakers=bet365&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"Missing eventId\"}",
+      "params": {
+        "id": "69921736",
+        "bookmakers": "bet365"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=pinnacle&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"pinnacle is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "pinnacle"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=pinnacle&markets=h2h%2Cspreads%2Ctotals&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"pinnacle is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "pinnacle",
+        "markets": "h2h,spreads,totals"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?id=69921736&bookmakers=pinnacle&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"Missing eventId\"}",
+      "params": {
+        "id": "69921736",
+        "bookmakers": "pinnacle"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=bet365%2Cpinnacle&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"bet365 is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "bet365,pinnacle"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=bet365%2Cpinnacle&markets=h2h%2Cspreads%2Ctotals&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"bet365 is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "bet365,pinnacle",
+        "markets": "h2h,spreads,totals"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?id=69921736&bookmakers=bet365%2Cpinnacle&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"Missing eventId\"}",
+      "params": {
+        "id": "69921736",
+        "bookmakers": "bet365,pinnacle"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=all&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"all is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "all"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=all&markets=h2h%2Cspreads%2Ctotals&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"all is not a valid bookmaker, use /v3/bookmakers to get a list of valid bookmakers\"}",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "all",
+        "markets": "h2h,spreads,totals"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?id=69921736&bookmakers=all&apiKey=***",
+      "status": 400,
+      "ok": false,
+      "preview": "{\"error\": \"Missing eventId\"}",
+      "params": {
+        "id": "69921736",
+        "bookmakers": "all"
+      }
+    },
+    {
+      "kind": "odds_bookmaker_probe",
+      "url": "https://api.odds-api.io/v3/odds?eventId=69921736&bookmakers=1xbet&apiKey=***",
       "status": 200,
       "ok": true,
-      "preview": "{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"homeId\": 1114065, \"awayId\": 283509, \"date\": \"2026-05-02T11:15:00Z\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"status\": \"pending\", \"scores\": {\"home\": 0, \"away\": 0}}",
-      "params": {}
+      "preview": "{\"id\": 69921736, \"home\": \"MK United\", \"away\": \"IF Sibbo Vargarna\", \"date\": \"2026-05-02T11:15:00Z\", \"status\": \"pending\", \"sport\": {\"name\": \"Football\", \"slug\": \"football\"}, \"league\": {\"name\": \"Finland - Kolmonen\", \"slug\": \"finland-kolmonen\"}, \"urls\": {\"1xbet\": \"https://1xbet.com/en/line/Football/1001057-Finland-Kolmonen-Division-3/328901358-MK-United-SibboV\"}, \"bookmakerIds\": {\"1xbet\": \"411931376\"}, \"bookmakers\": {\"1xbet\": [{\"name\": \"ML\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"home\": \"2.470\", \"draw\": \"4.200\", \"away\": \"2.130\"}]}, {\"name\": \"Double Chance\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"1X\": \"1.560\", \"12\": \"1.145\", \"X2\": \"1.420\"}]}, {\"name\": \"Spread\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"hdp\": 1.75, \"home\": \"1.145\", \"away\": \"4.295\"}, {\"hdp\": 1.5, \"home\": \"1.220\", \"away\": \"3.500\"}, {\"hdp\": -1.5, \"home\": \"4.250\", \"away\": \"1.150\"}, {\"hdp\": 0.75, \"home\": \"1.482\", \"away\": \"2.410\"}, {\"hdp\": 1.25, \"home\": \"1.261\", \"away\": \"3.200\"}, {\"hdp\": 2.5, \"home\": \"1.054\", \"away\": \"6.400\"}, {\"hdp\": 0.25, \"home\": \"1.740\", \"away\": \"1.890\"}, {\"hdp\": -0.25, \"home\": \"2.173\", \"away\": \"1.552\"}, {\"hdp\": -1, \"home\": \"3.580\", \"away\": \"1.210\"}, {\"hdp\": 0, \"home\": \"1.950\", \"away\": \"1.690\"}, {\"hdp\": 2, \"home\": \"1.073\", \"away\": \"5.750\"}, {\"hdp\": 1, \"home\": \"1.330\", \"away\": \"2.960\"}, {\"hdp\": -0.75, \"home\": \"3.100\", \"away\": \"1.330\"}]}, {\"name\": \"Totals\", \"updatedAt\": \"2026-05-02T06:42:18.653Z\", \"odds\": [{\"hdp\": 4.25, \"over\": \"2.060\", \"under\": \"1.615\"}, {\"hdp\": 2.75, \"over\": \"1.229\", \"under\": \"3.415\"}, {\"hdp\": 3.5, \"over\": \"1.590\", \"under\": \"2.190\"}, {\"hdp\": 3.25, ",
+      "params": {
+        "eventId": "69921736",
+        "bookmakers": "1xbet"
+      }
     }
   ]
 }
