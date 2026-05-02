@@ -1,6 +1,6 @@
 # V4 MARKET ENGINE
 
-Ingen kandidater blev leveret, eller ingen kandidater bestod de indledende markedsfiltre. Der er derfor ingen spil at anbefale på nuværende tidspunkt.
+Ingen kandidater blev modtaget til analyse. Der kan derfor ikke gives spilforslag eller overvågningslister baseret på de givne kriterier.
 
 Candidates: 0
 
