@@ -1,8 +1,51 @@
 {
-  "summary": "Ingen kandidater modtaget til evaluering. Der er derfor ingen potentielle spil at analysere eller anbefale på nuværende tidspunkt.",
-  "top_bets": [],
-  "watchlist": [],
-  "pass": [],
+  "summary": "Bendix V4 Market Engine har behandlet 5 kandidater og identificeret 2 stærke spil baseret på konservative principper om sandsynlighed, værdi og lav variance. Maksimal indsats på 5 kr gælder, med yderligere begrænsninger for høje odds (maks 2 kr for odds >= 3.5, maks 1 kr for odds >= 4). Alle spil er singler, uden livebetting eller parlays.",
+  "top_bets": [
+    {
+      "event": "Arminia Bielefeld vs VfL Bochum",
+      "pick": "VfL Bochum",
+      "odds": 3.75,
+      "stake_kr": 2,
+      "confidence": "Høj",
+      "reason": "Fremragende værdi (13.6% edge) med stærk markedskonsensus (38 bookmakere), hvilket indikerer lav variance og god sandsynlighed. Overholder stake-limit for høje odds (maks. 2 kr for odds >= 3.5)."
+    },
+    {
+      "event": "1. FC Köln vs Werder Bremen",
+      "pick": "Werder Bremen",
+      "odds": 2.9,
+      "stake_kr": 3,
+      "confidence": "Høj",
+      "reason": "Solid værdi (10.3% edge) med et godt antal bookmakere (12). God balance mellem sandsynlighed og værdi inden for de fastsatte stake-grænser."
+    }
+  ],
+  "watchlist": [
+    {
+      "event": "Arminia Bielefeld vs VfL Bochum",
+      "pick": "Arminia Bielefeld",
+      "odds": 2.06,
+      "stake_kr": 0,
+      "confidence": "Mellem",
+      "reason": "Acceptabel værdi (4.3% edge) og meget stærk markedskonsensus (38 bookmakere). Overvejes for potentielle fremtidige bets, men mangler den 'top bet' edge, der kræves til øjeblikkelig indsats."
+    },
+    {
+      "event": "Dynamo Dresden vs 1. FC Kaiserslautern",
+      "pick": "Dynamo Dresden",
+      "odds": 1.79,
+      "stake_kr": 0,
+      "confidence": "Mellem",
+      "reason": "Mindsket, men stadig positiv værdi (3.5% edge) med meget høj markedskonsensus (38 bookmakere). Holder øje med oddsudviklingen for bedre muligheder."
+    }
+  ],
+  "pass": [
+    {
+      "event": "1. FC Köln vs Werder Bremen",
+      "pick": "1. FC Köln",
+      "odds": 2.26,
+      "stake_kr": 0,
+      "confidence": "Lav",
+      "reason": "Lav værdi (2.7% edge) gør dette til et pas. Opfylder ikke de konservative krav til sandsynlighed og værdi for en anbefalet indsats."
+    }
+  ],
   "mode": "V4_MARKET_ENGINE",
-  "candidate_count": 0
+  "candidate_count": 5
 }
