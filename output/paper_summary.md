@@ -1,8 +1,8 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-02T13:52:55.317548+00:00
+Generated: 2026-05-02T14:42:09.377110+00:00
 
-Source mode: V7_MULTI_SPORT_RISK_GOVERNOR
+Source mode: V7_MULTI_SPORT_RISK_GOVERNOR+V10_ADAPTIVE_FEEDBACK
 
 Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
 
