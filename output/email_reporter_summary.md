@@ -31,16 +31,6 @@ Foreslået styrke: 2 units
 Edge/score: 16.8% / 21.76
 
 BET 3
-Kampstart: 2026-05-04 03:10
-Sport: Ishockey
-Kamp: Colorado Avalanche vs Minnesota Wild
-Marked: Kampvinder
-Spillet er: Minnesota Wild vinder kampen mod modstanderen i: Colorado Avalanche vs Minnesota Wild.
-Odds: 3.5
-Foreslået styrke: 2 units
-Edge/score: 12.0% / 16.2
-
-BET 4
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
