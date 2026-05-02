@@ -5,11 +5,20 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: v9-feedback
+  cancel-in-progress: false
+
 jobs:
   run-feedback:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -18,6 +27,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/v9_* || true
-          git diff --cached --quiet || git commit -m "Update V9 feedback"
+          git diff --cached --quiet && exit 0
+          git commit -m "Update V9 feedback"
           git pull --rebase
           git push
