@@ -5,6 +5,13 @@ on:
   schedule:
     - cron: '*/30 * * * *'
 
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-tracker
+  cancel-in-progress: false
+
 jobs:
   run-paper-tracker:
     runs-on: ubuntu-latest
@@ -12,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -29,6 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/paper_*.json output/paper_*.md || true
-          git diff --cached --quiet || git commit -m "Update paper tracker"
-          git pull --rebase || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Update paper tracker"
+          git pull --rebase
           git push
