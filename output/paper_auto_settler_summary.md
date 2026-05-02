@@ -1,8 +1,8 @@
 # PAPER AUTO SETTLER V2
 
-Generated: 2026-05-02T18:05:41.663038+00:00
+Generated: 2026-05-02T19:31:27.476084+00:00
 
-Checked open bets: 27 | Auto-settled: 0 | Pending/not finished: 24 | Unmatched: 3
+Checked open bets: 27 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 5
 
 Source sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
@@ -32,12 +32,12 @@ Source sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_li
 - PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | kampen forventes ikke færdig endnu
 - PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | kampen forventes ikke færdig endnu
 - PB-00010 | Tampa Bay Rays vs San Francisco Giants | pending | kampen forventes ikke færdig endnu
-- PB-00011 | Stephen Erceg vs Tim Elliott | pending | kampen forventes ikke færdig endnu
+- PB-00011 | Stephen Erceg vs Tim Elliott | unmatched | no_matching_score_game
 - PB-00012 | Union Berlin vs 1. FC Köln | unmatched | no_matching_score_game
 - PB-00013 | Boston Red Sox vs Houston Astros | pending | kampen forventes ikke færdig endnu
 - PB-00014 | Athletics vs Cleveland Guardians | pending | kampen forventes ikke færdig endnu
 - PB-00015 | Carolina Hurricanes vs Philadelphia Flyers | pending | kampen forventes ikke færdig endnu
-- PB-00016 | Louie Sutherland vs Tai Tuivasa | pending | kampen forventes ikke færdig endnu
+- PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | no_matching_score_game
 - PB-00017 | Borussia Monchengladbach vs Borussia Dortmund | pending | kampen forventes ikke færdig endnu
 - PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | kampen forventes ikke færdig endnu
 - PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | kampen forventes ikke færdig endnu
