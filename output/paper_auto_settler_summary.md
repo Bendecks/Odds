@@ -1,6 +1,6 @@
 # PAPER AUTO SETTLER V2
 
-Generated: 2026-05-02T19:31:27.476084+00:00
+Generated: 2026-05-02T19:36:17.857934+00:00
 
 Checked open bets: 27 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 5
 

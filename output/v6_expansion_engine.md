@@ -1,6 +1,6 @@
 # V10 ADAPTIVE FEEDBACK ACTIVE
 
-Activated: 2026-05-02T18:45:40.567915+00:00 | feedback patterns: 0 | adjustments applied: 0
+Activated: 2026-05-02T19:36:16.762823+00:00 | feedback patterns: 0 | adjustments applied: 0
 
 No V9 feedback data yet. V10 is active but neutral until enough settled bets exist.
 
@@ -54,8 +54,8 @@ Candidates scanned: 2 | Resolved: 1 | Conflict watchlist: 1 | Governor max top b
 ## TOP_BETS
 
 ## WATCHLIST
-1. Boston Celtics vs Philadelphia 76ers | start 2026-05-03 01:30 | sport basketball_odds_api_io | h2h | Boston Celtics | None | odds 1.37 | stake 0 | role WATCHLIST | edge 0.0 | books 1 | score 1.5 | conf None | 
-2. Boston Celtics vs Philadelphia 76ers | start 2026-05-03 01:30 | sport basketball_odds_api_io | h2h | Philadelphia 76ers | None | odds 3.43 | stake 0 | role WATCHLIST | edge 0.0 | books 1 | score 1.5 | conf None | 
+1. Boston Celtics vs Philadelphia 76ers | start 2026-05-03 01:30 | sport basketball_odds_api_io | h2h | Boston Celtics | None | odds 1.38 | stake 0 | role WATCHLIST | edge 0.0 | books 1 | score 1.5 | conf None | 
+2. Boston Celtics vs Philadelphia 76ers | start 2026-05-03 01:30 | sport basketball_odds_api_io | h2h | Philadelphia 76ers | None | odds 3.38 | stake 0 | role WATCHLIST | edge 0.0 | books 1 | score 1.5 | conf None | 
 
 ## PASS
 
