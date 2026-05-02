@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-02T15:41:35.389018+00:00
+Generated: 2026-05-02T16:22:36.003275+00:00
 
 Source mode: V7_MULTI_SPORT_RISK_GOVERNOR+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 4 | Skipped duplicates: 9 | Skipped exposure cap: 0
+Added this run: 1 | Skipped duplicates: 7 | Skipped exposure cap: 0
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 26,
+  "open_count": 27,
   "settled_count": 0,
   "won": 0,
   "lost": 0,
   "push_void": 0,
-  "open_stake": 128.0,
-  "available_exposure_kr": 122.0,
+  "open_stake": 148.0,
+  "available_exposure_kr": 102.0,
   "settled_stake": 0,
   "profit": 0,
   "roi_pct": 0,
@@ -57,6 +57,7 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00008 | 2026-05-04 03:10 | icehockey_nhl | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None | odds 3.5 | units None | stake 2.0 kr | edge 9.4 | score 13.57
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
+- PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None | odds 3.07 | units 2.0 | stake 20.0 kr | edge 7.7 | score 12.72
 - PB-00026 | 2026-05-09 15:30 | soccer_germany_bundesliga | VfB Stuttgart vs Bayer Leverkusen | h2h | Bayer Leverkusen None | odds 3.25 | units 2.0 | stake 20.0 kr | edge 8.3 | score 13.33
 
 ## SETTLED PAPER BETS — SORTED BY KICKOFF
