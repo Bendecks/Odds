@@ -1,6 +1,6 @@
 # DATA HUNTER V3
 
-Analysen viser ingen aktuelle spilmuligheder med tilstrækkelig value eller passende risiko på nuværende tidspunkt. Vi afventer bedre bettingsituationer.
+Ingen tilgængelige kampe at analysere for perioden. Derfor ingen spil at placere på nuværende tidspunkt.
 
 ## TOP_BETS
 
