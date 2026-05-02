@@ -1,17 +1,17 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T22:03:44.728010+00:00
+Generated: 2026-05-02T22:13:51.559378+00:00
 
-Checked open bets: 28 | Auto-settled: 0 | Pending/not finished: 23 | Unmatched: 5
+Checked open bets: 33 | Auto-settled: 0 | Pending/not finished: 27 | Unmatched: 6
 
 The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 207
+odds-api.io fallback events loaded: 0
 
 ## SUMMARY
 ```json
 {
-  "open_count": 28,
+  "open_count": 33,
   "settled_count": 1,
   "won": 1,
   "lost": 0,
@@ -44,7 +44,7 @@ odds-api.io fallback events loaded: 207
 - PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | time | kampen forventes ikke færdig endnu
 - PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | time | kampen forventes ikke færdig endnu
 - PB-00020 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
-- PB-00021 | New York Yankees vs Baltimore Orioles | pending | time | kampen forventes ikke færdig endnu
+- PB-00021 | New York Yankees vs Baltimore Orioles | unmatched | odds-api.io | no_matching_score_game
 - PB-00023 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | pending | time | kampen forventes ikke færdig endnu
 - PB-00025 | Elche CF vs Alavés | pending | time | kampen forventes ikke færdig endnu
@@ -52,6 +52,11 @@ odds-api.io fallback events loaded: 207
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 - PB-00028 | St. Louis Cardinals vs Los Angeles Dodgers | pending | time | kampen forventes ikke færdig endnu
 - PB-00029 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
+- PB-00030 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00031 | Keilor Thunder vs Geelong United | pending | time | kampen forventes ikke færdig endnu
+- PB-00032 | Manchester United vs Liverpool FC | pending | time | kampen forventes ikke færdig endnu
+- PB-00033 | Aston Villa vs Tottenham Hotspur | pending | time | kampen forventes ikke færdig endnu
+- PB-00034 | FC Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 - PB-00022 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | totals | Under @ 1.7 | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5 | odds-api.io
@@ -85,3 +90,8 @@ odds-api.io fallback events loaded: 207
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None @ 3.07
 - PB-00028 | 2026-05-03 01:16 | baseball_mlb | St. Louis Cardinals vs Los Angeles Dodgers | h2h | Los Angeles Dodgers None @ 1.77
 - PB-00029 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None @ 3.81
+- PB-00030 | 2026-05-03 02:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.06
+- PB-00031 | 2026-05-03 06:00 | basketball_odds_api_io | Keilor Thunder vs Geelong United | h2h | Geelong United None @ 3.15
+- PB-00032 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None @ 3.08
+- PB-00033 | 2026-05-03 20:00 | soccer_odds_api_io | Aston Villa vs Tottenham Hotspur | h2h | Tottenham Hotspur None @ 3.31
+- PB-00034 | 2026-05-09 15:30 | soccer_odds_api_io | FC Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None @ 3.07
