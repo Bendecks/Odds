@@ -41,12 +41,15 @@ jobs:
       - name: Apply V10 Adaptive Feedback
         run: python scripts/v10_apply_feedback.py
 
+      - name: Apply STRICT MODE
+        run: python scripts/strict_mode.py
+
       - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/v6_expansion_engine.* output/odds_cache_raw.json || true
           git diff --cached --quiet && exit 0
-          git commit -m "Update V6+V10 Expansion Engine"
+          git commit -m "Update V6+V10+STRICT Engine"
           git pull --rebase origin main
           git push
