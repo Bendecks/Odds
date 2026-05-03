@@ -1,27 +1,27 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-03T14:23:07.900509+00:00
+Generated: 2026-05-03T14:25:22.112243+00:00
 
-Checked open bets: 32 | Auto-settled: 0 | Pending/not finished: 19 | Unmatched: 13
+Checked open bets: 32 | Auto-settled: 2 | Pending/not finished: 19 | Unmatched: 11
 
 The Odds API sports queried: mma_mixed_martial_arts, icehockey_nhl, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
 odds-api.io fallback events loaded: 0
 
-football-data fallback matches loaded: 0
+football-data fallback matches loaded: 45
 
 ## SUMMARY
 ```json
 {
-  "open_count": 32,
-  "settled_count": 5,
+  "open_count": 30,
+  "settled_count": 7,
   "won": 1,
-  "lost": 4,
+  "lost": 6,
   "push_void": 0,
-  "settled_stake": 28.0,
-  "profit": -21.2,
-  "roi_pct": -75.71,
-  "hitrate_pct": 20.0
+  "settled_stake": 36.0,
+  "profit": -29.2,
+  "roi_pct": -81.11,
+  "hitrate_pct": 14.29
 }
 ```
 
@@ -36,14 +36,14 @@ football-data fallback matches loaded: 0
 - PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
 - PB-00010 | Tampa Bay Rays vs San Francisco Giants | unmatched | odds-api.io | no_matching_score_game
 - PB-00011 | Stephen Erceg vs Tim Elliott | unmatched | odds-api.io | no_matching_score_game
-- PB-00012 | Union Berlin vs 1. FC Köln | unmatched | football-data | no_matching_score_game
+- PB-00012 | Union Berlin vs 1. FC Köln | settled | football-data | Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5
 - PB-00013 | Boston Red Sox vs Houston Astros | unmatched | odds-api.io | no_matching_score_game
 - PB-00014 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
 - PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | odds-api.io | no_matching_score_game
 - PB-00017 | Borussia Monchengladbach vs Borussia Dortmund | pending | time | kampen forventes ikke færdig endnu
 - PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | time | kampen forventes ikke færdig endnu
 - PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | time | kampen forventes ikke færdig endnu
-- PB-00020 | Union Berlin vs 1. FC Köln | unmatched | football-data | no_matching_score_game
+- PB-00020 | Union Berlin vs 1. FC Köln | settled | football-data | Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5
 - PB-00021 | New York Yankees vs Baltimore Orioles | unmatched | odds-api.io | no_matching_score_game
 - PB-00023 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | unmatched | odds-api.io | no_matching_score_game
@@ -61,7 +61,9 @@ football-data fallback matches loaded: 0
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
+- PB-00012 | loss | profit -4.0 | Union Berlin vs 1. FC Köln | totals | Under @ 2.16 | Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5 | football-data
 - PB-00015 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.9 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
+- PB-00020 | loss | profit -4.0 | Union Berlin vs 1. FC Köln | totals | Under @ 2.2 | Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5 | football-data
 - PB-00022 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | totals | Under @ 1.7 | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5 | odds-api.io
 - PB-00030 | loss | profit -10.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.06 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
 - PB-00031 | loss | profit -10.0 | Keilor Thunder vs Geelong United | h2h | Geelong United @ 3.15 | Keilor Thunder 91 - 75 Geelong United; winner=Keilor Thunder | odds-api.io
@@ -77,14 +79,12 @@ football-data fallback matches loaded: 0
 - PB-00009 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None @ 3.88
 - PB-00010 | 2026-05-03 00:11 | baseball_mlb | Tampa Bay Rays vs San Francisco Giants | h2h | San Francisco Giants None @ 1.99
 - PB-00011 | 2026-05-02 14:15 | mma_mixed_martial_arts | Stephen Erceg vs Tim Elliott | h2h | Tim Elliott None @ 2.66
-- PB-00012 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 @ 2.16
 - PB-00013 | 2026-05-02 22:11 | baseball_mlb | Boston Red Sox vs Houston Astros | h2h | Houston Astros None @ 2.16
 - PB-00014 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None @ 2.26
 - PB-00016 | 2026-05-02 13:15 | mma_mixed_martial_arts | Louie Sutherland vs Tai Tuivasa | h2h | Louie Sutherland None @ 3.1
 - PB-00017 | 2026-05-03 17:30 | soccer_germany_bundesliga | Borussia Monchengladbach vs Borussia Dortmund | h2h | Borussia Monchengladbach None @ 3.95
 - PB-00018 | 2026-05-03 19:30 | soccer_germany_bundesliga | SC Freiburg vs VfL Wolfsburg | h2h | SC Freiburg None @ 2.66
 - PB-00019 | 2026-05-03 15:30 | soccer_germany_bundesliga | FC St. Pauli vs FSV Mainz 05 | h2h | FC St. Pauli None @ 2.94
-- PB-00020 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 @ 2.2
 - PB-00021 | 2026-05-02 19:36 | baseball_mlb | New York Yankees vs Baltimore Orioles | h2h | Baltimore Orioles None @ 2.5
 - PB-00023 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None @ 2.25
 - PB-00024 | 2026-05-03 02:50 | mma_mixed_martial_arts | Humberto Bandenay vs Sang Won Kim | h2h | Sang Won Kim None @ 2.65

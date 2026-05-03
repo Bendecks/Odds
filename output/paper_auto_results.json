@@ -1,6 +1,23 @@
 {
-  "generated_at": "2026-05-03T14:23:07.900177+00:00",
-  "results": [],
+  "generated_at": "2026-05-03T14:25:22.111854+00:00",
+  "results": [
+    {
+      "id": "PB-00012",
+      "result": "loss",
+      "profit": -4.0,
+      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5",
+      "settled_at": "2026-05-03T14:25:22.110224+00:00",
+      "source": "football-data"
+    },
+    {
+      "id": "PB-00020",
+      "result": "loss",
+      "profit": -4.0,
+      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5",
+      "settled_at": "2026-05-03T14:25:22.110755+00:00",
+      "source": "football-data"
+    }
+  ],
   "diagnostics": [
     {
       "id": "PB-00002",
@@ -75,9 +92,9 @@
     {
       "id": "PB-00012",
       "event": "Union Berlin vs 1. FC Köln",
-      "status": "unmatched",
+      "status": "settled",
       "source": "football-data",
-      "note": "no_matching_score_game"
+      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5"
     },
     {
       "id": "PB-00013",
@@ -124,9 +141,9 @@
     {
       "id": "PB-00020",
       "event": "Union Berlin vs 1. FC Köln",
-      "status": "unmatched",
+      "status": "settled",
       "source": "football-data",
-      "note": "no_matching_score_game"
+      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5"
     },
     {
       "id": "PB-00021",
@@ -228,5 +245,5 @@
     }
   ],
   "odds_io_events_loaded": 0,
-  "football_data_matches_loaded": 0
+  "football_data_matches_loaded": 45
 }
