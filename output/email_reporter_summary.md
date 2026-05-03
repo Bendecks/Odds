@@ -2,73 +2,13 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 31
-Åben eksponering: 0 / 0 kr
+Åbne spil: 32
+Åben eksponering: 250.0 / 250.0 kr
 Profit: -21.2 kr
 ROI: -75.71%
 Hitrate: 20.0%
 
 NYE/TOP PICKS
-
-BET 1
-Kampstart: 2026-05-03 16:30
-Sport: Fodbold
-Kamp: Manchester United vs Liverpool FC
-Marked: Kampvinder
-Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
-Odds: 3.0
-Foreslået styrke: 1 units
-Edge/score: 0.0% / 6.2
-
-BET 2
-Kampstart: 2026-05-04 21:00
-Sport: Fodbold
-Kamp: Sevilla FC vs Real Sociedad San Sebastian
-Marked: Kampvinder
-Spillet er: Real Sociedad San Sebastian vinder kampen mod modstanderen i: Sevilla FC vs Real Sociedad San Sebastian.
-Odds: 2.99
-Foreslået styrke: 1 units
-Edge/score: 0.0% / 6.2
-
-BET 3
-Kampstart: 2026-05-05 02:00
-Sport: Basketball
-Kamp: New York Knicks vs Philadelphia 76ers
-Marked: Kampvinder
-Spillet er: Philadelphia 76ers vinder kampen mod modstanderen i: New York Knicks vs Philadelphia 76ers.
-Odds: 3.31
-Foreslået styrke: 1 units
-Edge/score: 0.0% / 6.2
-
-BET 4
-Kampstart: 2026-05-09 14:00
-Sport: Fodbold
-Kamp: Elche CF vs Deportivo Alaves
-Marked: Kampvinder
-Spillet er: Deportivo Alaves vinder kampen mod modstanderen i: Elche CF vs Deportivo Alaves.
-Odds: 3.38
-Foreslået styrke: 1 units
-Edge/score: 0.0% / 6.2
-
-BET 5
-Kampstart: 2026-05-09 15:30
-Sport: Fodbold
-Kamp: VfB Stuttgart vs Bayer Leverkusen
-Marked: Kampvinder
-Spillet er: Bayer Leverkusen vinder kampen mod modstanderen i: VfB Stuttgart vs Bayer Leverkusen.
-Odds: 3.23
-Foreslået styrke: 1 units
-Edge/score: 0.0% / 6.2
-
-BET 6
-Kampstart: 2026-05-09 15:30
-Sport: Fodbold
-Kamp: FC Augsburg vs Borussia Monchengladbach
-Marked: Kampvinder
-Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: FC Augsburg vs Borussia Monchengladbach.
-Odds: 3.07
-Foreslået styrke: 1 units
-Edge/score: 0.0% / 6.2
 
 ÅBNE PAPER BETS
 
@@ -263,6 +203,16 @@ Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
 BET 20
+Kampstart: 2026-05-03 16:30
+Sport: Fodbold
+Kamp: Manchester United vs Liverpool FC
+Marked: Kampvinder
+Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
+Odds: 2.96
+Indsats: 10.0 kr (1.0 units)
+Edge/score: 0.0% / 6.2
+
+BET 21
 Kampstart: 2026-05-03 17:30
 Sport: Fodbold
 Kamp: Borussia Monchengladbach vs Borussia Dortmund
@@ -272,7 +222,7 @@ Odds: 3.95
 Indsats: 2.0 kr (None units)
 Edge/score: 8.2% / 12.42
 
-BET 21
+BET 22
 Kampstart: 2026-05-03 19:30
 Sport: Fodbold
 Kamp: SC Freiburg vs VfL Wolfsburg
@@ -282,7 +232,7 @@ Odds: 2.66
 Indsats: 2.0 kr (None units)
 Edge/score: 7.3% / 12.26
 
-BET 22
+BET 23
 Kampstart: 2026-05-03 20:00
 Sport: Fodbold
 Kamp: Aston Villa vs Tottenham Hotspur
@@ -292,7 +242,7 @@ Odds: 3.31
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 23
+BET 24
 Kampstart: 2026-05-04 00:10
 Sport: Ishockey
 Kamp: Tampa Bay Lightning vs Montréal Canadiens
@@ -302,7 +252,7 @@ Odds: 3.24
 Indsats: 2.0 kr (None units)
 Edge/score: 16.8% / 21.76
 
-BET 24
+BET 25
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -312,7 +262,7 @@ Odds: 3.88
 Indsats: 2.0 kr (None units)
 Edge/score: 9.3% / 13.5
 
-BET 25
+BET 26
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -322,7 +272,7 @@ Odds: 3.81
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.3% / 11.52
 
-BET 26
+BET 27
 Kampstart: 2026-05-04 03:10
 Sport: Ishockey
 Kamp: Colorado Avalanche vs Minnesota Wild
@@ -332,7 +282,7 @@ Odds: 3.5
 Indsats: 2.0 kr (None units)
 Edge/score: 9.4% / 13.57
 
-BET 27
+BET 28
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -342,7 +292,7 @@ Odds: 3.05
 Indsats: 2.0 kr (None units)
 Edge/score: 10.9% / 15.91
 
-BET 28
+BET 29
 Kampstart: 2026-05-09 14:00
 Sport: Fodbold
 Kamp: Elche CF vs Alavés
@@ -352,7 +302,7 @@ Odds: 3.4
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.9% / 12.94
 
-BET 29
+BET 30
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: VfB Stuttgart vs Bayer Leverkusen
@@ -361,13 +311,3 @@ Spillet er: Bayer Leverkusen vinder kampen mod modstanderen i: VfB Stuttgart vs 
 Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
-
-BET 30
-Kampstart: 2026-05-09 15:30
-Sport: Fodbold
-Kamp: Augsburg vs Borussia Monchengladbach
-Marked: Kampvinder
-Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: Augsburg vs Borussia Monchengladbach.
-Odds: 3.07
-Indsats: 20.0 kr (2.0 units)
-Edge/score: 7.7% / 12.72
