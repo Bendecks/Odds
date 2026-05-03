@@ -1,30 +1,30 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-03T00:04:21.363845+00:00
+Generated: 2026-05-03T04:15:42.530820+00:00
 
-Checked open bets: 33 | Auto-settled: 0 | Pending/not finished: 27 | Unmatched: 6
+Checked open bets: 33 | Auto-settled: 3 | Pending/not finished: 19 | Unmatched: 11
 
 The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 1305
+odds-api.io fallback events loaded: 1291
 
 ## SUMMARY
 ```json
 {
-  "open_count": 33,
-  "settled_count": 1,
+  "open_count": 30,
+  "settled_count": 4,
   "won": 1,
-  "lost": 0,
+  "lost": 3,
   "push_void": 0,
-  "settled_stake": 4.0,
-  "profit": 2.8,
-  "roi_pct": 70.0,
-  "hitrate_pct": 100.0
+  "settled_stake": 18.0,
+  "profit": -11.2,
+  "roi_pct": -62.22,
+  "hitrate_pct": 25.0
 }
 ```
 
 ## DIAGNOSTICS
-- PB-00001 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00001 | Carolina Hurricanes vs Philadelphia Flyers | settled | odds-api.io | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes
 - PB-00002 | Joel Alvarez vs Bryce Logan | pending | time | kampen forventes ikke færdig endnu
 - PB-00003 | Tampa Bay Lightning vs Montréal Canadiens | pending | time | kampen forventes ikke færdig endnu
 - PB-00004 | Getafe vs Rayo Vallecano | pending | time | kampen forventes ikke færdig endnu
@@ -33,36 +33,38 @@ odds-api.io fallback events loaded: 1305
 - PB-00007 | Carlos Prates vs Jack Della Maddalena | unmatched | odds-api.io | no_matching_score_game
 - PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | time | kampen forventes ikke færdig endnu
 - PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
-- PB-00010 | Tampa Bay Rays vs San Francisco Giants | pending | time | kampen forventes ikke færdig endnu
+- PB-00010 | Tampa Bay Rays vs San Francisco Giants | unmatched | odds-api.io | no_matching_score_game
 - PB-00011 | Stephen Erceg vs Tim Elliott | unmatched | odds-api.io | no_matching_score_game
 - PB-00012 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
-- PB-00013 | Boston Red Sox vs Houston Astros | pending | time | kampen forventes ikke færdig endnu
-- PB-00014 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
-- PB-00015 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00013 | Boston Red Sox vs Houston Astros | unmatched | odds-api.io | no_matching_score_game
+- PB-00014 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
+- PB-00015 | Carolina Hurricanes vs Philadelphia Flyers | settled | odds-api.io | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes
 - PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | odds-api.io | no_matching_score_game
 - PB-00017 | Borussia Monchengladbach vs Borussia Dortmund | pending | time | kampen forventes ikke færdig endnu
 - PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | time | kampen forventes ikke færdig endnu
 - PB-00019 | FC St. Pauli vs FSV Mainz 05 | pending | time | kampen forventes ikke færdig endnu
 - PB-00020 | Union Berlin vs 1. FC Köln | unmatched | odds-api.io | no_matching_score_game
 - PB-00021 | New York Yankees vs Baltimore Orioles | unmatched | odds-api.io | no_matching_score_game
-- PB-00023 | Athletics vs Cleveland Guardians | pending | time | kampen forventes ikke færdig endnu
+- PB-00023 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | pending | time | kampen forventes ikke færdig endnu
 - PB-00025 | Elche CF vs Alavés | pending | time | kampen forventes ikke færdig endnu
 - PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | time | kampen forventes ikke færdig endnu
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
-- PB-00028 | St. Louis Cardinals vs Los Angeles Dodgers | pending | time | kampen forventes ikke færdig endnu
+- PB-00028 | St. Louis Cardinals vs Los Angeles Dodgers | unmatched | odds-api.io | no_matching_score_game
 - PB-00029 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
-- PB-00030 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00030 | Carolina Hurricanes vs Philadelphia Flyers | settled | odds-api.io | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes
 - PB-00031 | Keilor Thunder vs Geelong United | pending | time | kampen forventes ikke færdig endnu
 - PB-00032 | Manchester United vs Liverpool FC | pending | time | kampen forventes ikke færdig endnu
 - PB-00033 | Aston Villa vs Tottenham Hotspur | pending | time | kampen forventes ikke færdig endnu
 - PB-00034 | FC Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
+- PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
+- PB-00015 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.9 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
 - PB-00022 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | totals | Under @ 1.7 | Eintracht Frankfurt 1 - 2 Hamburger SV; total=3, line=3.5 | odds-api.io
+- PB-00030 | loss | profit -10.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.06 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
 
 ## OPEN
-- PB-00001 | 2026-05-03 02:00 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.88
 - PB-00002 | 2026-05-03 02:00 | mma_mixed_martial_arts | Joel Alvarez vs Bryce Logan | h2h | Bryce Logan None @ 3.5
 - PB-00003 | 2026-05-04 00:10 | icehockey_nhl | Tampa Bay Lightning vs Montréal Canadiens | h2h | Montréal Canadiens None @ 3.24
 - PB-00004 | 2026-05-03 16:15 | soccer_spain_la_liga | Getafe vs Rayo Vallecano | h2h | Rayo Vallecano None @ 5.0
@@ -76,7 +78,6 @@ odds-api.io fallback events loaded: 1305
 - PB-00012 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 @ 2.16
 - PB-00013 | 2026-05-02 22:11 | baseball_mlb | Boston Red Sox vs Houston Astros | h2h | Houston Astros None @ 2.16
 - PB-00014 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None @ 2.26
-- PB-00015 | 2026-05-03 02:10 | icehockey_nhl | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.9
 - PB-00016 | 2026-05-02 13:15 | mma_mixed_martial_arts | Louie Sutherland vs Tai Tuivasa | h2h | Louie Sutherland None @ 3.1
 - PB-00017 | 2026-05-03 17:30 | soccer_germany_bundesliga | Borussia Monchengladbach vs Borussia Dortmund | h2h | Borussia Monchengladbach None @ 3.95
 - PB-00018 | 2026-05-03 19:30 | soccer_germany_bundesliga | SC Freiburg vs VfL Wolfsburg | h2h | SC Freiburg None @ 2.66
@@ -90,7 +91,6 @@ odds-api.io fallback events loaded: 1305
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None @ 3.07
 - PB-00028 | 2026-05-03 01:16 | baseball_mlb | St. Louis Cardinals vs Los Angeles Dodgers | h2h | Los Angeles Dodgers None @ 1.77
 - PB-00029 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None @ 3.81
-- PB-00030 | 2026-05-03 02:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.06
 - PB-00031 | 2026-05-03 06:00 | basketball_odds_api_io | Keilor Thunder vs Geelong United | h2h | Geelong United None @ 3.15
 - PB-00032 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None @ 3.08
 - PB-00033 | 2026-05-03 20:00 | soccer_odds_api_io | Aston Villa vs Tottenham Hotspur | h2h | Tottenham Hotspur None @ 3.31

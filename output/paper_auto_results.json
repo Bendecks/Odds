@@ -1,13 +1,38 @@
 {
-  "generated_at": "2026-05-03T00:04:21.363495+00:00",
-  "results": [],
+  "generated_at": "2026-05-03T04:15:42.530411+00:00",
+  "results": [
+    {
+      "id": "PB-00001",
+      "result": "loss",
+      "profit": -2.0,
+      "note": "Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes",
+      "settled_at": "2026-05-03T04:15:42.366224+00:00",
+      "source": "odds-api.io"
+    },
+    {
+      "id": "PB-00015",
+      "result": "loss",
+      "profit": -2.0,
+      "note": "Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes",
+      "settled_at": "2026-05-03T04:15:42.453582+00:00",
+      "source": "odds-api.io"
+    },
+    {
+      "id": "PB-00030",
+      "result": "loss",
+      "profit": -10.0,
+      "note": "Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes",
+      "settled_at": "2026-05-03T04:15:42.529284+00:00",
+      "source": "odds-api.io"
+    }
+  ],
   "diagnostics": [
     {
       "id": "PB-00001",
       "event": "Carolina Hurricanes vs Philadelphia Flyers",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes"
     },
     {
       "id": "PB-00002",
@@ -68,9 +93,9 @@
     {
       "id": "PB-00010",
       "event": "Tampa Bay Rays vs San Francisco Giants",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00011",
@@ -89,23 +114,23 @@
     {
       "id": "PB-00013",
       "event": "Boston Red Sox vs Houston Astros",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00014",
       "event": "Athletics vs Cleveland Guardians",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00015",
       "event": "Carolina Hurricanes vs Philadelphia Flyers",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes"
     },
     {
       "id": "PB-00016",
@@ -152,9 +177,9 @@
     {
       "id": "PB-00023",
       "event": "Athletics vs Cleveland Guardians",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00024",
@@ -187,9 +212,9 @@
     {
       "id": "PB-00028",
       "event": "St. Louis Cardinals vs Los Angeles Dodgers",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00029",
@@ -201,9 +226,9 @@
     {
       "id": "PB-00030",
       "event": "Carolina Hurricanes vs Philadelphia Flyers",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes"
     },
     {
       "id": "PB-00031",
@@ -234,5 +259,5 @@
       "note": "kampen forventes ikke færdig endnu"
     }
   ],
-  "odds_io_events_loaded": 1305
+  "odds_io_events_loaded": 1291
 }
