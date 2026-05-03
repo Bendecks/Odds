@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-03T07:56:36.755613+00:00
+Generated: 2026-05-03T09:21:47.371654+00:00
 
 Source mode: V11_RESILIENT_MULTI_SOURCE_ENGINE+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 0 | Skipped duplicates: 2 | Skipped exposure cap: 4
+Added this run: 1 | Skipped duplicates: 1 | Skipped exposure cap: 4
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -18,16 +18,16 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
   "open_count": 32,
-  "settled_count": 4,
+  "settled_count": 5,
   "won": 1,
-  "lost": 3,
+  "lost": 4,
   "push_void": 0,
   "open_stake": 250.0,
   "available_exposure_kr": 0,
-  "settled_stake": 18.0,
-  "profit": -11.2,
-  "roi_pct": -62.22,
-  "hitrate_pct": 25.0
+  "settled_stake": 28.0,
+  "profit": -21.2,
+  "roi_pct": -75.71,
+  "hitrate_pct": 20.0
 }
 ```
 
@@ -45,13 +45,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00028 | 2026-05-03 01:16 | baseball_mlb | St. Louis Cardinals vs Los Angeles Dodgers | h2h | Los Angeles Dodgers None | odds 1.77 | units 3.0 | stake 30.0 kr | edge 6.0 | score 10.99
 - PB-00002 | 2026-05-03 02:00 | mma_mixed_martial_arts | Joel Alvarez vs Bryce Logan | h2h | Bryce Logan None | odds 3.5 | units None | stake 1.0 kr | edge 20.7 | score 22.89
 - PB-00024 | 2026-05-03 02:50 | mma_mixed_martial_arts | Humberto Bandenay vs Sang Won Kim | h2h | Sang Won Kim None | odds 2.65 | units 1.0 | stake 10.0 kr | edge 8.2 | score 11.16
-- PB-00031 | 2026-05-03 06:00 | basketball_odds_api_io | Keilor Thunder vs Geelong United | h2h | Geelong United None | odds 3.15 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00006 | 2026-05-03 15:00 | soccer_epl | Bournemouth vs Crystal Palace | h2h | Crystal Palace None | odds 5.6 | units None | stake 1.0 kr | edge 12.0 | score 14.5
 - PB-00035 | 2026-05-03 15:30 | soccer_odds_api_io | FC St. Pauli vs FSV Mainz | h2h | FC St. Pauli None | odds 2.98 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00019 | 2026-05-03 15:30 | soccer_germany_bundesliga | FC St. Pauli vs FSV Mainz 05 | h2h | FC St. Pauli None | odds 2.94 | units None | stake 2.0 kr | edge 6.9 | score 11.91
 - PB-00004 | 2026-05-03 16:15 | soccer_spain_la_liga | Getafe vs Rayo Vallecano | h2h | Rayo Vallecano None | odds 5.0 | units None | stake 1.0 kr | edge 13.6 | score 16.14
 - PB-00032 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.08 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00036 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.0 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
+- PB-00037 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 2.96 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00017 | 2026-05-03 17:30 | soccer_germany_bundesliga | Borussia Monchengladbach vs Borussia Dortmund | h2h | Borussia Monchengladbach None | odds 3.95 | units None | stake 2.0 kr | edge 8.2 | score 12.42
 - PB-00018 | 2026-05-03 19:30 | soccer_germany_bundesliga | SC Freiburg vs VfL Wolfsburg | h2h | SC Freiburg None | odds 2.66 | units None | stake 2.0 kr | edge 7.3 | score 12.26
 - PB-00033 | 2026-05-03 20:00 | soccer_odds_api_io | Aston Villa vs Tottenham Hotspur | h2h | Tottenham Hotspur None | odds 3.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
@@ -70,3 +70,4 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00001 | 2026-05-03 02:00 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | Philadelphia Flyers @ 3.88
 - PB-00030 | 2026-05-03 02:00 | loss | profit -10.0 | Carolina Hurricanes vs Philadelphia Flyers | Philadelphia Flyers @ 3.06
 - PB-00015 | 2026-05-03 02:10 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | Philadelphia Flyers @ 3.9
+- PB-00031 | 2026-05-03 06:00 | loss | profit -10.0 | Keilor Thunder vs Geelong United | Geelong United @ 3.15
