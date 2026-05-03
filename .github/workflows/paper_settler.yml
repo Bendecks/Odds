@@ -3,7 +3,7 @@ name: Paper Auto Settler
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */2 * * *'
 
 permissions:
   contents: write
@@ -34,6 +34,7 @@ jobs:
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python scripts/paper_auto_settler.py
 
       - name: Commit results
