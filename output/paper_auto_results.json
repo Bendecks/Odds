@@ -1,31 +1,6 @@
 {
-  "generated_at": "2026-05-03T16:35:25.900494+00:00",
-  "results": [
-    {
-      "id": "PB-00006",
-      "result": "loss",
-      "profit": -1.0,
-      "note": "Bournemouth 3 - 0 Crystal Palace; winner=Bournemouth",
-      "settled_at": "2026-05-03T16:35:25.787148+00:00",
-      "source": "odds-api.io"
-    },
-    {
-      "id": "PB-00019",
-      "result": "loss",
-      "profit": -2.0,
-      "note": "FC St. Pauli 1 - 2 FSV Mainz 05; winner=FSV Mainz 05",
-      "settled_at": "2026-05-03T16:35:25.852372+00:00",
-      "source": "odds-api.io"
-    },
-    {
-      "id": "PB-00035",
-      "result": "loss",
-      "profit": -10.0,
-      "note": "FC St. Pauli 1 - 2 FSV Mainz; winner=FSV Mainz",
-      "settled_at": "2026-05-03T16:35:25.899266+00:00",
-      "source": "odds-api.io"
-    }
-  ],
+  "generated_at": "2026-05-03T16:55:54.177121+00:00",
+  "results": [],
   "diagnostics": [
     {
       "id": "PB-00002",
@@ -44,9 +19,9 @@
     {
       "id": "PB-00004",
       "event": "Getafe vs Rayo Vallecano",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "football-data",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00005",
@@ -54,13 +29,6 @@
       "status": "pending",
       "source": "time",
       "note": "kampen forventes ikke færdig endnu"
-    },
-    {
-      "id": "PB-00006",
-      "event": "Bournemouth vs Crystal Palace",
-      "status": "settled",
-      "source": "odds-api.io",
-      "note": "Bournemouth 3 - 0 Crystal Palace; winner=Bournemouth"
     },
     {
       "id": "PB-00007",
@@ -133,13 +101,6 @@
       "note": "kampen forventes ikke færdig endnu"
     },
     {
-      "id": "PB-00019",
-      "event": "FC St. Pauli vs FSV Mainz 05",
-      "status": "settled",
-      "source": "odds-api.io",
-      "note": "FC St. Pauli 1 - 2 FSV Mainz 05; winner=FSV Mainz 05"
-    },
-    {
       "id": "PB-00021",
       "event": "New York Yankees vs Baltimore Orioles",
       "status": "unmatched",
@@ -198,9 +159,9 @@
     {
       "id": "PB-00032",
       "event": "Manchester United vs Liverpool FC",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "football-data",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00033",
@@ -217,27 +178,20 @@
       "note": "kampen forventes ikke færdig endnu"
     },
     {
-      "id": "PB-00035",
-      "event": "FC St. Pauli vs FSV Mainz",
-      "status": "settled",
-      "source": "odds-api.io",
-      "note": "FC St. Pauli 1 - 2 FSV Mainz; winner=FSV Mainz"
-    },
-    {
       "id": "PB-00036",
       "event": "Manchester United vs Liverpool FC",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "football-data",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00037",
       "event": "Manchester United vs Liverpool FC",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "football-data",
+      "note": "no_matching_score_game"
     }
   ],
-  "odds_io_events_loaded": 1006,
-  "football_data_matches_loaded": 43
+  "odds_io_events_loaded": 0,
+  "football_data_matches_loaded": 0
 }

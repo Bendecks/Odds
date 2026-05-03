@@ -1,14 +1,14 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-03T16:35:25.900844+00:00
+Generated: 2026-05-03T16:55:54.177420+00:00
 
-Checked open bets: 30 | Auto-settled: 3 | Pending/not finished: 16 | Unmatched: 11
+Checked open bets: 27 | Auto-settled: 0 | Pending/not finished: 12 | Unmatched: 15
 
-The Odds API sports queried: mma_mixed_martial_arts, icehockey_nhl, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
+The Odds API sports queried: mma_mixed_martial_arts, icehockey_nhl, soccer_spain_la_liga, basketball_nba, baseball_mlb, soccer_germany_bundesliga, soccer_epl
 
-odds-api.io fallback events loaded: 1006
+odds-api.io fallback events loaded: 0
 
-football-data fallback matches loaded: 43
+football-data fallback matches loaded: 0
 
 ## SUMMARY
 ```json
@@ -28,9 +28,8 @@ football-data fallback matches loaded: 43
 ## DIAGNOSTICS
 - PB-00002 | Joel Alvarez vs Bryce Logan | unmatched | odds-api.io | no_matching_score_game
 - PB-00003 | Tampa Bay Lightning vs Montréal Canadiens | pending | time | kampen forventes ikke færdig endnu
-- PB-00004 | Getafe vs Rayo Vallecano | pending | time | kampen forventes ikke færdig endnu
+- PB-00004 | Getafe vs Rayo Vallecano | unmatched | football-data | no_matching_score_game
 - PB-00005 | Levante vs CA Osasuna | pending | time | kampen forventes ikke færdig endnu
-- PB-00006 | Bournemouth vs Crystal Palace | settled | odds-api.io | Bournemouth 3 - 0 Crystal Palace; winner=Bournemouth
 - PB-00007 | Carlos Prates vs Jack Della Maddalena | unmatched | odds-api.io | no_matching_score_game
 - PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | time | kampen forventes ikke færdig endnu
 - PB-00009 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
@@ -41,7 +40,6 @@ football-data fallback matches loaded: 43
 - PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | odds-api.io | no_matching_score_game
 - PB-00017 | Borussia Monchengladbach vs Borussia Dortmund | pending | time | kampen forventes ikke færdig endnu
 - PB-00018 | SC Freiburg vs VfL Wolfsburg | pending | time | kampen forventes ikke færdig endnu
-- PB-00019 | FC St. Pauli vs FSV Mainz 05 | settled | odds-api.io | FC St. Pauli 1 - 2 FSV Mainz 05; winner=FSV Mainz 05
 - PB-00021 | New York Yankees vs Baltimore Orioles | unmatched | odds-api.io | no_matching_score_game
 - PB-00023 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | unmatched | odds-api.io | no_matching_score_game
@@ -50,12 +48,11 @@ football-data fallback matches loaded: 43
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 - PB-00028 | St. Louis Cardinals vs Los Angeles Dodgers | unmatched | odds-api.io | no_matching_score_game
 - PB-00029 | Cleveland Cavaliers vs Toronto Raptors | pending | time | kampen forventes ikke færdig endnu
-- PB-00032 | Manchester United vs Liverpool FC | pending | time | kampen forventes ikke færdig endnu
+- PB-00032 | Manchester United vs Liverpool FC | unmatched | football-data | no_matching_score_game
 - PB-00033 | Aston Villa vs Tottenham Hotspur | pending | time | kampen forventes ikke færdig endnu
 - PB-00034 | FC Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
-- PB-00035 | FC St. Pauli vs FSV Mainz | settled | odds-api.io | FC St. Pauli 1 - 2 FSV Mainz; winner=FSV Mainz
-- PB-00036 | Manchester United vs Liverpool FC | pending | time | kampen forventes ikke færdig endnu
-- PB-00037 | Manchester United vs Liverpool FC | pending | time | kampen forventes ikke færdig endnu
+- PB-00036 | Manchester United vs Liverpool FC | unmatched | football-data | no_matching_score_game
+- PB-00037 | Manchester United vs Liverpool FC | unmatched | football-data | no_matching_score_game
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
