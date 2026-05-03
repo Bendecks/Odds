@@ -1,13 +1,22 @@
 {
-  "generated_at": "2026-05-03T06:44:41.625328+00:00",
-  "results": [],
+  "generated_at": "2026-05-03T08:28:38.961774+00:00",
+  "results": [
+    {
+      "id": "PB-00031",
+      "result": "loss",
+      "profit": -10.0,
+      "note": "Keilor Thunder 91 - 75 Geelong United; winner=Keilor Thunder",
+      "settled_at": "2026-05-03T08:28:38.960699+00:00",
+      "source": "odds-api.io"
+    }
+  ],
   "diagnostics": [
     {
       "id": "PB-00002",
       "event": "Joel Alvarez vs Bryce Logan",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00003",
@@ -145,9 +154,9 @@
     {
       "id": "PB-00024",
       "event": "Humberto Bandenay vs Sang Won Kim",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00025",
@@ -187,9 +196,9 @@
     {
       "id": "PB-00031",
       "event": "Keilor Thunder vs Geelong United",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Keilor Thunder 91 - 75 Geelong United; winner=Keilor Thunder"
     },
     {
       "id": "PB-00032",
