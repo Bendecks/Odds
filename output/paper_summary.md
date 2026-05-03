@@ -1,6 +1,6 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-03T19:32:23.099116+00:00
+Generated: 2026-05-03T20:37:56.647760+00:00
 
 Source mode: V11_RESILIENT_MULTI_SOURCE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_MODE
 
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 25,
-  "settled_count": 12,
+  "open_count": 24,
+  "settled_count": 13,
   "won": 3,
   "lost": 9,
-  "push_void": 0,
-  "open_stake": 226.0,
-  "available_exposure_kr": 24.0,
+  "push_void": 1,
+  "open_stake": 224.0,
+  "available_exposure_kr": 26.0,
   "settled_stake": 52.0,
   "profit": -32.3,
   "roi_pct": -62.12,
@@ -46,7 +46,6 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00032 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.08 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00036 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.0 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00037 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 2.96 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
-- PB-00018 | 2026-05-03 19:30 | soccer_germany_bundesliga | SC Freiburg vs VfL Wolfsburg | h2h | SC Freiburg None | odds 2.66 | units None | stake 2.0 kr | edge 7.3 | score 12.26
 - PB-00033 | 2026-05-03 20:00 | soccer_odds_api_io | Aston Villa vs Tottenham Hotspur | h2h | Tottenham Hotspur None | odds 3.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00003 | 2026-05-04 00:10 | icehockey_nhl | Tampa Bay Lightning vs Montréal Canadiens | h2h | Montréal Canadiens None | odds 3.24 | units None | stake 2.0 kr | edge 16.8 | score 21.76
 - PB-00009 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None | odds 3.88 | units None | stake 2.0 kr | edge 9.3 | score 13.5
@@ -71,3 +70,4 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00019 | 2026-05-03 15:30 | loss | profit -2.0 | FC St. Pauli vs FSV Mainz 05 | FC St. Pauli @ 2.94
 - PB-00004 | 2026-05-03 16:15 | win | profit 4.0 | Getafe vs Rayo Vallecano | Rayo Vallecano @ 5.0
 - PB-00017 | 2026-05-03 17:30 | win | profit 5.9 | Borussia Monchengladbach vs Borussia Dortmund | Borussia Monchengladbach @ 3.95
+- PB-00018 | 2026-05-03 19:30 | push | profit 0.0 | SC Freiburg vs VfL Wolfsburg | SC Freiburg @ 2.66
