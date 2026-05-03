@@ -1,6 +1,6 @@
 # V10 ADAPTIVE FEEDBACK ACTIVE
 
-Activated: 2026-05-03T14:23:06.698764+00:00 | feedback patterns: 0 | adjustments applied: 0
+Activated: 2026-05-03T14:42:17.260930+00:00 | feedback patterns: 0 | adjustments applied: 0
 
 No V9 feedback data yet. V10 is active but neutral until enough settled bets exist.
 
@@ -46,19 +46,19 @@ THE_ODDS_API quota brugt. ingen spil nu (odds-api.io fallback aktiv)
     },
     {
       "label": "odds-api.io",
-      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 55 seconds.\"}"
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 10 minutes and 44 seconds.\"}"
     },
     {
       "label": "odds-api.io",
-      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 55 seconds.\"}"
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 10 minutes and 44 seconds.\"}"
     },
     {
       "label": "odds-api.io",
-      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 55 seconds.\"}"
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 10 minutes and 44 seconds.\"}"
     },
     {
       "label": "odds-api.io",
-      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 55 seconds.\"}"
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 10 minutes and 44 seconds.\"}"
     }
   ],
   "quota_exhausted": true,
