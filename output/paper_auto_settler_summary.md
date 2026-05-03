@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER V3 — MULTI SOURCE
 
-Generated: 2026-05-02T23:06:22.225837+00:00
+Generated: 2026-05-03T00:04:21.363845+00:00
 
 Checked open bets: 33 | Auto-settled: 0 | Pending/not finished: 27 | Unmatched: 6
 
 The Odds API sports queried: icehockey_nhl, mma_mixed_martial_arts, soccer_spain_la_liga, soccer_epl, basketball_nba, baseball_mlb, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 0
+odds-api.io fallback events loaded: 1305
 
 ## SUMMARY
 ```json
