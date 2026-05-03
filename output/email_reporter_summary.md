@@ -3,12 +3,72 @@ Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
 Åbne spil: 30
-Åben eksponering: 0 / 0 kr
+Åben eksponering: 242.0 / 250.0 kr
 Profit: -29.2 kr
 ROI: -81.11%
 Hitrate: 14.29%
 
 NYE/TOP PICKS
+
+BET 1
+Kampstart: 2026-05-04 21:00
+Sport: Fodbold
+Kamp: Sevilla FC vs Real Sociedad San Sebastian
+Marked: Kampvinder
+Spillet er: Real Sociedad San Sebastian vinder kampen mod modstanderen i: Sevilla FC vs Real Sociedad San Sebastian.
+Odds: 2.99
+Foreslået styrke: 1 units
+Edge/score: 0.0% / 6.2
+
+BET 2
+Kampstart: 2026-05-05 02:00
+Sport: Basketball
+Kamp: New York Knicks vs Philadelphia 76ers
+Marked: Kampvinder
+Spillet er: Philadelphia 76ers vinder kampen mod modstanderen i: New York Knicks vs Philadelphia 76ers.
+Odds: 3.38
+Foreslået styrke: 1 units
+Edge/score: 0.0% / 6.2
+
+BET 3
+Kampstart: 2026-05-09 14:00
+Sport: Fodbold
+Kamp: Elche CF vs Deportivo Alaves
+Marked: Kampvinder
+Spillet er: Deportivo Alaves vinder kampen mod modstanderen i: Elche CF vs Deportivo Alaves.
+Odds: 3.37
+Foreslået styrke: 1 units
+Edge/score: 0.0% / 6.2
+
+BET 4
+Kampstart: 2026-05-09 15:30
+Sport: Fodbold
+Kamp: VfB Stuttgart vs Bayer Leverkusen
+Marked: Kampvinder
+Spillet er: Bayer Leverkusen vinder kampen mod modstanderen i: VfB Stuttgart vs Bayer Leverkusen.
+Odds: 3.23
+Foreslået styrke: 1 units
+Edge/score: 0.0% / 6.2
+
+BET 5
+Kampstart: 2026-05-09 15:30
+Sport: Fodbold
+Kamp: FC Augsburg vs Borussia Monchengladbach
+Marked: Kampvinder
+Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: FC Augsburg vs Borussia Monchengladbach.
+Odds: 3.05
+Foreslået styrke: 1 units
+Edge/score: 0.0% / 6.2
+
+BET 6
+Kampstart: 2026-05-10 14:00
+Sport: Fodbold
+Kamp: FC Nordsjaelland vs FC Midtjylland
+Marked: Kampvinder
+Spillet er: FC Nordsjaelland vinder kampen mod modstanderen i: FC Nordsjaelland vs FC Midtjylland.
+Odds: 3.31
+Foreslået styrke: 1 units
+Edge/score: 0.0% / 6.2
 
 ÅBNE PAPER BETS
 
