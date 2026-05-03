@@ -9,6 +9,7 @@ RESULTS_JSON = OUT / 'paper_auto_results.json'
 
 THE_ODDS_API_KEY = os.getenv('THE_ODDS_API_KEY','')
 ODDS_API_IO_KEY = os.getenv('ODDS_API_IO_KEY','')
+FOOTBALL_DATA_API_KEY = os.getenv('FOOTBALL_DATA_API_KEY','')
 DAYS_FROM = int(os.getenv('SCORES_DAYS_FROM','3'))
 ODDS_IO_BASE = 'https://api.odds-api.io/v3'
 
@@ -35,6 +36,15 @@ ODDS_IO_LEAGUE_HINTS = {
     'basketball_nba': ['usa-nba'],
 }
 
+FOOTBALL_DATA_COMPETITIONS = {
+    'soccer_epl': 'PL',
+    'soccer_spain_la_liga': 'PD',
+    'soccer_germany_bundesliga': 'BL1',
+    'soccer_italy_serie_a': 'SA',
+    'soccer_france_ligue_one': 'FL1',
+    'soccer_uefa_champs_league': 'CL',
+}
+
 
 def now_iso(): return datetime.now(timezone.utc).isoformat()
 def now_dt(): return datetime.now(timezone.utc)
@@ -50,8 +60,8 @@ def save_json(path, data): path.write_text(json.dumps(data, ensure_ascii=False, 
 def norm(s):
     s = str(s or '').lower()
     s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode('ascii')
-    s = s.replace('koln','koln').replace('koeln','koln')
-    s = re.sub(r'\b(fc|cf|sc|sv|afc|bc|club|team|1)\b', '', s)
+    s = s.replace('koeln','koln')
+    s = re.sub(r'\b(football|club|fc|cf|sc|sv|afc|bc|team|1)\b', '', s)
     s = re.sub(r'[^a-z0-9]+', '', s)
     return s
 
@@ -107,6 +117,59 @@ def odds_io_call(path, params):
         return data if isinstance(data, list) else []
     except Exception: return []
 
+def football_data_call(path, params=None):
+    if not FOOTBALL_DATA_API_KEY: return {}
+    try:
+        r = requests.get('https://api.football-data.org/v4' + path, params=params or {}, headers={'X-Auth-Token': FOOTBALL_DATA_API_KEY}, timeout=60)
+        if not r.ok: return {}
+        return r.json()
+    except Exception:
+        return {}
+
+def football_data_comp_for_bet(bet):
+    return FOOTBALL_DATA_COMPETITIONS.get(str(bet.get('sport') or ''))
+
+def date_window_for_open_bets(open_bets):
+    dates=[]
+    for b in open_bets:
+        if sport_bucket(b.get('sport')) != 'soccer': continue
+        d=parse_dt(b.get('start'))
+        if d: dates.append(d.date())
+    if not dates: return None, None
+    return (min(dates) - timedelta(days=1)).isoformat(), (max(dates) + timedelta(days=1)).isoformat()
+
+def get_football_data_events(open_bets):
+    if not FOOTBALL_DATA_API_KEY: return []
+    date_from, date_to = date_window_for_open_bets(open_bets)
+    if not date_from: return []
+    comps=[]
+    for b in open_bets:
+        comp=football_data_comp_for_bet(b)
+        if comp and comp not in comps: comps.append(comp)
+    out=[]
+    for comp in comps or [None]:
+        params={'dateFrom':date_from,'dateTo':date_to}
+        if comp: params['competitions']=comp
+        data=football_data_call('/matches', params)
+        for m in data.get('matches', []) if isinstance(data, dict) else []:
+            if not isinstance(m, dict): continue
+            home=(m.get('homeTeam') or {}).get('name')
+            away=(m.get('awayTeam') or {}).get('name')
+            score=m.get('score') or {}
+            ft=score.get('fullTime') or {}
+            out.append({
+                'source':'football-data',
+                'id':m.get('id'),
+                'home_team':home,
+                'away_team':away,
+                'commence_time':m.get('utcDate'),
+                'status':m.get('status'),
+                'scores':{'home':ft.get('home'), 'away':ft.get('away')},
+                'competition': ((m.get('competition') or {}).get('code') or comp),
+                'sport_key':'soccer_football_data'
+            })
+    return out
+
 def odds_io_sport_for_bet(bet):
     s = str(bet.get('sport') or '')
     if s.startswith('soccer_'): return 'football'
@@ -126,7 +189,6 @@ def odds_io_leagues_for_bet(bet):
     return [x.get('slug') for x in rows[:3]]
 
 def get_odds_io_events_for_open_bets(open_bets):
-    # Fetch only relevant league event lists, then match locally.
     out = []
     fetched = set()
     for b in open_bets:
@@ -183,7 +245,7 @@ def score_map(game):
 def game_completed(game, bet):
     status = str(game.get('status') or '').lower()
     if game.get('completed') is True: return True
-    if status in ('completed','complete','finished','ended','closed','final','ft','ended_normally'): return True
+    if status in ('completed','complete','finished','ended','closed','final','ft','ended_normally','finished_provisional'): return True
     return bool(score_map(game)) and likely_finished(bet)
 
 def match_game(bet, games):
@@ -203,7 +265,7 @@ def match_game(bet, games):
         score = 100
         if bet_start and gs:
             diff_h = abs((bet_start - gs).total_seconds()) / 3600
-            if diff_h > 24: continue
+            if diff_h > 30: continue
             score -= diff_h
         if not game_completed(g, bet): return None, 'matched_but_not_completed_yet'
         if score > best_score:
@@ -267,21 +329,22 @@ def summarize(bets):
     hit=(len(won)/(len(won)+len(lost))*100) if (len(won)+len(lost)) else 0
     return {'open_count':len(open_bets),'settled_count':len(settled),'won':len(won),'lost':len(lost),'push_void':len(push),'settled_stake':round(settled_stake,2),'profit':round(profit,2),'roi_pct':round(roi,2),'hitrate_pct':round(hit,2)}
 
-def write_md(bets, applied, checked, pending, unmatched, source_sports, diagnostics, odds_io_count):
+def write_md(bets, applied, checked, pending, unmatched, source_sports, diagnostics, odds_io_count, football_data_count):
     with AUTO_MD.open('w', encoding='utf-8') as f:
-        f.write('# PAPER AUTO SETTLER V3 — MULTI SOURCE\n\n')
+        f.write('# PAPER AUTO SETTLER V4 — THE ODDS + ODDS-API.IO + FOOTBALL-DATA\n\n')
         f.write(f'Generated: {now_iso()}\n\n')
         f.write(f'Checked open bets: {checked} | Auto-settled: {applied} | Pending/not finished: {pending} | Unmatched: {unmatched}\n\n')
         f.write(f'The Odds API sports queried: {", ".join(source_sports)}\n\n')
         f.write(f'odds-api.io fallback events loaded: {odds_io_count}\n\n')
+        f.write(f'football-data fallback matches loaded: {football_data_count}\n\n')
         f.write('## SUMMARY\n```json\n'+json.dumps(summarize(bets),ensure_ascii=False,indent=2)+'\n```\n\n')
         f.write('## DIAGNOSTICS\n')
-        for d in diagnostics[-160:]: f.write(f"- {d.get('id')} | {d.get('event')} | {d.get('status')} | {d.get('source')} | {d.get('note')}\n")
+        for d in diagnostics[-220:]: f.write(f"- {d.get('id')} | {d.get('event')} | {d.get('status')} | {d.get('source')} | {d.get('note')}\n")
         f.write('\n## RECENT SETTLED\n')
-        for b in [x for x in bets if x.get('status')=='settled'][-80:]:
+        for b in [x for x in bets if x.get('status')=='settled'][-100:]:
             f.write(f"- {b.get('id')} | {b.get('result')} | profit {b.get('profit')} | {b.get('event')} | {b.get('market')} | {b.get('pick')} @ {b.get('odds')} | {b.get('auto_settle_note','')} | {b.get('result_source')}\n")
         f.write('\n## OPEN\n')
-        for b in [x for x in bets if x.get('status')=='open'][-100:]:
+        for b in [x for x in bets if x.get('status')=='open'][-120:]:
             f.write(f"- {b.get('id')} | {b.get('start_local') or b.get('start')} | {b.get('sport')} | {b.get('event')} | {b.get('market')} | {b.get('pick')} {b.get('point')} @ {b.get('odds')}\n")
 
 def main():
@@ -294,6 +357,7 @@ def main():
             if s not in needed: needed.append(s)
     scores_by_sport = {s: get_scores(s) for s in needed}
     odds_io_events = get_odds_io_events_for_open_bets(open_bets)
+    football_events = get_football_data_events(open_bets)
     auto_results=[]; applied=0; checked=0; unmatched=0; pending=0; diagnostics=[]
     for b in open_bets:
         checked += 1
@@ -307,6 +371,9 @@ def main():
         if not matched and match_note != 'matched_but_not_completed_yet':
             matched, match_note = match_game(b, odds_io_events)
             source = 'odds-api.io'
+        if not matched and match_note != 'matched_but_not_completed_yet' and sport_bucket(b.get('sport')) == 'soccer':
+            matched, match_note = match_game(b, football_events)
+            source = 'football-data'
         if not matched:
             if match_note == 'matched_but_not_completed_yet':
                 pending += 1; diagnostics.append({'id':b.get('id'),'event':b.get('event'),'status':'pending','source':source,'note':match_note})
@@ -323,8 +390,8 @@ def main():
         applied += 1
     paper['updated_at']=now_iso(); paper['bets']=bets; paper['summary']=summarize(bets)
     save_json(PAPER_JSON, paper)
-    save_json(RESULTS_JSON, {'generated_at':now_iso(),'results':auto_results,'diagnostics':diagnostics,'odds_io_events_loaded':len(odds_io_events)})
-    write_md(bets, applied, checked, pending, unmatched, needed, diagnostics, len(odds_io_events))
-    print(f'Paper Auto Settler V3 complete. checked={checked} applied={applied} pending={pending} unmatched={unmatched} odds_io_events={len(odds_io_events)}')
+    save_json(RESULTS_JSON, {'generated_at':now_iso(),'results':auto_results,'diagnostics':diagnostics,'odds_io_events_loaded':len(odds_io_events),'football_data_matches_loaded':len(football_events)})
+    write_md(bets, applied, checked, pending, unmatched, needed, diagnostics, len(odds_io_events), len(football_events))
+    print(f'Paper Auto Settler V4 complete. checked={checked} applied={applied} pending={pending} unmatched={unmatched} odds_io_events={len(odds_io_events)} football_data={len(football_events)}')
 
 if __name__ == '__main__': main()
