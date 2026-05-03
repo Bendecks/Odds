@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-03T20:31:11.102906+00:00
+Generated: 2026-05-03T22:29:09.175886+00:00
 
-Checked open bets: 25 | Auto-settled: 1 | Pending/not finished: 9 | Unmatched: 15
+Checked open bets: 24 | Auto-settled: 0 | Pending/not finished: 9 | Unmatched: 15
 
 The Odds API sports queried: mma_mixed_martial_arts, icehockey_nhl, soccer_spain_la_liga, basketball_nba, baseball_mlb, soccer_germany_bundesliga, soccer_epl
 
-odds-api.io fallback events loaded: 963
+odds-api.io fallback events loaded: 954
 
 football-data fallback matches loaded: 29
 
@@ -37,7 +37,6 @@ football-data fallback matches loaded: 29
 - PB-00013 | Boston Red Sox vs Houston Astros | unmatched | odds-api.io | no_matching_score_game
 - PB-00014 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
 - PB-00016 | Louie Sutherland vs Tai Tuivasa | unmatched | odds-api.io | no_matching_score_game
-- PB-00018 | SC Freiburg vs VfL Wolfsburg | settled | odds-api.io | SC Freiburg 1 - 1 VfL Wolfsburg
 - PB-00021 | New York Yankees vs Baltimore Orioles | unmatched | odds-api.io | no_matching_score_game
 - PB-00023 | Athletics vs Cleveland Guardians | unmatched | odds-api.io | no_matching_score_game
 - PB-00024 | Humberto Bandenay vs Sang Won Kim | unmatched | odds-api.io | no_matching_score_game
