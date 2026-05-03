@@ -16,7 +16,7 @@ Sport: Ishockey
 Kamp: Carolina Hurricanes vs Philadelphia Flyers
 Marked: Kampvinder
 Spillet er: Philadelphia Flyers vinder kampen mod modstanderen i: Carolina Hurricanes vs Philadelphia Flyers.
-Odds: 3.06
+Odds: 3.0
 Foreslået styrke: 1 units
 Edge/score: 0.0% / 6.2
 
@@ -36,17 +36,17 @@ Sport: Fodbold
 Kamp: Manchester United vs Liverpool FC
 Marked: Kampvinder
 Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
-Odds: 3.08
+Odds: 3.02
 Foreslået styrke: 1 units
 Edge/score: 0.0% / 6.2
 
 BET 4
-Kampstart: 2026-05-03 20:00
+Kampstart: 2026-05-04 21:00
 Sport: Fodbold
-Kamp: Aston Villa vs Tottenham Hotspur
+Kamp: Sevilla FC vs Real Sociedad San Sebastian
 Marked: Kampvinder
-Spillet er: Tottenham Hotspur vinder kampen mod modstanderen i: Aston Villa vs Tottenham Hotspur.
-Odds: 3.31
+Spillet er: Real Sociedad San Sebastian vinder kampen mod modstanderen i: Sevilla FC vs Real Sociedad San Sebastian.
+Odds: 2.99
 Foreslået styrke: 1 units
 Edge/score: 0.0% / 6.2
 
