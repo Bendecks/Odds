@@ -1,6 +1,23 @@
 {
-  "generated_at": "2026-05-03T16:55:54.177121+00:00",
-  "results": [],
+  "generated_at": "2026-05-03T18:41:23.074879+00:00",
+  "results": [
+    {
+      "id": "PB-00004",
+      "result": "win",
+      "profit": 4.0,
+      "note": "Getafe 0 - 2 Rayo Vallecano; winner=Rayo Vallecano",
+      "settled_at": "2026-05-03T18:41:22.942164+00:00",
+      "source": "odds-api.io"
+    },
+    {
+      "id": "PB-00017",
+      "result": "win",
+      "profit": 5.9,
+      "note": "Borussia Monchengladbach 1 - 0 Borussia Dortmund; winner=Borussia Monchengladbach",
+      "settled_at": "2026-05-03T18:41:23.006953+00:00",
+      "source": "odds-api.io"
+    }
+  ],
   "diagnostics": [
     {
       "id": "PB-00002",
@@ -19,9 +36,9 @@
     {
       "id": "PB-00004",
       "event": "Getafe vs Rayo Vallecano",
-      "status": "unmatched",
-      "source": "football-data",
-      "note": "no_matching_score_game"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Getafe 0 - 2 Rayo Vallecano; winner=Rayo Vallecano"
     },
     {
       "id": "PB-00005",
@@ -89,9 +106,9 @@
     {
       "id": "PB-00017",
       "event": "Borussia Monchengladbach vs Borussia Dortmund",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Borussia Monchengladbach 1 - 0 Borussia Dortmund; winner=Borussia Monchengladbach"
     },
     {
       "id": "PB-00018",
@@ -192,6 +209,6 @@
       "note": "no_matching_score_game"
     }
   ],
-  "odds_io_events_loaded": 0,
-  "football_data_matches_loaded": 0
+  "odds_io_events_loaded": 962,
+  "football_data_matches_loaded": 29
 }

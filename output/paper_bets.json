@@ -83,7 +83,7 @@
     },
     {
       "id": "PB-00004",
-      "status": "open",
+      "status": "settled",
       "created_at": "2026-05-02T10:27:32.972546+00:00",
       "source_run_id": "2026-05-02T10:27:32.972512+00:00",
       "event": "Getafe vs Rayo Vallecano",
@@ -101,11 +101,14 @@
       "pre_score": 16.14,
       "confidence": "auto",
       "reason": "Auto-valgt: score 16.14, edge 13.6%, books 38.",
-      "result": null,
-      "profit": null,
-      "settled_at": null,
+      "result": "win",
+      "profit": 4.0,
+      "settled_at": "2026-05-03T18:41:22.942164+00:00",
       "notes": "",
-      "key": "Getafe vs Rayo Vallecano|2026-05-03T14:15:00Z|h2h|Rayo Vallecano|None|5.0"
+      "key": "Getafe vs Rayo Vallecano|2026-05-03T14:15:00Z|h2h|Rayo Vallecano|None|5.0",
+      "auto_settled": true,
+      "auto_settle_note": "Getafe 0 - 2 Rayo Vallecano; winner=Rayo Vallecano",
+      "result_source": "odds-api.io"
     },
     {
       "id": "PB-00005",
@@ -430,7 +433,7 @@
     },
     {
       "id": "PB-00017",
-      "status": "open",
+      "status": "settled",
       "created_at": "2026-05-02T11:23:00.820490+00:00",
       "source_run_id": "2026-05-02T11:23:00.820396+00:00",
       "event": "Borussia Monchengladbach vs Borussia Dortmund",
@@ -448,11 +451,14 @@
       "pre_score": 12.42,
       "confidence": "auto",
       "reason": "Auto-valgt: score 12.42, edge 8.2%, books 41.",
-      "result": null,
-      "profit": null,
-      "settled_at": null,
+      "result": "win",
+      "profit": 5.9,
+      "settled_at": "2026-05-03T18:41:23.006953+00:00",
       "notes": "",
-      "key": "Borussia Monchengladbach vs Borussia Dortmund|2026-05-03T15:30:00Z|h2h|Borussia Monchengladbach|None|3.95"
+      "key": "Borussia Monchengladbach vs Borussia Dortmund|2026-05-03T15:30:00Z|h2h|Borussia Monchengladbach|None|3.95",
+      "auto_settled": true,
+      "auto_settle_note": "Borussia Monchengladbach 1 - 0 Borussia Dortmund; winner=Borussia Monchengladbach",
+      "result_source": "odds-api.io"
     },
     {
       "id": "PB-00018",
@@ -1053,24 +1059,17 @@
       "key": "Manchester United vs Liverpool FC|2026-05-03T14:30:00Z|h2h|Liverpool FC|None|2.96"
     }
   ],
-  "updated_at": "2026-05-03T18:09:01.619009+00:00",
+  "updated_at": "2026-05-03T18:41:23.073690+00:00",
   "summary": {
-    "bankroll_kr": 1000.0,
-    "unit_pct": 1.0,
-    "unit_kr": 10.0,
-    "max_exposure_pct": 25.0,
-    "max_open_exposure_kr": 250.0,
-    "open_count": 27,
-    "settled_count": 10,
-    "won": 1,
+    "open_count": 25,
+    "settled_count": 12,
+    "won": 3,
     "lost": 9,
     "push_void": 0,
-    "open_stake": 229.0,
-    "available_exposure_kr": 21.0,
-    "settled_stake": 49.0,
-    "profit": -42.2,
-    "roi_pct": -86.12,
-    "hitrate_pct": 10.0
+    "settled_stake": 52.0,
+    "profit": -32.3,
+    "roi_pct": -62.12,
+    "hitrate_pct": 25.0
   },
   "bankroll_kr": 1000.0,
   "unit_pct": 1.0,
