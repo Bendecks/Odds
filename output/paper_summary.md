@@ -1,6 +1,6 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-03T18:09:01.620240+00:00
+Generated: 2026-05-03T19:32:23.099116+00:00
 
 Source mode: V11_RESILIENT_MULTI_SOURCE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_MODE
 
@@ -17,17 +17,17 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 27,
-  "settled_count": 10,
-  "won": 1,
+  "open_count": 25,
+  "settled_count": 12,
+  "won": 3,
   "lost": 9,
   "push_void": 0,
-  "open_stake": 229.0,
-  "available_exposure_kr": 21.0,
-  "settled_stake": 49.0,
-  "profit": -42.2,
-  "roi_pct": -86.12,
-  "hitrate_pct": 10.0
+  "open_stake": 226.0,
+  "available_exposure_kr": 24.0,
+  "settled_stake": 52.0,
+  "profit": -32.3,
+  "roi_pct": -62.12,
+  "hitrate_pct": 25.0
 }
 ```
 
@@ -43,11 +43,9 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00028 | 2026-05-03 01:16 | baseball_mlb | St. Louis Cardinals vs Los Angeles Dodgers | h2h | Los Angeles Dodgers None | odds 1.77 | units 3.0 | stake 30.0 kr | edge 6.0 | score 10.99
 - PB-00002 | 2026-05-03 02:00 | mma_mixed_martial_arts | Joel Alvarez vs Bryce Logan | h2h | Bryce Logan None | odds 3.5 | units None | stake 1.0 kr | edge 20.7 | score 22.89
 - PB-00024 | 2026-05-03 02:50 | mma_mixed_martial_arts | Humberto Bandenay vs Sang Won Kim | h2h | Sang Won Kim None | odds 2.65 | units 1.0 | stake 10.0 kr | edge 8.2 | score 11.16
-- PB-00004 | 2026-05-03 16:15 | soccer_spain_la_liga | Getafe vs Rayo Vallecano | h2h | Rayo Vallecano None | odds 5.0 | units None | stake 1.0 kr | edge 13.6 | score 16.14
 - PB-00032 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.08 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00036 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.0 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00037 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 2.96 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
-- PB-00017 | 2026-05-03 17:30 | soccer_germany_bundesliga | Borussia Monchengladbach vs Borussia Dortmund | h2h | Borussia Monchengladbach None | odds 3.95 | units None | stake 2.0 kr | edge 8.2 | score 12.42
 - PB-00018 | 2026-05-03 19:30 | soccer_germany_bundesliga | SC Freiburg vs VfL Wolfsburg | h2h | SC Freiburg None | odds 2.66 | units None | stake 2.0 kr | edge 7.3 | score 12.26
 - PB-00033 | 2026-05-03 20:00 | soccer_odds_api_io | Aston Villa vs Tottenham Hotspur | h2h | Tottenham Hotspur None | odds 3.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00003 | 2026-05-04 00:10 | icehockey_nhl | Tampa Bay Lightning vs Montréal Canadiens | h2h | Montréal Canadiens None | odds 3.24 | units None | stake 2.0 kr | edge 16.8 | score 21.76
@@ -71,3 +69,5 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00006 | 2026-05-03 15:00 | loss | profit -1.0 | Bournemouth vs Crystal Palace | Crystal Palace @ 5.6
 - PB-00035 | 2026-05-03 15:30 | loss | profit -10.0 | FC St. Pauli vs FSV Mainz | FC St. Pauli @ 2.98
 - PB-00019 | 2026-05-03 15:30 | loss | profit -2.0 | FC St. Pauli vs FSV Mainz 05 | FC St. Pauli @ 2.94
+- PB-00004 | 2026-05-03 16:15 | win | profit 4.0 | Getafe vs Rayo Vallecano | Rayo Vallecano @ 5.0
+- PB-00017 | 2026-05-03 17:30 | win | profit 5.9 | Borussia Monchengladbach vs Borussia Dortmund | Borussia Monchengladbach @ 3.95
