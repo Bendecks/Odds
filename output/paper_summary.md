@@ -1,6 +1,6 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-03T14:23:06.738883+00:00
+Generated: 2026-05-03T15:09:49.279965+00:00
 
 Source mode: V11_RESILIENT_MULTI_SOURCE_ENGINE+V10_ADAPTIVE_FEEDBACK
 
@@ -17,25 +17,23 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 32,
-  "settled_count": 5,
+  "open_count": 30,
+  "settled_count": 7,
   "won": 1,
-  "lost": 4,
+  "lost": 6,
   "push_void": 0,
-  "open_stake": 250.0,
-  "available_exposure_kr": 0,
-  "settled_stake": 28.0,
-  "profit": -21.2,
-  "roi_pct": -75.71,
-  "hitrate_pct": 20.0
+  "open_stake": 242.0,
+  "available_exposure_kr": 8.0,
+  "settled_stake": 36.0,
+  "profit": -29.2,
+  "roi_pct": -81.11,
+  "hitrate_pct": 14.29
 }
 ```
 
 ## OPEN PAPER BETS — SORTED BY KICKOFF
 - PB-00016 | 2026-05-02 13:15 | mma_mixed_martial_arts | Louie Sutherland vs Tai Tuivasa | h2h | Louie Sutherland None | odds 3.1 | units None | stake 1.0 kr | edge 10.7 | score 15.71
 - PB-00011 | 2026-05-02 14:15 | mma_mixed_martial_arts | Stephen Erceg vs Tim Elliott | h2h | Tim Elliott None | odds 2.66 | units None | stake 1.0 kr | edge 7.5 | score 12.47
-- PB-00012 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 | odds 2.16 | units None | stake 4.0 kr | edge 10.2 | score 12.4
-- PB-00020 | 2026-05-02 15:30 | soccer_germany_bundesliga | Union Berlin vs 1. FC Köln | totals | Under 2.5 | odds 2.2 | units None | stake 4.0 kr | edge 9.5 | score 11.65
 - PB-00007 | 2026-05-02 15:45 | mma_mixed_martial_arts | Carlos Prates vs Jack Della Maddalena | h2h | Jack Della Maddalena None | odds 2.1 | units None | stake 1.0 kr | edge 9.1 | score 14.09
 - PB-00021 | 2026-05-02 19:36 | baseball_mlb | New York Yankees vs Baltimore Orioles | h2h | Baltimore Orioles None | odds 2.5 | units None | stake 2.0 kr | edge 6.4 | score 11.38
 - PB-00014 | 2026-05-02 22:06 | baseball_mlb | Athletics vs Cleveland Guardians | h2h | Cleveland Guardians None | odds 2.26 | units None | stake 3.0 kr | edge 6.6 | score 11.6
@@ -67,6 +65,8 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 
 ## SETTLED PAPER BETS — SORTED BY KICKOFF
 - PB-00022 | 2026-05-02 15:30 | win | profit 2.8 | Eintracht Frankfurt vs Hamburger SV | Under @ 1.7
+- PB-00012 | 2026-05-02 15:30 | loss | profit -4.0 | Union Berlin vs 1. FC Köln | Under @ 2.16
+- PB-00020 | 2026-05-02 15:30 | loss | profit -4.0 | Union Berlin vs 1. FC Köln | Under @ 2.2
 - PB-00001 | 2026-05-03 02:00 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | Philadelphia Flyers @ 3.88
 - PB-00030 | 2026-05-03 02:00 | loss | profit -10.0 | Carolina Hurricanes vs Philadelphia Flyers | Philadelphia Flyers @ 3.06
 - PB-00015 | 2026-05-03 02:10 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | Philadelphia Flyers @ 3.9
