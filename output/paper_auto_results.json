@@ -1,21 +1,29 @@
 {
-  "generated_at": "2026-05-03T14:25:22.111854+00:00",
+  "generated_at": "2026-05-03T16:35:25.900494+00:00",
   "results": [
     {
-      "id": "PB-00012",
+      "id": "PB-00006",
       "result": "loss",
-      "profit": -4.0,
-      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5",
-      "settled_at": "2026-05-03T14:25:22.110224+00:00",
-      "source": "football-data"
+      "profit": -1.0,
+      "note": "Bournemouth 3 - 0 Crystal Palace; winner=Bournemouth",
+      "settled_at": "2026-05-03T16:35:25.787148+00:00",
+      "source": "odds-api.io"
     },
     {
-      "id": "PB-00020",
+      "id": "PB-00019",
       "result": "loss",
-      "profit": -4.0,
-      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5",
-      "settled_at": "2026-05-03T14:25:22.110755+00:00",
-      "source": "football-data"
+      "profit": -2.0,
+      "note": "FC St. Pauli 1 - 2 FSV Mainz 05; winner=FSV Mainz 05",
+      "settled_at": "2026-05-03T16:35:25.852372+00:00",
+      "source": "odds-api.io"
+    },
+    {
+      "id": "PB-00035",
+      "result": "loss",
+      "profit": -10.0,
+      "note": "FC St. Pauli 1 - 2 FSV Mainz; winner=FSV Mainz",
+      "settled_at": "2026-05-03T16:35:25.899266+00:00",
+      "source": "odds-api.io"
     }
   ],
   "diagnostics": [
@@ -50,9 +58,9 @@
     {
       "id": "PB-00006",
       "event": "Bournemouth vs Crystal Palace",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Bournemouth 3 - 0 Crystal Palace; winner=Bournemouth"
     },
     {
       "id": "PB-00007",
@@ -88,13 +96,6 @@
       "status": "unmatched",
       "source": "odds-api.io",
       "note": "no_matching_score_game"
-    },
-    {
-      "id": "PB-00012",
-      "event": "Union Berlin vs 1. FC Köln",
-      "status": "settled",
-      "source": "football-data",
-      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5"
     },
     {
       "id": "PB-00013",
@@ -134,16 +135,9 @@
     {
       "id": "PB-00019",
       "event": "FC St. Pauli vs FSV Mainz 05",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
-    },
-    {
-      "id": "PB-00020",
-      "event": "Union Berlin vs 1. FC Köln",
       "status": "settled",
-      "source": "football-data",
-      "note": "Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5"
+      "source": "odds-api.io",
+      "note": "FC St. Pauli 1 - 2 FSV Mainz 05; winner=FSV Mainz 05"
     },
     {
       "id": "PB-00021",
@@ -225,9 +219,9 @@
     {
       "id": "PB-00035",
       "event": "FC St. Pauli vs FSV Mainz",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "FC St. Pauli 1 - 2 FSV Mainz; winner=FSV Mainz"
     },
     {
       "id": "PB-00036",
@@ -244,6 +238,6 @@
       "note": "kampen forventes ikke færdig endnu"
     }
   ],
-  "odds_io_events_loaded": 0,
-  "football_data_matches_loaded": 45
+  "odds_io_events_loaded": 1006,
+  "football_data_matches_loaded": 43
 }
