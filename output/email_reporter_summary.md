@@ -2,11 +2,11 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 27
-Åben eksponering: 229.0 / 250.0 kr
-Profit: -42.2 kr
-ROI: -86.12%
-Hitrate: 10.0%
+Åbne spil: 25
+Åben eksponering: 0 / 0 kr
+Profit: -32.3 kr
+ROI: -62.12%
+Hitrate: 25.0%
 
 NYE/TOP PICKS
 
@@ -123,16 +123,6 @@ Indsats: 10.0 kr (1.0 units)
 Edge/score: 8.2% / 11.16
 
 BET 12
-Kampstart: 2026-05-03 16:15
-Sport: Fodbold
-Kamp: Getafe vs Rayo Vallecano
-Marked: Kampvinder
-Spillet er: Rayo Vallecano vinder kampen mod modstanderen i: Getafe vs Rayo Vallecano.
-Odds: 5.0
-Indsats: 1.0 kr (None units)
-Edge/score: 13.6% / 16.14
-
-BET 13
 Kampstart: 2026-05-03 16:30
 Sport: Fodbold
 Kamp: Manchester United vs Liverpool FC
@@ -142,7 +132,7 @@ Odds: 3.08
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 14
+BET 13
 Kampstart: 2026-05-03 16:30
 Sport: Fodbold
 Kamp: Manchester United vs Liverpool FC
@@ -152,7 +142,7 @@ Odds: 3.0
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 15
+BET 14
 Kampstart: 2026-05-03 16:30
 Sport: Fodbold
 Kamp: Manchester United vs Liverpool FC
@@ -162,17 +152,7 @@ Odds: 2.96
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 16
-Kampstart: 2026-05-03 17:30
-Sport: Fodbold
-Kamp: Borussia Monchengladbach vs Borussia Dortmund
-Marked: Kampvinder
-Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: Borussia Monchengladbach vs Borussia Dortmund.
-Odds: 3.95
-Indsats: 2.0 kr (None units)
-Edge/score: 8.2% / 12.42
-
-BET 17
+BET 15
 Kampstart: 2026-05-03 19:30
 Sport: Fodbold
 Kamp: SC Freiburg vs VfL Wolfsburg
@@ -182,7 +162,7 @@ Odds: 2.66
 Indsats: 2.0 kr (None units)
 Edge/score: 7.3% / 12.26
 
-BET 18
+BET 16
 Kampstart: 2026-05-03 20:00
 Sport: Fodbold
 Kamp: Aston Villa vs Tottenham Hotspur
@@ -192,7 +172,7 @@ Odds: 3.31
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 19
+BET 17
 Kampstart: 2026-05-04 00:10
 Sport: Ishockey
 Kamp: Tampa Bay Lightning vs Montréal Canadiens
@@ -202,7 +182,7 @@ Odds: 3.24
 Indsats: 2.0 kr (None units)
 Edge/score: 16.8% / 21.76
 
-BET 20
+BET 18
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -212,7 +192,7 @@ Odds: 3.88
 Indsats: 2.0 kr (None units)
 Edge/score: 9.3% / 13.5
 
-BET 21
+BET 19
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -222,7 +202,7 @@ Odds: 3.81
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.3% / 11.52
 
-BET 22
+BET 20
 Kampstart: 2026-05-04 03:10
 Sport: Ishockey
 Kamp: Colorado Avalanche vs Minnesota Wild
@@ -232,7 +212,7 @@ Odds: 3.5
 Indsats: 2.0 kr (None units)
 Edge/score: 9.4% / 13.57
 
-BET 23
+BET 21
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -242,7 +222,7 @@ Odds: 3.05
 Indsats: 2.0 kr (None units)
 Edge/score: 10.9% / 15.91
 
-BET 24
+BET 22
 Kampstart: 2026-05-09 14:00
 Sport: Fodbold
 Kamp: Elche CF vs Alavés
@@ -252,7 +232,7 @@ Odds: 3.4
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.9% / 12.94
 
-BET 25
+BET 23
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: VfB Stuttgart vs Bayer Leverkusen
@@ -262,7 +242,7 @@ Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
 
-BET 26
+BET 24
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: Augsburg vs Borussia Monchengladbach
@@ -272,7 +252,7 @@ Odds: 3.07
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.7% / 12.72
 
-BET 27
+BET 25
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: FC Augsburg vs Borussia Monchengladbach
