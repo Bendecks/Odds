@@ -2,7 +2,7 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 30
+Åbne spil: 32
 Åben eksponering: 0 / 0 kr
 Profit: -11.2 kr
 ROI: -62.22%
@@ -11,12 +11,12 @@ Hitrate: 25.0%
 NYE/TOP PICKS
 
 BET 1
-Kampstart: 2026-05-03 06:00
-Sport: Basketball
-Kamp: Keilor Thunder vs Geelong United
+Kampstart: 2026-05-03 15:30
+Sport: Fodbold
+Kamp: FC St. Pauli vs FSV Mainz
 Marked: Kampvinder
-Spillet er: Geelong United vinder kampen mod modstanderen i: Keilor Thunder vs Geelong United.
-Odds: 3.35
+Spillet er: FC St. Pauli vinder kampen mod modstanderen i: FC St. Pauli vs FSV Mainz.
+Odds: 2.98
 Foreslået styrke: 1 units
 Edge/score: 0.0% / 6.2
 
@@ -26,7 +26,7 @@ Sport: Fodbold
 Kamp: Manchester United vs Liverpool FC
 Marked: Kampvinder
 Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
-Odds: 3.02
+Odds: 3.0
 Foreslået styrke: 1 units
 Edge/score: 0.0% / 6.2
 
@@ -233,6 +233,16 @@ Indsats: 2.0 kr (None units)
 Edge/score: 6.9% / 11.91
 
 BET 17
+Kampstart: 2026-05-03 15:30
+Sport: Fodbold
+Kamp: FC St. Pauli vs FSV Mainz
+Marked: Kampvinder
+Spillet er: FC St. Pauli vinder kampen mod modstanderen i: FC St. Pauli vs FSV Mainz.
+Odds: 2.98
+Indsats: 10.0 kr (1.0 units)
+Edge/score: 0.0% / 6.2
+
+BET 18
 Kampstart: 2026-05-03 16:15
 Sport: Fodbold
 Kamp: Getafe vs Rayo Vallecano
@@ -242,7 +252,7 @@ Odds: 5.0
 Indsats: 1.0 kr (None units)
 Edge/score: 13.6% / 16.14
 
-BET 18
+BET 19
 Kampstart: 2026-05-03 16:30
 Sport: Fodbold
 Kamp: Manchester United vs Liverpool FC
@@ -252,7 +262,17 @@ Odds: 3.08
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 19
+BET 20
+Kampstart: 2026-05-03 16:30
+Sport: Fodbold
+Kamp: Manchester United vs Liverpool FC
+Marked: Kampvinder
+Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
+Odds: 3.0
+Indsats: 10.0 kr (1.0 units)
+Edge/score: 0.0% / 6.2
+
+BET 21
 Kampstart: 2026-05-03 17:30
 Sport: Fodbold
 Kamp: Borussia Monchengladbach vs Borussia Dortmund
@@ -262,7 +282,7 @@ Odds: 3.95
 Indsats: 2.0 kr (None units)
 Edge/score: 8.2% / 12.42
 
-BET 20
+BET 22
 Kampstart: 2026-05-03 19:30
 Sport: Fodbold
 Kamp: SC Freiburg vs VfL Wolfsburg
@@ -272,7 +292,7 @@ Odds: 2.66
 Indsats: 2.0 kr (None units)
 Edge/score: 7.3% / 12.26
 
-BET 21
+BET 23
 Kampstart: 2026-05-03 20:00
 Sport: Fodbold
 Kamp: Aston Villa vs Tottenham Hotspur
@@ -282,7 +302,7 @@ Odds: 3.31
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
-BET 22
+BET 24
 Kampstart: 2026-05-04 00:10
 Sport: Ishockey
 Kamp: Tampa Bay Lightning vs Montréal Canadiens
@@ -292,7 +312,7 @@ Odds: 3.24
 Indsats: 2.0 kr (None units)
 Edge/score: 16.8% / 21.76
 
-BET 23
+BET 25
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -302,7 +322,7 @@ Odds: 3.88
 Indsats: 2.0 kr (None units)
 Edge/score: 9.3% / 13.5
 
-BET 24
+BET 26
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -312,7 +332,7 @@ Odds: 3.81
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.3% / 11.52
 
-BET 25
+BET 27
 Kampstart: 2026-05-04 03:10
 Sport: Ishockey
 Kamp: Colorado Avalanche vs Minnesota Wild
@@ -322,7 +342,7 @@ Odds: 3.5
 Indsats: 2.0 kr (None units)
 Edge/score: 9.4% / 13.57
 
-BET 26
+BET 28
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -332,7 +352,7 @@ Odds: 3.05
 Indsats: 2.0 kr (None units)
 Edge/score: 10.9% / 15.91
 
-BET 27
+BET 29
 Kampstart: 2026-05-09 14:00
 Sport: Fodbold
 Kamp: Elche CF vs Alavés
@@ -342,7 +362,7 @@ Odds: 3.4
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.9% / 12.94
 
-BET 28
+BET 30
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: VfB Stuttgart vs Bayer Leverkusen
@@ -351,23 +371,3 @@ Spillet er: Bayer Leverkusen vinder kampen mod modstanderen i: VfB Stuttgart vs 
 Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
-
-BET 29
-Kampstart: 2026-05-09 15:30
-Sport: Fodbold
-Kamp: Augsburg vs Borussia Monchengladbach
-Marked: Kampvinder
-Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: Augsburg vs Borussia Monchengladbach.
-Odds: 3.07
-Indsats: 20.0 kr (2.0 units)
-Edge/score: 7.7% / 12.72
-
-BET 30
-Kampstart: 2026-05-09 15:30
-Sport: Fodbold
-Kamp: FC Augsburg vs Borussia Monchengladbach
-Marked: Kampvinder
-Spillet er: Borussia Monchengladbach vinder kampen mod modstanderen i: FC Augsburg vs Borussia Monchengladbach.
-Odds: 3.07
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 6.2
