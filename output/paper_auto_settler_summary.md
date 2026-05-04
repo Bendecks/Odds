@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-04T18:31:21.193232+00:00
+Generated: 2026-05-04T19:11:25.610303+00:00
 
 Checked open bets: 22 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 0
 
 The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, icehockey_nhl, basketball_nba, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
 
-odds-api.io fallback events loaded: 1577
+odds-api.io fallback events loaded: 1240
 
 football-data fallback matches loaded: 19
 
