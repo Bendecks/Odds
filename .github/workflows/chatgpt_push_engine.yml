@@ -52,6 +52,8 @@ jobs:
         run: python scripts/paper_auto_settler.py
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
 
       - name: Apply Manual Result Patch
         run: python scripts/manual_result_patch.py
@@ -63,8 +65,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/v6_expansion_engine.* output/odds_cache_raw.json output/paper_*.json output/paper_*.md output/v9_* || true
+          git add -A output/v6_expansion_engine.* output/odds_cache_raw.json output/paper_*.json output/paper_*.md output/manual_result_patch.md output/v9_* || true
           git diff --cached --quiet && exit 0
           git commit -m "Auto-update active outputs after ChatGPT push"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main
           git push
