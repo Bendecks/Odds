@@ -2,167 +2,17 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 20
-Åben eksponering: 0 / 0 kr
-Profit: -44.82 kr
-ROI: -57.46%
-Hitrate: 31.25%
+Åbne spil: 5
+Åben eksponering: 72.0 / 0 kr
+Profit: 25.74 kr
+ROI: 12.62%
+Hitrate: 38.71%
 
 NYE/TOP PICKS
 
 ÅBNE PAPER BETS
 
 BET 1
-Kampstart: 2026-05-02 13:15
-Sport: MMA
-Kamp: Louie Sutherland vs Tai Tuivasa
-Marked: Kampvinder
-Spillet er: Louie Sutherland vinder kampen mod modstanderen i: Louie Sutherland vs Tai Tuivasa.
-Odds: 3.1
-Indsats: 1.0 kr (None units)
-Edge/score: 10.7% / 15.71
-
-BET 2
-Kampstart: 2026-05-02 14:15
-Sport: MMA
-Kamp: Stephen Erceg vs Tim Elliott
-Marked: Kampvinder
-Spillet er: Tim Elliott vinder kampen mod modstanderen i: Stephen Erceg vs Tim Elliott.
-Odds: 2.66
-Indsats: 1.0 kr (None units)
-Edge/score: 7.5% / 12.47
-
-BET 3
-Kampstart: 2026-05-02 15:45
-Sport: MMA
-Kamp: Carlos Prates vs Jack Della Maddalena
-Marked: Kampvinder
-Spillet er: Jack Della Maddalena vinder kampen mod modstanderen i: Carlos Prates vs Jack Della Maddalena.
-Odds: 2.1
-Indsats: 1.0 kr (None units)
-Edge/score: 9.1% / 14.09
-
-BET 4
-Kampstart: 2026-05-02 19:36
-Sport: Baseball
-Kamp: New York Yankees vs Baltimore Orioles
-Marked: Kampvinder
-Spillet er: Baltimore Orioles vinder kampen mod modstanderen i: New York Yankees vs Baltimore Orioles.
-Odds: 2.5
-Indsats: 2.0 kr (None units)
-Edge/score: 6.4% / 11.38
-
-BET 5
-Kampstart: 2026-05-02 22:06
-Sport: Baseball
-Kamp: Athletics vs Cleveland Guardians
-Marked: Kampvinder
-Spillet er: Cleveland Guardians vinder kampen mod modstanderen i: Athletics vs Cleveland Guardians.
-Odds: 2.26
-Indsats: 3.0 kr (None units)
-Edge/score: 6.6% / 11.6
-
-BET 6
-Kampstart: 2026-05-02 22:06
-Sport: Baseball
-Kamp: Athletics vs Cleveland Guardians
-Marked: Kampvinder
-Spillet er: Cleveland Guardians vinder kampen mod modstanderen i: Athletics vs Cleveland Guardians.
-Odds: 2.25
-Indsats: 30.0 kr (3.0 units)
-Edge/score: 6.1% / 11.13
-
-BET 7
-Kampstart: 2026-05-02 22:11
-Sport: Baseball
-Kamp: Boston Red Sox vs Houston Astros
-Marked: Kampvinder
-Spillet er: Houston Astros vinder kampen mod modstanderen i: Boston Red Sox vs Houston Astros.
-Odds: 2.16
-Indsats: 3.0 kr (None units)
-Edge/score: 6.9% / 11.93
-
-BET 8
-Kampstart: 2026-05-03 00:11
-Sport: Baseball
-Kamp: Tampa Bay Rays vs San Francisco Giants
-Marked: Kampvinder
-Spillet er: San Francisco Giants vinder kampen mod modstanderen i: Tampa Bay Rays vs San Francisco Giants.
-Odds: 1.99
-Indsats: 4.0 kr (None units)
-Edge/score: 7.6% / 12.57
-
-BET 9
-Kampstart: 2026-05-03 01:16
-Sport: Baseball
-Kamp: St. Louis Cardinals vs Los Angeles Dodgers
-Marked: Kampvinder
-Spillet er: Los Angeles Dodgers vinder kampen mod modstanderen i: St. Louis Cardinals vs Los Angeles Dodgers.
-Odds: 1.77
-Indsats: 30.0 kr (3.0 units)
-Edge/score: 6.0% / 10.99
-
-BET 10
-Kampstart: 2026-05-03 02:00
-Sport: MMA
-Kamp: Joel Alvarez vs Bryce Logan
-Marked: Kampvinder
-Spillet er: Bryce Logan vinder kampen mod modstanderen i: Joel Alvarez vs Bryce Logan.
-Odds: 3.5
-Indsats: 1.0 kr (None units)
-Edge/score: 20.7% / 22.89
-
-BET 11
-Kampstart: 2026-05-03 02:50
-Sport: MMA
-Kamp: Humberto Bandenay vs Sang Won Kim
-Marked: Kampvinder
-Spillet er: Sang Won Kim vinder kampen mod modstanderen i: Humberto Bandenay vs Sang Won Kim.
-Odds: 2.65
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 8.2% / 11.16
-
-BET 12
-Kampstart: 2026-05-03 16:30
-Sport: Fodbold
-Kamp: Manchester United vs Liverpool FC
-Marked: Kampvinder
-Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
-Odds: 3.08
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 6.2
-
-BET 13
-Kampstart: 2026-05-03 16:30
-Sport: Fodbold
-Kamp: Manchester United vs Liverpool FC
-Marked: Kampvinder
-Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
-Odds: 3.0
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 6.2
-
-BET 14
-Kampstart: 2026-05-03 16:30
-Sport: Fodbold
-Kamp: Manchester United vs Liverpool FC
-Marked: Kampvinder
-Spillet er: Liverpool FC vinder kampen mod modstanderen i: Manchester United vs Liverpool FC.
-Odds: 2.96
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 6.2
-
-BET 15
-Kampstart: 2026-05-03 20:00
-Sport: Fodbold
-Kamp: Aston Villa vs Tottenham Hotspur
-Marked: Kampvinder
-Spillet er: Tottenham Hotspur vinder kampen mod modstanderen i: Aston Villa vs Tottenham Hotspur.
-Odds: 3.31
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 6.2
-
-BET 16
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -172,7 +22,7 @@ Odds: 3.05
 Indsats: 2.0 kr (None units)
 Edge/score: 10.9% / 15.91
 
-BET 17
+BET 2
 Kampstart: 2026-05-09 14:00
 Sport: Fodbold
 Kamp: Elche CF vs Alavés
@@ -182,7 +32,7 @@ Odds: 3.4
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.9% / 12.94
 
-BET 18
+BET 3
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: VfB Stuttgart vs Bayer Leverkusen
@@ -192,7 +42,7 @@ Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
 
-BET 19
+BET 4
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: Augsburg vs Borussia Monchengladbach
@@ -202,7 +52,7 @@ Odds: 3.07
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.7% / 12.72
 
-BET 20
+BET 5
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: FC Augsburg vs Borussia Monchengladbach
