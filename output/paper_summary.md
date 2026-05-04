@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-04T18:31:04.001422+00:00
+Generated: 2026-05-04T19:02:33.508933+00:00
 
 Source mode: V13_NEAR_TERM_STRICT_READY_ENGINE+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 8 | Skipped duplicates: 0 | Skipped exposure cap: 12
+Added this run: 0 | Skipped duplicates: 8 | Skipped exposure cap: 12
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
