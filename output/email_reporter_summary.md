@@ -3,7 +3,7 @@ Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
 Åbne spil: 20
-Åben eksponering: 198.0 / 250.0 kr
+Åben eksponering: 0 / 0 kr
 Profit: -44.82 kr
 ROI: -57.46%
 Hitrate: 31.25%
