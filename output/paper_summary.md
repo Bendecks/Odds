@@ -1,6 +1,6 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-04T02:30:22.458516+00:00
+Generated: 2026-05-04T06:08:06.271563+00:00
 
 Source mode: V11_RESILIENT_MULTI_SOURCE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_MODE
 
@@ -17,17 +17,17 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 23,
-  "settled_count": 14,
-  "won": 4,
-  "lost": 9,
+  "open_count": 20,
+  "settled_count": 17,
+  "won": 5,
+  "lost": 11,
   "push_void": 1,
-  "open_stake": 222.0,
-  "available_exposure_kr": 28.0,
-  "settled_stake": 54.0,
-  "profit": -27.82,
-  "roi_pct": -51.52,
-  "hitrate_pct": 30.77
+  "open_stake": 198.0,
+  "available_exposure_kr": 52.0,
+  "settled_stake": 78.0,
+  "profit": -44.82,
+  "roi_pct": -57.46,
+  "hitrate_pct": 31.25
 }
 ```
 
@@ -47,9 +47,6 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00036 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 3.0 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00037 | 2026-05-03 16:30 | soccer_odds_api_io | Manchester United vs Liverpool FC | h2h | Liverpool FC None | odds 2.96 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
 - PB-00033 | 2026-05-03 20:00 | soccer_odds_api_io | Aston Villa vs Tottenham Hotspur | h2h | Tottenham Hotspur None | odds 3.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
-- PB-00009 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None | odds 3.88 | units None | stake 2.0 kr | edge 9.3 | score 13.5
-- PB-00029 | 2026-05-04 01:40 | basketball_nba | Cleveland Cavaliers vs Toronto Raptors | h2h | Toronto Raptors None | odds 3.81 | units 2.0 | stake 20.0 kr | edge 7.3 | score 11.52
-- PB-00008 | 2026-05-04 03:10 | icehockey_nhl | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None | odds 3.5 | units None | stake 2.0 kr | edge 9.4 | score 13.57
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None | odds 3.07 | units 2.0 | stake 20.0 kr | edge 7.7 | score 12.72
@@ -71,3 +68,6 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00017 | 2026-05-03 17:30 | win | profit 5.9 | Borussia Monchengladbach vs Borussia Dortmund | Borussia Monchengladbach @ 3.95
 - PB-00018 | 2026-05-03 19:30 | push | profit 0.0 | SC Freiburg vs VfL Wolfsburg | SC Freiburg @ 2.66
 - PB-00003 | 2026-05-04 00:10 | win | profit 4.48 | Tampa Bay Lightning vs Montréal Canadiens | Montréal Canadiens @ 3.24
+- PB-00009 | 2026-05-04 01:40 | loss | profit -2.0 | Cleveland Cavaliers vs Toronto Raptors | Toronto Raptors @ 3.88
+- PB-00029 | 2026-05-04 01:40 | loss | profit -20.0 | Cleveland Cavaliers vs Toronto Raptors | Toronto Raptors @ 3.81
+- PB-00008 | 2026-05-04 03:10 | win | profit 5.0 | Colorado Avalanche vs Minnesota Wild | Minnesota Wild @ 3.5
