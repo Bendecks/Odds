@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-04T17:12:55.462819+00:00
+Generated: 2026-05-04T18:02:08.295070+00:00
 
-Source mode: V12_SAFE_STRICT_READY_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_MODE
+Source mode: V13_NEAR_TERM_STRICT_READY_ENGINE+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 9 | Skipped duplicates: 0 | Skipped exposure cap: 0
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 5,
+  "open_count": 14,
   "settled_count": 32,
   "won": 12,
   "lost": 19,
   "push_void": 1,
-  "open_stake": 72.0,
-  "available_exposure_kr": 178.0,
+  "open_stake": 162.0,
+  "available_exposure_kr": 88.0,
   "settled_stake": 204.0,
   "profit": 25.74,
   "roi_pct": 12.62,
@@ -32,6 +32,15 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 ```
 
 ## OPEN PAPER BETS — SORTED BY KICKOFF
+- PB-00038 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | h2h | Manchester City None | odds 1.51 | units 1.0 | stake 10.0 kr | edge 0.0 | score 6.2
+- PB-00039 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.5 | odds 2.39 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00040 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Under 2.75 | odds 2.19 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00041 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.25 | odds 2.15 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00042 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 2.5 | odds 1.65 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00043 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.75 | odds 2.25 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00044 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 | odds 2.23 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00045 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 | odds 1.99 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
+- PB-00046 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.1 | units 1.0 | stake 10.0 kr | edge 0.0 | score -3.6
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None | odds 3.07 | units 2.0 | stake 20.0 kr | edge 7.7 | score 12.72

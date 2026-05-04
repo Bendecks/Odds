@@ -1,19 +1,19 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-04T17:20:15.559600+00:00
+Generated: 2026-05-04T18:02:14.122846+00:00
 
-Checked open bets: 5 | Auto-settled: 0 | Pending/not finished: 5 | Unmatched: 0
+Checked open bets: 14 | Auto-settled: 0 | Pending/not finished: 14 | Unmatched: 0
 
 The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl
 
-odds-api.io fallback events loaded: 846
+odds-api.io fallback events loaded: 0
 
-football-data fallback matches loaded: 11
+football-data fallback matches loaded: 19
 
 ## SUMMARY
 ```json
 {
-  "open_count": 5,
+  "open_count": 14,
   "settled_count": 32,
   "won": 12,
   "lost": 19,
@@ -31,6 +31,15 @@ football-data fallback matches loaded: 11
 - PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | time | kampen forventes ikke færdig endnu
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 - PB-00034 | FC Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
+- PB-00038 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
+- PB-00039 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
+- PB-00040 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
+- PB-00041 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
+- PB-00042 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
+- PB-00043 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
+- PB-00044 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
+- PB-00045 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
+- PB-00046 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
@@ -72,3 +81,12 @@ football-data fallback matches loaded: 11
 - PB-00026 | 2026-05-09 15:30 | soccer_germany_bundesliga | VfB Stuttgart vs Bayer Leverkusen | h2h | Bayer Leverkusen None @ 3.25
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None @ 3.07
 - PB-00034 | 2026-05-09 15:30 | soccer_odds_api_io | FC Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None @ 3.07
+- PB-00038 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | h2h | Manchester City None @ 1.51
+- PB-00039 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.5 @ 2.39
+- PB-00040 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Under 2.75 @ 2.19
+- PB-00041 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.25 @ 2.15
+- PB-00042 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 2.5 @ 1.65
+- PB-00043 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.75 @ 2.25
+- PB-00044 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 @ 2.23
+- PB-00045 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 @ 1.99
+- PB-00046 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None @ 3.1

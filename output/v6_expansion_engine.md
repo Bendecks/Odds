@@ -1,59 +1,100 @@
-# STRICT MODE ENGINE OUTPUT
+# V10 ADAPTIVE FEEDBACK ACTIVE
 
-STRICT MODE: 0 godkendte top bets. 40 flyttet til watchlist.
+Activated: 2026-05-04T18:02:08.254979+00:00 | feedback patterns: 1 | adjustments applied: 1
 
-## STRICT MODE RULES
-- Kun fodbold
-- Ingen MMA
-- Ingen baseball
-- Ingen odds over 3.00
-- Ingen single-source fallback picks som top bet
-- Ingen spreads/handicap
-- Max 1 bet pr kamp
-- Max 5 top bets
-- Max 1 unit
+## V9 feedback used
+- h2h|odds_3: bets=9 hit=33.3 roi_per_bet=-3.4
 
-## TOP BETS
+# V13_NEAR_TERM_STRICT_READY_ENGINE
+
+THE_ODDS_API quota brugt. 9 top bets (odds-api.io fallback aktiv)
+
+## DIAGNOSTICS
+```json
+{
+  "api_errors": [
+    {
+      "label": "theodds:soccer_epl",
+      "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "label": "theodds:soccer_spain_la_liga",
+      "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "label": "theodds:soccer_germany_bundesliga",
+      "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "label": "theodds:basketball_nba",
+      "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "label": "theodds:icehockey_nhl",
+      "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "label": "odds-api.io:/odds",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 50 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/odds",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 50 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/odds",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 50 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/odds",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 50 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 50 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 49 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/leagues",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 49 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/leagues",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 17 minutes and 49 seconds.\"}"
+    }
+  ],
+  "quota_exhausted": true,
+  "max_hours": 36,
+  "theodds_games": 0,
+  "odds_api_io_events": 141,
+  "odds_api_io_games": 2,
+  "candidate_count": 15,
+  "top_count": 9,
+  "engine_note": "Near-term engine: only considers events within MAX_HOURS, default 36h, so bets should normally be today/tomorrow."
+}
+```
+
+## TOP_BETS
+1. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.1 | units 1 | source odds-api.io | conf low_single_source | score 6.2 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+2. 2026-05-04 21:00 | Everton FC vs Manchester City | h2h | Manchester City None | odds 1.51 | units 1 | source odds-api.io | conf low_single_source | score 6.2 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+3. 2026-05-04 21:00 | Everton FC vs Manchester City | totals | Over 3.5 | odds 2.39 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+4. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.75 | odds 2.25 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+5. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 | odds 2.23 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+6. 2026-05-04 21:00 | Everton FC vs Manchester City | totals | Under 2.75 | odds 2.19 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+7. 2026-05-04 21:00 | Everton FC vs Manchester City | totals | Over 3.25 | odds 2.15 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+8. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 | odds 1.99 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
+9. 2026-05-04 21:00 | Everton FC vs Manchester City | totals | Over 2.5 | odds 1.65 | units 1 | source odds-api.io | conf low_single_source | score 5.7 | Near-term engine pick. Strict Mode filtrerer efterfølgende.
 
 ## WATCHLIST
-1. 2026-05-05 10:00 | Potapova, Anastasia vs Bartunkova, Nikola | h2h | Bartunkova, Nikola None | odds 2.85 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-2. 2026-05-05 10:00 | Stearns, Peyton vs Tjen, Janice | h2h | Tjen, Janice None | odds 2.76 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-3. 2026-05-05 10:00 | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None | odds 2.73 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-4. 2026-05-05 10:00 | Carreno Busta, Pablo vs Wawrinka, Stan | h2h | Wawrinka, Stan None | odds 2.62 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-5. 2026-05-06 02:00 | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None | odds 2.59 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-6. 2026-05-05 03:30 | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None | odds 2.39 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-7. 2026-05-05 10:00 | Siegemund, Laura vs Bejlek, Sara | h2h | Siegemund, Laura None | odds 2.36 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-8. 2026-05-06 01:00 | Detroit Pistons vs Cleveland Cavaliers | h2h | Cleveland Cavaliers None | odds 2.33 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-9. 2026-05-05 10:00 | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None | odds 2.32 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-10. 2026-05-05 10:00 | Merida, Daniel vs Barrios Vera, Marcelo Tomas | h2h | Barrios Vera, Marcelo Tomas None | odds 2.3 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-11. 2026-05-05 10:00 | Pliskova, Karolina vs Bouzas Maneiro, Jessica | h2h | Bouzas Maneiro, Jessica None | odds 2.27 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-12. 2026-05-05 10:00 | Kovacevic, Aleksandar vs Fearnley, Jacob | h2h | Kovacevic, Aleksandar None | odds 2.21 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-13. 2026-05-05 10:00 | Landaluce, Martin vs Pellegrino, Andrea | h2h | Pellegrino, Andrea None | odds 2.18 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-14. 2026-05-05 11:10 | Dellien, Hugo vs De Jong, Jesper | h2h | Dellien, Hugo None | odds 2.16 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-15. 2026-05-05 11:10 | Kypson, Patrick vs Droguet, Titouan | h2h | Kypson, Patrick None | odds 2.16 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-16. 2026-05-05 10:00 | Eala, Alexandra vs Frech, Magdalena | h2h | Frech, Magdalena None | odds 2.03 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-17. 2026-05-05 02:00 | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None | odds 3.31 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-18. 2026-05-05 10:00 | Li, Ann vs Zhang, Shuai | h2h | Zhang, Shuai None | odds 3.15 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-19. 2026-05-05 01:00 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.12 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: kun fodboldligaer med god result dækning er tilladt.
-20. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.11 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: odds over 3.0 er slået fra.
-21. 2026-05-05 10:00 | Potapova, Anastasia vs Bartunkova, Nikola | h2h | Bartunkova, Nikola None | odds 2.85 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-22. 2026-05-05 10:00 | Stearns, Peyton vs Tjen, Janice | h2h | Tjen, Janice None | odds 2.76 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-23. 2026-05-05 10:00 | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None | odds 2.73 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-24. 2026-05-05 10:00 | Carreno Busta, Pablo vs Wawrinka, Stan | h2h | Wawrinka, Stan None | odds 2.62 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-25. 2026-05-06 02:00 | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None | odds 2.59 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-26. 2026-05-05 03:30 | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None | odds 2.39 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-27. 2026-05-05 10:00 | Siegemund, Laura vs Bejlek, Sara | h2h | Siegemund, Laura None | odds 2.36 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-28. 2026-05-06 01:00 | Detroit Pistons vs Cleveland Cavaliers | h2h | Cleveland Cavaliers None | odds 2.33 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-29. 2026-05-05 10:00 | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None | odds 2.32 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-30. 2026-05-05 10:00 | Merida, Daniel vs Barrios Vera, Marcelo Tomas | h2h | Barrios Vera, Marcelo Tomas None | odds 2.3 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-31. 2026-05-05 10:00 | Pliskova, Karolina vs Bouzas Maneiro, Jessica | h2h | Bouzas Maneiro, Jessica None | odds 2.27 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-32. 2026-05-05 10:00 | Kovacevic, Aleksandar vs Fearnley, Jacob | h2h | Kovacevic, Aleksandar None | odds 2.21 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-33. 2026-05-05 10:00 | Landaluce, Martin vs Pellegrino, Andrea | h2h | Pellegrino, Andrea None | odds 2.18 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-34. 2026-05-05 11:10 | Dellien, Hugo vs De Jong, Jesper | h2h | Dellien, Hugo None | odds 2.16 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-35. 2026-05-05 11:10 | Kypson, Patrick vs Droguet, Titouan | h2h | Kypson, Patrick None | odds 2.16 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-36. 2026-05-05 10:00 | Eala, Alexandra vs Frech, Magdalena | h2h | Frech, Magdalena None | odds 2.03 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | Strict Mode: max 5 top bets.
-37. 2026-05-05 02:00 | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None | odds 3.31 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: max 5 top bets.
-38. 2026-05-05 10:00 | Li, Ann vs Zhang, Shuai | h2h | Zhang, Shuai None | odds 3.15 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: max 5 top bets.
-39. 2026-05-05 01:00 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.12 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: max 5 top bets.
-40. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.11 | source odds-api.io | Near-term engine pick. Strict Mode filtrerer efterfølgende. | V10 penalty -9.8: feedback bets=9 roi_per_bet=-3.4 hit=33.3. | Strict Mode: max 5 top bets.
-41. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Sevilla FC None | odds 2.48 | source odds-api.io | Konflikt: allerede valgt andet spil i samme kamp.
+1. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Sevilla FC None | odds 2.49 | units 0 | source odds-api.io | conf low_single_source | score 6.2 | Konflikt: allerede valgt andet spil i samme kamp.
+2. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.5 | odds 1.95 | units 0 | source odds-api.io | conf low_single_source | score 5.7 | Konflikt: allerede valgt andet spil i samme kamp.
+3. 2026-05-04 21:00 | Everton FC vs Manchester City | totals | Over 2.75 | odds 1.79 | units 0 | source odds-api.io | conf low_single_source | score 5.7 | Konflikt: allerede valgt andet spil i samme kamp.
+4. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.25 | odds 1.76 | units 0 | source odds-api.io | conf low_single_source | score 5.7 | Konflikt: allerede valgt andet spil i samme kamp.
+5. 2026-05-04 21:00 | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.75 | odds 1.75 | units 0 | source odds-api.io | conf low_single_source | score 5.7 | Konflikt: allerede valgt andet spil i samme kamp.
+6. 2026-05-04 21:00 | Everton FC vs Manchester City | totals | Under 3.25 | odds 1.64 | units 0 | source odds-api.io | conf low_single_source | score 5.7 | Konflikt: allerede valgt andet spil i samme kamp.
+
+## PASS
+
