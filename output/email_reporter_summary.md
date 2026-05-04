@@ -2,11 +2,11 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 24
-Åben eksponering: 224.0 / 250.0 kr
-Profit: -32.3 kr
-ROI: -62.12%
-Hitrate: 25.0%
+Åbne spil: 23
+Åben eksponering: 222.0 / 250.0 kr
+Profit: -27.82 kr
+ROI: -51.52%
+Hitrate: 30.77%
 
 NYE/TOP PICKS
 
@@ -163,16 +163,6 @@ Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 6.2
 
 BET 16
-Kampstart: 2026-05-04 00:10
-Sport: Ishockey
-Kamp: Tampa Bay Lightning vs Montréal Canadiens
-Marked: Kampvinder
-Spillet er: Montréal Canadiens vinder kampen mod modstanderen i: Tampa Bay Lightning vs Montréal Canadiens.
-Odds: 3.24
-Indsats: 2.0 kr (None units)
-Edge/score: 16.8% / 21.76
-
-BET 17
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -182,7 +172,7 @@ Odds: 3.88
 Indsats: 2.0 kr (None units)
 Edge/score: 9.3% / 13.5
 
-BET 18
+BET 17
 Kampstart: 2026-05-04 01:40
 Sport: Basketball
 Kamp: Cleveland Cavaliers vs Toronto Raptors
@@ -192,7 +182,7 @@ Odds: 3.81
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.3% / 11.52
 
-BET 19
+BET 18
 Kampstart: 2026-05-04 03:10
 Sport: Ishockey
 Kamp: Colorado Avalanche vs Minnesota Wild
@@ -202,7 +192,7 @@ Odds: 3.5
 Indsats: 2.0 kr (None units)
 Edge/score: 9.4% / 13.57
 
-BET 20
+BET 19
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -212,7 +202,7 @@ Odds: 3.05
 Indsats: 2.0 kr (None units)
 Edge/score: 10.9% / 15.91
 
-BET 21
+BET 20
 Kampstart: 2026-05-09 14:00
 Sport: Fodbold
 Kamp: Elche CF vs Alavés
@@ -222,7 +212,7 @@ Odds: 3.4
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.9% / 12.94
 
-BET 22
+BET 21
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: VfB Stuttgart vs Bayer Leverkusen
@@ -232,7 +222,7 @@ Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
 
-BET 23
+BET 22
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: Augsburg vs Borussia Monchengladbach
@@ -242,7 +232,7 @@ Odds: 3.07
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.7% / 12.72
 
-BET 24
+BET 23
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: FC Augsburg vs Borussia Monchengladbach
