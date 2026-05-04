@@ -2,11 +2,11 @@ ODDS RAPPORT
 Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.
 
 STATUS
-Åbne spil: 22
-Åben eksponering: 242.0 / 0 kr
-Profit: 25.74 kr
-ROI: 12.62%
-Hitrate: 38.71%
+Åbne spil: 17
+Åben eksponering: 192.0 / 250.0 kr
+Profit: -1.96 kr
+ROI: -0.77%
+Hitrate: 36.11%
 
 NYE/TOP PICKS
 
@@ -63,56 +63,6 @@ Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 5.7
 
 BET 6
-Kampstart: 2026-05-04 21:00
-Sport: Fodbold
-Kamp: Sevilla FC vs Real Sociedad San Sebastian
-Marked: Over/under mål/point i kampen
-Spillet er: Der kommer OVER 2.75 samlede mål/point i kampen Sevilla FC vs Real Sociedad San Sebastian. Eksempel: Hvis linjen er 2.5, vinder spillet ved 3 eller flere mål/point.
-Odds: 2.25
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 5.7
-
-BET 7
-Kampstart: 2026-05-04 21:00
-Sport: Fodbold
-Kamp: Sevilla FC vs Real Sociedad San Sebastian
-Marked: Over/under mål/point i kampen
-Spillet er: Der kommer UNDER 2.25 samlede mål/point i kampen Sevilla FC vs Real Sociedad San Sebastian. Eksempel: Hvis linjen er 2.5, vinder spillet ved 0, 1 eller 2 mål/point.
-Odds: 2.23
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 5.7
-
-BET 8
-Kampstart: 2026-05-04 21:00
-Sport: Fodbold
-Kamp: Sevilla FC vs Real Sociedad San Sebastian
-Marked: Over/under mål/point i kampen
-Spillet er: Der kommer OVER 2.5 samlede mål/point i kampen Sevilla FC vs Real Sociedad San Sebastian. Eksempel: Hvis linjen er 2.5, vinder spillet ved 3 eller flere mål/point.
-Odds: 1.99
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / 5.7
-
-BET 9
-Kampstart: 2026-05-04 21:00
-Sport: Fodbold
-Kamp: Sevilla FC vs Real Sociedad San Sebastian
-Marked: Kampvinder
-Spillet er: Real Sociedad San Sebastian vinder kampen mod modstanderen i: Sevilla FC vs Real Sociedad San Sebastian.
-Odds: 3.1
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / -3.6
-
-BET 10
-Kampstart: 2026-05-04 21:00
-Sport: Fodbold
-Kamp: Sevilla FC vs Real Sociedad San Sebastian
-Marked: Kampvinder
-Spillet er: Real Sociedad San Sebastian vinder kampen mod modstanderen i: Sevilla FC vs Real Sociedad San Sebastian.
-Odds: 3.23
-Indsats: 10.0 kr (1.0 units)
-Edge/score: 0.0% / -0.58
-
-BET 11
 Kampstart: 2026-05-05 01:00
 Sport: Ishockey
 Kamp: Carolina Hurricanes vs Philadelphia Flyers
@@ -122,7 +72,7 @@ Odds: 3.12
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / -0.58
 
-BET 12
+BET 7
 Kampstart: 2026-05-05 02:00
 Sport: Basketball
 Kamp: New York Knicks vs Philadelphia 76ers
@@ -132,7 +82,7 @@ Odds: 3.31
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / -0.58
 
-BET 13
+BET 8
 Kampstart: 2026-05-05 03:30
 Sport: Ishockey
 Kamp: Vegas Golden Knights vs Anaheim Ducks
@@ -142,7 +92,7 @@ Odds: 2.39
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 8.2
 
-BET 14
+BET 9
 Kampstart: 2026-05-05 10:00
 Sport: Tennis
 Kamp: Carreno Busta, Pablo vs Wawrinka, Stan
@@ -152,7 +102,7 @@ Odds: 2.65
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 8.2
 
-BET 15
+BET 10
 Kampstart: 2026-05-05 10:00
 Sport: Tennis
 Kamp: Comesana, Francisco vs Riedi, Leandro
@@ -162,7 +112,7 @@ Odds: 2.21
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 8.2
 
-BET 16
+BET 11
 Kampstart: 2026-05-05 10:00
 Sport: Tennis
 Kamp: Galfi, Dalma vs Grabher, Julia
@@ -172,7 +122,7 @@ Odds: 3.09
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / -0.58
 
-BET 17
+BET 12
 Kampstart: 2026-05-05 10:00
 Sport: Tennis
 Kamp: Garin, Cristian vs Choinski, Jan
@@ -182,7 +132,7 @@ Odds: 2.73
 Indsats: 10.0 kr (1.0 units)
 Edge/score: 0.0% / 8.2
 
-BET 18
+BET 13
 Kampstart: 2026-05-08 21:00
 Sport: Fodbold
 Kamp: Levante vs CA Osasuna
@@ -192,7 +142,7 @@ Odds: 3.05
 Indsats: 2.0 kr (None units)
 Edge/score: 10.9% / 15.91
 
-BET 19
+BET 14
 Kampstart: 2026-05-09 14:00
 Sport: Fodbold
 Kamp: Elche CF vs Alavés
@@ -202,7 +152,7 @@ Odds: 3.4
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.9% / 12.94
 
-BET 20
+BET 15
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: VfB Stuttgart vs Bayer Leverkusen
@@ -212,7 +162,7 @@ Odds: 3.25
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 8.3% / 13.33
 
-BET 21
+BET 16
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: Augsburg vs Borussia Monchengladbach
@@ -222,7 +172,7 @@ Odds: 3.07
 Indsats: 20.0 kr (2.0 units)
 Edge/score: 7.7% / 12.72
 
-BET 22
+BET 17
 Kampstart: 2026-05-09 15:30
 Sport: Fodbold
 Kamp: FC Augsburg vs Borussia Monchengladbach
