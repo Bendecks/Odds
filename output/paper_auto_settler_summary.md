@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-04T05:23:30.268037+00:00
+Generated: 2026-05-04T08:14:12.344358+00:00
 
-Checked open bets: 23 | Auto-settled: 3 | Pending/not finished: 5 | Unmatched: 15
+Checked open bets: 20 | Auto-settled: 0 | Pending/not finished: 5 | Unmatched: 15
 
-The Odds API sports queried: mma_mixed_martial_arts, soccer_spain_la_liga, icehockey_nhl, basketball_nba, baseball_mlb, soccer_germany_bundesliga, soccer_epl
+The Odds API sports queried: mma_mixed_martial_arts, soccer_spain_la_liga, baseball_mlb, soccer_germany_bundesliga, soccer_epl
 
-odds-api.io fallback events loaded: 933
+odds-api.io fallback events loaded: 835
 
 football-data fallback matches loaded: 29
 
@@ -29,8 +29,6 @@ football-data fallback matches loaded: 29
 - PB-00002 | Joel Alvarez vs Bryce Logan | unmatched | odds-api.io | no_matching_score_game
 - PB-00005 | Levante vs CA Osasuna | pending | time | kampen forventes ikke færdig endnu
 - PB-00007 | Carlos Prates vs Jack Della Maddalena | unmatched | odds-api.io | no_matching_score_game
-- PB-00008 | Colorado Avalanche vs Minnesota Wild | settled | odds-api.io | Colorado Avalanche 2 - 3 Minnesota Wild; winner=Minnesota Wild
-- PB-00009 | Cleveland Cavaliers vs Toronto Raptors | settled | odds-api.io | Cleveland Cavaliers 114 - 103 Toronto Raptors; winner=Cleveland Cavaliers
 - PB-00010 | Tampa Bay Rays vs San Francisco Giants | unmatched | odds-api.io | no_matching_score_game
 - PB-00011 | Stephen Erceg vs Tim Elliott | unmatched | odds-api.io | no_matching_score_game
 - PB-00013 | Boston Red Sox vs Houston Astros | unmatched | odds-api.io | no_matching_score_game
@@ -43,7 +41,6 @@ football-data fallback matches loaded: 29
 - PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | time | kampen forventes ikke færdig endnu
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 - PB-00028 | St. Louis Cardinals vs Los Angeles Dodgers | unmatched | odds-api.io | no_matching_score_game
-- PB-00029 | Cleveland Cavaliers vs Toronto Raptors | settled | odds-api.io | Cleveland Cavaliers 114 - 103 Toronto Raptors; winner=Cleveland Cavaliers
 - PB-00032 | Manchester United vs Liverpool FC | unmatched | football-data | no_matching_score_game
 - PB-00033 | Aston Villa vs Tottenham Hotspur | unmatched | football-data | no_matching_score_game
 - PB-00034 | FC Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
