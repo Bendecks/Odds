@@ -20,7 +20,6 @@ concurrency:
 
 jobs:
   run-engines:
-    # Avoid infinite loops when the workflow itself commits output files.
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -53,6 +52,9 @@ jobs:
         run: python scripts/paper_auto_settler.py
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+
+      - name: Apply Manual Result Patch
+        run: python scripts/manual_result_patch.py
 
       - name: Run V9 Feedback
         run: python scripts/v9_performance_feedback.py
