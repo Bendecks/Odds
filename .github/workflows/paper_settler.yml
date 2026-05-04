@@ -2,6 +2,13 @@ name: Paper Auto Settler
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/manual_result_patch.py'
+      - 'scripts/paper_auto_settler.py'
+      - '.github/workflows/paper_settler.yml'
   schedule:
     - cron: '0 */2 * * *'
 
@@ -37,12 +44,15 @@ jobs:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python scripts/paper_auto_settler.py
 
+      - name: Apply Manual Result Patch
+        run: python scripts/manual_result_patch.py
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/paper_*.json output/paper_*.md || true
+          git add output/paper_*.json output/paper_*.md output/manual_result_patch.md || true
           git diff --cached --quiet && exit 0
-          git commit -m "Update paper auto settler"
+          git commit -m "Update paper auto settler and manual patch"
           git pull --rebase
           git push
