@@ -1,6 +1,6 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-04T21:56:49.147674+00:00
+Generated: 2026-05-04T22:57:31.048527+00:00
 
 Source mode: STRICT_MODE_V2_1
 
@@ -17,17 +17,17 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 22,
-  "settled_count": 32,
-  "won": 12,
-  "lost": 19,
+  "open_count": 17,
+  "settled_count": 37,
+  "won": 13,
+  "lost": 23,
   "push_void": 1,
-  "open_stake": 242.0,
-  "available_exposure_kr": 8.0,
-  "settled_stake": 204.0,
-  "profit": 25.74,
-  "roi_pct": 12.62,
-  "hitrate_pct": 38.71
+  "open_stake": 192.0,
+  "available_exposure_kr": 58.0,
+  "settled_stake": 254.0,
+  "profit": -1.96,
+  "roi_pct": -0.77,
+  "hitrate_pct": 36.11
 }
 ```
 
@@ -37,11 +37,6 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00040 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Under 2.75 | odds 2.19 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
 - PB-00041 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.25 | odds 2.15 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
 - PB-00042 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 2.5 | odds 1.65 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
-- PB-00043 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.75 | odds 2.25 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
-- PB-00044 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 | odds 2.23 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
-- PB-00045 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 | odds 1.99 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
-- PB-00046 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.1 | units 1.0 | stake 10.0 kr | edge 0.0 | score -3.6
-- PB-00047 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.23 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
 - PB-00048 | 2026-05-05 01:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.12 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
 - PB-00049 | 2026-05-05 02:00 | basketball_odds_api_io | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None | odds 3.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
 - PB-00050 | 2026-05-05 03:30 | icehockey_odds_api_io | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None | odds 2.39 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
@@ -88,3 +83,8 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00009 | 2026-05-04 01:40 | loss | profit -2.0 | Cleveland Cavaliers vs Toronto Raptors | Toronto Raptors @ 3.88
 - PB-00029 | 2026-05-04 01:40 | loss | profit -20.0 | Cleveland Cavaliers vs Toronto Raptors | Toronto Raptors @ 3.81
 - PB-00008 | 2026-05-04 03:10 | win | profit 5.0 | Colorado Avalanche vs Minnesota Wild | Minnesota Wild @ 3.5
+- PB-00043 | 2026-05-04 21:00 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | Over @ 2.25
+- PB-00044 | 2026-05-04 21:00 | win | profit 12.3 | Sevilla FC vs Real Sociedad San Sebastian | Under @ 2.23
+- PB-00045 | 2026-05-04 21:00 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | Over @ 1.99
+- PB-00046 | 2026-05-04 21:00 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | Real Sociedad San Sebastian @ 3.1
+- PB-00047 | 2026-05-04 21:00 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | Real Sociedad San Sebastian @ 3.23
