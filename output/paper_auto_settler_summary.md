@@ -1,8 +1,8 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-03T22:29:09.175886+00:00
+Generated: 2026-05-04T01:45:32.157442+00:00
 
-Checked open bets: 24 | Auto-settled: 0 | Pending/not finished: 9 | Unmatched: 15
+Checked open bets: 24 | Auto-settled: 1 | Pending/not finished: 8 | Unmatched: 15
 
 The Odds API sports queried: mma_mixed_martial_arts, icehockey_nhl, soccer_spain_la_liga, basketball_nba, baseball_mlb, soccer_germany_bundesliga, soccer_epl
 
@@ -13,21 +13,21 @@ football-data fallback matches loaded: 29
 ## SUMMARY
 ```json
 {
-  "open_count": 24,
-  "settled_count": 13,
-  "won": 3,
+  "open_count": 23,
+  "settled_count": 14,
+  "won": 4,
   "lost": 9,
   "push_void": 1,
-  "settled_stake": 52.0,
-  "profit": -32.3,
-  "roi_pct": -62.12,
-  "hitrate_pct": 25.0
+  "settled_stake": 54.0,
+  "profit": -27.82,
+  "roi_pct": -51.52,
+  "hitrate_pct": 30.77
 }
 ```
 
 ## DIAGNOSTICS
 - PB-00002 | Joel Alvarez vs Bryce Logan | unmatched | odds-api.io | no_matching_score_game
-- PB-00003 | Tampa Bay Lightning vs Montréal Canadiens | pending | time | kampen forventes ikke færdig endnu
+- PB-00003 | Tampa Bay Lightning vs Montréal Canadiens | settled | odds-api.io | Tampa Bay Lightning 1 - 2 Montréal Canadiens; winner=Montréal Canadiens
 - PB-00005 | Levante vs CA Osasuna | pending | time | kampen forventes ikke færdig endnu
 - PB-00007 | Carlos Prates vs Jack Della Maddalena | unmatched | odds-api.io | no_matching_score_game
 - PB-00008 | Colorado Avalanche vs Minnesota Wild | pending | time | kampen forventes ikke færdig endnu
@@ -53,6 +53,7 @@ football-data fallback matches loaded: 29
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
+- PB-00003 | win | profit 4.48 | Tampa Bay Lightning vs Montréal Canadiens | h2h | Montréal Canadiens @ 3.24 | Tampa Bay Lightning 1 - 2 Montréal Canadiens; winner=Montréal Canadiens | odds-api.io
 - PB-00004 | win | profit 4.0 | Getafe vs Rayo Vallecano | h2h | Rayo Vallecano @ 5.0 | Getafe 0 - 2 Rayo Vallecano; winner=Rayo Vallecano | odds-api.io
 - PB-00006 | loss | profit -1.0 | Bournemouth vs Crystal Palace | h2h | Crystal Palace @ 5.6 | Bournemouth 3 - 0 Crystal Palace; winner=Bournemouth | odds-api.io
 - PB-00012 | loss | profit -4.0 | Union Berlin vs 1. FC Köln | totals | Under @ 2.16 | Union Berlin 2 - 2 1. FC Köln; total=4, line=2.5 | football-data
@@ -68,7 +69,6 @@ football-data fallback matches loaded: 29
 
 ## OPEN
 - PB-00002 | 2026-05-03 02:00 | mma_mixed_martial_arts | Joel Alvarez vs Bryce Logan | h2h | Bryce Logan None @ 3.5
-- PB-00003 | 2026-05-04 00:10 | icehockey_nhl | Tampa Bay Lightning vs Montréal Canadiens | h2h | Montréal Canadiens None @ 3.24
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None @ 3.05
 - PB-00007 | 2026-05-02 15:45 | mma_mixed_martial_arts | Carlos Prates vs Jack Della Maddalena | h2h | Jack Della Maddalena None @ 2.1
 - PB-00008 | 2026-05-04 03:10 | icehockey_nhl | Colorado Avalanche vs Minnesota Wild | h2h | Minnesota Wild None @ 3.5
