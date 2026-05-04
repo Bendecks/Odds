@@ -1,27 +1,27 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-04T20:57:07.707925+00:00
+Generated: 2026-05-04T22:45:57.122918+00:00
 
-Checked open bets: 22 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 0
+Checked open bets: 22 | Auto-settled: 5 | Pending/not finished: 12 | Unmatched: 5
 
 The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, icehockey_nhl, basketball_nba, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
 
-odds-api.io fallback events loaded: 1573
+odds-api.io fallback events loaded: 1451
 
 football-data fallback matches loaded: 19
 
 ## SUMMARY
 ```json
 {
-  "open_count": 22,
-  "settled_count": 32,
-  "won": 12,
-  "lost": 19,
+  "open_count": 17,
+  "settled_count": 37,
+  "won": 13,
+  "lost": 23,
   "push_void": 1,
-  "settled_stake": 204.0,
-  "profit": 25.74,
-  "roi_pct": 12.62,
-  "hitrate_pct": 38.71
+  "settled_stake": 254.0,
+  "profit": -1.96,
+  "roi_pct": -0.77,
+  "hitrate_pct": 36.11
 }
 ```
 
@@ -31,16 +31,16 @@ football-data fallback matches loaded: 19
 - PB-00026 | VfB Stuttgart vs Bayer Leverkusen | pending | time | kampen forventes ikke færdig endnu
 - PB-00027 | Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
 - PB-00034 | FC Augsburg vs Borussia Monchengladbach | pending | time | kampen forventes ikke færdig endnu
-- PB-00038 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
-- PB-00039 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
-- PB-00040 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
-- PB-00041 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
-- PB-00042 | Everton FC vs Manchester City | pending | time | kampen forventes ikke færdig endnu
-- PB-00043 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
-- PB-00044 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
-- PB-00045 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
-- PB-00046 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
-- PB-00047 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
+- PB-00038 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
+- PB-00039 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
+- PB-00040 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
+- PB-00041 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
+- PB-00042 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
+- PB-00043 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.75
+- PB-00044 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.25
+- PB-00045 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.5
+- PB-00046 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC
+- PB-00047 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC
 - PB-00048 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
 - PB-00049 | New York Knicks vs Philadelphia 76ers | pending | time | kampen forventes ikke færdig endnu
 - PB-00050 | Vegas Golden Knights vs Anaheim Ducks | pending | time | kampen forventes ikke færdig endnu
@@ -82,6 +82,11 @@ football-data fallback matches loaded: 19
 - PB-00035 | loss | profit -10.0 | FC St. Pauli vs FSV Mainz | h2h | FC St. Pauli @ 2.98 | FC St. Pauli 1 - 2 FSV Mainz; winner=FSV Mainz | odds-api.io
 - PB-00036 | loss | profit -10.0 | Manchester United vs Liverpool FC | h2h | Liverpool FC @ 3.0 | Manchester United 3 - 2 Liverpool FC; pick Liverpool FC lost. | manual:web:Reuters/SBNation
 - PB-00037 | loss | profit -10.0 | Manchester United vs Liverpool FC | h2h | Liverpool FC @ 2.96 | Manchester United 3 - 2 Liverpool FC; pick Liverpool FC lost. | manual:web:Reuters/SBNation
+- PB-00043 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | totals | Over @ 2.25 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.75 | odds-api.io
+- PB-00044 | win | profit 12.3 | Sevilla FC vs Real Sociedad San Sebastian | totals | Under @ 2.23 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.25 | odds-api.io
+- PB-00045 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | totals | Over @ 1.99 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.5 | odds-api.io
+- PB-00046 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian @ 3.1 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC | odds-api.io
+- PB-00047 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian @ 3.23 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC | odds-api.io
 
 ## OPEN
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None @ 3.05
@@ -94,11 +99,6 @@ football-data fallback matches loaded: 19
 - PB-00040 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Under 2.75 @ 2.19
 - PB-00041 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.25 @ 2.15
 - PB-00042 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 2.5 @ 1.65
-- PB-00043 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.75 @ 2.25
-- PB-00044 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 @ 2.23
-- PB-00045 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 @ 1.99
-- PB-00046 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None @ 3.1
-- PB-00047 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None @ 3.23
 - PB-00048 | 2026-05-05 01:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.12
 - PB-00049 | 2026-05-05 02:00 | basketball_odds_api_io | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None @ 3.31
 - PB-00050 | 2026-05-05 03:30 | icehockey_odds_api_io | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None @ 2.39

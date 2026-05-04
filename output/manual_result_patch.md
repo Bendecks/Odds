@@ -1,6 +1,6 @@
 # MANUAL RESULT PATCH
 
-Generated: 2026-05-04T20:57:07.766550+00:00
+Generated: 2026-05-04T22:45:57.177745+00:00
 
 Applied: 0
 Skipped: 16
@@ -28,15 +28,15 @@ Skipped: 16
 ## SUMMARY
 ```json
 {
-  "open_count": 22,
-  "settled_count": 32,
-  "won": 12,
-  "lost": 19,
+  "open_count": 17,
+  "settled_count": 37,
+  "won": 13,
+  "lost": 23,
   "push_void": 1,
-  "open_stake": 242.0,
-  "settled_stake": 204.0,
-  "profit": 25.74,
-  "roi_pct": 12.62,
-  "hitrate_pct": 38.71
+  "open_stake": 192.0,
+  "settled_stake": 254.0,
+  "profit": -1.96,
+  "roi_pct": -0.77,
+  "hitrate_pct": 36.11
 }
 ```
