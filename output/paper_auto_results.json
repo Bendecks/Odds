@@ -1,12 +1,28 @@
 {
-  "generated_at": "2026-05-04T01:45:32.157112+00:00",
+  "generated_at": "2026-05-04T05:23:30.267660+00:00",
   "results": [
     {
-      "id": "PB-00003",
+      "id": "PB-00008",
       "result": "win",
-      "profit": 4.48,
-      "note": "Tampa Bay Lightning 1 - 2 Montréal Canadiens; winner=Montréal Canadiens",
-      "settled_at": "2026-05-04T01:45:32.032612+00:00",
+      "profit": 5.0,
+      "note": "Colorado Avalanche 2 - 3 Minnesota Wild; winner=Minnesota Wild",
+      "settled_at": "2026-05-04T05:23:30.128677+00:00",
+      "source": "odds-api.io"
+    },
+    {
+      "id": "PB-00009",
+      "result": "loss",
+      "profit": -2.0,
+      "note": "Cleveland Cavaliers 114 - 103 Toronto Raptors; winner=Cleveland Cavaliers",
+      "settled_at": "2026-05-04T05:23:30.137991+00:00",
+      "source": "odds-api.io"
+    },
+    {
+      "id": "PB-00029",
+      "result": "loss",
+      "profit": -20.0,
+      "note": "Cleveland Cavaliers 114 - 103 Toronto Raptors; winner=Cleveland Cavaliers",
+      "settled_at": "2026-05-04T05:23:30.229212+00:00",
       "source": "odds-api.io"
     }
   ],
@@ -17,13 +33,6 @@
       "status": "unmatched",
       "source": "odds-api.io",
       "note": "no_matching_score_game"
-    },
-    {
-      "id": "PB-00003",
-      "event": "Tampa Bay Lightning vs Montréal Canadiens",
-      "status": "settled",
-      "source": "odds-api.io",
-      "note": "Tampa Bay Lightning 1 - 2 Montréal Canadiens; winner=Montréal Canadiens"
     },
     {
       "id": "PB-00005",
@@ -42,16 +51,16 @@
     {
       "id": "PB-00008",
       "event": "Colorado Avalanche vs Minnesota Wild",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Colorado Avalanche 2 - 3 Minnesota Wild; winner=Minnesota Wild"
     },
     {
       "id": "PB-00009",
       "event": "Cleveland Cavaliers vs Toronto Raptors",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Cleveland Cavaliers 114 - 103 Toronto Raptors; winner=Cleveland Cavaliers"
     },
     {
       "id": "PB-00010",
@@ -140,9 +149,9 @@
     {
       "id": "PB-00029",
       "event": "Cleveland Cavaliers vs Toronto Raptors",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Cleveland Cavaliers 114 - 103 Toronto Raptors; winner=Cleveland Cavaliers"
     },
     {
       "id": "PB-00032",
@@ -180,6 +189,6 @@
       "note": "no_matching_score_game"
     }
   ],
-  "odds_io_events_loaded": 954,
+  "odds_io_events_loaded": 933,
   "football_data_matches_loaded": 29
 }
