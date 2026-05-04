@@ -15,10 +15,11 @@ STRICT_ALLOWED_SPORT_PREFIXES = (
 )
 
 STRICT_ALLOWED_MARKETS = ('h2h',)
-STRICT_MAX_ODDS = 3.00
+STRICT_MAX_ODDS = 2.50
+STRICT_MIN_ODDS = 1.50
 STRICT_MAX_TOP_BETS = 5
 STRICT_MIN_SCORE = 7.0
-STRICT_ALLOW_SINGLE_SOURCE = False
+STRICT_ALLOW_SINGLE_SOURCE = True
 
 
 def now_iso():
@@ -53,19 +54,16 @@ def rejection_reason(item, seen_events):
         return 'Kun top fodboldligaer.'
 
     if market not in STRICT_ALLOWED_MARKETS:
-        return 'Kun kampvinder (ingen over/under).'
+        return 'Kun kampvinder.'
 
-    if odds <= 0 or odds > STRICT_MAX_ODDS:
-        return f'Odds over {STRICT_MAX_ODDS}.'
-
-    if item.get('single_source') and not STRICT_ALLOW_SINGLE_SOURCE:
-        return 'Single-source ikke tilladt.'
+    if odds <= 0 or odds > STRICT_MAX_ODDS or odds < STRICT_MIN_ODDS:
+        return f'Odds udenfor {STRICT_MIN_ODDS}-{STRICT_MAX_ODDS}'
 
     if score < STRICT_MIN_SCORE:
-        return f'Score < {STRICT_MIN_SCORE}.'
+        return f'Score < {STRICT_MIN_SCORE}'
 
     if event in seen_events:
-        return 'Kun 1 bet pr kamp.'
+        return 'Kun 1 bet pr kamp'
 
     return ''
 
@@ -97,10 +95,9 @@ def strict_filter(engine):
             continue
 
         clean = dict(item)
-        clean['role'] = 'PRIMARY_STRICT_V2'
+        clean['role'] = 'PRIMARY_STRICT_V2_1'
         clean['stake_kr'] = 1
-        clean['strict_mode'] = True
-        clean['reason'] = 'Godkendt (Strict V2)'
+        clean['reason'] = 'Godkendt (Strict V2.1)'
 
         new_top.append(clean)
         seen_events.add(str(item.get('event')))
@@ -114,16 +111,15 @@ def strict_filter(engine):
 
     engine['top_bets'] = new_top
     engine['watchlist'] = moved + old_watch
-    engine['mode'] = 'STRICT_MODE_V2'
-
-    engine['summary'] = f"STRICT V2: {len(new_top)} bets"
+    engine['mode'] = 'STRICT_MODE_V2_1'
+    engine['summary'] = f"STRICT V2.1: {len(new_top)} bets"
 
     return engine
 
 
 def write_md(engine):
     lines = []
-    lines.append('# STRICT MODE V2')
+    lines.append('# STRICT MODE V2.1')
     lines.append(engine.get('summary', ''))
     lines.append('')
 
