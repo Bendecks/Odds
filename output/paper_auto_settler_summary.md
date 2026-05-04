@@ -1,19 +1,19 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-04T18:02:14.122846+00:00
+Generated: 2026-05-04T18:31:21.193232+00:00
 
-Checked open bets: 14 | Auto-settled: 0 | Pending/not finished: 14 | Unmatched: 0
+Checked open bets: 22 | Auto-settled: 0 | Pending/not finished: 22 | Unmatched: 0
 
-The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl
+The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, icehockey_nhl, basketball_nba, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
 
-odds-api.io fallback events loaded: 0
+odds-api.io fallback events loaded: 1577
 
 football-data fallback matches loaded: 19
 
 ## SUMMARY
 ```json
 {
-  "open_count": 14,
+  "open_count": 22,
   "settled_count": 32,
   "won": 12,
   "lost": 19,
@@ -40,6 +40,14 @@ football-data fallback matches loaded: 19
 - PB-00044 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
 - PB-00045 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
 - PB-00046 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
+- PB-00047 | Sevilla FC vs Real Sociedad San Sebastian | pending | time | kampen forventes ikke færdig endnu
+- PB-00048 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
+- PB-00049 | New York Knicks vs Philadelphia 76ers | pending | time | kampen forventes ikke færdig endnu
+- PB-00050 | Vegas Golden Knights vs Anaheim Ducks | pending | time | kampen forventes ikke færdig endnu
+- PB-00051 | Carreno Busta, Pablo vs Wawrinka, Stan | pending | time | kampen forventes ikke færdig endnu
+- PB-00052 | Comesana, Francisco vs Riedi, Leandro | pending | time | kampen forventes ikke færdig endnu
+- PB-00053 | Galfi, Dalma vs Grabher, Julia | pending | time | kampen forventes ikke færdig endnu
+- PB-00054 | Garin, Cristian vs Choinski, Jan | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
@@ -90,3 +98,11 @@ football-data fallback matches loaded: 19
 - PB-00044 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 @ 2.23
 - PB-00045 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 @ 1.99
 - PB-00046 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None @ 3.1
+- PB-00047 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None @ 3.23
+- PB-00048 | 2026-05-05 01:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.12
+- PB-00049 | 2026-05-05 02:00 | basketball_odds_api_io | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None @ 3.31
+- PB-00050 | 2026-05-05 03:30 | icehockey_odds_api_io | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None @ 2.39
+- PB-00051 | 2026-05-05 10:00 | tennis_odds_api_io | Carreno Busta, Pablo vs Wawrinka, Stan | h2h | Wawrinka, Stan None @ 2.65
+- PB-00052 | 2026-05-05 10:00 | tennis_odds_api_io | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None @ 2.21
+- PB-00053 | 2026-05-05 10:00 | tennis_odds_api_io | Galfi, Dalma vs Grabher, Julia | h2h | Grabher, Julia None @ 3.09
+- PB-00054 | 2026-05-05 10:00 | tennis_odds_api_io | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None @ 2.73

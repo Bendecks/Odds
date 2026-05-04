@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-04T18:02:08.295070+00:00
+Generated: 2026-05-04T18:31:04.001422+00:00
 
 Source mode: V13_NEAR_TERM_STRICT_READY_ENGINE+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 9 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 8 | Skipped duplicates: 0 | Skipped exposure cap: 12
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 14,
+  "open_count": 22,
   "settled_count": 32,
   "won": 12,
   "lost": 19,
   "push_void": 1,
-  "open_stake": 162.0,
-  "available_exposure_kr": 88.0,
+  "open_stake": 242.0,
+  "available_exposure_kr": 8.0,
   "settled_stake": 204.0,
   "profit": 25.74,
   "roi_pct": 12.62,
@@ -41,6 +41,14 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00044 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Under 2.25 | odds 2.23 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
 - PB-00045 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | totals | Over 2.5 | odds 1.99 | units 1.0 | stake 10.0 kr | edge 0.0 | score 5.7
 - PB-00046 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.1 | units 1.0 | stake 10.0 kr | edge 0.0 | score -3.6
+- PB-00047 | 2026-05-04 21:00 | soccer_odds_api_io | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian None | odds 3.23 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
+- PB-00048 | 2026-05-05 01:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None | odds 3.12 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
+- PB-00049 | 2026-05-05 02:00 | basketball_odds_api_io | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None | odds 3.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
+- PB-00050 | 2026-05-05 03:30 | icehockey_odds_api_io | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None | odds 2.39 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00051 | 2026-05-05 10:00 | tennis_odds_api_io | Carreno Busta, Pablo vs Wawrinka, Stan | h2h | Wawrinka, Stan None | odds 2.65 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00052 | 2026-05-05 10:00 | tennis_odds_api_io | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None | odds 2.21 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00053 | 2026-05-05 10:00 | tennis_odds_api_io | Galfi, Dalma vs Grabher, Julia | h2h | Grabher, Julia None | odds 3.09 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
+- PB-00054 | 2026-05-05 10:00 | tennis_odds_api_io | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None | odds 2.73 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None | odds 3.07 | units 2.0 | stake 20.0 kr | edge 7.7 | score 12.72
