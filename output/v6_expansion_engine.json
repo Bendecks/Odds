@@ -4,7 +4,7 @@
   "watchlist": [],
   "pass": [],
   "mode": "STRICT_MODE_V2_1",
-  "generated_at": "2026-05-05T10:49:30.134753+00:00",
+  "generated_at": "2026-05-05T10:52:43.089582+00:00",
   "candidate_count": 0,
   "diagnostics": {
     "api_errors": [
@@ -57,53 +57,22 @@
         "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
       },
       {
-        "label": "odds-api.io:/odds",
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 23 minutes and 57 seconds.\"}"
-      },
-      {
-        "label": "odds-api.io:/odds",
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 23 minutes and 56 seconds.\"}"
-      },
-      {
-        "label": "odds-api.io:/events",
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 23 minutes and 56 seconds.\"}"
-      },
-      {
-        "label": "odds-api.io:/events",
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 23 minutes and 56 seconds.\"}"
-      },
-      {
-        "label": "odds-api.io:/events",
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 23 minutes and 56 seconds.\"}"
-      },
-      {
-        "label": "odds-api.io:/events",
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 23 minutes and 56 seconds.\"}"
+        "label": "odds-api.io:/leagues",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 20 minutes and 43 seconds.\"}"
       }
     ],
     "quota_exhausted": true,
     "max_hours": 36,
     "theodds_games": 0,
-    "odds_api_io_events": 162,
+    "odds_api_io_events": 0,
     "odds_api_io_games": 0,
     "candidate_count": 0,
     "top_count": 0,
-    "odds_io_leagues_used": [
-      "england-premier-league",
-      "spain-laliga",
-      "germany-bundesliga",
-      "italy-serie-a",
-      "france-ligue-1",
-      "netherlands-eredivisie",
-      "denmark-superliga",
-      "usa-usl-league-two",
-      "finland-kolmonen",
-      "usa-usl-w-league"
-    ],
+    "odds_io_leagues_used": [],
     "engine_note": "Football-only near-term engine. Non-football is not fetched while Strict Mode is football-only."
   },
   "v10": {
-    "activated_at": "2026-05-05T10:49:30.212779+00:00",
+    "activated_at": "2026-05-05T10:52:43.615268+00:00",
     "feedback_file": "output/v9_feedback.json",
     "feedback_patterns": 3,
     "adjustments_applied": 0,
