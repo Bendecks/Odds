@@ -1,6 +1,6 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-05T07:02:46.624970+00:00
+Generated: 2026-05-05T07:13:09.713477+00:00
 
 Checked open bets: 2 | Auto-settled: 0 | Pending/not finished: 2 | Unmatched: 0
 
