@@ -1,6 +1,6 @@
 # STRICT MODE V2.1 MIGRATION
 
-Generated: 2026-05-05T04:52:17.323030+00:00
+Generated: 2026-05-05T07:17:43.331626+00:00
 
 Migrated open legacy bets to void: 0
 
@@ -9,12 +9,12 @@ Migrated open legacy bets to void: 0
 ## SUMMARY
 ```json
 {
-  "open_count": 0,
+  "open_count": 2,
   "settled_count": 59,
   "won": 13,
   "lost": 24,
   "push_void": 22,
-  "open_stake": 0,
+  "open_stake": 20.0,
   "settled_stake": 264.0,
   "profit": -11.96,
   "roi_pct": -4.53,
