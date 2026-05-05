@@ -1,6 +1,6 @@
 # PAPER AUTO SETTLER — FOOTBALL-DATA STRICT
 
-Generated: 2026-05-05T19:59:15.304563+00:00
+Generated: 2026-05-05T21:38:53.384632+00:00
 
 Checked open bets: 10 | Auto-settled: 0 | Pending/not finished: 7 | Unmatched: 3
 
