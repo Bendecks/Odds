@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/manual_result_patch.py'
       - 'scripts/paper_auto_settler.py'
+      - 'scripts/strict_mode_migration_cleaner.py'
       - '.github/workflows/paper_settler.yml'
   schedule:
     - cron: '0 */2 * * *'
@@ -47,12 +48,15 @@ jobs:
       - name: Apply Manual Result Patch
         run: python scripts/manual_result_patch.py
 
+      - name: Apply Strict Mode Migration Cleaner
+        run: python scripts/strict_mode_migration_cleaner.py
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/paper_*.json output/paper_*.md output/manual_result_patch.md || true
+          git add -A output/paper_*.json output/paper_*.md output/manual_result_patch.md output/strict_mode_migration.md || true
           git diff --cached --quiet && exit 0
-          git commit -m "Update paper auto settler and manual patch"
-          git pull --rebase
+          git commit -m "Update paper auto settler, manual patch and strict migration"
+          git pull --rebase --autostash origin main
           git push
