@@ -22,12 +22,31 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
+      - name: Sync latest main before processing
+        run: git pull --rebase --autostash origin main
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: pip install requests
+
+      - name: Validate engine freshness
+        run: |
+          python - <<EOF
+          import json, pathlib, sys, datetime
+          p = pathlib.Path('output/v6_expansion_engine.json')
+          if not p.exists(): sys.exit('Missing engine output')
+          data = json.loads(p.read_text())
+          ts = data.get('generated_at')
+          if not ts: sys.exit('Missing generated_at')
+          dt = datetime.datetime.fromisoformat(ts.replace('Z','+00:00'))
+          age = (datetime.datetime.now(datetime.timezone.utc) - dt).total_seconds() / 60
+          if age > 60:
+              sys.exit(f'Engine output too old: {age:.1f} minutes')
+          print('Engine freshness OK')
+          EOF
 
       - name: Add bets from engine
         run: python scripts/paper_tracker.py
@@ -36,7 +55,7 @@ jobs:
 
       - name: Run Auto Settler
         env:
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          THE_ODDS_API_KEY: ''
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python scripts/paper_auto_settler.py
