@@ -12,9 +12,8 @@ MAX_TOP_BETS = int(os.getenv('MAX_TOP_BETS', '20'))
 ODDS_IO_BOOKMAKER = os.getenv('ODDS_API_IO_BOOKMAKER', '1xbet')
 ODDS_IO_MAX_EVENTS = int(os.getenv('ODDS_IO_MAX_EVENTS', '25'))
 MARKETS = ('h2h',)
-MODE = 'V15_SETTLEABLE_FOOTBALL_ONLY_ENGINE'
+MODE = 'V16_SETTLEABLE_MARKET_VALIDATED_ENGINE'
 
-# Only leagues we can reasonably settle through football-data.org.
 SETTLEABLE_LEAGUES = [
     'england-premier-league',
     'spain-laliga',
@@ -34,7 +33,7 @@ DIAG = {
     'candidate_count': 0,
     'top_count': 0,
     'odds_io_leagues_used': [],
-    'engine_note': 'Only football-data-settleable football leagues are scanned. No non-football and no random high-event leagues.'
+    'engine_note': 'Settleable football only. Top bets require market validation: at least 2 bookmaker prices.'
 }
 
 
@@ -155,8 +154,12 @@ def add_candidate(cands, g, market, selection, prices):
     best = max(vals); med = statistics.median(vals); books = len(vals)
     single_source = books < 2
     edge = 0.0 if single_source else (best / med - 1 if med else 0.0)
-    score = 7.2 if single_source and 1.50 <= best <= 2.50 else edge * 100 + 3 + (2 if books >= 20 else 1 if books >= 8 else 0)
-    confidence = 'controlled_single_source' if single_source else 'market_consensus'
+    if single_source:
+        score = 6.4
+        confidence = 'watch_only_single_source'
+    else:
+        score = edge * 100 + 3 + (2 if books >= 20 else 1 if books >= 8 else 0)
+        confidence = 'market_consensus'
     if best >= 3: score -= 2
     if score < 5.5: return
     cands.append({'event': f"{g.get('home_team')} vs {g.get('away_team')}", 'event_id': g.get('id'), 'source': g.get('source'), 'sport': g.get('sport_key'), 'sport_bucket': 'soccer', 'league': g.get('league'), 'start': g.get('commence_time'), 'start_local': fmt_start(g.get('commence_time')), 'market': market, 'selection': selection, 'point': None, 'odds': round(best, 2), 'median': round(med, 2), 'edge_pct': round(edge * 100, 1), 'books': books, 'pre_score': round(score, 2), 'confidence': confidence, 'single_source': single_source})
@@ -182,17 +185,17 @@ def collect_candidates(): return parse_games(fetch_odds_io())
 
 def top_eligible(c):
     odds = float(c.get('odds') or 0); score = float(c.get('pre_score') or 0)
-    return 1.50 <= odds <= 2.50 and score >= 7.0 and c.get('league') in SETTLEABLE_LEAGUES
+    return 1.50 <= odds <= 2.50 and score >= 7.0 and c.get('league') in SETTLEABLE_LEAGUES and int(c.get('books') or 0) >= 2
 
 def rank(cands):
     top = []; watch = []
     for c in cands:
         item = {'event': c['event'], 'event_id': c.get('event_id'), 'source': c.get('source'), 'sport': c.get('sport'), 'sport_bucket': c.get('sport_bucket'), 'league': c.get('league'), 'start': c.get('start'), 'start_local': c.get('start_local'), 'market': c.get('market'), 'pick': c.get('selection'), 'point': c.get('point'), 'odds': c.get('odds'), 'edge_pct': c.get('edge_pct'), 'books': c.get('books'), 'pre_score': c.get('pre_score'), 'confidence': c.get('confidence'), 'single_source': c.get('single_source')}
         if not top_eligible(c):
-            item['role'] = 'WATCHLIST'; item['stake_kr'] = 0; item['reason'] = 'Ikke settleable Strict V2.1.'; watch.append(item); continue
+            item['role'] = 'WATCHLIST'; item['stake_kr'] = 0; item['reason'] = 'Ikke settleable/market-validated Strict V2.2.'; watch.append(item); continue
         if any(c.get('event') == t.get('event') for t in top):
             item['role'] = 'WATCHLIST'; item['stake_kr'] = 0; item['reason'] = 'Kun 1 bet pr kamp.'; watch.append(item); continue
-        item['role'] = 'PRIMARY'; item['stake_kr'] = 1; item['reason'] = 'Settleable football Strict V2.1 candidate.'
+        item['role'] = 'PRIMARY'; item['stake_kr'] = 1; item['reason'] = 'Settleable market-validated football candidate.'
         top.append(item)
         if len(top) >= MAX_TOP_BETS: break
     DIAG['top_count'] = len(top)
@@ -207,6 +210,6 @@ with open(OUT / 'v6_expansion_engine.md', 'w', encoding='utf-8') as f:
     for sec in ['top_bets', 'watchlist', 'pass']:
         f.write('## ' + sec.upper() + '\n')
         for i, x in enumerate(as_list(res.get(sec)), 1):
-            f.write(f"{i}. {x.get('start_local')} | {x.get('league')} | {x.get('event')} | {x.get('market')} | {x.get('pick')} | odds {x.get('odds')} | units {x.get('stake_kr')} | source {x.get('source')} | conf {x.get('confidence')} | score {x.get('pre_score')} | {x.get('reason')}\n")
+            f.write(f"{i}. {x.get('start_local')} | {x.get('league')} | {x.get('event')} | {x.get('market')} | {x.get('pick')} | odds {x.get('odds')} | units {x.get('stake_kr')} | source {x.get('source')} | books {x.get('books')} | conf {x.get('confidence')} | score {x.get('pre_score')} | {x.get('reason')}\n")
         f.write('\n')
 print(res['summary'])
