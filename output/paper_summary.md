@@ -1,12 +1,12 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-05T11:49:40.301952+00:00
+Generated: 2026-05-05T11:50:00.390317+00:00
 
 Source mode: STRICT_MODE_V2_1
 
-Tracker add bets enabled: False
+Tracker add bets enabled: True
 
-Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 0 | Skipped duplicates: 5 | Skipped exposure cap: 0
 
 ## SUMMARY
 ```json
