@@ -1,2 +1,2 @@
 # Odds
-Odds database
+Odds database.
