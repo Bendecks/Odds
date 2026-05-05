@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-04T22:45:57.122918+00:00
+Generated: 2026-05-05T01:45:58.118737+00:00
 
-Checked open bets: 22 | Auto-settled: 5 | Pending/not finished: 12 | Unmatched: 5
+Checked open bets: 17 | Auto-settled: 0 | Pending/not finished: 12 | Unmatched: 5
 
 The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, icehockey_nhl, basketball_nba, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
 
-odds-api.io fallback events loaded: 1451
+odds-api.io fallback events loaded: 1486
 
 football-data fallback matches loaded: 19
 
@@ -36,11 +36,6 @@ football-data fallback matches loaded: 19
 - PB-00040 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
 - PB-00041 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
 - PB-00042 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
-- PB-00043 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.75
-- PB-00044 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.25
-- PB-00045 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.5
-- PB-00046 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC
-- PB-00047 | Sevilla FC vs Real Sociedad San Sebastian | settled | odds-api.io | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC
 - PB-00048 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
 - PB-00049 | New York Knicks vs Philadelphia 76ers | pending | time | kampen forventes ikke færdig endnu
 - PB-00050 | Vegas Golden Knights vs Anaheim Ducks | pending | time | kampen forventes ikke færdig endnu
