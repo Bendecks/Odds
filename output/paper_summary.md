@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-05T02:33:08.828923+00:00
+Generated: 2026-05-05T03:56:07.445695+00:00
 
-Source mode: STRICT_MODE_V2_1
+Source mode: V13_NEAR_TERM_STRICT_READY_ENGINE+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 5 | Skipped duplicates: 1 | Skipped exposure cap: 14
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 17,
+  "open_count": 22,
   "settled_count": 37,
   "won": 13,
   "lost": 23,
   "push_void": 1,
-  "open_stake": 192.0,
-  "available_exposure_kr": 58.0,
+  "open_stake": 242.0,
+  "available_exposure_kr": 8.0,
   "settled_stake": 254.0,
   "profit": -1.96,
   "roi_pct": -0.77,
@@ -42,8 +42,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 - PB-00050 | 2026-05-05 03:30 | icehockey_odds_api_io | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None | odds 2.39 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
 - PB-00051 | 2026-05-05 10:00 | tennis_odds_api_io | Carreno Busta, Pablo vs Wawrinka, Stan | h2h | Wawrinka, Stan None | odds 2.65 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
 - PB-00052 | 2026-05-05 10:00 | tennis_odds_api_io | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None | odds 2.21 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00055 | 2026-05-05 10:00 | tennis_odds_api_io | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None | odds 2.42 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
 - PB-00053 | 2026-05-05 10:00 | tennis_odds_api_io | Galfi, Dalma vs Grabher, Julia | h2h | Grabher, Julia None | odds 3.09 | units 1.0 | stake 10.0 kr | edge 0.0 | score -0.58
+- PB-00056 | 2026-05-05 10:00 | tennis_odds_api_io | Galfi, Dalma vs Grabher, Julia | h2h | Grabher, Julia None | odds 3.15 | units 1.0 | stake 10.0 kr | edge 0.0 | score -2.6
 - PB-00054 | 2026-05-05 10:00 | tennis_odds_api_io | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None | odds 2.73 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00057 | 2026-05-05 10:00 | tennis_odds_api_io | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None | odds 2.94 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00058 | 2026-05-05 10:00 | tennis_odds_api_io | Merida, Daniel vs Barrios Vera, Marcelo Tomas | h2h | Barrios Vera, Marcelo Tomas None | odds 2.5 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
+- PB-00059 | 2026-05-05 10:00 | tennis_odds_api_io | Potapova, Anastasia vs Bartunkova, Nikola | h2h | Bartunkova, Nikola None | odds 2.89 | units 1.0 | stake 10.0 kr | edge 0.0 | score 8.2
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None | odds 3.05 | units None | stake 2.0 kr | edge 10.9 | score 15.91
 - PB-00025 | 2026-05-09 14:00 | soccer_spain_la_liga | Elche CF vs Alavés | h2h | Alavés None | odds 3.4 | units 2.0 | stake 20.0 kr | edge 7.9 | score 12.94
 - PB-00027 | 2026-05-09 15:30 | soccer_germany_bundesliga | Augsburg vs Borussia Monchengladbach | h2h | Borussia Monchengladbach None | odds 3.07 | units 2.0 | stake 20.0 kr | edge 7.7 | score 12.72

@@ -1,6 +1,15 @@
 {
-  "generated_at": "2026-05-05T01:45:58.118414+00:00",
-  "results": [],
+  "generated_at": "2026-05-05T03:56:19.440867+00:00",
+  "results": [
+    {
+      "id": "PB-00048",
+      "result": "loss",
+      "profit": -10.0,
+      "note": "Carolina Hurricanes 3 - 2 Philadelphia Flyers; winner=Carolina Hurricanes",
+      "settled_at": "2026-05-05T03:56:19.425368+00:00",
+      "source": "odds-api.io"
+    }
+  ],
   "diagnostics": [
     {
       "id": "PB-00005",
@@ -75,16 +84,16 @@
     {
       "id": "PB-00048",
       "event": "Carolina Hurricanes vs Philadelphia Flyers",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "settled",
+      "source": "odds-api.io",
+      "note": "Carolina Hurricanes 3 - 2 Philadelphia Flyers; winner=Carolina Hurricanes"
     },
     {
       "id": "PB-00049",
       "event": "New York Knicks vs Philadelphia 76ers",
-      "status": "pending",
-      "source": "time",
-      "note": "kampen forventes ikke færdig endnu"
+      "status": "unmatched",
+      "source": "odds-api.io",
+      "note": "no_matching_score_game"
     },
     {
       "id": "PB-00050",
@@ -120,8 +129,43 @@
       "status": "pending",
       "source": "time",
       "note": "kampen forventes ikke færdig endnu"
+    },
+    {
+      "id": "PB-00055",
+      "event": "Comesana, Francisco vs Riedi, Leandro",
+      "status": "pending",
+      "source": "time",
+      "note": "kampen forventes ikke færdig endnu"
+    },
+    {
+      "id": "PB-00056",
+      "event": "Galfi, Dalma vs Grabher, Julia",
+      "status": "pending",
+      "source": "time",
+      "note": "kampen forventes ikke færdig endnu"
+    },
+    {
+      "id": "PB-00057",
+      "event": "Garin, Cristian vs Choinski, Jan",
+      "status": "pending",
+      "source": "time",
+      "note": "kampen forventes ikke færdig endnu"
+    },
+    {
+      "id": "PB-00058",
+      "event": "Merida, Daniel vs Barrios Vera, Marcelo Tomas",
+      "status": "pending",
+      "source": "time",
+      "note": "kampen forventes ikke færdig endnu"
+    },
+    {
+      "id": "PB-00059",
+      "event": "Potapova, Anastasia vs Bartunkova, Nikola",
+      "status": "pending",
+      "source": "time",
+      "note": "kampen forventes ikke færdig endnu"
     }
   ],
-  "odds_io_events_loaded": 1486,
+  "odds_io_events_loaded": 1487,
   "football_data_matches_loaded": 19
 }

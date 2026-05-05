@@ -1,27 +1,27 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-05T01:45:58.118737+00:00
+Generated: 2026-05-05T03:56:19.441150+00:00
 
-Checked open bets: 17 | Auto-settled: 0 | Pending/not finished: 12 | Unmatched: 5
+Checked open bets: 22 | Auto-settled: 1 | Pending/not finished: 15 | Unmatched: 6
 
 The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, icehockey_nhl, basketball_nba, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
 
-odds-api.io fallback events loaded: 1486
+odds-api.io fallback events loaded: 1487
 
 football-data fallback matches loaded: 19
 
 ## SUMMARY
 ```json
 {
-  "open_count": 17,
-  "settled_count": 37,
+  "open_count": 21,
+  "settled_count": 38,
   "won": 13,
-  "lost": 23,
+  "lost": 24,
   "push_void": 1,
-  "settled_stake": 254.0,
-  "profit": -1.96,
-  "roi_pct": -0.77,
-  "hitrate_pct": 36.11
+  "settled_stake": 264.0,
+  "profit": -11.96,
+  "roi_pct": -4.53,
+  "hitrate_pct": 35.14
 }
 ```
 
@@ -36,13 +36,18 @@ football-data fallback matches loaded: 19
 - PB-00040 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
 - PB-00041 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
 - PB-00042 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
-- PB-00048 | Carolina Hurricanes vs Philadelphia Flyers | pending | time | kampen forventes ikke færdig endnu
-- PB-00049 | New York Knicks vs Philadelphia 76ers | pending | time | kampen forventes ikke færdig endnu
+- PB-00048 | Carolina Hurricanes vs Philadelphia Flyers | settled | odds-api.io | Carolina Hurricanes 3 - 2 Philadelphia Flyers; winner=Carolina Hurricanes
+- PB-00049 | New York Knicks vs Philadelphia 76ers | unmatched | odds-api.io | no_matching_score_game
 - PB-00050 | Vegas Golden Knights vs Anaheim Ducks | pending | time | kampen forventes ikke færdig endnu
 - PB-00051 | Carreno Busta, Pablo vs Wawrinka, Stan | pending | time | kampen forventes ikke færdig endnu
 - PB-00052 | Comesana, Francisco vs Riedi, Leandro | pending | time | kampen forventes ikke færdig endnu
 - PB-00053 | Galfi, Dalma vs Grabher, Julia | pending | time | kampen forventes ikke færdig endnu
 - PB-00054 | Garin, Cristian vs Choinski, Jan | pending | time | kampen forventes ikke færdig endnu
+- PB-00055 | Comesana, Francisco vs Riedi, Leandro | pending | time | kampen forventes ikke færdig endnu
+- PB-00056 | Galfi, Dalma vs Grabher, Julia | pending | time | kampen forventes ikke færdig endnu
+- PB-00057 | Garin, Cristian vs Choinski, Jan | pending | time | kampen forventes ikke færdig endnu
+- PB-00058 | Merida, Daniel vs Barrios Vera, Marcelo Tomas | pending | time | kampen forventes ikke færdig endnu
+- PB-00059 | Potapova, Anastasia vs Bartunkova, Nikola | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
@@ -82,6 +87,7 @@ football-data fallback matches loaded: 19
 - PB-00045 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | totals | Over @ 1.99 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; total=1, line=2.5 | odds-api.io
 - PB-00046 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian @ 3.1 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC | odds-api.io
 - PB-00047 | loss | profit -10.0 | Sevilla FC vs Real Sociedad San Sebastian | h2h | Real Sociedad San Sebastian @ 3.23 | Sevilla FC 1 - 0 Real Sociedad San Sebastian; winner=Sevilla FC | odds-api.io
+- PB-00048 | loss | profit -10.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.12 | Carolina Hurricanes 3 - 2 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
 
 ## OPEN
 - PB-00005 | 2026-05-08 21:00 | soccer_spain_la_liga | Levante vs CA Osasuna | h2h | CA Osasuna None @ 3.05
@@ -94,10 +100,14 @@ football-data fallback matches loaded: 19
 - PB-00040 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Under 2.75 @ 2.19
 - PB-00041 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 3.25 @ 2.15
 - PB-00042 | 2026-05-04 21:00 | soccer_odds_api_io | Everton FC vs Manchester City | totals | Over 2.5 @ 1.65
-- PB-00048 | 2026-05-05 01:00 | icehockey_odds_api_io | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers None @ 3.12
 - PB-00049 | 2026-05-05 02:00 | basketball_odds_api_io | New York Knicks vs Philadelphia 76ers | h2h | Philadelphia 76ers None @ 3.31
 - PB-00050 | 2026-05-05 03:30 | icehockey_odds_api_io | Vegas Golden Knights vs Anaheim Ducks | h2h | Anaheim Ducks None @ 2.39
 - PB-00051 | 2026-05-05 10:00 | tennis_odds_api_io | Carreno Busta, Pablo vs Wawrinka, Stan | h2h | Wawrinka, Stan None @ 2.65
 - PB-00052 | 2026-05-05 10:00 | tennis_odds_api_io | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None @ 2.21
 - PB-00053 | 2026-05-05 10:00 | tennis_odds_api_io | Galfi, Dalma vs Grabher, Julia | h2h | Grabher, Julia None @ 3.09
 - PB-00054 | 2026-05-05 10:00 | tennis_odds_api_io | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None @ 2.73
+- PB-00055 | 2026-05-05 10:00 | tennis_odds_api_io | Comesana, Francisco vs Riedi, Leandro | h2h | Riedi, Leandro None @ 2.42
+- PB-00056 | 2026-05-05 10:00 | tennis_odds_api_io | Galfi, Dalma vs Grabher, Julia | h2h | Grabher, Julia None @ 3.15
+- PB-00057 | 2026-05-05 10:00 | tennis_odds_api_io | Garin, Cristian vs Choinski, Jan | h2h | Choinski, Jan None @ 2.94
+- PB-00058 | 2026-05-05 10:00 | tennis_odds_api_io | Merida, Daniel vs Barrios Vera, Marcelo Tomas | h2h | Barrios Vera, Marcelo Tomas None @ 2.5
+- PB-00059 | 2026-05-05 10:00 | tennis_odds_api_io | Potapova, Anastasia vs Bartunkova, Nikola | h2h | Bartunkova, Nikola None @ 2.89
