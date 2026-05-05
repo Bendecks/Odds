@@ -1,19 +1,19 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-05T04:52:17.241124+00:00
+Generated: 2026-05-05T07:02:46.624970+00:00
 
-Checked open bets: 0 | Auto-settled: 0 | Pending/not finished: 0 | Unmatched: 0
+Checked open bets: 2 | Auto-settled: 0 | Pending/not finished: 2 | Unmatched: 0
 
-The Odds API sports queried: 
+The Odds API sports queried: soccer_epl, soccer_spain_la_liga, soccer_germany_bundesliga
 
-odds-api.io fallback events loaded: 0
+odds-api.io fallback events loaded: 827
 
 football-data fallback matches loaded: 0
 
 ## SUMMARY
 ```json
 {
-  "open_count": 0,
+  "open_count": 2,
   "settled_count": 59,
   "won": 13,
   "lost": 24,
@@ -26,6 +26,8 @@ football-data fallback matches loaded: 0
 ```
 
 ## DIAGNOSTICS
+- PB-00060 | RKC Waalwijk vs Willem II Tilburg | pending | time | kampen forventes ikke færdig endnu
+- PB-00061 | Almere City FC vs De Graafschap | pending | time | kampen forventes ikke færdig endnu
 
 ## RECENT SETTLED
 - PB-00001 | loss | profit -2.0 | Carolina Hurricanes vs Philadelphia Flyers | h2h | Philadelphia Flyers @ 3.88 | Carolina Hurricanes 3 - 0 Philadelphia Flyers; winner=Carolina Hurricanes | odds-api.io
@@ -89,3 +91,5 @@ football-data fallback matches loaded: 0
 - PB-00059 | void | profit 0.0 | Potapova, Anastasia vs Bartunkova, Nikola | h2h | Bartunkova, Nikola @ 2.89 | legacy_void: sport outside Strict V2.1 | strict_mode_v2_1_migration
 
 ## OPEN
+- PB-00060 | 2026-05-05 18:45 | soccer_odds_api_io | RKC Waalwijk vs Willem II Tilburg | h2h | RKC Waalwijk None @ 2.32
+- PB-00061 | 2026-05-06 18:45 | soccer_odds_api_io | Almere City FC vs De Graafschap | h2h | Almere City FC None @ 2.28

@@ -1,10 +1,10 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-05T05:39:02.929340+00:00
+Generated: 2026-05-05T07:02:44.763095+00:00
 
-Source mode: STRICT_MODE_V2_1
+Source mode: V14_FOOTBALL_ONLY_NEAR_TERM_ENGINE+V10_ADAPTIVE_FEEDBACK
 
-Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
+Added this run: 2 | Skipped duplicates: 0 | Skipped exposure cap: 0
 
 ## BANKROLL / EXPOSURE
 Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.00 kr
@@ -17,13 +17,13 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 0,
+  "open_count": 2,
   "settled_count": 59,
   "won": 13,
   "lost": 24,
   "push_void": 22,
-  "open_stake": 0,
-  "available_exposure_kr": 250.0,
+  "open_stake": 20.0,
+  "available_exposure_kr": 230.0,
   "settled_stake": 264.0,
   "profit": -11.96,
   "roi_pct": -4.53,
@@ -32,8 +32,8 @@ Bankroll: 1000.00 kr | Unit: 1.00% = 10.00 kr | Max open exposure: 25.00% = 250.
 ```
 
 ## OPEN PAPER BETS — SORTED BY KICKOFF
-No open paper bets.
-
+- PB-00060 | 2026-05-05 18:45 | soccer_odds_api_io | RKC Waalwijk vs Willem II Tilburg | h2h | RKC Waalwijk None | odds 2.32 | units 1.0 | stake 10.0 kr | edge 0.0 | score 9.2
+- PB-00061 | 2026-05-06 18:45 | soccer_odds_api_io | Almere City FC vs De Graafschap | h2h | Almere City FC None | odds 2.28 | units 1.0 | stake 10.0 kr | edge 0.0 | score 9.2
 
 ## SETTLED PAPER BETS — SORTED BY KICKOFF
 - PB-00016 | 2026-05-02 13:15 | win | profit 2.1 | Louie Sutherland vs Tai Tuivasa | Louie Sutherland @ 3.1
