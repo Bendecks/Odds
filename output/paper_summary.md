@@ -1,12 +1,12 @@
 # PAPER TRACKER V2 — BANKROLL MANAGER
 
-Generated: 2026-05-05T10:48:48.349224+00:00
+Generated: 2026-05-05T11:49:40.301952+00:00
 
 Source mode: STRICT_MODE_V2_1
 
-Tracker add bets enabled: True
+Tracker add bets enabled: False
 
-Added this run: 0 | Skipped duplicates: 5 | Skipped exposure cap: 0
+Added this run: 0 | Skipped duplicates: 0 | Skipped exposure cap: 0
 
 ## SUMMARY
 ```json
@@ -16,13 +16,13 @@ Added this run: 0 | Skipped duplicates: 5 | Skipped exposure cap: 0
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "open_count": 6,
+  "open_count": 10,
   "settled_count": 59,
   "won": 13,
   "lost": 24,
   "push_void": 22,
-  "open_stake": 60.0,
-  "available_exposure_kr": 190.0,
+  "open_stake": 100.0,
+  "available_exposure_kr": 150.0,
   "settled_stake": 264.0,
   "profit": -11.96,
   "roi_pct": -4.53,
@@ -33,10 +33,14 @@ Added this run: 0 | Skipped duplicates: 5 | Skipped exposure cap: 0
 ## OPEN PAPER BETS — SORTED BY KICKOFF
 - PB-00060 | 2026-05-05 18:45 | soccer_odds_api_io | RKC Waalwijk vs Willem II Tilburg | h2h | RKC Waalwijk None | odds 2.32 | units 1.0 | stake 10.0 kr | edge 0.0 | score 9.2
 - PB-00062 | 2026-05-05 18:45 | soccer_odds_api_io | RKC Waalwijk vs Willem II Tilburg | h2h | RKC Waalwijk None | odds 2.3 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.92
+- PB-00066 | 2026-05-05 18:45 | soccer_odds_api_io | RKC Waalwijk vs Willem II Tilburg | h2h | RKC Waalwijk None | odds 2.31 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.92
 - PB-00065 | 2026-05-06 17:30 | soccer_odds_api_io | HaPK Edustus vs Kultsu FC | h2h | HaPK Edustus None | odds 1.65 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.2
+- PB-00067 | 2026-05-06 17:30 | soccer_odds_api_io | HaPK Edustus vs Kultsu FC | h2h | HaPK Edustus None | odds 1.92 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.2
+- PB-00068 | 2026-05-06 17:30 | soccer_odds_api_io | Mikkelin Palloilijat 2 vs Kjp Kouvola | h2h | Kjp Kouvola None | odds 2.02 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.92
 - PB-00063 | 2026-05-06 18:30 | soccer_odds_api_io | FC Lahti 69 vs Helsingin Ponnistus | h2h | FC Lahti 69 None | odds 2.04 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.92
 - PB-00064 | 2026-05-06 18:30 | soccer_odds_api_io | KuPS Akatemia II vs Yllatys | h2h | KuPS Akatemia II None | odds 1.75 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.2
 - PB-00061 | 2026-05-06 18:45 | soccer_odds_api_io | Almere City FC vs De Graafschap | h2h | Almere City FC None | odds 2.28 | units 1.0 | stake 10.0 kr | edge 0.0 | score 9.2
+- PB-00069 | 2026-05-06 18:45 | soccer_odds_api_io | Almere City FC vs De Graafschap | h2h | Almere City FC None | odds 2.21 | units 1.0 | stake 10.0 kr | edge 0.0 | score 7.92
 
 ## SETTLED PAPER BETS — SORTED BY KICKOFF
 - PB-00016 | 2026-05-02 13:15 | win | profit 2.1 | Louie Sutherland vs Tai Tuivasa | Louie Sutherland @ 3.1
