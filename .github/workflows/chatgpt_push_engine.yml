@@ -1,32 +1,26 @@
 name: ChatGPT Push Engine
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/**'
-      - '.github/workflows/**'
-      - 'data/**'
-      - 'requirements.txt'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: engine-output-writer
+  group: v6-expansion-engine
   cancel-in-progress: true
 
 jobs:
   run-engines:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: true
+
+      - name: Sync latest main before running
+        run: git pull --rebase --autostash origin main
 
       - uses: actions/setup-python@v5
         with:
@@ -35,18 +29,16 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Sync latest main before running
-        run: git pull --rebase --autostash origin main
-
       - name: Run V6/V7 Expansion Engine
         run: python scripts/v6_expansion_engine.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          THE_ODDS_API_KEY: ''
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
           MAX_HOURS: 36
           ODDS_IO_SPORTS: football
-          ODDS_API_IO_MAX_EVENTS: 25
+          ODDS_IO_MAX_EVENTS: 25
+          THEODDS_SPORTS: ''
 
       - name: Apply V10 Adaptive Feedback
         run: python scripts/v10_apply_feedback.py
@@ -64,5 +56,5 @@ jobs:
           git pull --rebase --autostash origin main
           git add -A output/v6_expansion_engine.* output/odds_cache_raw.json output/v9_* || true
           git diff --cached --quiet && exit 0
-          git commit -m "Auto-update engine outputs after ChatGPT push"
+          git commit -m "Manual update engine outputs"
           git push
