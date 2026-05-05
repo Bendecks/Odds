@@ -2,15 +2,6 @@ name: Paper Auto Settler
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/manual_result_patch.py'
-      - 'scripts/paper_auto_settler.py'
-      - 'scripts/paper_tracker.py'
-      - 'scripts/strict_mode_migration_cleaner.py'
-      - '.github/workflows/paper_settler.yml'
   schedule:
     - cron: '35 */2 * * *'
 
@@ -26,22 +17,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run Paper Tracker after latest engine output
+      - name: Add bets from engine
         run: python scripts/paper_tracker.py
+        env:
+          TRACKER_ADD_BETS: '1'
 
       - name: Run Auto Settler
         env:
@@ -50,21 +41,20 @@ jobs:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python scripts/paper_auto_settler.py
 
-      - name: Apply Manual Result Patch
-        run: python scripts/manual_result_patch.py
-
-      - name: Apply Strict Mode Migration Cleaner
+      - name: Apply Strict Mode Cleanup
         run: python scripts/strict_mode_migration_cleaner.py
 
-      - name: Rebuild Paper Summary
+      - name: Rebuild summary only (no new bets)
         run: python scripts/paper_tracker.py
+        env:
+          TRACKER_ADD_BETS: '0'
 
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A output/paper_*.json output/paper_*.md output/manual_result_patch.md output/strict_mode_migration.md || true
-          git diff --cached --quiet && exit 0
-          git commit -m "Update paper tracker and settler outputs"
           git pull --rebase --autostash origin main
+          git add -A output/paper_*.json output/paper_*.md output/strict_mode_migration.md || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Stable paper update"
           git push
