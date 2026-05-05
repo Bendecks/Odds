@@ -3,15 +3,14 @@ name: Email Reporter V1
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 5 * * *'   # daily 05:00 UTC (~07:00 DK)
-    - cron: '*/30 * * * *'
+    - cron: '50 */2 * * *'
 
 permissions:
   contents: write
 
 concurrency:
   group: email-reporter
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run-email-reporter:
@@ -23,6 +22,9 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
+
+      - name: Sync latest main before email
+        run: git pull --rebase --autostash origin main
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -44,8 +46,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add output/email_reporter_*.json output/email_reporter_*.md || true
           git diff --cached --quiet && exit 0
           git commit -m "Update email reporter state"
-          git pull --rebase origin main
           git push
