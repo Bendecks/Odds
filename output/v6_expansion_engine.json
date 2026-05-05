@@ -1,62 +1,11 @@
 {
-  "summary": "THE_ODDS_API quota brugt. 2 top bets (odds-api.io fallback aktiv)",
-  "top_bets": [
-    {
-      "event": "RKC Waalwijk vs Willem II Tilburg",
-      "event_id": "oddsio_71242236",
-      "source": "odds-api.io",
-      "sport": "soccer_odds_api_io",
-      "sport_bucket": "soccer",
-      "start": "2026-05-05T16:45:00Z",
-      "start_local": "2026-05-05 18:45",
-      "market": "h2h",
-      "pick": "RKC Waalwijk",
-      "point": null,
-      "odds": 2.32,
-      "edge_pct": 0.0,
-      "books": 1,
-      "pre_score": 7.92,
-      "confidence": "controlled_single_source",
-      "single_source": true,
-      "role": "PRIMARY",
-      "stake_kr": 1,
-      "reason": "Football-only Strict V2.1 candidate. | V10 bonus +0.72: feedback bets=19 roi_per_bet=1.86 hit=21.1.",
-      "v10_feedback_key": "h2h|odds_2",
-      "v10_adjustment": 0.72,
-      "v10_feedback_reason": "feedback bets=19 roi_per_bet=1.86 hit=21.1",
-      "v10_pre_score_before": 7.2
-    },
-    {
-      "event": "Almere City FC vs De Graafschap",
-      "event_id": "oddsio_71242262",
-      "source": "odds-api.io",
-      "sport": "soccer_odds_api_io",
-      "sport_bucket": "soccer",
-      "start": "2026-05-06T16:45:00Z",
-      "start_local": "2026-05-06 18:45",
-      "market": "h2h",
-      "pick": "Almere City FC",
-      "point": null,
-      "odds": 2.28,
-      "edge_pct": 0.0,
-      "books": 1,
-      "pre_score": 7.92,
-      "confidence": "controlled_single_source",
-      "single_source": true,
-      "role": "PRIMARY",
-      "stake_kr": 1,
-      "reason": "Football-only Strict V2.1 candidate. | V10 bonus +0.72: feedback bets=19 roi_per_bet=1.86 hit=21.1.",
-      "v10_feedback_key": "h2h|odds_2",
-      "v10_adjustment": 0.72,
-      "v10_feedback_reason": "feedback bets=19 roi_per_bet=1.86 hit=21.1",
-      "v10_pre_score_before": 7.2
-    }
-  ],
+  "summary": "THE_ODDS_API quota brugt. ingen spil nu (odds-api.io fallback aktiv)",
+  "top_bets": [],
   "watchlist": [],
   "pass": [],
   "mode": "V14_FOOTBALL_ONLY_NEAR_TERM_ENGINE+V10_ADAPTIVE_FEEDBACK",
-  "generated_at": "2026-05-05T07:13:07.369593+00:00",
-  "candidate_count": 2,
+  "generated_at": "2026-05-05T07:20:52.943709+00:00",
+  "candidate_count": 0,
   "diagnostics": {
     "api_errors": [
       {
@@ -106,15 +55,39 @@
       {
         "label": "theodds:soccer_uefa_europa_league",
         "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+      },
+      {
+        "label": "odds-api.io:/events",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+      },
+      {
+        "label": "odds-api.io:/events",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+      },
+      {
+        "label": "odds-api.io:/events",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+      },
+      {
+        "label": "odds-api.io:/events",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+      },
+      {
+        "label": "odds-api.io:/events",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+      },
+      {
+        "label": "odds-api.io:/events",
+        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 45 seconds.\"}"
       }
     ],
     "quota_exhausted": true,
     "max_hours": 36,
     "theodds_games": 0,
-    "odds_api_io_events": 1001,
-    "odds_api_io_games": 2,
-    "candidate_count": 2,
-    "top_count": 2,
+    "odds_api_io_events": 120,
+    "odds_api_io_games": 0,
+    "candidate_count": 0,
+    "top_count": 0,
     "odds_io_leagues_used": [
       "england-premier-league",
       "spain-laliga",
@@ -130,10 +103,10 @@
     "engine_note": "Football-only near-term engine. Non-football is not fetched while Strict Mode is football-only."
   },
   "v10": {
-    "activated_at": "2026-05-05T07:13:07.492855+00:00",
+    "activated_at": "2026-05-05T07:20:52.999996+00:00",
     "feedback_file": "output/v9_feedback.json",
     "feedback_patterns": 3,
-    "adjustments_applied": 2,
+    "adjustments_applied": 0,
     "min_feedback_bets": 5,
     "max_bonus": 5.0,
     "max_penalty": -7.0

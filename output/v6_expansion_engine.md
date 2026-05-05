@@ -1,6 +1,6 @@
 # V10 ADAPTIVE FEEDBACK ACTIVE
 
-Activated: 2026-05-05T07:13:07.492855+00:00 | feedback patterns: 3 | adjustments applied: 2
+Activated: 2026-05-05T07:20:52.999996+00:00 | feedback patterns: 3 | adjustments applied: 0
 
 ## V9 feedback used
 - h2h|odds_3: bets=25 hit=20.0 roi_per_bet=-2.26
@@ -9,7 +9,7 @@ Activated: 2026-05-05T07:13:07.492855+00:00 | feedback patterns: 3 | adjustments
 
 # V14_FOOTBALL_ONLY_NEAR_TERM_ENGINE
 
-THE_ODDS_API quota brugt. 2 top bets (odds-api.io fallback aktiv)
+THE_ODDS_API quota brugt. ingen spil nu (odds-api.io fallback aktiv)
 
 ## DIAGNOSTICS
 ```json
@@ -62,15 +62,39 @@ THE_ODDS_API quota brugt. 2 top bets (odds-api.io fallback aktiv)
     {
       "label": "theodds:soccer_uefa_europa_league",
       "error": "401 {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 46 seconds.\"}"
+    },
+    {
+      "label": "odds-api.io:/events",
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 41 minutes and 45 seconds.\"}"
     }
   ],
   "quota_exhausted": true,
   "max_hours": 36,
   "theodds_games": 0,
-  "odds_api_io_events": 1001,
-  "odds_api_io_games": 2,
-  "candidate_count": 2,
-  "top_count": 2,
+  "odds_api_io_events": 120,
+  "odds_api_io_games": 0,
+  "candidate_count": 0,
+  "top_count": 0,
   "odds_io_leagues_used": [
     "england-premier-league",
     "spain-laliga",
@@ -88,8 +112,6 @@ THE_ODDS_API quota brugt. 2 top bets (odds-api.io fallback aktiv)
 ```
 
 ## TOP_BETS
-1. 2026-05-05 18:45 | RKC Waalwijk vs Willem II Tilburg | h2h | RKC Waalwijk | odds 2.32 | units 1 | source odds-api.io | conf controlled_single_source | score 7.2 | Football-only Strict V2.1 candidate.
-2. 2026-05-06 18:45 | Almere City FC vs De Graafschap | h2h | Almere City FC | odds 2.28 | units 1 | source odds-api.io | conf controlled_single_source | score 7.2 | Football-only Strict V2.1 candidate.
 
 ## WATCHLIST
 
