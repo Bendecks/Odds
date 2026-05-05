@@ -3,14 +3,14 @@ name: V6 Expansion Engine
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '15 */2 * * *'
 
 permissions:
   contents: write
 
 concurrency:
   group: v6-expansion-engine
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run:
@@ -37,6 +37,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
+          MAX_HOURS: 36
+          ODDS_IO_SPORTS: football
+          ODDS_API_IO_MAX_EVENTS: 25
 
       - name: Apply V10 Adaptive Feedback
         run: python scripts/v10_apply_feedback.py
@@ -48,8 +51,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/v6_expansion_engine.* output/odds_cache_raw.json || true
+          git add -A output/v6_expansion_engine.* output/odds_cache_raw.json || true
           git diff --cached --quiet && exit 0
           git commit -m "Update V6+V10+STRICT Engine"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main
           git push
