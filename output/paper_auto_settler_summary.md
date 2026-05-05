@@ -1,12 +1,12 @@
 # PAPER AUTO SETTLER — CORE STABLE
 
-Generated: 2026-05-05T03:56:19.441150+00:00
+Generated: 2026-05-05T04:21:24.440424+00:00
 
-Checked open bets: 22 | Auto-settled: 1 | Pending/not finished: 15 | Unmatched: 6
+Checked open bets: 21 | Auto-settled: 0 | Pending/not finished: 15 | Unmatched: 6
 
-The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, icehockey_nhl, basketball_nba, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
+The Odds API sports queried: soccer_spain_la_liga, soccer_germany_bundesliga, soccer_epl, basketball_nba, icehockey_nhl, baseball_mlb, americanfootball_nfl, mma_mixed_martial_arts
 
-odds-api.io fallback events loaded: 1487
+odds-api.io fallback events loaded: 58
 
 football-data fallback matches loaded: 19
 
@@ -36,7 +36,6 @@ football-data fallback matches loaded: 19
 - PB-00040 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
 - PB-00041 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
 - PB-00042 | Everton FC vs Manchester City | unmatched | football-data | no_matching_score_game
-- PB-00048 | Carolina Hurricanes vs Philadelphia Flyers | settled | odds-api.io | Carolina Hurricanes 3 - 2 Philadelphia Flyers; winner=Carolina Hurricanes
 - PB-00049 | New York Knicks vs Philadelphia 76ers | unmatched | odds-api.io | no_matching_score_game
 - PB-00050 | Vegas Golden Knights vs Anaheim Ducks | pending | time | kampen forventes ikke færdig endnu
 - PB-00051 | Carreno Busta, Pablo vs Wawrinka, Stan | pending | time | kampen forventes ikke færdig endnu
