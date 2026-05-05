@@ -23,6 +23,9 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
+      - name: Sync latest main before running
+        run: git pull --rebase --autostash origin main
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -35,11 +38,12 @@ jobs:
         run: python scripts/v6_expansion_engine.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          THE_ODDS_API_KEY: ''
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
           MAX_HOURS: 36
           ODDS_IO_SPORTS: football
-          ODDS_API_IO_MAX_EVENTS: 25
+          ODDS_IO_MAX_EVENTS: 25
+          THEODDS_SPORTS: ''
 
       - name: Apply V10 Adaptive Feedback
         run: python scripts/v10_apply_feedback.py
@@ -51,8 +55,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add -A output/v6_expansion_engine.* output/odds_cache_raw.json || true
           git diff --cached --quiet && exit 0
           git commit -m "Update V6+V10+STRICT Engine"
-          git pull --rebase --autostash origin main
           git push
