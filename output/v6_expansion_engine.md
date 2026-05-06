@@ -1,2 +1,473 @@
-# STRICT MODE V2.1
-STRICT V2.1: 0 bets
+# V18_SAFE_LEAGUE_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
+
+V18 strict: 0 bets
+
+## DIAGNOSTICS
+```json
+{
+  "candidate_count": 0,
+  "top_count": 0,
+  "duplicates_removed": 0,
+  "edge_filtered": 0,
+  "league_filtered": 630,
+  "leagues_total": 637,
+  "leagues_selected": [
+    {
+      "slug": "england-premier-league",
+      "canonical": "england-premier-league",
+      "name": "England - Premier League",
+      "eventsCount": 31
+    },
+    {
+      "slug": "france-ligue-1",
+      "canonical": "france-ligue-1",
+      "name": "France - Ligue 1",
+      "eventsCount": 20
+    },
+    {
+      "slug": "germany-2-bundesliga",
+      "canonical": "germany-bundesliga",
+      "name": "Germany - 2. Bundesliga",
+      "eventsCount": 18
+    },
+    {
+      "slug": "international-clubs-caf-champions-league",
+      "canonical": "uefa-champions-league",
+      "name": "International Clubs - CAF Champions League",
+      "eventsCount": 2
+    },
+    {
+      "slug": "italy-serie-a",
+      "canonical": "italy-serie-a",
+      "name": "Italy - Serie A",
+      "eventsCount": 30
+    },
+    {
+      "slug": "netherlands-eredivisie",
+      "canonical": "netherlands-eredivisie",
+      "name": "Netherlands - Eredivisie",
+      "eventsCount": 21
+    },
+    {
+      "slug": "spain-laliga",
+      "canonical": "spain-laliga",
+      "name": "Spain - LaLiga",
+      "eventsCount": 40
+    }
+  ],
+  "league_samples": [
+    {
+      "slug": "albania-kategoria-e-pare",
+      "name": "Albania - Kategoria e Pare",
+      "eventsCount": 4
+    },
+    {
+      "slug": "albania-kategoria-superiore",
+      "name": "Albania - Kategoria Superiore",
+      "eventsCount": 5
+    },
+    {
+      "slug": "albania-kupa-e-shqiperise",
+      "name": "Albania - Kupa e Shqiperise",
+      "eventsCount": 1
+    },
+    {
+      "slug": "algeria-ligue-1",
+      "name": "Algeria - Ligue 1",
+      "eventsCount": 9
+    },
+    {
+      "slug": "algeria-ligue-2",
+      "name": "Algeria - Ligue 2",
+      "eventsCount": 16
+    },
+    {
+      "slug": "andorra-primera-divisio",
+      "name": "Andorra - Primera Divisio",
+      "eventsCount": 8
+    },
+    {
+      "slug": "andorra-second-divisio",
+      "name": "Andorra - Second Divisio",
+      "eventsCount": 4
+    },
+    {
+      "slug": "angola-girabola",
+      "name": "Angola - Girabola",
+      "eventsCount": 23
+    },
+    {
+      "slug": "argentina-copa-argentina",
+      "name": "Argentina - Copa Argentina",
+      "eventsCount": 2
+    },
+    {
+      "slug": "argentina-copa-proyeccion-final-reserves",
+      "name": "Argentina - Copa Proyeccion Final, Reserves",
+      "eventsCount": 84
+    },
+    {
+      "slug": "argentina-liga-profesional",
+      "name": "Argentina - Liga Profesional",
+      "eventsCount": 8
+    },
+    {
+      "slug": "argentina-primera-b",
+      "name": "Argentina - Primera B",
+      "eventsCount": 56
+    },
+    {
+      "slug": "argentina-primera-c",
+      "name": "Argentina - Primera C",
+      "eventsCount": 56
+    },
+    {
+      "slug": "argentina-primera-division-women",
+      "name": "Argentina - Primera Division, Women",
+      "eventsCount": 7
+    },
+    {
+      "slug": "argentina-primera-nacional",
+      "name": "Argentina - Primera Nacional",
+      "eventsCount": 72
+    },
+    {
+      "slug": "argentina-torneo-federal-a",
+      "name": "Argentina - Torneo Federal A",
+      "eventsCount": 68
+    },
+    {
+      "slug": "armenia-armenian-cup",
+      "name": "Armenia - Armenian Cup",
+      "eventsCount": 1
+    },
+    {
+      "slug": "armenia-first-league",
+      "name": "Armenia - First League",
+      "eventsCount": 10
+    },
+    {
+      "slug": "armenia-premier-league",
+      "name": "Armenia - Premier League",
+      "eventsCount": 5
+    },
+    {
+      "slug": "aruba-division-honor",
+      "name": "Aruba - Division Honor",
+      "eventsCount": 1
+    },
+    {
+      "slug": "australia-a-league",
+      "name": "Australia - A-League",
+      "eventsCount": 4
+    },
+    {
+      "slug": "australia-a-league-women",
+      "name": "Australia - A-League, Women",
+      "eventsCount": 2
+    },
+    {
+      "slug": "australia-capital-npl-1",
+      "name": "Australia - Capital NPL 1",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-capital-npl-women",
+      "name": "Australia - Capital NPL, Women",
+      "eventsCount": 15
+    },
+    {
+      "slug": "australia-northern-nsw-league-one",
+      "name": "Australia - Northern NSW League One",
+      "eventsCount": 20
+    },
+    {
+      "slug": "australia-northern-nsw-league-one-reserves",
+      "name": "Australia - Northern NSW League One, Reserves",
+      "eventsCount": 20
+    },
+    {
+      "slug": "australia-northern-nsw-league-one-reserves-women",
+      "name": "Australia - Northern NSW League One, Reserves, Women",
+      "eventsCount": 10
+    },
+    {
+      "slug": "australia-northern-nsw-npl",
+      "name": "Australia - Northern NSW NPL",
+      "eventsCount": 24
+    },
+    {
+      "slug": "australia-northern-nsw-npl-reserves",
+      "name": "Australia - Northern NSW NPL, Reserves",
+      "eventsCount": 24
+    },
+    {
+      "slug": "australia-northern-nsw-premier-league-women",
+      "name": "Australia - Northern NSW Premier League, Women",
+      "eventsCount": 12
+    },
+    {
+      "slug": "australia-northern-territory-division-3",
+      "name": "Australia - Northern Territory Division 3",
+      "eventsCount": 17
+    },
+    {
+      "slug": "australia-northern-territory-premier-league",
+      "name": "Australia - Northern Territory Premier League",
+      "eventsCount": 20
+    },
+    {
+      "slug": "australia-northern-territory-premier-league-reserves",
+      "name": "Australia - Northern Territory Premier League, Reserves",
+      "eventsCount": 18
+    },
+    {
+      "slug": "australia-northern-territory-premier-league-women",
+      "name": "Australia - Northern Territory Premier League, Women",
+      "eventsCount": 24
+    },
+    {
+      "slug": "australia-npl-western-australia-women",
+      "name": "Australia - NPL Western Australia, Women",
+      "eventsCount": 12
+    },
+    {
+      "slug": "australia-nsw-league-one",
+      "name": "Australia - NSW League One",
+      "eventsCount": 56
+    },
+    {
+      "slug": "australia-nsw-league-one-women",
+      "name": "Australia - NSW League One, Women",
+      "eventsCount": 24
+    },
+    {
+      "slug": "australia-nsw-league-two",
+      "name": "Australia - NSW League Two",
+      "eventsCount": 30
+    },
+    {
+      "slug": "australia-nsw-npl-1",
+      "name": "Australia - NSW NPL 1",
+      "eventsCount": 33
+    },
+    {
+      "slug": "australia-nsw-premier-league-women",
+      "name": "Australia - NSW Premier League, Women",
+      "eventsCount": 28
+    },
+    {
+      "slug": "australia-queensland-npl",
+      "name": "Australia - Queensland NPL",
+      "eventsCount": 26
+    },
+    {
+      "slug": "australia-queensland-npl-women",
+      "name": "Australia - Queensland NPL, Women",
+      "eventsCount": 23
+    },
+    {
+      "slug": "australia-queensland-premier-league-1",
+      "name": "Australia - Queensland Premier League 1",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-queensland-premier-league-1-women",
+      "name": "Australia - Queensland Premier League 1, Women",
+      "eventsCount": 15
+    },
+    {
+      "slug": "australia-queensland-premier-league-2",
+      "name": "Australia - Queensland Premier League 2",
+      "eventsCount": 20
+    },
+    {
+      "slug": "australia-queensland-premier-league-3-metro",
+      "name": "Australia - Queensland Premier League 3 Metro",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-south-australia-npl",
+      "name": "Australia - South Australia NPL",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-south-australia-npl-reserves",
+      "name": "Australia - South Australia NPL, Reserves",
+      "eventsCount": 24
+    },
+    {
+      "slug": "australia-south-australia-npl-reserves-women",
+      "name": "Australia - South Australia NPL, Reserves, Women",
+      "eventsCount": 15
+    },
+    {
+      "slug": "australia-south-australia-npl-women",
+      "name": "Australia - South Australia NPL, Women",
+      "eventsCount": 16
+    },
+    {
+      "slug": "australia-south-australia-state-league-1",
+      "name": "Australia - South Australia State League 1",
+      "eventsCount": 26
+    },
+    {
+      "slug": "australia-south-australia-state-league-1-reserves",
+      "name": "Australia - South Australia State League 1, Reserves",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-south-australia-state-league-2",
+      "name": "Australia - South Australia State League 2",
+      "eventsCount": 40
+    },
+    {
+      "slug": "australia-south-australia-state-league-2-reserves",
+      "name": "Australia - South Australia State League 2, Reserves",
+      "eventsCount": 40
+    },
+    {
+      "slug": "australia-south-australia-state-league-women",
+      "name": "Australia - South Australia State League, Women",
+      "eventsCount": 15
+    },
+    {
+      "slug": "australia-tasmania-northern-championship",
+      "name": "Australia - Tasmania Northern Championship",
+      "eventsCount": 12
+    },
+    {
+      "slug": "australia-tasmania-npl",
+      "name": "Australia - Tasmania NPL",
+      "eventsCount": 15
+    },
+    {
+      "slug": "australia-tasmania-southern-championship",
+      "name": "Australia - Tasmania Southern Championship",
+      "eventsCount": 16
+    },
+    {
+      "slug": "australia-tasmania-super-league-women",
+      "name": "Australia - Tasmania Super League, Women",
+      "eventsCount": 12
+    },
+    {
+      "slug": "australia-u20-nsw-npl",
+      "name": "Australia - U20 NSW NPL",
+      "eventsCount": 33
+    },
+    {
+      "slug": "australia-u20-nsw-premier-league-2",
+      "name": "Australia - U20 NSW Premier League 2",
+      "eventsCount": 32
+    },
+    {
+      "slug": "australia-u20-victoria-npl-women",
+      "name": "Australia - U20 Victoria NPL, Women",
+      "eventsCount": 29
+    },
+    {
+      "slug": "australia-u23-capital-npl",
+      "name": "Australia - U23 Capital NPL",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-u23-northern-territory-premier-league-women",
+      "name": "Australia - U23 Northern Territory Premier League, Women",
+      "eventsCount": 10
+    },
+    {
+      "slug": "australia-u23-nsw-npl-women",
+      "name": "Australia - U23 NSW NPL, Women",
+      "eventsCount": 28
+    },
+    {
+      "slug": "australia-u23-queensland-npl",
+      "name": "Australia - U23 Queensland NPL",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-u23-queensland-premier-league-1",
+      "name": "Australia - U23 Queensland Premier League 1",
+      "eventsCount": 25
+    },
+    {
+      "slug": "australia-u23-victoria-npl",
+      "name": "Australia - U23 Victoria NPL",
+      "eventsCount": 31
+    },
+    {
+      "slug": "australia-u23-victoria-premier-league-1",
+      "name": "Australia - U23 Victoria Premier League 1",
+      "eventsCount": 30
+    },
+    {
+      "slug": "australia-u23-western-australia-npl",
+      "name": "Australia - U23 Western Australia NPL",
+      "eventsCount": 24
+    },
+    {
+      "slug": "australia-victoria-npl",
+      "name": "Australia - Victoria, NPL",
+      "eventsCount": 33
+    },
+    {
+      "slug": "australia-victoria-npl-women",
+      "name": "Australia - Victoria NPL, Women",
+      "eventsCount": 29
+    },
+    {
+      "slug": "australia-victoria-premier-league-1",
+      "name": "Australia - Victoria Premier League 1",
+      "eventsCount": 30
+    },
+    {
+      "slug": "australia-victoria-premier-league-2",
+      "name": "Australia - Victoria Premier League 2",
+      "eventsCount": 32
+    },
+    {
+      "slug": "australia-victoria-premier-league-women",
+      "name": "Australia - Victoria Premier League, Women",
+      "eventsCount": 19
+    },
+    {
+      "slug": "australia-western-australia-npl",
+      "name": "Australia - Western Australia NPL",
+      "eventsCount": 26
+    },
+    {
+      "slug": "australia-western-australia-state-cup-women",
+      "name": "Australia - Western Australia State Cup, Women",
+      "eventsCount": 2
+    },
+    {
+      "slug": "australia-western-australia-state-league-1",
+      "name": "Australia - Western Australia State League 1",
+      "eventsCount": 26
+    },
+    {
+      "slug": "australia-western-australia-state-league-1-reserves",
+      "name": "Australia - Western Australia State League 1, Reserves",
+      "eventsCount": 29
+    },
+    {
+      "slug": "australia-western-australia-state-league-2",
+      "name": "Australia - Western Australia State League 2",
+      "eventsCount": 24
+    }
+  ],
+  "event_count": 163,
+  "upcoming_event_count": 0,
+  "odds_events_checked": 0,
+  "odds_errors": 0,
+  "markets_found": 0,
+  "rejected_short_prices": 0,
+  "rejected_odds_range": 0,
+  "api_key_present": true,
+  "engine_note": "Safe league matching: requires correct country/competition terms. Writes candidate debug output."
+}
+```
+
+## TOP BETS
+Ingen valide bets fundet i dette run.
