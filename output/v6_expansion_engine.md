@@ -9,8 +9,8 @@ V18 strict: 0 bets
   "top_count": 0,
   "duplicates_removed": 0,
   "edge_filtered": 0,
-  "league_filtered": 625,
-  "leagues_total": 632,
+  "league_filtered": 626,
+  "leagues_total": 633,
   "leagues_selected": [
     {
       "slug": "england-premier-league",
@@ -74,7 +74,7 @@ V18 strict: 0 bets
     {
       "slug": "algeria-ligue-1",
       "name": "Algeria - Ligue 1",
-      "eventsCount": 12
+      "eventsCount": 20
     },
     {
       "slug": "algeria-ligue-2",
@@ -104,7 +104,7 @@ V18 strict: 0 bets
     {
       "slug": "argentina-copa-proyeccion-final-reserves",
       "name": "Argentina - Copa Proyeccion Final, Reserves",
-      "eventsCount": 81
+      "eventsCount": 79
     },
     {
       "slug": "argentina-liga-profesional",
