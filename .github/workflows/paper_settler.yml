@@ -63,6 +63,9 @@ jobs:
       - name: Apply Strict Mode Cleanup
         run: python scripts/strict_mode_migration_cleaner.py
 
+      - name: Apply V18 Migration Cleaner
+        run: python scripts/v18_migration_cleaner.py
+
       - name: Rebuild summary only (no new bets)
         run: python scripts/paper_tracker.py
         env:
@@ -73,7 +76,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add -A output/paper_*.json output/paper_*.md output/strict_mode_migration.md || true
+          git add -A output/paper_*.json output/paper_*.md output/strict_mode_migration.md output/v18_migration_cleaner.md || true
           git diff --cached --quiet && exit 0
-          git commit -m "Stable paper update"
+          git commit -m "Stable paper update with V18 migration cleaner"
           git push
