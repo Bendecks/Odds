@@ -2159,10 +2159,16 @@
       "auto_settle_note": "V18: league not approved or missing"
     }
   ],
-  "updated_at": "2026-05-06T06:30:45.324818+00:00",
+  "updated_at": "2026-05-06T06:47:46.061808+00:00",
   "summary": {
+    "bankroll_kr": 988.04,
+    "unit_pct": 1.0,
+    "unit_kr": 9.88,
+    "max_exposure_pct": 25.0,
+    "max_open_exposure_kr": 247.01,
     "open_count": 0,
     "open_stake": 0,
+    "available_exposure_kr": 247.01,
     "settled_count": 69,
     "won": 13,
     "lost": 24,
@@ -2177,5 +2183,14 @@
   "unit_kr": 10.0,
   "max_exposure_pct": 25.0,
   "max_open_exposure_kr": 250.0,
-  "bankroll": 988.04
+  "bankroll": 988.04,
+  "last_tracker_run": {
+    "generated_at": "2026-05-06T06:47:46.061905+00:00",
+    "engine_mode": "STRICT_MODE_V2_1",
+    "engine_summary": "STRICT V2.1: 0 bets",
+    "add_bets": false,
+    "added": 0,
+    "skipped_duplicate": 0,
+    "skipped_exposure": 0
+  }
 }
