@@ -5,22 +5,36 @@ from zoneinfo import ZoneInfo
 OUT = pathlib.Path('output')
 OUT.mkdir(exist_ok=True)
 
+ENGINE_JSON = OUT / 'v6_expansion_engine.json'
+ENGINE_MD = OUT / 'v6_expansion_engine.md'
+DEBUG_JSON = OUT / 'odds_candidate_debug.json'
+
 ODDS_IO = os.getenv('ODDS_API_IO_KEY', '')
 DISPLAY_TZ = os.getenv('DISPLAY_TZ', 'Europe/Copenhagen')
 MAX_HOURS = int(os.getenv('MAX_HOURS', '36'))
 MAX_TOP_BETS = int(os.getenv('MAX_TOP_BETS', '8'))
-MODE = 'V18_EDGE_FILTER_ENGINE_SLUG_FIX'
+MIN_BOOK_PRICES = int(os.getenv('MIN_BOOK_PRICES', '3'))
+MIN_EDGE_PCT = float(os.getenv('MIN_EDGE_PCT', '1.5'))
+MIN_ODDS = float(os.getenv('MIN_ODDS', '1.50'))
+MAX_ODDS = float(os.getenv('MAX_ODDS', '2.40'))
+MODE = 'V18_SAFE_LEAGUE_EDGE_ENGINE'
 
-# Canonical quality leagues. We match by slug/name aliases instead of exact guessed slug only.
-LEAGUE_PATTERNS = [
-    ('england-premier-league', ['premier', 'england']),
-    ('spain-laliga', ['laliga', 'la-liga', 'spain', 'primera']),
-    ('germany-bundesliga', ['bundesliga', 'germany']),
-    ('italy-serie-a', ['serie-a', 'seriea', 'italy']),
-    ('france-ligue-1', ['ligue-1', 'ligue1', 'france']),
-    ('netherlands-eredivisie', ['eredivisie', 'netherlands', 'holland']),
-    ('portugal-primeira-liga', ['primeira', 'portugal']),
-    ('uefa-champions-league', ['champions-league', 'championsleague', 'uefa-champions']),
+# Safe rules: country/competition must match, not just generic words like "Premier" or "Ligue".
+LEAGUE_RULES = [
+    {'canonical': 'england-premier-league', 'country_terms': ['england'], 'required_any': ['premier-league', 'premierleague']},
+    {'canonical': 'spain-laliga', 'country_terms': ['spain'], 'required_any': ['laliga', 'la-liga', 'primera-division']},
+    {'canonical': 'germany-bundesliga', 'country_terms': ['germany'], 'required_any': ['bundesliga']},
+    {'canonical': 'italy-serie-a', 'country_terms': ['italy'], 'required_any': ['serie-a', 'seriea']},
+    {'canonical': 'france-ligue-1', 'country_terms': ['france'], 'required_any': ['ligue-1', 'ligue1']},
+    {'canonical': 'netherlands-eredivisie', 'country_terms': ['netherlands', 'holland'], 'required_any': ['eredivisie']},
+    {'canonical': 'portugal-primeira-liga', 'country_terms': ['portugal'], 'required_any': ['primeira-liga', 'primeira']},
+    {'canonical': 'uefa-champions-league', 'country_terms': ['international-clubs', 'europe', 'uefa'], 'required_any': ['uefa-champions-league', 'champions-league']},
+]
+
+EXCLUDE_TERMS = [
+    'women', 'woman', 'female', 'u19', 'u20', 'u21', 'u23', 'youth', 'reserve', 'reserves',
+    'amateur', 'ii', '2nd', 'second', 'third', 'derde', 'primavera', 'academy', 'akatemia',
+    'cup', 'copa', 'kupa', 'super-cup', 'playoff', 'play-off', 'friendly', 'afc-champions'
 ]
 
 DIAG = {
@@ -34,8 +48,21 @@ DIAG = {
     'league_samples': [],
     'event_count': 0,
     'upcoming_event_count': 0,
+    'odds_events_checked': 0,
     'odds_errors': 0,
-    'engine_note': 'Slug fix: allowed leagues are matched by slug/name aliases, with diagnostics.'
+    'markets_found': 0,
+    'rejected_short_prices': 0,
+    'rejected_odds_range': 0,
+    'api_key_present': bool(ODDS_IO),
+    'engine_note': 'Safe league matching: requires correct country/competition terms. Writes candidate debug output.'
+}
+
+DEBUG = {
+    'generated_at': None,
+    'selected_leagues': [],
+    'upcoming_events': [],
+    'candidate_rows': [],
+    'rejected_rows': [],
 }
 
 
@@ -65,7 +92,7 @@ def upcoming(v):
 def fmt(v):
     d = parse_dt(v)
     if not d:
-        return str(v)
+        return str(v or '')
     return d.astimezone(ZoneInfo(DISPLAY_TZ)).strftime('%Y-%m-%d %H:%M')
 
 
@@ -75,41 +102,57 @@ def odds_get(path, params=None):
     try:
         p = dict(params or {})
         p['apiKey'] = ODDS_IO
-        r = requests.get('https://api.odds-api.io/v3' + path, params=p, timeout=40)
+        r = requests.get('https://api.odds-api.io/v3' + path, params=p, timeout=45)
         if r.ok:
             return r.json()
         DIAG['odds_errors'] += 1
+        return []
     except Exception:
         DIAG['odds_errors'] += 1
-    return []
+        return []
 
 
-def league_identity(row):
-    bits = [row.get('slug'), row.get('name'), row.get('title'), row.get('key'), row.get('id')]
-    return ' '.join(norm(x) for x in bits if x)
+def league_text(row):
+    parts = [row.get('slug'), row.get('name'), row.get('title'), row.get('key'), row.get('id')]
+    return ' '.join(norm(x) for x in parts if x)
+
+
+def has_term(text, term):
+    term = norm(term)
+    return bool(term) and term in text
+
+
+def excluded_league(text):
+    return any(has_term(text, t) for t in EXCLUDE_TERMS)
 
 
 def canonical_league(row):
-    text = league_identity(row)
+    text = league_text(row)
     slug = norm(row.get('slug'))
 
-    for canonical, aliases in LEAGUE_PATTERNS:
+    for rule in LEAGUE_RULES:
+        canonical = rule['canonical']
         if slug == canonical:
             return canonical
-        for a in aliases:
-            a = norm(a)
-            if a and a in text:
-                return canonical
+
+        country_ok = any(has_term(text, t) for t in rule['country_terms'])
+        comp_ok = any(has_term(text, t) for t in rule['required_any'])
+
+        if country_ok and comp_ok and not excluded_league(text):
+            return canonical
+
     return ''
 
 
 def selected_leagues(raw_leagues):
     selected = []
-    seen = set()
+    chosen_by_canonical = set()
     DIAG['leagues_total'] = len(raw_leagues) if isinstance(raw_leagues, list) else 0
 
     for lg in raw_leagues if isinstance(raw_leagues, list) else []:
-        if len(DIAG['league_samples']) < 30:
+        if not isinstance(lg, dict):
+            continue
+        if len(DIAG['league_samples']) < 80:
             DIAG['league_samples'].append({
                 'slug': lg.get('slug'),
                 'name': lg.get('name') or lg.get('title'),
@@ -122,160 +165,186 @@ def selected_leagues(raw_leagues):
             DIAG['league_filtered'] += 1
             continue
 
-        if canonical in seen:
+        # Prefer one safe source league per canonical league to reduce API calls.
+        if canonical in chosen_by_canonical:
             DIAG['league_filtered'] += 1
             continue
 
-        seen.add(canonical)
-        selected.append({'slug': slug, 'canonical': canonical, 'name': lg.get('name') or lg.get('title')})
+        item = {'slug': slug, 'canonical': canonical, 'name': lg.get('name') or lg.get('title'), 'eventsCount': lg.get('eventsCount')}
+        selected.append(item)
+        chosen_by_canonical.add(canonical)
 
     DIAG['leagues_selected'] = selected
+    DEBUG['selected_leagues'] = selected
     return selected
 
 
-def extract_books(books, home, away):
+def extract_prices_from_bookmakers(bookmakers, home, away):
     selections = {}
 
-    if isinstance(books, list):
+    if isinstance(bookmakers, list):
         converted = {}
-        for row in books:
+        for row in bookmakers:
             if isinstance(row, dict):
-                key = row.get('key') or row.get('name') or row.get('bookmaker') or 'book'
+                key = row.get('key') or row.get('name') or row.get('bookmaker') or f'book_{len(converted)+1}'
                 converted[key] = row.get('markets') or row.get('odds') or []
-        books = converted
+        bookmakers = converted
 
-    if not isinstance(books, dict):
+    if not isinstance(bookmakers, dict):
         return selections
 
-    for _, rows in books.items():
-        for row in rows if isinstance(rows, list) else []:
-            if not isinstance(row, dict):
+    for book_key, rows in bookmakers.items():
+        for market in rows if isinstance(rows, list) else []:
+            if not isinstance(market, dict):
                 continue
-            name = str(row.get('name') or row.get('key') or '').lower()
-            if name not in ('h2h', 'ml', 'moneyline'):
+            market_name = str(market.get('name') or market.get('key') or '').lower()
+            if market_name not in ('h2h', 'ml', 'moneyline'):
                 continue
+            DIAG['markets_found'] += 1
 
-            odds_rows = row.get('odds') or row.get('outcomes') or []
-            if odds_rows and isinstance(odds_rows[0], dict) and any(k in odds_rows[0] for k in ('home', 'away', 'draw')):
-                x = odds_rows[0]
-                odds_rows = []
-                if x.get('home') is not None:
-                    odds_rows.append({'name': home, 'price': x.get('home')})
-                if x.get('away') is not None:
-                    odds_rows.append({'name': away, 'price': x.get('away')})
+            outcomes = market.get('odds') or market.get('outcomes') or []
+            if outcomes and isinstance(outcomes[0], dict) and any(k in outcomes[0] for k in ('home', 'away', 'draw')):
+                row = outcomes[0]
+                outcomes = []
+                if row.get('home') is not None:
+                    outcomes.append({'name': home, 'price': row.get('home')})
+                if row.get('away') is not None:
+                    outcomes.append({'name': away, 'price': row.get('away')})
 
-            for o in odds_rows:
-                if not isinstance(o, dict):
+            for outcome in outcomes:
+                if not isinstance(outcome, dict):
                     continue
-                sel = o.get('name') or o.get('label')
-                pr = o.get('price') or o.get('odds')
-                if not sel or str(sel).lower() == 'draw':
+                name = outcome.get('name') or outcome.get('label')
+                price = outcome.get('price') or outcome.get('odds')
+                if not name or str(name).lower() == 'draw':
                     continue
                 try:
-                    pr = float(pr)
+                    price = float(price)
                 except Exception:
                     continue
-                if 1.30 <= pr <= 8:
-                    selections.setdefault(sel, []).append(pr)
+                if 1.30 <= price <= 8:
+                    selections.setdefault(str(name), []).append(price)
 
     return selections
 
 
-def fetch_games():
-    out = []
+def add_debug_row(collection, row, max_len=120):
+    if len(collection) < max_len:
+        collection.append(row)
+
+
+def fetch_candidates():
+    candidates = []
     leagues = selected_leagues(odds_get('/leagues', {'sport': 'football'}))
 
-    for lg in leagues:
-        events = odds_get('/events', {'sport': 'football', 'league': lg['slug']})
+    for league in leagues:
+        events = odds_get('/events', {'sport': 'football', 'league': league['slug']})
         if not isinstance(events, list):
             continue
         DIAG['event_count'] += len(events)
 
-        for ev in events:
-            if not isinstance(ev, dict) or not upcoming(ev.get('date')):
+        for event in events:
+            if not isinstance(event, dict):
+                continue
+            if not upcoming(event.get('date')):
                 continue
             DIAG['upcoming_event_count'] += 1
 
-            oid = ev.get('id')
-            if not oid:
+            event_id = event.get('id')
+            home_hint = event.get('home')
+            away_hint = event.get('away')
+            add_debug_row(DEBUG['upcoming_events'], {
+                'league': league['canonical'],
+                'source_league_slug': league['slug'],
+                'event_id': event_id,
+                'date': event.get('date'),
+                'home': home_hint,
+                'away': away_hint,
+            })
+
+            if not event_id:
                 continue
-            odds = odds_get('/odds', {'eventId': oid})
+            DIAG['odds_events_checked'] += 1
+            odds = odds_get('/odds', {'eventId': event_id})
             if isinstance(odds, list):
                 odds = odds[0] if odds and isinstance(odds[0], dict) else {}
             if not isinstance(odds, dict):
                 continue
 
-            home = odds.get('home') or ev.get('home')
-            away = odds.get('away') or ev.get('away')
-            books = odds.get('bookmakers') or {}
-            selections = extract_books(books, home, away)
+            home = odds.get('home') or home_hint
+            away = odds.get('away') or away_hint
+            selections = extract_prices_from_bookmakers(odds.get('bookmakers') or {}, home, away)
 
-            for sel, vals in selections.items():
-                vals = sorted(vals)
-                if len(vals) < 3:
+            for selection, prices in selections.items():
+                clean_prices = sorted([float(p) for p in prices if isinstance(p, (int, float)) or str(p).replace('.', '', 1).isdigit()])
+                if len(clean_prices) < MIN_BOOK_PRICES:
+                    DIAG['rejected_short_prices'] += 1
+                    add_debug_row(DEBUG['rejected_rows'], {'event': f'{home} vs {away}', 'pick': selection, 'reason': 'too_few_prices', 'prices': len(clean_prices)})
                     continue
 
-                best = max(vals)
-                median = statistics.median(vals)
-                edge = ((best - median) / median) * 100 if median else 0
-
-                if edge < 1.5:
-                    DIAG['edge_filtered'] += 1
-                    continue
-
-                score = round(edge + (len(vals) * 0.15), 2)
-                out.append({
+                best = max(clean_prices)
+                median = statistics.median(clean_prices)
+                edge = ((best - median) / median) * 100 if median else 0.0
+                row = {
                     'event': f'{home} vs {away}',
-                    'event_id': oid,
-                    'league': lg['canonical'],
-                    'source_league_slug': lg['slug'],
-                    'start': ev.get('date'),
-                    'start_local': fmt(ev.get('date')),
+                    'event_id': event_id,
+                    'league': league['canonical'],
+                    'source_league_slug': league['slug'],
+                    'start': event.get('date'),
+                    'start_local': fmt(event.get('date')),
                     'market': 'h2h',
-                    'pick': sel,
+                    'pick': selection,
                     'odds': round(best, 2),
                     'median_odds': round(median, 2),
                     'edge_pct': round(edge, 2),
-                    'books': len(vals),
-                    'pre_score': score,
+                    'books': len(clean_prices),
+                    'pre_score': round(edge + len(clean_prices) * 0.15, 2),
                     'confidence': 'real_market_edge',
                     'sport': 'soccer_odds_api_io',
-                    'sport_bucket': 'soccer'
-                })
+                    'sport_bucket': 'soccer',
+                }
+                add_debug_row(DEBUG['candidate_rows'], row)
 
-    return out
+                if edge < MIN_EDGE_PCT:
+                    DIAG['edge_filtered'] += 1
+                    add_debug_row(DEBUG['rejected_rows'], {**row, 'reason': 'edge_below_minimum'})
+                    continue
+                if not (MIN_ODDS <= best <= MAX_ODDS):
+                    DIAG['rejected_odds_range'] += 1
+                    add_debug_row(DEBUG['rejected_rows'], {**row, 'reason': 'odds_outside_range'})
+                    continue
+
+                candidates.append(row)
+
+    return candidates
 
 
-def dedupe(cands):
-    out = []
+def dedupe(candidates):
+    result = []
     seen = set()
-    for c in sorted(cands, key=lambda x: x['pre_score'], reverse=True):
-        key = c.get('event_id')
+    for item in sorted(candidates, key=lambda x: (x['pre_score'], x['edge_pct'], x['books']), reverse=True):
+        key = item.get('event_id')
         if key in seen:
             DIAG['duplicates_removed'] += 1
             continue
         seen.add(key)
-        out.append(c)
-    return out
+        result.append(item)
+    return result
 
 
-def rank(cands):
-    cands = dedupe(cands)
-    approved = [
-        c for c in cands
-        if c['edge_pct'] >= 1.5
-        and c['books'] >= 3
-        and 1.50 <= c['odds'] <= 2.40
-    ]
+def rank(candidates):
+    approved = dedupe(candidates)
     approved = sorted(approved, key=lambda x: (x['edge_pct'], x['books'], x['pre_score']), reverse=True)
     top = approved[:MAX_TOP_BETS]
 
-    for t in top:
-        t['role'] = 'PRIMARY'
-        t['stake_kr'] = max(10, round(t['edge_pct'] * 4))
-        t['reason'] = f"Reel market edge på {t['edge_pct']}% mod medianodds. Valideret af {t['books']} bookmaker-priser."
+    for item in top:
+        item['role'] = 'PRIMARY_V18'
+        item['stake_kr'] = max(10, round(item['edge_pct'] * 4))
+        item['reason'] = f"Reel market edge på {item['edge_pct']}% mod medianodds. Valideret af {item['books']} bookmaker-priser."
 
+    DIAG['candidate_count'] = len(candidates)
     DIAG['top_count'] = len(top)
+
     return {
         'summary': ('ingen valide bets' if not top else f'{len(top)} edge bets'),
         'top_bets': top,
@@ -284,30 +353,41 @@ def rank(cands):
     }
 
 
-cands = fetch_games()
-DIAG['candidate_count'] = len(cands)
-res = rank(cands)
-res['mode'] = MODE
-res['generated_at'] = now_iso()
-res['diagnostics'] = DIAG
+def write_md(result):
+    lines = [f'# {MODE}', '', result.get('summary', ''), '', '## DIAGNOSTICS', '```json', json.dumps(DIAG, ensure_ascii=False, indent=2), '```', '']
+    lines.append('## TOP BETS')
+    if not result.get('top_bets'):
+        lines.append('Ingen valide bets fundet i dette run.')
+    for i, item in enumerate(result.get('top_bets') or [], 1):
+        lines.extend([
+            f'{i}. {item.get("start_local")}',
+            f'Liga: {item.get("league")} ({item.get("source_league_slug")})',
+            f'Kamp: {item.get("event")}',
+            f'Spil: Vinder = {item.get("pick")}',
+            f'Odds: {item.get("odds")}',
+            f'Medianodds: {item.get("median_odds")}',
+            f'Market edge: {item.get("edge_pct")}% ',
+            f'Bookmakers: {item.get("books")}',
+            f'Stake: {item.get("stake_kr")} kr',
+            f'Forklaring: {item.get("reason")}',
+            ''
+        ])
+    ENGINE_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-(OUT / 'v6_expansion_engine.json').write_text(json.dumps(res, ensure_ascii=False, indent=2), encoding='utf-8')
 
-with open(OUT / 'v6_expansion_engine.md', 'w', encoding='utf-8') as f:
-    f.write(f"# {MODE}\n\n{res['summary']}\n\n")
-    f.write('## DIAGNOSTICS\n```json\n' + json.dumps(DIAG, ensure_ascii=False, indent=2) + '\n```\n\n')
-    for i, x in enumerate(res['top_bets'], 1):
-        f.write(
-            f"{i}. {x['start_local']}\n"
-            f"Liga: {x['league']} ({x.get('source_league_slug')})\n"
-            f"Kamp: {x['event']}\n"
-            f"Spil: Vinder = {x['pick']}\n"
-            f"Odds: {x['odds']}\n"
-            f"Medianodds: {x['median_odds']}\n"
-            f"Market edge: {x['edge_pct']}%\n"
-            f"Bookmakers: {x['books']}\n"
-            f"Stake: {x['stake_kr']} kr\n"
-            f"Forklaring: {x['reason']}\n\n"
-        )
+def main():
+    candidates = fetch_candidates()
+    result = rank(candidates)
+    result['mode'] = MODE
+    result['generated_at'] = now_iso()
+    result['diagnostics'] = DIAG
 
-print(res['summary'])
+    DEBUG['generated_at'] = result['generated_at']
+    DEBUG_JSON.write_text(json.dumps(DEBUG, ensure_ascii=False, indent=2), encoding='utf-8')
+    ENGINE_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
+    write_md(result)
+    print(result['summary'])
+
+
+if __name__ == '__main__':
+    main()
