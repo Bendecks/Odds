@@ -33,9 +33,12 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           THE_ODDS_API_KEY: ''
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
-          MAX_HOURS: 36
-          ODDS_IO_SPORTS: football
-          ODDS_IO_MAX_EVENTS: 25
+          MAX_HOURS: 72
+          MAX_TOP_BETS: 8
+          MIN_BOOK_PRICES: 3
+          MIN_EDGE_PCT: 1.5
+          MIN_ODDS: 1.50
+          MAX_ODDS: 2.40
           THEODDS_SPORTS: ''
       - name: Apply V10 feedback
         run: python scripts/v10_apply_feedback.py
@@ -46,7 +49,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add -A output/v6_expansion_engine.* output/odds_cache_raw.json || true
+          git add -A output/v6_expansion_engine.* output/odds_candidate_debug.json output/odds_cache_raw.json || true
           git diff --cached --quiet && exit 0
           git commit -m "Update active engine outputs"
           git push
