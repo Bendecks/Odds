@@ -17,8 +17,8 @@ MIN_BOOK_PRICES = int(os.getenv('MIN_BOOK_PRICES', '3'))
 MIN_EDGE_PCT = float(os.getenv('MIN_EDGE_PCT', '1.5'))
 MIN_ODDS = float(os.getenv('MIN_ODDS', '1.50'))
 MAX_ODDS = float(os.getenv('MAX_ODDS', '2.40'))
-ODDS_IO_BOOKMAKERS = os.getenv('ODDS_IO_BOOKMAKERS', '1xbet')
-MODE = 'V18_EXACT_LEAGUE_EDGE_ENGINE_ODDS_FALLBACK'
+ODDS_IO_BOOKMAKERS = os.getenv('ODDS_IO_BOOKMAKERS', '').strip()
+MODE = 'V18_MULTI_BOOK_EDGE_ENGINE'
 
 APPROVED_LEAGUES = {
     'england-premier-league': 'england-premier-league',
@@ -51,10 +51,11 @@ DIAG = {
     'odds_success_pattern': {},
     'markets_found': 0,
     'rejected_short_prices': 0,
+    'rejected_single_book_only': 0,
     'rejected_odds_range': 0,
     'api_key_present': bool(ODDS_IO),
-    'bookmakers_param': ODDS_IO_BOOKMAKERS,
-    'engine_note': 'Exact approved league slugs. Odds endpoint now tries several endpoint/parameter patterns and logs failures.'
+    'bookmakers_param': ODDS_IO_BOOKMAKERS or '(none: prefer all bookmakers)',
+    'engine_note': 'Prefer all-bookmaker odds. If API only returns one bookmaker, rows are logged as diagnostics and not used for real-edge bets.'
 }
 
 DEBUG = {
@@ -63,6 +64,7 @@ DEBUG = {
     'upcoming_events': [],
     'candidate_rows': [],
     'rejected_rows': [],
+    'single_book_rows': [],
     'odds_error_samples': [],
 }
 
@@ -102,14 +104,13 @@ def add_limited(collection, row, max_len=250):
         collection.append(row)
 
 
-def request_json(path, params=None, label=''):
+def request_json(path, params=None):
     if not ODDS_IO:
         return None, 'missing_api_key'
     p = dict(params or {})
     p['apiKey'] = ODDS_IO
-    url = 'https://api.odds-api.io/v3' + path
     try:
-        r = requests.get(url, params=p, timeout=45)
+        r = requests.get('https://api.odds-api.io/v3' + path, params=p, timeout=45)
         if r.ok:
             return r.json(), ''
         return None, f'{r.status_code} {r.text[:240]}'
@@ -118,40 +119,62 @@ def request_json(path, params=None, label=''):
 
 
 def odds_get(path, params=None):
-    data, err = request_json(path, params, path)
+    data, err = request_json(path, params)
     if err:
         DIAG['odds_errors'] += 1
-        add_limited(DIAG['odds_error_samples'], {'path': path, 'params': {k: v for k, v in (params or {}).items() if k != 'apiKey'}, 'error': err}, 20)
+        add_limited(DIAG['odds_error_samples'], {'path': path, 'params': params or {}, 'error': err}, 20)
     return data if data is not None else []
 
 
-def fetch_event_odds(event_id):
-    # odds-api.io has changed/varied endpoint parameter names across examples.
-    # Try safest patterns in a fixed order. First pattern uses bookmaker(s), because /odds often rejects bare eventId.
-    patterns = [
-        ('/odds', {'eventId': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_eventId_bookmakers'),
-        ('/odds', {'eventId': event_id, 'bookmaker': ODDS_IO_BOOKMAKERS}, 'odds_eventId_bookmaker'),
-        ('/odds', {'eventId': event_id}, 'odds_eventId'),
-        ('/odds', {'event_id': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_event_id_bookmakers'),
-        ('/odds', {'event_id': event_id}, 'odds_event_id'),
-        ('/odds', {'id': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_id_bookmakers'),
-        (f'/events/{event_id}/odds', {'bookmakers': ODDS_IO_BOOKMAKERS}, 'events_id_odds_bookmakers'),
-        (f'/odds/{event_id}', {'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_id_path_bookmakers'),
-    ]
+def payload_price_count(payload):
+    obj = normalize_odds_payload(payload)
+    books = obj.get('bookmakers') if isinstance(obj, dict) else {}
+    selections = extract_prices_from_bookmakers(books, obj.get('home'), obj.get('away'))
+    return sum(len(v) for v in selections.values())
 
+
+def fetch_event_odds(event_id):
+    patterns = [
+        ('/odds', {'eventId': event_id}, 'odds_eventId_all'),
+        ('/odds', {'event_id': event_id}, 'odds_event_id_all'),
+        ('/odds', {'id': event_id}, 'odds_id_all'),
+        (f'/events/{event_id}/odds', {}, 'events_id_odds_all'),
+        (f'/odds/{event_id}', {}, 'odds_id_path_all'),
+    ]
+    if ODDS_IO_BOOKMAKERS:
+        patterns.extend([
+            ('/odds', {'eventId': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_eventId_bookmakers'),
+            ('/odds', {'eventId': event_id, 'bookmaker': ODDS_IO_BOOKMAKERS}, 'odds_eventId_bookmaker'),
+            ('/odds', {'event_id': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_event_id_bookmakers'),
+            ('/odds', {'id': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_id_bookmakers'),
+        ])
+
+    best_payload = {}
+    best_label = ''
+    best_count = -1
     errors = []
+
     for path, params, label in patterns:
         DIAG['odds_fallback_attempts'] += 1
-        data, err = request_json(path, params, label)
-        if not err and data not in (None, [], {}):
-            DIAG['odds_successes'] += 1
-            DIAG['odds_success_pattern'][label] = DIAG['odds_success_pattern'].get(label, 0) + 1
-            return data
+        data, err = request_json(path, params)
         if err:
             errors.append({'pattern': label, 'error': err})
+            continue
+        if data in (None, [], {}):
+            continue
+        count = payload_price_count(data)
+        if count > best_count:
+            best_payload, best_label, best_count = data, label, count
+        if count >= MIN_BOOK_PRICES * 2:
+            break
+
+    if best_payload:
+        DIAG['odds_successes'] += 1
+        DIAG['odds_success_pattern'][best_label] = DIAG['odds_success_pattern'].get(best_label, 0) + 1
+        return best_payload
 
     DIAG['odds_errors'] += 1
-    sample = {'event_id': event_id, 'errors': errors[:4]}
+    sample = {'event_id': event_id, 'errors': errors[:6]}
     add_limited(DIAG['odds_error_samples'], sample, 20)
     add_limited(DEBUG['odds_error_samples'], sample, 50)
     return {}
@@ -263,6 +286,9 @@ def fetch_candidates():
                     except Exception:
                         pass
                 clean_prices = sorted(clean_prices)
+                if len(clean_prices) == 1:
+                    DIAG['rejected_single_book_only'] += 1
+                    add_limited(DEBUG['single_book_rows'], {'event': f'{home} vs {away}', 'pick': selection, 'odds': clean_prices[0], 'reason': 'single_book_only'})
                 if len(clean_prices) < MIN_BOOK_PRICES:
                     DIAG['rejected_short_prices'] += 1
                     add_limited(DEBUG['rejected_rows'], {'event': f'{home} vs {away}', 'pick': selection, 'reason': 'too_few_prices', 'prices': len(clean_prices)})
