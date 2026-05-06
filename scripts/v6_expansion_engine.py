@@ -11,31 +11,26 @@ DEBUG_JSON = OUT / 'odds_candidate_debug.json'
 
 ODDS_IO = os.getenv('ODDS_API_IO_KEY', '')
 DISPLAY_TZ = os.getenv('DISPLAY_TZ', 'Europe/Copenhagen')
-MAX_HOURS = int(os.getenv('MAX_HOURS', '36'))
+MAX_HOURS = int(os.getenv('MAX_HOURS', '72'))
 MAX_TOP_BETS = int(os.getenv('MAX_TOP_BETS', '8'))
 MIN_BOOK_PRICES = int(os.getenv('MIN_BOOK_PRICES', '3'))
 MIN_EDGE_PCT = float(os.getenv('MIN_EDGE_PCT', '1.5'))
 MIN_ODDS = float(os.getenv('MIN_ODDS', '1.50'))
 MAX_ODDS = float(os.getenv('MAX_ODDS', '2.40'))
-MODE = 'V18_SAFE_LEAGUE_EDGE_ENGINE'
+MODE = 'V18_EXACT_LEAGUE_EDGE_ENGINE'
 
-# Safe rules: country/competition must match, not just generic words like "Premier" or "Ligue".
-LEAGUE_RULES = [
-    {'canonical': 'england-premier-league', 'country_terms': ['england'], 'required_any': ['premier-league', 'premierleague']},
-    {'canonical': 'spain-laliga', 'country_terms': ['spain'], 'required_any': ['laliga', 'la-liga', 'primera-division']},
-    {'canonical': 'germany-bundesliga', 'country_terms': ['germany'], 'required_any': ['bundesliga']},
-    {'canonical': 'italy-serie-a', 'country_terms': ['italy'], 'required_any': ['serie-a', 'seriea']},
-    {'canonical': 'france-ligue-1', 'country_terms': ['france'], 'required_any': ['ligue-1', 'ligue1']},
-    {'canonical': 'netherlands-eredivisie', 'country_terms': ['netherlands', 'holland'], 'required_any': ['eredivisie']},
-    {'canonical': 'portugal-primeira-liga', 'country_terms': ['portugal'], 'required_any': ['primeira-liga', 'primeira']},
-    {'canonical': 'uefa-champions-league', 'country_terms': ['international-clubs', 'europe', 'uefa'], 'required_any': ['uefa-champions-league', 'champions-league']},
-]
-
-EXCLUDE_TERMS = [
-    'women', 'woman', 'female', 'u19', 'u20', 'u21', 'u23', 'youth', 'reserve', 'reserves',
-    'amateur', 'ii', '2nd', 'second', 'third', 'derde', 'primavera', 'academy', 'akatemia',
-    'cup', 'copa', 'kupa', 'super-cup', 'playoff', 'play-off', 'friendly', 'afc-champions'
-]
+# Exact API slugs only. No fuzzy league inference.
+APPROVED_LEAGUES = {
+    'england-premier-league': 'england-premier-league',
+    'spain-laliga': 'spain-laliga',
+    'germany-bundesliga': 'germany-bundesliga',
+    'italy-serie-a': 'italy-serie-a',
+    'france-ligue-1': 'france-ligue-1',
+    'netherlands-eredivisie': 'netherlands-eredivisie',
+    'portugal-primeira-liga': 'portugal-primeira-liga',
+    'international-clubs-uefa-champions-league': 'uefa-champions-league',
+    'uefa-champions-league': 'uefa-champions-league',
+}
 
 DIAG = {
     'candidate_count': 0,
@@ -54,7 +49,7 @@ DIAG = {
     'rejected_short_prices': 0,
     'rejected_odds_range': 0,
     'api_key_present': bool(ODDS_IO),
-    'engine_note': 'Safe league matching: requires correct country/competition terms. Writes candidate debug output.'
+    'engine_note': 'Exact approved league slugs only. Candidate debug is written to output/odds_candidate_debug.json.'
 }
 
 DEBUG = {
@@ -112,67 +107,24 @@ def odds_get(path, params=None):
         return []
 
 
-def league_text(row):
-    parts = [row.get('slug'), row.get('name'), row.get('title'), row.get('key'), row.get('id')]
-    return ' '.join(norm(x) for x in parts if x)
-
-
-def has_term(text, term):
-    term = norm(term)
-    return bool(term) and term in text
-
-
-def excluded_league(text):
-    return any(has_term(text, t) for t in EXCLUDE_TERMS)
-
-
-def canonical_league(row):
-    text = league_text(row)
-    slug = norm(row.get('slug'))
-
-    for rule in LEAGUE_RULES:
-        canonical = rule['canonical']
-        if slug == canonical:
-            return canonical
-
-        country_ok = any(has_term(text, t) for t in rule['country_terms'])
-        comp_ok = any(has_term(text, t) for t in rule['required_any'])
-
-        if country_ok and comp_ok and not excluded_league(text):
-            return canonical
-
-    return ''
-
-
 def selected_leagues(raw_leagues):
     selected = []
-    chosen_by_canonical = set()
     DIAG['leagues_total'] = len(raw_leagues) if isinstance(raw_leagues, list) else 0
 
     for lg in raw_leagues if isinstance(raw_leagues, list) else []:
         if not isinstance(lg, dict):
             continue
-        if len(DIAG['league_samples']) < 80:
-            DIAG['league_samples'].append({
-                'slug': lg.get('slug'),
-                'name': lg.get('name') or lg.get('title'),
-                'eventsCount': lg.get('eventsCount')
-            })
+        slug = norm(lg.get('slug'))
+        name = lg.get('name') or lg.get('title')
+        if len(DIAG['league_samples']) < 100:
+            DIAG['league_samples'].append({'slug': lg.get('slug'), 'name': name, 'eventsCount': lg.get('eventsCount')})
 
-        canonical = canonical_league(lg)
-        slug = lg.get('slug')
-        if not canonical or not slug:
+        canonical = APPROVED_LEAGUES.get(slug)
+        if not canonical:
             DIAG['league_filtered'] += 1
             continue
 
-        # Prefer one safe source league per canonical league to reduce API calls.
-        if canonical in chosen_by_canonical:
-            DIAG['league_filtered'] += 1
-            continue
-
-        item = {'slug': slug, 'canonical': canonical, 'name': lg.get('name') or lg.get('title'), 'eventsCount': lg.get('eventsCount')}
-        selected.append(item)
-        chosen_by_canonical.add(canonical)
+        selected.append({'slug': lg.get('slug'), 'canonical': canonical, 'name': name, 'eventsCount': lg.get('eventsCount')})
 
     DIAG['leagues_selected'] = selected
     DEBUG['selected_leagues'] = selected
@@ -193,7 +145,7 @@ def extract_prices_from_bookmakers(bookmakers, home, away):
     if not isinstance(bookmakers, dict):
         return selections
 
-    for book_key, rows in bookmakers.items():
+    for _, rows in bookmakers.items():
         for market in rows if isinstance(rows, list) else []:
             if not isinstance(market, dict):
                 continue
@@ -228,7 +180,7 @@ def extract_prices_from_bookmakers(bookmakers, home, away):
     return selections
 
 
-def add_debug_row(collection, row, max_len=120):
+def add_debug_row(collection, row, max_len=250):
     if len(collection) < max_len:
         collection.append(row)
 
@@ -249,7 +201,6 @@ def fetch_candidates():
             if not upcoming(event.get('date')):
                 continue
             DIAG['upcoming_event_count'] += 1
-
             event_id = event.get('id')
             home_hint = event.get('home')
             away_hint = event.get('away')
@@ -276,7 +227,14 @@ def fetch_candidates():
             selections = extract_prices_from_bookmakers(odds.get('bookmakers') or {}, home, away)
 
             for selection, prices in selections.items():
-                clean_prices = sorted([float(p) for p in prices if isinstance(p, (int, float)) or str(p).replace('.', '', 1).isdigit()])
+                clean_prices = []
+                for p in prices:
+                    try:
+                        clean_prices.append(float(p))
+                    except Exception:
+                        pass
+                clean_prices = sorted(clean_prices)
+
                 if len(clean_prices) < MIN_BOOK_PRICES:
                     DIAG['rejected_short_prices'] += 1
                     add_debug_row(DEBUG['rejected_rows'], {'event': f'{home} vs {away}', 'pick': selection, 'reason': 'too_few_prices', 'prices': len(clean_prices)})
@@ -344,18 +302,11 @@ def rank(candidates):
 
     DIAG['candidate_count'] = len(candidates)
     DIAG['top_count'] = len(top)
-
-    return {
-        'summary': ('ingen valide bets' if not top else f'{len(top)} edge bets'),
-        'top_bets': top,
-        'watchlist': [],
-        'pass': []
-    }
+    return {'summary': ('ingen valide bets' if not top else f'{len(top)} edge bets'), 'top_bets': top, 'watchlist': [], 'pass': []}
 
 
 def write_md(result):
-    lines = [f'# {MODE}', '', result.get('summary', ''), '', '## DIAGNOSTICS', '```json', json.dumps(DIAG, ensure_ascii=False, indent=2), '```', '']
-    lines.append('## TOP BETS')
+    lines = [f'# {MODE}', '', result.get('summary', ''), '', '## DIAGNOSTICS', '```json', json.dumps(DIAG, ensure_ascii=False, indent=2), '```', '', '## TOP BETS']
     if not result.get('top_bets'):
         lines.append('Ingen valide bets fundet i dette run.')
     for i, item in enumerate(result.get('top_bets') or [], 1):
@@ -381,7 +332,6 @@ def main():
     result['mode'] = MODE
     result['generated_at'] = now_iso()
     result['diagnostics'] = DIAG
-
     DEBUG['generated_at'] = result['generated_at']
     DEBUG_JSON.write_text(json.dumps(DEBUG, ensure_ascii=False, indent=2), encoding='utf-8')
     ENGINE_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
