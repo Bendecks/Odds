@@ -9,8 +9,8 @@ V18 strict: 0 bets
   "top_count": 0,
   "duplicates_removed": 0,
   "edge_filtered": 0,
-  "league_filtered": 627,
-  "leagues_total": 634,
+  "league_filtered": 625,
+  "leagues_total": 632,
   "leagues_selected": [
     {
       "slug": "england-premier-league",
@@ -74,7 +74,7 @@ V18 strict: 0 bets
     {
       "slug": "algeria-ligue-1",
       "name": "Algeria - Ligue 1",
-      "eventsCount": 9
+      "eventsCount": 12
     },
     {
       "slug": "algeria-ligue-2",
