@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T17:54:26.299883+00:00",
+  "generated_at": "2026-05-06T20:03:27.614077+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -23,7 +23,7 @@
       "slug": "international-clubs-uefa-champions-league",
       "canonical": "uefa-champions-league",
       "name": "International Clubs - UEFA Champions League",
-      "eventsCount": 2
+      "eventsCount": 1
     },
     {
       "slug": "italy-serie-a",
@@ -142,14 +142,6 @@
       "away": "Bayern Munich"
     },
     {
-      "league": "uefa-champions-league",
-      "source_league_slug": "international-clubs-uefa-champions-league",
-      "event_id": 69339434,
-      "date": "2026-05-06T19:00:00Z",
-      "home": "Bayern Munich",
-      "away": "Paris Saint-Germain"
-    },
-    {
       "league": "italy-serie-a",
       "source_league_slug": "italy-serie-a",
       "event_id": 61061661,
@@ -174,12 +166,28 @@
       "away": "Inter Milano"
     },
     {
+      "league": "italy-serie-a",
+      "source_league_slug": "italy-serie-a",
+      "event_id": 61061653,
+      "date": "2026-05-09T18:45:00Z",
+      "home": "US Lecce",
+      "away": "Juventus Turin"
+    },
+    {
       "league": "netherlands-eredivisie",
       "source_league_slug": "netherlands-eredivisie",
       "event_id": 71242238,
       "date": "2026-05-09T14:30:00Z",
       "home": "Willem II Tilburg",
       "away": "RKC Waalwijk"
+    },
+    {
+      "league": "netherlands-eredivisie",
+      "source_league_slug": "netherlands-eredivisie",
+      "event_id": 71242264,
+      "date": "2026-05-09T18:00:00Z",
+      "home": "De Graafschap",
+      "away": "Almere City FC"
     },
     {
       "league": "spain-laliga",
@@ -212,6 +220,14 @@
       "date": "2026-05-09T16:30:00Z",
       "home": "Atletico Madrid",
       "away": "RC Celta de Vigo"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624630,
+      "date": "2026-05-09T19:00:00Z",
+      "home": "Real Sociedad San Sebastian",
+      "away": "Real Betis Seville"
     }
   ],
   "candidate_rows": [],
@@ -519,31 +535,6 @@
       ]
     },
     {
-      "event_id": 69339434,
-      "errors": [
-        {
-          "pattern": "odds_eventId_all",
-          "error": "400 {\"error\":\"Missing bookmakers\"}"
-        },
-        {
-          "pattern": "odds_event_id_all",
-          "error": "400 {\"error\":\"Missing eventId\"}"
-        },
-        {
-          "pattern": "odds_id_all",
-          "error": "400 {\"error\":\"Missing eventId\"}"
-        },
-        {
-          "pattern": "events_id_odds_all",
-          "error": "404 404 page not found"
-        },
-        {
-          "pattern": "odds_id_path_all",
-          "error": "404 404 page not found"
-        }
-      ]
-    },
-    {
       "event_id": 61061661,
       "errors": [
         {
@@ -619,7 +610,57 @@
       ]
     },
     {
+      "event_id": 61061653,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
       "event_id": 71242238,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 71242264,
       "errors": [
         {
           "pattern": "odds_eventId_all",
@@ -720,6 +761,31 @@
     },
     {
       "event_id": 61624620,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61624630,
       "errors": [
         {
           "pattern": "odds_eventId_all",

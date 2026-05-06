@@ -9,8 +9,8 @@ V18 strict: 0 bets
   "top_count": 0,
   "duplicates_removed": 0,
   "edge_filtered": 0,
-  "league_filtered": 629,
-  "leagues_total": 636,
+  "league_filtered": 627,
+  "leagues_total": 634,
   "leagues_selected": [
     {
       "slug": "england-premier-league",
@@ -34,7 +34,7 @@ V18 strict: 0 bets
       "slug": "international-clubs-uefa-champions-league",
       "canonical": "uefa-champions-league",
       "name": "International Clubs - UEFA Champions League",
-      "eventsCount": 2
+      "eventsCount": 1
     },
     {
       "slug": "italy-serie-a",
@@ -104,7 +104,7 @@ V18 strict: 0 bets
     {
       "slug": "argentina-copa-proyeccion-final-reserves",
       "name": "Argentina - Copa Proyeccion Final, Reserves",
-      "eventsCount": 83
+      "eventsCount": 81
     },
     {
       "slug": "argentina-liga-profesional",
@@ -474,7 +474,7 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-burgenland-burgenlandliga",
       "name": "Austria Amateur - Burgenland, Burgenlandliga",
-      "eventsCount": 32
+      "eventsCount": 36
     },
     {
       "slug": "austria-amateur-karnten-karntner-liga",
@@ -484,7 +484,7 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-niederosterreich-1-landesliga",
       "name": "Austria Amateur - Niederosterreich, 1. Landesliga",
-      "eventsCount": 35
+      "eventsCount": 39
     },
     {
       "slug": "austria-amateur-oberosterreich-oo-liga",
@@ -504,7 +504,7 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-regionalliga-ost",
       "name": "Austria Amateur - Regionalliga Ost",
-      "eventsCount": 66
+      "eventsCount": 71
     },
     {
       "slug": "austria-amateur-regionalliga-west",
@@ -558,11 +558,11 @@ V18 strict: 0 bets
     }
   ],
   "event_count": 163,
-  "upcoming_event_count": 21,
-  "odds_events_checked": 21,
-  "odds_errors": 21,
+  "upcoming_event_count": 23,
+  "odds_events_checked": 23,
+  "odds_errors": 23,
   "odds_successes": 0,
-  "odds_fallback_attempts": 105,
+  "odds_fallback_attempts": 115,
   "odds_error_samples": [
     {
       "event_id": 61301233,
@@ -865,31 +865,6 @@ V18 strict: 0 bets
       ]
     },
     {
-      "event_id": 69339434,
-      "errors": [
-        {
-          "pattern": "odds_eventId_all",
-          "error": "400 {\"error\":\"Missing bookmakers\"}"
-        },
-        {
-          "pattern": "odds_event_id_all",
-          "error": "400 {\"error\":\"Missing eventId\"}"
-        },
-        {
-          "pattern": "odds_id_all",
-          "error": "400 {\"error\":\"Missing eventId\"}"
-        },
-        {
-          "pattern": "events_id_odds_all",
-          "error": "404 404 page not found"
-        },
-        {
-          "pattern": "odds_id_path_all",
-          "error": "404 404 page not found"
-        }
-      ]
-    },
-    {
       "event_id": 61061661,
       "errors": [
         {
@@ -965,7 +940,57 @@ V18 strict: 0 bets
       ]
     },
     {
+      "event_id": 61061653,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
       "event_id": 71242238,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 71242264,
       "errors": [
         {
           "pattern": "odds_eventId_all",
@@ -1016,31 +1041,6 @@ V18 strict: 0 bets
     },
     {
       "event_id": 61624628,
-      "errors": [
-        {
-          "pattern": "odds_eventId_all",
-          "error": "400 {\"error\":\"Missing bookmakers\"}"
-        },
-        {
-          "pattern": "odds_event_id_all",
-          "error": "400 {\"error\":\"Missing eventId\"}"
-        },
-        {
-          "pattern": "odds_id_all",
-          "error": "400 {\"error\":\"Missing eventId\"}"
-        },
-        {
-          "pattern": "events_id_odds_all",
-          "error": "404 404 page not found"
-        },
-        {
-          "pattern": "odds_id_path_all",
-          "error": "404 404 page not found"
-        }
-      ]
-    },
-    {
-      "event_id": 61624632,
       "errors": [
         {
           "pattern": "odds_eventId_all",
