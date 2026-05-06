@@ -6,20 +6,22 @@ OUT = pathlib.Path('output')
 ENGINE_JSON = OUT / 'v6_expansion_engine.json'
 ENGINE_MD = OUT / 'v6_expansion_engine.md'
 
-STRICT_ALLOWED_SPORT_PREFIXES = (
-    'soccer_epl',
-    'soccer_spain_la_liga',
-    'soccer_germany_bundesliga',
-    'soccer_football_data',
-    'soccer_odds_api_io'
-)
-
-STRICT_ALLOWED_MARKETS = ('h2h',)
-STRICT_MAX_ODDS = 2.50
-STRICT_MIN_ODDS = 1.50
-STRICT_MAX_TOP_BETS = 5
-STRICT_MIN_SCORE = 7.0
-STRICT_ALLOW_SINGLE_SOURCE = True
+ALLOWED_LEAGUES = {
+    'england-premier-league',
+    'spain-laliga',
+    'germany-bundesliga',
+    'italy-serie-a',
+    'france-ligue-1',
+    'netherlands-eredivisie',
+    'portugal-primeira-liga',
+    'uefa-champions-league',
+}
+ALLOWED_MARKETS = {'h2h'}
+MIN_ODDS = 1.50
+MAX_ODDS = 2.40
+MIN_EDGE = 1.5
+MIN_BOOKS = 3
+MAX_TOP_BETS = 8
 
 
 def now_iso():
@@ -39,32 +41,40 @@ def save_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
-def is_allowed(item):
-    sport = str(item.get('sport') or '')
-    return sport.startswith(STRICT_ALLOWED_SPORT_PREFIXES)
+def fnum(v):
+    try:
+        return float(v)
+    except Exception:
+        return 0.0
+
+
+def inum(v):
+    try:
+        return int(v)
+    except Exception:
+        return 0
 
 
 def rejection_reason(item, seen_events):
+    league = str(item.get('league') or '')
     market = str(item.get('market') or '').lower()
-    odds = float(item.get('odds') or 0)
-    score = float(item.get('pre_score') or 0)
-    event = str(item.get('event') or '')
+    odds = fnum(item.get('odds'))
+    edge = fnum(item.get('edge_pct'))
+    books = inum(item.get('books'))
+    event_id = str(item.get('event_id') or item.get('event') or '')
 
-    if not is_allowed(item):
-        return 'Kun top fodboldligaer.'
-
-    if market not in STRICT_ALLOWED_MARKETS:
+    if league not in ALLOWED_LEAGUES:
+        return 'Liga er ikke V18-godkendt.'
+    if market not in ALLOWED_MARKETS:
         return 'Kun kampvinder.'
-
-    if odds <= 0 or odds > STRICT_MAX_ODDS or odds < STRICT_MIN_ODDS:
-        return f'Odds udenfor {STRICT_MIN_ODDS}-{STRICT_MAX_ODDS}'
-
-    if score < STRICT_MIN_SCORE:
-        return f'Score < {STRICT_MIN_SCORE}'
-
-    if event in seen_events:
-        return 'Kun 1 bet pr kamp'
-
+    if not (MIN_ODDS <= odds <= MAX_ODDS):
+        return f'Odds udenfor {MIN_ODDS}-{MAX_ODDS}.'
+    if edge < MIN_EDGE:
+        return f'Edge under {MIN_EDGE}%.'
+    if books < MIN_BOOKS:
+        return f'For få bookmaker-priser ({books}).'
+    if event_id in seen_events:
+        return 'Kun 1 bet pr kamp.'
     return ''
 
 
@@ -79,7 +89,6 @@ def normalize_watch(item, reason):
 def strict_filter(engine):
     old_top = engine.get('top_bets') if isinstance(engine.get('top_bets'), list) else []
     old_watch = engine.get('watchlist') if isinstance(engine.get('watchlist'), list) else []
-
     new_top = []
     moved = []
     seen_events = set()
@@ -87,46 +96,49 @@ def strict_filter(engine):
     for item in old_top:
         if not isinstance(item, dict):
             continue
-
         reason = rejection_reason(item, seen_events)
-
         if reason:
             moved.append(normalize_watch(item, reason))
             continue
-
         clean = dict(item)
-        clean['role'] = 'PRIMARY_STRICT_V2_1'
-        clean['stake_kr'] = 1
-        clean['reason'] = 'Godkendt (Strict V2.1)'
-
+        clean['role'] = 'PRIMARY_V18_STRICT'
+        clean['reason'] = clean.get('reason') or 'Godkendt af V18 strict filter.'
         new_top.append(clean)
-        seen_events.add(str(item.get('event')))
-
-        if len(new_top) >= STRICT_MAX_TOP_BETS:
+        seen_events.add(str(item.get('event_id') or item.get('event') or ''))
+        if len(new_top) >= MAX_TOP_BETS:
             break
-
-    for item in old_top:
-        if isinstance(item, dict) and item not in new_top and item not in moved:
-            moved.append(normalize_watch(item, 'Ikke blandt top 5'))
 
     engine['top_bets'] = new_top
     engine['watchlist'] = moved + old_watch
-    engine['mode'] = 'STRICT_MODE_V2_1'
-    engine['summary'] = f"STRICT V2.1: {len(new_top)} bets"
-
+    original_mode = engine.get('mode') or 'UNKNOWN_ENGINE'
+    engine['mode'] = f'{original_mode}+STRICT_V18'
+    engine['summary'] = f"V18 strict: {len(new_top)} bets"
+    engine['strict_v18'] = {
+        'applied_at': now_iso(),
+        'moved_to_watchlist': len(moved),
+        'top_count_after_strict': len(new_top),
+    }
     return engine
 
 
 def write_md(engine):
-    lines = []
-    lines.append('# STRICT MODE V2.1')
-    lines.append(engine.get('summary', ''))
-    lines.append('')
-
+    lines = [
+        f"# {engine.get('mode')}",
+        '',
+        engine.get('summary', ''),
+        '',
+        '## DIAGNOSTICS',
+        '```json',
+        json.dumps(engine.get('diagnostics') or {}, ensure_ascii=False, indent=2),
+        '```',
+        '',
+        '## TOP BETS',
+    ]
+    if not engine.get('top_bets'):
+        lines.append('Ingen valide bets fundet i dette run.')
     for i, x in enumerate(engine.get('top_bets') or [], 1):
-        lines.append(f"{i}. {x.get('event')} | {x.get('pick')} @ {x.get('odds')}")
-
-    ENGINE_MD.write_text('\n'.join(lines), encoding='utf-8')
+        lines.append(f"{i}. {x.get('start_local') or x.get('start')} | {x.get('league')} | {x.get('event')} | {x.get('pick')} @ {x.get('odds')} | edge {x.get('edge_pct')} | books {x.get('books')}")
+    ENGINE_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
 def main():
