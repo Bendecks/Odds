@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T17:09:58.436609+00:00",
+  "generated_at": "2026-05-06T17:21:08.144239+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -140,310 +140,311 @@
       "date": "2026-05-09T16:30:00Z",
       "home": "VFL Wolfsburg",
       "away": "Bayern Munich"
-    },
-    {
-      "league": "uefa-champions-league",
-      "source_league_slug": "international-clubs-uefa-champions-league",
-      "event_id": 69339434,
-      "date": "2026-05-06T19:00:00Z",
-      "home": "Bayern Munich",
-      "away": "Paris Saint-Germain"
-    },
-    {
-      "league": "italy-serie-a",
-      "source_league_slug": "italy-serie-a",
-      "event_id": 61061661,
-      "date": "2026-05-08T18:45:00Z",
-      "home": "Torino FC",
-      "away": "Sassuolo Calcio"
-    },
-    {
-      "league": "italy-serie-a",
-      "source_league_slug": "italy-serie-a",
-      "event_id": 61061645,
-      "date": "2026-05-09T13:00:00Z",
-      "home": "Cagliari Calcio",
-      "away": "Udinese Calcio"
-    },
-    {
-      "league": "italy-serie-a",
-      "source_league_slug": "italy-serie-a",
-      "event_id": 61061651,
-      "date": "2026-05-09T16:00:00Z",
-      "home": "Lazio Rome",
-      "away": "Inter Milano"
-    },
-    {
-      "league": "netherlands-eredivisie",
-      "source_league_slug": "netherlands-eredivisie",
-      "event_id": 71242238,
-      "date": "2026-05-09T14:30:00Z",
-      "home": "Willem II Tilburg",
-      "away": "RKC Waalwijk"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
-      "event_id": 61624624,
-      "date": "2026-05-08T19:00:00Z",
-      "home": "Levante UD",
-      "away": "CA Osasuna"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
-      "event_id": 61624628,
-      "date": "2026-05-09T12:00:00Z",
-      "home": "Elche CF",
-      "away": "Deportivo Alaves"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
-      "event_id": 61624632,
-      "date": "2026-05-09T14:15:00Z",
-      "home": "Sevilla FC",
-      "away": "Espanyol Barcelona"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
-      "event_id": 61624620,
-      "date": "2026-05-09T16:30:00Z",
-      "home": "Atletico Madrid",
-      "away": "RC Celta de Vigo"
     }
   ],
   "candidate_rows": [],
-  "rejected_rows": [
+  "rejected_rows": [],
+  "single_book_rows": [],
+  "odds_error_samples": [
     {
-      "event": "Liverpool FC vs Chelsea FC",
-      "pick": "Liverpool FC",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61301233,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Liverpool FC vs Chelsea FC",
-      "pick": "Chelsea FC",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61301225,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Brighton & Hove Albion vs Wolverhampton Wanderers",
-      "pick": "Brighton & Hove Albion",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61301231,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Fulham FC vs AFC Bournemouth",
-      "pick": "Fulham FC",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61301241,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Fulham FC vs AFC Bournemouth",
-      "pick": "AFC Bournemouth",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61301235,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Sunderland AFC vs Manchester United",
-      "pick": "Sunderland AFC",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61526576,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Sunderland AFC vs Manchester United",
-      "pick": "Manchester United",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61514184,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Manchester City vs Brentford FC",
-      "pick": "Manchester City",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61514188,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Manchester City vs Brentford FC",
-      "pick": "Brentford FC",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61514190,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Racing Club De Lens vs FC Nantes",
-      "pick": "Racing Club De Lens",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61514194,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Racing Club De Lens vs FC Nantes",
-      "pick": "FC Nantes",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61514196,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     },
     {
-      "event": "Borussia Dortmund vs Eintracht Frankfurt",
-      "pick": "Borussia Dortmund",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Borussia Dortmund vs Eintracht Frankfurt",
-      "pick": "Eintracht Frankfurt",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "RB Leipzig vs FC St. Pauli",
-      "pick": "RB Leipzig",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "VfB Stuttgart vs Bayer Leverkusen",
-      "pick": "VfB Stuttgart",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "VfB Stuttgart vs Bayer Leverkusen",
-      "pick": "Bayer Leverkusen",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "FC Augsburg vs Borussia Monchengladbach",
-      "pick": "FC Augsburg",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "FC Augsburg vs Borussia Monchengladbach",
-      "pick": "Borussia Monchengladbach",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "TSG Hoffenheim vs Werder Bremen",
-      "pick": "TSG Hoffenheim",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "TSG Hoffenheim vs Werder Bremen",
-      "pick": "Werder Bremen",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "VFL Wolfsburg vs Bayern Munich",
-      "pick": "VFL Wolfsburg",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "VFL Wolfsburg vs Bayern Munich",
-      "pick": "Bayern Munich",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Bayern Munich vs Paris Saint-Germain",
-      "pick": "Bayern Munich",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Bayern Munich vs Paris Saint-Germain",
-      "pick": "Paris Saint-Germain",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Torino FC vs Sassuolo Calcio",
-      "pick": "Torino FC",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Torino FC vs Sassuolo Calcio",
-      "pick": "Sassuolo Calcio",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Cagliari Calcio vs Udinese Calcio",
-      "pick": "Cagliari Calcio",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Cagliari Calcio vs Udinese Calcio",
-      "pick": "Udinese Calcio",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Lazio Rome vs Inter Milano",
-      "pick": "Lazio Rome",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Lazio Rome vs Inter Milano",
-      "pick": "Inter Milano",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Levante UD vs CA Osasuna",
-      "pick": "Levante UD",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Levante UD vs CA Osasuna",
-      "pick": "CA Osasuna",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Elche CF vs Deportivo Alaves",
-      "pick": "Elche CF",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Elche CF vs Deportivo Alaves",
-      "pick": "Deportivo Alaves",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Sevilla FC vs Espanyol Barcelona",
-      "pick": "Sevilla FC",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Sevilla FC vs Espanyol Barcelona",
-      "pick": "Espanyol Barcelona",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Atletico Madrid vs RC Celta de Vigo",
-      "pick": "Atletico Madrid",
-      "reason": "too_few_prices",
-      "prices": 1
-    },
-    {
-      "event": "Atletico Madrid vs RC Celta de Vigo",
-      "pick": "RC Celta de Vigo",
-      "reason": "too_few_prices",
-      "prices": 1
+      "event_id": 61514192,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
     }
-  ],
-  "odds_error_samples": []
+  ]
 }

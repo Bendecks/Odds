@@ -1,4 +1,4 @@
-# V18_EXACT_LEAGUE_EDGE_ENGINE_ODDS_FALLBACK+V10_ADAPTIVE_FEEDBACK+STRICT_V18
+# V18_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
 
 V18 strict: 0 bets
 
@@ -557,22 +557,354 @@ V18 strict: 0 bets
       "eventsCount": 18
     }
   ],
-  "event_count": 163,
-  "upcoming_event_count": 21,
-  "odds_events_checked": 21,
-  "odds_errors": 0,
-  "odds_successes": 21,
-  "odds_fallback_attempts": 21,
-  "odds_error_samples": [],
-  "odds_success_pattern": {
-    "odds_eventId_bookmakers": 21
-  },
-  "markets_found": 20,
-  "rejected_short_prices": 38,
+  "event_count": 70,
+  "upcoming_event_count": 12,
+  "odds_events_checked": 12,
+  "odds_errors": 16,
+  "odds_successes": 0,
+  "odds_fallback_attempts": 60,
+  "odds_error_samples": [
+    {
+      "event_id": 61301233,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61301225,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61301231,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61301241,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61301235,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61526576,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61514184,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61514188,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61514190,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61514194,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61514196,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61514192,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "path": "/events",
+      "params": {
+        "sport": "football",
+        "league": "international-clubs-uefa-champions-league"
+      },
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 35 seconds.\"}"
+    },
+    {
+      "path": "/events",
+      "params": {
+        "sport": "football",
+        "league": "italy-serie-a"
+      },
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 35 seconds.\"}"
+    },
+    {
+      "path": "/events",
+      "params": {
+        "sport": "football",
+        "league": "netherlands-eredivisie"
+      },
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 35 seconds.\"}"
+    },
+    {
+      "path": "/events",
+      "params": {
+        "sport": "football",
+        "league": "spain-laliga"
+      },
+      "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 34 seconds.\"}"
+    }
+  ],
+  "odds_success_pattern": {},
+  "markets_found": 0,
+  "rejected_short_prices": 0,
+  "rejected_single_book_only": 0,
   "rejected_odds_range": 0,
   "api_key_present": true,
-  "bookmakers_param": "1xbet",
-  "engine_note": "Exact approved league slugs. Odds endpoint now tries several endpoint/parameter patterns and logs failures."
+  "bookmakers_param": "(none: prefer all bookmakers)",
+  "engine_note": "Prefer all-bookmaker odds. If API only returns one bookmaker, rows are logged as diagnostics and not used for real-edge bets."
 }
 ```
 
