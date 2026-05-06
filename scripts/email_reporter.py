@@ -21,43 +21,46 @@ SMTP_PASSWORD = os.getenv('SMTP_PASSWORD', '')
 
 def parse_dt(v):
     try:
-        return datetime.fromisoformat(str(v).replace('Z','+00:00'))
+        return datetime.fromisoformat(str(v).replace('Z', '+00:00'))
     except Exception:
         return datetime.max.replace(tzinfo=timezone.utc)
 
 
 def load_json(path):
-    if path.exists():
-        return json.loads(path.read_text(encoding='utf-8'))
+    try:
+        if path.exists():
+            return json.loads(path.read_text(encoding='utf-8'))
+    except Exception:
+        pass
     return {}
 
 
 def top_bets(engine):
     bets = engine.get('top_bets') or []
-    return sorted(bets, key=lambda b: parse_dt(b.get('start')))
+    return sorted([b for b in bets if isinstance(b, dict)], key=lambda b: parse_dt(b.get('start')))
 
 
 def open_bets(paper):
     bets = paper.get('bets') or []
-    return sorted([b for b in bets if b.get('status')=='open'], key=lambda b: parse_dt(b.get('start')))
+    return sorted([b for b in bets if b.get('status') == 'open'], key=lambda b: parse_dt(b.get('start')))
 
 
 def sport_dk(s):
     s = str(s or '')
-    if s.startswith('soccer_'): return 'Fodbold'
-    if s.startswith('basketball_'): return 'Basketball'
-    if s.startswith('icehockey_'): return 'Ishockey'
-    if s.startswith('baseball_'): return 'Baseball'
-    if s.startswith('tennis_'): return 'Tennis'
-    if s.startswith('mma_'): return 'MMA'
-    if s.startswith('americanfootball_'): return 'Amerikansk fodbold'
+    if 'soccer' in s: return 'Fodbold'
+    if 'basketball' in s: return 'Basketball'
+    if 'icehockey' in s: return 'Ishockey'
+    if 'baseball' in s: return 'Baseball'
+    if 'tennis' in s: return 'Tennis'
+    if 'mma' in s: return 'MMA'
+    if 'americanfootball' in s: return 'Amerikansk fodbold'
     return s or 'Ukendt sport'
 
 
 def market_dk(m):
     m = str(m or '').lower()
     if m == 'h2h': return 'Kampvinder'
-    if m == 'totals': return 'Over/under mål/point i kampen'
+    if m == 'totals': return 'Over/under mål/point'
     if m == 'spreads': return 'Handicap/spread'
     return m or 'Ukendt marked'
 
@@ -67,68 +70,112 @@ def explain_pick(b):
     pick = str(b.get('pick') or '')
     point = b.get('point')
     event = b.get('event') or 'Ukendt kamp'
+
     if market == 'h2h':
-        return f"Spillet er: {pick} vinder kampen mod modstanderen i: {event}."
+        return f'Spillet er: {pick} vinder kampen i {event}.'
+
     if market == 'totals':
         direction = pick.lower()
         if direction == 'under':
-            return f"Spillet er: Der kommer UNDER {point} samlede mål/point i kampen {event}. Eksempel: Hvis linjen er 2.5, vinder spillet ved 0, 1 eller 2 mål/point."
+            return f'Spillet er UNDER {point} samlede mål/point i {event}.'
         if direction == 'over':
-            return f"Spillet er: Der kommer OVER {point} samlede mål/point i kampen {event}. Eksempel: Hvis linjen er 2.5, vinder spillet ved 3 eller flere mål/point."
-        return f"Spillet er et totals-spil på linjen {point} i kampen {event}: {pick}."
+            return f'Spillet er OVER {point} samlede mål/point i {event}.'
+
     if market == 'spreads':
-        return f"Spillet er: {pick} med handicap/spread {point} i kampen {event}. Holdets resultat justeres med {point}, før spillet afgøres."
-    return f"Spillet er: {pick} i kampen {event}."
+        return f'Spillet er {pick} med handicap/spread {point} i {event}.'
+
+    return f'Spillet er: {pick} i {event}.'
 
 
 def bet_block(b, index=None, paper=False):
-    prefix = f"BET {index}" if index is not None else "BET"
-    stake_line = f"Indsats: {b.get('paper_stake')} kr ({b.get('stake_units')} units)" if paper else f"Foreslået styrke: {b.get('stake_kr')} units"
-    return "\n".join([
-        f"{prefix}",
-        f"Kampstart: {b.get('start_local') or b.get('start')}",
-        f"Sport: {sport_dk(b.get('sport'))}",
-        f"Kamp: {b.get('event')}",
-        f"Marked: {market_dk(b.get('market'))}",
+    prefix = f'BET {index}' if index is not None else 'BET'
+
+    if paper:
+        stake_line = f'Indsats: {b.get("paper_stake")} kr'
+    else:
+        stake_line = f'Foreslået indsats: {b.get("stake_kr")} kr'
+
+    return '\n'.join([
+        prefix,
+        f'Kampstart: {b.get("start_local") or b.get("start")}',
+        f'Sport: {sport_dk(b.get("sport"))}',
+        f'Liga: {b.get("league")}',
+        f'Kamp: {b.get("event")}',
+        f'Marked: {market_dk(b.get("market"))}',
         explain_pick(b),
-        f"Odds: {b.get('odds')}",
+        f'Odds: {b.get("odds")}',
         stake_line,
-        f"Edge/score: {b.get('edge_pct', 'n/a')}% / {b.get('pre_score', 'n/a')}",
-        ""
+        f'Edge: {b.get("edge_pct", "n/a")}% | Score: {b.get("pre_score", "n/a")}',
+        f'Bookmakers: {b.get("books", "n/a")}',
+        ''
     ])
 
 
 def build_report(engine, paper):
     summary = paper.get('summary') if isinstance(paper.get('summary'), dict) else {}
+    diagnostics = engine.get('diagnostics') if isinstance(engine.get('diagnostics'), dict) else {}
+
     lines = []
     lines.append('ODDS RAPPORT')
     lines.append('Sorteret efter kampstart. Alle spil er forklaret med almindelige ord.')
     lines.append('')
+
     lines.append('STATUS')
-    lines.append(f"Åbne spil: {summary.get('open_count', 0)}")
-    lines.append(f"Åben eksponering: {summary.get('open_stake', 0)} / {summary.get('max_open_exposure_kr', 0)} kr")
-    lines.append(f"Profit: {summary.get('profit', 0)} kr")
-    lines.append(f"ROI: {summary.get('roi_pct', 0)}%")
-    lines.append(f"Hitrate: {summary.get('hitrate_pct', 0)}%")
+    lines.append(f'Åbne spil: {summary.get("open_count", 0)}')
+    lines.append(f'Åben eksponering: {summary.get("open_stake", 0)} / {summary.get("max_open_exposure_kr", 0)} kr')
+    lines.append(f'Profit: {summary.get("profit", 0)} kr')
+    lines.append(f'ROI: {summary.get("roi_pct", 0)}%')
+    lines.append(f'Hitrate: {summary.get("hitrate_pct", 0)}%')
     lines.append('')
+
+    lines.append('ENGINE STATUS')
+    lines.append(f'Mode: {engine.get("mode")}')
+    lines.append(f'Summary: {engine.get("summary")}')
+    lines.append(f'Kandidater fundet: {diagnostics.get("candidate_count", 0)}')
+    lines.append(f'Ligaer scannet: {diagnostics.get("leagues_total", 0)}')
+    lines.append(f'Events fundet: {diagnostics.get("event_count", 0)}')
+    lines.append(f'Kommende events: {diagnostics.get("upcoming_event_count", 0)}')
+    lines.append(f'Filtrerede ligaer: {diagnostics.get("league_filtered", 0)}')
+    lines.append(f'Edge-filtrerede picks: {diagnostics.get("edge_filtered", 0)}')
+    lines.append(f'Odds-fejl: {diagnostics.get("odds_errors", 0)}')
+    lines.append('')
+
     lines.append('NYE/TOP PICKS')
     lines.append('')
-    for i, b in enumerate(top_bets(engine)[:20], 1):
+
+    top = top_bets(engine)
+    if not top:
+        lines.append('Ingen valide bets fundet i dette run.')
+        lines.append('')
+
+    for i, b in enumerate(top[:20], 1):
         lines.append(bet_block(b, i, paper=False))
+
     lines.append('ÅBNE PAPER BETS')
     lines.append('')
-    for i, b in enumerate(open_bets(paper)[:30], 1):
+
+    open_list = open_bets(paper)
+    if not open_list:
+        lines.append('Ingen åbne paper bets.')
+        lines.append('')
+
+    for i, b in enumerate(open_list[:30], 1):
         lines.append(bet_block(b, i, paper=True))
+
     return '\n'.join(lines)
 
 
 def send_email(body):
+    if not all([MAIL_TO, MAIL_FROM, SMTP_HOST, SMTP_USER, SMTP_PASSWORD]):
+        raise RuntimeError('Missing SMTP/email configuration')
+
     msg = MIMEMultipart()
     msg['Subject'] = 'Odds rapport - forklaret'
     msg['From'] = MAIL_FROM
     msg['To'] = MAIL_TO
     msg.attach(MIMEText(body, 'plain', 'utf-8'))
-    with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
         server.starttls()
         server.login(SMTP_USER, SMTP_PASSWORD)
         server.sendmail(MAIL_FROM, MAIL_TO, msg.as_string())
@@ -140,6 +187,8 @@ def main():
     body = build_report(engine, paper)
     send_email(body)
     EMAIL_SUMMARY.write_text(body, encoding='utf-8')
+    print('Email report sent')
+
 
 if __name__ == '__main__':
     main()
