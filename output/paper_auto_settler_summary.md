@@ -1,19 +1,19 @@
 # PAPER AUTO SETTLER — FOOTBALL-DATA STRICT
 
-Generated: 2026-05-06T04:05:15.955980+00:00
+Generated: 2026-05-06T04:23:56.080523+00:00
 
-Checked open bets: 10 | Auto-settled: 0 | Pending/not finished: 7 | Unmatched: 3
+Checked open bets: 0 | Auto-settled: 0 | Pending/not finished: 0 | Unmatched: 0
 
-football-data matches loaded: 8
+football-data matches loaded: 0
 
 ## SUMMARY
 ```json
 {
-  "open_count": 10,
-  "settled_count": 59,
+  "open_count": 0,
+  "settled_count": 69,
   "won": 13,
   "lost": 24,
-  "push_void": 22,
+  "push_void": 32,
   "settled_stake": 264.0,
   "profit": -11.96,
   "roi_pct": -4.53,
@@ -22,13 +22,3 @@ football-data matches loaded: 8
 ```
 
 ## DIAGNOSTICS
-- PB-00060 | RKC Waalwijk vs Willem II Tilburg | unmatched | no_matching_football_data_match
-- PB-00061 | Almere City FC vs De Graafschap | pending | kampen forventes ikke færdig endnu
-- PB-00062 | RKC Waalwijk vs Willem II Tilburg | unmatched | no_matching_football_data_match
-- PB-00063 | FC Lahti 69 vs Helsingin Ponnistus | pending | kampen forventes ikke færdig endnu
-- PB-00064 | KuPS Akatemia II vs Yllatys | pending | kampen forventes ikke færdig endnu
-- PB-00065 | HaPK Edustus vs Kultsu FC | pending | kampen forventes ikke færdig endnu
-- PB-00066 | RKC Waalwijk vs Willem II Tilburg | unmatched | no_matching_football_data_match
-- PB-00067 | HaPK Edustus vs Kultsu FC | pending | kampen forventes ikke færdig endnu
-- PB-00068 | Mikkelin Palloilijat 2 vs Kjp Kouvola | pending | kampen forventes ikke færdig endnu
-- PB-00069 | Almere City FC vs De Graafschap | pending | kampen forventes ikke færdig endnu
