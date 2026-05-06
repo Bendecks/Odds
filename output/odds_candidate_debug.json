@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T17:21:08.144239+00:00",
+  "generated_at": "2026-05-06T17:54:26.299883+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -140,6 +140,78 @@
       "date": "2026-05-09T16:30:00Z",
       "home": "VFL Wolfsburg",
       "away": "Bayern Munich"
+    },
+    {
+      "league": "uefa-champions-league",
+      "source_league_slug": "international-clubs-uefa-champions-league",
+      "event_id": 69339434,
+      "date": "2026-05-06T19:00:00Z",
+      "home": "Bayern Munich",
+      "away": "Paris Saint-Germain"
+    },
+    {
+      "league": "italy-serie-a",
+      "source_league_slug": "italy-serie-a",
+      "event_id": 61061661,
+      "date": "2026-05-08T18:45:00Z",
+      "home": "Torino FC",
+      "away": "Sassuolo Calcio"
+    },
+    {
+      "league": "italy-serie-a",
+      "source_league_slug": "italy-serie-a",
+      "event_id": 61061645,
+      "date": "2026-05-09T13:00:00Z",
+      "home": "Cagliari Calcio",
+      "away": "Udinese Calcio"
+    },
+    {
+      "league": "italy-serie-a",
+      "source_league_slug": "italy-serie-a",
+      "event_id": 61061651,
+      "date": "2026-05-09T16:00:00Z",
+      "home": "Lazio Rome",
+      "away": "Inter Milano"
+    },
+    {
+      "league": "netherlands-eredivisie",
+      "source_league_slug": "netherlands-eredivisie",
+      "event_id": 71242238,
+      "date": "2026-05-09T14:30:00Z",
+      "home": "Willem II Tilburg",
+      "away": "RKC Waalwijk"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624624,
+      "date": "2026-05-08T19:00:00Z",
+      "home": "Levante UD",
+      "away": "CA Osasuna"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624628,
+      "date": "2026-05-09T12:00:00Z",
+      "home": "Elche CF",
+      "away": "Deportivo Alaves"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624632,
+      "date": "2026-05-09T14:15:00Z",
+      "home": "Sevilla FC",
+      "away": "Espanyol Barcelona"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624620,
+      "date": "2026-05-09T16:30:00Z",
+      "home": "Atletico Madrid",
+      "away": "RC Celta de Vigo"
     }
   ],
   "candidate_rows": [],
@@ -401,15 +473,15 @@
       "errors": [
         {
           "pattern": "odds_eventId_all",
-          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
         },
         {
           "pattern": "odds_event_id_all",
-          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+          "error": "400 {\"error\":\"Missing eventId\"}"
         },
         {
           "pattern": "odds_id_all",
-          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 37 seconds.\"}"
+          "error": "400 {\"error\":\"Missing eventId\"}"
         },
         {
           "pattern": "events_id_odds_all",
@@ -426,15 +498,240 @@
       "errors": [
         {
           "pattern": "odds_eventId_all",
-          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
         },
         {
           "pattern": "odds_event_id_all",
-          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+          "error": "400 {\"error\":\"Missing eventId\"}"
         },
         {
           "pattern": "odds_id_all",
-          "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 29 minutes and 36 seconds.\"}"
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 69339434,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61061661,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61061645,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61061651,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 71242238,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61624624,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61624628,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61624632,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "events_id_odds_all",
+          "error": "404 404 page not found"
+        },
+        {
+          "pattern": "odds_id_path_all",
+          "error": "404 404 page not found"
+        }
+      ]
+    },
+    {
+      "event_id": 61624620,
+      "errors": [
+        {
+          "pattern": "odds_eventId_all",
+          "error": "400 {\"error\":\"Missing bookmakers\"}"
+        },
+        {
+          "pattern": "odds_event_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
+        },
+        {
+          "pattern": "odds_id_all",
+          "error": "400 {\"error\":\"Missing eventId\"}"
         },
         {
           "pattern": "events_id_odds_all",
