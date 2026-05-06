@@ -1,4 +1,4 @@
-# V18_EXACT_LEAGUE_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
+# V18_EXACT_LEAGUE_EDGE_ENGINE_ODDS_FALLBACK+V10_ADAPTIVE_FEEDBACK+STRICT_V18
 
 V18 strict: 0 bets
 
@@ -9,8 +9,8 @@ V18 strict: 0 bets
   "top_count": 0,
   "duplicates_removed": 0,
   "edge_filtered": 0,
-  "league_filtered": 630,
-  "leagues_total": 637,
+  "league_filtered": 629,
+  "leagues_total": 636,
   "leagues_selected": [
     {
       "slug": "england-premier-league",
@@ -46,7 +46,7 @@ V18 strict: 0 bets
       "slug": "netherlands-eredivisie",
       "canonical": "netherlands-eredivisie",
       "name": "Netherlands - Eredivisie",
-      "eventsCount": 21
+      "eventsCount": 20
     },
     {
       "slug": "spain-laliga",
@@ -104,7 +104,7 @@ V18 strict: 0 bets
     {
       "slug": "argentina-copa-proyeccion-final-reserves",
       "name": "Argentina - Copa Proyeccion Final, Reserves",
-      "eventsCount": 84
+      "eventsCount": 83
     },
     {
       "slug": "argentina-liga-profesional",
@@ -479,17 +479,17 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-karnten-karntner-liga",
       "name": "Austria Amateur - Karnten, Karntner Liga",
-      "eventsCount": 42
+      "eventsCount": 46
     },
     {
       "slug": "austria-amateur-niederosterreich-1-landesliga",
       "name": "Austria Amateur - Niederosterreich, 1. Landesliga",
-      "eventsCount": 34
+      "eventsCount": 35
     },
     {
       "slug": "austria-amateur-oberosterreich-oo-liga",
       "name": "Austria Amateur - Oberosterreich, OO Liga",
-      "eventsCount": 34
+      "eventsCount": 37
     },
     {
       "slug": "austria-amateur-ofb-cup-women",
@@ -499,12 +499,12 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-regionalliga-centre",
       "name": "Austria Amateur - Regionalliga Centre",
-      "eventsCount": 32
+      "eventsCount": 40
     },
     {
       "slug": "austria-amateur-regionalliga-ost",
       "name": "Austria Amateur - Regionalliga Ost",
-      "eventsCount": 62
+      "eventsCount": 66
     },
     {
       "slug": "austria-amateur-regionalliga-west",
@@ -519,7 +519,7 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-steiermark-landesliga",
       "name": "Austria Amateur - Steiermark, Landesliga",
-      "eventsCount": 32
+      "eventsCount": 40
     },
     {
       "slug": "austria-amateur-tirol-regionalliga-tirol",
@@ -534,7 +534,7 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-wien-wiener-stadtliga",
       "name": "Austria Amateur - Wien, Wiener Stadtliga",
-      "eventsCount": 30
+      "eventsCount": 31
     },
     {
       "slug": "austria-bundesliga",
@@ -560,12 +560,19 @@ V18 strict: 0 bets
   "event_count": 163,
   "upcoming_event_count": 21,
   "odds_events_checked": 21,
-  "odds_errors": 21,
-  "markets_found": 0,
-  "rejected_short_prices": 0,
+  "odds_errors": 0,
+  "odds_successes": 21,
+  "odds_fallback_attempts": 21,
+  "odds_error_samples": [],
+  "odds_success_pattern": {
+    "odds_eventId_bookmakers": 21
+  },
+  "markets_found": 20,
+  "rejected_short_prices": 38,
   "rejected_odds_range": 0,
   "api_key_present": true,
-  "engine_note": "Exact approved league slugs only. Candidate debug is written to output/odds_candidate_debug.json."
+  "bookmakers_param": "1xbet",
+  "engine_note": "Exact approved league slugs. Odds endpoint now tries several endpoint/parameter patterns and logs failures."
 }
 ```
 
