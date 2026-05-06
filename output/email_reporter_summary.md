@@ -12,10 +12,10 @@ ENGINE STATUS
 Mode: STRICT_MODE_V2_1
 Summary: STRICT V2.1: 0 bets
 Kandidater fundet: 0
-Ligaer scannet: 635
+Ligaer scannet: 637
 Events fundet: 154
 Kommende events: 5
-Filtrerede ligaer: 627
+Filtrerede ligaer: 629
 Edge-filtrerede picks: 0
 Odds-fejl: 5
 
