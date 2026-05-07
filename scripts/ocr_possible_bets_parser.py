@@ -36,7 +36,7 @@ NOISE_PATTERNS = [
     r'^bet$', r'^365$', r'^bet365$', r'^bet365\.dk$', r'^Session ', r'^Ansvarsfuldt spil$',
     r'^ÅBN$', r'^Åbn i appen', r'^Sport$', r'^Live$', r'^Casino$', r'^Væddemål$',
     r'^AKKUMULATOR', r'^Matchkupon$', r'^Ekstra$', r'^Alle$', r'^Alle kampe$', r'^Næste ',
-    r'^Hjem$', r'^<$', r'^=$', r'^•', r'^\.\.',$
+    r'^Hjem$', r'^<$', r'^=$', r'^•', r'^\.\.$',
 ]
 
 
@@ -145,7 +145,6 @@ def parse_basketball_like(lines):
             i += 1
             continue
 
-        # Skip header-like pairs.
         if home.lower() in {'handicap', 'total', 'point', 'rebound', 'assist'} or away.lower() in {'handicap', 'total', 'point', 'rebound', 'assist'}:
             i += 1
             continue
@@ -167,8 +166,6 @@ def parse_basketball_like(lines):
                 'raw_chunk': chunk,
             }
 
-            # Common bet365 screen layout: handicap odds, total odds, then moneyline home/away.
-            # We keep confidence levels because OCR layout can shift.
             if handicaps and len(odds_numbers) >= 2:
                 event['markets'].append({
                     'market': 'handicap',
@@ -207,7 +204,6 @@ def parse_basketball_like(lines):
                         'explanation': f'{totals[1]} samlede point til odds {odds_numbers[5]}',
                     })
 
-            # Moneyline often appears as the 3rd and 6th odds in the shown OCR layout.
             if len(odds_numbers) >= 6:
                 event['markets'].append({
                     'market': 'moneyline',
@@ -237,7 +233,6 @@ def score_market(market):
     odds = market.get('odds')
     if odds is None:
         return 0
-    # Screenshot-only model: no true edge. We rank by usable price and market confidence only.
     confidence_bonus = {'high': 2, 'medium': 1, 'low': -2}.get(market.get('confidence'), 0)
     if market.get('market') == 'moneyline':
         base = 3 if 1.60 <= odds <= 3.50 else 1
