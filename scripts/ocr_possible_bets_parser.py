@@ -57,6 +57,7 @@ TIME_RE = re.compile(rf'^{DAY_RE}\s+\d{{1,2}}:\d{{2}}(?:\s+\d+)?$', re.I)
 SCORE_RE = re.compile(r'^\(\d+\)$')
 COUNT_RE = re.compile(r'^\d+»?$')
 HEADER_1X2_RE = re.compile(r'\b1\s+X\s+2\b', re.I)
+DECIMAL_ODDS_RE = re.compile(r'^\d{1,2}[\.,]\d{2}$')
 
 
 def now_iso():
@@ -151,6 +152,11 @@ def is_odds(x):
         return False
 
 
+def is_decimal_odds_token(x):
+    """For football 1X2 PDFs: accept prices like 1.70, but reject count markers like 6 or 5."""
+    return bool(DECIMAL_ODDS_RE.fullmatch(str(x).strip())) and is_odds(x)
+
+
 def parse_odds(x):
     try:
         return float(str(x).replace(',', '.'))
@@ -215,6 +221,17 @@ def clean_league_name(line):
     return HEADER_1X2_RE.sub('', line).strip(' -') or line
 
 
+def assign_1x2_markets(ev, odds_triplet, confidence, method):
+    home_odds, draw_odds, away_odds = odds_triplet
+    ev['markets'] = [
+        {'market': '1x2', 'selection': ev['home'], 'line': '1', 'odds': home_odds, 'confidence': confidence, 'explanation': f'{ev["home"]} vinder til odds {home_odds}'},
+        {'market': '1x2', 'selection': 'Draw', 'line': 'X', 'odds': draw_odds, 'confidence': confidence, 'explanation': f'Uafgjort til odds {draw_odds}'},
+        {'market': '1x2', 'selection': ev['away'], 'line': '2', 'odds': away_odds, 'confidence': confidence, 'explanation': f'{ev["away"]} vinder til odds {away_odds}'},
+    ]
+    ev['parse_method'] = method
+    return ev
+
+
 def parse_football_1x2_sections(lines):
     events = []
     sections = []
@@ -255,38 +272,24 @@ def parse_football_1x2_sections(lines):
         if not event_rows:
             continue
 
-        odds = [parse_odds(x) for x in raw if is_odds(x)]
+        # Only decimal price tokens count as football 1X2 odds. This rejects bet365 side counts like "6" and scores like "(0)".
+        odds = [parse_odds(x) for x in raw if is_decimal_odds_token(x)]
         n = len(event_rows)
-        assigned = False
 
-        # bet365 full-page PDFs often list all home odds first, then all draw odds, then all away odds.
         if len(odds) >= n * 3:
             home_odds = odds[0:n]
             draw_odds = odds[n:n * 2]
             away_odds = odds[n * 2:n * 3]
             for idx, ev in enumerate(event_rows):
-                ev['markets'] = [
-                    {'market': '1x2', 'selection': ev['home'], 'line': '1', 'odds': home_odds[idx], 'confidence': 'high', 'explanation': f'{ev["home"]} vinder til odds {home_odds[idx]}'},
-                    {'market': '1x2', 'selection': 'Draw', 'line': 'X', 'odds': draw_odds[idx], 'confidence': 'high', 'explanation': f'Uafgjort til odds {draw_odds[idx]}'},
-                    {'market': '1x2', 'selection': ev['away'], 'line': '2', 'odds': away_odds[idx], 'confidence': 'high', 'explanation': f'{ev["away"]} vinder til odds {away_odds[idx]}'},
-                ]
+                assign_1x2_markets(ev, (home_odds[idx], draw_odds[idx], away_odds[idx]), 'high', 'football_1x2_column_major_decimal_only')
                 ev['raw_section_odds'] = odds[:n * 3]
-                ev['parse_method'] = 'football_1x2_column_major'
                 events.append(ev)
-            assigned = True
-
-        if assigned:
             continue
 
-        # Fallback for small/inline sections: one event followed by exactly three odds.
         if n == 1 and len(odds) >= 3:
             ev = event_rows[0]
-            ev['markets'] = [
-                {'market': '1x2', 'selection': ev['home'], 'line': '1', 'odds': odds[0], 'confidence': 'medium', 'explanation': f'{ev["home"]} vinder til odds {odds[0]}'},
-                {'market': '1x2', 'selection': 'Draw', 'line': 'X', 'odds': odds[1], 'confidence': 'medium', 'explanation': f'Uafgjort til odds {odds[1]}'},
-                {'market': '1x2', 'selection': ev['away'], 'line': '2', 'odds': odds[2], 'confidence': 'medium', 'explanation': f'{ev["away"]} vinder til odds {odds[2]}'},
-            ]
-            ev['parse_method'] = 'football_1x2_inline_fallback'
+            assign_1x2_markets(ev, (odds[0], odds[1], odds[2]), 'medium', 'football_1x2_inline_decimal_fallback')
+            ev['raw_section_odds'] = odds[:3]
             events.append(ev)
 
     return events
