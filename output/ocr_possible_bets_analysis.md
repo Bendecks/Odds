@@ -1,6 +1,6 @@
 # OCR/PDF POSSIBLE BETS ANALYSIS
 
-Generated: 2026-05-07T20:16:43Z
+Generated: 2026-05-07T20:28:44Z
 
 Vigtigt: Screenshot/PDF parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er fra bet365.
 
