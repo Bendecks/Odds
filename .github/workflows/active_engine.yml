@@ -31,7 +31,7 @@ jobs:
         run: python scripts/v6_expansion_engine.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          THE_ODDS_API_KEY: ''
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
           MAX_HOURS: 72
           MAX_TOP_BETS: 8
@@ -39,7 +39,9 @@ jobs:
           MIN_EDGE_PCT: 1.5
           MIN_ODDS: 1.50
           MAX_ODDS: 2.40
-          THEODDS_SPORTS: ''
+          THE_ODDS_REGIONS: eu,uk,us,au
+          THE_ODDS_MARKETS: h2h
+          THE_ODDS_SPORTS: soccer_epl,soccer_spain_la_liga,soccer_germany_bundesliga,soccer_italy_serie_a,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_uefa_champs_league
       - name: Apply V10 feedback
         run: python scripts/v10_apply_feedback.py
       - name: Apply strict mode
