@@ -26,6 +26,12 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install OCR dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+          pip install pillow pytesseract
+
       - name: Parse OCR possible bets inbox
         run: python scripts/ocr_possible_bets_parser.py
         env:
