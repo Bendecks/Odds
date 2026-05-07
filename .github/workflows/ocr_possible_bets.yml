@@ -26,13 +26,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install OCR dependencies
+      - name: Install OCR and PDF dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
-          pip install pillow pytesseract
+          pip install pillow pytesseract pypdf
 
-      - name: Parse OCR possible bets inbox
+      - name: Parse OCR/PDF possible bets inbox
         run: python scripts/ocr_possible_bets_parser.py
         env:
           OCR_MAX_FILES: 25
