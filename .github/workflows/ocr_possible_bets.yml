@@ -1,0 +1,48 @@
+name: OCR Possible Bets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ocr-possible-bets
+  cancel-in-progress: true
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Sync latest main
+        run: git pull --rebase --autostash origin main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Parse OCR possible bets inbox
+        run: python scripts/ocr_possible_bets_parser.py
+        env:
+          OCR_MAX_FILES: 25
+
+      - name: Cleanup old OCR inbox files
+        run: python scripts/ocr_cleanup.py
+        env:
+          OCR_RETENTION_HOURS: 48
+          OCR_CLEANUP_DRY_RUN: 0
+
+      - name: Commit OCR outputs and cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+          git add -A inbox/possible_bets output/ocr_possible_bets_analysis.* output/ocr_cleanup_report.* || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Process OCR possible bets inbox"
+          git push
