@@ -11,8 +11,15 @@ OUT.mkdir(exist_ok=True)
 
 ANALYSIS_JSON = OUT / 'ocr_possible_bets_analysis.json'
 ANALYSIS_MD = OUT / 'ocr_possible_bets_analysis.md'
+FINAL_PICKS_JSON = OUT / 'ocr_final_picks.json'
+FINAL_PICKS_MD = OUT / 'ocr_final_picks.md'
 
 MAX_FILES = int(os.getenv('OCR_MAX_FILES', '25'))
+FINAL_MAX_PICKS = int(os.getenv('OCR_FINAL_MAX_PICKS', '5'))
+FINAL_MIN_ODDS = float(os.getenv('OCR_FINAL_MIN_ODDS', '1.55'))
+FINAL_MAX_ODDS = float(os.getenv('OCR_FINAL_MAX_ODDS', '2.40'))
+FINAL_ALLOW_DRAWS = os.getenv('OCR_FINAL_ALLOW_DRAWS', '0') == '1'
+FINAL_CONFIDENCE = os.getenv('OCR_FINAL_CONFIDENCE', 'high')
 IMAGE_EXTS = {'.png', '.jpg', '.jpeg', '.webp'}
 TEXT_EXTS = {'.txt', '.json', '.md'}
 PDF_EXTS = {'.pdf'}
@@ -379,6 +386,52 @@ def file_type(path):
     return 'text'
 
 
+def make_final_picks(candidates):
+    seen_events = set()
+    picked = []
+    rejected = []
+
+    for c in sorted(candidates, key=lambda x: (x.get('score', 0), x.get('odds') or 0), reverse=True):
+        reason = None
+        odds = c.get('odds')
+        if c.get('confidence') != FINAL_CONFIDENCE:
+            reason = f"confidence_not_{FINAL_CONFIDENCE}"
+        elif c.get('market') not in {'1x2', 'moneyline'}:
+            reason = 'unsupported_market'
+        elif c.get('line') == 'X' and not FINAL_ALLOW_DRAWS:
+            reason = 'draws_disabled'
+        elif odds is None or not (FINAL_MIN_ODDS <= odds <= FINAL_MAX_ODDS):
+            reason = 'odds_outside_final_range'
+        elif c.get('event') in seen_events:
+            reason = 'event_already_selected'
+
+        if reason:
+            rejected.append({**c, 'final_reject_reason': reason})
+            continue
+
+        row = dict(c)
+        row['final_pick'] = True
+        row['final_reason'] = f"{c.get('confidence')} confidence, odds {odds}, marked {c.get('market')}, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing."
+        picked.append(row)
+        seen_events.add(c.get('event'))
+        if len(picked) >= FINAL_MAX_PICKS:
+            break
+
+    return {
+        'rules': {
+            'max_picks': FINAL_MAX_PICKS,
+            'min_odds': FINAL_MIN_ODDS,
+            'max_odds': FINAL_MAX_ODDS,
+            'confidence': FINAL_CONFIDENCE,
+            'allow_draws': FINAL_ALLOW_DRAWS,
+            'one_pick_per_event': True,
+            'note': 'Screenshot/PDF-only picks. No real bookmaker edge is calculated.',
+        },
+        'picks': picked,
+        'rejected_sample': rejected[:50],
+    }
+
+
 def analyze_file(path):
     text = extract_text(path)
     lines = clean_lines(text)
@@ -421,19 +474,67 @@ def analyze_file(path):
     }
 
 
+def write_final_picks_md(final_picks, generated_at):
+    lines = [
+        '# OCR FINAL PICKS', '',
+        f'Generated: {generated_at}', '',
+        'Vigtigt: Dette er ikke value/edge-bets. Det er kun filtrerede, læsbare bet365/PDF-kandidater.', '',
+        '## Regler',
+        f'- Maks picks: {final_picks["rules"]["max_picks"]}',
+        f'- Oddsrange: {final_picks["rules"]["min_odds"]}–{final_picks["rules"]["max_odds"]}',
+        f'- Confidence: {final_picks["rules"]["confidence"]}',
+        f'- Uafgjort tilladt: {final_picks["rules"]["allow_draws"]}',
+        f'- Én pick pr kamp: {final_picks["rules"]["one_pick_per_event"]}',
+        '',
+        '## Final picks',
+    ]
+    if not final_picks['picks']:
+        lines.append('Ingen final picks efter filteret.')
+    for i, p in enumerate(final_picks['picks'], 1):
+        lines.extend([
+            '',
+            f'### {i}. {p.get("event")}',
+            f'- Liga: {p.get("league")}',
+            f'- Tidspunkt: {p.get("start_time_visible")}',
+            f'- Spil: {p.get("selection")}' + (f' ({p.get("line")})' if p.get('line') else ''),
+            f'- Odds: {p.get("odds")}',
+            f'- Confidence: {p.get("confidence")}',
+            f'- Parser: {p.get("parse_method")}',
+            f'- Begrundelse: {p.get("final_reason")}',
+        ])
+    FINAL_PICKS_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+
 def write_md(result):
     lines = [
         '# OCR/PDF POSSIBLE BETS ANALYSIS', '',
         f'Generated: {result["generated_at"]}', '',
         'Vigtigt: Screenshot/PDF parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er fra bet365.', '',
         f'Files analyzed: {result["files_analyzed"]}', '',
+        '## Final picks',
     ]
+
+    final_picks = result.get('final_picks') or {}
+    picks = final_picks.get('picks') or []
+    if not picks:
+        lines.append('Ingen final picks efter filteret.')
+    for i, p in enumerate(picks, 1):
+        lines.extend([
+            '',
+            f'### {i}. {p.get("event")}',
+            f'- Liga: {p.get("league")}',
+            f'- Tidspunkt: {p.get("start_time_visible")}',
+            f'- Spil: {p.get("selection")}' + (f' ({p.get("line")})' if p.get('line') else ''),
+            f'- Odds: {p.get("odds")}',
+            f'- Confidence: {p.get("confidence")}',
+            f'- Begrundelse: {p.get("final_reason")}',
+        ])
 
     all_candidates = []
     for item in result['files']:
         all_candidates.extend(item.get('candidates') or [])
 
-    lines.append('## Bedste læsbare kandidater')
+    lines.append('\n## Bedste læsbare kandidater')
     if not all_candidates:
         lines.append('Ingen kandidater fundet.')
     for i, c in enumerate(sorted(all_candidates, key=lambda x: (x.get('score', 0), x.get('odds') or 0), reverse=True)[:40], 1):
@@ -472,9 +573,16 @@ def main():
         except Exception as exc:
             result['files'].append({'file': str(p), 'type': file_type(p), 'error': str(exc)[:500]})
 
+    all_candidates = []
+    for item in result['files']:
+        all_candidates.extend(item.get('candidates') or [])
+    result['final_picks'] = make_final_picks(all_candidates)
+
     ANALYSIS_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
+    FINAL_PICKS_JSON.write_text(json.dumps({'generated_at': result['generated_at'], **result['final_picks']}, ensure_ascii=False, indent=2), encoding='utf-8')
+    write_final_picks_md(result['final_picks'], result['generated_at'])
     write_md(result)
-    print(f'OCR/PDF possible bets parser OK | files={len(files)}')
+    print(f'OCR/PDF possible bets parser OK | files={len(files)} final_picks={len(result["final_picks"]["picks"])}')
 
 
 if __name__ == '__main__':
