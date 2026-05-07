@@ -1,10 +1,52 @@
 # OCR/PDF POSSIBLE BETS ANALYSIS
 
-Generated: 2026-05-07T20:12:16Z
+Generated: 2026-05-07T20:16:43Z
 
 Vigtigt: Screenshot/PDF parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er fra bet365.
 
 Files analyzed: 2
+
+## Final picks
+
+### 1. TSV Hannover Burgdorf vs SC DHFK Leipzig
+- Liga: Tyskland - Bundesliga Handicap Total Vinder
+- Tidspunkt: Fre 20:00
+- Spil: TSV Hannover Burgdorf (1)
+- Odds: 2.1
+- Confidence: high
+- Begrundelse: high confidence, odds 2.1, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
+
+### 2. Strasbourg vs Rayo Vallecano
+- Liga: UEFA Conference League
+- Tidspunkt: Tor 21:00
+- Spil: Strasbourg (1)
+- Odds: 1.95
+- Confidence: high
+- Begrundelse: high confidence, odds 1.95, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
+
+### 3. IFK Kristianstad vs Alingsås HK
+- Liga: Sverige - Handbollsligan Handicap Total Vinder
+- Tidspunkt: Fre 19:00
+- Spil: IFK Kristianstad (1)
+- Odds: 1.95
+- Confidence: high
+- Begrundelse: high confidence, odds 1.95, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
+
+### 4. Esztergomi KC (K) vs Gyori Eto (K)
+- Liga: Tyskland - Bundesliga Handicap Total Vinder
+- Tidspunkt: Fre 18:00
+- Spil: Esztergomi KC (K) (1)
+- Odds: 1.9
+- Confidence: high
+- Begrundelse: high confidence, odds 1.9, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
+
+### 5. TSV GWD Minden vs Bergischer HC
+- Liga: Tyskland - Bundesliga Handicap Total Vinder
+- Tidspunkt: Fre 19:00
+- Spil: Bergischer HC (2)
+- Odds: 1.88
+- Confidence: high
+- Begrundelse: high confidence, odds 1.88, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
 
 ## Bedste læsbare kandidater
 
