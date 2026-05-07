@@ -275,14 +275,17 @@ def parse_football_1x2_sections(lines):
         # Only decimal price tokens count as football 1X2 odds. This rejects bet365 side counts like "6" and scores like "(0)".
         odds = [parse_odds(x) for x in raw if is_decimal_odds_token(x)]
         n = len(event_rows)
+        confidence = 'medium' if n >= 4 else 'high'
+        method = 'football_1x2_column_major_decimal_only_long_section' if n >= 4 else 'football_1x2_column_major_decimal_only'
 
         if len(odds) >= n * 3:
             home_odds = odds[0:n]
             draw_odds = odds[n:n * 2]
             away_odds = odds[n * 2:n * 3]
             for idx, ev in enumerate(event_rows):
-                assign_1x2_markets(ev, (home_odds[idx], draw_odds[idx], away_odds[idx]), 'high', 'football_1x2_column_major_decimal_only')
+                assign_1x2_markets(ev, (home_odds[idx], draw_odds[idx], away_odds[idx]), confidence, method)
                 ev['raw_section_odds'] = odds[:n * 3]
+                ev['section_event_count'] = n
                 events.append(ev)
             continue
 
@@ -290,6 +293,7 @@ def parse_football_1x2_sections(lines):
             ev = event_rows[0]
             assign_1x2_markets(ev, (odds[0], odds[1], odds[2]), 'medium', 'football_1x2_inline_decimal_fallback')
             ev['raw_section_odds'] = odds[:3]
+            ev['section_event_count'] = n
             events.append(ev)
 
     return events
@@ -398,6 +402,7 @@ def analyze_file(path):
                 'event': f'{event.get("home")} vs {event.get("away")}',
                 'start_time_visible': event.get('start_time_visible'),
                 'parse_method': event.get('parse_method'),
+                'section_event_count': event.get('section_event_count'),
                 **market,
             }
             row['score'] = score_market(row)
@@ -442,6 +447,7 @@ def write_md(result):
             f'- Spil: {c.get("selection")}' + (f' ({c.get("line")})' if c.get('line') else ''),
             f'- Odds: {c.get("odds")}',
             f'- Sikkerhed: {c.get("confidence")}',
+            f'- Kampe i sektion: {c.get("section_event_count")}',
             f'- Parser: {c.get("parse_method")}',
             f'- Forklaring: {c.get("explanation")}',
             f'- Score: {c.get("score")}',
@@ -451,7 +457,7 @@ def write_md(result):
     for item in result['files']:
         lines.extend(['', f'### {item.get("file")}', f'- Type: {item.get("type")}', f'- Sport: {item.get("sport")}', f'- Linjer: {item.get("line_count")}', f'- Events: {len(item.get("events") or [])}', f'- Candidates: {len(item.get("candidates") or [])}'])
         for event in item.get('events') or []:
-            lines.append(f'  - {event.get("league")}: {event.get("home")} vs {event.get("away")} ({event.get("start_time_visible")})')
+            lines.append(f'  - {event.get("league")}: {event.get("home")} vs {event.get("away")} ({event.get("start_time_visible")}) | section_count={event.get("section_event_count")}')
         if item.get('error'):
             lines.append(f'- Error: {item.get("error")}')
     ANALYSIS_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
