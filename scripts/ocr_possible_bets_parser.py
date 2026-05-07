@@ -13,6 +13,8 @@ ANALYSIS_JSON = OUT / 'ocr_possible_bets_analysis.json'
 ANALYSIS_MD = OUT / 'ocr_possible_bets_analysis.md'
 
 MAX_FILES = int(os.getenv('OCR_MAX_FILES', '25'))
+IMAGE_EXTS = {'.png', '.jpg', '.jpeg', '.webp'}
+TEXT_EXTS = {'.txt', '.json', '.md'}
 
 TEAM_ALIASES = {
     'CLE Cavaliers': 'Cleveland Cavaliers',
@@ -56,15 +58,39 @@ def list_input_files():
         return []
     files = []
     for p in INBOX.rglob('*'):
-        if p.is_file() and p.suffix.lower() in {'.txt', '.json', '.md'}:
+        if p.is_file() and p.suffix.lower() in TEXT_EXTS.union(IMAGE_EXTS):
             files.append(p)
-    files.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    files.sort(key=lambda p: p.name, reverse=True)
     return files[:MAX_FILES]
 
 
+def ocr_image(path):
+    try:
+        from PIL import Image, ImageOps, ImageFilter
+        import pytesseract
+    except Exception as exc:
+        raise RuntimeError(f'OCR dependencies missing. Install pillow, pytesseract and tesseract-ocr. {exc}')
+
+    img = Image.open(path)
+    img = ImageOps.exif_transpose(img)
+    img = ImageOps.grayscale(img)
+    # Light preprocessing for phone screenshots.
+    img = ImageOps.autocontrast(img)
+    w, h = img.size
+    if w < 1400:
+        scale = 1400 / max(w, 1)
+        img = img.resize((int(w * scale), int(h * scale)))
+    img = img.filter(ImageFilter.SHARPEN)
+    return pytesseract.image_to_string(img, config='--psm 6')
+
+
 def extract_text(path):
+    suffix = path.suffix.lower()
+    if suffix in IMAGE_EXTS:
+        return ocr_image(path)
+
     raw = read_text_file(path)
-    if path.suffix.lower() == '.json':
+    if suffix == '.json':
         try:
             data = json.loads(raw)
             if isinstance(data, dict):
@@ -116,7 +142,7 @@ def looks_like_time(x):
 def looks_like_team(x):
     if is_odds(x) or is_handicap(x) or is_total_line(x) or looks_like_time(x):
         return False
-    if len(x) < 3:
+    if len(x) < 3 or len(x) > 45:
         return False
     if re.search(r'[A-Za-zÆØÅæøå]', x) and not re.search(r'^(Handicap|Total|Point|Rebounds|Assist|Lige På|Point O/U)$', x, flags=re.I):
         return True
@@ -149,7 +175,7 @@ def parse_basketball_like(lines):
             i += 1
             continue
 
-        chunk = lines[i + 2:i + 14]
+        chunk = lines[i + 2:i + 16]
         odds_numbers = [parse_odds(x) for x in chunk if is_odds(x)]
         handicaps = [x for x in chunk if is_handicap(x)]
         totals = [x for x in chunk if is_total_line(x)]
@@ -265,25 +291,22 @@ def analyze_file(path):
     candidates.sort(key=lambda x: (x.get('score', 0), x.get('odds') or 0), reverse=True)
     return {
         'file': str(path),
+        'type': 'image_ocr' if path.suffix.lower() in IMAGE_EXTS else 'text',
         'mtime': datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
         'sport': sport,
         'line_count': len(lines),
         'events': events,
         'candidates': candidates,
-        'raw_text_preview': text[:1500],
+        'raw_text_preview': text[:2500],
     }
 
 
 def write_md(result):
     lines = [
-        '# OCR POSSIBLE BETS ANALYSIS',
-        '',
-        f'Generated: {result["generated_at"]}',
-        '',
-        'Vigtigt: Dette er kun screenshot/OCR-parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er én bookmaker/ét skærmbillede.',
-        '',
-        f'Files analyzed: {result["files_analyzed"]}',
-        '',
+        '# OCR POSSIBLE BETS ANALYSIS', '',
+        f'Generated: {result["generated_at"]}', '',
+        'Vigtigt: Screenshot/OCR-parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er én bookmaker/ét skærmbillede.', '',
+        f'Files analyzed: {result["files_analyzed"]}', '',
     ]
 
     all_candidates = []
@@ -294,47 +317,26 @@ def write_md(result):
     if not all_candidates:
         lines.append('Ingen kandidater fundet.')
     for i, c in enumerate(sorted(all_candidates, key=lambda x: (x.get('score', 0), x.get('odds') or 0), reverse=True)[:20], 1):
-        lines.extend([
-            '',
-            f'### {i}. {c.get("event")}',
-            f'- Sport: {c.get("sport")}',
-            f'- Synligt tidspunkt: {c.get("start_time_visible")}',
-            f'- Marked: {c.get("market")}',
-            f'- Spil: {c.get("selection")}' + (f' {c.get("line")}' if c.get('line') else ''),
-            f'- Odds: {c.get("odds")}',
-            f'- Sikkerhed: {c.get("confidence")}',
-            f'- Forklaring: {c.get("explanation")}',
-            f'- Score: {c.get("score")}',
-        ])
+        lines.extend(['', f'### {i}. {c.get("event")}', f'- Sport: {c.get("sport")}', f'- Synligt tidspunkt: {c.get("start_time_visible")}', f'- Marked: {c.get("market")}', f'- Spil: {c.get("selection")}' + (f' {c.get("line")}' if c.get('line') else ''), f'- Odds: {c.get("odds")}', f'- Sikkerhed: {c.get("confidence")}', f'- Forklaring: {c.get("explanation")}', f'- Score: {c.get("score")}'])
 
     lines.append('\n## Filer')
     for item in result['files']:
-        lines.extend([
-            '',
-            f'### {item.get("file")}',
-            f'- Sport: {item.get("sport")}',
-            f'- Linjer: {item.get("line_count")}',
-            f'- Events: {len(item.get("events") or [])}',
-        ])
+        lines.extend(['', f'### {item.get("file")}', f'- Type: {item.get("type")}', f'- Sport: {item.get("sport")}', f'- Linjer: {item.get("line_count")}', f'- Events: {len(item.get("events") or [])}'])
         for event in item.get('events') or []:
             lines.append(f'  - {event.get("home")} vs {event.get("away")} ({event.get("start_time_visible")})')
-
+        if item.get('error'):
+            lines.append(f'- Error: {item.get("error")}')
     ANALYSIS_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
 def main():
     files = list_input_files()
-    result = {
-        'generated_at': now_iso(),
-        'input_dir': str(INBOX),
-        'files_analyzed': len(files),
-        'files': [],
-    }
+    result = {'generated_at': now_iso(), 'input_dir': str(INBOX), 'accepted_extensions': sorted(TEXT_EXTS.union(IMAGE_EXTS)), 'files_analyzed': len(files), 'files': []}
     for p in files:
         try:
             result['files'].append(analyze_file(p))
         except Exception as exc:
-            result['files'].append({'file': str(p), 'error': str(exc)[:500]})
+            result['files'].append({'file': str(p), 'type': 'image_ocr' if p.suffix.lower() in IMAGE_EXTS else 'text', 'error': str(exc)[:500]})
 
     ANALYSIS_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
     write_md(result)
