@@ -1,5 +1,5 @@
 import os, json, pathlib, requests, statistics, re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 
 OUT = pathlib.Path('output')
@@ -10,6 +10,7 @@ ENGINE_MD = OUT / 'v6_expansion_engine.md'
 DEBUG_JSON = OUT / 'odds_candidate_debug.json'
 
 ODDS_IO = os.getenv('ODDS_API_IO_KEY', '')
+THE_ODDS = os.getenv('THE_ODDS_API_KEY', '')
 DISPLAY_TZ = os.getenv('DISPLAY_TZ', 'Europe/Copenhagen')
 MAX_HOURS = int(os.getenv('MAX_HOURS', '72'))
 MAX_TOP_BETS = int(os.getenv('MAX_TOP_BETS', '8'))
@@ -17,8 +18,22 @@ MIN_BOOK_PRICES = int(os.getenv('MIN_BOOK_PRICES', '3'))
 MIN_EDGE_PCT = float(os.getenv('MIN_EDGE_PCT', '1.5'))
 MIN_ODDS = float(os.getenv('MIN_ODDS', '1.50'))
 MAX_ODDS = float(os.getenv('MAX_ODDS', '2.40'))
+THE_ODDS_REGIONS = os.getenv('THE_ODDS_REGIONS', 'eu,uk,us,au')
+THE_ODDS_MARKETS = os.getenv('THE_ODDS_MARKETS', 'h2h')
+THE_ODDS_SPORTS = [x.strip() for x in os.getenv('THE_ODDS_SPORTS', 'soccer_epl,soccer_spain_la_liga,soccer_germany_bundesliga,soccer_italy_serie_a,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_uefa_champs_league').split(',') if x.strip()]
 ODDS_IO_BOOKMAKERS = os.getenv('ODDS_IO_BOOKMAKERS', '').strip()
-MODE = 'V18_MULTI_BOOK_EDGE_ENGINE'
+MODE = 'V19_THE_ODDS_MULTI_BOOK_EDGE_ENGINE'
+
+THE_ODDS_LEAGUE_MAP = {
+    'soccer_epl': 'england-premier-league',
+    'soccer_spain_la_liga': 'spain-laliga',
+    'soccer_germany_bundesliga': 'germany-bundesliga',
+    'soccer_italy_serie_a': 'italy-serie-a',
+    'soccer_france_ligue_one': 'france-ligue-1',
+    'soccer_netherlands_eredivisie': 'netherlands-eredivisie',
+    'soccer_uefa_champs_league': 'uefa-champions-league',
+    'soccer_portugal_primeira_liga': 'portugal-primeira-liga',
+}
 
 APPROVED_LEAGUES = {
     'england-premier-league': 'england-premier-league',
@@ -54,8 +69,15 @@ DIAG = {
     'rejected_single_book_only': 0,
     'rejected_odds_range': 0,
     'api_key_present': bool(ODDS_IO),
-    'bookmakers_param': ODDS_IO_BOOKMAKERS or '(none: prefer all bookmakers)',
-    'engine_note': 'Prefer all-bookmaker odds. If API only returns one bookmaker, rows are logged as diagnostics and not used for real-edge bets.'
+    'the_odds_api_key_present': bool(THE_ODDS),
+    'the_odds_regions': THE_ODDS_REGIONS,
+    'the_odds_sports': THE_ODDS_SPORTS,
+    'the_odds_requests': 0,
+    'the_odds_successes': 0,
+    'the_odds_errors': 0,
+    'the_odds_remaining': None,
+    'bookmakers_param': ODDS_IO_BOOKMAKERS or '(none)',
+    'engine_note': 'Primary source restored: The Odds API v4 multi-bookmaker sport odds. Odds-API.io kept as diagnostics/fallback only.'
 }
 
 DEBUG = {
@@ -104,80 +126,58 @@ def add_limited(collection, row, max_len=250):
         collection.append(row)
 
 
-def request_json(path, params=None):
+def fnum(v):
+    try:
+        return float(v)
+    except Exception:
+        return None
+
+
+def request_json(base, path, params=None):
+    p = dict(params or {})
+    try:
+        r = requests.get(base + path, params=p, timeout=45)
+        if r.ok:
+            return r.json(), '', r.headers
+        return None, f'{r.status_code} {r.text[:240]}', r.headers
+    except Exception as e:
+        return None, str(e)[:240], {}
+
+
+def the_odds_get(path, params=None):
+    if not THE_ODDS:
+        return []
+    p = dict(params or {})
+    p['apiKey'] = THE_ODDS
+    DIAG['the_odds_requests'] += 1
+    data, err, headers = request_json('https://api.the-odds-api.com', path, p)
+    if headers:
+        rem = headers.get('x-requests-remaining') or headers.get('X-Requests-Remaining')
+        if rem is not None:
+            DIAG['the_odds_remaining'] = rem
+    if err:
+        DIAG['the_odds_errors'] += 1
+        add_limited(DIAG['odds_error_samples'], {'source': 'the-odds-api', 'path': path, 'params': {k: v for k, v in p.items() if k != 'apiKey'}, 'error': err}, 20)
+        return []
+    DIAG['the_odds_successes'] += 1
+    return data if data is not None else []
+
+
+def oddsio_request_json(path, params=None):
     if not ODDS_IO:
         return None, 'missing_api_key'
     p = dict(params or {})
     p['apiKey'] = ODDS_IO
-    try:
-        r = requests.get('https://api.odds-api.io/v3' + path, params=p, timeout=45)
-        if r.ok:
-            return r.json(), ''
-        return None, f'{r.status_code} {r.text[:240]}'
-    except Exception as e:
-        return None, str(e)[:240]
+    data, err, _headers = request_json('https://api.odds-api.io/v3', path, p)
+    return data, err
 
 
-def odds_get(path, params=None):
-    data, err = request_json(path, params)
+def oddsio_get(path, params=None):
+    data, err = oddsio_request_json(path, params)
     if err:
         DIAG['odds_errors'] += 1
-        add_limited(DIAG['odds_error_samples'], {'path': path, 'params': params or {}, 'error': err}, 20)
+        add_limited(DIAG['odds_error_samples'], {'source': 'odds-api.io', 'path': path, 'params': params or {}, 'error': err}, 20)
     return data if data is not None else []
-
-
-def payload_price_count(payload):
-    obj = normalize_odds_payload(payload)
-    books = obj.get('bookmakers') if isinstance(obj, dict) else {}
-    selections = extract_prices_from_bookmakers(books, obj.get('home'), obj.get('away'))
-    return sum(len(v) for v in selections.values())
-
-
-def fetch_event_odds(event_id):
-    patterns = [
-        ('/odds', {'eventId': event_id}, 'odds_eventId_all'),
-        ('/odds', {'event_id': event_id}, 'odds_event_id_all'),
-        ('/odds', {'id': event_id}, 'odds_id_all'),
-        (f'/events/{event_id}/odds', {}, 'events_id_odds_all'),
-        (f'/odds/{event_id}', {}, 'odds_id_path_all'),
-    ]
-    if ODDS_IO_BOOKMAKERS:
-        patterns.extend([
-            ('/odds', {'eventId': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_eventId_bookmakers'),
-            ('/odds', {'eventId': event_id, 'bookmaker': ODDS_IO_BOOKMAKERS}, 'odds_eventId_bookmaker'),
-            ('/odds', {'event_id': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_event_id_bookmakers'),
-            ('/odds', {'id': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS}, 'odds_id_bookmakers'),
-        ])
-
-    best_payload = {}
-    best_label = ''
-    best_count = -1
-    errors = []
-
-    for path, params, label in patterns:
-        DIAG['odds_fallback_attempts'] += 1
-        data, err = request_json(path, params)
-        if err:
-            errors.append({'pattern': label, 'error': err})
-            continue
-        if data in (None, [], {}):
-            continue
-        count = payload_price_count(data)
-        if count > best_count:
-            best_payload, best_label, best_count = data, label, count
-        if count >= MIN_BOOK_PRICES * 2:
-            break
-
-    if best_payload:
-        DIAG['odds_successes'] += 1
-        DIAG['odds_success_pattern'][best_label] = DIAG['odds_success_pattern'].get(best_label, 0) + 1
-        return best_payload
-
-    DIAG['odds_errors'] += 1
-    sample = {'event_id': event_id, 'errors': errors[:6]}
-    add_limited(DIAG['odds_error_samples'], sample, 20)
-    add_limited(DEBUG['odds_error_samples'], sample, 50)
-    return {}
 
 
 def selected_leagues(raw_leagues):
@@ -200,6 +200,113 @@ def selected_leagues(raw_leagues):
     return selected
 
 
+def add_candidate_from_prices(candidates, event, league, sport_key, market_key, selection, prices, source):
+    clean_prices = []
+    for p in prices:
+        fp = fnum(p)
+        if fp is not None and 1.30 <= fp <= 8:
+            clean_prices.append(fp)
+    clean_prices = sorted(clean_prices)
+
+    home = event.get('home_team') or event.get('home')
+    away = event.get('away_team') or event.get('away')
+    event_name = f'{home} vs {away}'
+
+    if len(clean_prices) == 1:
+        DIAG['rejected_single_book_only'] += 1
+        add_limited(DEBUG['single_book_rows'], {'event': event_name, 'pick': selection, 'odds': clean_prices[0], 'source': source, 'reason': 'single_book_only'})
+    if len(clean_prices) < MIN_BOOK_PRICES:
+        DIAG['rejected_short_prices'] += 1
+        add_limited(DEBUG['rejected_rows'], {'event': event_name, 'pick': selection, 'reason': 'too_few_prices', 'prices': len(clean_prices), 'source': source})
+        return
+
+    best = max(clean_prices)
+    median = statistics.median(clean_prices)
+    edge = ((best - median) / median) * 100 if median else 0.0
+    row = {
+        'event': event_name,
+        'event_id': event.get('id'),
+        'league': league,
+        'source_league_slug': sport_key,
+        'start': event.get('commence_time') or event.get('date'),
+        'start_local': fmt(event.get('commence_time') or event.get('date')),
+        'market': market_key,
+        'pick': selection,
+        'odds': round(best, 2),
+        'median_odds': round(median, 2),
+        'edge_pct': round(edge, 2),
+        'books': len(clean_prices),
+        'pre_score': round(edge + len(clean_prices) * 0.15, 2),
+        'confidence': 'real_market_edge',
+        'source': source,
+        'sport': sport_key,
+        'sport_bucket': 'soccer',
+    }
+    add_limited(DEBUG['candidate_rows'], row)
+
+    if edge < MIN_EDGE_PCT:
+        DIAG['edge_filtered'] += 1
+        add_limited(DEBUG['rejected_rows'], {**row, 'reason': 'edge_below_minimum'})
+        return
+    if not (MIN_ODDS <= best <= MAX_ODDS):
+        DIAG['rejected_odds_range'] += 1
+        add_limited(DEBUG['rejected_rows'], {**row, 'reason': 'odds_outside_range'})
+        return
+    candidates.append(row)
+
+
+def fetch_the_odds_candidates():
+    candidates = []
+    if not THE_ODDS:
+        return candidates
+
+    now = datetime.now(timezone.utc)
+    params_base = {
+        'regions': THE_ODDS_REGIONS,
+        'markets': THE_ODDS_MARKETS,
+        'oddsFormat': 'decimal',
+        'dateFormat': 'iso',
+        'commenceTimeFrom': now.isoformat().replace('+00:00', 'Z'),
+        'commenceTimeTo': (now + timedelta(hours=MAX_HOURS)).isoformat().replace('+00:00', 'Z'),
+    }
+
+    for sport_key in THE_ODDS_SPORTS:
+        league = THE_ODDS_LEAGUE_MAP.get(sport_key, sport_key)
+        DIAG['leagues_selected'].append({'slug': sport_key, 'canonical': league, 'name': sport_key, 'source': 'the-odds-api'})
+        events = the_odds_get(f'/v4/sports/{sport_key}/odds', params_base)
+        if not isinstance(events, list):
+            continue
+        DIAG['event_count'] += len(events)
+        for event in events:
+            if not isinstance(event, dict) or not upcoming(event.get('commence_time')):
+                continue
+            DIAG['upcoming_event_count'] += 1
+            add_limited(DEBUG['upcoming_events'], {'league': league, 'source_league_slug': sport_key, 'event_id': event.get('id'), 'date': event.get('commence_time'), 'home': event.get('home_team'), 'away': event.get('away_team'), 'source': 'the-odds-api'})
+
+            buckets = {}
+            for book in event.get('bookmakers') or []:
+                if not isinstance(book, dict):
+                    continue
+                for market in book.get('markets') or []:
+                    if not isinstance(market, dict):
+                        continue
+                    market_key = str(market.get('key') or '').lower()
+                    if market_key != 'h2h':
+                        continue
+                    DIAG['markets_found'] += 1
+                    for outcome in market.get('outcomes') or []:
+                        if not isinstance(outcome, dict):
+                            continue
+                        name = outcome.get('name')
+                        price = outcome.get('price')
+                        if not name or str(name).lower() == 'draw':
+                            continue
+                        buckets.setdefault(('h2h', str(name)), []).append(price)
+            for (market_key, selection), prices in buckets.items():
+                add_candidate_from_prices(candidates, event, league, sport_key, market_key, selection, prices, 'the-odds-api')
+    return candidates
+
+
 def extract_prices_from_bookmakers(bookmakers, home, away):
     selections = {}
     if isinstance(bookmakers, list):
@@ -211,7 +318,6 @@ def extract_prices_from_bookmakers(bookmakers, home, away):
         bookmakers = converted
     if not isinstance(bookmakers, dict):
         return selections
-
     for _, rows in bookmakers.items():
         for market in rows if isinstance(rows, list) else []:
             if not isinstance(market, dict):
@@ -222,12 +328,12 @@ def extract_prices_from_bookmakers(bookmakers, home, away):
             DIAG['markets_found'] += 1
             outcomes = market.get('odds') or market.get('outcomes') or []
             if outcomes and isinstance(outcomes[0], dict) and any(k in outcomes[0] for k in ('home', 'away', 'draw')):
-                row = outcomes[0]
+                x = outcomes[0]
                 outcomes = []
-                if row.get('home') is not None:
-                    outcomes.append({'name': home, 'price': row.get('home')})
-                if row.get('away') is not None:
-                    outcomes.append({'name': away, 'price': row.get('away')})
+                if x.get('home') is not None:
+                    outcomes.append({'name': home, 'price': x.get('home')})
+                if x.get('away') is not None:
+                    outcomes.append({'name': away, 'price': x.get('away')})
             for outcome in outcomes:
                 if not isinstance(outcome, dict):
                     continue
@@ -235,12 +341,7 @@ def extract_prices_from_bookmakers(bookmakers, home, away):
                 price = outcome.get('price') or outcome.get('odds')
                 if not name or str(name).lower() == 'draw':
                     continue
-                try:
-                    price = float(price)
-                except Exception:
-                    continue
-                if 1.30 <= price <= 8:
-                    selections.setdefault(str(name), []).append(price)
+                selections.setdefault(str(name), []).append(price)
     return selections
 
 
@@ -253,11 +354,13 @@ def normalize_odds_payload(payload):
     return payload if isinstance(payload, dict) else {}
 
 
-def fetch_candidates():
+def fetch_oddsio_candidates():
     candidates = []
-    leagues = selected_leagues(odds_get('/leagues', {'sport': 'football'}))
+    if not ODDS_IO:
+        return candidates
+    leagues = selected_leagues(oddsio_get('/leagues', {'sport': 'football'}))
     for league in leagues:
-        events = odds_get('/events', {'sport': 'football', 'league': league['slug']})
+        events = oddsio_get('/events', {'sport': 'football', 'league': league['slug']})
         if not isinstance(events, list):
             continue
         DIAG['event_count'] += len(events)
@@ -268,46 +371,34 @@ def fetch_candidates():
             event_id = event.get('id')
             home_hint = event.get('home')
             away_hint = event.get('away')
-            add_limited(DEBUG['upcoming_events'], {'league': league['canonical'], 'source_league_slug': league['slug'], 'event_id': event_id, 'date': event.get('date'), 'home': home_hint, 'away': away_hint})
+            add_limited(DEBUG['upcoming_events'], {'league': league['canonical'], 'source_league_slug': league['slug'], 'event_id': event_id, 'date': event.get('date'), 'home': home_hint, 'away': away_hint, 'source': 'odds-api.io'})
             if not event_id:
                 continue
             DIAG['odds_events_checked'] += 1
-            odds = normalize_odds_payload(fetch_event_odds(event_id))
-            if not odds:
+            if not ODDS_IO_BOOKMAKERS:
+                add_limited(DEBUG['rejected_rows'], {'event_id': event_id, 'reason': 'odds-api.io requires bookmakers parameter; no multi-book source available'})
                 continue
+            odds_data, err = oddsio_request_json('/odds', {'eventId': event_id, 'bookmakers': ODDS_IO_BOOKMAKERS})
+            if err:
+                DIAG['odds_errors'] += 1
+                add_limited(DIAG['odds_error_samples'], {'event_id': event_id, 'error': err}, 20)
+                continue
+            DIAG['odds_successes'] += 1
+            odds = normalize_odds_payload(odds_data)
             home = odds.get('home') or home_hint
             away = odds.get('away') or away_hint
             selections = extract_prices_from_bookmakers(odds.get('bookmakers') or {}, home, away)
             for selection, prices in selections.items():
-                clean_prices = []
-                for p in prices:
-                    try:
-                        clean_prices.append(float(p))
-                    except Exception:
-                        pass
-                clean_prices = sorted(clean_prices)
-                if len(clean_prices) == 1:
-                    DIAG['rejected_single_book_only'] += 1
-                    add_limited(DEBUG['single_book_rows'], {'event': f'{home} vs {away}', 'pick': selection, 'odds': clean_prices[0], 'reason': 'single_book_only'})
-                if len(clean_prices) < MIN_BOOK_PRICES:
-                    DIAG['rejected_short_prices'] += 1
-                    add_limited(DEBUG['rejected_rows'], {'event': f'{home} vs {away}', 'pick': selection, 'reason': 'too_few_prices', 'prices': len(clean_prices)})
-                    continue
-                best = max(clean_prices)
-                median = statistics.median(clean_prices)
-                edge = ((best - median) / median) * 100 if median else 0.0
-                row = {'event': f'{home} vs {away}', 'event_id': event_id, 'league': league['canonical'], 'source_league_slug': league['slug'], 'start': event.get('date'), 'start_local': fmt(event.get('date')), 'market': 'h2h', 'pick': selection, 'odds': round(best, 2), 'median_odds': round(median, 2), 'edge_pct': round(edge, 2), 'books': len(clean_prices), 'pre_score': round(edge + len(clean_prices) * 0.15, 2), 'confidence': 'real_market_edge', 'sport': 'soccer_odds_api_io', 'sport_bucket': 'soccer'}
-                add_limited(DEBUG['candidate_rows'], row)
-                if edge < MIN_EDGE_PCT:
-                    DIAG['edge_filtered'] += 1
-                    add_limited(DEBUG['rejected_rows'], {**row, 'reason': 'edge_below_minimum'})
-                    continue
-                if not (MIN_ODDS <= best <= MAX_ODDS):
-                    DIAG['rejected_odds_range'] += 1
-                    add_limited(DEBUG['rejected_rows'], {**row, 'reason': 'odds_outside_range'})
-                    continue
-                candidates.append(row)
+                event_obj = {'id': event_id, 'home': home, 'away': away, 'date': event.get('date')}
+                add_candidate_from_prices(candidates, event_obj, league['canonical'], 'soccer_odds_api_io', 'h2h', selection, prices, 'odds-api.io')
     return candidates
+
+
+def fetch_candidates():
+    candidates = fetch_the_odds_candidates()
+    if candidates:
+        return candidates
+    return fetch_oddsio_candidates()
 
 
 def dedupe(candidates):
@@ -327,7 +418,7 @@ def rank(candidates):
     approved = sorted(dedupe(candidates), key=lambda x: (x['edge_pct'], x['books'], x['pre_score']), reverse=True)
     top = approved[:MAX_TOP_BETS]
     for item in top:
-        item['role'] = 'PRIMARY_V18'
+        item['role'] = 'PRIMARY_V19'
         item['stake_kr'] = max(10, round(item['edge_pct'] * 4))
         item['reason'] = f"Reel market edge på {item['edge_pct']}% mod medianodds. Valideret af {item['books']} bookmaker-priser."
     DIAG['candidate_count'] = len(candidates)
@@ -340,7 +431,7 @@ def write_md(result):
     if not result.get('top_bets'):
         lines.append('Ingen valide bets fundet i dette run.')
     for i, item in enumerate(result.get('top_bets') or [], 1):
-        lines.extend([f'{i}. {item.get("start_local")}', f'Liga: {item.get("league")} ({item.get("source_league_slug")})', f'Kamp: {item.get("event")}', f'Spil: Vinder = {item.get("pick")}', f'Odds: {item.get("odds")}', f'Medianodds: {item.get("median_odds")}', f'Market edge: {item.get("edge_pct")}% ', f'Bookmakers: {item.get("books")}', f'Stake: {item.get("stake_kr")} kr', f'Forklaring: {item.get("reason")}', ''])
+        lines.extend([f'{i}. {item.get("start_local")}', f'Liga: {item.get("league")} ({item.get("source_league_slug")})', f'Kamp: {item.get("event")}', f'Spil: Vinder = {item.get("pick")}', f'Odds: {item.get("odds")}', f'Medianodds: {item.get("median_odds")}', f'Market edge: {item.get("edge_pct")}% ', f'Bookmakers: {item.get("books")}', f'Stake: {item.get("stake_kr")} kr', f'Kilde: {item.get("source")}', f'Forklaring: {item.get("reason")}', ''])
     ENGINE_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
