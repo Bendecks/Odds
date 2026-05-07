@@ -9,8 +9,8 @@ V18 strict: 0 bets
   "top_count": 0,
   "duplicates_removed": 0,
   "edge_filtered": 0,
-  "league_filtered": 626,
-  "leagues_total": 633,
+  "league_filtered": 627,
+  "leagues_total": 634,
   "leagues_selected": [
     {
       "slug": "england-premier-league",
@@ -152,11 +152,6 @@ V18 strict: 0 bets
       "eventsCount": 5
     },
     {
-      "slug": "aruba-division-honor",
-      "name": "Aruba - Division Honor",
-      "eventsCount": 1
-    },
-    {
       "slug": "australia-a-league",
       "name": "Australia - A-League",
       "eventsCount": 4
@@ -264,7 +259,7 @@ V18 strict: 0 bets
     {
       "slug": "australia-queensland-npl-women",
       "name": "Australia - Queensland NPL, Women",
-      "eventsCount": 23
+      "eventsCount": 24
     },
     {
       "slug": "australia-queensland-premier-league-1",
@@ -294,7 +289,7 @@ V18 strict: 0 bets
     {
       "slug": "australia-south-australia-npl-reserves",
       "name": "Australia - South Australia NPL, Reserves",
-      "eventsCount": 24
+      "eventsCount": 26
     },
     {
       "slug": "australia-south-australia-npl-reserves-women",
@@ -314,7 +309,7 @@ V18 strict: 0 bets
     {
       "slug": "australia-south-australia-state-league-1-reserves",
       "name": "Australia - South Australia State League 1, Reserves",
-      "eventsCount": 25
+      "eventsCount": 27
     },
     {
       "slug": "australia-south-australia-state-league-2",
@@ -364,7 +359,7 @@ V18 strict: 0 bets
     {
       "slug": "australia-u20-victoria-npl-women",
       "name": "Australia - U20 Victoria NPL, Women",
-      "eventsCount": 29
+      "eventsCount": 34
     },
     {
       "slug": "australia-u23-capital-npl",
@@ -384,7 +379,7 @@ V18 strict: 0 bets
     {
       "slug": "australia-u23-queensland-npl",
       "name": "Australia - U23 Queensland NPL",
-      "eventsCount": 25
+      "eventsCount": 26
     },
     {
       "slug": "australia-u23-queensland-premier-league-1",
@@ -394,12 +389,12 @@ V18 strict: 0 bets
     {
       "slug": "australia-u23-victoria-npl",
       "name": "Australia - U23 Victoria NPL",
-      "eventsCount": 31
+      "eventsCount": 34
     },
     {
       "slug": "australia-u23-victoria-premier-league-1",
       "name": "Australia - U23 Victoria Premier League 1",
-      "eventsCount": 30
+      "eventsCount": 33
     },
     {
       "slug": "australia-u23-western-australia-npl",
@@ -555,9 +550,14 @@ V18 strict: 0 bets
       "slug": "azerbaijan-premier-league",
       "name": "Azerbaijan - Premier League",
       "eventsCount": 18
+    },
+    {
+      "slug": "bahrain-2nd-division",
+      "name": "Bahrain - 2nd Division",
+      "eventsCount": 6
     }
   ],
-  "event_count": 163,
+  "event_count": 161,
   "upcoming_event_count": 23,
   "odds_events_checked": 23,
   "odds_errors": 23,
