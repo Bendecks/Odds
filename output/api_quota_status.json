@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-05-07T06:27:02Z",
+  "note": "Small API quota check only. Does not fetch odds markets.",
+  "apis": [
+    {
+      "api": "the-odds-api",
+      "configured": true,
+      "ok": true,
+      "status_code": 200,
+      "headers": {
+        "x-requests-remaining": "0",
+        "x-requests-used": "500",
+        "x-requests-last": "0"
+      },
+      "error": null,
+      "sample_items": 86
+    },
+    {
+      "api": "odds-api.io",
+      "configured": true,
+      "ok": true,
+      "status_code": 200,
+      "headers": {},
+      "error": null,
+      "sample_items": 635
+    }
+  ]
+}
