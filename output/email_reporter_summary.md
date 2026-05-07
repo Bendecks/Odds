@@ -9,15 +9,15 @@ ROI: -4.53%
 Hitrate: 35.14%
 
 ENGINE STATUS
-Mode: V18_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
+Mode: V19_THE_ODDS_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
 Summary: V18 strict: 0 bets
 Kandidater fundet: 0
-Ligaer scannet: 633
-Events fundet: 163
+Ligaer scannet: 634
+Events fundet: 161
 Kommende events: 23
-Filtrerede ligaer: 626
+Filtrerede ligaer: 627
 Edge-filtrerede picks: 0
-Odds-fejl: 23
+Odds-fejl: 0
 
 NYE/TOP PICKS
 
