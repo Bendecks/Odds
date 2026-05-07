@@ -3,8 +3,8 @@
   "top_bets": [],
   "watchlist": [],
   "pass": [],
-  "mode": "V18_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18",
-  "generated_at": "2026-05-07T03:46:13.856635+00:00",
+  "mode": "V19_THE_ODDS_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18",
+  "generated_at": "2026-05-07T03:54:04.599428+00:00",
   "diagnostics": {
     "candidate_count": 0,
     "top_count": 0,
@@ -561,509 +561,100 @@
     "event_count": 161,
     "upcoming_event_count": 23,
     "odds_events_checked": 23,
-    "odds_errors": 23,
+    "odds_errors": 0,
     "odds_successes": 0,
-    "odds_fallback_attempts": 115,
+    "odds_fallback_attempts": 0,
     "odds_error_samples": [
       {
-        "event_id": 61301233,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_epl/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
       {
-        "event_id": 61301225,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_spain_la_liga/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
       {
-        "event_id": 61301231,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_germany_bundesliga/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
       {
-        "event_id": 61301241,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_italy_serie_a/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
       {
-        "event_id": 61301235,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_france_ligue_one/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
       {
-        "event_id": 61526576,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_netherlands_eredivisie/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
       {
-        "event_id": 61514184,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61514188,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61514190,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61514194,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61514196,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61514192,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61061661,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61061645,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61061651,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61061653,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 71242238,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 71242264,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61624624,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
-      },
-      {
-        "event_id": 61624628,
-        "errors": [
-          {
-            "pattern": "odds_eventId_all",
-            "error": "400 {\"error\":\"Missing bookmakers\"}"
-          },
-          {
-            "pattern": "odds_event_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "odds_id_all",
-            "error": "400 {\"error\":\"Missing eventId\"}"
-          },
-          {
-            "pattern": "events_id_odds_all",
-            "error": "404 404 page not found"
-          },
-          {
-            "pattern": "odds_id_path_all",
-            "error": "404 404 page not found"
-          }
-        ]
+        "source": "the-odds-api",
+        "path": "/v4/sports/soccer_uefa_champs_league/odds",
+        "params": {
+          "regions": "eu,uk,us,au",
+          "markets": "h2h",
+          "oddsFormat": "decimal",
+          "dateFormat": "iso",
+          "commenceTimeFrom": "2026-05-07T03:54:00.984252Z",
+          "commenceTimeTo": "2026-05-10T03:54:00.984252Z"
+        },
+        "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       }
     ],
     "odds_success_pattern": {},
@@ -1072,11 +663,26 @@
     "rejected_single_book_only": 0,
     "rejected_odds_range": 0,
     "api_key_present": true,
-    "bookmakers_param": "(none: prefer all bookmakers)",
-    "engine_note": "Prefer all-bookmaker odds. If API only returns one bookmaker, rows are logged as diagnostics and not used for real-edge bets."
+    "the_odds_api_key_present": true,
+    "the_odds_regions": "eu,uk,us,au",
+    "the_odds_sports": [
+      "soccer_epl",
+      "soccer_spain_la_liga",
+      "soccer_germany_bundesliga",
+      "soccer_italy_serie_a",
+      "soccer_france_ligue_one",
+      "soccer_netherlands_eredivisie",
+      "soccer_uefa_champs_league"
+    ],
+    "the_odds_requests": 7,
+    "the_odds_successes": 0,
+    "the_odds_errors": 7,
+    "the_odds_remaining": "0",
+    "bookmakers_param": "(none)",
+    "engine_note": "Primary source restored: The Odds API v4 multi-bookmaker sport odds. Odds-API.io kept as diagnostics/fallback only."
   },
   "v10": {
-    "activated_at": "2026-05-07T03:46:13.914041+00:00",
+    "activated_at": "2026-05-07T03:54:04.655085+00:00",
     "feedback_file": "output/v9_feedback.json",
     "feedback_patterns": 4,
     "adjustments_applied": 0,
@@ -1085,7 +691,7 @@
     "max_penalty": -7.0
   },
   "strict_v18": {
-    "applied_at": "2026-05-07T03:46:13.950375+00:00",
+    "applied_at": "2026-05-07T03:54:04.692445+00:00",
     "moved_to_watchlist": 0,
     "top_count_after_strict": 0
   }
