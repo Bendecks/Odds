@@ -36,6 +36,19 @@ jobs:
         run: python scripts/ocr_possible_bets_parser.py
         env:
           OCR_MAX_FILES: 25
+          # Conservative OCR/PDF safety defaults. These are not value/edge bets.
+          OCR_FINAL_MAX_PICKS: 3
+          OCR_FINAL_MIN_ODDS: 1.55
+          OCR_FINAL_MAX_ODDS: 2.10
+          OCR_FINAL_ALLOW_DRAWS: 0
+          OCR_FINAL_CONFIDENCE: high
+          OCR_FINAL_SOON_HOURS: 12
+          OCR_FINAL_MIN_START_MINUTES: 5
+          OCR_BANKROLL_DKK: 100
+          OCR_MAX_TOTAL_STAKE_PCT: 0.10
+          OCR_MIN_STAKE_DKK: 1
+          OCR_MAX_STAKE_DKK: 3
+          OCR_TIMEZONE: Europe/Copenhagen
 
       - name: Cleanup old OCR inbox files
         run: python scripts/ocr_cleanup.py
@@ -48,7 +61,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add -A inbox/possible_bets output/ocr_possible_bets_analysis.* output/ocr_cleanup_report.* || true
+          git add -A inbox/possible_bets output/ocr_possible_bets_analysis.* output/ocr_cleanup_report.* output/ocr_final_picks.* || true
           git diff --cached --quiet && exit 0
           git commit -m "Process OCR possible bets inbox"
           git push
