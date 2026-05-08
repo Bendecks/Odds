@@ -36,7 +36,6 @@ jobs:
         run: python scripts/ocr_possible_bets_parser.py
         env:
           OCR_MAX_FILES: 25
-          # Broad parser output. Winner selector below applies stricter model rules.
           OCR_FINAL_MAX_PICKS: 25
           OCR_FINAL_MIN_ODDS: 1.55
           OCR_FINAL_MAX_ODDS: 2.10
@@ -48,6 +47,12 @@ jobs:
           OCR_MAX_TOTAL_STAKE_PCT: 0.10
           OCR_MIN_STAKE_DKK: 1
           OCR_MAX_STAKE_DKK: 3
+          OCR_TIMEZONE: Europe/Copenhagen
+
+      - name: Reparse inline full-page football rows
+        run: python scripts/ocr_inline_football_reparser.py
+        env:
+          OCR_MAX_FILES: 25
           OCR_TIMEZONE: Europe/Copenhagen
 
       - name: Select conservative winner picks
