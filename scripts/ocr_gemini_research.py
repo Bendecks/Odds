@@ -56,19 +56,26 @@ def extract_json(text):
     return None
 
 
-def gemini_generate_json(prompt):
-    if not GEMINI_API_KEY:
-        return {'error': 'missing_GEMINI_API_KEY'}
-    url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent'
+def gemini_payload(prompt, with_grounding=True, json_mime=False):
     payload = {
         'contents': [{'parts': [{'text': prompt}]}],
-        'tools': [{'google_search': {}}],
         'generationConfig': {
             'temperature': 0.1,
             'topP': 0.8,
-            'responseMimeType': 'application/json'
         }
     }
+    if with_grounding:
+        payload['tools'] = [{'google_search': {}}]
+    # Gemini API does not support tool use together with responseMimeType=application/json.
+    # Only use JSON mime on non-grounded fallback calls.
+    if json_mime:
+        payload['generationConfig']['responseMimeType'] = 'application/json'
+    return payload
+
+
+def call_gemini(prompt, with_grounding=True, json_mime=False):
+    url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent'
+    payload = gemini_payload(prompt, with_grounding=with_grounding, json_mime=json_mime)
     data = json.dumps(payload).encode('utf-8')
     req = urllib.request.Request(
         url,
@@ -84,15 +91,18 @@ def gemini_generate_json(prompt):
             raw = resp.read().decode('utf-8', errors='replace')
     except urllib.error.HTTPError as exc:
         body = exc.read().decode('utf-8', errors='replace')
-        return {'error': f'http_{exc.code}', 'body': body[:2000]}
+        return None, {'error': f'http_{exc.code}', 'body': body[:4000], 'with_grounding': with_grounding, 'json_mime': json_mime}
     except Exception as exc:
-        return {'error': 'request_failed', 'body': str(exc)[:1000]}
+        return None, {'error': 'request_failed', 'body': str(exc)[:1000], 'with_grounding': with_grounding, 'json_mime': json_mime}
 
     try:
         obj = json.loads(raw)
     except Exception:
-        return {'error': 'bad_api_json', 'body': raw[:2000]}
+        return None, {'error': 'bad_api_json', 'body': raw[:2000], 'with_grounding': with_grounding, 'json_mime': json_mime}
+    return obj, None
 
+
+def parse_gemini_obj(obj):
     text = ''
     candidate = None
     candidates = obj.get('candidates') or []
@@ -102,7 +112,7 @@ def gemini_generate_json(prompt):
         text = ''.join(p.get('text', '') for p in parts)
     parsed = extract_json(text)
     if parsed is None:
-        parsed = {'error': 'bad_model_json', 'raw_text': text[:2000]}
+        parsed = {'error': 'bad_model_json', 'raw_text': text[:3000]}
 
     grounding = (candidate or {}).get('groundingMetadata') or {}
     chunks = grounding.get('groundingChunks') or []
@@ -118,6 +128,29 @@ def gemini_generate_json(prompt):
     return parsed
 
 
+def gemini_generate_json(prompt):
+    if not GEMINI_API_KEY:
+        return {'error': 'missing_GEMINI_API_KEY'}
+
+    # Primary: grounded Google Search without responseMimeType.
+    obj, err = call_gemini(prompt, with_grounding=True, json_mime=False)
+    if obj is not None:
+        parsed = parse_gemini_obj(obj)
+        parsed['gemini_call_mode'] = 'grounded_no_json_mime'
+        return parsed
+
+    # Fallback: non-grounded strict JSON. This keeps the workflow usable if grounding rejects the request.
+    fallback_prompt = prompt + '\n\nGrounding failed. Use only general knowledge and the supplied candidate. If current data is needed, return insufficient_data. Return JSON only.'
+    obj2, err2 = call_gemini(fallback_prompt, with_grounding=False, json_mime=True)
+    if obj2 is not None:
+        parsed = parse_gemini_obj(obj2)
+        parsed['gemini_call_mode'] = 'fallback_no_grounding_json_mime'
+        parsed['grounding_error'] = err
+        return parsed
+
+    return {'error': 'gemini_all_calls_failed', 'primary_error': err, 'fallback_error': err2}
+
+
 def build_prompt(pick):
     return f"""
 You are a cautious sports betting research filter. Use Google Search grounding.
@@ -131,7 +164,7 @@ Strict rules:
 - Prefer rejecting uncertain bets.
 - Compare the bet365 odds with other available bookmaker/odds-comparison sources when possible.
 - For 1X2, evaluate only the listed selection, not draw or handicap.
-- Return JSON only.
+- Return JSON only. No markdown. No explanation outside the JSON object.
 
 Candidate:
 {json.dumps(pick, ensure_ascii=False, indent=2)}
@@ -168,7 +201,10 @@ def decision_from_research(pick, research):
         return 'remove', 0.0, 'gemini_error'
     verdict = str(research.get('verdict') or '').lower()
     action = str(research.get('final_action') or '').lower()
-    confidence = float(research.get('gemini_confidence') or 0)
+    try:
+        confidence = float(research.get('gemini_confidence') or 0)
+    except Exception:
+        confidence = 0
     red_flags = research.get('red_flags') or []
     stake_multiplier = research.get('stake_multiplier')
     try:
@@ -181,7 +217,6 @@ def decision_from_research(pick, research):
     if verdict in {'reject', 'insufficient_data'} or action == 'remove':
         return 'remove', 0.0, f'gemini_{verdict or action}'
     if red_flags:
-        # Red flags are not automatic hard rejects if Gemini explicitly says reduce, but stake is capped hard.
         if verdict == 'approve' and action == 'keep':
             return 'remove', 0.0, 'gemini_red_flags'
     if verdict == 'approve' and action == 'keep':
@@ -253,6 +288,7 @@ def write_md(research_data, final_data):
             f'- Risk: {r.get("risk_level")}',
             f'- Confidence: {r.get("gemini_confidence")}',
             f'- Edge: {r.get("edge_status")} ({r.get("edge_percent_estimate")})',
+            f'- Call mode: {r.get("gemini_call_mode")}',
             f'- Summary: {r.get("summary")}',
         ])
         sources = r.get('grounding_sources') or []
@@ -269,7 +305,7 @@ def write_md(research_data, final_data):
         r = p.get('gemini_research') or {}
         lines.extend([
             '',
-            f'- {p.get("event")} / {p.get("selection")} @ {p.get("odds")} — {p.get("gemini_decision_reason")} — {r.get("summary")}',
+            f'- {p.get("event")} / {p.get("selection")} @ {p.get("odds")} — {p.get("gemini_decision_reason")} — {r.get("summary") or r.get("error")}',
         ])
     RESEARCH_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
@@ -294,7 +330,7 @@ def main():
         print('Gemini research disabled | missing key')
         return
 
-    for idx, pick in enumerate(picks, 1):
+    for pick in picks:
         prompt = build_prompt(pick)
         research = gemini_generate_json(prompt)
         research['event'] = research.get('event') or pick.get('event')
