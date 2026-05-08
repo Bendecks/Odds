@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T17:45:55.227700+00:00",
+  "generated_at": "2026-05-08T19:46:22.494082+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -11,13 +11,13 @@
       "slug": "france-ligue-1",
       "canonical": "france-ligue-1",
       "name": "France - Ligue 1",
-      "eventsCount": 20
+      "eventsCount": 19
     },
     {
       "slug": "germany-bundesliga",
       "canonical": "germany-bundesliga",
       "name": "Germany - Bundesliga",
-      "eventsCount": 18
+      "eventsCount": 17
     },
     {
       "slug": "international-clubs-uefa-champions-league",
@@ -29,7 +29,7 @@
       "slug": "italy-serie-a",
       "canonical": "italy-serie-a",
       "name": "Italy - Serie A",
-      "eventsCount": 30
+      "eventsCount": 29
     },
     {
       "slug": "netherlands-eredivisie",
@@ -41,7 +41,7 @@
       "slug": "spain-laliga",
       "canonical": "spain-laliga",
       "name": "Spain - LaLiga",
-      "eventsCount": 40
+      "eventsCount": 39
     }
   ],
   "upcoming_events": [
@@ -127,12 +127,12 @@
       "source": "odds-api.io"
     },
     {
-      "league": "france-ligue-1",
-      "source_league_slug": "france-ligue-1",
-      "event_id": 61526576,
-      "date": "2026-05-08T18:45:00Z",
-      "home": "Racing Club De Lens",
-      "away": "FC Nantes",
+      "league": "england-premier-league",
+      "source_league_slug": "england-premier-league",
+      "event_id": 61301243,
+      "date": "2026-05-11T19:00:00Z",
+      "home": "Tottenham Hotspur",
+      "away": "Leeds United",
       "source": "odds-api.io"
     },
     {
@@ -210,15 +210,6 @@
     {
       "league": "germany-bundesliga",
       "source_league_slug": "germany-bundesliga",
-      "event_id": 61514184,
-      "date": "2026-05-08T18:30:00Z",
-      "home": "Borussia Dortmund",
-      "away": "Eintracht Frankfurt",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "germany-bundesliga",
-      "source_league_slug": "germany-bundesliga",
       "event_id": 61514188,
       "date": "2026-05-09T13:30:00Z",
       "home": "RB Leipzig",
@@ -291,15 +282,6 @@
     {
       "league": "italy-serie-a",
       "source_league_slug": "italy-serie-a",
-      "event_id": 61061661,
-      "date": "2026-05-08T18:45:00Z",
-      "home": "Torino FC",
-      "away": "Sassuolo Calcio",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "italy-serie-a",
-      "source_league_slug": "italy-serie-a",
       "event_id": 61061645,
       "date": "2026-05-09T13:00:00Z",
       "home": "Cagliari Calcio",
@@ -367,6 +349,15 @@
       "date": "2026-05-10T18:45:00Z",
       "home": "AC Milan",
       "away": "Atalanta BC",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "italy-serie-a",
+      "source_league_slug": "italy-serie-a",
+      "event_id": 61061657,
+      "date": "2026-05-11T18:45:00Z",
+      "home": "SSC Napoli",
+      "away": "Bologna FC",
       "source": "odds-api.io"
     },
     {
@@ -471,15 +462,6 @@
     {
       "league": "spain-laliga",
       "source_league_slug": "spain-laliga",
-      "event_id": 61624624,
-      "date": "2026-05-08T19:00:00Z",
-      "home": "Levante UD",
-      "away": "CA Osasuna",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
       "event_id": 61624628,
       "date": "2026-05-09T12:00:00Z",
       "home": "Elche CF",
@@ -548,6 +530,15 @@
       "home": "FC Barcelona",
       "away": "Real Madrid",
       "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624636,
+      "date": "2026-05-11T19:00:00Z",
+      "home": "Rayo Vallecano",
+      "away": "Girona FC",
+      "source": "odds-api.io"
     }
   ],
   "candidate_rows": [],
@@ -589,7 +580,7 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
-      "event_id": 61526576,
+      "event_id": 61301243,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
@@ -625,10 +616,6 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
-      "event_id": 61514184,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
       "event_id": 61514188,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
@@ -661,10 +648,6 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
-      "event_id": 61061661,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
       "event_id": 61061645,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
@@ -694,6 +677,10 @@
     },
     {
       "event_id": 61061655,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61061657,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
@@ -741,10 +728,6 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
-      "event_id": 61624624,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
       "event_id": 61624628,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
@@ -774,6 +757,10 @@
     },
     {
       "event_id": 61624622,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624636,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     }
   ],
