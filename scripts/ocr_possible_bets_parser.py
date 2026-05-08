@@ -2,7 +2,8 @@ import json
 import os
 import pathlib
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 
 ROOT = pathlib.Path('.')
 INBOX = ROOT / 'inbox' / 'possible_bets'
@@ -20,6 +21,13 @@ FINAL_MIN_ODDS = float(os.getenv('OCR_FINAL_MIN_ODDS', '1.55'))
 FINAL_MAX_ODDS = float(os.getenv('OCR_FINAL_MAX_ODDS', '2.40'))
 FINAL_ALLOW_DRAWS = os.getenv('OCR_FINAL_ALLOW_DRAWS', '0') == '1'
 FINAL_CONFIDENCE = os.getenv('OCR_FINAL_CONFIDENCE', 'high')
+FINAL_SOON_HOURS = float(os.getenv('OCR_FINAL_SOON_HOURS', '36'))
+FINAL_MIN_START_MINUTES = float(os.getenv('OCR_FINAL_MIN_START_MINUTES', '0'))
+DEFAULT_BANKROLL_DKK = float(os.getenv('OCR_BANKROLL_DKK', '100'))
+MAX_TOTAL_STAKE_PCT = float(os.getenv('OCR_MAX_TOTAL_STAKE_PCT', '0.30'))
+MIN_STAKE_DKK = float(os.getenv('OCR_MIN_STAKE_DKK', '1'))
+MAX_STAKE_DKK = float(os.getenv('OCR_MAX_STAKE_DKK', '10'))
+TIMEZONE = os.getenv('OCR_TIMEZONE', 'Europe/Copenhagen')
 IMAGE_EXTS = {'.png', '.jpg', '.jpeg', '.webp'}
 TEXT_EXTS = {'.txt', '.json', '.md'}
 PDF_EXTS = {'.pdf'}
@@ -65,10 +73,17 @@ SCORE_RE = re.compile(r'^\(\d+\)$')
 COUNT_RE = re.compile(r'^\d+»?$')
 HEADER_1X2_RE = re.compile(r'\b1\s+X\s+2\b', re.I)
 DECIMAL_ODDS_RE = re.compile(r'^\d{1,2}[\.,]\d{2}$')
+BALANCE_RE = re.compile(r'(\d+(?:[\.,]\d{2})?)\s*kr\.?', re.I)
+SERVER_DATE_RE = re.compile(r'(\d{2})\.(\d{2})\.(\d{4}),\s*(\d{1,2})\.(\d{2})')
+DK_WEEKDAYS = {'Man': 0, 'Tir': 1, 'Ons': 2, 'Tor': 3, 'Fre': 4, 'Lør': 5, 'Søn': 6}
 
 
 def now_iso():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+
+
+def parse_iso_utc(value):
+    return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
 
 
 def read_text_file(path):
@@ -149,6 +164,30 @@ def clean_lines(text):
             continue
         lines.append(x)
     return lines
+
+
+def extract_bankroll_dkk(text):
+    values = []
+    for match in BALANCE_RE.finditer(str(text)):
+        try:
+            v = float(match.group(1).replace(',', '.'))
+        except Exception:
+            continue
+        # Ignore phone numbers and huge unrelated numbers.
+        if 1 <= v <= 100000:
+            values.append(v)
+    # On bet365 coupon, balance normally appears late and can be repeated. Use the last plausible DKK value.
+    return values[-1] if values else None
+
+
+def extract_capture_time(text):
+    matches = list(SERVER_DATE_RE.finditer(str(text)))
+    if not matches:
+        return None
+    m = matches[-1]
+    day, month, year, hour, minute = map(int, m.groups())
+    tz = ZoneInfo(TIMEZONE)
+    return datetime(year, month, day, hour, minute, tzinfo=tz)
 
 
 def is_odds(x):
@@ -279,7 +318,6 @@ def parse_football_1x2_sections(lines):
         if not event_rows:
             continue
 
-        # Only decimal price tokens count as football 1X2 odds. This rejects bet365 side counts like "6" and scores like "(0)".
         odds = [parse_odds(x) for x in raw if is_decimal_odds_token(x)]
         n = len(event_rows)
         confidence = 'medium' if n >= 4 else 'high'
@@ -360,6 +398,28 @@ def parse_basketball_like(lines):
     return events
 
 
+def parse_visible_start(visible, reference_utc):
+    if not visible:
+        return None, None
+    m = TIME_RE.fullmatch(str(visible).strip())
+    if not m:
+        return None, None
+    day_name = m.group(1).title()
+    clock = re.search(r'(\d{1,2}):(\d{2})', visible)
+    if not clock or day_name not in DK_WEEKDAYS:
+        return None, None
+    hour, minute = int(clock.group(1)), int(clock.group(2))
+    tz = ZoneInfo(TIMEZONE)
+    ref_local = reference_utc.astimezone(tz)
+    target_wd = DK_WEEKDAYS[day_name]
+    delta_days = (target_wd - ref_local.weekday()) % 7
+    candidate = (ref_local + timedelta(days=delta_days)).replace(hour=hour, minute=minute, second=0, microsecond=0)
+    if candidate < ref_local - timedelta(minutes=30):
+        candidate += timedelta(days=7)
+    hours_until = (candidate.astimezone(timezone.utc) - reference_utc).total_seconds() / 3600
+    return candidate.isoformat(), round(hours_until, 2)
+
+
 def score_market(market):
     odds = market.get('odds')
     if odds is None:
@@ -386,14 +446,63 @@ def file_type(path):
     return 'text'
 
 
-def make_final_picks(candidates):
+def stake_pct_for_pick(pick):
+    odds = pick.get('odds') or 0
+    confidence = pick.get('confidence')
+    if confidence != 'high':
+        return 0.005
+    if odds <= 1.80:
+        return 0.020
+    if odds <= 2.10:
+        return 0.015
+    return 0.010
+
+
+def apply_stakes(picks, bankroll):
+    if not picks:
+        return picks
+    total_cap = max(0, bankroll * MAX_TOTAL_STAKE_PCT)
+    raw = []
+    for p in picks:
+        pct = stake_pct_for_pick(p)
+        stake = bankroll * pct
+        stake = max(MIN_STAKE_DKK, min(MAX_STAKE_DKK, stake))
+        row = dict(p)
+        row['stake_pct'] = pct
+        row['stake_dkk_raw'] = round(stake, 2)
+        raw.append(row)
+
+    total_raw = sum(p['stake_dkk_raw'] for p in raw)
+    scale = min(1.0, total_cap / total_raw) if total_raw > 0 else 1.0
+    for p in raw:
+        p['stake_dkk'] = round(max(MIN_STAKE_DKK, p['stake_dkk_raw'] * scale), 2)
+        p['stake_note'] = f"Stake beregnet fra bankroll {bankroll:.2f} kr., pct {p['stake_pct']:.3f}, total cap {MAX_TOTAL_STAKE_PCT:.0%}."
+    return raw
+
+
+def make_final_picks(candidates, generated_at, bankroll):
+    reference_utc = parse_iso_utc(generated_at)
+    enriched = []
+    for c in candidates:
+        row = dict(c)
+        start_iso, hours_until = parse_visible_start(row.get('start_time_visible'), reference_utc)
+        row['start_datetime_local'] = start_iso
+        row['hours_until_start'] = hours_until
+        enriched.append(row)
+
     seen_events = set()
     picked = []
     rejected = []
 
-    for c in sorted(candidates, key=lambda x: (x.get('score', 0), x.get('odds') or 0), reverse=True):
+    def sort_key(x):
+        soon = x.get('hours_until_start')
+        soon_sort = soon if soon is not None else 9999
+        return (soon_sort, -(x.get('score', 0)), -(x.get('odds') or 0))
+
+    for c in sorted(enriched, key=sort_key):
         reason = None
         odds = c.get('odds')
+        hours_until = c.get('hours_until_start')
         if c.get('confidence') != FINAL_CONFIDENCE:
             reason = f"confidence_not_{FINAL_CONFIDENCE}"
         elif c.get('market') not in {'1x2', 'moneyline'}:
@@ -402,6 +511,12 @@ def make_final_picks(candidates):
             reason = 'draws_disabled'
         elif odds is None or not (FINAL_MIN_ODDS <= odds <= FINAL_MAX_ODDS):
             reason = 'odds_outside_final_range'
+        elif hours_until is None:
+            reason = 'missing_or_unparsed_start_time'
+        elif hours_until < FINAL_MIN_START_MINUTES / 60:
+            reason = 'starts_too_soon_or_already_started'
+        elif hours_until > FINAL_SOON_HOURS:
+            reason = 'starts_too_late'
         elif c.get('event') in seen_events:
             reason = 'event_already_selected'
 
@@ -411,11 +526,13 @@ def make_final_picks(candidates):
 
         row = dict(c)
         row['final_pick'] = True
-        row['final_reason'] = f"{c.get('confidence')} confidence, odds {odds}, marked {c.get('market')}, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing."
+        row['final_reason'] = f"Starter om ca. {hours_until} timer, {c.get('confidence')} confidence, odds {odds}, én pick pr kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing."
         picked.append(row)
         seen_events.add(c.get('event'))
         if len(picked) >= FINAL_MAX_PICKS:
             break
+
+    picked = apply_stakes(picked, bankroll)
 
     return {
         'rules': {
@@ -425,10 +542,16 @@ def make_final_picks(candidates):
             'confidence': FINAL_CONFIDENCE,
             'allow_draws': FINAL_ALLOW_DRAWS,
             'one_pick_per_event': True,
+            'soon_hours': FINAL_SOON_HOURS,
+            'min_start_minutes': FINAL_MIN_START_MINUTES,
+            'bankroll_dkk': bankroll,
+            'max_total_stake_pct': MAX_TOTAL_STAKE_PCT,
+            'min_stake_dkk': MIN_STAKE_DKK,
+            'max_stake_dkk': MAX_STAKE_DKK,
             'note': 'Screenshot/PDF-only picks. No real bookmaker edge is calculated.',
         },
         'picks': picked,
-        'rejected_sample': rejected[:50],
+        'rejected_sample': rejected[:80],
     }
 
 
@@ -436,6 +559,8 @@ def analyze_file(path):
     text = extract_text(path)
     lines = clean_lines(text)
     sport = infer_sport(lines)
+    bankroll = extract_bankroll_dkk(text)
+    capture_time = extract_capture_time(text)
     football_events = parse_football_1x2_sections(lines)
     basketball_events = [] if football_events else parse_basketball_like(lines)
     events = football_events + basketball_events
@@ -456,6 +581,8 @@ def analyze_file(path):
                 'start_time_visible': event.get('start_time_visible'),
                 'parse_method': event.get('parse_method'),
                 'section_event_count': event.get('section_event_count'),
+                'source_bankroll_dkk': bankroll,
+                'source_capture_time_local': capture_time.isoformat() if capture_time else None,
                 **market,
             }
             row['score'] = score_market(row)
@@ -468,6 +595,8 @@ def analyze_file(path):
         'mtime': datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
         'sport': sport,
         'line_count': len(lines),
+        'source_bankroll_dkk': bankroll,
+        'source_capture_time_local': capture_time.isoformat() if capture_time else None,
         'events': events,
         'candidates': candidates,
         'raw_text_preview': text[:3500],
@@ -483,24 +612,33 @@ def write_final_picks_md(final_picks, generated_at):
         f'- Maks picks: {final_picks["rules"]["max_picks"]}',
         f'- Oddsrange: {final_picks["rules"]["min_odds"]}–{final_picks["rules"]["max_odds"]}',
         f'- Confidence: {final_picks["rules"]["confidence"]}',
+        f'- Starter indenfor: {final_picks["rules"]["soon_hours"]} timer',
         f'- Uafgjort tilladt: {final_picks["rules"]["allow_draws"]}',
         f'- Én pick pr kamp: {final_picks["rules"]["one_pick_per_event"]}',
+        f'- Bankroll: {final_picks["rules"]["bankroll_dkk"]:.2f} kr.',
+        f'- Total stake cap: {final_picks["rules"]["max_total_stake_pct"]:.0%}',
         '',
         '## Final picks',
     ]
     if not final_picks['picks']:
         lines.append('Ingen final picks efter filteret.')
+    total_stake = sum(p.get('stake_dkk', 0) for p in final_picks['picks'])
+    if final_picks['picks']:
+        lines.append(f'Samlet stake: {total_stake:.2f} kr.')
     for i, p in enumerate(final_picks['picks'], 1):
         lines.extend([
             '',
             f'### {i}. {p.get("event")}',
             f'- Liga: {p.get("league")}',
             f'- Tidspunkt: {p.get("start_time_visible")}',
+            f'- Starter om: {p.get("hours_until_start")} timer',
             f'- Spil: {p.get("selection")}' + (f' ({p.get("line")})' if p.get('line') else ''),
             f'- Odds: {p.get("odds")}',
+            f'- Stake: {p.get("stake_dkk")} kr.',
             f'- Confidence: {p.get("confidence")}',
             f'- Parser: {p.get("parse_method")}',
             f'- Begrundelse: {p.get("final_reason")}',
+            f'- Stake-note: {p.get("stake_note")}',
         ])
     FINAL_PICKS_MD.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
@@ -518,14 +656,18 @@ def write_md(result):
     picks = final_picks.get('picks') or []
     if not picks:
         lines.append('Ingen final picks efter filteret.')
+    if picks:
+        lines.append(f'Samlet stake: {sum(p.get("stake_dkk", 0) for p in picks):.2f} kr.')
     for i, p in enumerate(picks, 1):
         lines.extend([
             '',
             f'### {i}. {p.get("event")}',
             f'- Liga: {p.get("league")}',
             f'- Tidspunkt: {p.get("start_time_visible")}',
+            f'- Starter om: {p.get("hours_until_start")} timer',
             f'- Spil: {p.get("selection")}' + (f' ({p.get("line")})' if p.get('line') else ''),
             f'- Odds: {p.get("odds")}',
+            f'- Stake: {p.get("stake_dkk")} kr.',
             f'- Confidence: {p.get("confidence")}',
             f'- Begrundelse: {p.get("final_reason")}',
         ])
@@ -556,7 +698,7 @@ def write_md(result):
 
     lines.append('\n## Filer')
     for item in result['files']:
-        lines.extend(['', f'### {item.get("file")}', f'- Type: {item.get("type")}', f'- Sport: {item.get("sport")}', f'- Linjer: {item.get("line_count")}', f'- Events: {len(item.get("events") or [])}', f'- Candidates: {len(item.get("candidates") or [])}'])
+        lines.extend(['', f'### {item.get("file")}', f'- Type: {item.get("type")}', f'- Sport: {item.get("sport")}', f'- Linjer: {item.get("line_count")}', f'- Bankroll fra fil: {item.get("source_bankroll_dkk")}', f'- Capture time: {item.get("source_capture_time_local")}', f'- Events: {len(item.get("events") or [])}', f'- Candidates: {len(item.get("candidates") or [])}'])
         for event in item.get('events') or []:
             lines.append(f'  - {event.get("league")}: {event.get("home")} vs {event.get("away")} ({event.get("start_time_visible")}) | section_count={event.get("section_event_count")}')
         if item.get('error'):
@@ -565,8 +707,9 @@ def write_md(result):
 
 
 def main():
+    generated_at = now_iso()
     files = list_input_files()
-    result = {'generated_at': now_iso(), 'input_dir': str(INBOX), 'accepted_extensions': sorted(ACCEPTED_EXTS), 'files_analyzed': len(files), 'files': []}
+    result = {'generated_at': generated_at, 'input_dir': str(INBOX), 'accepted_extensions': sorted(ACCEPTED_EXTS), 'files_analyzed': len(files), 'files': []}
     for p in files:
         try:
             result['files'].append(analyze_file(p))
@@ -574,15 +717,20 @@ def main():
             result['files'].append({'file': str(p), 'type': file_type(p), 'error': str(exc)[:500]})
 
     all_candidates = []
+    bankrolls = []
     for item in result['files']:
         all_candidates.extend(item.get('candidates') or [])
-    result['final_picks'] = make_final_picks(all_candidates)
+        if item.get('source_bankroll_dkk') is not None:
+            bankrolls.append(item.get('source_bankroll_dkk'))
+    bankroll = bankrolls[0] if bankrolls else DEFAULT_BANKROLL_DKK
+    result['detected_bankroll_dkk'] = bankroll
+    result['final_picks'] = make_final_picks(all_candidates, generated_at, bankroll)
 
     ANALYSIS_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
     FINAL_PICKS_JSON.write_text(json.dumps({'generated_at': result['generated_at'], **result['final_picks']}, ensure_ascii=False, indent=2), encoding='utf-8')
     write_final_picks_md(result['final_picks'], result['generated_at'])
     write_md(result)
-    print(f'OCR/PDF possible bets parser OK | files={len(files)} final_picks={len(result["final_picks"]["picks"])}')
+    print(f'OCR/PDF possible bets parser OK | files={len(files)} final_picks={len(result["final_picks"]["picks"])} bankroll={bankroll}')
 
 
 if __name__ == '__main__':
