@@ -1,6 +1,6 @@
 # OCR FINAL PICKS — WINNER SELECTOR
 
-Generated: 2026-05-08T03:39:09Z
+Generated: 2026-05-08T03:41:37Z
 
 Vigtigt: Dette er vinderpicks baseret på OCR/PDF og bet365-markedet. Det er ikke en fuld value/edge-model.
 
