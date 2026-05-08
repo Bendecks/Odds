@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T03:50:19Z",
+  "generated_at": "2026-05-08T04:01:58Z",
   "rules": {
     "mode": "conservative_winner_selector",
     "max_picks": 25,
@@ -25,7 +25,197 @@
     "gemini_required": true,
     "gemini_min_confidence": 0.55
   },
-  "picks": [],
+  "picks": [
+    {
+      "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
+      "sport": "football",
+      "league": "bet365_full_page_inline",
+      "event": "Silkeborg IF vs FC København",
+      "start_time_visible": "Fre 16:00",
+      "parse_method": "football_1x2_inline_row_pdf",
+      "section_event_count": 1,
+      "source_bankroll_dkk": 68.36,
+      "source_capture_time_local": "2026-05-08T05:40:00+02:00",
+      "market": "1x2",
+      "selection": "FC København",
+      "line": "2",
+      "odds": 1.72,
+      "confidence": "high",
+      "explanation": "FC København vinder til odds 1.72",
+      "score": 5,
+      "implied_probability": 0.5814,
+      "market_overround": 1.0695,
+      "complete_1x2_market": true,
+      "normalized_probability": 0.5436,
+      "team_probability_rank": 1,
+      "team_probability_margin": 0.321,
+      "start_datetime_local": "2026-05-08T16:00:00+02:00",
+      "hours_until_start": 9.97,
+      "winner_score": 74.37,
+      "final_pick": true,
+      "pick_type": "winner",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5436, margin 0.321, odds 1.72, starter om 9.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til. Gemini: gemini_reduced.",
+      "stake_pct": 0.01,
+      "stake_dkk_raw": 1.0,
+      "stake_dkk": 0.5,
+      "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%. Gemini multiplier 0.50 (gemini_reduced).",
+      "gemini_research": {
+        "event": "Silkeborg IF vs FC København",
+        "selection": "FC København",
+        "verdict": "reduce",
+        "risk_level": "medium",
+        "gemini_confidence": 0.65,
+        "winner_probability_estimate": 0.6,
+        "stake_multiplier": 0.5,
+        "edge_status": "neutral",
+        "edge_percent_estimate": 0.0,
+        "other_bookmaker_odds": [
+          {
+            "bookmaker": "888Sport",
+            "odds": 1.7,
+            "source": "cite: 16",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Oddschecker",
+            "odds": 1.77,
+            "source": "cite: 17",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Thunderpick",
+            "odds": 1.68,
+            "source": "cite: 19",
+            "confidence": "medium"
+          }
+        ],
+        "market_summary": "FC København er den klare markedsfavorit, med odds der spænder fra 1.68 til 1.77 på tværs af forskellige bookmakere.",
+        "form_summary": "FC København har vundet 4 af deres seneste 5 kampe og spillet 1 uafgjort, herunder en dominerende 7-0 sejr mod Silkeborg for nylig. Silkeborg har også en stærk nylig form med 4 sejre og 1 uafgjort i deres seneste 5 kampe.",
+        "injury_rotation_summary": "FC København har flere spillere med ukendte eller langvarige skader, herunder Magnus Mattsson og Rodrigo Huescas (korsbåndsskader). O. Højer, Birger Meling, E. Achouri, T. Delaney, Gabriel Pereira og Kenay Myrie har også skader eller ukendt status. Pantelis Hatzidiakos er i risiko for karantæne. Silkeborg IF har Younes Bakiz (forstrækning), Pontus Rödin (knæskade, tvivlsom), Oliver Ross (fingerskade), Pedro Ganchas (ankelskade) og Robin Öström (karantæne). FC København har en kommende pokalkamp den 14. maj 2026, hvilket potentielt kan føre til rotation i truppen.",
+        "motivation_summary": "Begge hold er i Superligaens nedrykningsgruppe. FC København ligger i øjeblikket nummer 1 i gruppen, mens Silkeborg er nummer 3. FC København deltager også i den danske pokalfinale, hvilket kan være en højere prioritet.",
+        "key_reasons_for": [
+          "FC Københavns dominerende head-to-head statistik, herunder en nylig 7-0 sejr mod Silkeborg.",
+          "FC Københavns stærke nylige form med 4 sejre og 1 uafgjort i de seneste 5 kampe.",
+          "FC København er markedsfavorit hos flere bookmakere."
+        ],
+        "key_reasons_against": [
+          "Silkeborg IF har også en stærk nylig form med 4 sejre og 1 uafgjort i de seneste 5 kampe.",
+          "FC København har flere skadede spillere, nogle med ukendte returdatoer.",
+          "FC København har en kommende pokalkamp, hvilket potentielt kan føre til rotation i truppen.",
+          "Kampen spilles på Silkeborgs hjemmebane."
+        ],
+        "red_flags": [
+          "Potentiel rotation for FC København på grund af en kommende pokalfinale.",
+          "Flere nøgleskader for begge hold, med nogle FCK-spillere med langvarige problemer."
+        ],
+        "final_action": "keep_reduced",
+        "summary": "FC København er favoritter baseret på H2H og nylig form, men skader og en kommende pokalfinale for FCK, samt Silkeborgs gode nylige form, indfører usikkerhed, hvilket reducerer værdien af væddemålet ved de nuværende odds.",
+        "grounding_sources": [
+          {
+            "title": "888sport.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESX-ne1aKpC5WzLj872VOOso5x_-wcPV6p7tl4AUGxlC2WHSzAsSE8htu1AexWUnHi2sz8-xNCgcdSjFDIpV9gvoUuiomzxf5GcNLkNXKXlF33ePXq4AD9ccnP-4E0RpWPplHDC0n5H83QxobF0ZQVF0Q3DbuCpC1kjadE9SpogCDdS6XxXlGYMuTg8sDatEACjpQfvA2kIhrK1y00tw=="
+          },
+          {
+            "title": "oddschecker.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcOPvNjjZzBFyc0LuABqqwmJ2rtOAN9h5F7Jb-YtJ1qiyJ4yqOlZeIpKO0QjXGwfW0dzdXO-EEYKa_6lANRmTJ5GHlof78x_XtjpDX3t0LfhlVChtRmBq6dX0VQcin8IXP_oEpZEEbFvzQ6Vt-tNdO_yZh7KcqeawsuloF4WyWjf-ncPxBa0tzdS-Fq78PpVXXJTQ"
+          },
+          {
+            "title": "thunderpick.io",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMF7sggutsalm3y-me8-6xSa3c1CN7k-kApcFQzOA_Sl4OoCCgu7dnOskx4VaXKcNnljFGfG0xfYne1IZbS_WoHXunNfF9D_1sAykfVf18y6nrjg4AW6ZnGh0ZYrSbdlYkYEQmEv9ePtauRtznzthImskf2vhDCxb-UsIImPcnx_ATSIU-sLnZh--sWWu-ESHRm4z7DyLKWEAdPua5r1Df"
+          },
+          {
+            "title": "aiscore.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoD0Qn0JsYLJtSvtOxx3jI4g9QjeBIdLrIR_Z13h3B55-3IZGiJeYtW2suw8s02uXmDXfdQRyrbLptRrFkt72t6vRMJiXaPxUZRwwhddkahJT1eZhG21jxHDoDRM5XXnge0dx-3eBkjQdqcA5zKtNbNbb8TsDRDTjDSXB9-VdH"
+          },
+          {
+            "title": "fotmob.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE3ADpWg8G_oZgfZP1LuDZuvQmHWljd-e6UV6mKgDyMIOyBhzs1l8DGzB4fheCrGtJ2_0SMBAj4GEMIWfSJXRj_VeG4mogJSuwtUO2oHzbTmbcjzncJ5pd9w1nYMUyR9nj27amApxBKLqqeR5DuSHJJTA="
+          },
+          {
+            "title": "forebet.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH24LwI5NMNNDycYisI1M2-FsExpDG1Jn32SKf1sgl5YVwqbL7aG5uodEYXNuEVwQPUBqMvs2VZaMg1aKMsBZGj2xUkuyE91_iFTjiwtjYhWE6clfzpSEgAIRBnD1MJOxuDWfMtSVg89w=="
+          },
+          {
+            "title": "fotmob.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDi2nhp14WIdfIfRDxmQsNK9A7BbUqvHEeeOg58Kw_12H01b-agOdE0QB-oBV6JBxCbR7eY0QXmxZgyQe-iR4kE-aIFzYf6ZVTydECU0K_j8Eg0ei2WdsiGiGQi_dYyrmz-FkkNDWWZ5jIf-i9UXs="
+          },
+          {
+            "title": "transfermarkt.us",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4AtGiJX-lJe95OhAAjAs0isLy-EjtMdCy-_5ojbb-Lop9mmRYn9-vpyvHlm56De7KRD_dxj9CmWMQS-FbI9xnXDjG0rfSenrmzaraYKm0c28lLwcbKu2uud_71cAosjW57SoCzkRij4KIIya9OgE7ccPaHnIJLbcQn9uvfufE2jRSC_V4QI4="
+          },
+          {
+            "title": "sportsgambler.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoWn7mpDMDI2Vk2y-CDpfwBrHpFLuBwJFJfGPRSctBv_pUVBFvYCtHqmVO1Z5-HdYWS2RePGTjWkmyKpeDr-IkhYz6kyeZqImjMzz7KzVlW90VjGMgF2U3ab9YfB5iBF8h8Ji8EG8nm2by7jCkWkjxO7MRQh4UM7YgXw_s8w=="
+          },
+          {
+            "title": "besoccer.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6YtUc0wfNjy5wflck0XwnXJNUBsFv1o3wHYzQMO9CABlV5bBBett_9Ra6Yh3NPkDso6BCwTqHj04kdaYtf-Dp5aMArSlCy5lzNTmWJkbkz3RW55iBsBHpOxEtrHsEjuhtMCn3jPXosW0z-vOoApSiqkJ4kOVpLy4hjQ=="
+          },
+          {
+            "title": "besoccer.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG30XpV-E62tKn33rQmtzrnsNEHD2Mw484IYUVhrGlrzncUDt5PncqRqlAuXGKsRVRK2eNJZ8RulZZqLjif7u_6sYT6OPFMhFkTwPBFwccpSlEzG2WYrPnah72wmSpnLC_FwLvPpg=="
+          },
+          {
+            "title": "besoccer.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPANeW7nlNrJ0zYyfnjpg_MJAg1NPuferlQD1X9oSexXACasSkguRAN_R6Qc8ZIQM1TN7zB47FP2pkii_Q97lV6uh9Qt2en-AFl6G7XdKtR1QbHEcfSrKbgWdea2fRQqgJJ4VThJFlaRKH1TNkj7RnOuPNbV22agHqcg=="
+          }
+        ],
+        "web_search_queries": [
+          "Silkeborg IF vs FC København May 8 2026 football match",
+          "Silkeborg IF recent form 2026",
+          "FC København recent form 2026",
+          "Silkeborg IF injuries suspensions May 8 2026",
+          "FC København injuries suspensions May 8 2026",
+          "Silkeborg IF FC København head to head",
+          "Danish Superliga standings May 2026",
+          "odds Silkeborg IF vs FC København May 8 2026",
+          "FC København lineup prediction May 8 2026",
+          "Silkeborg IF lineup prediction May 8 2026"
+        ],
+        "gemini_call_mode": "grounded_no_json_mime",
+        "line": "2",
+        "original_pick": {
+          "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
+          "sport": "football",
+          "league": "bet365_full_page_inline",
+          "event": "Silkeborg IF vs FC København",
+          "start_time_visible": "Fre 16:00",
+          "parse_method": "football_1x2_inline_row_pdf",
+          "section_event_count": 1,
+          "source_bankroll_dkk": 68.36,
+          "source_capture_time_local": "2026-05-08T05:40:00+02:00",
+          "market": "1x2",
+          "selection": "FC København",
+          "line": "2",
+          "odds": 1.72,
+          "confidence": "high",
+          "explanation": "FC København vinder til odds 1.72",
+          "score": 5,
+          "implied_probability": 0.5814,
+          "market_overround": 1.0695,
+          "complete_1x2_market": true,
+          "normalized_probability": 0.5436,
+          "team_probability_rank": 1,
+          "team_probability_margin": 0.321,
+          "start_datetime_local": "2026-05-08T16:00:00+02:00",
+          "hours_until_start": 9.97,
+          "winner_score": 74.37,
+          "final_pick": true,
+          "pick_type": "winner",
+          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5436, margin 0.321, odds 1.72, starter om 9.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+          "stake_pct": 0.01,
+          "stake_dkk_raw": 1.0,
+          "stake_dkk": 1.0,
+          "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%."
+        },
+        "researched_at": "2026-05-08T04:03:41Z"
+      },
+      "gemini_final_decision": "keep_reduced",
+      "gemini_decision_reason": "gemini_reduced",
+      "gemini_stake_multiplier": 0.5,
+      "stake_dkk_before_gemini": 1.0
+    }
+  ],
   "rejected_sample": [
     {
       "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -51,8 +241,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1328,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 50.21,
+      "hours_until_start": 7.47,
+      "winner_score": 50.25,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -77,8 +267,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2832,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 29.41,
+      "hours_until_start": 7.47,
+      "winner_score": 29.45,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -103,8 +293,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2374,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 24.82,
+      "hours_until_start": 7.47,
+      "winner_score": 24.87,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -131,8 +321,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1328,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 23.64,
+      "hours_until_start": 7.47,
+      "winner_score": 23.69,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -159,8 +349,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.2755,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 11.66,
+      "hours_until_start": 7.47,
+      "winner_score": 11.71,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -187,8 +377,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1346,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 50.0,
+      "hours_until_start": 7.97,
+      "winner_score": 50.05,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -215,8 +405,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1242,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 49.94,
+      "hours_until_start": 7.97,
+      "winner_score": 49.99,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -243,8 +433,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0995,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 48.57,
+      "hours_until_start": 7.97,
+      "winner_score": 48.61,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -269,8 +459,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2885,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 29.81,
+      "hours_until_start": 7.97,
+      "winner_score": 29.86,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -297,8 +487,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0995,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 28.66,
+      "hours_until_start": 7.97,
+      "winner_score": 28.71,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -323,8 +513,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2688,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 27.84,
+      "hours_until_start": 7.97,
+      "winner_score": 27.89,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -349,8 +539,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2468,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 25.64,
+      "hours_until_start": 7.97,
+      "winner_score": 25.69,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -377,8 +567,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1242,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 25.1,
+      "hours_until_start": 7.97,
+      "winner_score": 25.15,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -405,8 +595,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1346,
       "start_datetime_local": "2026-05-08T14:00:00+02:00",
-      "hours_until_start": 8.16,
-      "winner_score": 23.08,
+      "hours_until_start": 7.97,
+      "winner_score": 23.13,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -433,8 +623,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0522,
       "start_datetime_local": "2026-05-08T15:00:00+02:00",
-      "hours_until_start": 9.16,
-      "winner_score": 41.15,
+      "hours_until_start": 8.97,
+      "winner_score": 41.2,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -461,8 +651,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0522,
       "start_datetime_local": "2026-05-08T15:00:00+02:00",
-      "hours_until_start": 9.16,
-      "winner_score": 30.71,
+      "hours_until_start": 8.97,
+      "winner_score": 30.76,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -487,8 +677,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2956,
       "start_datetime_local": "2026-05-08T15:00:00+02:00",
-      "hours_until_start": 9.16,
-      "winner_score": 30.27,
+      "hours_until_start": 8.97,
+      "winner_score": 30.32,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -515,8 +705,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.6285,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 112.1,
+      "hours_until_start": 9.47,
+      "winner_score": 112.15,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -543,8 +733,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.4849,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 95.58,
+      "hours_until_start": 9.47,
+      "winner_score": 95.63,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -571,8 +761,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1007,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 49.0,
+      "hours_until_start": 9.47,
+      "winner_score": 49.05,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -599,8 +789,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1007,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 28.86,
+      "hours_until_start": 9.47,
+      "winner_score": 28.91,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -625,8 +815,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2522,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 25.8,
+      "hours_until_start": 9.47,
+      "winner_score": 25.85,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -651,8 +841,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2332,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 23.91,
+      "hours_until_start": 9.47,
+      "winner_score": 23.95,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -679,8 +869,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1747,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 20.51,
+      "hours_until_start": 9.47,
+      "winner_score": 20.56,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -705,8 +895,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.188,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 19.39,
+      "hours_until_start": 9.47,
+      "winner_score": 19.43,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -731,8 +921,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.1721,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 17.8,
+      "hours_until_start": 9.47,
+      "winner_score": 17.84,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -759,8 +949,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.4849,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": -7.31,
+      "hours_until_start": 9.47,
+      "winner_score": -7.26,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -787,8 +977,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.6285,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": -20.87,
+      "hours_until_start": 9.47,
+      "winner_score": -20.82,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -815,8 +1005,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.648,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 115.21,
+      "hours_until_start": 9.97,
+      "winner_score": 115.25,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -843,8 +1033,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0733,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 44.59,
+      "hours_until_start": 9.97,
+      "winner_score": 44.63,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -871,8 +1061,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0733,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 29.92,
+      "hours_until_start": 9.97,
+      "winner_score": 29.97,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -897,8 +1087,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2641,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 26.87,
+      "hours_until_start": 9.97,
+      "winner_score": 26.92,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -923,8 +1113,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2507,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 25.53,
+      "hours_until_start": 9.97,
+      "winner_score": 25.58,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -949,8 +1139,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2338,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 23.84,
+      "hours_until_start": 9.97,
+      "winner_score": 23.89,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -975,8 +1165,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.152,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 15.66,
+      "hours_until_start": 9.97,
+      "winner_score": 15.71,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -1003,8 +1193,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.2671,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 11.21,
+      "hours_until_start": 9.97,
+      "winner_score": 11.26,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -1031,8 +1221,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.321,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 6.67,
+      "hours_until_start": 9.97,
+      "winner_score": 6.72,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -1059,8 +1249,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.648,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": -21.94,
+      "hours_until_start": 9.97,
+      "winner_score": -21.89,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -1085,8 +1275,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2795,
       "start_datetime_local": "2026-05-08T16:15:00+02:00",
-      "hours_until_start": 10.41,
-      "winner_score": 28.35,
+      "hours_until_start": 10.22,
+      "winner_score": 28.4,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -1113,37 +1303,9 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.2067,
       "start_datetime_local": "2026-05-08T16:15:00+02:00",
-      "hours_until_start": 10.41,
-      "winner_score": 15.75,
+      "hours_until_start": 10.22,
+      "winner_score": 15.8,
       "final_reject_reason": "odds_outside_safe_range"
-    },
-    {
-      "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
-      "sport": "football",
-      "league": "bet365_full_page_inline",
-      "event": "Lazio vs Inter Milan",
-      "start_time_visible": "Fre 18:00",
-      "parse_method": "football_1x2_inline_row_pdf",
-      "section_event_count": 1,
-      "source_bankroll_dkk": 68.36,
-      "source_capture_time_local": "2026-05-08T05:40:00+02:00",
-      "market": "1x2",
-      "selection": "Inter Milan",
-      "line": "2",
-      "odds": 1.8,
-      "confidence": "high",
-      "explanation": "Inter Milan vinder til odds 1.8",
-      "score": 5,
-      "implied_probability": 0.5556,
-      "market_overround": 1.048,
-      "complete_1x2_market": true,
-      "normalized_probability": 0.5301,
-      "team_probability_rank": 1,
-      "team_probability_margin": 0.3181,
-      "start_datetime_local": "2026-05-08T18:00:00+02:00",
-      "hours_until_start": 12.16,
-      "winner_score": 71.64,
-      "final_reject_reason": "starts_too_late"
     },
     {
       "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -1169,8 +1331,8 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0814,
       "start_datetime_local": "2026-05-08T18:00:00+02:00",
-      "hours_until_start": 12.16,
-      "winner_score": 45.05,
+      "hours_until_start": 11.97,
+      "winner_score": 45.06,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -1197,8 +1359,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0814,
       "start_datetime_local": "2026-05-08T18:00:00+02:00",
-      "hours_until_start": 12.16,
-      "winner_score": 28.77,
+      "hours_until_start": 11.97,
+      "winner_score": 28.78,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -1223,8 +1385,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2618,
       "start_datetime_local": "2026-05-08T18:00:00+02:00",
-      "hours_until_start": 12.16,
-      "winner_score": 26.18,
+      "hours_until_start": 11.97,
+      "winner_score": 26.19,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -1249,8 +1411,8 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2579,
       "start_datetime_local": "2026-05-08T18:00:00+02:00",
-      "hours_until_start": 12.16,
-      "winner_score": 25.79,
+      "hours_until_start": 11.97,
+      "winner_score": 25.8,
       "final_reject_reason": "draws_disabled"
     },
     {
@@ -1277,8 +1439,8 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.3181,
       "start_datetime_local": "2026-05-08T18:00:00+02:00",
-      "hours_until_start": 12.16,
-      "winner_score": 5.29,
+      "hours_until_start": 11.97,
+      "winner_score": 5.3,
       "final_reject_reason": "odds_outside_safe_range"
     },
     {
@@ -1305,7 +1467,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.5631,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 104.77,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1333,7 +1495,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.3624,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 79.43,
       "final_reject_reason": "starts_too_late"
     },
@@ -1361,7 +1523,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1908,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 56.04,
       "final_reject_reason": "starts_too_late"
     },
@@ -1387,7 +1549,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2697,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 26.97,
       "final_reject_reason": "draws_disabled"
     },
@@ -1413,7 +1575,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.218,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 21.8,
       "final_reject_reason": "draws_disabled"
     },
@@ -1441,7 +1603,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1908,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 17.43,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1467,7 +1629,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.1653,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 16.53,
       "final_reject_reason": "draws_disabled"
     },
@@ -1495,7 +1657,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.3624,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": 2.86,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1523,7 +1685,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.5631,
       "start_datetime_local": "2026-05-08T18:30:00+02:00",
-      "hours_until_start": 12.66,
+      "hours_until_start": 12.47,
       "winner_score": -14.58,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1551,7 +1713,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2874,
       "start_datetime_local": "2026-05-08T19:00:00+02:00",
-      "hours_until_start": 13.16,
+      "hours_until_start": 12.97,
       "winner_score": 70.82,
       "final_reject_reason": "starts_too_late"
     },
@@ -1579,7 +1741,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1242,
       "start_datetime_local": "2026-05-08T19:00:00+02:00",
-      "hours_until_start": 13.16,
+      "hours_until_start": 12.97,
       "winner_score": 48.98,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1605,7 +1767,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2688,
       "start_datetime_local": "2026-05-08T19:00:00+02:00",
-      "hours_until_start": 13.16,
+      "hours_until_start": 12.97,
       "winner_score": 26.88,
       "final_reject_reason": "draws_disabled"
     },
@@ -1633,7 +1795,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.1242,
       "start_datetime_local": "2026-05-08T19:00:00+02:00",
-      "hours_until_start": 13.16,
+      "hours_until_start": 12.97,
       "winner_score": 24.14,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1659,7 +1821,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.222,
       "start_datetime_local": "2026-05-08T19:00:00+02:00",
-      "hours_until_start": 13.16,
+      "hours_until_start": 12.97,
       "winner_score": 22.2,
       "final_reject_reason": "draws_disabled"
     },
@@ -1687,7 +1849,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.2874,
       "start_datetime_local": "2026-05-08T19:00:00+02:00",
-      "hours_until_start": 13.16,
+      "hours_until_start": 12.97,
       "winner_score": 10.16,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1715,7 +1877,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.4578,
       "start_datetime_local": "2026-05-08T20:30:00+02:00",
-      "hours_until_start": 14.66,
+      "hours_until_start": 14.47,
       "winner_score": 91.29,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1741,7 +1903,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.1988,
       "start_datetime_local": "2026-05-08T20:30:00+02:00",
-      "hours_until_start": 14.66,
+      "hours_until_start": 14.47,
       "winner_score": 19.88,
       "final_reject_reason": "draws_disabled"
     },
@@ -1769,7 +1931,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.4578,
       "start_datetime_local": "2026-05-08T20:30:00+02:00",
-      "hours_until_start": 14.66,
+      "hours_until_start": 14.47,
       "winner_score": -5.72,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1797,7 +1959,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.5264,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 98.59,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1825,7 +1987,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.4941,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 94.95,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1853,7 +2015,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0488,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 40.31,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1881,7 +2043,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0488,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 30.55,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -1907,7 +2069,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2913,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 29.13,
       "final_reject_reason": "draws_disabled"
     },
@@ -1933,7 +2095,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2073,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 20.73,
       "final_reject_reason": "draws_disabled"
     },
@@ -1959,7 +2121,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2009,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": 20.09,
       "final_reject_reason": "draws_disabled"
     },
@@ -1987,7 +2149,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.4941,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": -9.77,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2015,7 +2177,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.5264,
       "start_datetime_local": "2026-05-08T20:45:00+02:00",
-      "hours_until_start": 14.91,
+      "hours_until_start": 14.72,
       "winner_score": -12.69,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2043,7 +2205,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0912,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 44.77,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2071,7 +2233,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0404,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 39.75,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2099,7 +2261,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.0208,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 38.45,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2127,7 +2289,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0208,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 34.29,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2155,7 +2317,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0404,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 31.67,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2181,7 +2343,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.287,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 28.7,
       "final_reject_reason": "draws_disabled"
     },
@@ -2207,7 +2369,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2858,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 28.58,
       "final_reject_reason": "draws_disabled"
     },
@@ -2233,7 +2395,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.2726,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 27.26,
       "final_reject_reason": "draws_disabled"
     },
@@ -2261,7 +2423,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.0912,
       "start_datetime_local": "2026-05-08T21:00:00+02:00",
-      "hours_until_start": 15.16,
+      "hours_until_start": 14.97,
       "winner_score": 26.53,
       "final_reject_reason": "odds_outside_safe_range"
     },
@@ -2289,7 +2451,7 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2209,
       "start_datetime_local": "2026-05-15T02:10:00+02:00",
-      "hours_until_start": 164.33,
+      "hours_until_start": 164.13,
       "winner_score": 55.23,
       "final_reject_reason": "starts_too_late"
     },
@@ -2315,7 +2477,7 @@
       "complete_1x2_market": true,
       "normalized_probability": 0.3373,
       "start_datetime_local": "2026-05-15T02:10:00+02:00",
-      "hours_until_start": 164.33,
+      "hours_until_start": 164.13,
       "winner_score": 33.73,
       "final_reject_reason": "draws_disabled"
     },
@@ -2343,7 +2505,7 @@
       "team_probability_rank": 2,
       "team_probability_margin": -0.2209,
       "start_datetime_local": "2026-05-15T02:10:00+02:00",
-      "hours_until_start": 164.33,
+      "hours_until_start": 164.13,
       "winner_score": 11.04,
       "final_reject_reason": "odds_outside_safe_range"
     }
@@ -2373,11 +2535,11 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2755,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 69.21,
+      "hours_until_start": 7.47,
+      "winner_score": 69.26,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.519, margin 0.2755, odds 1.83, starter om 7.66 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.519, margin 0.2755, odds 1.83, starter om 7.47 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.01,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
@@ -2407,11 +2569,11 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1747,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 55.9,
+      "hours_until_start": 9.47,
+      "winner_score": 55.95,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4613, margin 0.1747, odds 2.05, starter om 9.66 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4613, margin 0.1747, odds 2.05, starter om 9.47 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.0075,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
@@ -2441,11 +2603,11 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.321,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 74.32,
+      "hours_until_start": 9.97,
+      "winner_score": 74.37,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5436, margin 0.321, odds 1.72, starter om 10.16 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5436, margin 0.321, odds 1.72, starter om 9.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.01,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
@@ -2475,11 +2637,11 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2671,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 66.91,
+      "hours_until_start": 9.97,
+      "winner_score": 66.96,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5082, margin 0.2671, odds 1.85, starter om 10.16 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5082, margin 0.2671, odds 1.85, starter om 9.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.01,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
@@ -2509,15 +2671,49 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2067,
       "start_datetime_local": "2026-05-08T16:15:00+02:00",
-      "hours_until_start": 10.41,
-      "winner_score": 57.55,
+      "hours_until_start": 10.22,
+      "winner_score": 57.59,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4636, margin 0.2067, odds 2.05, starter om 10.41 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4636, margin 0.2067, odds 2.05, starter om 10.22 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.0075,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
       "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0075, total cap 10%."
+    },
+    {
+      "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
+      "sport": "football",
+      "league": "bet365_full_page_inline",
+      "event": "Lazio vs Inter Milan",
+      "start_time_visible": "Fre 18:00",
+      "parse_method": "football_1x2_inline_row_pdf",
+      "section_event_count": 1,
+      "source_bankroll_dkk": 68.36,
+      "source_capture_time_local": "2026-05-08T05:40:00+02:00",
+      "market": "1x2",
+      "selection": "Inter Milan",
+      "line": "2",
+      "odds": 1.8,
+      "confidence": "high",
+      "explanation": "Inter Milan vinder til odds 1.8",
+      "score": 5,
+      "implied_probability": 0.5556,
+      "market_overround": 1.048,
+      "complete_1x2_market": true,
+      "normalized_probability": 0.5301,
+      "team_probability_rank": 1,
+      "team_probability_margin": 0.3181,
+      "start_datetime_local": "2026-05-08T18:00:00+02:00",
+      "hours_until_start": 11.97,
+      "winner_score": 71.65,
+      "final_pick": true,
+      "pick_type": "winner",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5301, margin 0.3181, odds 1.8, starter om 11.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "stake_pct": 0.01,
+      "stake_dkk_raw": 1.0,
+      "stake_dkk": 1.0,
+      "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%."
     }
   ],
   "picks_removed_by_gemini": [
@@ -2545,20 +2741,135 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2755,
       "start_datetime_local": "2026-05-08T13:30:00+02:00",
-      "hours_until_start": 7.66,
-      "winner_score": 69.21,
+      "hours_until_start": 7.47,
+      "winner_score": 69.26,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.519, margin 0.2755, odds 1.83, starter om 7.66 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.519, margin 0.2755, odds 1.83, starter om 7.47 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.01,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
       "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%.",
       "gemini_research": {
-        "error": "http_400",
-        "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Tool use with a response mime type: 'application/json' is unsupported\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
         "event": "Liverpool vs Chelsea",
         "selection": "Liverpool",
+        "verdict": "approve",
+        "risk_level": "medium",
+        "gemini_confidence": 0.7,
+        "winner_probability_estimate": 0.55,
+        "stake_multiplier": 1.0,
+        "edge_status": "neutral",
+        "edge_percent_estimate": 0.0,
+        "other_bookmaker_odds": [
+          {
+            "bookmaker": "Betfred",
+            "odds": 1.9,
+            "source": "GoonersGuide.com",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Cloudbet",
+            "odds": 1.84,
+            "source": "GoonersGuide.com",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Sportbet",
+            "odds": 1.79,
+            "source": "GoonersGuide.com",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Kalshi",
+            "odds": 1.85,
+            "source": "Kalshi",
+            "confidence": "medium"
+          },
+          {
+            "bookmaker": "Dimers",
+            "odds": 1.79,
+            "source": "Dimers",
+            "confidence": "medium"
+          }
+        ],
+        "market_summary": "Liverpool is the clear market favorite at home, with Chelsea in catastrophic form and facing significant injury woes. Odds are generally consistent across bookmakers.",
+        "form_summary": "Liverpool has a mixed recent form (W3 L2 in last 5 PL games), but maintains a strong home record. Chelsea has lost their last six Premier League matches, ranking bottom on the form table.",
+        "injury_rotation_summary": "Liverpool has an extensive injury list including key players like Alisson Becker, Mohamed Salah, Alexander Isak, and Ibrahima Konate. Chelsea also has significant injuries, particularly in attack and goalkeeper, but Reece James and Levi Colwill are in contention.",
+        "motivation_summary": "Liverpool is highly motivated to secure Champions League qualification. Chelsea's European hopes are over, but they may seek momentum for an upcoming FA Cup final.",
+        "key_reasons_for": [
+          "Chelsea's catastrophic recent form, having lost their last six Premier League matches.",
+          "Liverpool's strong home record and historical advantage against Chelsea at Anfield.",
+          "High motivation for Liverpool to secure Champions League qualification.",
+          "Market consensus and expert predictions heavily favor a Liverpool win."
+        ],
+        "key_reasons_against": [
+          "Liverpool has an extensive injury list, including key players like Alisson Becker, Mohamed Salah, Alexander Isak, and Ibrahima Konate.",
+          "Chelsea won the reverse fixture earlier in the season."
+        ],
+        "red_flags": [
+          "Liverpool's significant injury crisis, particularly in goal and attack, could impact performance."
+        ],
+        "final_action": "keep",
+        "summary": "Væddemålet på Liverpool til at vinde mod Chelsea godkendes. Liverpool er storfavorit på hjemmebane med høj motivation for Champions League-kvalifikation, og Chelsea er i katastrofal form med mange skader. Selvom Liverpool også har betydelige skadesproblemer, er markedets sandsynlighed for en Liverpool-sejr høj, og oddsene er konkurrencedygtige.",
+        "grounding_sources": [
+          {
+            "title": "onefootball.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEueHif8r2toHeVV8x3DWm60mEzzMJ1QRJFVAzEv3sEAi5nVGdv3mXM-hP4rag_pIxgEyPEsxLbyh8YjFF8LOKkx1kkcGnLHAX1h3b-giSRs3zqwmVy78M4YzXQhvdYIeVdR0YeOwD6okk26afN_6YYB_hMUBnW6q7yQ3flg1qe2ifd-Ik5WOjj9RSHH3NJyZMX3-iRxYYq4lR9y9wSvizLFzoQuWF98-5KlgXmGEdxdLpH"
+          },
+          {
+            "title": "matchbingo.co.uk",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED9SJnSf-TNbFuKnG7reZ51MexV5X8EE5XeSPZJqEyymeTQjVu9WryTzvcnkcUQ6pyAi198aYkZjCYo9bhF9v_xUKebhzpobxrhwkSgEWlhd4cLswS6dlDkwIW46kPy4glh5UcpmeexhNBC_mrcFve0M_iRDEY5wmPUtyHcQ=="
+          },
+          {
+            "title": "sportsgambler.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG210ZoInZOczwdOHjWd9H-bQL_52alpOCIvA_UyPW6966NqUc17edrSBTSYruNX3aHlAlltrjcBMq3CHHht_QqTpnhDzsYL7X78mkf-kQqL4DxRBYc2sIedANlaqGddYKK055jfB6TyZzkRDxEjbLJziJi42MHcgnpuX9qSNUIzT_PlMtGZzebOmRMl4XlQk9E-mGuiHTf6-kIE-n4p_MOs3gdIihKng=="
+          },
+          {
+            "title": "statmuse.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnlpUPLjEDqDDmjAzlerPjlgbf19gmqEj1QMKJLwJEGWR_l_cf7gGSlF0y3UBnvXZWOdvSIi1_9K2D99EgT7LE3MHMBWVivj-BD3pcFlmuw8pk5eBziBfWqYe_8IH3vNFmW_SRIXlmKh_zEpvw8-vJ9AyQp-bKPpixmol-"
+          },
+          {
+            "title": "flashscore.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElONd-rILTx-IXgi2zidK7GR-e5inxUkvseyGcY5aimYpS6HwMGMv8ixonRse7ZS2wO-S9euJGscUdW_C1pgZnlzgvwnk3aVsaDGcJtgl3vTz5qU1ctPXi3iylEmG76Y6EjPDeDO6JubirwdatMHo6k7WnSYv6Jr5T0xA67-AVGPnQ8dHTB9t5ApAICsbUlz24eSQfGx0a1qac-goVSo1FlF3gQQ87rfaO"
+          },
+          {
+            "title": "chelseafc.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj682XlHPV-HmbLVstzhr5yKR0iqWwQpXX6mU7LXMw20PUB8saxkM571cVFYZW8dp0I1hlkX40-Ha-IYxNnrRxXPAfHGVnO8JngU0CYZHfAzpie2VpxP5nki7ocURFkg3F3eixjtWhnL9Q4CADdOtkKks9sK-aLKPfE-zCJihjrU21cG18PHPS507NabatCur37Iowd7bPe54lEow="
+          },
+          {
+            "title": "thestatszone.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcVWIvPlcINpNtEewWVhgymfu-L8XRL3wpgRTO3W0DviZOxNpL6G8zQppvpogu9xuv3XgHSvMcjFauSmai-5EFGoOPzUEueU_pIVps_1FwfzeNMvcjmQsTY6tL41YAgsCeS-Novdz4ePcO-SbUEzaPuL8zPTZN1mfElL5naP9LRMxZjfitWUq0qfijlrAH5GA="
+          },
+          {
+            "title": "sarcomaplankathon.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-k2Xu9rCvuEDBJpcfwon0OVC5_xpW5XWBQqeOzZYsvfDpQTudANsb1meWDZMSkeH7W3TzFQNztxHujTA96eQP873OO8eJnFAjLjXOMaTZdEUvVpCB6Lu9lUrFjwTLeMOKszudNqfrPl4YnuGdsCpLFwD8rvw0dhx_9wKJdlCh26TeAD3H4hlKBwoV6Rf6h4hV_1OjLkwX7IOke3S1wvGpl_g-EIAQUpdOf9U_gkCX71qpaMTJpSt2V-dga01s56hrEUmQCv6CdHqKkUV6DORVw3HBKRNSo4_4d3W5uMTzbv8Gfn0tV2EpIKfEM16gF6ikGVzU2kWiZNW5S5UJ0h-iSDQ="
+          },
+          {
+            "title": "liverpoolfctimes.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX1X8-875Pnox2zD6qJUHp_TDd6RjdzQCQKMlVpzEJm9ta1pw4q2orty7QeIZi-rLX2H2eg9GNQ6UuicCLxPTT1J3eDe6xaGrN7RA02pWwuFWUvQFCVo2ZLXXDCFqHzZafCdTiia1vvPxZ0Qv2s9jG6RUCH2B_Z02gVLqYZS0L"
+          },
+          {
+            "title": "liverpoolfc.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM6bbULAQi9_EDWNwjUS346S1D4Alk90p25RwU-Kl-2DzpKp3SSu98D6xOv15OxKp5TZ8yDw-qFf9RTahiyt3mYq0pArQC0qCZ6YdTmMtkuSMdFfzniYN79TniZcLlDldZEabEe7L6UeHK5YOGyXsTOHHZs635l7Hph10pM5Z0Y_BS3RWhZHU65ZePILfxWw=="
+          },
+          {
+            "title": "onefootball.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc80uSGy9Juh4nmodnHxMrkDX2tHEDWhCjGM8gXiDogHtdrJgo-_TAgYXwYM61VFpcDmtd8djTFosAT6Q8wzJg18BQSm-f3mbvsvQvw1BYIi0c_lT_Dau_BwaqiB8ugNxivW6BpZaJYEfdGC5_oSg9b8rKpsw5X2vaMu4XJPZiVSEReToQJALCOUrTVsQ_pa0ot8wtoOu-ATyVcUmj1iJ6pJFtVXy_CHj6"
+          },
+          {
+            "title": "sportsmole.co.uk",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESI8DFHdIvAScYSWYXvuMXSPlZaadSRFMuaOtBDmHIBAKY1D3sAlNwLa7HSKWp-11YQtp0Xp7cKKZ3k5Ez0bW-rYTbUx55BcdtH1i4Bl3PpBQ6iDaovZMU6H0wN4UWtfdXkMU2AtyVjkG7PKyxocsuQ5waT_fm__nPEN4Mf8gnHG2FAGqnpxUh6hfoWD5VjHrQ7EVak1odfPYAIcsAZsIujkP9R80PyE9-OswslQigb0iqzquDoFo7wSsiD-eJIJTXnVyVNPhG3OHbeRMmgMaFBzF3itzO0wwlqAzzWdcWyFT2Ao-C2XBahX4="
+          }
+        ],
+        "web_search_queries": [
+          "Liverpool vs Chelsea May 8 2026 match preview",
+          "Liverpool recent form May 2026",
+          "Chelsea recent form May 2026",
+          "Liverpool injuries May 8 2026",
+          "Chelsea injuries May 8 2026",
+          "Liverpool Chelsea betting odds May 8 2026"
+        ],
+        "gemini_call_mode": "grounded_no_json_mime",
         "line": "1",
         "original_pick": {
           "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -2584,22 +2895,22 @@
           "team_probability_rank": 1,
           "team_probability_margin": 0.2755,
           "start_datetime_local": "2026-05-08T13:30:00+02:00",
-          "hours_until_start": 7.66,
-          "winner_score": 69.21,
+          "hours_until_start": 7.47,
+          "winner_score": 69.26,
           "final_pick": true,
           "pick_type": "winner",
-          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.519, margin 0.2755, odds 1.83, starter om 7.66 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.519, margin 0.2755, odds 1.83, starter om 7.47 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
           "stake_pct": 0.01,
           "stake_dkk_raw": 1.0,
           "stake_dkk": 1.0,
           "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%."
         },
-        "researched_at": "2026-05-08T03:50:21Z"
+        "researched_at": "2026-05-08T04:02:29Z"
       },
       "gemini_final_decision": "remove",
-      "gemini_decision_reason": "gemini_error",
+      "gemini_decision_reason": "gemini_red_flags",
       "gemini_stake_multiplier": 0.0,
-      "final_reject_reason": "gemini_error"
+      "final_reject_reason": "gemini_red_flags"
     },
     {
       "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -2625,137 +2936,16 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.1747,
       "start_datetime_local": "2026-05-08T15:30:00+02:00",
-      "hours_until_start": 9.66,
-      "winner_score": 55.9,
+      "hours_until_start": 9.47,
+      "winner_score": 55.95,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4613, margin 0.1747, odds 2.05, starter om 9.66 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4613, margin 0.1747, odds 2.05, starter om 9.47 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.0075,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
       "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0075, total cap 10%.",
-      "gemini_research": {
-        "error": "http_400",
-        "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Tool use with a response mime type: 'application/json' is unsupported\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
-        "event": "Augsburg vs Borussia M'gladb…",
-        "selection": "Augsburg",
-        "line": "1",
-        "original_pick": {
-          "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
-          "sport": "football",
-          "league": "bet365_full_page_inline",
-          "event": "Augsburg vs Borussia M'gladb…",
-          "start_time_visible": "Fre 15:30",
-          "parse_method": "football_1x2_inline_row_pdf",
-          "section_event_count": 1,
-          "source_bankroll_dkk": 68.36,
-          "source_capture_time_local": "2026-05-08T05:40:00+02:00",
-          "market": "1x2",
-          "selection": "Augsburg",
-          "line": "1",
-          "odds": 2.05,
-          "confidence": "high",
-          "explanation": "Augsburg vinder til odds 2.05",
-          "score": 5,
-          "implied_probability": 0.4878,
-          "market_overround": 1.0575,
-          "complete_1x2_market": true,
-          "normalized_probability": 0.4613,
-          "team_probability_rank": 1,
-          "team_probability_margin": 0.1747,
-          "start_datetime_local": "2026-05-08T15:30:00+02:00",
-          "hours_until_start": 9.66,
-          "winner_score": 55.9,
-          "final_pick": true,
-          "pick_type": "winner",
-          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4613, margin 0.1747, odds 2.05, starter om 9.66 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
-          "stake_pct": 0.0075,
-          "stake_dkk_raw": 1.0,
-          "stake_dkk": 1.0,
-          "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0075, total cap 10%."
-        },
-        "researched_at": "2026-05-08T03:50:22Z"
-      },
-      "gemini_final_decision": "remove",
-      "gemini_decision_reason": "gemini_error",
-      "gemini_stake_multiplier": 0.0,
-      "final_reject_reason": "gemini_error"
-    },
-    {
-      "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
-      "sport": "football",
-      "league": "bet365_full_page_inline",
-      "event": "Silkeborg IF vs FC København",
-      "start_time_visible": "Fre 16:00",
-      "parse_method": "football_1x2_inline_row_pdf",
-      "section_event_count": 1,
-      "source_bankroll_dkk": 68.36,
-      "source_capture_time_local": "2026-05-08T05:40:00+02:00",
-      "market": "1x2",
-      "selection": "FC København",
-      "line": "2",
-      "odds": 1.72,
-      "confidence": "high",
-      "explanation": "FC København vinder til odds 1.72",
-      "score": 5,
-      "implied_probability": 0.5814,
-      "market_overround": 1.0695,
-      "complete_1x2_market": true,
-      "normalized_probability": 0.5436,
-      "team_probability_rank": 1,
-      "team_probability_margin": 0.321,
-      "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 74.32,
-      "final_pick": true,
-      "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5436, margin 0.321, odds 1.72, starter om 10.16 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
-      "stake_pct": 0.01,
-      "stake_dkk_raw": 1.0,
-      "stake_dkk": 1.0,
-      "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%.",
-      "gemini_research": {
-        "error": "http_400",
-        "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Tool use with a response mime type: 'application/json' is unsupported\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
-        "event": "Silkeborg IF vs FC København",
-        "selection": "FC København",
-        "line": "2",
-        "original_pick": {
-          "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
-          "sport": "football",
-          "league": "bet365_full_page_inline",
-          "event": "Silkeborg IF vs FC København",
-          "start_time_visible": "Fre 16:00",
-          "parse_method": "football_1x2_inline_row_pdf",
-          "section_event_count": 1,
-          "source_bankroll_dkk": 68.36,
-          "source_capture_time_local": "2026-05-08T05:40:00+02:00",
-          "market": "1x2",
-          "selection": "FC København",
-          "line": "2",
-          "odds": 1.72,
-          "confidence": "high",
-          "explanation": "FC København vinder til odds 1.72",
-          "score": 5,
-          "implied_probability": 0.5814,
-          "market_overround": 1.0695,
-          "complete_1x2_market": true,
-          "normalized_probability": 0.5436,
-          "team_probability_rank": 1,
-          "team_probability_margin": 0.321,
-          "start_datetime_local": "2026-05-08T16:00:00+02:00",
-          "hours_until_start": 10.16,
-          "winner_score": 74.32,
-          "final_pick": true,
-          "pick_type": "winner",
-          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5436, margin 0.321, odds 1.72, starter om 10.16 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
-          "stake_pct": 0.01,
-          "stake_dkk_raw": 1.0,
-          "stake_dkk": 1.0,
-          "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%."
-        },
-        "researched_at": "2026-05-08T03:50:22Z"
-      },
+      "gemini_research": null,
       "gemini_final_decision": "remove",
       "gemini_decision_reason": "gemini_error",
       "gemini_stake_multiplier": 0.0,
@@ -2785,20 +2975,138 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2671,
       "start_datetime_local": "2026-05-08T16:00:00+02:00",
-      "hours_until_start": 10.16,
-      "winner_score": 66.91,
+      "hours_until_start": 9.97,
+      "winner_score": 66.96,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5082, margin 0.2671, odds 1.85, starter om 10.16 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5082, margin 0.2671, odds 1.85, starter om 9.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.01,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
       "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%.",
       "gemini_research": {
-        "error": "http_400",
-        "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Tool use with a response mime type: 'application/json' is unsupported\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
         "event": "Sunderland vs Man Utd",
         "selection": "Man Utd",
+        "verdict": "reject",
+        "risk_level": "medium",
+        "gemini_confidence": 0.8,
+        "winner_probability_estimate": 0.5,
+        "stake_multiplier": 0.0,
+        "edge_status": "negative",
+        "edge_percent_estimate": -1.95,
+        "other_bookmaker_odds": [
+          {
+            "bookmaker": "1win",
+            "odds": 1.97,
+            "source": "Transfermarkt",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "1xBet",
+            "odds": 1.93,
+            "source": "Transfermarkt",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Oddspedia",
+            "odds": 1.76,
+            "source": "Oddspedia",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Oddschecker",
+            "odds": 1.91,
+            "source": "Oddschecker",
+            "confidence": "high"
+          },
+          {
+            "bookmaker": "Dailysports",
+            "odds": 1.87,
+            "source": "Dailysports",
+            "confidence": "high"
+          }
+        ],
+        "market_summary": "Man Utd is the market favorite, but the bet365 odds of 1.85 are generally lower than or on par with other bookmakers, indicating a negative edge compared to the broader market.",
+        "form_summary": "Manchester United is in excellent form, having won their last three games, including a 3-2 victory over Liverpool. Under Michael Carrick, they have the best Premier League record since January 2026 (10-2-2). Sunderland's recent form is mixed, with two wins, one draw, and two losses in their last five Premier League matches, and they are winless in their last three games.",
+        "injury_rotation_summary": "Sunderland will be without key starting centre-back Dan Ballard due to a three-match suspension, which was upheld after an appeal, ruling him out for the rest of the season. Romaine Mundle and Simon Moore are also injured. Bertrand Traoré and Nilson Angulo are expected to return. For Manchester United, Lisandro Martínez returns from suspension, which is a boost. However, Matthijs de Ligt is out with a back injury. Benjamin Šeško (shin injury), Matheus Cunha (hip problem), and Luke Shaw (knock injury) are all doubtful or facing late fitness tests.",
+        "motivation_summary": "Manchester United has already secured Champions League qualification and sits 3rd in the Premier League, so the match holds less critical importance for their league position. However, they will aim to maintain momentum and pride, and Michael Carrick is making a strong case for the permanent manager role. Sunderland, currently 12th and mathematically safe from relegation, still has slim hopes for European qualification (4-5 points adrift of 6th/7th place with 3 games remaining) and will be motivated to perform well at home against a big club.",
+        "key_reasons_for": [
+          "Manchester United is in excellent recent form under Michael Carrick, with the best Premier League record since January 2026.",
+          "Manchester United has won their last three matches, including a significant victory over Liverpool.",
+          "Sunderland will be without key starting centre-back Dan Ballard due to suspension for the remainder of the season.",
+          "Lisandro Martínez returns from suspension for Manchester United, strengthening their defense."
+        ],
+        "key_reasons_against": [
+          "The bet365 odds of 1.85 are lower than or similar to other bookmakers, indicating a negative edge compared to the market.",
+          "Manchester United has several key players doubtful or injured, including Benjamin Šeško, Matheus Cunha, Luke Shaw, and Matthijs de Ligt.",
+          "Sunderland, despite recent struggles, will be motivated playing at home with slim hopes of European qualification and for pride against a top team.",
+          "Sunderland's home form, while mixed, can be challenging, and they will aim to bounce back from recent heavy home defeats."
+        ],
+        "red_flags": [
+          "Negative edge compared to other bookmakers' odds.",
+          "Multiple injury doubts for Manchester United's key players."
+        ],
+        "final_action": "remove",
+        "summary": "Man Utd er favoritter med god form, men odds 1.85 er lavere end andre bookmakere, og der er skadesusikkerhed for vigtige spillere. Sunderland er svækket af karantæne, men spiller hjemme med motivation. Samlet set er værdien ikke tilstrækkelig, og væddemålet afvises.",
+        "grounding_sources": [
+          {
+            "title": "transfermarkt.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_mY0L8nXRqRGyYkYMCQu6l7Grpg-7A7T-0iwpJHRuD6zVUUwjxieCwZy14F29bMNRnW22OuvOpzJYIZfSOISbfA93BJ3H7yKkJ9TZnukAeyNXm1tN7kvn4OMkeTmLDtzK6j6_utpTO0mW4tPGGfE5OSeBJCFWtYHljKPDEaL2_lpRbd087ez0hDAC_aXdSabX1Zy_v4EeFbbHiN__6-l6"
+          },
+          {
+            "title": "oddspedia.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGza_0zo4qJJHVO0UVQA7Ws6dqchMogTQZ8hppsffWpnZcctbFd3gNm59HnfU8RqEikLwaWl1kvUNm25TtZUSOcXGvtTIde6ra1FfeSFuW0wixQCwxCU9s2OpRYn0Iebhf4qJtKtuSH6wqP4KCECmeAHry9O_w8NPn_dZlHbA=="
+          },
+          {
+            "title": "oddschecker.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD3oY9wMkf0idEkZRO-xhQsoVv7GjstSHvgWg7YtfoVWFMMS4qRsp8QXGCe-fJPHvfPXWbrBVTArOhKrWjTqr341lJeeTGjWsWRUJumWeuNmSmtYQmPowWOPlJnqv5B1OUv4GXtGCXU4PCPLbkeJ4AoY39f_iBtHweifr42H6GW-Kmu-3MDSZenrYZevk1ZGv3Mg=="
+          },
+          {
+            "title": "squawka.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa2jMDv63zulZebOgQNbEg2JbJQbGHC6K3CEzlsu9IaYC8U6sHZ6kAQZz2PutvPq5ZfcmHn4RLWybKmVvvGvh8UE7nYGoIfRjbsoz76tYlQdcwkRIAyaMt6eBvhskcBOkBSCBwYOGRDKkxNQfb37rzedklkyv8Y626TxPClruFa9CPUSXclXd6YZu64DrEuXhP9Wox_tPVe37zUkbd9W0GnA=="
+          },
+          {
+            "title": "ratingbet.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEPv0EVy7ItAFbvucJr9mjQ-AsBvq5Hm3VRJX_S1AvphTDgk-bMjchXAU_YbL4cPKU82We1g-cZ_vTnLVBdWI7qjoKNq_I3oKVvJhS8aD5NnbONzu6HTDAHNfFM3FjW6vVYp4L_nc1Oul1IGk2u4VM2Vl0I-aXo4PP9PfNSogGhG4cJNLgUMLsl2bg8hDzTRNDCU5X2LcXx4dKjLnVhwKoFcxK-iioE22VyQ=="
+          },
+          {
+            "title": "fbref.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9Asub8zqNPHytyBESbmRO-koBUaSvO39OxF9mTJL57nOEMisZ91P--Kp34eP2tJIKO7iesAm6q-u1bW5Eb9fhSz1UMQ-0S2kbHAnOfYVX1MHs-jXWV7Ulw3WtPt_X7Bs45C0FCmace5XHJmnktwcL1jUiLAX0-g=="
+          },
+          {
+            "title": "dailysports.net",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKjd-cHQF8VnMl7ob0US1OHSmcH9t-LXWnZNAJfYxldvIh4MlUNj087jL5u2fIRRC4SNuwt1kXUoXsqgk5EIsM-z5cHFqBJmD-5VXfeo7XQtKrrGgwAct4CiBZ7vT40x2KE6z5iozCYVGk-WqYjxwze-ljvodqBQ7OXgxws8h9SKdd2p9DB8heo5RhFJiScdoxriKoJHol_5iQQcvFPo9D59HK0yAYfL88kJBW"
+          },
+          {
+            "title": "sofascore.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxC9gh7DUBqH76y6DvLYhJ4pR-o2ngbErC42-gf6pFIApV2XyXteISgSYdrDFbRgDHVWMJgQ6XZtR3F1k-Xfb3656dwWGvjzmk3T7yHQmSoJtnSvcdkL5N2rzg0R5vH164GZLKMqAzNH2ZgDho0yNRjuTHg0jR4JtxvDL4FKsWeBGHUxpd_qWgVcjPNilXi1T8gdAGD-uYB3Z07RvST3ek71PoDg=="
+          },
+          {
+            "title": "fotmob.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSiXXZdrWRwQ5eixO1pdrbBAwWuELDLxSFKAHb90JY88fuerxrZ6V1tuAzSxaVj3Dj-8d58jdQk3PO8Ay8BtBPfrQDbOnyqCfuGThL-898xXAKkdV6V9hR0Y8g-NgJMdR9PWTjfrM7hJUoUHQy-sMi"
+          },
+          {
+            "title": "besoccer.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeSlEDX7BiwK-XggEbRnNS9nBm45Zy70NFtEc_x5-HhsoDcjDiSMoTHcha_CW9qgN9WrcRAl3OMEGVFEIZAEnChRBTEBf8h6xYvjGot1XTPDXhxUDAlcPvnx9X1Ufq58Yt8-hWph00SjHvJiYGYHbVYKrFIM_zG72uwQQZ"
+          },
+          {
+            "title": "mansionsportsfc.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUm-WkYgNkIUD_aL-CueKoshT52mxAgQqcKmnml6nLR1at9DGFBy42wb0GRE5G3DkaXgA5cOMFZYOShDL8Ch40MY4f-9npZIKsFqmDQO5RJMCSW1e_3_yAbiyuH2Njlu8EG6vZonmGfE5-pxsYFYtvOP3YhIOKIp-chMadBVIcB3BNbHBSV2PMWtbWrgxzyA=="
+          },
+          {
+            "title": "standard.co.uk",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_-yIjesUArm5ZwX9zjx05K4TKU39aEu_lBCQcB0lwM7xA7UoMQC_liTWw7TCsiRUg6W7wvMSlB1Ccly6TP7qlZgLZtsDCoeAapZgHGw2TrWN5-t1RSG5ASbJkGrskNu1W3ax7vRV1R6vdonnPaexpVCJr-Kjw82rxsYCaGxBHPtdVatjQIN6P4w3vHozYhszgWrmZULhQEG1PUi0VZ4Pwymzc6xGAQgjesd2fsCN141iq-6C894X-V_UncVbfQFKChG1BVWXVNu-sXgRp6XNZLXBkylMf7euaHqWOPHjUZebQe_BnumWMNlVDYLy7mg=="
+          }
+        ],
+        "web_search_queries": [
+          "Sunderland vs Man Utd May 8 2026 football match",
+          "Sunderland AFC recent form 2026",
+          "Manchester United recent form 2026",
+          "Sunderland AFC injuries suspensions May 8 2026",
+          "Manchester United injuries suspensions May 8 2026",
+          "Sunderland vs Man Utd odds comparison May 8 2026"
+        ],
+        "gemini_call_mode": "grounded_no_json_mime",
         "line": "2",
         "original_pick": {
           "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -2824,22 +3132,22 @@
           "team_probability_rank": 1,
           "team_probability_margin": 0.2671,
           "start_datetime_local": "2026-05-08T16:00:00+02:00",
-          "hours_until_start": 10.16,
-          "winner_score": 66.91,
+          "hours_until_start": 9.97,
+          "winner_score": 66.96,
           "final_pick": true,
           "pick_type": "winner",
-          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5082, margin 0.2671, odds 1.85, starter om 10.16 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5082, margin 0.2671, odds 1.85, starter om 9.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
           "stake_pct": 0.01,
           "stake_dkk_raw": 1.0,
           "stake_dkk": 1.0,
           "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%."
         },
-        "researched_at": "2026-05-08T03:50:23Z"
+        "researched_at": "2026-05-08T04:04:08Z"
       },
       "gemini_final_decision": "remove",
-      "gemini_decision_reason": "gemini_error",
+      "gemini_decision_reason": "gemini_reject",
       "gemini_stake_multiplier": 0.0,
-      "final_reject_reason": "gemini_error"
+      "final_reject_reason": "gemini_reject"
     },
     {
       "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -2865,20 +3173,50 @@
       "team_probability_rank": 1,
       "team_probability_margin": 0.2067,
       "start_datetime_local": "2026-05-08T16:15:00+02:00",
-      "hours_until_start": 10.41,
-      "winner_score": 57.55,
+      "hours_until_start": 10.22,
+      "winner_score": 57.59,
       "final_pick": true,
       "pick_type": "winner",
-      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4636, margin 0.2067, odds 2.05, starter om 10.41 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4636, margin 0.2067, odds 2.05, starter om 10.22 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
       "stake_pct": 0.0075,
       "stake_dkk_raw": 1.0,
       "stake_dkk": 1.0,
       "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0075, total cap 10%.",
       "gemini_research": {
-        "error": "http_400",
-        "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Tool use with a response mime type: 'application/json' is unsupported\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
         "event": "Sevilla vs Espanyol",
         "selection": "Sevilla",
+        "verdict": "insufficient_data",
+        "risk_level": "high",
+        "gemini_confidence": 0.0,
+        "winner_probability_estimate": 0.0,
+        "stake_multiplier": 0.0,
+        "edge_status": "unknown",
+        "edge_percent_estimate": 0.0,
+        "other_bookmaker_odds": [],
+        "market_summary": "Cannot assess market conditions for an event in 2026.",
+        "form_summary": "Cannot assess recent form for an event in 2026.",
+        "injury_rotation_summary": "Cannot assess injuries or rotation for an event in 2026.",
+        "motivation_summary": "Cannot assess team motivation or match importance for an event in 2026.",
+        "key_reasons_for": [],
+        "key_reasons_against": [
+          "Match is too far in the future (2026) to gather current, relevant information.",
+          "Cannot verify recent form, injuries, lineups, or motivation.",
+          "Cannot compare current bookmaker odds."
+        ],
+        "red_flags": [
+          "Event date is in the distant future (2026)."
+        ],
+        "final_action": "remove",
+        "summary": "Utilstrækkelig data: Kampen er i 2026, og der kan ikke findes aktuelle oplysninger om form, skader, motivation eller odds.",
+        "grounding_sources": [],
+        "web_search_queries": [],
+        "gemini_call_mode": "fallback_no_grounding_json_mime",
+        "grounding_error": {
+          "error": "request_failed",
+          "body": "The read operation timed out",
+          "with_grounding": true,
+          "json_mime": false
+        },
         "line": "1",
         "original_pick": {
           "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
@@ -2904,22 +3242,216 @@
           "team_probability_rank": 1,
           "team_probability_margin": 0.2067,
           "start_datetime_local": "2026-05-08T16:15:00+02:00",
-          "hours_until_start": 10.41,
-          "winner_score": 57.55,
+          "hours_until_start": 10.22,
+          "winner_score": 57.59,
           "final_pick": true,
           "pick_type": "winner",
-          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4636, margin 0.2067, odds 2.05, starter om 10.41 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.4636, margin 0.2067, odds 2.05, starter om 10.22 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
           "stake_pct": 0.0075,
           "stake_dkk_raw": 1.0,
           "stake_dkk": 1.0,
           "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0075, total cap 10%."
         },
-        "researched_at": "2026-05-08T03:50:24Z"
+        "researched_at": "2026-05-08T04:04:59Z"
       },
       "gemini_final_decision": "remove",
-      "gemini_decision_reason": "gemini_error",
+      "gemini_decision_reason": "gemini_confidence_too_low",
       "gemini_stake_multiplier": 0.0,
-      "final_reject_reason": "gemini_error"
+      "final_reject_reason": "gemini_confidence_too_low"
+    },
+    {
+      "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
+      "sport": "football",
+      "league": "bet365_full_page_inline",
+      "event": "Lazio vs Inter Milan",
+      "start_time_visible": "Fre 18:00",
+      "parse_method": "football_1x2_inline_row_pdf",
+      "section_event_count": 1,
+      "source_bankroll_dkk": 68.36,
+      "source_capture_time_local": "2026-05-08T05:40:00+02:00",
+      "market": "1x2",
+      "selection": "Inter Milan",
+      "line": "2",
+      "odds": 1.8,
+      "confidence": "high",
+      "explanation": "Inter Milan vinder til odds 1.8",
+      "score": 5,
+      "implied_probability": 0.5556,
+      "market_overround": 1.048,
+      "complete_1x2_market": true,
+      "normalized_probability": 0.5301,
+      "team_probability_rank": 1,
+      "team_probability_margin": 0.3181,
+      "start_datetime_local": "2026-05-08T18:00:00+02:00",
+      "hours_until_start": 11.97,
+      "winner_score": 71.65,
+      "final_pick": true,
+      "pick_type": "winner",
+      "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5301, margin 0.3181, odds 1.8, starter om 11.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+      "stake_pct": 0.01,
+      "stake_dkk_raw": 1.0,
+      "stake_dkk": 1.0,
+      "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%.",
+      "gemini_research": {
+        "event": "Lazio vs Inter Milan",
+        "selection": "Inter Milan",
+        "verdict": "reject",
+        "risk_level": "high",
+        "gemini_confidence": 0.8,
+        "winner_probability_estimate": 0.579,
+        "stake_multiplier": 0.0,
+        "edge_status": "neutral",
+        "edge_percent_estimate": 0.0,
+        "other_bookmaker_odds": [
+          {
+            "bookmaker": "Futbol24",
+            "odds": 1.86,
+            "source": "Futbol24.com",
+            "confidence": "medium"
+          },
+          {
+            "bookmaker": "Football Whispers",
+            "odds": 1.75,
+            "source": "Football Whispers",
+            "confidence": "medium"
+          },
+          {
+            "bookmaker": "Sportsgambler",
+            "odds": 1.73,
+            "source": "Sportsgambler",
+            "confidence": "medium"
+          },
+          {
+            "bookmaker": "Oddspedia",
+            "odds": 1.72,
+            "source": "Oddspedia",
+            "confidence": "medium"
+          }
+        ],
+        "market_summary": "Inter Milan is currently 1st in Serie A and has already secured the Scudetto for the 2025/2026 season. Lazio is 8th and is aiming for a European qualification spot.",
+        "form_summary": "Inter Milan is in stellar form, winning 74.29% of their matches this season and not losing their last 7 consecutive matches. They have scored two or more goals in their last six games across all competitions. Lazio has mixed form, with only one loss in their last 10 games across all competitions, but their last game ended in a draw.",
+        "injury_rotation_summary": "Inter Milan has several players with recent injury concerns including Hakan Çalhanoğlu (thigh), Luis Henrique (muscle), Denzel Dumfries (physical discomfort), Alessandro Bastoni (thigh), and Lautaro Martínez (muscle), although Lautaro is reported to have returned. Inter is expected to rotate their squad significantly due to having already won the league title and having a Coppa Italia final next week. Lazio also has a number of injured players including Danilo Cataldi (physical discomfort), Mario Gila (thigh), Alessio Furlanetto (ligament), Ivan Provedel (shoulder), Manuel Lazzari (muscle), Daniel Maldini (hamstring), Luca Pellegrini (muscle), Patric (muscle), and Toma Basic (adductor).",
+        "motivation_summary": "Inter Milan has already won the Serie A title, which may reduce their motivation for this league match. Their primary focus is likely on the upcoming Coppa Italia final. Lazio, on the other hand, is highly motivated to secure a European qualification spot through their league position and also has a Coppa Italia final next week, making this match a 'dress rehearsal' for both teams.",
+        "key_reasons_for": [
+          "Inter Milan's superior league position and overall season form.",
+          "Inter Milan's strong head-to-head record against Lazio in recent encounters.",
+          "Inter Milan's high-scoring ability, with two or more goals in their last six games."
+        ],
+        "key_reasons_against": [
+          "Inter Milan has already secured the Serie A title and is likely to rotate key players ahead of their Coppa Italia final next week, potentially impacting their performance.",
+          "Lazio is highly motivated to secure a European qualification spot and will be playing at home.",
+          "The match is described as a 'dress rehearsal' for the Coppa Italia final, which could lead to a less intense league encounter from both sides.",
+          "Significant injury concerns for both teams, adding to lineup uncertainty."
+        ],
+        "red_flags": [
+          "High risk of Inter Milan rotating their squad due to having already won the league and prioritizing the Coppa Italia final.",
+          "Discrepancy in the match date between the candidate information (May 8th) and multiple search results (May 9th), indicating potential inaccuracy in the candidate data.",
+          "The 'dress rehearsal' nature of the match could lead to a cautious approach from both teams, making the outcome less predictable."
+        ],
+        "final_action": "remove",
+        "summary": "Væddemålet afvises på grund af høj risiko for spillerotation og lavere motivation hos Inter Milan, da de allerede har vundet Serie A og har en Coppa Italia-finale i næste uge. Selvom Inter er det stærkere hold, skaber kampens kontekst og usikkerhed omkring holdopstillingerne for stor risiko. Der er også en uoverensstemmelse i kampdatoen mellem kandidaten og søgeresultaterne.",
+        "grounding_sources": [
+          {
+            "title": "futbol24.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkSWRhcB3L0P93rX5KA4BDF3fEkwQH1feJKA_1SXscQXU5Vc19piSjtOuv2Z4N_Hoo5_nFIEKIlSRWwZpcCGhCo8vtcjgiVEG0gRbMT67ucW9X-_7ZFzJ_L_HoaBSmGcrcxY00KhufiOMFfHvYhKyPsP8zdSyM2a4PNOJlFG9T34D6ZVJIqjIBLwot703crlvlfNe2jw=="
+          },
+          {
+            "title": "statmuse.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5GSmWLh0pDu83FRF3xEgDXtxjbrDRVpTRp-k8yDshGHpGM-4UuD8opvns08D9JzYqOeW_piMyPSBr5E5qKVV9y0yGJ6TBSZ9kkftsls7cWoqFRjAohqbDHiYbHGyLVH61vQrCcbmYhcgY-ODj0sKpj1tWWrdinb-MxRvmxHh5xps="
+          },
+          {
+            "title": "fbref.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG69qtRWqBkbLzcQLHtmMd8HkWMpa9mKbq5Ww2vK9EmTWwOqxRgXTWHdOPQeULZ0zLR5K1CUqSOP_Ijd_uTfGYESfjUbla8aNmoxKSK768aUks89QwvkhurUwJQfjdyNeiGEXaCVt3kAKeRSX75aD_oGc1v"
+          },
+          {
+            "title": "footballwhispers.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtRBSb03o_M58zKrXSDmRf2JVes4w8nlXrD_KsLgWyLkMMBbLGddhy4-fwHHe1R7wrKIKIDxpGwSU_8iKzpRDlbX7-Izs7lPyj34ZtAUPbPbUmw9U6VuBUR5C4TaZvuqaX7rAXznVEsIh-_b1J69fD0xSpOCvFgs1mOXO9FxsILXpnxcF-9ic="
+          },
+          {
+            "title": "aiscore.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbbsQjkhd2Aut5vENvgEEZkBVoKdwn9BWJKV5BSlg16ECndGbNC8A_4DEfvb65xbeJ_UvyXdBcyTW7VvaZb7R3dMcrmBsejooP-4ufJJQy7Hm1_Gm3UOr1Vxzve6WcaSzFGt1GN3gd5yxGs-5SEwoGmx9C0pA7XCtymw=="
+          },
+          {
+            "title": "fotmob.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgpwtsJ4eoG5dTo0SQFitKmqlPkmwLAkfahckiDvgS2nJA6rMQdyOfhmnmHTu6GRNFBdiccH7dsTSi8wlH3mv4hh1OGWp66Shu7rajaY2XEBlAI0hbeeag2xOpt_hRR3wkpIhyDIWoMinx"
+          },
+          {
+            "title": "sportinglife.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBaAX9cWIitn08NDG033B0yVfz680YiQG3VBbb5aUfEVA2s7T6QxjTxTi-4377dCFrDVRTJDJAc69wu1okfVt5yY_QlZrcRj0NngOd-Lsq2EXWenEhrTjW7nCo8dqUvMLrUKkvUoo94u4YyZOfWfNCOQVXWziBgz-Z0tlUIeSHs5hFnh2LeJuvpcz3OoV-Xf2oPpJiCA=="
+          },
+          {
+            "title": "tntsports.co.uk",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFEpxMiFN0z8aeFhmfXqYd11pyhy0tmfSFsnG2VQlzvPYD5LtJEV4sxdpTUhPbF4INjXafxAyQKjCFFDLwHHArFYzpoCSy7ybf36yXSHkuaUOEFxxMS_9N3y_1W_VZNKVHwSemUYaSDTJLr-3U0Z-IExCMSNhn8Bzd2Bsi7Q-a8g=="
+          },
+          {
+            "title": "sportstats365.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNcoQhFctVuq8EkAYJKo_xwnm_Waz6daIlY567GroMHxf1hXu3vjl4KIaLSGd5rQKSupO5pClAB8Gz_9tcvGwimkd0Pxj6RtNt1tKIynbo-LHOWX17aQ3rP7xHepoVjQ9dPsuLMIQwXizYpFomn6ZWgEf-yzHRV1kHvFWtvOoCOg=="
+          },
+          {
+            "title": "sportstats365.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHLdWVPyI9UHjksYGbPfxMW8dYo-M4y1nPU8pZ6-EfUNoPPObWBz3RzEf02VTPf94gHA_RhSnzJqYlKciupoVUVsF5auz9wYDRrA6aMlN2zzFRY3UoLYZ_Okdck30Oz0cJ8LjPy1Qch3HKMwKtxJ8flIL12vdnn7slqqKOVD10"
+          },
+          {
+            "title": "besoccer.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmPVIBx-G8OKwAfrNNmYnIj6le8oGY2YYtcBMeYFNOEqm1qFQF3kUKuLLO4juS1ICDFbQ10dltO7A8m0r6OjDQXPJP3rwISfsE12D8WLnHB6A4Ef7m9jTC6U4jWSpk3oYA9jYGWhPjmvuC0bjDvOy2_-v2xwEblZkjYbU="
+          },
+          {
+            "title": "onefootball.com",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0t896-5gR7_poQoMjugvjLYs3jBjRg9YjiYExbOhtdW397ZS56sQYEtNse60Shx_BHwZh3fSdKrDAH5U4BA-ksk3E4eTKyxNg64DwUr3773NGma7WJcSoeQNRCfWRc9A-nL8oe2EfhGlq7B83Ey6iyB6LJRJUyoeVLaaxRn3K7V6tYPp18dBevZ234nNbpy98h-WKbMlLmKlxSYbOY9lo"
+          }
+        ],
+        "web_search_queries": [
+          "Lazio vs Inter Milan May 8 2026 football match",
+          "Lazio recent form 2025-2026",
+          "Inter Milan recent form 2025-2026",
+          "Lazio injuries suspensions May 8 2026",
+          "Inter Milan injuries suspensions May 8 2026",
+          "Lazio Inter Milan predicted lineup May 8 2026",
+          "Serie A standings 2025-2026",
+          "Lazio vs Inter Milan odds comparison May 8 2026"
+        ],
+        "gemini_call_mode": "grounded_no_json_mime",
+        "line": "2",
+        "original_pick": {
+          "file": "inbox/possible_bets/20260508-054146_possible_bets_7099.pdf",
+          "sport": "football",
+          "league": "bet365_full_page_inline",
+          "event": "Lazio vs Inter Milan",
+          "start_time_visible": "Fre 18:00",
+          "parse_method": "football_1x2_inline_row_pdf",
+          "section_event_count": 1,
+          "source_bankroll_dkk": 68.36,
+          "source_capture_time_local": "2026-05-08T05:40:00+02:00",
+          "market": "1x2",
+          "selection": "Inter Milan",
+          "line": "2",
+          "odds": 1.8,
+          "confidence": "high",
+          "explanation": "Inter Milan vinder til odds 1.8",
+          "score": 5,
+          "implied_probability": 0.5556,
+          "market_overround": 1.048,
+          "complete_1x2_market": true,
+          "normalized_probability": 0.5301,
+          "team_probability_rank": 1,
+          "team_probability_margin": 0.3181,
+          "start_datetime_local": "2026-05-08T18:00:00+02:00",
+          "hours_until_start": 11.97,
+          "winner_score": 71.65,
+          "final_pick": true,
+          "pick_type": "winner",
+          "final_reason": "Vinderpick: markedsfavorit blandt holdene, normaliseret sandsynlighed 0.5301, margin 0.3181, odds 1.8, starter om 11.97 timer. Ingen reel multi-bookmaker edge; vurderingen bruger kun de data, OCR/PDF-flowet har adgang til.",
+          "stake_pct": 0.01,
+          "stake_dkk_raw": 1.0,
+          "stake_dkk": 1.0,
+          "stake_note": "Konservativ winner-stake ud fra bankroll 68.36 kr., pct 0.0100, total cap 10%."
+        },
+        "researched_at": "2026-05-08T04:05:33Z"
+      },
+      "gemini_final_decision": "remove",
+      "gemini_decision_reason": "gemini_reject",
+      "gemini_stake_multiplier": 0.0,
+      "final_reject_reason": "gemini_reject"
     }
   ]
 }
