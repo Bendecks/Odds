@@ -1,10 +1,10 @@
 # OCR/PDF POSSIBLE BETS ANALYSIS
 
-Generated: 2026-05-08T03:41:37Z
+Generated: 2026-05-08T03:42:29Z
 
 Vigtigt: Screenshot/PDF parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er fra bet365.
 
-Files analyzed: 3
+Files analyzed: 5
 
 ## Final picks
 Ingen final picks efter filteret.
@@ -532,6 +532,24 @@ Ingen final picks efter filteret.
 - Score: 3
 
 ## Filer
+
+### inbox/possible_bets/20260508-054148_possible_bets_6589.pdf
+- Type: pdf_text
+- Sport: football
+- Linjer: 140
+- Bankroll fra fil: 68.36
+- Capture time: 2026-05-08T05:12:00+02:00
+- Events: 0
+- Candidates: 0
+
+### inbox/possible_bets/20260508-054146_possible_bets_7099.pdf
+- Type: pdf_text
+- Sport: football
+- Linjer: 176
+- Bankroll fra fil: 68.36
+- Capture time: 2026-05-08T05:40:00+02:00
+- Events: 0
+- Candidates: 0
 
 ### inbox/possible_bets/20260508-051248_possible_bets_7352.pdf
 - Type: pdf_text

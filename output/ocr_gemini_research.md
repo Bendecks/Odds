@@ -1,6 +1,6 @@
 # OCR GEMINI RESEARCH
 
-Generated: 2026-05-08T03:41:38Z
+Generated: 2026-05-08T03:42:32Z
 
 Gemini-laget bruger Google Search grounding til kampresearch, marked/odds-sammenligning og sanity check. Det erstatter ikke en garanteret edge-model.
 
