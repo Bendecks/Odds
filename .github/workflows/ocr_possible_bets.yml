@@ -70,6 +70,18 @@ jobs:
           OCR_MAX_STAKE_DKK: 3
           OCR_TIMEZONE: Europe/Copenhagen
 
+      - name: Gemini research and market odds check
+        run: python scripts/ocr_gemini_research.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          OCR_GEMINI_MAX_RESEARCH_PICKS: 25
+          OCR_GEMINI_TIMEOUT_SECONDS: 45
+          OCR_GEMINI_SLEEP_SECONDS: 0.5
+          OCR_REQUIRE_GEMINI_APPROVAL: 1
+          OCR_GEMINI_ALLOW_REDUCE: 1
+          OCR_GEMINI_MIN_CONFIDENCE: 0.55
+
       - name: Cleanup old OCR inbox files
         run: python scripts/ocr_cleanup.py
         env:
@@ -81,7 +93,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add -A inbox/possible_bets output/ocr_possible_bets_analysis.* output/ocr_cleanup_report.* output/ocr_final_picks.* || true
+          git add -A inbox/possible_bets output/ocr_possible_bets_analysis.* output/ocr_cleanup_report.* output/ocr_final_picks.* output/ocr_gemini_research.* || true
           git diff --cached --quiet && exit 0
           git commit -m "Process OCR possible bets inbox"
           git push
