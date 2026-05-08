@@ -1,52 +1,13 @@
 # OCR/PDF POSSIBLE BETS ANALYSIS
 
-Generated: 2026-05-07T20:28:44Z
+Generated: 2026-05-08T03:13:48Z
 
 Vigtigt: Screenshot/PDF parsing. Der beregnes ikke reel bookmaker-edge, fordi input kun er fra bet365.
 
-Files analyzed: 2
+Files analyzed: 3
 
 ## Final picks
-
-### 1. TSV Hannover Burgdorf vs SC DHFK Leipzig
-- Liga: Tyskland - Bundesliga Handicap Total Vinder
-- Tidspunkt: Fre 20:00
-- Spil: TSV Hannover Burgdorf (1)
-- Odds: 2.1
-- Confidence: high
-- Begrundelse: high confidence, odds 2.1, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
-
-### 2. Strasbourg vs Rayo Vallecano
-- Liga: UEFA Conference League
-- Tidspunkt: Tor 21:00
-- Spil: Strasbourg (1)
-- Odds: 1.95
-- Confidence: high
-- Begrundelse: high confidence, odds 1.95, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
-
-### 3. IFK Kristianstad vs Alingsås HK
-- Liga: Sverige - Handbollsligan Handicap Total Vinder
-- Tidspunkt: Fre 19:00
-- Spil: IFK Kristianstad (1)
-- Odds: 1.95
-- Confidence: high
-- Begrundelse: high confidence, odds 1.95, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
-
-### 4. Esztergomi KC (K) vs Gyori Eto (K)
-- Liga: Tyskland - Bundesliga Handicap Total Vinder
-- Tidspunkt: Fre 18:00
-- Spil: Esztergomi KC (K) (1)
-- Odds: 1.9
-- Confidence: high
-- Begrundelse: high confidence, odds 1.9, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
-
-### 5. TSV GWD Minden vs Bergischer HC
-- Liga: Tyskland - Bundesliga Handicap Total Vinder
-- Tidspunkt: Fre 19:00
-- Spil: Bergischer HC (2)
-- Odds: 1.88
-- Confidence: high
-- Begrundelse: high confidence, odds 1.88, marked 1x2, ingen dublet på samme kamp. Bemærk: ingen reel edge, kun bet365/PDF parsing.
+Ingen final picks efter filteret.
 
 ## Bedste læsbare kandidater
 
@@ -572,10 +533,21 @@ Files analyzed: 2
 
 ## Filer
 
+### inbox/possible_bets/20260508-051248_possible_bets_7352.pdf
+- Type: pdf_text
+- Sport: football
+- Linjer: 140
+- Bankroll fra fil: 68.36
+- Capture time: 2026-05-08T05:12:00+02:00
+- Events: 0
+- Candidates: 0
+
 ### inbox/possible_bets/20260507-214337_possible_bets_6310.pdf
 - Type: pdf_text
 - Sport: football
 - Linjer: 129
+- Bankroll fra fil: 68.36
+- Capture time: 2026-05-07T19:43:00+02:00
 - Events: 9
 - Candidates: 27
   - UEFA Europa League: Aston Villa vs Nottm Forest (Tor 21:00) | section_count=2
@@ -592,6 +564,8 @@ Files analyzed: 2
 - Type: pdf_text
 - Sport: football
 - Linjer: 309
+- Bankroll fra fil: 68.36
+- Capture time: 2026-05-07T21:20:00+02:00
 - Events: 9
 - Candidates: 27
   - Algeriet - Division Excellence Handicap Total Vinder: SAG Villa Ballester (K) vs SEDALO (K) (Fre 02:45) | section_count=4
