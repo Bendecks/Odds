@@ -9,14 +9,14 @@ V18 strict: 0 bets
   "top_count": 0,
   "duplicates_removed": 0,
   "edge_filtered": 0,
-  "league_filtered": 637,
-  "leagues_total": 644,
+  "league_filtered": 631,
+  "leagues_total": 638,
   "leagues_selected": [
     {
       "slug": "england-premier-league",
       "canonical": "england-premier-league",
       "name": "England - Premier League",
-      "eventsCount": 30
+      "eventsCount": 27
     },
     {
       "slug": "france-ligue-1",
@@ -28,7 +28,7 @@ V18 strict: 0 bets
       "slug": "germany-bundesliga",
       "canonical": "germany-bundesliga",
       "name": "Germany - Bundesliga",
-      "eventsCount": 17
+      "eventsCount": 13
     },
     {
       "slug": "international-clubs-uefa-champions-league",
@@ -46,20 +46,20 @@ V18 strict: 0 bets
       "slug": "netherlands-eredivisie",
       "canonical": "netherlands-eredivisie",
       "name": "Netherlands - Eredivisie",
-      "eventsCount": 20
+      "eventsCount": 19
     },
     {
       "slug": "spain-laliga",
       "canonical": "spain-laliga",
       "name": "Spain - LaLiga",
-      "eventsCount": 38
+      "eventsCount": 37
     }
   ],
   "league_samples": [
     {
       "slug": "albania-kategoria-e-pare",
       "name": "Albania - Kategoria e Pare",
-      "eventsCount": 3
+      "eventsCount": 1
     },
     {
       "slug": "albania-kategoria-superiore",
@@ -79,7 +79,7 @@ V18 strict: 0 bets
     {
       "slug": "algeria-ligue-2",
       "name": "Algeria - Ligue 2",
-      "eventsCount": 9
+      "eventsCount": 8
     },
     {
       "slug": "andorra-primera-divisio",
@@ -94,7 +94,7 @@ V18 strict: 0 bets
     {
       "slug": "angola-girabola",
       "name": "Angola - Girabola",
-      "eventsCount": 26
+      "eventsCount": 21
     },
     {
       "slug": "argentina-copa-argentina",
@@ -149,7 +149,7 @@ V18 strict: 0 bets
     {
       "slug": "armenia-premier-league",
       "name": "Armenia - Premier League",
-      "eventsCount": 8
+      "eventsCount": 7
     },
     {
       "slug": "australia-a-league",
@@ -464,12 +464,12 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-bundesliga-women",
       "name": "Austria Amateur - Bundesliga, Women",
-      "eventsCount": 14
+      "eventsCount": 13
     },
     {
       "slug": "austria-amateur-burgenland-burgenlandliga",
       "name": "Austria Amateur - Burgenland, Burgenlandliga",
-      "eventsCount": 36
+      "eventsCount": 33
     },
     {
       "slug": "austria-amateur-karnten-karntner-liga",
@@ -479,12 +479,12 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-niederosterreich-1-landesliga",
       "name": "Austria Amateur - Niederosterreich, 1. Landesliga",
-      "eventsCount": 34
+      "eventsCount": 32
     },
     {
       "slug": "austria-amateur-oberosterreich-oo-liga",
       "name": "Austria Amateur - Oberosterreich, OO Liga",
-      "eventsCount": 35
+      "eventsCount": 32
     },
     {
       "slug": "austria-amateur-ofb-cup-women",
@@ -499,42 +499,42 @@ V18 strict: 0 bets
     {
       "slug": "austria-amateur-regionalliga-ost",
       "name": "Austria Amateur - Regionalliga Ost",
-      "eventsCount": 34
+      "eventsCount": 31
     },
     {
       "slug": "austria-amateur-regionalliga-west",
       "name": "Austria Amateur - Regionalliga West",
-      "eventsCount": 45
+      "eventsCount": 40
     },
     {
       "slug": "austria-amateur-salzburg-salzburger-liga",
       "name": "Austria Amateur - Salzburg, Salzburger Liga",
-      "eventsCount": 44
+      "eventsCount": 40
     },
     {
       "slug": "austria-amateur-steiermark-landesliga",
       "name": "Austria Amateur - Steiermark, Landesliga",
-      "eventsCount": 35
+      "eventsCount": 33
     },
     {
       "slug": "austria-amateur-tirol-regionalliga-tirol",
       "name": "Austria Amateur - Tirol, Regionalliga Tirol",
-      "eventsCount": 35
+      "eventsCount": 31
     },
     {
       "slug": "austria-amateur-vorarlberg-eliteliga",
       "name": "Austria Amateur - Vorarlberg, Eliteliga",
-      "eventsCount": 41
+      "eventsCount": 38
     },
     {
       "slug": "austria-amateur-wien-wiener-stadtliga",
       "name": "Austria Amateur - Wien, Wiener Stadtliga",
-      "eventsCount": 35
+      "eventsCount": 33
     },
     {
       "slug": "austria-bundesliga",
       "name": "Austria - Bundesliga",
-      "eventsCount": 12
+      "eventsCount": 9
     },
     {
       "slug": "azerbaijan-azerbaijan-cup",
@@ -558,8 +558,8 @@ V18 strict: 0 bets
     }
   ],
   "event_count": 157,
-  "upcoming_event_count": 48,
-  "odds_events_checked": 48,
+  "upcoming_event_count": 43,
+  "odds_events_checked": 43,
   "odds_errors": 0,
   "odds_successes": 0,
   "odds_fallback_attempts": 0,
@@ -572,8 +572,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     },
@@ -585,8 +585,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     },
@@ -598,8 +598,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     },
@@ -611,8 +611,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     },
@@ -624,8 +624,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     },
@@ -637,8 +637,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     },
@@ -650,8 +650,8 @@ V18 strict: 0 bets
         "markets": "h2h",
         "oddsFormat": "decimal",
         "dateFormat": "iso",
-        "commenceTimeFrom": "2026-05-09T13:55:03.886517Z",
-        "commenceTimeTo": "2026-05-12T13:55:03.886517Z"
+        "commenceTimeFrom": "2026-05-09T15:15:08.758180Z",
+        "commenceTimeTo": "2026-05-12T15:15:08.758180Z"
       },
       "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
     }

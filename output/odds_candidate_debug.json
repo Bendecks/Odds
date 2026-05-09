@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-09T13:55:06.159966+00:00",
+  "generated_at": "2026-05-09T15:15:12.018083+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
       "canonical": "england-premier-league",
       "name": "England - Premier League",
-      "eventsCount": 30
+      "eventsCount": 27
     },
     {
       "slug": "france-ligue-1",
@@ -17,7 +17,7 @@
       "slug": "germany-bundesliga",
       "canonical": "germany-bundesliga",
       "name": "Germany - Bundesliga",
-      "eventsCount": 17
+      "eventsCount": 13
     },
     {
       "slug": "international-clubs-uefa-champions-league",
@@ -35,43 +35,16 @@
       "slug": "netherlands-eredivisie",
       "canonical": "netherlands-eredivisie",
       "name": "Netherlands - Eredivisie",
-      "eventsCount": 20
+      "eventsCount": 19
     },
     {
       "slug": "spain-laliga",
       "canonical": "spain-laliga",
       "name": "Spain - LaLiga",
-      "eventsCount": 38
+      "eventsCount": 37
     }
   ],
   "upcoming_events": [
-    {
-      "league": "england-premier-league",
-      "source_league_slug": "england-premier-league",
-      "event_id": 61301225,
-      "date": "2026-05-09T14:00:00Z",
-      "home": "Brighton & Hove Albion",
-      "away": "Wolverhampton Wanderers",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "england-premier-league",
-      "source_league_slug": "england-premier-league",
-      "event_id": 61301231,
-      "date": "2026-05-09T14:00:00Z",
-      "home": "Fulham FC",
-      "away": "AFC Bournemouth",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "england-premier-league",
-      "source_league_slug": "england-premier-league",
-      "event_id": 61301241,
-      "date": "2026-05-09T14:00:00Z",
-      "home": "Sunderland AFC",
-      "away": "Manchester United",
-      "source": "odds-api.io"
-    },
     {
       "league": "england-premier-league",
       "source_league_slug": "england-premier-league",
@@ -309,15 +282,6 @@
     {
       "league": "netherlands-eredivisie",
       "source_league_slug": "netherlands-eredivisie",
-      "event_id": 71242238,
-      "date": "2026-05-09T14:30:00Z",
-      "home": "Willem II Tilburg",
-      "away": "RKC Waalwijk",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "netherlands-eredivisie",
-      "source_league_slug": "netherlands-eredivisie",
       "event_id": 71242264,
       "date": "2026-05-09T18:00:00Z",
       "home": "De Graafschap",
@@ -408,15 +372,6 @@
     {
       "league": "spain-laliga",
       "source_league_slug": "spain-laliga",
-      "event_id": 61624632,
-      "date": "2026-05-09T14:15:00Z",
-      "home": "Sevilla FC",
-      "away": "Espanyol Barcelona",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
       "event_id": 61624620,
       "date": "2026-05-09T16:30:00Z",
       "home": "Atletico Madrid",
@@ -480,18 +435,6 @@
   ],
   "candidate_rows": [],
   "rejected_rows": [
-    {
-      "event_id": 61301225,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
-      "event_id": 61301231,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
-      "event_id": 61301241,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
     {
       "event_id": 61301235,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
@@ -597,10 +540,6 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
-      "event_id": 71242238,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
       "event_id": 71242264,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
@@ -638,10 +577,6 @@
     },
     {
       "event_id": 61320265,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
-      "event_id": 61624632,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
