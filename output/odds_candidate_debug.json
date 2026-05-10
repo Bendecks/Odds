@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T23:07:54.467438+00:00",
+  "generated_at": "2026-05-10T04:18:11.079106+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -11,7 +11,7 @@
       "slug": "france-ligue-1",
       "canonical": "france-ligue-1",
       "name": "France - Ligue 1",
-      "eventsCount": 19
+      "eventsCount": 20
     },
     {
       "slug": "germany-bundesliga",
@@ -160,6 +160,15 @@
       "date": "2026-05-10T19:00:00Z",
       "home": "Stade Rennais FC",
       "away": "Paris FC",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "france-ligue-1",
+      "source_league_slug": "france-ligue-1",
+      "event_id": 71411500,
+      "date": "2026-05-12T18:30:00Z",
+      "home": "Red Star FC",
+      "away": "Rodez Aveyron Football",
       "source": "odds-api.io"
     },
     {
@@ -449,6 +458,10 @@
     },
     {
       "event_id": 61526584,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 71411500,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
