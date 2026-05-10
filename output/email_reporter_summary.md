@@ -13,7 +13,7 @@ Mode: V19_THE_ODDS_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
 Summary: V18 strict: 0 bets
 Kandidater fundet: 0
 Ligaer scannet: 578
-Events fundet: 139
+Events fundet: 124
 Kommende events: 15
 Filtrerede ligaer: 571
 Edge-filtrerede picks: 0
