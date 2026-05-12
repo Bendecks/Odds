@@ -4,20 +4,564 @@
   "watchlist": [],
   "pass": [],
   "mode": "V19_THE_ODDS_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18",
-  "generated_at": "2026-05-12T21:41:23.311271+00:00",
+  "generated_at": "2026-05-12T23:19:24.826744+00:00",
   "diagnostics": {
     "candidate_count": 0,
     "top_count": 0,
     "duplicates_removed": 0,
     "edge_filtered": 0,
-    "league_filtered": 0,
-    "leagues_total": 0,
-    "leagues_selected": [],
-    "league_samples": [],
-    "event_count": 0,
-    "upcoming_event_count": 0,
-    "odds_events_checked": 0,
-    "odds_errors": 1,
+    "league_filtered": 574,
+    "leagues_total": 581,
+    "leagues_selected": [
+      {
+        "slug": "england-premier-league",
+        "canonical": "england-premier-league",
+        "name": "England - Premier League",
+        "eventsCount": 21
+      },
+      {
+        "slug": "france-ligue-1",
+        "canonical": "france-ligue-1",
+        "name": "France - Ligue 1",
+        "eventsCount": 11
+      },
+      {
+        "slug": "germany-bundesliga",
+        "canonical": "germany-bundesliga",
+        "name": "Germany - Bundesliga",
+        "eventsCount": 11
+      },
+      {
+        "slug": "international-clubs-uefa-champions-league",
+        "canonical": "uefa-champions-league",
+        "name": "International Clubs - UEFA Champions League",
+        "eventsCount": 1
+      },
+      {
+        "slug": "italy-serie-a",
+        "canonical": "italy-serie-a",
+        "name": "Italy - Serie A",
+        "eventsCount": 20
+      },
+      {
+        "slug": "netherlands-eredivisie",
+        "canonical": "netherlands-eredivisie",
+        "name": "Netherlands - Eredivisie",
+        "eventsCount": 11
+      },
+      {
+        "slug": "spain-laliga",
+        "canonical": "spain-laliga",
+        "name": "Spain - LaLiga",
+        "eventsCount": 27
+      }
+    ],
+    "league_samples": [
+      {
+        "slug": "albania-kategoria-superiore",
+        "name": "Albania - Kategoria Superiore",
+        "eventsCount": 7
+      },
+      {
+        "slug": "albania-kupa-e-shqiperise",
+        "name": "Albania - Kupa e Shqiperise",
+        "eventsCount": 1
+      },
+      {
+        "slug": "algeria-ligue-1",
+        "name": "Algeria - Ligue 1",
+        "eventsCount": 11
+      },
+      {
+        "slug": "andorra-primera-divisio",
+        "name": "Andorra - Primera Divisio",
+        "eventsCount": 4
+      },
+      {
+        "slug": "andorra-second-divisio",
+        "name": "Andorra - Second Divisio",
+        "eventsCount": 2
+      },
+      {
+        "slug": "angola-girabola",
+        "name": "Angola - Girabola",
+        "eventsCount": 21
+      },
+      {
+        "slug": "argentina-copa-argentina",
+        "name": "Argentina - Copa Argentina",
+        "eventsCount": 1
+      },
+      {
+        "slug": "argentina-copa-proyeccion-final-reserves",
+        "name": "Argentina - Copa Proyeccion Final, Reserves",
+        "eventsCount": 84
+      },
+      {
+        "slug": "argentina-liga-profesional",
+        "name": "Argentina - Liga Profesional",
+        "eventsCount": 3
+      },
+      {
+        "slug": "argentina-primera-b",
+        "name": "Argentina - Primera B",
+        "eventsCount": 55
+      },
+      {
+        "slug": "argentina-primera-c",
+        "name": "Argentina - Primera C",
+        "eventsCount": 56
+      },
+      {
+        "slug": "argentina-primera-division-women",
+        "name": "Argentina - Primera Division, Women",
+        "eventsCount": 8
+      },
+      {
+        "slug": "argentina-primera-nacional",
+        "name": "Argentina - Primera Nacional",
+        "eventsCount": 73
+      },
+      {
+        "slug": "argentina-torneo-federal-a",
+        "name": "Argentina - Torneo Federal A",
+        "eventsCount": 68
+      },
+      {
+        "slug": "armenia-armenian-cup",
+        "name": "Armenia - Armenian Cup",
+        "eventsCount": 1
+      },
+      {
+        "slug": "armenia-first-league",
+        "name": "Armenia - First League",
+        "eventsCount": 11
+      },
+      {
+        "slug": "armenia-premier-league",
+        "name": "Armenia - Premier League",
+        "eventsCount": 5
+      },
+      {
+        "slug": "aruba-division-honor",
+        "name": "Aruba - Division Honor",
+        "eventsCount": 2
+      },
+      {
+        "slug": "australia-a-league",
+        "name": "Australia - A-League",
+        "eventsCount": 2
+      },
+      {
+        "slug": "australia-a-league-women",
+        "name": "Australia - A-League, Women",
+        "eventsCount": 1
+      },
+      {
+        "slug": "australia-capital-npl-1",
+        "name": "Australia - Capital NPL 1",
+        "eventsCount": 25
+      },
+      {
+        "slug": "australia-capital-npl-women",
+        "name": "Australia - Capital NPL, Women",
+        "eventsCount": 12
+      },
+      {
+        "slug": "australia-northern-nsw-league-one",
+        "name": "Australia - Northern NSW League One",
+        "eventsCount": 15
+      },
+      {
+        "slug": "australia-northern-nsw-league-one-reserves",
+        "name": "Australia - Northern NSW League One, Reserves",
+        "eventsCount": 15
+      },
+      {
+        "slug": "australia-northern-nsw-league-one-reserves-women",
+        "name": "Australia - Northern NSW League One, Reserves, Women",
+        "eventsCount": 7
+      },
+      {
+        "slug": "australia-northern-nsw-npl",
+        "name": "Australia - Northern NSW NPL",
+        "eventsCount": 19
+      },
+      {
+        "slug": "australia-northern-nsw-npl-reserves",
+        "name": "Australia - Northern NSW NPL, Reserves",
+        "eventsCount": 19
+      },
+      {
+        "slug": "australia-northern-nsw-premier-league-women",
+        "name": "Australia - Northern NSW Premier League, Women",
+        "eventsCount": 9
+      },
+      {
+        "slug": "australia-northern-territory-division-3",
+        "name": "Australia - Northern Territory Division 3",
+        "eventsCount": 16
+      },
+      {
+        "slug": "australia-northern-territory-premier-league",
+        "name": "Australia - Northern Territory Premier League",
+        "eventsCount": 16
+      },
+      {
+        "slug": "australia-northern-territory-premier-league-reserves",
+        "name": "Australia - Northern Territory Premier League, Reserves",
+        "eventsCount": 16
+      },
+      {
+        "slug": "australia-northern-territory-premier-league-women",
+        "name": "Australia - Northern Territory Premier League, Women",
+        "eventsCount": 21
+      },
+      {
+        "slug": "australia-npl-western-australia-women",
+        "name": "Australia - NPL Western Australia, Women",
+        "eventsCount": 12
+      },
+      {
+        "slug": "australia-nsw-league-one",
+        "name": "Australia - NSW League One",
+        "eventsCount": 56
+      },
+      {
+        "slug": "australia-nsw-league-one-women",
+        "name": "Australia - NSW League One, Women",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-nsw-league-two",
+        "name": "Australia - NSW League Two",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-nsw-npl-1",
+        "name": "Australia - NSW NPL 1",
+        "eventsCount": 32
+      },
+      {
+        "slug": "australia-nsw-premier-league-women",
+        "name": "Australia - NSW Premier League, Women",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-queensland-npl",
+        "name": "Australia - Queensland NPL",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-queensland-npl-women",
+        "name": "Australia - Queensland NPL, Women",
+        "eventsCount": 21
+      },
+      {
+        "slug": "australia-queensland-premier-league-1",
+        "name": "Australia - Queensland Premier League 1",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-queensland-premier-league-1-women",
+        "name": "Australia - Queensland Premier League 1, Women",
+        "eventsCount": 11
+      },
+      {
+        "slug": "australia-queensland-premier-league-2",
+        "name": "Australia - Queensland Premier League 2",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-queensland-premier-league-3-metro",
+        "name": "Australia - Queensland Premier League 3 Metro",
+        "eventsCount": 30
+      },
+      {
+        "slug": "australia-south-australia-npl",
+        "name": "Australia - South Australia NPL",
+        "eventsCount": 23
+      },
+      {
+        "slug": "australia-south-australia-npl-reserves",
+        "name": "Australia - South Australia NPL, Reserves",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-south-australia-npl-reserves-women",
+        "name": "Australia - South Australia NPL, Reserves, Women",
+        "eventsCount": 10
+      },
+      {
+        "slug": "australia-south-australia-npl-women",
+        "name": "Australia - South Australia NPL, Women",
+        "eventsCount": 11
+      },
+      {
+        "slug": "australia-south-australia-state-league-1",
+        "name": "Australia - South Australia State League 1",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-south-australia-state-league-1-reserves",
+        "name": "Australia - South Australia State League 1, Reserves",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-south-australia-state-league-2",
+        "name": "Australia - South Australia State League 2",
+        "eventsCount": 30
+      },
+      {
+        "slug": "australia-south-australia-state-league-2-reserves",
+        "name": "Australia - South Australia State League 2, Reserves",
+        "eventsCount": 30
+      },
+      {
+        "slug": "australia-south-australia-state-league-women",
+        "name": "Australia - South Australia State League, Women",
+        "eventsCount": 12
+      },
+      {
+        "slug": "australia-tasmania-northern-championship",
+        "name": "Australia - Tasmania Northern Championship",
+        "eventsCount": 8
+      },
+      {
+        "slug": "australia-tasmania-npl",
+        "name": "Australia - Tasmania NPL",
+        "eventsCount": 10
+      },
+      {
+        "slug": "australia-tasmania-southern-championship",
+        "name": "Australia - Tasmania Southern Championship",
+        "eventsCount": 11
+      },
+      {
+        "slug": "australia-tasmania-super-league-women",
+        "name": "Australia - Tasmania Super League, Women",
+        "eventsCount": 8
+      },
+      {
+        "slug": "australia-u20-nsw-npl",
+        "name": "Australia - U20 NSW NPL",
+        "eventsCount": 32
+      },
+      {
+        "slug": "australia-u20-nsw-premier-league-2",
+        "name": "Australia - U20 NSW Premier League 2",
+        "eventsCount": 32
+      },
+      {
+        "slug": "australia-u20-victoria-npl-women",
+        "name": "Australia - U20 Victoria NPL, Women",
+        "eventsCount": 29
+      },
+      {
+        "slug": "australia-u23-capital-npl",
+        "name": "Australia - U23 Capital NPL",
+        "eventsCount": 25
+      },
+      {
+        "slug": "australia-u23-northern-territory-premier-league-women",
+        "name": "Australia - U23 Northern Territory Premier League, Women",
+        "eventsCount": 8
+      },
+      {
+        "slug": "australia-u23-nsw-npl-women",
+        "name": "Australia - U23 NSW NPL, Women",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-u23-queensland-npl",
+        "name": "Australia - U23 Queensland NPL",
+        "eventsCount": 23
+      },
+      {
+        "slug": "australia-u23-queensland-premier-league-1",
+        "name": "Australia - U23 Queensland Premier League 1",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-u23-victoria-npl",
+        "name": "Australia - U23 Victoria NPL",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-u23-victoria-premier-league-1",
+        "name": "Australia - U23 Victoria Premier League 1",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-u23-western-australia-npl",
+        "name": "Australia - U23 Western Australia NPL",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-victoria-npl",
+        "name": "Australia - Victoria, NPL",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-victoria-npl-women",
+        "name": "Australia - Victoria NPL, Women",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-victoria-premier-league-1",
+        "name": "Australia - Victoria Premier League 1",
+        "eventsCount": 28
+      },
+      {
+        "slug": "australia-victoria-premier-league-2",
+        "name": "Australia - Victoria Premier League 2",
+        "eventsCount": 27
+      },
+      {
+        "slug": "australia-victoria-premier-league-women",
+        "name": "Australia - Victoria Premier League, Women",
+        "eventsCount": 19
+      },
+      {
+        "slug": "australia-western-australia-npl",
+        "name": "Australia - Western Australia NPL",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-western-australia-state-league-1",
+        "name": "Australia - Western Australia State League 1",
+        "eventsCount": 25
+      },
+      {
+        "slug": "australia-western-australia-state-league-1-reserves",
+        "name": "Australia - Western Australia State League 1, Reserves",
+        "eventsCount": 26
+      },
+      {
+        "slug": "australia-western-australia-state-league-2",
+        "name": "Australia - Western Australia State League 2",
+        "eventsCount": 24
+      },
+      {
+        "slug": "australia-western-australia-state-league-2-reserves",
+        "name": "Australia - Western Australia State League 2, Reserves",
+        "eventsCount": 25
+      },
+      {
+        "slug": "austria-2-liga",
+        "name": "Austria - 2. Liga",
+        "eventsCount": 7
+      },
+      {
+        "slug": "austria-amateur-bundesliga-women",
+        "name": "Austria Amateur - Bundesliga, Women",
+        "eventsCount": 12
+      },
+      {
+        "slug": "austria-amateur-burgenland-burgenlandliga",
+        "name": "Austria Amateur - Burgenland, Burgenlandliga",
+        "eventsCount": 32
+      },
+      {
+        "slug": "austria-amateur-karnten-karntner-liga",
+        "name": "Austria Amateur - Karnten, Karntner Liga",
+        "eventsCount": 40
+      },
+      {
+        "slug": "austria-amateur-niederosterreich-1-landesliga",
+        "name": "Austria Amateur - Niederosterreich, 1. Landesliga",
+        "eventsCount": 32
+      },
+      {
+        "slug": "austria-amateur-oberosterreich-oo-liga",
+        "name": "Austria Amateur - Oberosterreich, OO Liga",
+        "eventsCount": 32
+      },
+      {
+        "slug": "austria-amateur-ofb-cup-women",
+        "name": "Austria Amateur - OFB Cup, Women",
+        "eventsCount": 1
+      },
+      {
+        "slug": "austria-amateur-regionalliga-centre",
+        "name": "Austria Amateur - Regionalliga Centre",
+        "eventsCount": 32
+      },
+      {
+        "slug": "austria-amateur-regionalliga-ost",
+        "name": "Austria Amateur - Regionalliga Ost",
+        "eventsCount": 32
+      },
+      {
+        "slug": "austria-amateur-regionalliga-west",
+        "name": "Austria Amateur - Regionalliga West",
+        "eventsCount": 40
+      },
+      {
+        "slug": "austria-amateur-salzburg-salzburger-liga",
+        "name": "Austria Amateur - Salzburg, Salzburger Liga",
+        "eventsCount": 40
+      },
+      {
+        "slug": "austria-amateur-steiermark-landesliga",
+        "name": "Austria Amateur - Steiermark, Landesliga",
+        "eventsCount": 32
+      },
+      {
+        "slug": "austria-amateur-tirol-regionalliga-tirol",
+        "name": "Austria Amateur - Tirol, Regionalliga Tirol",
+        "eventsCount": 28
+      },
+      {
+        "slug": "austria-amateur-vorarlberg-eliteliga",
+        "name": "Austria Amateur - Vorarlberg, Eliteliga",
+        "eventsCount": 35
+      },
+      {
+        "slug": "austria-amateur-wien-wiener-stadtliga",
+        "name": "Austria Amateur - Wien, Wiener Stadtliga",
+        "eventsCount": 30
+      },
+      {
+        "slug": "austria-bundesliga",
+        "name": "Austria - Bundesliga",
+        "eventsCount": 6
+      },
+      {
+        "slug": "azerbaijan-azerbaijan-cup",
+        "name": "Azerbaijan - Azerbaijan Cup",
+        "eventsCount": 1
+      },
+      {
+        "slug": "azerbaijan-first-division",
+        "name": "Azerbaijan - First Division",
+        "eventsCount": 10
+      },
+      {
+        "slug": "azerbaijan-premier-league",
+        "name": "Azerbaijan - Premier League",
+        "eventsCount": 12
+      },
+      {
+        "slug": "bahrain-2nd-division",
+        "name": "Bahrain - 2nd Division",
+        "eventsCount": 6
+      },
+      {
+        "slug": "bahrain-premier-league",
+        "name": "Bahrain - Premier League",
+        "eventsCount": 6
+      },
+      {
+        "slug": "barbados-premier-league",
+        "name": "Barbados - Premier League",
+        "eventsCount": 2
+      }
+    ],
+    "event_count": 108,
+    "upcoming_event_count": 12,
+    "odds_events_checked": 12,
+    "odds_errors": 0,
     "odds_successes": 0,
     "odds_fallback_attempts": 0,
     "odds_error_samples": [
@@ -29,8 +573,8 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
@@ -42,8 +586,8 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
@@ -55,8 +599,8 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
@@ -68,8 +612,8 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
@@ -81,8 +625,8 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
@@ -94,8 +638,8 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
       },
@@ -107,18 +651,10 @@
           "markets": "h2h",
           "oddsFormat": "decimal",
           "dateFormat": "iso",
-          "commenceTimeFrom": "2026-05-12T21:41:21.372318Z",
-          "commenceTimeTo": "2026-05-15T21:41:21.372318Z"
+          "commenceTimeFrom": "2026-05-12T23:19:22.788042Z",
+          "commenceTimeTo": "2026-05-15T23:19:22.788042Z"
         },
         "error": "422 {\"message\":\"Invalid commenceTimeFrom parameter. The format must be YYYY-MM-DDTHH:MM:SSZ, for example 2020-11-24T16:05:00Z\",\"error_code\":\"INVALID_COMMENCE_TIME_FROM\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.h"
-      },
-      {
-        "source": "odds-api.io",
-        "path": "/leagues",
-        "params": {
-          "sport": "football"
-        },
-        "error": "429 {\"error\":\"You have exceeded your rate limit of 100 requests per hour. It resets in 13 minutes and 53 seconds.\"}"
       }
     ],
     "odds_success_pattern": {},
@@ -146,7 +682,7 @@
     "engine_note": "Primary source restored: The Odds API v4 multi-bookmaker sport odds. Odds-API.io kept as diagnostics/fallback only."
   },
   "v10": {
-    "activated_at": "2026-05-12T21:41:23.367108+00:00",
+    "activated_at": "2026-05-12T23:19:24.883673+00:00",
     "feedback_file": "output/v9_feedback.json",
     "feedback_patterns": 4,
     "adjustments_applied": 0,
@@ -155,7 +691,7 @@
     "max_penalty": -7.0
   },
   "strict_v18": {
-    "applied_at": "2026-05-12T21:41:23.405937+00:00",
+    "applied_at": "2026-05-12T23:19:24.919133+00:00",
     "moved_to_watchlist": 0,
     "top_count_after_strict": 0
   }
