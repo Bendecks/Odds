@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T23:19:24.826744+00:00",
+  "generated_at": "2026-05-13T04:14:58.380253+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -11,7 +11,7 @@
       "slug": "france-ligue-1",
       "canonical": "france-ligue-1",
       "name": "France - Ligue 1",
-      "eventsCount": 11
+      "eventsCount": 12
     },
     {
       "slug": "germany-bundesliga",
@@ -79,6 +79,15 @@
       "date": "2026-05-13T19:00:00Z",
       "home": "Racing Club De Lens",
       "away": "Paris Saint-Germain",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "france-ligue-1",
+      "source_league_slug": "france-ligue-1",
+      "event_id": 71476180,
+      "date": "2026-05-15T18:30:00Z",
+      "home": "AS Saint-Etienne",
+      "away": "Rodez Aveyron Football",
       "source": "odds-api.io"
     },
     {
@@ -170,6 +179,10 @@
     },
     {
       "event_id": 70315360,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 71476180,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
