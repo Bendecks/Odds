@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T14:44:32.195821+00:00",
+  "generated_at": "2026-05-14T18:11:17.892085+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -41,7 +41,7 @@
       "slug": "spain-laliga",
       "canonical": "spain-laliga",
       "name": "Spain - LaLiga",
-      "eventsCount": 23
+      "eventsCount": 22
     }
   ],
   "upcoming_events": [
@@ -106,6 +106,15 @@
       "date": "2026-05-17T14:00:00Z",
       "home": "Wolverhampton Wanderers",
       "away": "Fulham FC",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "england-premier-league",
+      "source_league_slug": "england-premier-league",
+      "event_id": 61301263,
+      "date": "2026-05-17T16:30:00Z",
+      "home": "Newcastle United",
+      "away": "West Ham United",
       "source": "odds-api.io"
     },
     {
@@ -253,6 +262,15 @@
       "source": "odds-api.io"
     },
     {
+      "league": "italy-serie-a",
+      "source_league_slug": "italy-serie-a",
+      "event_id": 61061665,
+      "date": "2026-05-17T16:00:00Z",
+      "home": "Atalanta BC",
+      "away": "Bologna FC",
+      "source": "odds-api.io"
+    },
+    {
       "league": "netherlands-eredivisie",
       "source_league_slug": "netherlands-eredivisie",
       "event_id": 71412170,
@@ -345,28 +363,91 @@
     {
       "league": "spain-laliga",
       "source_league_slug": "spain-laliga",
-      "event_id": 61624652,
-      "date": "2026-05-14T17:00:00Z",
-      "home": "Valencia CF",
-      "away": "Rayo Vallecano",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
-      "event_id": 61624646,
-      "date": "2026-05-14T18:00:00Z",
-      "home": "Girona FC",
-      "away": "Real Sociedad San Sebastian",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "spain-laliga",
-      "source_league_slug": "spain-laliga",
       "event_id": 61624656,
       "date": "2026-05-14T19:30:00Z",
       "home": "Real Madrid",
       "away": "Real Oviedo",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624660,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Atletico Madrid",
+      "away": "Girona FC",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624658,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Athletic Bilbao",
+      "away": "RC Celta de Vigo",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624664,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Elche CF",
+      "away": "Getafe CF",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624666,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Levante UD",
+      "away": "RCD Mallorca",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624668,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Rayo Vallecano",
+      "away": "Villarreal CF",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624672,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Real Oviedo",
+      "away": "Deportivo Alaves",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624670,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Real Sociedad San Sebastian",
+      "away": "Valencia CF",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624674,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "CA Osasuna",
+      "away": "Espanyol Barcelona",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "spain-laliga",
+      "source_league_slug": "spain-laliga",
+      "event_id": 61624676,
+      "date": "2026-05-17T17:00:00Z",
+      "home": "Sevilla FC",
+      "away": "Real Madrid",
       "source": "odds-api.io"
     }
   ],
@@ -398,6 +479,10 @@
     },
     {
       "event_id": 61301265,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61301263,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
@@ -465,6 +550,10 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
+      "event_id": 61061665,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
       "event_id": 71412170,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
@@ -505,15 +594,43 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
-      "event_id": 61624652,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
-      "event_id": 61624646,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
-    {
       "event_id": 61624656,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624660,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624658,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624664,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624666,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624668,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624672,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624670,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624674,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 61624676,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     }
   ],
