@@ -12,10 +12,10 @@ ENGINE STATUS
 Mode: V19_THE_ODDS_MULTI_BOOK_EDGE_ENGINE+V10_ADAPTIVE_FEEDBACK+STRICT_V18
 Summary: V18 strict: 0 bets
 Kandidater fundet: 0
-Ligaer scannet: 604
-Events fundet: 108
-Kommende events: 20
-Filtrerede ligaer: 597
+Ligaer scannet: 602
+Events fundet: 96
+Kommende events: 36
+Filtrerede ligaer: 595
 Edge-filtrerede picks: 0
 Odds-fejl: 0
 
