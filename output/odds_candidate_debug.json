@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-18T18:12:47.273876+00:00",
+  "generated_at": "2026-05-18T20:04:57.323231+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
       "canonical": "england-premier-league",
       "name": "England - Premier League",
-      "eventsCount": 13
+      "eventsCount": 12
     },
     {
       "slug": "france-ligue-1",
@@ -48,15 +48,6 @@
     {
       "league": "england-premier-league",
       "source_league_slug": "england-premier-league",
-      "event_id": 61301249,
-      "date": "2026-05-18T19:00:00Z",
-      "home": "Arsenal FC",
-      "away": "Burnley FC",
-      "source": "odds-api.io"
-    },
-    {
-      "league": "england-premier-league",
-      "source_league_slug": "england-premier-league",
       "event_id": 61301247,
       "date": "2026-05-19T18:30:00Z",
       "home": "AFC Bournemouth",
@@ -70,6 +61,15 @@
       "date": "2026-05-19T19:15:00Z",
       "home": "Chelsea FC",
       "away": "Tottenham Hotspur",
+      "source": "odds-api.io"
+    },
+    {
+      "league": "germany-bundesliga",
+      "source_league_slug": "germany-bundesliga",
+      "event_id": 71443804,
+      "date": "2026-05-21T18:30:00Z",
+      "home": "VFL Wolfsburg",
+      "away": "SC Paderborn 07",
       "source": "odds-api.io"
     },
     {
@@ -89,14 +89,19 @@
       "home": "Ajax Amsterdam",
       "away": "FC Groningen",
       "source": "odds-api.io"
+    },
+    {
+      "league": "netherlands-eredivisie",
+      "source_league_slug": "netherlands-eredivisie",
+      "event_id": 71558148,
+      "date": "2026-05-21T19:00:00Z",
+      "home": "FC Utrecht",
+      "away": "SC Heerenveen",
+      "source": "odds-api.io"
     }
   ],
   "candidate_rows": [],
   "rejected_rows": [
-    {
-      "event_id": 61301249,
-      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
-    },
     {
       "event_id": 61301247,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
@@ -106,11 +111,19 @@
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
+      "event_id": 71443804,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
       "event_id": 71558030,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     },
     {
       "event_id": 71558146,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 71558148,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     }
   ],
