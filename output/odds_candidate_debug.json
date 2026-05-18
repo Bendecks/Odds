@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T15:57:53.739055+00:00",
+  "generated_at": "2026-05-18T18:12:47.273876+00:00",
   "selected_leagues": [
     {
       "slug": "england-premier-league",
@@ -80,6 +80,15 @@
       "home": "Willem II Tilburg",
       "away": "FC Volendam",
       "source": "odds-api.io"
+    },
+    {
+      "league": "netherlands-eredivisie",
+      "source_league_slug": "netherlands-eredivisie",
+      "event_id": 71558146,
+      "date": "2026-05-21T16:45:00Z",
+      "home": "Ajax Amsterdam",
+      "away": "FC Groningen",
+      "source": "odds-api.io"
     }
   ],
   "candidate_rows": [],
@@ -98,6 +107,10 @@
     },
     {
       "event_id": 71558030,
+      "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
+    },
+    {
+      "event_id": 71558146,
       "reason": "odds-api.io requires bookmakers parameter; no multi-book source available"
     }
   ],
