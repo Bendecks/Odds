@@ -1,9 +1,9 @@
 name: Email Reporter V1
 
+# Automatic/scheduled trigger disabled to prevent GitHub Actions usage.
+# Run manually from the Actions tab only.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '50 */2 * * *'
 
 permissions:
   contents: write
