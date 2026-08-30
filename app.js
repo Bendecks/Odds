@@ -1,42 +1,5 @@
-const byId = (id) => document.getElementById(id);
-const ledger = [];
-const pct = (x) => (x * 100).toFixed(1) + '%';
-
-byId('valueForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const odds = Number(byId('odds').value);
-  const fair = Number(byId('prob').value) / 100;
-  const implied = 1 / odds;
-  const edge = fair - implied;
-  const ev = fair * odds - 1;
-  const qualifies = ev >= 0.025 && edge >= 0.02;
-  const item = {
-    event: byId('event').value,
-    market: byId('market').value,
-    odds,
-    fair,
-    edge,
-    ev,
-    status: qualifies ? 'PAPER' : 'AFVIS'
-  };
-  ledger.unshift(item);
-  renderResult(item);
-  renderLedger();
-});
-
-function renderResult(x) {
-  byId('bankroll').textContent = Number(byId('bank').value).toLocaleString('da-DK') + ' kr.';
-  byId('result').className = 'result ' + (x.status === 'PAPER' ? 'pass' : 'fail');
-  byId('result').innerHTML = `<strong>${x.status === 'PAPER' ? 'Paper-kandidat' : 'Ingen kandidat'}</strong><div class="resultGrid"><span>Implied: <b>${pct(1 / x.odds)}</b></span><span>Fair: <b>${pct(x.fair)}</b></span><span>Edge: <b>${pct(x.edge)}</b></span><span>Model-EV: <b>${pct(x.ev)}</b></span></div><small>Gate: mindst 2,0 procentpoint edge og 2,5% model-EV. Et modelsignal er ikke en garanti for profit.</small>`;
-}
-
-function renderLedger() {
-  byId('betCount').textContent = ledger.length;
-  byId('ledger').innerHTML = ledger.map(x => `<tr><td>${safe(x.event)}</td><td>${safe(x.market)}</td><td>${x.odds.toFixed(2)}</td><td>${pct(x.fair)}</td><td>${pct(x.edge)}</td><td>Paper</td><td><span class="pill ${x.status === 'PAPER' ? 'ok' : 'no'}">${x.status}</span></td></tr>`).join('');
-}
-
-function safe(s) {
-  const d = document.createElement('div');
-  d.textContent = s;
-  return d.innerHTML;
-}
+const byId=id=>document.getElementById(id);const ledger=[];const pct=x=>(x*100).toFixed(1)+'%';const BANK=50;
+byId('valueForm').addEventListener('submit',e=>{e.preventDefault();const odds=Number(byId('odds').value),fair=Number(byId('prob').value)/100,implied=1/odds,edge=fair-implied,ev=fair*odds-1;const qualifies=ev>=.025&&edge>=.02;const fullKelly=Math.max(0,(odds*fair-1)/(odds-1));const raw=BANK*fullKelly*.125;const stake=qualifies?Math.max(1,Math.min(BANK*.02,raw)):0;const minOdds=qualifies?1/fair/0.975:null;const item={event:byId('event').value,market:byId('market').value,odds,fair,edge,ev,stake,minOdds,status:qualifies?'PAPER':'AFVIS'};ledger.unshift(item);renderResult(item);renderLedger()});
+function renderResult(x){byId('bankroll').textContent=BANK.toLocaleString('da-DK')+' kr.';byId('result').className='result '+(x.status==='PAPER'?'pass':'fail');byId('result').innerHTML=x.status==='PAPER'?`<strong>PAPER PICK: ${safe(x.market)}</strong><div class="resultGrid"><span>Odds nu: <b>${x.odds.toFixed(2)}</b></span><span>Minimum: <b>${x.minOdds.toFixed(2)}</b></span><span>Edge: <b>${pct(x.edge)}</b></span><span>Testindsats: <b>${x.stake.toFixed(0)} kr.</b></span></div><small>Dette forbliver paper mode, indtil modellen er valideret.</small>`:`<strong>INGEN BET</strong><p>Signalkvaliteten er under systemets gate.</p>`}
+function renderLedger(){byId('betCount').textContent=ledger.filter(x=>x.status==='PAPER').length;byId('ledger').innerHTML=ledger.map(x=>`<tr><td>${safe(x.event)}</td><td>${safe(x.market)}</td><td>${x.odds.toFixed(2)}</td><td>${pct(x.fair)}</td><td>${pct(x.edge)}</td><td>Paper</td><td><span class="pill ${x.status==='PAPER'?'ok':'no'}">${x.status}</span></td></tr>`).join('')}
+function safe(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
