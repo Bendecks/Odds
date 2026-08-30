@@ -1,13 +1,14 @@
 # Data pipeline
 
-1. Acquire current market candidates from an approved data source.
-2. Normalize event, market, selection, bookmaker and timestamp.
-3. Estimate fair probability independently of the target bookmaker price.
-4. Pass candidates to `scripts/value_decision_engine.py`.
-5. Persist every candidate and decision before event start.
-6. Capture closing odds and settle results after event completion.
-7. Feed outcomes into calibration, CLV and ROI reports.
+The system deliberately separates observation from betting decisions.
 
-GitHub Pages is display-only. Secrets and paid API credentials must never be shipped to browser JavaScript. Acquisition/model jobs belong in GitHub Actions or another server-side process.
+1. **Bet365 discovery** — collect a broad football market universe from Odds-API.io. Do not discard an observation because its market, price, league or apparent edge looks unattractive.
+2. **Reference observations** — collect H2H fair-probability observations from The Odds API. Draws and observations with only one or two reference books are retained and labelled with `reference_quality`.
+3. **Enrichment/join** — match Bet365 target prices to reference observations where possible. Unmatched Bet365 observations remain useful discovery data.
+4. **Scoring** — calculate implied probability, edge, EV and stake only after data collection.
+5. **Final play gate** — only here enforce freshness, minimum reference-book count, edge, EV, minimum stake and bankroll caps.
+6. **Validation** — persist decisions, capture closing odds/results, and evaluate calibration, CLV and ROI. Legacy paper history is diagnostic only and does not validate the new model.
 
-The remaining external dependency is a reliable current odds/data source. Until that is connected, `output/latest_decision.json` correctly remains `NO BET`.
+Current reference coverage is intentionally narrower than Bet365 discovery because The Odds API free quota is scarce. This is a data-enrichment constraint, not a reason to delete or ignore the broader Bet365 universe.
+
+GitHub Pages is display-only. Secrets and API credentials must never be shipped to browser JavaScript. Acquisition and model jobs belong in GitHub Actions or another server-side process.
