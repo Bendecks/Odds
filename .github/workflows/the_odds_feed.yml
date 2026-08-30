@@ -2,7 +2,7 @@ name: The Odds reference feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 */12 * * *'
 permissions:
   contents: write
 concurrency:
@@ -17,14 +17,15 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests
-      - name: Fetch reference market, join fresh Bet365 price and decide
+      - name: Fetch reference market, direct Bet365 prices and decide
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
           MAX_HOURS: '72'
         run: |
           python scripts/the_odds_feed.py
-          python scripts/bet365_candidate_joiner.py
+          python scripts/odds_api_io_bet365.py
           python scripts/value_decision_engine.py
           python scripts/validation_report.py
       - name: Commit generated feed
