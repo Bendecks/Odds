@@ -1,9 +1,11 @@
-import json, pathlib
-from datetime import datetime, timezone
+import json, pathlib, os
+from datetime import datetime, timezone, timedelta
+from settlement_schema import signal_key, settlement_key, valid_settlement
 
 SIGNALS=pathlib.Path('data/model_signals.jsonl')
 SETTLED=pathlib.Path('data/model_settlements.jsonl')
 OUT=pathlib.Path('output/model_settlement_queue.json')
+GRACE_HOURS=int(os.getenv('SETTLEMENT_GRACE_HOURS','3'))
 
 def read(path):
     out=[]
@@ -13,12 +15,9 @@ def read(path):
         except Exception: pass
     return out
 
-def signal_key(x):
-    return '|'.join(str(x.get(k,'')) for k in ('event','market','pick','price_timestamp','model_version'))
-
 def main():
     signals=[x for x in read(SIGNALS) if x.get('decision') in ('PAPER PICK','PLAY')]
-    settled=read(SETTLED); settled_keys={str(x.get('signal_key','')) for x in settled}
+    settlements=read(SETTLED); settled_keys={settlement_key(x) for x in settlements if valid_settlement(x)}
     now=datetime.now(timezone.utc); pending=[]; future=[]
     for x in signals:
         k=signal_key(x)
@@ -26,7 +25,8 @@ def main():
         try: start=datetime.fromisoformat(str(x.get('commence_time')).replace('Z','+00:00')).astimezone(timezone.utc)
         except Exception: start=None
         row={'signal_key':k,'event':x.get('event'),'market':x.get('market'),'pick':x.get('pick'),'odds':x.get('odds'),'stake_dkk':x.get('stake'),'fair_probability':x.get('fair_probability'),'commence_time':x.get('commence_time'),'model_version':x.get('model_version'),'price_timestamp':x.get('price_timestamp')}
-        (pending if start and start<now else future).append(row)
-    report={'generated_at':now.isoformat(),'actionable_signals':len(signals),'settled':len(settled_keys),'awaiting_settlement':len(pending),'not_started_or_unknown':len(future),'pending':pending[:100]}
+        mature=bool(start and start+timedelta(hours=GRACE_HOURS)<=now)
+        (pending if mature else future).append(row)
+    report={'generated_at':now.isoformat(),'actionable_signals':len(signals),'valid_settlements':len(settled_keys),'settlement_grace_hours':GRACE_HOURS,'awaiting_settlement':len(pending),'not_mature_or_unknown':len(future),'pending':pending[:100]}
     OUT.parent.mkdir(exist_ok=True); OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n'); print(json.dumps({k:v for k,v in report.items() if k!='pending'},ensure_ascii=False))
 if __name__=='__main__': main()
