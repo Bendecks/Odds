@@ -35,6 +35,7 @@ jobs:
           python scripts/value_decision_engine.py
           python scripts/signal_ledger.py
           python scripts/validation_report.py
+          python scripts/model_validation_readiness.py
       - name: Archive raw Bet365 snapshot
         uses: actions/upload-artifact@v4
         with:
@@ -46,7 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/value_candidates.json data/observation_snapshots.jsonl data/model_signals.jsonl output/bet365_market_summary.json output/market_coverage_report.json output/market_signal_inventory.json output/reference_coverage_report.json output/reference_match_diagnostics.json output/quota_status.json output/signal_ledger_status.json output/latest_decision.json output/the_odds_feed_status.json output/bet365_join_status.json output/validation_report.json
+          git add data/value_candidates.json data/observation_snapshots.jsonl data/model_signals.jsonl output/bet365_market_summary.json output/market_coverage_report.json output/market_signal_inventory.json output/reference_coverage_report.json output/reference_match_diagnostics.json output/quota_status.json output/signal_ledger_status.json output/latest_decision.json output/the_odds_feed_status.json output/bet365_join_status.json output/validation_report.json output/model_validation_readiness.json
           git diff --cached --quiet && exit 0
           git commit -m "Update value engine feed"
           git pull --rebase --autostash
