@@ -14,21 +14,27 @@ def parse_dt(v):
     except Exception:return None
 
 def minimum_odds(p):
-    return max((1+MIN_EV)/p,1/(p-MIN_EDGE)) if p>MIN_EDGE else float('inf')
+    if p<=MIN_EDGE or KELLY_FRACTION<=0 or BANKROLL*MAX_STAKE_PCT<MIN_STAKE:return float('inf')
+    gates=[(1+MIN_EV)/p,1/(p-MIN_EDGE)]
+    k=MIN_STAKE/(BANKROLL*KELLY_FRACTION)
+    if p<=k:return float('inf')
+    gates.append((1-k)/(p-k))
+    return max(gates)
 
 def evaluate(c, now=None):
     if not c.get('bet365_verified',False): return None
     now=now or datetime.now(timezone.utc); stamp=parse_dt(c.get('bet365_timestamp'))
     if not stamp or (now-stamp).total_seconds()<0 or (now-stamp).total_seconds()>float(P['max_price_age_minutes'])*60:return None
     start=parse_dt(c.get('commence_time'))
-    if start and start<=now:return None
+    if not start or start<=now:return None
     try: odds=float(c.get('bet365_odds',0)); p=float(c['fair_probability'])
     except Exception:return None
     if odds<=1 or not 0<p<1:return None
     implied=1/odds; edge=p-implied; ev=p*odds-1; full=max(0.0,(odds*p-1)/(odds-1))
     stake=min(BANKROLL*MAX_STAKE_PCT,BANKROLL*full*KELLY_FRACTION); stake=math.floor(stake*2)/2
     qualified=edge>=MIN_EDGE and ev>=MIN_EV and stake>=MIN_STAKE
-    return {**c,'odds':odds,'implied_probability':round(implied,5),'edge':round(edge,5),'ev':round(ev,5),'stake':stake,'minimum_odds':round(minimum_odds(p),2),'qualified':qualified,'score':round(ev*max(edge,0),6)}
+    mo=minimum_odds(p)
+    return {**c,'odds':odds,'implied_probability':round(implied,5),'edge':round(edge,5),'ev':round(ev,5),'stake':stake,'minimum_odds':round(mo,2) if math.isfinite(mo) else None,'qualified':qualified,'score':round(ev*max(edge,0),6)}
 
 def decide(candidates, now=None):
     ranked=[x for x in (evaluate(c,now) for c in candidates) if x and x['qualified']]; ranked.sort(key=lambda x:x['score'],reverse=True)
