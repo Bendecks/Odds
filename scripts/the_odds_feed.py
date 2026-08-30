@@ -5,11 +5,14 @@ import requests
 BASE='https://api.the-odds-api.com'
 KEY=os.getenv('THE_ODDS_API_KEY') or os.getenv('ODDS_API_KEY','')
 SPORTS=[x.strip() for x in os.getenv('THE_ODDS_SPORTS','soccer_denmark_superliga,soccer_epl,soccer_spain_la_liga,soccer_germany_bundesliga,soccer_italy_serie_a,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_uefa_champs_league').split(',') if x.strip()]
-# Keep this list to currently documented bookmaker keys. Up to 10 bookmakers costs one region-equivalent.
 BOOKMAKERS=[x.strip() for x in os.getenv('THE_ODDS_BOOKMAKERS','pinnacle,betfair_ex_eu,betsson,nordicbet,williamhill').split(',') if x.strip()]
 MAX_HOURS=int(os.getenv('MAX_HOURS','72'))
 OUT=pathlib.Path('data/value_candidates.json')
 STATUS=pathlib.Path('output/the_odds_feed_status.json')
+
+def api_time(dt):
+    # The Odds API requires whole-second UTC timestamps: YYYY-MM-DDTHH:MM:SSZ.
+    return dt.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 def get(path,params):
     r=requests.get(BASE+path,params={**params,'apiKey':KEY},timeout=30)
@@ -25,7 +28,7 @@ def novig_fair(outcomes):
 def main():
     if not KEY: raise SystemExit('Missing THE_ODDS_API_KEY/ODDS_API_KEY')
     now=datetime.now(timezone.utc); end=now+timedelta(hours=MAX_HOURS); candidates=[]; last_meta={}; events_seen=0; errors=[]
-    params={'bookmakers':','.join(BOOKMAKERS),'markets':'h2h','oddsFormat':'decimal','dateFormat':'iso','commenceTimeFrom':now.isoformat().replace('+00:00','Z'),'commenceTimeTo':end.isoformat().replace('+00:00','Z')}
+    params={'bookmakers':','.join(BOOKMAKERS),'markets':'h2h','oddsFormat':'decimal','dateFormat':'iso','commenceTimeFrom':api_time(now),'commenceTimeTo':api_time(end)}
     for sport in SPORTS:
         try:data,last_meta=get(f'/v4/sports/{sport}/odds',params)
         except requests.HTTPError as e:
