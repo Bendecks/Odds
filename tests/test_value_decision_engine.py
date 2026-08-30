@@ -8,7 +8,7 @@ class TestDecisionEngine(unittest.TestCase):
         x=evaluate({'event':'A-B','pick':'A','bet365_odds':2.0,'fair_probability':0.50,'bet365_verified':True})
         self.assertFalse(x['qualified'])
     def test_selects_best_verified_qualified(self):
-        xs=[{'event':'A-B','pick':'A','bet365_odds':2.2,'fair_probability':0.52,'bet365_verified':True},{'event':'C-D','pick':'C','bet365_odds':2.5,'fair_probability':0.48,'bet365_verified':True}]
+        xs=[{'event':'A-B','pick':'A','bet365_odds':3.0,'fair_probability':0.45,'bet365_verified':True},{'event':'C-D','pick':'C','bet365_odds':3.2,'fair_probability':0.40,'bet365_verified':True}]
         self.assertEqual(decide(xs)['decision'],'PLAY')
     def test_minimum_odds_satisfies_both_gates(self):
         p=.52; o=minimum_odds(p)
