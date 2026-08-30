@@ -1,33 +1,26 @@
 [
   {
-    "event": "Real Madrid vs Málaga",
-    "event_id": "6ff0ed06ec6e70d249bf0e5dbd4067f2",
-    "sport": "soccer_spain_la_liga",
-    "commence_time": "2026-08-30T15:00:00Z",
-    "market": "h2h",
-    "pick": "Real Madrid",
-    "reference_odds": 1.1,
-    "fair_probability": 0.873257,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
     "event": "Barcelona vs Rayo Vallecano",
     "event_id": "5ab1a5278538ef69d7a84dfe2030facf",
     "sport": "soccer_spain_la_liga",
     "commence_time": "2026-08-31T19:30:00Z",
     "market": "h2h",
     "pick": "Barcelona",
-    "reference_odds": 1.17,
+    "reference_odds": 1.16,
     "fair_probability": 0.823557,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "SC Cambuur vs FC Twente Enschede",
@@ -36,36 +29,25 @@
     "commence_time": "2026-08-30T18:00:00Z",
     "market": "h2h",
     "pick": "FC Twente Enschede",
-    "reference_odds": 1.34,
-    "fair_probability": 0.733645,
+    "reference_odds": 1.33,
+    "fair_probability": 0.73718,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": true,
-    "model_version": "market-consensus-v2",
-    "bet365_odds": 1.333,
-    "bet365_timestamp": "2026-08-30T13:59:00.73Z",
+    "model_version": "market-consensus-v3",
+    "bet365_odds": 1.285,
+    "bet365_timestamp": "2026-08-30T15:59:56.842Z",
     "bet365_source": "odds-api.io",
     "bet365_event_id": 72041102
-  },
-  {
-    "event": "Manchester United vs Ipswich Town",
-    "event_id": "5759167055d94ba38e145ab92188abbf",
-    "sport": "soccer_epl",
-    "commence_time": "2026-08-30T15:30:00Z",
-    "market": "h2h",
-    "pick": "Manchester United",
-    "reference_odds": 1.39,
-    "fair_probability": 0.693151,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": true,
-    "model_version": "market-consensus-v2",
-    "bet365_odds": 1.333,
-    "bet365_timestamp": "2026-08-30T13:59:00.73Z",
-    "bet365_source": "odds-api.io",
-    "bet365_event_id": 72221226
   },
   {
     "event": "Cagliari vs Inter Milan",
@@ -74,13 +56,21 @@
     "commence_time": "2026-08-30T18:45:00Z",
     "market": "h2h",
     "pick": "Inter Milan",
-    "reference_odds": 1.43,
+    "reference_odds": 1.45,
     "fair_probability": 0.673549,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "FC Copenhagen vs SonderjyskE",
@@ -92,25 +82,18 @@
     "reference_odds": 1.4,
     "fair_probability": 0.669824,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Rennes vs Le Mans FC",
-    "event_id": "744192fed865ae616fd27a1dc5392c1c",
-    "sport": "soccer_france_ligue_one",
-    "commence_time": "2026-08-30T15:15:00Z",
-    "market": "h2h",
-    "pick": "Rennes",
-    "reference_odds": 1.47,
-    "fair_probability": 0.663742,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Lecce vs AS Roma",
@@ -122,10 +105,18 @@
     "reference_odds": 1.5,
     "fair_probability": 0.638686,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Aston Villa vs Arsenal",
@@ -134,28 +125,21 @@
     "commence_time": "2026-08-31T19:00:00Z",
     "market": "h2h",
     "pick": "Arsenal",
-    "reference_odds": 1.54,
+    "reference_odds": 1.55,
     "fair_probability": 0.630341,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "SC Telstar vs Ajax",
-    "event_id": "b128bbf82d12277022dc196ec6b337f3",
-    "sport": "soccer_netherlands_eredivisie",
-    "commence_time": "2026-08-30T14:45:00Z",
-    "market": "h2h",
-    "pick": "Ajax",
-    "reference_odds": 1.56,
-    "fair_probability": 0.629723,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Atalanta BC vs Bologna",
@@ -164,28 +148,21 @@
     "commence_time": "2026-08-31T18:45:00Z",
     "market": "h2h",
     "pick": "Atalanta BC",
-    "reference_odds": 1.98,
+    "reference_odds": 1.97,
     "fair_probability": 0.502242,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "FC Nordsjaelland vs Brondby IF",
-    "event_id": "e467c9cc0b9ec707479c600749d3baf8",
-    "sport": "soccer_denmark_superliga",
-    "commence_time": "2026-08-30T16:00:00Z",
-    "market": "h2h",
-    "pick": "FC Nordsjaelland",
-    "reference_odds": 2.12,
-    "fair_probability": 0.456484,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "CA Osasuna vs Getafe",
@@ -197,25 +174,18 @@
     "reference_odds": 2.24,
     "fair_probability": 0.43848,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Augsburg vs FC Schalke 04",
-    "event_id": "78ab183499784117d62a40821294d9fa",
-    "sport": "soccer_germany_bundesliga",
-    "commence_time": "2026-08-30T15:30:00Z",
-    "market": "h2h",
-    "pick": "Augsburg",
-    "reference_odds": 2.26,
-    "fair_probability": 0.426132,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "AS Monaco vs Marseille",
@@ -224,13 +194,21 @@
     "commence_time": "2026-08-30T18:45:00Z",
     "market": "h2h",
     "pick": "AS Monaco",
-    "reference_odds": 2.28,
-    "fair_probability": 0.425851,
+    "reference_odds": 2.3,
+    "fair_probability": 0.429941,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Lazio vs Genoa",
@@ -240,12 +218,20 @@
     "market": "h2h",
     "pick": "Lazio",
     "reference_odds": 2.46,
-    "fair_probability": 0.400336,
+    "fair_probability": 0.400136,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Napoli vs Como",
@@ -254,13 +240,21 @@
     "commence_time": "2026-08-30T16:30:00Z",
     "market": "h2h",
     "pick": "Napoli",
-    "reference_odds": 2.6,
-    "fair_probability": 0.375061,
+    "reference_odds": 2.5,
+    "fair_probability": 0.39737,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Deportivo La Coruña vs Valencia",
@@ -272,25 +266,18 @@
     "reference_odds": 2.7,
     "fair_probability": 0.368362,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Celta Vigo vs Athletic Bilbao",
-    "event_id": "41d50199bc21a00a53f3e0bd2a149ff2",
-    "sport": "soccer_spain_la_liga",
-    "commence_time": "2026-08-30T19:30:00Z",
-    "market": "h2h",
-    "pick": "Celta Vigo",
-    "reference_odds": 2.82,
-    "fair_probability": 0.350538,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Celta Vigo vs Athletic Bilbao",
@@ -299,13 +286,44 @@
     "commence_time": "2026-08-30T19:30:00Z",
     "market": "h2h",
     "pick": "Athletic Bilbao",
-    "reference_odds": 2.88,
-    "fair_probability": 0.347534,
+    "reference_odds": 2.8,
+    "fair_probability": 0.354802,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
+  },
+  {
+    "event": "Celta Vigo vs Athletic Bilbao",
+    "event_id": "41d50199bc21a00a53f3e0bd2a149ff2",
+    "sport": "soccer_spain_la_liga",
+    "commence_time": "2026-08-30T19:30:00Z",
+    "market": "h2h",
+    "pick": "Celta Vigo",
+    "reference_odds": 2.9,
+    "fair_probability": 0.3419,
+    "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
+    "reference_quality": "strong",
+    "discovery_eligible": true,
+    "bookmaker": "REFERENCE_MARKET",
+    "bet365_verified": false,
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Lazio vs Genoa",
@@ -315,12 +333,20 @@
     "market": "h2h",
     "pick": "Draw",
     "reference_odds": 3.05,
-    "fair_probability": 0.328848,
+    "fair_probability": 0.325194,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "CA Osasuna vs Getafe",
@@ -332,10 +358,18 @@
     "reference_odds": 3.05,
     "fair_probability": 0.322854,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Deportivo La Coruña vs Valencia",
@@ -347,10 +381,18 @@
     "reference_odds": 3.1,
     "fair_probability": 0.320832,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Napoli vs Como",
@@ -359,13 +401,21 @@
     "commence_time": "2026-08-30T16:30:00Z",
     "market": "h2h",
     "pick": "Draw",
-    "reference_odds": 3.1,
-    "fair_probability": 0.318239,
+    "reference_odds": 3.2,
+    "fair_probability": 0.312532,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Deportivo La Coruña vs Valencia",
@@ -377,25 +427,18 @@
     "reference_odds": 3.2,
     "fair_probability": 0.310806,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Napoli vs Como",
-    "event_id": "c57fd532ff733bb6face677a55f41f09",
-    "sport": "soccer_italy_serie_a",
-    "commence_time": "2026-08-30T16:30:00Z",
-    "market": "h2h",
-    "pick": "Como",
-    "reference_odds": 3.35,
-    "fair_probability": 0.309168,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Celta Vigo vs Athletic Bilbao",
@@ -405,12 +448,20 @@
     "market": "h2h",
     "pick": "Draw",
     "reference_odds": 3.3,
-    "fair_probability": 0.301564,
+    "fair_probability": 0.301522,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "AS Monaco vs Marseille",
@@ -420,57 +471,43 @@
     "market": "h2h",
     "pick": "Marseille",
     "reference_odds": 3.3,
-    "fair_probability": 0.300538,
+    "fair_probability": 0.300123,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
-    "event": "Augsburg vs FC Schalke 04",
-    "event_id": "78ab183499784117d62a40821294d9fa",
-    "sport": "soccer_germany_bundesliga",
-    "commence_time": "2026-08-30T15:30:00Z",
+    "event": "Napoli vs Como",
+    "event_id": "c57fd532ff733bb6face677a55f41f09",
+    "sport": "soccer_italy_serie_a",
+    "commence_time": "2026-08-30T16:30:00Z",
     "market": "h2h",
-    "pick": "FC Schalke 04",
-    "reference_odds": 3.45,
-    "fair_probability": 0.295629,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "FC Nordsjaelland vs Brondby IF",
-    "event_id": "e467c9cc0b9ec707479c600749d3baf8",
-    "sport": "soccer_denmark_superliga",
-    "commence_time": "2026-08-30T16:00:00Z",
-    "market": "h2h",
-    "pick": "Brondby IF",
+    "pick": "Como",
     "reference_odds": 3.4,
-    "fair_probability": 0.289449,
+    "fair_probability": 0.292184,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Augsburg vs FC Schalke 04",
-    "event_id": "78ab183499784117d62a40821294d9fa",
-    "sport": "soccer_germany_bundesliga",
-    "commence_time": "2026-08-30T15:30:00Z",
-    "market": "h2h",
-    "pick": "Draw",
-    "reference_odds": 3.65,
-    "fair_probability": 0.278239,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Lazio vs Genoa",
@@ -480,12 +517,20 @@
     "market": "h2h",
     "pick": "Genoa",
     "reference_odds": 3.75,
-    "fair_probability": 0.271842,
+    "fair_probability": 0.27467,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "AS Monaco vs Marseille",
@@ -495,12 +540,20 @@
     "market": "h2h",
     "pick": "Draw",
     "reference_odds": 3.75,
-    "fair_probability": 0.271829,
+    "fair_probability": 0.271874,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Atalanta BC vs Bologna",
@@ -510,27 +563,20 @@
     "market": "h2h",
     "pick": "Draw",
     "reference_odds": 3.7,
-    "fair_probability": 0.269571,
+    "fair_probability": 0.268884,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "FC Nordsjaelland vs Brondby IF",
-    "event_id": "e467c9cc0b9ec707479c600749d3baf8",
-    "sport": "soccer_denmark_superliga",
-    "commence_time": "2026-08-30T16:00:00Z",
-    "market": "h2h",
-    "pick": "Draw",
-    "reference_odds": 4.0,
-    "fair_probability": 0.252443,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "CA Osasuna vs Getafe",
@@ -542,10 +588,18 @@
     "reference_odds": 4.2,
     "fair_probability": 0.238666,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Aston Villa vs Arsenal",
@@ -557,10 +611,18 @@
     "reference_odds": 4.5,
     "fair_probability": 0.230613,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Atalanta BC vs Bologna",
@@ -572,10 +634,18 @@
     "reference_odds": 4.4,
     "fair_probability": 0.230081,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Lecce vs AS Roma",
@@ -587,10 +657,18 @@
     "reference_odds": 4.4,
     "fair_probability": 0.229927,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Cagliari vs Inter Milan",
@@ -599,13 +677,21 @@
     "commence_time": "2026-08-30T18:45:00Z",
     "market": "h2h",
     "pick": "Draw",
-    "reference_odds": 5.0,
-    "fair_probability": 0.209581,
+    "reference_odds": 4.9,
+    "fair_probability": 0.211438,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "FC Copenhagen vs SonderjyskE",
@@ -615,76 +701,20 @@
     "market": "h2h",
     "pick": "Draw",
     "reference_odds": 5.4,
-    "fair_probability": 0.201952,
+    "fair_probability": 0.205598,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Rennes vs Le Mans FC",
-    "event_id": "744192fed865ae616fd27a1dc5392c1c",
-    "sport": "soccer_france_ligue_one",
-    "commence_time": "2026-08-30T15:15:00Z",
-    "market": "h2h",
-    "pick": "Draw",
-    "reference_odds": 5.1,
-    "fair_probability": 0.200264,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "SC Telstar vs Ajax",
-    "event_id": "b128bbf82d12277022dc196ec6b337f3",
-    "sport": "soccer_netherlands_eredivisie",
-    "commence_time": "2026-08-30T14:45:00Z",
-    "market": "h2h",
-    "pick": "Draw",
-    "reference_odds": 5.2,
-    "fair_probability": 0.197916,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Manchester United vs Ipswich Town",
-    "event_id": "5759167055d94ba38e145ab92188abbf",
-    "sport": "soccer_epl",
-    "commence_time": "2026-08-30T15:30:00Z",
-    "market": "h2h",
-    "pick": "Draw",
-    "reference_odds": 5.7,
-    "fair_probability": 0.191688,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": true,
-    "model_version": "market-consensus-v2",
-    "bet365_odds": 5.25,
-    "bet365_timestamp": "2026-08-30T13:59:00.73Z",
-    "bet365_source": "odds-api.io",
-    "bet365_event_id": 72221226
-  },
-  {
-    "event": "SC Telstar vs Ajax",
-    "event_id": "b128bbf82d12277022dc196ec6b337f3",
-    "sport": "soccer_netherlands_eredivisie",
-    "commence_time": "2026-08-30T14:45:00Z",
-    "market": "h2h",
-    "pick": "SC Telstar",
-    "reference_odds": 5.8,
-    "fair_probability": 0.173301,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "SC Cambuur vs FC Twente Enschede",
@@ -694,14 +724,22 @@
     "market": "h2h",
     "pick": "Draw",
     "reference_odds": 6.2,
-    "fair_probability": 0.164592,
+    "fair_probability": 0.165542,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": true,
-    "model_version": "market-consensus-v2",
-    "bet365_odds": 6.25,
-    "bet365_timestamp": "2026-08-30T13:59:00.73Z",
+    "model_version": "market-consensus-v3",
+    "bet365_odds": 6.5,
+    "bet365_timestamp": "2026-08-30T15:59:56.842Z",
     "bet365_source": "odds-api.io",
     "bet365_event_id": 72041102
   },
@@ -715,25 +753,41 @@
     "reference_odds": 7.2,
     "fair_probability": 0.139046,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
-    "event": "Rennes vs Le Mans FC",
-    "event_id": "744192fed865ae616fd27a1dc5392c1c",
-    "sport": "soccer_france_ligue_one",
-    "commence_time": "2026-08-30T15:15:00Z",
+    "event": "Lecce vs AS Roma",
+    "event_id": "29ac78994462bce061f8d01e93c7b3f0",
+    "sport": "soccer_italy_serie_a",
+    "commence_time": "2026-08-31T16:30:00Z",
     "market": "h2h",
-    "pick": "Le Mans FC",
-    "reference_odds": 8.0,
-    "fair_probability": 0.129714,
+    "pick": "Lecce",
+    "reference_odds": 8.6,
+    "fair_probability": 0.129284,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "FC Copenhagen vs SonderjyskE",
@@ -745,25 +799,18 @@
     "reference_odds": 7.8,
     "fair_probability": 0.124132,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Lecce vs AS Roma",
-    "event_id": "29ac78994462bce061f8d01e93c7b3f0",
-    "sport": "soccer_italy_serie_a",
-    "commence_time": "2026-08-31T16:30:00Z",
-    "market": "h2h",
-    "pick": "Lecce",
-    "reference_odds": 8.8,
-    "fair_probability": 0.120536,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Barcelona vs Rayo Vallecano",
@@ -775,29 +822,18 @@
     "reference_odds": 10.0,
     "fair_probability": 0.117788,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Manchester United vs Ipswich Town",
-    "event_id": "5759167055d94ba38e145ab92188abbf",
-    "sport": "soccer_epl",
-    "commence_time": "2026-08-30T15:30:00Z",
-    "market": "h2h",
-    "pick": "Ipswich Town",
-    "reference_odds": 9.2,
-    "fair_probability": 0.11305,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": true,
-    "model_version": "market-consensus-v2",
-    "bet365_odds": 8.0,
-    "bet365_timestamp": "2026-08-30T13:59:00.73Z",
-    "bet365_source": "odds-api.io",
-    "bet365_event_id": 72221226
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "Cagliari vs Inter Milan",
@@ -806,13 +842,21 @@
     "commence_time": "2026-08-30T18:45:00Z",
     "market": "h2h",
     "pick": "Cagliari",
-    "reference_odds": 9.4,
-    "fair_probability": 0.107156,
+    "reference_odds": 9.0,
+    "fair_probability": 0.110575,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   },
   {
     "event": "SC Cambuur vs FC Twente Enschede",
@@ -821,32 +865,25 @@
     "commence_time": "2026-08-30T18:00:00Z",
     "market": "h2h",
     "pick": "SC Cambuur",
-    "reference_odds": 9.6,
-    "fair_probability": 0.102959,
+    "reference_odds": 9.8,
+    "fair_probability": 0.100512,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": true,
-    "model_version": "market-consensus-v2",
-    "bet365_odds": 7.5,
-    "bet365_timestamp": "2026-08-30T13:59:00.73Z",
+    "model_version": "market-consensus-v3",
+    "bet365_odds": 8.5,
+    "bet365_timestamp": "2026-08-30T15:59:56.842Z",
     "bet365_source": "odds-api.io",
     "bet365_event_id": 72041102
-  },
-  {
-    "event": "Real Madrid vs Málaga",
-    "event_id": "6ff0ed06ec6e70d249bf0e5dbd4067f2",
-    "sport": "soccer_spain_la_liga",
-    "commence_time": "2026-08-30T15:00:00Z",
-    "market": "h2h",
-    "pick": "Draw",
-    "reference_odds": 14.0,
-    "fair_probability": 0.085738,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
   },
   {
     "event": "Barcelona vs Rayo Vallecano",
@@ -855,27 +892,20 @@
     "commence_time": "2026-08-31T19:30:00Z",
     "market": "h2h",
     "pick": "Rayo Vallecano",
-    "reference_odds": 22.0,
-    "fair_probability": 0.047509,
+    "reference_odds": 23.0,
+    "fair_probability": 0.043238,
     "books": 5,
+    "reference_books": [
+      "betfair_ex_eu",
+      "betsson",
+      "nordicbet",
+      "pinnacle",
+      "williamhill"
+    ],
     "reference_quality": "strong",
+    "discovery_eligible": true,
     "bookmaker": "REFERENCE_MARKET",
     "bet365_verified": false,
-    "model_version": "market-consensus-v2"
-  },
-  {
-    "event": "Real Madrid vs Málaga",
-    "event_id": "6ff0ed06ec6e70d249bf0e5dbd4067f2",
-    "sport": "soccer_spain_la_liga",
-    "commence_time": "2026-08-30T15:00:00Z",
-    "market": "h2h",
-    "pick": "Málaga",
-    "reference_odds": 34.0,
-    "fair_probability": 0.029123,
-    "books": 5,
-    "reference_quality": "strong",
-    "bookmaker": "REFERENCE_MARKET",
-    "bet365_verified": false,
-    "model_version": "market-consensus-v2"
+    "model_version": "market-consensus-v3"
   }
 ]
