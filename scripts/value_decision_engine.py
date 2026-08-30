@@ -8,24 +8,31 @@ MAX_STAKE_PCT = 0.03
 MIN_STAKE = 1.0
 
 
+def minimum_odds(p):
+    return max((1 + MIN_EV) / p, 1 / (p - MIN_EDGE)) if p > MIN_EDGE else float('inf')
+
+
 def evaluate(c):
-    odds=float(c['odds']); p=float(c['fair_probability'])
+    # Reference-market rows are useful for modelling, but cannot become PLAY until
+    # a current Bet365/playable price is independently verified.
+    if not c.get('bet365_verified', False): return None
+    odds=float(c.get('bet365_odds', c.get('odds', 0))); p=float(c['fair_probability'])
     if odds <= 1 or not 0 < p < 1: return None
     implied=1/odds; edge=p-implied; ev=p*odds-1
     full=max(0.0,(odds*p-1)/(odds-1))
     stake=min(BANKROLL*MAX_STAKE_PCT,BANKROLL*full*KELLY_FRACTION)
     stake=math.floor(stake*2)/2
     qualified=edge>=MIN_EDGE and ev>=MIN_EV and stake>=MIN_STAKE
-    return {**c,'implied_probability':round(implied,5),'edge':round(edge,5),'ev':round(ev,5),'stake':stake,'qualified':qualified,'score':round(ev*max(edge,0),6)}
+    return {**c,'odds':odds,'implied_probability':round(implied,5),'edge':round(edge,5),'ev':round(ev,5),'stake':stake,'minimum_odds':round(minimum_odds(p),2),'qualified':qualified,'score':round(ev*max(edge,0),6)}
 
 
 def decide(candidates):
     ranked=[x for x in (evaluate(c) for c in candidates) if x and x['qualified']]
     ranked.sort(key=lambda x:x['score'],reverse=True)
     if not ranked:
-        return {'decision':'NO BET','bankroll':BANKROLL,'reason':'No candidate passes edge, EV and stake gates.'}
+        return {'decision':'NO BET','bankroll':BANKROLL,'reason':'No verified playable price passes edge, EV and stake gates.'}
     x=ranked[0]
-    return {'decision':'PLAY','bankroll':BANKROLL,'event':x['event'],'pick':x['pick'],'bookmaker':x.get('bookmaker','Bet365'),'odds':x['odds'],'minimum_odds':x['odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown')}
+    return {'decision':'PLAY','bankroll':BANKROLL,'event':x['event'],'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown')}
 
 
 def main():
