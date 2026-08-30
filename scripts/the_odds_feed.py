@@ -11,7 +11,6 @@ OUT=pathlib.Path('data/value_candidates.json')
 STATUS=pathlib.Path('output/the_odds_feed_status.json')
 
 def api_time(dt):
-    # The Odds API requires whole-second UTC timestamps: YYYY-MM-DDTHH:MM:SSZ.
     return dt.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 def get(path,params):
@@ -20,10 +19,16 @@ def get(path,params):
     r.raise_for_status(); return r.json(),meta
 
 def novig_fair(outcomes):
-    inv=[1/float(o['price']) for o in outcomes if float(o.get('price',0))>1]
-    total=sum(inv)
+    valid=[o for o in outcomes if float(o.get('price',0) or 0)>1]
+    inv=[1/float(o['price']) for o in valid]; total=sum(inv)
     if len(inv)<2 or total<=0:return {}
-    return {str(o['name']):(1/float(o['price']))/total for o in outcomes if float(o.get('price',0))>1}
+    return {str(o['name']):(1/float(o['price']))/total for o in valid}
+
+def quality(book_count):
+    if book_count>=4:return 'strong'
+    if book_count>=3:return 'good'
+    if book_count>=2:return 'limited'
+    return 'weak'
 
 def main():
     if not KEY: raise SystemExit('Missing THE_ODDS_API_KEY/ODDS_API_KEY')
@@ -34,8 +39,7 @@ def main():
         except requests.HTTPError as e:
             status=e.response.status_code if e.response is not None else None
             body=(e.response.text[:500] if e.response is not None else str(e))
-            errors.append({'sport':sport,'status':status,'error':body})
-            continue
+            errors.append({'sport':sport,'status':status,'error':body}); continue
         events_seen+=len(data)
         for event in data:
             consensus={}; offered={}
@@ -45,20 +49,21 @@ def main():
                     fair=novig_fair(market.get('outcomes',[]))
                     for outcome in market.get('outcomes',[]):
                         name=str(outcome.get('name')); price=float(outcome.get('price',0) or 0)
-                        if name.lower()=='draw' or price<=1:continue
+                        if price<=1:continue
                         if name in fair: consensus.setdefault(name,[]).append(fair[name])
                         offered.setdefault(name,[]).append(price)
             for pick,probs in consensus.items():
-                if len(probs)<3:continue
+                if not probs:continue
                 fair=statistics.median(probs); prices=offered.get(pick,[])
                 if not prices:continue
-                candidates.append({'event':f"{event.get('home_team')} vs {event.get('away_team')}",'event_id':event.get('id'),'sport':sport,'commence_time':event.get('commence_time'),'pick':pick,'reference_odds':round(max(prices),3),'fair_probability':round(fair,6),'books':len(probs),'bookmaker':'REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v1'})
+                candidates.append({'event':f"{event.get('home_team')} vs {event.get('away_team')}",'event_id':event.get('id'),'sport':sport,'commence_time':event.get('commence_time'),'market':'h2h','pick':pick,'reference_odds':round(max(prices),3),'fair_probability':round(fair,6),'books':len(probs),'reference_quality':quality(len(probs)),'bookmaker':'REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v2'})
     candidates.sort(key=lambda x:(x['books'],x['fair_probability']),reverse=True)
+    quality_counts={}
+    for c in candidates:quality_counts[c['reference_quality']]=quality_counts.get(c['reference_quality'],0)+1
     OUT.parent.mkdir(exist_ok=True); STATUS.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(candidates,ensure_ascii=False,indent=2)+'\n')
-    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'sports_requested':SPORTS,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'candidates':len(candidates),'quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
-    print(f'{len(candidates)} reference candidates from {events_seen} events; quota={last_meta}; errors={len(errors)}')
+    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'sports_requested':SPORTS,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
+    print(f'{len(candidates)} reference observations from {events_seen} events; quality={quality_counts}; quota={last_meta}; errors={len(errors)}')
     if errors and events_seen==0:
-        print(json.dumps(errors,ensure_ascii=False))
-        raise SystemExit('No events returned; see feed status/errors above')
+        print(json.dumps(errors,ensure_ascii=False)); raise SystemExit('No events returned; see feed status/errors above')
 if __name__=='__main__':main()
