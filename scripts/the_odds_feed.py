@@ -42,8 +42,9 @@ def main():
             errors.append({'sport':sport,'status':status,'error':body}); continue
         events_seen+=len(data)
         for event in data:
-            consensus={}; offered={}
+            consensus={}; offered={}; books_by_pick={}
             for book in event.get('bookmakers',[]):
+                book_key=str(book.get('key') or book.get('title') or 'unknown')
                 for market in book.get('markets',[]):
                     if market.get('key')!='h2h':continue
                     fair=novig_fair(market.get('outcomes',[]))
@@ -52,18 +53,42 @@ def main():
                         if price<=1:continue
                         if name in fair: consensus.setdefault(name,[]).append(fair[name])
                         offered.setdefault(name,[]).append(price)
-            for pick,probs in consensus.items():
-                if not probs:continue
-                fair=statistics.median(probs); prices=offered.get(pick,[])
+                        books_by_pick.setdefault(name,set()).add(book_key)
+            # Discovery is deliberately broad: home, away and draw all survive, even
+            # when only one reference bookmaker currently exposes the selection.
+            # Reference quality is metadata for later scoring/final PLAY gates.
+            for pick,prices in offered.items():
                 if not prices:continue
-                candidates.append({'event':f"{event.get('home_team')} vs {event.get('away_team')}",'event_id':event.get('id'),'sport':sport,'commence_time':event.get('commence_time'),'market':'h2h','pick':pick,'reference_odds':round(max(prices),3),'fair_probability':round(fair,6),'books':len(probs),'reference_quality':quality(len(probs)),'bookmaker':'REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v2'})
-    candidates.sort(key=lambda x:(x['books'],x['fair_probability']),reverse=True)
-    quality_counts={}
-    for c in candidates:quality_counts[c['reference_quality']]=quality_counts.get(c['reference_quality'],0)+1
+                probs=consensus.get(pick,[])
+                fair=statistics.median(probs) if probs else None
+                book_count=len(books_by_pick.get(pick,set()))
+                candidates.append({
+                    'event':f"{event.get('home_team')} vs {event.get('away_team')}",
+                    'event_id':event.get('id'),
+                    'sport':sport,
+                    'commence_time':event.get('commence_time'),
+                    'market':'h2h',
+                    'pick':pick,
+                    'reference_odds':round(max(prices),3),
+                    'fair_probability':round(fair,6) if fair is not None else None,
+                    'books':book_count,
+                    'reference_books':sorted(books_by_pick.get(pick,set())),
+                    'reference_quality':quality(book_count),
+                    'discovery_eligible':True,
+                    'bookmaker':'REFERENCE_MARKET',
+                    'bet365_verified':False,
+                    'model_version':'market-consensus-v3'
+                })
+    candidates.sort(key=lambda x:(x['books'],x['fair_probability'] or 0),reverse=True)
+    quality_counts={}; pick_type_counts={'draw':0,'team':0}
+    for c in candidates:
+        quality_counts[c['reference_quality']]=quality_counts.get(c['reference_quality'],0)+1
+        if str(c['pick']).lower()=='draw':pick_type_counts['draw']+=1
+        else:pick_type_counts['team']+=1
     OUT.parent.mkdir(exist_ok=True); STATUS.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(candidates,ensure_ascii=False,indent=2)+'\n')
-    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'sports_requested':SPORTS,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
-    print(f'{len(candidates)} reference observations from {events_seen} events; quality={quality_counts}; quota={last_meta}; errors={len(errors)}')
+    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v3','sports_requested':SPORTS,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'pick_type_counts':pick_type_counts,'discovery_policy':'preserve all offered h2h outcomes; confidence is metadata, not an early exclusion','quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
+    print(f'{len(candidates)} reference observations from {events_seen} events; quality={quality_counts}; picks={pick_type_counts}; quota={last_meta}; errors={len(errors)}')
     if errors and events_seen==0:
         print(json.dumps(errors,ensure_ascii=False)); raise SystemExit('No events returned; see feed status/errors above')
 if __name__=='__main__':main()
