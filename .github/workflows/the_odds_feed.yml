@@ -26,6 +26,7 @@ jobs:
           BET365_MAX_ODDS_CALLS: '80'
         run: |
           python scripts/the_odds_feed.py
+          python scripts/quota_guard.py
           python scripts/reference_coverage_report.py
           python scripts/odds_api_io_bet365.py
           python scripts/market_coverage_report.py
@@ -37,7 +38,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/value_candidates.json data/bet365_observations.jsonl data/observation_snapshots.jsonl data/model_signals.jsonl output/bet365_market_summary.json output/market_coverage_report.json output/reference_coverage_report.json output/signal_ledger_status.json output/latest_decision.json output/the_odds_feed_status.json output/bet365_join_status.json output/validation_report.json
+          git add data/value_candidates.json data/bet365_observations.jsonl data/observation_snapshots.jsonl data/model_signals.jsonl output/bet365_market_summary.json output/market_coverage_report.json output/reference_coverage_report.json output/quota_status.json output/signal_ledger_status.json output/latest_decision.json output/the_odds_feed_status.json output/bet365_join_status.json output/validation_report.json
           git diff --cached --quiet && exit 0
           git commit -m "Update value engine feed"
           git pull --rebase --autostash
