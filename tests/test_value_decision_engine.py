@@ -11,8 +11,13 @@ class TestDecisionEngine(unittest.TestCase):
     def test_selects_best_verified_qualified_in_paper_mode(self): self.assertEqual(decide([row(3.0,.45),row(3.2,.40)],NOW)['decision'],'PAPER PICK')
     def test_stale_price_is_rejected(self):
         x=row(3.0,.45); x['bet365_timestamp']=(NOW-timedelta(minutes=21)).isoformat(); self.assertIsNone(evaluate(x,NOW))
-    def test_minimum_odds_satisfies_both_gates(self):
-        p=.52; o=minimum_odds(p); self.assertGreaterEqual(p*o-1,.025-1e-9); self.assertGreaterEqual(p-1/o,.02-1e-9)
+    def test_missing_start_is_rejected(self):
+        x=row(3.0,.45); x.pop('commence_time'); self.assertIsNone(evaluate(x,NOW))
+    def test_minimum_odds_satisfies_edge_ev_and_stake_gates(self):
+        p=.52; o=minimum_odds(p)
+        self.assertGreaterEqual(p*o-1,.025-1e-9)
+        self.assertGreaterEqual(p-1/o,.02-1e-9)
+        self.assertTrue(evaluate(row(o+.01,p),NOW)['qualified'])
     def test_empty_is_no_bet(self): self.assertEqual(decide([],NOW)['decision'],'NO BET')
 
 if __name__=='__main__':unittest.main()
