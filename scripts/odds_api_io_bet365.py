@@ -3,7 +3,7 @@ from datetime import datetime, timezone, timedelta
 import requests
 
 BASE='https://api.odds-api.io/v3'; KEY=os.getenv('ODDS_API_IO_KEY','')
-CAND=pathlib.Path('data/value_candidates.json'); OBS=pathlib.Path('data/bet365_observations.jsonl'); SUMMARY=pathlib.Path('output/bet365_market_summary.json'); STATUS=pathlib.Path('output/bet365_join_status.json')
+CAND=pathlib.Path('data/value_candidates.json'); OBS=pathlib.Path('data/bet365_observations.jsonl'); SUMMARY=pathlib.Path('output/bet365_market_summary.json'); STATUS=pathlib.Path('output/bet365_join_status.json'); DIAG=pathlib.Path('output/reference_match_diagnostics.json')
 MAX_HOURS=int(os.getenv('MAX_HOURS','72')); MAX_ODDS_CALLS=int(os.getenv('BET365_MAX_ODDS_CALLS','80'))
 
 def norm(s):
@@ -39,6 +39,7 @@ def main():
     for r in refs:
         parts=re.split(r'\s+vs?\.?\s+',str(r.get('event','')),maxsplit=1,flags=re.I)
         if len(parts)==2:ref_keys.append(event_key(parts[0],parts[1]))
+    unique_ref_keys=set(ref_keys); exact_ref_keys={k for k in unique_ref_keys if k in idx}
     prioritized=[]; seen=set()
     for k in ref_keys:
         e=idx.get(k)
@@ -48,17 +49,20 @@ def main():
         if not eid or eid in seen:continue
         start=parse_start(e.get('date') or e.get('startTime') or e.get('commence_time'))
         if start and now<start<=cutoff:prioritized.append(e);seen.add(eid)
-    prioritized=prioritized[:MAX_ODDS_CALLS]; cache={}; observations=[]; errors=[]; odds_calls=0
+    prioritized=prioritized[:MAX_ODDS_CALLS]; queried_ids={str(e.get('id')) for e in prioritized}; cache={}; observations=[]; errors=[]; odds_calls=0
     for e in prioritized:
         eid=str(e['id'])
         try:cache[eid]=get('/odds',{'eventId':eid,'bookmakers':'Bet365'});odds_calls+=1;observations.extend(market_rows(e,bet365_markets(cache[eid]),now))
         except requests.HTTPError as exc:errors.append({'event_id':eid,'status':exc.response.status_code if exc.response is not None else None});cache[eid]={}
-    matched=0
+    matched=0; exact_rows=0; exact_but_not_queried=0; queried_without_h2h_price=0
     for r in refs:
         parts=re.split(r'\s+vs?\.?\s+',str(r.get('event','')),maxsplit=1,flags=re.I)
         if len(parts)!=2:continue
-        e=idx.get(event_key(parts[0],parts[1]));
+        e=idx.get(event_key(parts[0],parts[1]))
         if not e:continue
+        exact_rows+=1
+        if str(e.get('id')) not in queried_ids:exact_but_not_queried+=1;continue
+        found=False
         for m in bet365_markets(cache.get(str(e['id']),{})):
             if str(m.get('name','')).lower() not in ('ml','moneyline','h2h','1x2'):continue
             odds=m.get('odds') or []
@@ -67,10 +71,12 @@ def main():
             if not field or line.get(field) is None:continue
             try:price=float(line[field])
             except Exception:continue
-            r.update({'bet365_odds':price,'bet365_timestamp':m.get('updatedAt') or now.isoformat(),'bet365_verified':True,'bet365_source':'odds-api.io','bet365_event_id':e.get('id')});matched+=1;break
+            r.update({'bet365_odds':price,'bet365_timestamp':m.get('updatedAt') or now.isoformat(),'bet365_verified':True,'bet365_source':'odds-api.io','bet365_event_id':e.get('id')});matched+=1;found=True;break
+        if not found:queried_without_h2h_price+=1
     CAND.write_text(json.dumps(refs,ensure_ascii=False,indent=2)+'\n');OBS.parent.mkdir(exist_ok=True);OBS.write_text(''.join(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n' for x in observations))
     markets=collections.Counter(x['market'] for x in observations); leagues=collections.Counter(str(x.get('league') or 'unknown') for x in observations); selections=collections.Counter(x['selection'] for x in observations)
     summary={'generated_at':now.isoformat(),'events_queried':len(prioritized),'observations':len(observations),'unique_markets':len(markets),'top_markets':markets.most_common(100),'top_leagues':leagues.most_common(50),'selection_fields':selections.most_common(50)}
-    SUMMARY.parent.mkdir(exist_ok=True);SUMMARY.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n');STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'source':'odds-api.io','bet365_events_available':len(events),'events_queried':len(prioritized),'odds_calls':odds_calls,'raw_market_observations':len(observations),'unique_markets':len(markets),'matched_reference_candidates':matched,'max_odds_calls':MAX_ODDS_CALLS,'errors':errors},ensure_ascii=False,indent=2)+'\n')
-    print(f'Bet365 universe: available={len(events)} queried={len(prioritized)} observations={len(observations)} markets={len(markets)} reference_matches={matched} errors={len(errors)}')
+    diagnostics={'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':len(unique_ref_keys),'exact_reference_events_in_bet365':len(exact_ref_keys),'unmatched_reference_events':len(unique_ref_keys-exact_ref_keys),'exact_reference_rows':exact_rows,'exact_rows_not_queried':exact_but_not_queried,'queried_reference_rows_without_h2h_price':queried_without_h2h_price,'matched_prices':matched,'bet365_events_available':len(events),'bet365_events_queried':len(prioritized)}
+    SUMMARY.parent.mkdir(exist_ok=True);SUMMARY.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n');DIAG.write_text(json.dumps(diagnostics,ensure_ascii=False,indent=2)+'\n');STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'source':'odds-api.io','bet365_events_available':len(events),'events_queried':len(prioritized),'odds_calls':odds_calls,'raw_market_observations':len(observations),'unique_markets':len(markets),'matched_reference_candidates':matched,'max_odds_calls':MAX_ODDS_CALLS,'errors':errors},ensure_ascii=False,indent=2)+'\n')
+    print(f'Bet365 universe: available={len(events)} queried={len(prioritized)} observations={len(observations)} markets={len(markets)} reference_matches={matched} errors={len(errors)}');print('Reference match diagnostics: '+json.dumps(diagnostics,ensure_ascii=False))
 if __name__=='__main__':main()
