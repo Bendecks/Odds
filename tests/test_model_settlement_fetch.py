@@ -21,6 +21,19 @@ class ModelSettlementFetchTests(unittest.TestCase):
     def test_full_time_alias(self):
         event={'status':'finished','scores':{'home':3,'away':2,'periods':{'full_time':{'home':2,'away':2}}}}
         self.assertEqual(fetch.score_pair(event),(2.0,2.0))
+    def test_extra_time_without_regulation_score_fails_closed(self):
+        event={'status':'settled','scores':{'home':2,'away':1,'periods':{'et':{'home':1,'away':0}}}}
+        self.assertTrue(fetch.has_extra_time_or_penalties(event))
+        self.assertEqual(fetch.settlement_score_pair(event),(None,'ambiguous_knockout_score'))
+        self.assertIsNone(fetch.outcome(self.row('A'),event))
+    def test_penalty_shootout_without_regulation_score_fails_closed(self):
+        event={'status':'finished','scores':{'home':5,'away':4,'periods':{'penalties':{'home':5,'away':4}}}}
+        self.assertEqual(fetch.settlement_score_pair(event),(None,'ambiguous_knockout_score'))
+        self.assertIsNone(fetch.outcome(self.row('A'),event))
+    def test_regulation_score_allows_settlement_despite_penalties(self):
+        event={'status':'finished','scores':{'home':5,'away':4,'periods':{'ft':{'home':1,'away':1},'penalties':{'home':4,'away':3}}}}
+        self.assertEqual(fetch.settlement_score_pair(event),((1.0,1.0),'regulation_ft'))
+        self.assertEqual(fetch.outcome(self.row('Draw'),event),'win')
     def test_existing_keys_require_valid_settlement(self):
         valid={'signal_key':'A vs B|h2h|A|2026-08-31T10:00:00Z|v1','event':'A vs B','market':'h2h','pick':'A','price_timestamp':'2026-08-31T10:00:00Z','model_version':'v1','result':'win','odds':2.0,'stake_dkk':1.0}
         self.assertIn(valid['signal_key'],fetch.existing_keys([valid]))
