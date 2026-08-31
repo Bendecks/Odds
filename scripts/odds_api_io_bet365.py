@@ -5,7 +5,7 @@ from event_match_diagnostics import conservative_match
 
 BASE='https://api.odds-api.io/v3'; KEY=os.getenv('ODDS_API_IO_KEY','')
 CAND=pathlib.Path('data/value_candidates.json'); OBS=pathlib.Path('data/bet365_observations.jsonl'); SUMMARY=pathlib.Path('output/bet365_market_summary.json'); STATUS=pathlib.Path('output/bet365_join_status.json'); DIAG=pathlib.Path('output/reference_match_diagnostics.json')
-MAX_HOURS=int(os.getenv('MAX_HOURS','72')); MAX_ODDS_CALLS=int(os.getenv('BET365_MAX_ODDS_CALLS','80'))
+MAX_HOURS=int(os.getenv('MAX_HOURS','72')); MAX_ODDS_CALLS=int(os.getenv('BET365_MAX_ODDS_CALLS','80')); MAX_RESOLVER_ROWS=int(os.getenv('BET365_MAX_RESOLVER_ROWS','50'))
 
 def norm(s):
     s=unicodedata.normalize('NFKD',str(s or '')).encode('ascii','ignore').decode().lower(); return re.sub(r'[^a-z0-9]','',s)
@@ -19,6 +19,24 @@ def ref_parts(r):
     parts=re.split(r'\s+vs?\.?\s+',str(r.get('event','')),maxsplit=1,flags=re.I)
     return parts if len(parts)==2 else (None,None)
 def ref_start(r): return r.get('commence_time') or r.get('start_time') or r.get('event_start') or r.get('kickoff')
+def unique_reference_events(refs):
+    unique={}
+    for r in refs:
+        home,away=ref_parts(r)
+        if not home:continue
+        key=event_key(home,away)
+        if key not in unique:unique[key]=(r,home,away)
+    return unique
+def resolver_diagnostics(refs,idx,events):
+    rows=[]; accepted_ids=set(); counts=collections.Counter(); unique=unique_reference_events(refs)
+    for key,(r,home,away) in unique.items():
+        if key in idx:continue
+        start=ref_start(r)
+        result={'accepted':False,'reason':'missing_reference_start'} if not start else conservative_match(home,away,start,events)
+        counts[result.get('reason','unknown')]+=1
+        if result.get('accepted') and result.get('best',{}).get('event_id') is not None:accepted_ids.add(str(result['best']['event_id']))
+        if len(rows)<MAX_RESOLVER_ROWS:rows.append({'reference_event':r.get('event'),'reference_start':start,**result})
+    return rows,accepted_ids,counts,len(unique)
 def bet365_markets(data):
     books=(data or {}).get('bookmakers') or {}; markets=books.get('Bet365') or books.get('bet365') or []; return markets if isinstance(markets,list) else []
 def market_rows(event,markets,now):
@@ -41,7 +59,7 @@ def unavailable(refs,now,exc):
     error={'stage':'events','status':status,'reason':'rate_limited' if status==429 else type(exc).__name__}
     OBS.parent.mkdir(exist_ok=True);OBS.write_text('')
     SUMMARY.parent.mkdir(exist_ok=True);SUMMARY.write_text(json.dumps({'generated_at':now.isoformat(),'events_queried':0,'observations':0,'unique_markets':0,'top_markets':[],'top_leagues':[],'selection_fields':[],'provider_unavailable':True},indent=2)+'\n')
-    DIAG.write_text(json.dumps({'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':len({r.get('event') for r in refs if r.get('event')}),'exact_reference_events_in_bet365':0,'unmatched_reference_events':None,'exact_reference_rows':0,'exact_rows_not_queried':0,'queried_reference_rows_without_h2h_price':0,'matched_prices':0,'bet365_events_available':0,'bet365_events_queried':0,'resolver_diagnostic_only':True,'resolver_accepted_events':0,'resolver_reason_counts':{},'resolver_matches':[],'provider_unavailable':True},ensure_ascii=False,indent=2)+'\n')
+    DIAG.write_text(json.dumps({'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':len(unique_reference_events(refs)),'exact_reference_events_in_bet365':0,'unmatched_reference_events':None,'exact_reference_rows':0,'exact_rows_not_queried':0,'queried_reference_rows_without_h2h_price':0,'matched_prices':0,'bet365_events_available':0,'bet365_events_queried':0,'resolver_diagnostic_only':True,'resolver_accepted_events':0,'resolver_reason_counts':{},'resolver_matches':[],'resolver_rows_persisted':0,'resolver_rows_limit':MAX_RESOLVER_ROWS,'provider_unavailable':True},ensure_ascii=False,indent=2)+'\n')
     STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'source':'odds-api.io','provider_unavailable':True,'bet365_events_available':0,'events_queried':0,'odds_calls':0,'raw_market_observations':0,'unique_markets':0,'matched_reference_candidates':0,'resolver_accepted_events_diagnostic_only':0,'max_odds_calls':MAX_ODDS_CALLS,'errors':[error]},ensure_ascii=False,indent=2)+'\n')
     print('Bet365 provider unavailable for this run: '+json.dumps(error));return
 
@@ -56,18 +74,7 @@ def main():
         home,away=ref_parts(r)
         if home:ref_keys.append(event_key(home,away))
     unique_ref_keys=set(ref_keys); exact_ref_keys={k for k in unique_ref_keys if k in idx}
-    resolver_rows=[]; resolver_event_ids=set(); resolver_counts=collections.Counter()
-    for r in refs:
-        home,away=ref_parts(r)
-        if not home:continue
-        key=event_key(home,away)
-        if key in idx:continue
-        start=ref_start(r)
-        if not start:result={'accepted':False,'reason':'missing_reference_start'}
-        else:result=conservative_match(home,away,start,events)
-        resolver_counts[result.get('reason','unknown')]+=1
-        if result.get('accepted') and result.get('best',{}).get('event_id') is not None:resolver_event_ids.add(str(result['best']['event_id']))
-        resolver_rows.append({'reference_event':r.get('event'),'reference_start':start,**result})
+    resolver_rows,resolver_event_ids,resolver_counts,resolver_unique_events=resolver_diagnostics(refs,idx,events)
     prioritized=[]; seen=set()
     for k in ref_keys:
         e=idx.get(k)
@@ -107,7 +114,7 @@ def main():
     CAND.write_text(json.dumps(refs,ensure_ascii=False,indent=2)+'\n');OBS.parent.mkdir(exist_ok=True);OBS.write_text(''.join(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n' for x in observations))
     markets=collections.Counter(x['market'] for x in observations); leagues=collections.Counter(str(x.get('league') or 'unknown') for x in observations); selections=collections.Counter(x['selection'] for x in observations)
     summary={'generated_at':now.isoformat(),'events_queried':len(prioritized),'observations':len(observations),'unique_markets':len(markets),'top_markets':markets.most_common(100),'top_leagues':leagues.most_common(50),'selection_fields':selections.most_common(50)}
-    diagnostics={'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':len(unique_ref_keys),'exact_reference_events_in_bet365':len(exact_ref_keys),'unmatched_reference_events':len(unique_ref_keys-exact_ref_keys),'exact_reference_rows':exact_rows,'exact_rows_not_queried':exact_but_not_queried,'queried_reference_rows_without_h2h_price':queried_without_h2h_price,'matched_prices':matched,'bet365_events_available':len(events),'bet365_events_queried':len(prioritized),'resolver_diagnostic_only':True,'resolver_accepted_events':len(resolver_event_ids),'resolver_reason_counts':dict(resolver_counts),'resolver_matches':resolver_rows}
+    diagnostics={'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':resolver_unique_events,'exact_reference_events_in_bet365':len(exact_ref_keys),'unmatched_reference_events':len(unique_ref_keys-exact_ref_keys),'exact_reference_rows':exact_rows,'exact_rows_not_queried':exact_but_not_queried,'queried_reference_rows_without_h2h_price':queried_without_h2h_price,'matched_prices':matched,'bet365_events_available':len(events),'bet365_events_queried':len(prioritized),'resolver_diagnostic_only':True,'resolver_accepted_events':len(resolver_event_ids),'resolver_reason_counts':dict(resolver_counts),'resolver_matches':resolver_rows,'resolver_rows_persisted':len(resolver_rows),'resolver_rows_limit':MAX_RESOLVER_ROWS}
     SUMMARY.parent.mkdir(exist_ok=True);SUMMARY.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n');DIAG.write_text(json.dumps(diagnostics,ensure_ascii=False,indent=2)+'\n');STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'source':'odds-api.io','bet365_events_available':len(events),'events_queried':len(prioritized),'odds_calls':odds_calls,'raw_market_observations':len(observations),'unique_markets':len(markets),'matched_reference_candidates':matched,'resolver_accepted_events_diagnostic_only':len(resolver_event_ids),'max_odds_calls':MAX_ODDS_CALLS,'errors':errors},ensure_ascii=False,indent=2)+'\n')
     print(f'Bet365 universe: available={len(events)} queried={len(prioritized)} observations={len(observations)} markets={len(markets)} reference_matches={matched} resolver_diag={len(resolver_event_ids)} errors={len(errors)}');print('Reference match diagnostics: '+json.dumps(diagnostics,ensure_ascii=False))
 if __name__=='__main__':main()
