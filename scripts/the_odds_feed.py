@@ -22,11 +22,11 @@ def get(path,params):
     r.raise_for_status(); return r.json(),meta
 
 def active_sports():
-    if SPORTS_OVERRIDE:return [x.strip() for x in SPORTS_OVERRIDE.split(',') if x.strip()][:MAX_SPORTS], 'override'
+    if SPORTS_OVERRIDE:return [x.strip() for x in SPORTS_OVERRIDE.split(',') if x.strip()], 'override'
     try:
         data,_=get('/v4/sports',{})
         soccer=sorted(set(str(x.get('key')) for x in data if x.get('active') and str(x.get('key','')).startswith('soccer_') and not x.get('has_outrights')))
-        return soccer[:MAX_SPORTS], 'active-soccer-discovery'
+        return soccer, 'active-soccer-discovery'
     except Exception:return CORE_SPORTS[:MAX_SPORTS], 'fallback-defaults'
 
 def rotation_cursor():
@@ -35,20 +35,21 @@ def rotation_cursor():
 
 def select_sports(pool):
     if SPORTS_OVERRIDE:return pool[:min(len(pool),SPORTS_PER_RUN)],0
-    core=[s for s in CORE_SPORTS if s in pool]
-    tail=[s for s in pool if s not in core]
     budget=min(len(pool),SPORTS_PER_RUN)
-    # Keep broad core coverage but reserve at least half of every run for rotating tail
-    # when a tail exists. Thus active competitions are sampled over time rather than
-    # permanently discarded by a fixed top-N list.
-    core_slots=min(len(core),budget if not tail else max(1,budget//2))
-    selected=core[:core_slots]; tail_slots=budget-len(selected); cursor=rotation_cursor()
-    if tail and tail_slots:
-        selected += [tail[(cursor+i)%len(tail)] for i in range(tail_slots)]
-        next_cursor=(cursor+tail_slots)%len(tail)
-    else:next_cursor=cursor
-    if len(selected)<budget:
-        selected += [s for s in pool if s not in selected][:budget-len(selected)]
+    if not budget:return [],0
+    core=[s for s in CORE_SPORTS if s in pool]
+    # Keep a small stable core each run. Every other active competition—including
+    # unselected defaults—belongs to the rotating pool, so nothing is permanently
+    # excluded by ordering or by membership in DEFAULT_SPORTS.
+    core_slots=min(len(core),budget if len(pool)<=budget else max(1,budget//2))
+    stable=core[:core_slots]
+    rotating=[s for s in pool if s not in stable]
+    slots=budget-len(stable); cursor=rotation_cursor()
+    if rotating and slots:
+        selected=stable+[rotating[(cursor+i)%len(rotating)] for i in range(slots)]
+        next_cursor=(cursor+slots)%len(rotating)
+    else:selected=stable;next_cursor=cursor
+    if len(selected)<budget:selected += [s for s in pool if s not in selected][:budget-len(selected)]
     return selected,next_cursor
 
 def discover_sports():
@@ -91,7 +92,7 @@ def main():
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True);ROTATION_STATE.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(candidates,ensure_ascii=False,indent=2)+'\n')
     if not SPORTS_OVERRIDE:ROTATION_STATE.write_text(json.dumps({'cursor':next_cursor,'pool_size':len(pool),'last_sports':sports,'updated_at':now.isoformat()},ensure_ascii=False,indent=2)+'\n')
-    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v3','sports_source':source,'active_soccer_pool_size':len(pool),'sports_requested':sports,'sports_count':len(sports),'sports_per_run':SPORTS_PER_RUN,'max_sports':MAX_SPORTS,'rotation_next_cursor':next_cursor,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'pick_type_counts':pick_counts,'discovery_policy':'broad active-soccer pool with quota-aware rotation; preserve all offered h2h outcomes; confidence is metadata','quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
+    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v3','sports_source':source,'active_soccer_pool_size':len(pool),'sports_requested':sports,'sports_count':len(sports),'sports_per_run':SPORTS_PER_RUN,'max_sports':MAX_SPORTS,'rotation_next_cursor':next_cursor,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'pick_type_counts':pick_counts,'discovery_policy':'full active-soccer pool with quota-aware rotation; preserve all offered h2h outcomes; confidence is metadata','quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
     print(f'{len(candidates)} reference observations from {events_seen} events across {len(sports)}/{len(pool)} active sports ({source}); quota={last_meta}; errors={len(errors)}')
     if errors and events_seen==0:print(json.dumps(errors,ensure_ascii=False));raise SystemExit('No events returned; see feed status/errors above')
 if __name__=='__main__':main()
