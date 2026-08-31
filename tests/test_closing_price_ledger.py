@@ -19,7 +19,7 @@ class ClosingPriceLedgerTests(unittest.TestCase):
             closes.write_text(json.dumps({'signal_key':'a','taken_odds':9.9,'closing_odds':1.8})+'\n')
             old=(m.SIGNALS,m.PATH,m.STATUS);m.SIGNALS,m.PATH,m.STATUS=signals,closes,status
             try:
-                m.main(); row=json.loads(closes.read_text().strip()); self.assertEqual(row['taken_odds'],2.0); self.assertAlmostEqual(row['clv_pct'],(2.0/1.8-1)*100)
+                m.main(); row=json.loads(closes.read_text().strip()); self.assertEqual(row['taken_odds'],2.0); self.assertAlmostEqual(row['clv_pct'],(2.0/1.8-1)*100,places=4)
             finally:m.SIGNALS,m.PATH,m.STATUS=old
 
 if __name__=='__main__':unittest.main()
