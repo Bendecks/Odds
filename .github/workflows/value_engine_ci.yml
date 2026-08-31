@@ -12,5 +12,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests
+      - name: Compile provider and decision scripts
+        run: python -m py_compile scripts/the_odds_feed.py scripts/odds_api_io_bet365.py scripts/closing_price_fetch.py scripts/model_settlement_fetch.py scripts/value_decision_engine.py
       - run: python -m unittest discover -s tests -v
       - run: python scripts/value_decision_engine.py
