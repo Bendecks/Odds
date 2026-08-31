@@ -1,6 +1,11 @@
 import json, pathlib
 from datetime import datetime, timezone
 CAND=pathlib.Path('data/value_candidates.json');OBS=pathlib.Path('data/bet365_observations.jsonl')
+MARKET_ALIASES={
+ 'double_chance':('double chance',),
+ 'draw_no_bet':('draw no bet',),
+ 'btts':('both teams to score','teams to score'),
+}
 def main():
  candidates=json.loads(CAND.read_text()) if CAND.exists() else []; observations=[]
  if OBS.exists():
@@ -21,16 +26,16 @@ def main():
   if market not in matched:continue
   eid=exact_ids.get(str(c.get('event_id') or ''))
   if not eid:continue
-  if market=='double_chance':wanted_market='double chance';wanted_selection=str(c.get('pick') or '').lower()
-  elif market=='btts':wanted_market='both teams to score';wanted_selection=str(c.get('pick') or '').lower()
+  if market=='double_chance':wanted_selection=str(c.get('pick') or '').lower()
+  elif market=='btts':wanted_selection=str(c.get('pick') or '').lower()
   else:
-   wanted_market='draw no bet';event=str(c.get('event') or '')
+   event=str(c.get('event') or '')
    if ' vs ' not in event:continue
    home,away=event.split(' vs ',1);pick=str(c.get('pick') or '')
    if pick==home:wanted_selection='home'
    elif pick==away:wanted_selection='away'
    else:continue
-  o=index.get((eid,wanted_market,wanted_selection))
+  o=next((index.get((eid,wanted_market,wanted_selection)) for wanted_market in MARKET_ALIASES[market] if index.get((eid,wanted_market,wanted_selection))),None)
   if not o:continue
   try:odds=float(o.get('odds',0))
   except Exception:continue
