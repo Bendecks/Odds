@@ -13,6 +13,19 @@ def load(path, default):
     try:return json.loads(path.read_text())
     except Exception:return default
 
+def first_present(source, *keys):
+    for key in keys:
+        if key in source:
+            return source.get(key)
+    return None
+
+def provider_available(status):
+    if 'provider_available' in status:
+        return status.get('provider_available')
+    if 'provider_unavailable' in status:
+        return not bool(status.get('provider_unavailable'))
+    return None
+
 def main():
     decision=load(DECISION,{})
     candidates=load(CANDIDATES,[])
@@ -28,9 +41,9 @@ def main():
       'bet365_verified_rows':len(verified),
       'reference_events':reference.get('events_seen'),
       'reference_observations':reference.get('reference_observations'),
-      'bet365_events_queried':bet365.get('queried_events'),
-      'bet365_exact_matches':bet365.get('exact_reference_matches'),
-      'bet365_provider_available':bet365.get('provider_available'),
+      'bet365_events_queried':first_present(bet365,'events_queried','queried_events','bet365_events_queried'),
+      'bet365_exact_matches':first_present(bet365,'matched_reference_candidates','exact_reference_matches','bet365_exact_matches'),
+      'bet365_provider_available':provider_available(bet365),
       'reason':decision.get('reason')
     }
     old=[]
