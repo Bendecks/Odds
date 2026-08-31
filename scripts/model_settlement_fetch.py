@@ -58,22 +58,23 @@ def main():
         if row.get('event_match_method')!='exact' or not row.get('bet365_event_id'):
             skipped.append({'signal_key':key,'reason':'missing_exact_provider_identity'});continue
         eligible.append(row)
-    records=[];errors=[];calls=0
+    records=[];errors=[];attempts=0;successes=0
     if eligible and not KEY:errors.append({'reason':'missing_ODDS_API_IO_KEY'})
-    for row in eligible[:MAX_CALLS]:
-        eid=str(row['bet365_event_id'])
-        try:
-            r=requests.get(BASE+'/events/'+eid,params={'apiKey':KEY},timeout=30);r.raise_for_status();event=r.json();calls+=1
-            result=outcome(row,event)
-            if result is None:continue
-            close=closes.get(str(row['signal_key']),{})
-            records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':event.get('scores'),'source':'odds-api.io','bookmaker':'Bet365'})
-        except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
+    if KEY:
+        for row in eligible[:MAX_CALLS]:
+            eid=str(row['bet365_event_id']); attempts+=1
+            try:
+                r=requests.get(BASE+'/events/'+eid,params={'apiKey':KEY},timeout=30);r.raise_for_status();event=r.json();successes+=1
+                result=outcome(row,event)
+                if result is None:continue
+                close=closes.get(str(row['signal_key']),{})
+                records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':event.get('scores'),'source':'odds-api.io','bookmaker':'Bet365'})
+            except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
     if records:
         SETTLED.parent.mkdir(exist_ok=True)
         with SETTLED.open('a') as f:
             for x in records:f.write(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n')
-    report={'generated_at':now.isoformat(),'pending_rows':len(pending),'eligible_exact_h2h':len(eligible),'event_calls':calls,'settled_records_added':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_event_calls':MAX_CALLS}
+    report={'generated_at':now.isoformat(),'pending_rows':len(pending),'eligible_exact_h2h':len(eligible),'provider_call_attempts':attempts,'provider_call_successes':successes,'event_calls':attempts,'settled_records_added':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_event_calls':MAX_CALLS}
     STATUS.parent.mkdir(exist_ok=True);STATUS.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ('skipped','errors')},ensure_ascii=False))
 
 if __name__=='__main__':main()
