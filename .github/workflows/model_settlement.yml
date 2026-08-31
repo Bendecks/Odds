@@ -1,0 +1,38 @@
+name: New-model settlement
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 */6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: new-model-settlement
+  cancel-in-progress: true
+jobs:
+  settle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Settle mature exact H2H signals
+        env:
+          ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
+          SETTLEMENT_GRACE_HOURS: '3'
+          SETTLEMENT_MAX_EVENT_CALLS: '20'
+        run: |
+          python scripts/model_settlement_queue.py
+          python scripts/model_settlement_fetch.py
+          python scripts/model_settlement_queue.py
+          python scripts/model_validation_readiness.py
+      - name: Commit compact settlement state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/model_settlements.jsonl output/model_settlement_queue.json output/model_settlement_fetch_status.json output/model_validation_readiness.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update new-model settlements"
+          git pull --rebase --autostash
+          git push
