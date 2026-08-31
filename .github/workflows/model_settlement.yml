@@ -2,7 +2,7 @@ name: New-model settlement
 on:
   workflow_dispatch:
   schedule:
-    - cron: '37 */6 * * *'
+    - cron: '37 2,8,14,20 * * *'
 permissions:
   contents: write
 concurrency:
