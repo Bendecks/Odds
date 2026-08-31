@@ -8,7 +8,7 @@ class OperationalStatusTests(unittest.TestCase):
    td=pathlib.Path(td);c=td/'candidates.json';d=td/'decision.json';b=td/'bet365.json';r=td/'ref.json';mc=td/'market.json';runs=td/'runs.jsonl';out=td/'out.json'
    c.write_text(json.dumps([{'event':'A vs B','fair_probability':.55,'books':3},{'event':'C vs D','fair_probability':.6,'books':3}]))
    d.write_text(json.dumps({'decision':'NO BET','mode':'PAPER','reason':'x'}))
-   b.write_text(json.dumps({'provider_unavailable':False,'bet365_events_available':500,'events_queried':80,'provider_call_attempts':9,'odds_multi_calls':8,'fallback_odds_calls':1,'unique_markets':22,'raw_market_observations':1000}))
+   b.write_text(json.dumps({'provider_unavailable':False,'bet365_events_available':500,'events_queried':80,'provider_call_attempts':9,'batch_attempts':8,'fallback_attempts':1,'unique_markets':22,'raw_market_observations':1000}))
    r.write_text(json.dumps({'reference_events':2}))
    mc.write_text(json.dumps({}))
    runs.write_text(json.dumps({'decision':'NO BET'})+'\n')
