@@ -10,17 +10,20 @@ class ReferenceSportDiscoveryTests(unittest.TestCase):
             sports,source,pool,_=feed.discover_sports()
         self.assertEqual(set(sports),{'soccer_epl','soccer_uefa_champs_league'});self.assertEqual(pool,sports);self.assertEqual(source,'active-soccer-discovery')
 
-    def test_pool_and_per_run_are_separately_bounded(self):
+    def test_full_pool_is_preserved_while_paid_requests_are_bounded(self):
         data=[{'key':f'soccer_{i:02d}','active':True,'has_outrights':False} for i in range(30)]
         with patch.object(feed,'SPORTS_OVERRIDE',''),patch.object(feed,'MAX_SPORTS',20),patch.object(feed,'SPORTS_PER_RUN',6),patch.object(feed,'get',return_value=(data,{})),patch.object(feed,'rotation_cursor',return_value=0):
             sports,_,pool,_=feed.discover_sports()
-        self.assertEqual(len(pool),20);self.assertEqual(len(sports),6)
+        self.assertEqual(len(pool),30);self.assertEqual(len(sports),6)
 
-    def test_rotation_advances_tail(self):
+    def test_rotation_advances_across_all_nonstable_sports(self):
         pool=feed.CORE_SPORTS+['soccer_tail_a','soccer_tail_b','soccer_tail_c','soccer_tail_d']
-        with patch.object(feed,'SPORTS_OVERRIDE',''),patch.object(feed,'SPORTS_PER_RUN',4),patch.object(feed,'rotation_cursor',return_value=0):first,c1=feed.select_sports(pool)
-        with patch.object(feed,'SPORTS_OVERRIDE',''),patch.object(feed,'SPORTS_PER_RUN',4),patch.object(feed,'rotation_cursor',return_value=c1):second,c2=feed.select_sports(pool)
-        self.assertEqual(first[:2],feed.CORE_SPORTS[:2]);self.assertEqual(second[:2],feed.CORE_SPORTS[:2]);self.assertNotEqual(first[2:],second[2:]);self.assertEqual(c2,0)
+        seen=set();cursor=0
+        with patch.object(feed,'SPORTS_OVERRIDE',''),patch.object(feed,'SPORTS_PER_RUN',4):
+            for _ in range(6):
+                with patch.object(feed,'rotation_cursor',return_value=cursor):selected,cursor=feed.select_sports(pool)
+                self.assertEqual(selected[:2],feed.CORE_SPORTS[:2]);self.assertLessEqual(len(selected),4);seen.update(selected)
+        self.assertEqual(seen,set(pool))
 
     def test_override_avoids_discovery_call(self):
         with patch.object(feed,'SPORTS_OVERRIDE','soccer_epl,soccer_denmark_superliga'),patch.object(feed,'MAX_SPORTS',24),patch.object(feed,'SPORTS_PER_RUN',8),patch.object(feed,'get') as mocked:
