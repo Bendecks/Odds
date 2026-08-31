@@ -47,6 +47,13 @@ def candidate_edge(candidate):
         return None, None
     if odds <= 1 or not 0 < probability < 1:
         return None, None
+    if str(candidate.get('market') or '').lower()=='draw_no_bet':
+        try:
+            pw=float(candidate['win_probability']);pl=float(candidate['loss_probability'])
+        except Exception:return None, None
+        if pw < 0 or pl < 0 or pw+pl <= 0:return None, None
+        decisive=pw/(pw+pl)
+        return decisive-(1/odds), pw*(odds-1)-pl
     return probability-(1/odds), probability*odds-1
 
 def provider_available(status):
@@ -70,9 +77,9 @@ def bottleneck(funnel, decision):
         ('fair_probability_rows','Referencekandidater mangler fair probability.'),
         ('exact_bet365_rows','Ingen kandidater har eksakt Bet365-identitet.'),
         ('fresh_exact_bet365_rows','Eksakte Bet365-priser er ikke friske nok til final gate.'),
-        ('reference_depth_ready_rows','Ingen eksakte kandidater har nok referencebøger.'),
-        ('positive_edge_rows','Ingen eksakte kandidater har positiv edge mod Bet365.'),
-        ('ev_ready_rows','Ingen eksakte kandidater passerer EV-kravet.'),
+        ('reference_depth_ready_rows','Ingen friske eksakte kandidater har nok referencebøger.'),
+        ('positive_edge_rows','Ingen friske referenceklare kandidater har positiv edge mod Bet365.'),
+        ('ev_ready_rows','Ingen positive-edge kandidater passerer EV-kravet.'),
         ('qualified_now_rows','Ingen kandidat passerer alle final-gate krav lige nu.')
     ]
     for key, message in checks:
@@ -91,13 +98,15 @@ def main():
     exact=[c for c in candidates if exact_identity(c)]
     fresh=[c for c in exact if fresh_bet365(c,now)]
     min_books=int(engine.P.get('min_reference_books_for_play',3))
-    reference_ready=[c for c in exact if int(c.get('books') or 0) >= min_books]
+    reference_ready=[c for c in fresh if int(c.get('books') or 0) >= min_books]
     positive_edge=[]
-    ev_ready=[]
-    for c in exact:
-        edge, ev=candidate_edge(c)
-        if edge is not None and edge > 0:
+    for c in reference_ready:
+        edge,_=candidate_edge(c)
+        if edge is not None and edge >= float(engine.P.get('min_edge',0.02)):
             positive_edge.append(c)
+    ev_ready=[]
+    for c in positive_edge:
+        _,ev=candidate_edge(c)
         if ev is not None and ev >= float(engine.P.get('min_ev',0.025)):
             ev_ready.append(c)
     qualified=[x for x in (engine.evaluate(c,now) for c in candidates) if x and x.get('qualified')]
