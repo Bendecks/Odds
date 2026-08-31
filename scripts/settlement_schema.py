@@ -2,7 +2,7 @@ import hashlib, json
 
 DECISIVE={'win','loss'}
 TERMINAL={'win','loss','push','void'}
-IDENTITY_FIELDS=('event','market','pick','price_timestamp','model_version')
+IDENTITY_FIELDS=('event','market','line','pick','price_timestamp','model_version')
 
 def signal_key(x):
     return '|'.join(str(x.get(k,'')) for k in IDENTITY_FIELDS)
@@ -10,7 +10,8 @@ def signal_key(x):
 def settlement_key(x):
     explicit=str(x.get('signal_key') or '').strip()
     if explicit:return explicit
-    if not all(str(x.get(k) or '').strip() for k in IDENTITY_FIELDS):return ''
+    required=[k for k in IDENTITY_FIELDS if k!='line']
+    if not all(str(x.get(k) or '').strip() for k in required):return ''
     return signal_key(x)
 
 def normalize_result(v):return str(v or '').strip().lower()

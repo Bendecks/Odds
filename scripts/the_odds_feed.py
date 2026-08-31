@@ -11,6 +11,7 @@ MAX_SPORTS=int(os.getenv('THE_ODDS_MAX_SPORTS','24'))
 SPORTS_PER_RUN=max(1,int(os.getenv('THE_ODDS_SPORTS_PER_RUN','8')))
 ROTATION_STATE=pathlib.Path('data/reference_sport_rotation.json')
 BOOKMAKERS=[x.strip() for x in os.getenv('THE_ODDS_BOOKMAKERS','pinnacle,betfair_ex_eu,betsson,nordicbet,williamhill').split(',') if x.strip()]
+MARKETS=[x.strip() for x in os.getenv('THE_ODDS_MARKETS','h2h,totals,spreads,btts').split(',') if x.strip()]
 MAX_HOURS=int(os.getenv('MAX_HOURS','72'))
 OUT=pathlib.Path('data/value_candidates.json')
 STATUS=pathlib.Path('output/the_odds_feed_status.json')
@@ -56,43 +57,93 @@ def discover_sports():
     pool,source=active_sports(); selected,next_cursor=select_sports(pool)
     return selected,source,pool,next_cursor
 
+def price(outcome):
+    try:return float(outcome.get('price',0) or 0)
+    except Exception:return 0.0
+
+def point(outcome):
+    value=outcome.get('point')
+    if value is None:return None
+    try:return float(value)
+    except Exception:return value
+
+def market_bucket(market_key,outcome):
+    if market_key=='totals':return ('total',point(outcome))
+    if market_key=='spreads':
+        p=point(outcome)
+        try:return ('spread',abs(float(p)))
+        except Exception:return ('spread',p)
+    return ('market',None)
+
+def candidate_line(market_key,outcome):
+    if market_key in ('totals','spreads'):return point(outcome)
+    return None
+
 def novig_fair(outcomes):
-    valid=[o for o in outcomes if float(o.get('price',0) or 0)>1]; inv=[1/float(o['price']) for o in valid]; total=sum(inv)
+    valid=[o for o in outcomes if price(o)>1]; inv=[1/price(o) for o in valid]; total=sum(inv)
     if len(inv)<2 or total<=0:return {}
-    return {str(o['name']):(1/float(o['price']))/total for o in valid}
+    return {str(o['name']):(1/price(o))/total for o in valid}
+
+def fair_key(outcome):
+    return (str(outcome.get('name')),point(outcome))
+
+def novig_fair_by_key(outcomes):
+    valid=[o for o in outcomes if price(o)>1]; inv=[1/price(o) for o in valid]; total=sum(inv)
+    if len(inv)<2 or total<=0:return {}
+    return {fair_key(o):(1/price(o))/total for o in valid}
+
 def quality(n):return 'strong' if n>=4 else 'good' if n>=3 else 'limited' if n>=2 else 'weak'
+
+def market_candidates(event):
+    consensus={};offered={};books_by_pick={}
+    for book in event.get('bookmakers',[]):
+        bk=str(book.get('key') or book.get('title') or 'unknown')
+        for market in book.get('markets',[]):
+            market_key=str(market.get('key') or '')
+            if market_key not in MARKETS:continue
+            grouped={}
+            for outcome in market.get('outcomes',[]):
+                grouped.setdefault(market_bucket(market_key,outcome),[]).append(outcome)
+            for outcomes in grouped.values():
+                fair=novig_fair_by_key(outcomes)
+                for outcome in outcomes:
+                    p=price(outcome)
+                    if p<=1:continue
+                    pick=str(outcome.get('name'))
+                    line=candidate_line(market_key,outcome)
+                    key=(market_key,pick,line)
+                    fkey=fair_key(outcome)
+                    if fkey in fair:consensus.setdefault(key,[]).append(fair[fkey])
+                    offered.setdefault(key,[]).append(p);books_by_pick.setdefault(key,set()).add(bk)
+    rows=[]
+    for (market_key,pick,line),prices in offered.items():
+        probs=consensus.get((market_key,pick,line),[]);fair=statistics.median(probs) if probs else None;n=len(books_by_pick.get((market_key,pick,line),set()))
+        row={'event':f"{event.get('home_team')} vs {event.get('away_team')}",'event_id':event.get('id'),'sport':event.get('sport_key') or event.get('sport'),'commence_time':event.get('commence_time'),'market':market_key,'pick':pick,'reference_odds':round(max(prices),3),'fair_probability':round(fair,6) if fair is not None else None,'books':n,'reference_books':sorted(books_by_pick.get((market_key,pick,line),set())),'reference_quality':quality(n),'discovery_eligible':True,'bookmaker':'REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v4'}
+        if line is not None:row['line']=line
+        rows.append(row)
+    return rows
 
 def main():
     if not KEY:raise SystemExit('Missing THE_ODDS_API_KEY/ODDS_API_KEY')
     sports,source,pool,next_cursor=discover_sports(); now=datetime.now(timezone.utc);end=now+timedelta(hours=MAX_HOURS);candidates=[];last_meta={};events_seen=0;errors=[]
-    params={'bookmakers':','.join(BOOKMAKERS),'markets':'h2h','oddsFormat':'decimal','dateFormat':'iso','commenceTimeFrom':api_time(now),'commenceTimeTo':api_time(end)}
+    params={'bookmakers':','.join(BOOKMAKERS),'markets':','.join(MARKETS),'oddsFormat':'decimal','dateFormat':'iso','commenceTimeFrom':api_time(now),'commenceTimeTo':api_time(end)}
     for sport in sports:
         try:data,last_meta=get(f'/v4/sports/{sport}/odds',params)
         except requests.HTTPError as e:
             status=e.response.status_code if e.response is not None else None;body=(e.response.text[:500] if e.response is not None else str(e));errors.append({'sport':sport,'status':status,'error':body});continue
         events_seen+=len(data)
         for event in data:
-            consensus={};offered={};books_by_pick={}
-            for book in event.get('bookmakers',[]):
-                bk=str(book.get('key') or book.get('title') or 'unknown')
-                for market in book.get('markets',[]):
-                    if market.get('key')!='h2h':continue
-                    fair=novig_fair(market.get('outcomes',[]))
-                    for outcome in market.get('outcomes',[]):
-                        name=str(outcome.get('name'));price=float(outcome.get('price',0) or 0)
-                        if price<=1:continue
-                        if name in fair:consensus.setdefault(name,[]).append(fair[name])
-                        offered.setdefault(name,[]).append(price);books_by_pick.setdefault(name,set()).add(bk)
-            for pick,prices in offered.items():
-                probs=consensus.get(pick,[]);fair=statistics.median(probs) if probs else None;n=len(books_by_pick.get(pick,set()))
-                candidates.append({'event':f"{event.get('home_team')} vs {event.get('away_team')}",'event_id':event.get('id'),'sport':sport,'commence_time':event.get('commence_time'),'market':'h2h','pick':pick,'reference_odds':round(max(prices),3),'fair_probability':round(fair,6) if fair is not None else None,'books':n,'reference_books':sorted(books_by_pick.get(pick,set())),'reference_quality':quality(n),'discovery_eligible':True,'bookmaker':'REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v3'})
+            event['sport_key']=sport
+            candidates.extend(market_candidates(event))
     candidates.sort(key=lambda x:(x['books'],x['fair_probability'] or 0),reverse=True);quality_counts={};pick_counts={'draw':0,'team':0}
+    market_counts={}
     for c in candidates:
         quality_counts[c['reference_quality']]=quality_counts.get(c['reference_quality'],0)+1;pick_counts['draw' if str(c['pick']).lower()=='draw' else 'team']+=1
+        market_counts[c['market']]=market_counts.get(c['market'],0)+1
     OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True);ROTATION_STATE.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(candidates,ensure_ascii=False,indent=2)+'\n')
     if not SPORTS_OVERRIDE:ROTATION_STATE.write_text(json.dumps({'cursor':next_cursor,'pool_size':len(pool),'last_sports':sports,'updated_at':now.isoformat()},ensure_ascii=False,indent=2)+'\n')
-    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v3','sports_source':source,'active_soccer_pool_size':len(pool),'sports_requested':sports,'sports_count':len(sports),'sports_per_run':SPORTS_PER_RUN,'max_sports':MAX_SPORTS,'rotation_next_cursor':next_cursor,'bookmakers':BOOKMAKERS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'pick_type_counts':pick_counts,'discovery_policy':'full active-soccer pool with quota-aware rotation; preserve all offered h2h outcomes; confidence is metadata','quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
+    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v4','sports_source':source,'active_soccer_pool_size':len(pool),'sports_requested':sports,'sports_count':len(sports),'sports_per_run':SPORTS_PER_RUN,'max_sports':MAX_SPORTS,'rotation_next_cursor':next_cursor,'bookmakers':BOOKMAKERS,'markets':MARKETS,'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'market_counts':market_counts,'pick_type_counts':pick_counts,'discovery_policy':'full active-soccer pool with quota-aware rotation; preserve modelled h2h/totals/spreads/btts outcomes; confidence is metadata','quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n')
     print(f'{len(candidates)} reference observations from {events_seen} events across {len(sports)}/{len(pool)} active sports ({source}); quota={last_meta}; errors={len(errors)}')
     if errors and events_seen==0:print(json.dumps(errors,ensure_ascii=False));raise SystemExit('No events returned; see feed status/errors above')
 if __name__=='__main__':main()

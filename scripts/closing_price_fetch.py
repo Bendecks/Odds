@@ -18,11 +18,20 @@ def split_event(name):
     return p if len(p)==2 else (None,None)
 
 def field_for(row):
-    home,away=split_event(row.get('event')); pick=norm(row.get('pick'))
+    market=str(row.get('market') or 'h2h').lower();home,away=split_event(row.get('event')); pick=norm(row.get('pick'))
     if not home:return None
-    if pick==norm(home):return 'home'
-    if pick==norm(away):return 'away'
-    if pick in ('draw','uafgjort'):return 'draw'
+    if market in ('h2h','ml','1x2'):
+        if pick==norm(home):return 'home'
+        if pick==norm(away):return 'away'
+        if pick in ('draw','uafgjort'):return 'draw'
+    if market in ('totals','total'):
+        return 'over' if pick=='over' else 'under' if pick=='under' else None
+    if market in ('spreads','spread'):
+        if pick==norm(home):return 'home'
+        if pick==norm(away):return 'away'
+    if market in ('btts','both teams to score','teams to score'):
+        if pick in ('yes','ja'):return 'yes'
+        if pick in ('no','nej'):return 'no'
     return None
 
 def bet365_markets(data):
@@ -30,15 +39,45 @@ def bet365_markets(data):
     markets=books.get('Bet365') or books.get('bet365') or []
     return markets if isinstance(markets,list) else []
 
-def h2h_price(data,field):
-    if field not in ('home','away','draw'):return None,None
+MARKET_ALIASES={
+    'h2h':('ml','moneyline','h2h','1x2'),
+    'ml':('ml','moneyline','h2h','1x2'),
+    'totals':('totals','goals over/under','alternative total goals','alternative goal line'),
+    'spreads':('spread','alternative asian handicap'),
+    'btts':('both teams to score','teams to score'),
+}
+
+def market_matches(row,market):
+    row_market=str(row.get('market') or 'h2h').lower()
+    wanted=MARKET_ALIASES.get(row_market,(row_market,))
+    return str(market or '').lower() in wanted
+
+def line_matches(row,line_value):
+    candidate_line=row.get('line')
+    if candidate_line is None or candidate_line=='':return True
+    if line_value is None or line_value=='':return False
+    try:return abs(float(candidate_line)-float(line_value))<0.001
+    except Exception:return str(candidate_line)==str(line_value)
+
+def line_for_bet365(row,field):
+    line=row.get('line')
+    if str(row.get('market') or '').lower() in ('spreads','spread') and field=='away':
+        try:return -float(line)
+        except Exception:return line
+    return line
+
+def market_price(data,row,field):
     for m in bet365_markets(data):
-        if str(m.get('name','')).lower() not in ('ml','moneyline','h2h','1x2'):continue
+        if not market_matches(row,m.get('name') or m.get('key')):continue
         odds=m.get('odds') or []
-        if not odds or not isinstance(odds[0],dict):continue
-        try:price=float(odds[0].get(field))
-        except Exception:continue
-        if price>1:return price,m.get('updatedAt')
+        for line in odds:
+            if not isinstance(line,dict):continue
+            line_value=line.get('handicap',line.get('hdp',line.get('point',line.get('line',line.get('total')))))
+            probe={**row,'line':line_for_bet365(row,field)}
+            if not line_matches(probe,line_value):continue
+            try:price=float(line.get(field))
+            except Exception:continue
+            if price>1:return price,m.get('updatedAt')
     return None,None
 
 def main():
@@ -69,9 +108,9 @@ def main():
             eid=str(row['bet365_event_id']); attempts+=1
             try:
                 r=requests.get(BASE+'/odds',params={'apiKey':KEY,'eventId':eid,'bookmakers':'Bet365'},timeout=30);r.raise_for_status();data=r.json();successes+=1
-                price,provider_ts=h2h_price(data,field)
-                if price is None:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':'h2h_price_missing'});continue
-                records.append({'signal_key':row['signal_key'],'event':row.get('event'),'market':row.get('market'),'pick':row.get('pick'),'taken_odds':row.get('taken_odds'),'closing_odds':price,'commence_time':row.get('commence_time'),'model_version':row.get('model_version'),'bet365_event_id':eid,'event_match_method':'exact','provider_timestamp':provider_ts,'captured_at':now.isoformat(),'source':'odds-api.io','bookmaker':'Bet365'})
+                price,provider_ts=market_price(data,row,field)
+                if price is None:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':'market_price_missing'});continue
+                records.append({'signal_key':row['signal_key'],'event':row.get('event'),'market':row.get('market'),'line':row.get('line'),'pick':row.get('pick'),'taken_odds':row.get('taken_odds'),'closing_odds':price,'commence_time':row.get('commence_time'),'model_version':row.get('model_version'),'bet365_event_id':eid,'event_match_method':'exact','provider_timestamp':provider_ts,'captured_at':now.isoformat(),'source':'odds-api.io','bookmaker':'Bet365'})
             except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
     if records:
         LEDGER.parent.mkdir(exist_ok=True)

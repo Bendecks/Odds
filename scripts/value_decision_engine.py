@@ -2,7 +2,7 @@ import json, math, pathlib, sys
 from datetime import datetime, timezone
 
 POLICY_PATH=pathlib.Path('config/value_policy.json')
-DEFAULT={'mode':'PAPER','bankroll_dkk':50.0,'min_edge':0.02,'min_ev':0.025,'kelly_fraction':0.125,'max_stake_pct':0.03,'min_stake_dkk':1.0,'max_price_age_minutes':20,'min_reference_books_for_play':3}
+DEFAULT={'mode':'PAPER','bankroll_dkk':50.0,'min_edge':0.02,'min_ev':0.025,'kelly_fraction':0.125,'max_stake_pct':0.03,'min_stake_dkk':1.0,'max_price_age_minutes':20,'min_reference_books_for_play':3,'max_bets_per_event':1,'max_picks_per_run':25}
 
 def policy():
     try:return {**DEFAULT,**json.loads(POLICY_PATH.read_text())}
@@ -44,8 +44,19 @@ def decide(candidates, now=None):
     ranked=[x for x in (evaluate(c,now) for c in candidates) if x and x['qualified']]; ranked.sort(key=lambda x:x['score'],reverse=True)
     mode=str(P.get('mode','PAPER')).upper()
     if not ranked:return {'decision':'NO BET','mode':mode,'bankroll':BANKROLL,'reason':'Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.'}
-    x=ranked[0]; action='PLAY' if mode=='LIVE' else 'PAPER PICK'
-    return {'decision':action,'mode':mode,'bankroll':BANKROLL,'event':x['event'],'event_id':x.get('event_id'),'sport':x.get('sport'),'market':x.get('market','h2h'),'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'reference_books':x.get('books'),'reference_quality':x.get('reference_quality'),'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown'),'price_timestamp':x.get('bet365_timestamp'),'commence_time':x.get('commence_time'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':'exact'}
+    action='PLAY' if mode=='LIVE' else 'PAPER PICK'
+    per_event=max(1,int(P.get('max_bets_per_event',1)));limit=max(1,int(P.get('max_picks_per_run',25)))
+    seen={};picks=[]
+    for x in ranked:
+        event_key=str(x.get('bet365_event_id') or x.get('event_id') or x.get('event'))
+        if seen.get(event_key,0)>=per_event:continue
+        seen[event_key]=seen.get(event_key,0)+1
+        picks.append({'decision':action,'mode':mode,'bankroll':BANKROLL,'event':x['event'],'event_id':x.get('event_id'),'sport':x.get('sport'),'market':x.get('market','h2h'),'line':x.get('line'),'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'reference_books':x.get('books'),'reference_quality':x.get('reference_quality'),'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown'),'price_timestamp':x.get('bet365_timestamp'),'commence_time':x.get('commence_time'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':'exact'})
+        if len(picks)>=limit:break
+    if not picks:return {'decision':'NO BET','mode':mode,'bankroll':BANKROLL,'reason':'Kandidater fandtes, men max-bets-per-event policy fjernede alle.'}
+    result={**picks[0],'pick_count':len(picks),'picks':picks}
+    if len(picks)>1:result['reason']=f'{len(picks)} kvalificerede {action.lower()}s fundet i denne kørsel.'
+    return result
 
 def main():
     src=pathlib.Path(sys.argv[1] if len(sys.argv)>1 else 'data/value_candidates.json'); out=pathlib.Path(sys.argv[2] if len(sys.argv)>2 else 'output/latest_decision.json')

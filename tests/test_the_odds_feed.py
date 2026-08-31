@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 import scripts.the_odds_feed as feed
-from scripts.the_odds_feed import novig_fair, quality
+from scripts.the_odds_feed import market_candidates, novig_fair, quality
 
 class TestReferenceFeed(unittest.TestCase):
     def test_novig_three_way_keeps_draw(self):
@@ -28,5 +28,12 @@ class TestReferenceFeed(unittest.TestCase):
                     selected,cursor=feed.select_sports(pool)
                 seen.update(selected)
         self.assertEqual(seen,set(pool))
+    def test_market_candidates_preserve_modelled_lines(self):
+        event={'id':'r1','sport_key':'soccer_test','home_team':'Home','away_team':'Away','commence_time':'2026-09-01T12:00:00Z','bookmakers':[{'key':'pinnacle','markets':[{'key':'totals','outcomes':[{'name':'Over','price':1.91,'point':2.5},{'name':'Under','price':1.91,'point':2.5}]},{'key':'btts','outcomes':[{'name':'Yes','price':1.8},{'name':'No','price':2.0}]}]},{'key':'betfair_ex_eu','markets':[{'key':'totals','outcomes':[{'name':'Over','price':1.95,'point':2.5},{'name':'Under','price':1.87,'point':2.5}]}]}]}
+        rows=market_candidates(event)
+        total_over=[r for r in rows if r['market']=='totals' and r['pick']=='Over' and r.get('line')==2.5][0]
+        self.assertEqual(total_over['books'],2)
+        self.assertEqual(total_over['model_version'],'market-consensus-v4')
+        self.assertTrue(any(r['market']=='btts' and r['pick']=='Yes' for r in rows))
 
 if __name__=='__main__':unittest.main()

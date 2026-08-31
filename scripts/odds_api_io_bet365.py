@@ -58,6 +58,63 @@ def market_rows(event,markets,now):
                 rows.append({'event_id':event.get('id'),'event':f"{event.get('home')} vs {event.get('away')}",'home':event.get('home'),'away':event.get('away'),'sport':event.get('sport'),'league':event.get('league'),'commence_time':event.get('date') or event.get('startTime') or event.get('commence_time'),'market':name,'selection':field,'odds':price,'line':line_value,'timestamp':updated,'bookmaker':'Bet365','source':'odds-api.io'})
     return rows
 
+MARKET_ALIASES={
+    'h2h':('ml','moneyline','h2h','1x2'),
+    'totals':('totals','goals over/under','alternative total goals','alternative goal line'),
+    'spreads':('spread','alternative asian handicap'),
+    'btts':('both teams to score','teams to score'),
+}
+
+def market_matches(candidate_market, bet365_market):
+    wanted=MARKET_ALIASES.get(str(candidate_market or '').lower(),(str(candidate_market or '').lower(),))
+    actual=str(bet365_market or '').lower()
+    return actual in wanted
+
+def line_matches(candidate_line, bet365_line):
+    if candidate_line is None or candidate_line=='':
+        return True
+    if bet365_line is None or bet365_line=='':
+        return False
+    try:return abs(float(candidate_line)-float(bet365_line))<0.001
+    except Exception:return str(candidate_line)==str(bet365_line)
+
+def candidate_line_for_bet365(candidate,field):
+    line=candidate.get('line')
+    if str(candidate.get('market') or '').lower()=='spreads' and field=='away':
+        try:return -float(line)
+        except Exception:return line
+    return line
+
+def bet365_field(candidate,event):
+    market=str(candidate.get('market') or '').lower()
+    pick=norm(candidate.get('pick'))
+    if market=='h2h':
+        home=norm(event.get('home'));away=norm(event.get('away'))
+        return 'home' if pick==home else 'away' if pick==away else 'draw' if pick in ('draw','uafgjort') else None
+    if market=='totals':
+        return 'over' if pick=='over' else 'under' if pick=='under' else None
+    if market=='spreads':
+        home=norm(event.get('home'));away=norm(event.get('away'))
+        return 'home' if pick==home else 'away' if pick==away else None
+    if market=='btts':
+        if pick in ('yes','ja'):return 'yes'
+        if pick in ('no','nej'):return 'no'
+    return None
+
+def price_from_market(candidate,event,market):
+    odds=market.get('odds') or []
+    if not isinstance(odds,list):return None
+    field=bet365_field(candidate,event)
+    if not field:return None
+    for line in odds:
+        if not isinstance(line,dict):continue
+        line_value=line.get('handicap',line.get('hdp',line.get('point',line.get('line',line.get('total')))))
+        if not line_matches(candidate_line_for_bet365(candidate,field),line_value):continue
+        if line.get(field) is None:continue
+        try:return float(line[field])
+        except Exception:return None
+    return None
+
 def chunks(rows,size):
     for i in range(0,len(rows),size):yield rows[i:i+size]
 def fetch_odds(prioritized,now):
@@ -125,14 +182,10 @@ def main():
         if str(e.get('id')) not in queried_ids:exact_but_not_queried+=1;continue
         found=False
         for m in bet365_markets(cache.get(str(e['id']),{})):
-            if str(m.get('name','')).lower() not in ('ml','moneyline','h2h','1x2'):continue
-            odds=m.get('odds') or []
-            if not odds or not isinstance(odds[0],dict):continue
-            line=odds[0];pick=norm(r.get('pick'));home=norm(e.get('home'));away=norm(e.get('away'));field='home' if pick==home else 'away' if pick==away else 'draw' if pick in ('draw','uafgjort') else None
-            if not field or line.get(field) is None:continue
-            try:price=float(line[field])
-            except Exception:continue
-            r.update({'bet365_odds':price,'bet365_timestamp':m.get('updatedAt') or now.isoformat(),'bet365_verified':True,'bet365_source':'odds-api.io','bet365_event_id':e.get('id'),'event_match_method':'exact'});matched+=1;found=True;break
+            if not market_matches(r.get('market'),m.get('name') or m.get('key')):continue
+            price=price_from_market(r,e,m)
+            if price is None or price<=1:continue
+            r.update({'bet365_odds':price,'bet365_timestamp':m.get('updatedAt') or now.isoformat(),'bet365_verified':True,'bet365_source':'odds-api.io','bet365_event_id':e.get('id'),'bet365_market':m.get('name') or m.get('key'),'event_match_method':'exact'});matched+=1;found=True;break
         if not found:queried_without_h2h_price+=1
     CAND.write_text(json.dumps(refs,ensure_ascii=False,indent=2)+'\n');OBS.parent.mkdir(exist_ok=True);OBS.write_text(''.join(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n' for x in observations))
     markets=collections.Counter(x['market'] for x in observations); leagues=collections.Counter(str(x.get('league') or 'unknown') for x in observations); selections=collections.Counter(x['selection'] for x in observations)

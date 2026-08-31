@@ -23,4 +23,11 @@ class BatchTests(unittest.TestCase):
   with patch.object(m,'get',side_effect=fake):
    cache,obs,errs,attempts,successes,ba,bs,fa,fs=m.fetch_odds(events,__import__('datetime').datetime.now(__import__('datetime').timezone.utc))
   self.assertEqual((attempts,successes,ba,bs,fa,fs),(2,2,1,1,1,1));self.assertEqual(len(cache),2);self.assertFalse(errs)
+ def test_prices_non_h2h_modelled_markets(self):
+  event={'home':'Home FC','away':'Away FC'}
+  self.assertEqual(m.price_from_market({'market':'totals','pick':'Over','line':2.5},event,{'name':'Totals','odds':[{'total':2.5,'over':'1.91','under':'1.91'}]}),1.91)
+  self.assertEqual(m.price_from_market({'market':'btts','pick':'Yes'},event,{'name':'Both Teams To Score','odds':[{'yes':'1.8','no':'2.0'}]}),1.8)
+  self.assertEqual(m.price_from_market({'market':'spreads','pick':'Home FC','line':-1.5},event,{'name':'Spread','odds':[{'handicap':-1.5,'home':'2.1','away':'1.7'}]}),2.1)
+  self.assertEqual(m.price_from_market({'market':'spreads','pick':'Away FC','line':1.5},event,{'name':'Spread','odds':[{'handicap':-1.5,'home':'2.1','away':'1.7'}]}),1.7)
+  self.assertIsNone(m.price_from_market({'market':'totals','pick':'Over','line':3.5},event,{'name':'Totals','odds':[{'total':2.5,'over':'1.91','under':'1.91'}]}))
 if __name__=='__main__':unittest.main()
