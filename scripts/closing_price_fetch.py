@@ -62,21 +62,22 @@ def main():
         field=field_for(row)
         if not field:skipped.append({'signal_key':key,'reason':'unsupported_pick_identity'});continue
         eligible.append((row,field))
-    fetched=0; errors=[]; records=[]
+    attempts=0; successes=0; errors=[]; records=[]
     if eligible and not KEY:errors.append({'reason':'missing_ODDS_API_IO_KEY'})
-    for row,field in eligible[:MAX_CALLS]:
-        eid=str(row['bet365_event_id'])
-        try:
-            r=requests.get(BASE+'/odds',params={'apiKey':KEY,'eventId':eid,'bookmakers':'Bet365'},timeout=30);r.raise_for_status();data=r.json();fetched+=1
-            price,provider_ts=h2h_price(data,field)
-            if price is None:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':'h2h_price_missing'});continue
-            records.append({'signal_key':row['signal_key'],'event':row.get('event'),'market':row.get('market'),'pick':row.get('pick'),'taken_odds':row.get('taken_odds'),'closing_odds':price,'commence_time':row.get('commence_time'),'model_version':row.get('model_version'),'bet365_event_id':eid,'event_match_method':'exact','provider_timestamp':provider_ts,'captured_at':now.isoformat(),'source':'odds-api.io','bookmaker':'Bet365'})
-        except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
+    if KEY:
+        for row,field in eligible[:MAX_CALLS]:
+            eid=str(row['bet365_event_id']); attempts+=1
+            try:
+                r=requests.get(BASE+'/odds',params={'apiKey':KEY,'eventId':eid,'bookmakers':'Bet365'},timeout=30);r.raise_for_status();data=r.json();successes+=1
+                price,provider_ts=h2h_price(data,field)
+                if price is None:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':'h2h_price_missing'});continue
+                records.append({'signal_key':row['signal_key'],'event':row.get('event'),'market':row.get('market'),'pick':row.get('pick'),'taken_odds':row.get('taken_odds'),'closing_odds':price,'commence_time':row.get('commence_time'),'model_version':row.get('model_version'),'bet365_event_id':eid,'event_match_method':'exact','provider_timestamp':provider_ts,'captured_at':now.isoformat(),'source':'odds-api.io','bookmaker':'Bet365'})
+            except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
     if records:
         LEDGER.parent.mkdir(exist_ok=True)
         with LEDGER.open('a') as f:
             for x in records:f.write(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n')
-    report={'generated_at':now.isoformat(),'due_rows':len(due),'eligible_exact_rows':len(eligible),'odds_calls':fetched,'captured':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_odds_calls':MAX_CALLS}
+    report={'generated_at':now.isoformat(),'due_rows':len(due),'eligible_exact_rows':len(eligible),'provider_call_attempts':attempts,'provider_call_successes':successes,'odds_calls':attempts,'captured':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_odds_calls':MAX_CALLS}
     STATUS.parent.mkdir(exist_ok=True);STATUS.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ('skipped','errors')},ensure_ascii=False))
 
 if __name__=='__main__':main()
