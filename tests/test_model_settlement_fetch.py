@@ -8,6 +8,13 @@ class ModelSettlementFetchTests(unittest.TestCase):
     def test_home_win(self):self.assertEqual(fetch.outcome(self.row('A'),{'status':'settled','scores':{'home':2,'away':1}}),'win')
     def test_away_loss(self):self.assertEqual(fetch.outcome(self.row('B'),{'status':'settled','scores':{'home':2,'away':1}}),'loss')
     def test_draw_pick(self):self.assertEqual(fetch.outcome(self.row('Draw'),{'status':'settled','scores':{'home':1,'away':1}}),'win')
+    def test_draw_no_bet_market(self):
+        home={'event':'A vs B','market':'draw_no_bet','pick':'A'};away={'event':'A vs B','market':'draw_no_bet','pick':'B'}
+        self.assertTrue(fetch.supported_market(home))
+        self.assertEqual(fetch.outcome(home,{'status':'settled','scores':{'home':2,'away':1}}),'win')
+        self.assertEqual(fetch.outcome(away,{'status':'settled','scores':{'home':2,'away':1}}),'loss')
+        self.assertEqual(fetch.outcome(home,{'status':'settled','scores':{'home':1,'away':1}}),'push')
+        self.assertIsNone(fetch.outcome({'event':'A vs B','market':'draw_no_bet','pick':'C'},{'status':'settled','scores':{'home':1,'away':0}}))
     def test_total_goals_market(self):
         self.assertEqual(fetch.outcome({'event':'A vs B','market':'totals','pick':'Over','line':2.5},{'status':'settled','scores':{'home':2,'away':1}}),'win')
         self.assertEqual(fetch.outcome({'event':'A vs B','market':'totals','pick':'Under','line':2.5},{'status':'settled','scores':{'home':2,'away':1}}),'loss')
