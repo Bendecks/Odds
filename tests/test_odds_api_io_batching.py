@@ -1,0 +1,26 @@
+import importlib.util,pathlib,unittest
+from unittest.mock import patch
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+spec=importlib.util.spec_from_file_location('bet365',ROOT/'scripts'/'odds_api_io_bet365.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+
+def event(i):return {'id':i,'home':f'H{i}','away':f'A{i}','date':'2026-09-01T12:00:00Z'}
+def odds(i):return {'id':i,'bookmakers':{'Bet365':[{'name':'ML','updatedAt':'2026-08-31T06:00:00Z','odds':[{'home':'2.0','draw':'3.0','away':'4.0'}]}]}}
+class BatchTests(unittest.TestCase):
+ def test_chunks_max_ten(self):
+  self.assertEqual([len(x) for x in m.chunks(list(range(23)),10)],[10,10,3])
+ def test_batch_replaces_per_event_calls(self):
+  events=[event(i) for i in range(1,13)]
+  def fake(path,params):
+   self.assertEqual(path,'/odds/multi');return [odds(int(x)) for x in params['eventIds'].split(',')]
+  with patch.object(m,'get',side_effect=fake):
+   cache,obs,errs,attempts,successes,ba,bs,fa,fs=m.fetch_odds(events,__import__('datetime').datetime.now(__import__('datetime').timezone.utc))
+  self.assertEqual(attempts,2);self.assertEqual(successes,2);self.assertEqual((ba,bs,fa,fs),(2,2,0,0));self.assertEqual(len(cache),12);self.assertEqual(len(obs),36);self.assertFalse(errs)
+ def test_missing_batch_item_falls_back_only_for_missing_event(self):
+  events=[event(1),event(2)]
+  def fake(path,params):
+   if path=='/odds/multi':return [odds(1)]
+   self.assertEqual(params['eventId'],'2');return odds(2)
+  with patch.object(m,'get',side_effect=fake):
+   cache,obs,errs,attempts,successes,ba,bs,fa,fs=m.fetch_odds(events,__import__('datetime').datetime.now(__import__('datetime').timezone.utc))
+  self.assertEqual((attempts,successes,ba,bs,fa,fs),(2,2,1,1,1,1));self.assertEqual(len(cache),2);self.assertFalse(errs)
+if __name__=='__main__':unittest.main()
