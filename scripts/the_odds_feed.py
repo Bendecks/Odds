@@ -70,6 +70,11 @@ def market_bucket(market_key,outcome):
 
 def candidate_line(market_key,outcome):return point(outcome) if market_key in ('totals','spreads') else None
 
+def novig_fair(outcomes):
+    valid=[o for o in outcomes if price(o)>1]; inv=[1/price(o) for o in valid]; total=sum(inv)
+    if len(inv)<2 or total<=0:return {}
+    return {str(o.get('name')):(1/price(o))/total for o in valid}
+
 def fair_key(outcome):return (str(outcome.get('name')),point(outcome))
 def novig_fair_by_key(outcomes):
     valid=[o for o in outcomes if price(o)>1]; inv=[1/price(o) for o in valid]; total=sum(inv)
