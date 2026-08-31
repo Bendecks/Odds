@@ -14,7 +14,7 @@ class ModelSettlementFetchTests(unittest.TestCase):
     def test_unknown_pick_is_not_guessed(self):self.assertIsNone(fetch.outcome(self.row('C'),{'status':'settled','scores':{'home':1,'away':0}}))
     def test_wrapped_event_and_flat_scores(self):self.assertEqual(fetch.outcome(self.row('A'),{'data':{'status':'completed','homeScore':3,'awayScore':0}}),'win')
     def test_regulation_ft_beats_extra_time_top_level(self):
-        event={'status':'settled','scores':{'home':2,'away':1,'periods':{'ft':{'home':1,'away':1},'et':{'home':1,'away':0}}}}}
+        event={'status':'settled','scores':{'home':2,'away':1,'periods':{'ft':{'home':1,'away':1},'et':{'home':1,'away':0}}}}
         self.assertEqual(fetch.outcome(self.row('Draw'),event),'win')
         self.assertEqual(fetch.outcome(self.row('A'),event),'loss')
         self.assertEqual(fetch.score_source(event),'regulation_ft')
