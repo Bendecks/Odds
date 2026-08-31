@@ -35,6 +35,11 @@ class DerivedMarketJoinTests(unittest.TestCase):
   btts=next(x for x in out if x['market']=='btts')
   self.assertTrue(btts['bet365_verified']);self.assertEqual(btts['bet365_event_id'],'b365-1');self.assertEqual(btts['bet365_odds'],1.91)
 
+ def test_btts_accepts_provider_teams_to_score_alias(self):
+  out=self.run_join([direct(),derived('btts','no')],[obs('Teams to Score','no',2.07)])
+  btts=next(x for x in out if x['market']=='btts')
+  self.assertTrue(btts['bet365_verified']);self.assertEqual(btts['bet365_odds'],2.07);self.assertEqual(btts['bet365_market'],'Teams to Score')
+
  def test_btts_does_not_join_from_matching_names_without_exact_sibling(self):
   out=self.run_join([derived('btts','yes')],[obs('Both Teams To Score','yes',1.91)])
   self.assertFalse(out[0]['bet365_verified']);self.assertNotIn('bet365_odds',out[0])
