@@ -36,10 +36,21 @@ def market_rows(event,markets,now):
                 rows.append({'event_id':event.get('id'),'event':f"{event.get('home')} vs {event.get('away')}",'home':event.get('home'),'away':event.get('away'),'sport':event.get('sport'),'league':event.get('league'),'commence_time':event.get('date') or event.get('startTime') or event.get('commence_time'),'market':name,'selection':field,'odds':price,'line':line_value,'timestamp':updated,'bookmaker':'Bet365','source':'odds-api.io'})
     return rows
 
+def unavailable(refs,now,exc):
+    status=exc.response.status_code if isinstance(exc,requests.HTTPError) and exc.response is not None else None
+    error={'stage':'events','status':status,'reason':'rate_limited' if status==429 else type(exc).__name__}
+    OBS.parent.mkdir(exist_ok=True);OBS.write_text('')
+    SUMMARY.parent.mkdir(exist_ok=True);SUMMARY.write_text(json.dumps({'generated_at':now.isoformat(),'events_queried':0,'observations':0,'unique_markets':0,'top_markets':[],'top_leagues':[],'selection_fields':[],'provider_unavailable':True},indent=2)+'\n')
+    DIAG.write_text(json.dumps({'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':len({r.get('event') for r in refs if r.get('event')}),'exact_reference_events_in_bet365':0,'unmatched_reference_events':None,'exact_reference_rows':0,'exact_rows_not_queried':0,'queried_reference_rows_without_h2h_price':0,'matched_prices':0,'bet365_events_available':0,'bet365_events_queried':0,'resolver_diagnostic_only':True,'resolver_accepted_events':0,'resolver_reason_counts':{},'resolver_matches':[],'provider_unavailable':True},ensure_ascii=False,indent=2)+'\n')
+    STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'source':'odds-api.io','provider_unavailable':True,'bet365_events_available':0,'events_queried':0,'odds_calls':0,'raw_market_observations':0,'unique_markets':0,'matched_reference_candidates':0,'resolver_accepted_events_diagnostic_only':0,'max_odds_calls':MAX_ODDS_CALLS,'errors':[error]},ensure_ascii=False,indent=2)+'\n')
+    print('Bet365 provider unavailable for this run: '+json.dumps(error));return
+
 def main():
     if not KEY: raise SystemExit('Missing ODDS_API_IO_KEY')
     refs=json.loads(CAND.read_text()) if CAND.exists() else []; now=datetime.now(timezone.utc); cutoff=now+timedelta(hours=MAX_HOURS)
-    events=get('/events',{'sport':'football','bookmaker':'Bet365','status':'pending','limit':'500'}); events=(events.get('data') or events.get('events') or []) if isinstance(events,dict) else events
+    try:events=get('/events',{'sport':'football','bookmaker':'Bet365','status':'pending','limit':'500'})
+    except requests.RequestException as exc:return unavailable(refs,now,exc)
+    events=(events.get('data') or events.get('events') or []) if isinstance(events,dict) else events
     idx={event_key(e.get('home'),e.get('away')):e for e in events if e.get('id')}; ref_keys=[]
     for r in refs:
         home,away=ref_parts(r)
@@ -52,13 +63,10 @@ def main():
         key=event_key(home,away)
         if key in idx:continue
         start=ref_start(r)
-        if not start:
-            result={'accepted':False,'reason':'missing_reference_start'}
-        else:
-            result=conservative_match(home,away,start,events)
+        if not start:result={'accepted':False,'reason':'missing_reference_start'}
+        else:result=conservative_match(home,away,start,events)
         resolver_counts[result.get('reason','unknown')]+=1
-        if result.get('accepted') and result.get('best',{}).get('event_id') is not None:
-            resolver_event_ids.add(str(result['best']['event_id']))
+        if result.get('accepted') and result.get('best',{}).get('event_id') is not None:resolver_event_ids.add(str(result['best']['event_id']))
         resolver_rows.append({'reference_event':r.get('event'),'reference_start':start,**result})
     prioritized=[]; seen=set()
     for k in ref_keys:
