@@ -25,12 +25,13 @@ jobs:
         run: |
           python scripts/model_validation_readiness.py
           python scripts/paper_pick_history.py
+          PYTHONPATH=scripts python scripts/operational_status.py
       - uses: actions/configure-pages@v5
       - name: Stage public site only
         run: |
           mkdir -p _site/output
           cp index.html styles.css app.js _site/
-          cp output/latest_decision.json output/model_validation_readiness.json output/paper_pick_history.json _site/output/
+          cp output/latest_decision.json output/model_validation_readiness.json output/paper_pick_history.json output/operational_status.json _site/output/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'

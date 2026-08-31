@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-31T06:59:34.344525+00:00",
+  "mode": "PAPER",
+  "decision": "NO BET",
+  "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
+  "bottleneck": "Eksakte Bet365-priser er ikke friske nok til final gate.",
+  "funnel": {
+    "candidate_rows": 45,
+    "fair_probability_rows": 45,
+    "reference_events": 15,
+    "exact_bet365_rows": 3,
+    "fresh_exact_bet365_rows": 0,
+    "reference_depth_ready_rows": 3,
+    "positive_edge_rows": 0,
+    "ev_ready_rows": 0,
+    "qualified_now_rows": 0,
+    "decision_runs_recorded": 1
+  },
+  "provider": {
+    "generated_at": "2026-08-31T05:34:13.840472+00:00",
+    "available": true,
+    "bet365_events_available": 500,
+    "events_queried": 80,
+    "provider_call_attempts": 81,
+    "provider_call_successes": 81,
+    "odds_calls": 80,
+    "odds_multi_calls": null,
+    "fallback_odds_calls": null,
+    "raw_market_observations": 29698,
+    "unique_markets": 119,
+    "matched_reference_candidates": 3,
+    "errors": []
+  },
+  "policy": {
+    "bankroll_dkk": 50.0,
+    "min_edge": 0.02,
+    "min_ev": 0.025,
+    "max_price_age_minutes": 20,
+    "min_reference_books_for_play": 3
+  }
+}
