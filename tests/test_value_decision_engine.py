@@ -9,6 +9,16 @@ class TestDecisionEngine(unittest.TestCase):
     def test_unverified_reference_price_cannot_be_play(self): self.assertIsNone(evaluate({'event':'A-B','pick':'A','reference_odds':2.2,'fair_probability':0.52,'bet365_verified':False},NOW))
     def test_rejects_no_edge(self): self.assertFalse(evaluate(row(2.0,.50),NOW)['qualified'])
     def test_selects_best_verified_qualified_in_paper_mode(self): self.assertEqual(decide([row(3.0,.45),row(3.2,.40)],NOW)['decision'],'PAPER PICK')
+    def test_decide_keeps_multiple_qualified_events(self):
+        a=row(3.0,.45); b=row(3.0,.45); b['event']='C-B'; b['bet365_event_id']='evt-2'
+        result=decide([a,b],NOW)
+        self.assertEqual(result['decision'],'PAPER PICK')
+        self.assertEqual(result['pick_count'],2)
+        self.assertEqual(len(result['picks']),2)
+    def test_decide_respects_max_one_bet_per_event(self):
+        a=row(3.0,.45); b=row(2.8,.45); b['market']='totals'; b['pick']='Over'; b['line']=2.5
+        result=decide([a,b],NOW)
+        self.assertEqual(result['pick_count'],1)
     def test_pick_preserves_exact_provider_identity_for_closing_capture(self):
         x=decide([row(3.0,.45)],NOW); self.assertEqual(x['bet365_event_id'],'evt-1'); self.assertEqual(x['event_match_method'],'exact')
     def test_weak_reference_is_preserved_but_not_qualified(self):

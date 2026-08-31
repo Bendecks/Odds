@@ -8,6 +8,16 @@ class ModelSettlementFetchTests(unittest.TestCase):
     def test_home_win(self):self.assertEqual(fetch.outcome(self.row('A'),{'status':'settled','scores':{'home':2,'away':1}}),'win')
     def test_away_loss(self):self.assertEqual(fetch.outcome(self.row('B'),{'status':'settled','scores':{'home':2,'away':1}}),'loss')
     def test_draw_pick(self):self.assertEqual(fetch.outcome(self.row('Draw'),{'status':'settled','scores':{'home':1,'away':1}}),'win')
+    def test_total_goals_market(self):
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'totals','pick':'Over','line':2.5},{'status':'settled','scores':{'home':2,'away':1}}),'win')
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'totals','pick':'Under','line':2.5},{'status':'settled','scores':{'home':2,'away':1}}),'loss')
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'totals','pick':'Over','line':3.0},{'status':'settled','scores':{'home':2,'away':1}}),'push')
+    def test_btts_market(self):
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'btts','pick':'Yes'},{'status':'settled','scores':{'home':2,'away':1}}),'win')
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'btts','pick':'No'},{'status':'settled','scores':{'home':2,'away':1}}),'loss')
+    def test_spread_market(self):
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'spreads','pick':'A','line':-1.5},{'status':'settled','scores':{'home':3,'away':1}}),'win')
+        self.assertEqual(fetch.outcome({'event':'A vs B','market':'spreads','pick':'B','line':1.5},{'status':'settled','scores':{'home':3,'away':1}}),'loss')
     def test_cancelled_is_void(self):self.assertEqual(fetch.outcome(self.row(),{'status':'cancelled'}),'void')
     def test_postponed_is_void(self):self.assertEqual(fetch.outcome(self.row(),{'status':'postponed'}),'void')
     def test_pending_is_not_settled(self):self.assertIsNone(fetch.outcome(self.row(),{'status':'pending','scores':{'home':0,'away':0}}))

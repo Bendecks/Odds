@@ -63,17 +63,44 @@ def settlement_score_pair(event):
     if has_extra_time_or_penalties(event):return None,'ambiguous_knockout_score'
     pair=score_pair(event)
     return (pair,'top_level') if pair else (None,'missing_score')
+def supported_market(row):
+    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score')
+def market_outcome(row,pair):
+    h,a=pair;market=str(row.get('market') or '').lower();home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
+    if not home:return None
+    if market in ('h2h','ml','1x2'):
+        winner='draw' if h==a else 'home' if h>a else 'away';field='home' if pick==norm(home) else 'away' if pick==norm(away) else 'draw' if pick in ('draw','uafgjort') else None
+        if not field:return None
+        return 'win' if field==winner else 'loss'
+    if market in ('totals','total'):
+        try:line=float(row.get('line'))
+        except Exception:return None
+        goals=h+a
+        if goals==line:return 'push'
+        if pick=='over':return 'win' if goals>line else 'loss'
+        if pick=='under':return 'win' if goals<line else 'loss'
+        return None
+    if market in ('btts','both teams to score','teams to score'):
+        yes=h>0 and a>0
+        if pick in ('yes','ja'):return 'win' if yes else 'loss'
+        if pick in ('no','nej'):return 'loss' if yes else 'win'
+        return None
+    if market in ('spreads','spread'):
+        try:line=float(row.get('line'))
+        except Exception:return None
+        side='home' if pick==norm(home) else 'away' if pick==norm(away) else None
+        if not side:return None
+        margin=(h+line)-a if side=='home' else (a+line)-h
+        if margin==0:return 'push'
+        return 'win' if margin>0 else 'loss'
+    return None
 def outcome(row,event):
     event=event_payload(event);status=str(event.get('status') or '').lower()
     if status in ('cancelled','canceled','void','postponed'):return 'void'
     if status not in ('settled','finished','completed','ended'):return None
     pair,_=settlement_score_pair(event)
     if not pair:return None
-    h,a=pair;home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
-    if not home:return None
-    winner='draw' if h==a else 'home' if h>a else 'away';field='home' if pick==norm(home) else 'away' if pick==norm(away) else 'draw' if pick in ('draw','uafgjort') else None
-    if not field:return None
-    return 'win' if field==winner else 'loss'
+    return market_outcome(row,pair)
 def read_jsonl(path):
     out=[]
     if not path.exists():return out
@@ -91,7 +118,7 @@ def main():
     for row in pending:
         key=str(row.get('signal_key') or '')
         if not key or key in settled_keys:continue
-        if row.get('market') not in ('h2h','ML','1x2'):skipped.append({'signal_key':key,'reason':'unsupported_market'});continue
+        if not supported_market(row):skipped.append({'signal_key':key,'reason':'unsupported_market'});continue
         if row.get('event_match_method')!='exact' or not row.get('bet365_event_id'):skipped.append({'signal_key':key,'reason':'missing_exact_provider_identity'});continue
         eligible.append(row)
     records=[];errors=[];attempts=0;successes=0;added_keys=set()
@@ -112,5 +139,5 @@ def main():
     if records:
         with SETTLED.open('a') as f:
             for x in records:f.write(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n')
-    report={'generated_at':now.isoformat(),'pending_rows':len(pending),'eligible_exact_h2h':len(eligible),'provider_call_attempts':attempts,'provider_call_successes':successes,'event_calls':attempts,'settled_records_added':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_event_calls':MAX_CALLS};STATUS.parent.mkdir(exist_ok=True);STATUS.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ('skipped','errors')},ensure_ascii=False))
+    report={'generated_at':now.isoformat(),'pending_rows':len(pending),'eligible_exact_modelled':len(eligible),'provider_call_attempts':attempts,'provider_call_successes':successes,'event_calls':attempts,'settled_records_added':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_event_calls':MAX_CALLS};STATUS.parent.mkdir(exist_ok=True);STATUS.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ('skipped','errors')},ensure_ascii=False))
 if __name__=='__main__':main()

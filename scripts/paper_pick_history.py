@@ -30,7 +30,7 @@ def main():
             if outcome=='win': profit=round(stake*(odds-1),2)
             elif outcome=='loss': profit=round(-stake,2)
             elif outcome in ('push','void'): profit=0.0
-        rows.append({'signal_key':key,'recorded_at':s.get('recorded_at'),'commence_time':s.get('commence_time'),'event':s.get('event'),'market':s.get('market'),'pick':s.get('pick'),'odds':odds,'stake_dkk':stake,'edge':s.get('edge'),'ev':s.get('ev'),'reference_books':s.get('reference_books'),'result':outcome or 'open','profit_dkk':profit,'closing_odds':close.get('closing_odds') or result.get('closing_odds'),'clv_pct':close.get('clv_pct'),'model_version':s.get('model_version')})
+        rows.append({'signal_key':key,'recorded_at':s.get('recorded_at'),'commence_time':s.get('commence_time'),'event':s.get('event'),'market':s.get('market'),'line':s.get('line'),'pick':s.get('pick'),'odds':odds,'stake_dkk':stake,'edge':s.get('edge'),'ev':s.get('ev'),'reference_books':s.get('reference_books'),'result':outcome or 'open','profit_dkk':profit,'closing_odds':close.get('closing_odds') or result.get('closing_odds'),'clv_pct':close.get('clv_pct'),'model_version':s.get('model_version')})
     rows=rows[-MAX_PUBLIC_ROWS:]
     decisive=[x for x in rows if x['result'] in ('win','loss')]
     total_stake=sum((x['stake_dkk'] or 0) for x in decisive); total_profit=sum((x['profit_dkk'] or 0) for x in decisive)

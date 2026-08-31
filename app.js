@@ -12,6 +12,11 @@ function num(v, digits = 2) {
   return Number.isFinite(n) ? n.toFixed(digits) : '-';
 }
 
+function pickLabel(x) {
+  const line = x && x.line !== undefined && x.line !== null && x.line !== '' ? ` ${x.line}` : '';
+  return `${x?.pick ?? '-'}${line}`;
+}
+
 function age(ts) {
   if (!ts) return '';
   const t = new Date(ts).getTime();
@@ -37,8 +42,10 @@ async function loadDecision() {
     const pick = d.decision === 'PLAY' || d.decision === 'PAPER PICK';
     if (pick) {
       const stakeLabel = d.decision === 'PLAY' ? 'Indsats' : 'Paper indsats';
+      const count = Number(d.pick_count || 1);
+      const countText = count > 1 ? ` · ${count} picks` : '';
       box.className = 'result ' + (d.decision === 'PLAY' ? 'pass' : 'paper');
-      box.innerHTML = `<strong>${safe(d.decision)}</strong><h2>${safe(d.event)}</h2><h1>${safe(d.pick)}</h1><div class="resultGrid"><span>Bet365 odds <b>${num(d.odds)}</b></span><span>Minimum <b>${num(d.minimum_odds)}</b></span><span>${stakeLabel} <b>${num(d.stake)} kr.</b></span><span>Edge <b>${pct(d.edge)}</b></span></div><small>${safe(age(d.price_timestamp))}</small>`;
+      box.innerHTML = `<strong>${safe(d.decision)}${safe(countText)}</strong><h2>${safe(d.event)}</h2><h1>${safe(pickLabel(d))}</h1><div class="resultGrid"><span>Bet365 odds <b>${num(d.odds)}</b></span><span>Minimum <b>${num(d.minimum_odds)}</b></span><span>${stakeLabel} <b>${num(d.stake)} kr.</b></span><span>Edge <b>${pct(d.edge)}</b></span></div><small>${safe(age(d.price_timestamp))}</small>`;
     } else {
       box.className = 'result fail';
       box.innerHTML = `<strong>NO BET</strong><p>${safe(d.reason || 'Ingen kvalificeret value lige nu.')}</p>`;
@@ -99,7 +106,7 @@ async function loadPaperHistory() {
       const state = x.result === 'open' ? 'ÅBEN' : String(x.result || '').toUpperCase();
       const profit = x.profit_dkk == null ? '-' : `${Number(x.profit_dkk) >= 0 ? '+' : ''}${num(x.profit_dkk)} kr.`;
       const clv = x.clv_pct == null ? '-' : `${num(x.clv_pct, 2)}%`;
-      return `<article class="pickRow"><div><small>${safe(when(x.recorded_at))} · ${safe(state)}</small><strong>${safe(x.event)}</strong><span>${safe(x.pick)} @ ${num(x.odds)} · ${num(x.stake_dkk)} kr.</span></div><div class="pickMetrics"><span>Edge <b>${pct(x.edge)}</b></span><span>CLV <b>${clv}</b></span><span>P/L <b>${profit}</b></span></div></article>`;
+      return `<article class="pickRow"><div><small>${safe(when(x.recorded_at))} · ${safe(state)}</small><strong>${safe(x.event)}</strong><span>${safe(x.market)} · ${safe(pickLabel(x))} @ ${num(x.odds)} · ${num(x.stake_dkk)} kr.</span></div><div class="pickMetrics"><span>Edge <b>${pct(x.edge)}</b></span><span>CLV <b>${clv}</b></span><span>P/L <b>${profit}</b></span></div></article>`;
     }).join('');
   } catch (e) {
     byId('paper-history').className = 'history muted';
