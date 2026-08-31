@@ -33,7 +33,14 @@ class TestReferenceFeed(unittest.TestCase):
         rows=market_candidates(event)
         total_over=[r for r in rows if r['market']=='totals' and r['pick']=='Over' and r.get('line')==2.5][0]
         self.assertEqual(total_over['books'],2)
-        self.assertEqual(total_over['model_version'],'market-consensus-v4')
-        self.assertTrue(any(r['market']=='btts' and r['pick']=='Yes' for r in rows))
+        self.assertEqual(total_over['model_version'],'market-consensus-v5')
+        self.assertFalse(any(r['market']=='btts' for r in rows))
+    def test_derives_double_chance_from_three_way_consensus(self):
+        event={'id':'r2','sport_key':'soccer_test','home_team':'Home','away_team':'Away','commence_time':'2026-09-01T12:00:00Z','bookmakers':[{'key':'pinnacle','markets':[{'key':'h2h','outcomes':[{'name':'Home','price':2.0},{'name':'Draw','price':3.5},{'name':'Away','price':4.0}]}]},{'key':'williamhill','markets':[{'key':'h2h','outcomes':[{'name':'Home','price':2.1},{'name':'Draw','price':3.4},{'name':'Away','price':3.8}]}]}]}
+        rows=market_candidates(event)
+        dc=[r for r in rows if r['market']=='double_chance']
+        self.assertEqual({r['pick'] for r in dc},{'1X','12','X2'})
+        self.assertTrue(all(r['model_version']=='market-consensus-v5-derived' for r in dc))
+        self.assertTrue(all(0 < r['fair_probability'] < 1 for r in dc))
 
 if __name__=='__main__':unittest.main()
