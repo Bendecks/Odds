@@ -16,11 +16,11 @@ class DerivedBttsModelTests(unittest.TestCase):
   self.assertGreater(btts,0);self.assertLess(btts,1)
 
  def test_fit_recovers_synthetic_goal_rates(self):
-  ph,pd,pa,po,_=M.model_probs(1.63,1.07)
+  ph,pd,pa,po,_=M.model_probs(1.63,1.17)
   mse,lh,la,_=M.fit_lambdas((ph,pd,pa,po))
   self.assertLess(mse,0.00001)
   self.assertAlmostEqual(lh,1.63,places=2)
-  self.assertAlmostEqual(la,1.07,places=2)
+  self.assertAlmostEqual(la,1.17,places=2)
 
  def test_score_grid_retains_probability_mass(self):
   ph,pd,pa,_,_=M.model_probs(4.0,4.0)
