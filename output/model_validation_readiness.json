@@ -1,0 +1,31 @@
+{
+  "new_model_only": true,
+  "signals": 1,
+  "actionable_signals": 0,
+  "settlement_records": 0,
+  "valid_settlements": 0,
+  "settled_decisive_bets": 0,
+  "stake_dkk": 0,
+  "profit_dkk": 0,
+  "roi_pct": null,
+  "roi_bootstrap_95_pct": null,
+  "roi_lower_bound_pct": null,
+  "clv_observations": 0,
+  "mean_clv_pct": null,
+  "calibration_observations": 0,
+  "brier_score": null,
+  "expected_calibration_error": null,
+  "calibration_bins": [],
+  "model_versions": {},
+  "current_model_version": null,
+  "settlement_metrics_by_model_version": {},
+  "promotion_ready": false,
+  "promotion_blockers": [
+    "requires at least 300 settled new-model bets",
+    "requires positive out-of-sample ROI with uncertainty analysis",
+    "requires positive CLV evidence",
+    "requires calibration review",
+    "LIVE promotion must not be automatic from a single threshold crossing"
+  ],
+  "note": "Legacy paper bets are intentionally excluded from new-model validation. Bootstrap ROI interval and calibration diagnostics are descriptive; they are not guarantees of future returns."
+}
