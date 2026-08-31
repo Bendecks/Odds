@@ -24,7 +24,7 @@ def main():
         if key in captured:continue
         try:start=datetime.fromisoformat(str(x.get('commence_time')).replace('Z','+00:00')).astimezone(timezone.utc)
         except Exception:continue
-        row={'signal_key':key,'event':x.get('event'),'market':x.get('market'),'pick':x.get('pick'),'taken_odds':x.get('odds'),'commence_time':x.get('commence_time'),'model_version':x.get('model_version'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':x.get('event_match_method')}
+        row={'signal_key':key,'event':x.get('event'),'event_id':x.get('event_id'),'sport':x.get('sport'),'market':x.get('market'),'pick':x.get('pick'),'taken_odds':x.get('odds'),'commence_time':x.get('commence_time'),'model_version':x.get('model_version'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':x.get('event_match_method')}
         if start-timedelta(minutes=WINDOW_MINUTES)<=now<=start:due.append(row)
         elif now<start-timedelta(minutes=WINDOW_MINUTES):upcoming.append(row)
         else:missed.append(row)
