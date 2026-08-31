@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-08-31T07:37:41.711304+00:00",
-  "model_version": "market-consensus-v3",
+  "generated_at": "2026-08-31T08:54:04.521151+00:00",
+  "model_version": "market-consensus-v4",
   "sports_source": "active-soccer-discovery",
-  "active_soccer_pool_size": 45,
+  "active_soccer_pool_size": 47,
   "sports_requested": [
     "soccer_denmark_superliga",
     "soccer_epl",
     "soccer_spain_la_liga",
     "soccer_germany_bundesliga",
-    "soccer_brazil_serie_b",
-    "soccer_chile_campeonato",
-    "soccer_concacaf_leagues_cup",
-    "soccer_conmebol_copa_libertadores"
+    "soccer_conmebol_copa_libertadores",
+    "soccer_conmebol_copa_sudamericana",
+    "soccer_efl_champ",
+    "soccer_england_league1"
   ],
   "sports_count": 8,
   "sports_per_run": 8,
   "max_sports": 24,
-  "rotation_next_cursor": 8,
+  "rotation_next_cursor": 12,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -24,20 +24,33 @@
     "nordicbet",
     "williamhill"
   ],
-  "events_seen": 13,
-  "reference_observations": 39,
+  "markets": [
+    "h2h",
+    "totals",
+    "spreads"
+  ],
+  "events_seen": 29,
+  "reference_observations": 233,
   "quality_counts": {
-    "strong": 39
+    "strong": 101,
+    "good": 36,
+    "limited": 2,
+    "weak": 94
+  },
+  "market_counts": {
+    "h2h": 87,
+    "totals": 88,
+    "spreads": 58
   },
   "pick_type_counts": {
-    "draw": 13,
-    "team": 26
+    "draw": 29,
+    "team": 204
   },
-  "discovery_policy": "full active-soccer pool with quota-aware rotation; preserve all offered h2h outcomes; confidence is metadata",
+  "discovery_policy": "full active-soccer pool with quota-aware rotation; preserve modelled h2h/totals/spreads/btts outcomes; confidence is metadata",
   "quota": {
-    "remaining": "437",
-    "used": "63",
-    "last": "0"
+    "remaining": "422",
+    "used": "78",
+    "last": "3"
   },
   "errors": []
 }
