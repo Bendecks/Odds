@@ -1,6 +1,7 @@
 import json, os, pathlib, re, unicodedata
 from datetime import datetime, timezone
 import requests
+from settlement_schema import settlement_key, valid_settlement
 
 BASE='https://api.odds-api.io/v3'
 KEY=os.getenv('ODDS_API_IO_KEY','')
@@ -18,18 +19,34 @@ def split_event(name):
     p=re.split(r'\s+vs?\.?\s+',str(name or ''),maxsplit=1,flags=re.I)
     return p if len(p)==2 else (None,None)
 
+def event_payload(data):
+    if isinstance(data,dict):
+        nested=data.get('data') or data.get('event')
+        if isinstance(nested,dict):return nested
+    return data if isinstance(data,dict) else {}
+
+def score_pair(event):
+    scores=(event or {}).get('scores')
+    if isinstance(scores,dict):
+        for hk,ak in (('home','away'),('home_score','away_score'),('homeScore','awayScore')):
+            if scores.get(hk) is not None and scores.get(ak) is not None:
+                try:return float(scores[hk]),float(scores[ak])
+                except Exception:pass
+    for hk,ak in (('home_score','away_score'),('homeScore','awayScore')):
+        if (event or {}).get(hk) is not None and (event or {}).get(ak) is not None:
+            try:return float(event[hk]),float(event[ak])
+            except Exception:pass
+    return None
+
 def outcome(row, event):
-    status=str((event or {}).get('status') or '').lower()
+    event=event_payload(event);status=str(event.get('status') or '').lower()
     if status in ('cancelled','canceled','void','postponed'):return 'void'
     if status not in ('settled','finished','completed','ended'):return None
-    scores=(event or {}).get('scores') or {}
-    try:h=float(scores.get('home'));a=float(scores.get('away'))
-    except Exception:return None
-    home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
+    pair=score_pair(event)
+    if not pair:return None
+    h,a=pair;home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
     if not home:return None
-    if h==a:winner='draw'
-    elif h>a:winner='home'
-    else:winner='away'
+    winner='draw' if h==a else 'home' if h>a else 'away'
     field='home' if pick==norm(home) else 'away' if pick==norm(away) else 'draw' if pick in ('draw','uafgjort') else None
     if not field:return None
     return 'win' if field==winner else 'loss'
@@ -42,12 +59,14 @@ def read_jsonl(path):
         except Exception:pass
     return out
 
+def existing_keys(rows):return {settlement_key(x) for x in rows if valid_settlement(x) and settlement_key(x)}
+
 def main():
     now=datetime.now(timezone.utc)
     try:q=json.loads(QUEUE.read_text())
     except Exception:q={}
     pending=q.get('pending') or []
-    existing=read_jsonl(SETTLED); settled_keys={str(x.get('signal_key')) for x in existing if x.get('signal_key')}
+    existing=read_jsonl(SETTLED);settled_keys=existing_keys(existing)
     closes={str(x.get('signal_key')):x for x in read_jsonl(CLOSES) if x.get('signal_key') and x.get('closing_odds')}
     eligible=[];skipped=[]
     for row in pending:
@@ -58,17 +77,19 @@ def main():
         if row.get('event_match_method')!='exact' or not row.get('bet365_event_id'):
             skipped.append({'signal_key':key,'reason':'missing_exact_provider_identity'});continue
         eligible.append(row)
-    records=[];errors=[];attempts=0;successes=0
+    records=[];errors=[];attempts=0;successes=0;added_keys=set()
     if eligible and not KEY:errors.append({'reason':'missing_ODDS_API_IO_KEY'})
     if KEY:
         for row in eligible[:MAX_CALLS]:
-            eid=str(row['bet365_event_id']); attempts+=1
+            eid=str(row['bet365_event_id']);attempts+=1
             try:
-                r=requests.get(BASE+'/events/'+eid,params={'apiKey':KEY},timeout=30);r.raise_for_status();event=r.json();successes+=1
+                r=requests.get(BASE+'/events/'+eid,params={'apiKey':KEY},timeout=30);r.raise_for_status();event=event_payload(r.json());successes+=1
                 result=outcome(row,event)
                 if result is None:continue
-                close=closes.get(str(row['signal_key']),{})
-                records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':event.get('scores'),'source':'odds-api.io','bookmaker':'Bet365'})
+                key=str(row['signal_key'])
+                if key in settled_keys or key in added_keys:continue
+                close=closes.get(key,{})
+                records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':event.get('scores') or {'home':event.get('home_score',event.get('homeScore')),'away':event.get('away_score',event.get('awayScore'))},'source':'odds-api.io','bookmaker':'Bet365'});added_keys.add(key)
             except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
     if records:
         SETTLED.parent.mkdir(exist_ok=True)
