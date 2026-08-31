@@ -5,7 +5,7 @@ MIN_BOOKS = 3
 MAX_RMSE = 0.06
 
 
-def poisson_probs(lam, max_goals=10):
+def poisson_probs(lam, max_goals=15):
     vals = [math.exp(-lam)]
     for k in range(1, max_goals + 1):
         vals.append(vals[-1] * lam / k)
@@ -32,17 +32,37 @@ def model_probs(home_lambda, away_lambda):
     return home, draw, away, over25, btts
 
 
+def fit_error(lh, la, targets):
+    ph, pd, pa, po, pb = model_probs(lh, la)
+    err = ((ph-targets[0])**2 + (pd-targets[1])**2 + (pa-targets[2])**2 + (po-targets[3])**2) / 4.0
+    return err, lh, la, pb
+
+
 def fit_lambdas(targets):
     best = None
-    # Coarse grid is deterministic, dependency-free and intentionally bounded.
+    # Deterministic dependency-free coarse search.
     for hi in range(2, 41):
         lh = hi / 10.0
         for ai in range(2, 41):
-            la = ai / 10.0
-            ph, pd, pa, po, pb = model_probs(lh, la)
-            err = ((ph-targets[0])**2 + (pd-targets[1])**2 + (pa-targets[2])**2 + (po-targets[3])**2) / 4.0
-            if best is None or err < best[0]:
-                best = (err, lh, la, pb)
+            candidate = fit_error(lh, ai / 10.0, targets)
+            if best is None or candidate[0] < best[0]:
+                best = candidate
+    if best is None:
+        return None
+    # Refine locally at 0.01 resolution so borderline fits are not rejected
+    # merely because the coarse grid landed between plausible goal rates.
+    _, coarse_h, coarse_a, _ = best
+    h0 = max(0.2, coarse_h - 0.15)
+    h1 = min(4.0, coarse_h + 0.15)
+    a0 = max(0.2, coarse_a - 0.15)
+    a1 = min(4.0, coarse_a + 0.15)
+    hi0, hi1 = math.ceil(h0 * 100), math.floor(h1 * 100)
+    ai0, ai1 = math.ceil(a0 * 100), math.floor(a1 * 100)
+    for hi in range(hi0, hi1 + 1):
+        for ai in range(ai0, ai1 + 1):
+            candidate = fit_error(hi / 100.0, ai / 100.0, targets)
+            if candidate[0] < best[0]:
+                best = candidate
     return best
 
 
