@@ -10,6 +10,10 @@ class EventResolverTests(unittest.TestCase):
     def test_normalizes_common_club_noise(self):
         self.assertGreaterEqual(team_similarity('FC Copenhagen', 'Copenhagen'), 0.99)
 
+    def test_handles_diacritics_and_punctuation(self):
+        self.assertGreaterEqual(team_similarity('Malmö FF', 'Malmo FF'), 0.99)
+        self.assertGreaterEqual(team_similarity('Paris Saint-Germain', 'Paris Saint Germain'), 0.99)
+
     def test_accepts_clear_same_time_alias_when_explicitly_probing_lower_threshold(self):
         events=[{'id':'1','home':'Manchester United','away':'Arsenal','date':'2026-08-31T18:00:00Z'}]
         result=conservative_match('Man Utd','Arsenal FC','2026-08-31T18:00:00Z',events,min_team=0.50,min_score=0.70)
@@ -19,6 +23,16 @@ class EventResolverTests(unittest.TestCase):
     def test_default_threshold_does_not_accept_aggressive_alias(self):
         events=[{'id':'1','home':'Manchester United','away':'Arsenal','date':'2026-08-31T18:00:00Z'}]
         result=conservative_match('Man Utd','Arsenal FC','2026-08-31T18:00:00Z',events)
+        self.assertFalse(result['accepted'])
+
+    def test_rejects_unrelated_teams(self):
+        events=[{'id':'1','home':'Liverpool','away':'Everton','date':'2026-08-31T18:00:00Z'}]
+        result=conservative_match('Copenhagen','Brondby','2026-08-31T18:00:00Z',events)
+        self.assertFalse(result['accepted'])
+
+    def test_does_not_swap_home_and_away(self):
+        events=[{'id':'1','home':'Arsenal','away':'Chelsea','date':'2026-08-31T18:00:00Z'}]
+        result=conservative_match('Chelsea','Arsenal','2026-08-31T18:00:00Z',events)
         self.assertFalse(result['accepted'])
 
     def test_rejects_large_kickoff_difference(self):
