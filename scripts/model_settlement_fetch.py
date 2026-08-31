@@ -64,7 +64,7 @@ def settlement_score_pair(event):
     pair=score_pair(event)
     return (pair,'top_level') if pair else (None,'missing_score')
 def supported_market(row):
-    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score')
+    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb')
 def market_outcome(row,pair):
     h,a=pair;market=str(row.get('market') or '').lower();home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
     if not home:return None
@@ -72,6 +72,12 @@ def market_outcome(row,pair):
         winner='draw' if h==a else 'home' if h>a else 'away';field='home' if pick==norm(home) else 'away' if pick==norm(away) else 'draw' if pick in ('draw','uafgjort') else None
         if not field:return None
         return 'win' if field==winner else 'loss'
+    if market in ('draw_no_bet','draw no bet','dnb'):
+        side='home' if pick==norm(home) else 'away' if pick==norm(away) else None
+        if not side:return None
+        if h==a:return 'push'
+        winner='home' if h>a else 'away'
+        return 'win' if side==winner else 'loss'
     if market in ('totals','total'):
         try:line=float(row.get('line'))
         except Exception:return None
