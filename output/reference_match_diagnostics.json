@@ -1,20 +1,21 @@
 {
-  "generated_at": "2026-08-31T05:34:13.840472+00:00",
-  "reference_rows": 45,
-  "reference_events": 15,
-  "exact_reference_events_in_bet365": 1,
-  "unmatched_reference_events": 14,
-  "exact_reference_rows": 3,
+  "generated_at": "2026-08-31T07:37:43.390462+00:00",
+  "reference_rows": 39,
+  "reference_events": 13,
+  "exact_reference_events_in_bet365": 2,
+  "unmatched_reference_events": 11,
+  "exact_reference_rows": 6,
   "exact_rows_not_queried": 0,
   "queried_reference_rows_without_h2h_price": 0,
-  "matched_prices": 3,
+  "matched_prices": 6,
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 9,
+  "resolver_accepted_events": 5,
   "resolver_reason_counts": {
-    "time_team_match": 9,
-    "no_candidate": 5
+    "time_team_match": 5,
+    "no_candidate": 5,
+    "score_below_threshold": 1
   },
   "resolver_matches": [
     {
@@ -32,22 +33,6 @@
         "combined_score": 1.0
       },
       "margin": 1.0
-    },
-    {
-      "reference_event": "Flamengo vs Mirassol",
-      "reference_start": "2026-09-02T22:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 73936890,
-        "home": "CR Flamengo RJ",
-        "away": "Mirassol FC SP",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.8,
-        "away_score": 0.8889,
-        "combined_score": 0.8444
-      },
-      "margin": 0.8444
     },
     {
       "reference_event": "FC Copenhagen vs SonderjyskE",
@@ -82,42 +67,14 @@
       "margin": 1.0
     },
     {
-      "reference_event": "Wolfsberger AC vs LASK",
-      "reference_start": "2026-09-01T17:30:00Z",
+      "reference_event": "Fortaleza vs Operario PR",
+      "reference_start": "2026-08-31T22:30:00Z",
       "accepted": false,
       "reason": "no_candidate"
     },
     {
-      "reference_event": "RB Salzburg vs Rapid Wien",
-      "reference_start": "2026-09-02T18:30:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Austria Wien vs WSG Tirol",
-      "reference_start": "2026-09-02T16:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 73735412,
-        "home": "FK Austria Wien",
-        "away": "WSG Tirol",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.9167,
-        "away_score": 1.0,
-        "combined_score": 0.9583
-      },
-      "margin": 0.9583
-    },
-    {
-      "reference_event": "Sint Truiden vs Union Saint-Gilloise",
-      "reference_start": "2026-09-02T18:30:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Remo vs Coritiba",
-      "reference_start": "2026-08-31T23:00:00Z",
+      "reference_event": "Toluca vs León",
+      "reference_start": "2026-09-03T01:00:00Z",
       "accepted": false,
       "reason": "no_candidate"
     },
@@ -138,60 +95,56 @@
       "margin": 1.0
     },
     {
-      "reference_event": "CA Tigre BA vs Barracas Central",
-      "reference_start": "2026-09-01T00:15:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 73265252,
-        "home": "CA Tigre",
-        "away": "CA Barracas Central",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.875,
-        "away_score": 0.9375,
-        "combined_score": 0.9062
-      },
-      "margin": 0.9062
-    },
-    {
-      "reference_event": "Instituto de Córdoba vs San Lorenzo",
-      "reference_start": "2026-09-01T00:15:00Z",
+      "reference_event": "América vs Monterrey",
+      "reference_start": "2026-09-03T03:30:00Z",
       "accepted": false,
       "reason": "no_candidate"
     },
     {
-      "reference_event": "Defensa y Justicia vs Platense",
-      "reference_start": "2026-08-31T22:00:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
+      "reference_event": "Londrina vs Juventude",
+      "reference_start": "2026-09-01T22:30:00Z",
+      "accepted": false,
+      "reason": "score_below_threshold",
       "best": {
-        "event_id": 73265236,
-        "home": "Defensa y Justicia",
-        "away": "CA Platense",
+        "event_id": 68823212,
+        "home": "Londrina EC PR",
+        "away": "EC Juventude RS",
         "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 0.8889,
-        "combined_score": 0.9444
+        "home_score": 0.8,
+        "away_score": 0.8182,
+        "combined_score": 0.8091
       },
-      "margin": 0.9444
+      "margin": 0.8091
     },
     {
-      "reference_event": "Estudiantes vs Newells Old Boys",
-      "reference_start": "2026-08-31T22:00:00Z",
+      "reference_event": "Coquimbo Unido vs Universidad de Concepción",
+      "reference_start": "2026-09-02T22:00:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Universidad Católica (CHI) vs O'Higgins",
+      "reference_start": "2026-09-01T00:45:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 73265240,
-        "home": "Estudiantes de La Plata",
-        "away": "Newell's Old Boys",
+        "event_id": 67681996,
+        "home": "CD Universidad Catolica",
+        "away": "CD O´Higgins",
         "time_delta_minutes": 0.0,
-        "home_score": 0.7586,
-        "away_score": 1.0,
-        "combined_score": 0.8793
+        "home_score": 0.8837,
+        "away_score": 0.8889,
+        "combined_score": 0.8863
       },
-      "margin": 0.8793
+      "margin": 0.8863
+    },
+    {
+      "reference_event": "Union La Calera vs La Serena",
+      "reference_start": "2026-08-31T22:15:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
     }
   ],
-  "resolver_rows_persisted": 14,
+  "resolver_rows_persisted": 11,
   "resolver_rows_limit": 50
 }
