@@ -19,8 +19,13 @@ def minimum_odds(p):
     if p<=k:return float('inf')
     gates.append((1-k)/(p-k)); return max(gates)
 
+def exact_provider_identity(c):
+    return bool(c.get('bet365_verified')) and bool(str(c.get('bet365_event_id') or '').strip()) and c.get('event_match_method')=='exact'
+
 def evaluate(c, now=None):
-    if not c.get('bet365_verified',False): return None
+    # A price is actionable only when the provider event itself was joined exactly.
+    # Diagnostic fuzzy resolver matches must never cross the final PAPER/PLAY gate.
+    if not exact_provider_identity(c): return None
     now=now or datetime.now(timezone.utc); stamp=parse_dt(c.get('bet365_timestamp'))
     if not stamp or (now-stamp).total_seconds()<0 or (now-stamp).total_seconds()>float(P['max_price_age_minutes'])*60:return None
     start=parse_dt(c.get('commence_time'))
@@ -38,9 +43,9 @@ def evaluate(c, now=None):
 def decide(candidates, now=None):
     ranked=[x for x in (evaluate(c,now) for c in candidates) if x and x['qualified']]; ranked.sort(key=lambda x:x['score'],reverse=True)
     mode=str(P.get('mode','PAPER')).upper()
-    if not ranked:return {'decision':'NO BET','mode':mode,'bankroll':BANKROLL,'reason':'Ingen frisk verificeret Bet365-pris passerer reference-, edge-, EV- og indsatskrav.'}
+    if not ranked:return {'decision':'NO BET','mode':mode,'bankroll':BANKROLL,'reason':'Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.'}
     x=ranked[0]; action='PLAY' if mode=='LIVE' else 'PAPER PICK'
-    return {'decision':action,'mode':mode,'bankroll':BANKROLL,'event':x['event'],'event_id':x.get('event_id'),'sport':x.get('sport'),'market':x.get('market','h2h'),'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'reference_books':x.get('books'),'reference_quality':x.get('reference_quality'),'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown'),'price_timestamp':x.get('bet365_timestamp'),'commence_time':x.get('commence_time'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':x.get('event_match_method') or ('exact' if x.get('bet365_verified') and x.get('bet365_event_id') else None)}
+    return {'decision':action,'mode':mode,'bankroll':BANKROLL,'event':x['event'],'event_id':x.get('event_id'),'sport':x.get('sport'),'market':x.get('market','h2h'),'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'reference_books':x.get('books'),'reference_quality':x.get('reference_quality'),'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown'),'price_timestamp':x.get('bet365_timestamp'),'commence_time':x.get('commence_time'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':'exact'}
 
 def main():
     src=pathlib.Path(sys.argv[1] if len(sys.argv)>1 else 'data/value_candidates.json'); out=pathlib.Path(sys.argv[2] if len(sys.argv)>2 else 'output/latest_decision.json')
