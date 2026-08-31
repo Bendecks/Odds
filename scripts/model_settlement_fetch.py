@@ -44,11 +44,30 @@ def score_pair(event):
     if pair:return pair
     return numeric_pair(event)
 def score_source(event):return 'regulation_ft' if regulation_score_pair(event) else 'top_level'
+def has_extra_time_or_penalties(event):
+    event=event or {}; scores=event.get('scores')
+    containers=[event,scores if isinstance(scores,dict) else {}]
+    periods=scores.get('periods') if isinstance(scores,dict) else None
+    if isinstance(periods,dict):containers.append(periods)
+    keys=('extra_time','extraTime','et','aet','penalties','penalty','shootout','penalty_shootout','penaltyShootout')
+    for obj in containers:
+        if not isinstance(obj,dict):continue
+        for key in keys:
+            value=obj.get(key)
+            if value not in (None,False,'',0,{},[]):return True
+    status=' '.join(str(event.get(k) or '') for k in ('status','statusText','stage','period')).lower()
+    return any(token in status for token in ('extra time','after extra time','penalt','shootout'))
+def settlement_score_pair(event):
+    regulation=regulation_score_pair(event)
+    if regulation:return regulation,'regulation_ft'
+    if has_extra_time_or_penalties(event):return None,'ambiguous_knockout_score'
+    pair=score_pair(event)
+    return (pair,'top_level') if pair else (None,'missing_score')
 def outcome(row,event):
     event=event_payload(event);status=str(event.get('status') or '').lower()
     if status in ('cancelled','canceled','void','postponed'):return 'void'
     if status not in ('settled','finished','completed','ended'):return None
-    pair=score_pair(event)
+    pair,_=settlement_score_pair(event)
     if not pair:return None
     h,a=pair;home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
     if not home:return None
@@ -82,10 +101,13 @@ def main():
             eid=str(row['bet365_event_id']);attempts+=1
             try:
                 r=requests.get(BASE+'/events/'+eid,params={'apiKey':KEY},timeout=30);r.raise_for_status();event=event_payload(r.json());successes+=1;result=outcome(row,event)
-                if result is None:continue
+                if result is None:
+                    _,source=settlement_score_pair(event)
+                    if source=='ambiguous_knockout_score':skipped.append({'signal_key':row['signal_key'],'reason':source})
+                    continue
                 key=str(row['signal_key'])
                 if key in settled_keys or key in added_keys:continue
-                close=closes.get(key,{});records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':score_pair(event),'score_source':score_source(event),'source':'odds-api.io','bookmaker':'Bet365'});added_keys.add(key)
+                close=closes.get(key,{});pair,source=settlement_score_pair(event);records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':pair,'score_source':source,'source':'odds-api.io','bookmaker':'Bet365'});added_keys.add(key)
             except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
     if records:
         with SETTLED.open('a') as f:
