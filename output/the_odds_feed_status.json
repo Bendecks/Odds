@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-08-31T12:54:06.108748+00:00",
+  "generated_at": "2026-08-31T19:08:01.528003+00:00",
   "model_version": "market-consensus-v6",
   "sports_source": "active-soccer-discovery",
-  "active_soccer_pool_size": 47,
+  "active_soccer_pool_size": 46,
   "sports_requested": [
     "soccer_denmark_superliga",
     "soccer_epl",
     "soccer_spain_la_liga",
     "soccer_germany_bundesliga",
-    "soccer_greece_super_league",
-    "soccer_italy_coppa_italia",
-    "soccer_italy_serie_a",
-    "soccer_italy_serie_b"
+    "soccer_league_of_ireland",
+    "soccer_mexico_ligamx",
+    "soccer_netherlands_eredivisie",
+    "soccer_norway_eliteserien"
   ],
   "sports_count": 8,
   "sports_per_run": 8,
   "max_sports": 24,
-  "rotation_next_cursor": 24,
+  "rotation_next_cursor": 28,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -33,28 +33,28 @@
     "double_chance",
     "draw_no_bet"
   ],
-  "events_seen": 12,
-  "reference_observations": 154,
+  "events_seen": 4,
+  "reference_observations": 54,
   "quality_counts": {
-    "strong": 70,
-    "good": 42,
-    "weak": 42
+    "strong": 34,
+    "good": 6,
+    "weak": 14
   },
   "market_counts": {
-    "double_chance": 36,
-    "draw_no_bet": 24,
-    "h2h": 36,
-    "totals": 34,
-    "spreads": 24
+    "double_chance": 12,
+    "draw_no_bet": 8,
+    "h2h": 12,
+    "totals": 14,
+    "spreads": 8
   },
   "pick_type_counts": {
-    "draw": 12,
-    "team": 142
+    "draw": 4,
+    "team": 50
   },
   "discovery_policy": "active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus",
   "quota": {
-    "remaining": "371",
-    "used": "129",
+    "remaining": "365",
+    "used": "135",
     "last": "0"
   },
   "errors": []
