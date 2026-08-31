@@ -40,7 +40,7 @@ def decide(candidates, now=None):
     mode=str(P.get('mode','PAPER')).upper()
     if not ranked:return {'decision':'NO BET','mode':mode,'bankroll':BANKROLL,'reason':'Ingen frisk verificeret Bet365-pris passerer reference-, edge-, EV- og indsatskrav.'}
     x=ranked[0]; action='PLAY' if mode=='LIVE' else 'PAPER PICK'
-    return {'decision':action,'mode':mode,'bankroll':BANKROLL,'event':x['event'],'market':x.get('market','h2h'),'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'reference_books':x.get('books'),'reference_quality':x.get('reference_quality'),'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown'),'price_timestamp':x.get('bet365_timestamp'),'commence_time':x.get('commence_time')}
+    return {'decision':action,'mode':mode,'bankroll':BANKROLL,'event':x['event'],'market':x.get('market','h2h'),'pick':x['pick'],'bookmaker':'Bet365','odds':x['odds'],'minimum_odds':x['minimum_odds'],'stake':x['stake'],'fair_probability':x['fair_probability'],'reference_books':x.get('books'),'reference_quality':x.get('reference_quality'),'edge':x['edge'],'ev':x['ev'],'model_version':x.get('model_version','unknown'),'price_timestamp':x.get('bet365_timestamp'),'commence_time':x.get('commence_time'),'bet365_event_id':x.get('bet365_event_id'),'event_match_method':x.get('event_match_method')}
 
 def main():
     src=pathlib.Path(sys.argv[1] if len(sys.argv)>1 else 'data/value_candidates.json'); out=pathlib.Path(sys.argv[2] if len(sys.argv)>2 else 'output/latest_decision.json')
