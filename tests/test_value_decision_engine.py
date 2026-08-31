@@ -3,12 +3,14 @@ from datetime import datetime, timezone, timedelta
 from scripts.value_decision_engine import evaluate, decide, minimum_odds
 
 NOW=datetime(2026,8,30,8,0,tzinfo=timezone.utc)
-def row(odds,p,books=3): return {'event':'A-B','pick':'A','market':'h2h','books':books,'reference_quality':'good' if books>=3 else 'limited','bet365_odds':odds,'fair_probability':p,'bet365_verified':True,'bet365_timestamp':NOW.isoformat(),'commence_time':(NOW+timedelta(hours=3)).isoformat()}
+def row(odds,p,books=3): return {'event':'A-B','pick':'A','market':'h2h','books':books,'reference_quality':'good' if books>=3 else 'limited','bet365_odds':odds,'fair_probability':p,'bet365_verified':True,'bet365_timestamp':NOW.isoformat(),'commence_time':(NOW+timedelta(hours=3)).isoformat(),'bet365_event_id':'evt-1','event_match_method':'exact'}
 
 class TestDecisionEngine(unittest.TestCase):
     def test_unverified_reference_price_cannot_be_play(self): self.assertIsNone(evaluate({'event':'A-B','pick':'A','reference_odds':2.2,'fair_probability':0.52,'bet365_verified':False},NOW))
     def test_rejects_no_edge(self): self.assertFalse(evaluate(row(2.0,.50),NOW)['qualified'])
     def test_selects_best_verified_qualified_in_paper_mode(self): self.assertEqual(decide([row(3.0,.45),row(3.2,.40)],NOW)['decision'],'PAPER PICK')
+    def test_pick_preserves_exact_provider_identity_for_closing_capture(self):
+        x=decide([row(3.0,.45)],NOW); self.assertEqual(x['bet365_event_id'],'evt-1'); self.assertEqual(x['event_match_method'],'exact')
     def test_weak_reference_is_preserved_but_not_qualified(self):
         x=evaluate(row(3.0,.45,books=1),NOW); self.assertIsNotNone(x); self.assertFalse(x['enough_reference_for_play']); self.assertFalse(x['qualified'])
     def test_stale_price_is_rejected(self):
