@@ -25,7 +25,7 @@ jobs:
           MAX_HOURS: '72'
           THE_ODDS_MAX_SPORTS: '24'
           THE_ODDS_SPORTS_PER_RUN: '8'
-          THE_ODDS_MARKETS: 'h2h,totals,spreads,btts'
+          THE_ODDS_MARKETS: 'h2h,totals,spreads'
           BET365_MAX_ODDS_CALLS: '80'
         run: |
           python scripts/the_odds_feed.py
