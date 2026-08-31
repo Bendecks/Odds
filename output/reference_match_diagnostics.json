@@ -1,20 +1,19 @@
 {
-  "generated_at": "2026-08-31T08:59:48.687112+00:00",
-  "reference_rows": 262,
-  "reference_events": 24,
-  "exact_reference_events_in_bet365": 7,
-  "unmatched_reference_events": 17,
-  "exact_reference_rows": 74,
+  "generated_at": "2026-08-31T10:15:46.904560+00:00",
+  "reference_rows": 72,
+  "reference_events": 6,
+  "exact_reference_events_in_bet365": 1,
+  "unmatched_reference_events": 5,
+  "exact_reference_rows": 14,
   "exact_rows_not_queried": 0,
-  "queried_reference_rows_without_h2h_price": 21,
-  "matched_prices": 53,
+  "queried_reference_rows_without_h2h_price": 5,
+  "matched_prices": 9,
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 12,
+  "resolver_accepted_events": 5,
   "resolver_reason_counts": {
-    "time_team_match": 12,
-    "no_candidate": 5
+    "time_team_match": 5
   },
   "resolver_matches": [
     {
@@ -66,38 +65,6 @@
       "margin": 1.0
     },
     {
-      "reference_event": "Chesterfield FC vs Gillingham",
-      "reference_start": "2026-09-01T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72341876,
-        "home": "Chesterfield FC",
-        "away": "Gillingham FC",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "Dijon vs Saint Etienne",
-      "reference_start": "2026-08-31T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72572050,
-        "home": "Dijon FCO",
-        "away": "AS Saint-Etienne",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.7692,
-        "away_score": 0.9231,
-        "combined_score": 0.8462
-      },
-      "margin": 0.8462
-    },
-    {
       "reference_event": "CA Osasuna vs Getafe",
       "reference_start": "2026-08-31T17:30:00Z",
       "accepted": true,
@@ -114,132 +81,22 @@
       "margin": 1.0
     },
     {
-      "reference_event": "Ilves Tampere vs HJK Helsinki",
-      "reference_start": "2026-08-31T16:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "IF Gnistan vs TPS Turku",
-      "reference_start": "2026-08-31T16:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Cheltenham Town vs York City",
-      "reference_start": "2026-09-01T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72341872,
-        "home": "Cheltenham Town",
-        "away": "York City FC",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "Exeter City vs Barnet",
-      "reference_start": "2026-09-01T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72341884,
-        "home": "Exeter City",
-        "away": "Barnet FC",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "IFK Mariehamn vs Jaro",
+      "reference_event": "Bayern Munich vs FSV Mainz 05",
       "reference_start": "2026-08-31T16:00:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 67091490,
-        "home": "IFK Mariehamn",
-        "away": "FF Jaro",
+        "event_id": 72960976,
+        "home": "Bayern Munich",
+        "away": "1. FSV Mainz 05",
         "time_delta_minutes": 0.0,
         "home_score": 1.0,
-        "away_score": 0.8,
-        "combined_score": 0.9
+        "away_score": 0.9524,
+        "combined_score": 0.9762
       },
-      "margin": 0.9
-    },
-    {
-      "reference_event": "AC Oulu vs SJK Seinäjoki",
-      "reference_start": "2026-08-31T16:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Rochdale vs Shrewsbury Town",
-      "reference_start": "2026-09-01T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72341896,
-        "home": "Rochdale AFC",
-        "away": "Shrewsbury Town",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "Crewe Alexandra vs Walsall",
-      "reference_start": "2026-09-01T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72341880,
-        "home": "Crewe Alexandra",
-        "away": "Walsall FC",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "VPS Vaasa vs FC Lahti",
-      "reference_start": "2026-08-31T16:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Tranmere Rovers vs Rotherham United",
-      "reference_start": "2026-09-01T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72341906,
-        "home": "Tranmere Rovers FC",
-        "away": "Rotherham United",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "FC Inter Turku vs KuPS Kuopio",
-      "reference_start": "2026-08-31T16:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
+      "margin": 0.9762
     }
   ],
-  "resolver_rows_persisted": 17,
+  "resolver_rows_persisted": 5,
   "resolver_rows_limit": 50
 }

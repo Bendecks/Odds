@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-31T08:59:47.029849+00:00",
-  "model_version": "market-consensus-v5",
+  "generated_at": "2026-08-31T10:15:45.679103+00:00",
+  "model_version": "market-consensus-v6",
   "sports_source": "active-soccer-discovery",
   "active_soccer_pool_size": 47,
   "sports_requested": [
@@ -8,15 +8,15 @@
     "soccer_epl",
     "soccer_spain_la_liga",
     "soccer_germany_bundesliga",
-    "soccer_england_league2",
-    "soccer_finland_veikkausliiga",
-    "soccer_france_ligue_one",
-    "soccer_france_ligue_two"
+    "soccer_germany_bundesliga2",
+    "soccer_germany_bundesliga_women",
+    "soccer_germany_dfb_pokal",
+    "soccer_germany_liga3"
   ],
   "sports_count": 8,
   "sports_per_run": 8,
   "max_sports": 24,
-  "rotation_next_cursor": 16,
+  "rotation_next_cursor": 20,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -30,30 +30,32 @@
     "spreads"
   ],
   "derived_markets": [
-    "double_chance"
+    "double_chance",
+    "draw_no_bet"
   ],
-  "events_seen": 24,
-  "reference_observations": 262,
+  "events_seen": 7,
+  "reference_observations": 72,
   "quality_counts": {
-    "strong": 170,
-    "good": 22,
-    "weak": 70
+    "strong": 42,
+    "good": 8,
+    "weak": 22
   },
   "market_counts": {
-    "double_chance": 72,
-    "h2h": 72,
-    "totals": 70,
-    "spreads": 48
+    "double_chance": 15,
+    "draw_no_bet": 10,
+    "h2h": 15,
+    "totals": 20,
+    "spreads": 12
   },
   "pick_type_counts": {
-    "draw": 24,
-    "team": 238
+    "draw": 5,
+    "team": 67
   },
-  "discovery_policy": "full active-soccer pool with quota-aware rotation; direct h2h/totals/spreads plus mathematically derived double-chance probabilities from 1X2 consensus",
+  "discovery_policy": "active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus",
   "quota": {
-    "remaining": "404",
-    "used": "96",
-    "last": "3"
+    "remaining": "389",
+    "used": "111",
+    "last": "0"
   },
   "errors": []
 }
