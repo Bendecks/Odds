@@ -15,6 +15,17 @@ class DerivedBttsModelTests(unittest.TestCase):
   *_,btts=M.model_probs(1.5,1.1)
   self.assertGreater(btts,0);self.assertLess(btts,1)
 
+ def test_fit_recovers_synthetic_goal_rates(self):
+  ph,pd,pa,po,_=M.model_probs(1.63,1.07)
+  mse,lh,la,_=M.fit_lambdas((ph,pd,pa,po))
+  self.assertLess(mse,0.00001)
+  self.assertAlmostEqual(lh,1.63,places=2)
+  self.assertAlmostEqual(la,1.07,places=2)
+
+ def test_score_grid_retains_probability_mass(self):
+  ph,pd,pa,_,_=M.model_probs(4.0,4.0)
+  self.assertAlmostEqual(ph+pd+pa,1.0,places=5)
+
  def test_derives_yes_and_no_from_quality_inputs(self):
   rows=[row('h2h','Home FC',0.46),row('h2h','Draw',0.27),row('h2h','Away FC',0.27),row('totals','Over',0.52,2.5),row('totals','Under',0.48,2.5)]
   out=M.derive_for_event(rows)
