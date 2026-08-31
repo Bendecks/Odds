@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p _site/output
           cp index.html styles.css app.js _site/
-          cp output/latest_decision.json _site/output/
+          cp output/latest_decision.json output/model_validation_readiness.json _site/output/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
