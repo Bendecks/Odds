@@ -15,32 +15,27 @@ class TestReferenceFeed(unittest.TestCase):
         seen=set();cursor=0
         with patch.object(feed,'SPORTS_OVERRIDE',''),patch.object(feed,'SPORTS_PER_RUN',8):
             for _ in range(12):
-                with patch.object(feed,'rotation_cursor',return_value=cursor):
-                    selected,cursor=feed.select_sports(pool)
+                with patch.object(feed,'rotation_cursor',return_value=cursor):selected,cursor=feed.select_sports(pool)
                 self.assertLessEqual(len(selected),8);seen.update(selected)
         self.assertEqual(seen,set(pool))
     def test_unselected_default_sports_join_rotation(self):
-        pool=list(feed.CORE_SPORTS)+['soccer_extra_a','soccer_extra_b']
-        seen=set();cursor=0
+        pool=list(feed.CORE_SPORTS)+['soccer_extra_a','soccer_extra_b'];seen=set();cursor=0
         with patch.object(feed,'SPORTS_OVERRIDE',''),patch.object(feed,'SPORTS_PER_RUN',4):
             for _ in range(8):
-                with patch.object(feed,'rotation_cursor',return_value=cursor):
-                    selected,cursor=feed.select_sports(pool)
+                with patch.object(feed,'rotation_cursor',return_value=cursor):selected,cursor=feed.select_sports(pool)
                 seen.update(selected)
         self.assertEqual(seen,set(pool))
     def test_market_candidates_preserve_modelled_lines(self):
         event={'id':'r1','sport_key':'soccer_test','home_team':'Home','away_team':'Away','commence_time':'2026-09-01T12:00:00Z','bookmakers':[{'key':'pinnacle','markets':[{'key':'totals','outcomes':[{'name':'Over','price':1.91,'point':2.5},{'name':'Under','price':1.91,'point':2.5}]},{'key':'btts','outcomes':[{'name':'Yes','price':1.8},{'name':'No','price':2.0}]}]},{'key':'betfair_ex_eu','markets':[{'key':'totals','outcomes':[{'name':'Over','price':1.95,'point':2.5},{'name':'Under','price':1.87,'point':2.5}]}]}]}
-        rows=market_candidates(event)
-        total_over=[r for r in rows if r['market']=='totals' and r['pick']=='Over' and r.get('line')==2.5][0]
-        self.assertEqual(total_over['books'],2)
-        self.assertEqual(total_over['model_version'],'market-consensus-v5')
-        self.assertFalse(any(r['market']=='btts' for r in rows))
-    def test_derives_double_chance_from_three_way_consensus(self):
+        rows=market_candidates(event);total_over=[r for r in rows if r['market']=='totals' and r['pick']=='Over' and r.get('line')==2.5][0]
+        self.assertEqual(total_over['books'],2);self.assertEqual(total_over['model_version'],'market-consensus-v6');self.assertFalse(any(r['market']=='btts' for r in rows))
+    def test_derives_double_chance_and_draw_no_bet_from_three_way_consensus(self):
         event={'id':'r2','sport_key':'soccer_test','home_team':'Home','away_team':'Away','commence_time':'2026-09-01T12:00:00Z','bookmakers':[{'key':'pinnacle','markets':[{'key':'h2h','outcomes':[{'name':'Home','price':2.0},{'name':'Draw','price':3.5},{'name':'Away','price':4.0}]}]},{'key':'williamhill','markets':[{'key':'h2h','outcomes':[{'name':'Home','price':2.1},{'name':'Draw','price':3.4},{'name':'Away','price':3.8}]}]}]}
-        rows=market_candidates(event)
-        dc=[r for r in rows if r['market']=='double_chance']
-        self.assertEqual({r['pick'] for r in dc},{'1X','12','X2'})
-        self.assertTrue(all(r['model_version']=='market-consensus-v5-derived' for r in dc))
-        self.assertTrue(all(0 < r['fair_probability'] < 1 for r in dc))
+        rows=market_candidates(event);dc=[r for r in rows if r['market']=='double_chance'];dnb=[r for r in rows if r['market']=='draw_no_bet']
+        self.assertEqual({r['pick'] for r in dc},{'1X','12','X2'});self.assertTrue(all(r['model_version']=='market-consensus-v6-derived' for r in dc));self.assertTrue(all(0<r['fair_probability']<1 for r in dc))
+        self.assertEqual({r['pick'] for r in dnb},{'Home','Away'});self.assertTrue(all(r['model_version']=='market-consensus-v6-derived' for r in dnb));self.assertTrue(all(r['market_semantics']=='push_on_draw' for r in dnb))
+        for r in dnb:
+            self.assertAlmostEqual(r['win_probability']+r['loss_probability']+r['push_probability'],1.0,places=5)
+            self.assertAlmostEqual(r['fair_probability'],r['win_probability']/(r['win_probability']+r['loss_probability']),places=5)
 
 if __name__=='__main__':unittest.main()
