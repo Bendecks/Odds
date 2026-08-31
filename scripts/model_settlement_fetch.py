@@ -25,18 +25,33 @@ def event_payload(data):
         if isinstance(nested,dict):return nested
     return data if isinstance(data,dict) else {}
 
-def score_pair(event):
-    scores=(event or {}).get('scores')
-    if isinstance(scores,dict):
-        for hk,ak in (('home','away'),('home_score','away_score'),('homeScore','awayScore')):
-            if scores.get(hk) is not None and scores.get(ak) is not None:
-                try:return float(scores[hk]),float(scores[ak])
-                except Exception:pass
-    for hk,ak in (('home_score','away_score'),('homeScore','awayScore')):
-        if (event or {}).get(hk) is not None and (event or {}).get(ak) is not None:
-            try:return float(event[hk]),float(event[ak])
+def numeric_pair(obj):
+    if not isinstance(obj,dict):return None
+    for hk,ak in (('home','away'),('home_score','away_score'),('homeScore','awayScore')):
+        if obj.get(hk) is not None and obj.get(ak) is not None:
+            try:return float(obj[hk]),float(obj[ak])
             except Exception:pass
     return None
+
+def regulation_score_pair(event):
+    scores=(event or {}).get('scores')
+    if not isinstance(scores,dict):return None
+    periods=scores.get('periods')
+    if isinstance(periods,dict):
+        # Standard soccer 1X2/H2H settles on regulation full time, not ET/penalties.
+        for key in ('ft','full_time','fullTime','regulation'):
+            pair=numeric_pair(periods.get(key))
+            if pair:return pair
+    return None
+
+def score_pair(event):
+    event=event or {}; regulation=regulation_score_pair(event)
+    if regulation:return regulation
+    scores=event.get('scores'); pair=numeric_pair(scores)
+    if pair:return pair
+    return numeric_pair(event)
+
+def score_source(event):return 'regulation_ft' if regulation_score_pair(event) else 'top_level'
 
 def outcome(row, event):
     event=event_payload(event);status=str(event.get('status') or '').lower()
@@ -89,7 +104,7 @@ def main():
                 key=str(row['signal_key'])
                 if key in settled_keys or key in added_keys:continue
                 close=closes.get(key,{})
-                records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':event.get('scores') or {'home':event.get('home_score',event.get('homeScore')),'away':event.get('away_score',event.get('awayScore'))},'source':'odds-api.io','bookmaker':'Bet365'});added_keys.add(key)
+                records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':score_pair(event),'score_source':score_source(event),'source':'odds-api.io','bookmaker':'Bet365'});added_keys.add(key)
             except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
     if records:
         SETTLED.parent.mkdir(exist_ok=True)
