@@ -1,33 +1,53 @@
 {
-  "generated_at": "2026-09-01T04:17:23.626598+00:00",
-  "reference_rows": 148,
-  "reference_events": 11,
-  "exact_reference_events_in_bet365": 4,
-  "unmatched_reference_events": 7,
-  "exact_reference_rows": 56,
+  "generated_at": "2026-09-01T04:27:26.303600+00:00",
+  "reference_rows": 122,
+  "reference_events": 9,
+  "exact_reference_events_in_bet365": 3,
+  "unmatched_reference_events": 6,
+  "exact_reference_rows": 42,
   "exact_rows_not_queried": 0,
-  "queried_reference_rows_without_h2h_price": 20,
-  "matched_prices": 36,
+  "queried_reference_rows_without_h2h_price": 15,
+  "matched_prices": 27,
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 3,
+  "resolver_accepted_events": 4,
   "resolver_reason_counts": {
-    "no_candidate": 4,
-    "time_team_match": 3
+    "time_team_match": 4,
+    "no_candidate": 2
   },
   "resolver_matches": [
     {
-      "reference_event": "Celtic vs Aberdeen",
-      "reference_start": "2026-09-02T18:45:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
+      "reference_event": "Grasshopper Zürich vs FC St Gallen",
+      "reference_start": "2026-09-02T18:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72176918,
+        "home": "Grasshopper Club Zurich",
+        "away": "FC St. Gallen 1879",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 0.8,
+        "combined_score": 0.9
+      },
+      "margin": 0.9
     },
     {
-      "reference_event": "Falkirk F.C. vs Rangers",
-      "reference_start": "2026-09-02T19:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
+      "reference_event": "FC Thun vs FC Lausanne-Sport",
+      "reference_start": "2026-09-02T18:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72176914,
+        "home": "FC Thun",
+        "away": "Lausanne-Sport",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
     },
     {
       "reference_event": "Real Sociedad vs Celta Vigo",
@@ -36,60 +56,44 @@
       "reason": "no_candidate"
     },
     {
-      "reference_event": "Motherwell vs Dundee United",
-      "reference_start": "2026-09-02T18:45:00Z",
+      "reference_event": "FC Lugano vs Servette",
+      "reference_start": "2026-09-03T18:30:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 72201620,
-        "home": "Motherwell FC",
-        "away": "Dundee United",
+        "event_id": 72176920,
+        "home": "FC Lugano",
+        "away": "Servette Geneva",
         "time_delta_minutes": 0.0,
         "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
+        "away_score": 0.7273,
+        "combined_score": 0.8636
       },
-      "margin": 1.0
+      "margin": 0.8636
     },
     {
-      "reference_event": "Dundee FC vs St Johnstone",
-      "reference_start": "2026-09-02T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72201612,
-        "home": "Dundee FC",
-        "away": "St. Johnstone FC",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "Hibernian vs Hearts",
-      "reference_start": "2026-09-03T18:45:00Z",
+      "reference_event": "FC Basel vs FC Sion",
+      "reference_start": "2026-09-03T18:30:00Z",
       "accepted": false,
       "reason": "no_candidate"
     },
     {
-      "reference_event": "Kilmarnock vs St Mirren",
-      "reference_start": "2026-09-02T18:45:00Z",
+      "reference_event": "FC Zurich vs BSC Young Boys",
+      "reference_start": "2026-09-01T18:30:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 72201618,
-        "home": "Kilmarnock FC",
-        "away": "St Mirren FC",
+        "event_id": 72176912,
+        "home": "FC Zurich",
+        "away": "Young Boys Bern",
         "time_delta_minutes": 0.0,
         "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
+        "away_score": 0.72,
+        "combined_score": 0.86
       },
-      "margin": 1.0
+      "margin": 0.86
     }
   ],
-  "resolver_rows_persisted": 7,
+  "resolver_rows_persisted": 6,
   "resolver_rows_limit": 50
 }
