@@ -69,7 +69,7 @@ def settlement_score_pair(event):
     pair=score_pair(event)
     return (pair,'top_level') if pair else (None,'missing_score')
 def supported_market(row):
-    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','total_goals','total goals','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb','odd_even','odd/even','clean_sheet_home','clean sheet home','clean_sheet_away','clean sheet away','exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals','team_total_goals_home','team total goals home','team_total_goals_away','team total goals away')
+    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','total_goals','total goals','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb','odd_even','odd/even','odd_even_home','odd/even home','odd_even_away','odd/even away','clean_sheet_home','clean sheet home','clean_sheet_away','clean sheet away','exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals','team_total_goals_home','team total goals home','team_total_goals_away','team total goals away')
 def exact_goal_pick(row):
     raw=row.get('line') if row.get('line') is not None else row.get('pick')
     try:
@@ -120,8 +120,9 @@ def market_outcome(row,pair):
         if pick in ('yes','ja'):return 'win' if yes else 'loss'
         if pick in ('no','nej'):return 'loss' if yes else 'win'
         return None
-    if market in ('odd_even','odd/even'):
-        wanted='odd' if (h+a)%2 else 'even'
+    if market in ('odd_even','odd/even','odd_even_home','odd/even home','odd_even_away','odd/even away'):
+        goals=(h+a) if market in ('odd_even','odd/even') else h if market in ('odd_even_home','odd/even home') else a
+        wanted='odd' if goals%2 else 'even'
         return 'win' if pick==wanted else 'loss' if pick in ('odd','even') else None
     if market in ('clean_sheet_home','clean sheet home'):
         yes=a==0
