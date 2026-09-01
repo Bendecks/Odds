@@ -14,7 +14,7 @@ class TeamTotalJoinTests(unittest.TestCase):
  def base(self,line=1.5):
   return [
    {'event':'A vs B','event_id':'ref1','market':'h2h','pick':'A','fair_probability':.5,'event_match_method':'exact','bet365_event_id':'bet1','bet365_verified':True},
-   {'event':'A vs B','event_id':'ref1','market':'team_total_goals_home','pick':'over','line':line,'fair_probability':.6,'bet365_verified':False},
+   {'event':'A vs B','event_id':'ref1','market':'team_total_goals_home','pick':'over','line':line,'market_semantics':'binary_half_line_no_push','fair_probability':.6,'bet365_verified':False},
   ]
  def test_matches_exact_provider_event_selection_and_line(self):
   out=self.run_join(self.base(),[{'event_id':'bet1','market':'Team Total Goals Home','selection':'over','line':1.5,'odds':1.91,'timestamp':'2026-09-01T05:00:00+00:00'}])
