@@ -1,99 +1,206 @@
 {
-  "generated_at": "2026-09-01T15:59:52.854336+00:00",
+  "generated_at": "2026-09-01T16:03:35.691917+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
-  "bottleneck": "Ingen kandidat passerer alle final-gate krav lige nu.",
+  "bottleneck": "Ingen friske referenceklare kandidater passerer produktionskravet til edge.",
   "funnel": {
-    "candidate_rows": 2545,
-    "fair_probability_rows": 2545,
-    "reference_events": 44,
-    "exact_bet365_rows": 958,
-    "fresh_exact_bet365_rows": 315,
-    "reference_depth_ready_rows": 287,
-    "positive_edge_rows": 2,
-    "ev_ready_rows": 2,
+    "candidate_rows": 1120,
+    "fair_probability_rows": 1120,
+    "reference_events": 19,
+    "exact_bet365_rows": 478,
+    "fresh_exact_bet365_rows": 97,
+    "reference_depth_ready_rows": 95,
+    "positive_edge_rows": 0,
+    "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 20
+    "decision_runs_recorded": 21
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "total_goals": 434,
-        "team_total_goals_away": 310,
-        "team_total_goals_home": 310,
-        "exact_total_goals": 217,
-        "away_exact_goals": 155,
-        "home_exact_goals": 155,
-        "totals": 152,
-        "double_chance": 132,
-        "h2h": 132,
-        "draw_no_bet": 88,
-        "spreads": 88,
-        "btts": 62,
-        "clean_sheet_away": 62,
-        "clean_sheet_home": 62,
-        "odd_even": 62,
-        "odd_even_away": 62,
-        "odd_even_home": 62
+        "total_goals": 196,
+        "team_total_goals_away": 140,
+        "team_total_goals_home": 140,
+        "exact_total_goals": 98,
+        "away_exact_goals": 70,
+        "home_exact_goals": 70,
+        "double_chance": 57,
+        "h2h": 57,
+        "totals": 48,
+        "draw_no_bet": 38,
+        "spreads": 38,
+        "btts": 28,
+        "clean_sheet_away": 28,
+        "clean_sheet_home": 28,
+        "odd_even": 28,
+        "odd_even_away": 28,
+        "odd_even_home": 28
       },
       "exact": {
-        "total_goals": 224,
-        "team_total_goals_home": 130,
-        "team_total_goals_away": 120,
-        "totals": 74,
-        "double_chance": 66,
-        "h2h": 66,
-        "draw_no_bet": 44,
-        "spreads": 42,
-        "btts": 32,
-        "clean_sheet_away": 32,
-        "clean_sheet_home": 32,
-        "odd_even": 32,
-        "odd_even_away": 32,
-        "odd_even_home": 32
+        "total_goals": 126,
+        "team_total_goals_away": 68,
+        "team_total_goals_home": 64,
+        "double_chance": 27,
+        "h2h": 27,
+        "totals": 24,
+        "btts": 18,
+        "clean_sheet_away": 18,
+        "clean_sheet_home": 18,
+        "draw_no_bet": 18,
+        "odd_even": 18,
+        "odd_even_away": 18,
+        "odd_even_home": 18,
+        "spreads": 16
       },
       "fresh": {
-        "total_goals": 140,
-        "h2h": 66,
-        "btts": 32,
-        "totals": 32,
-        "spreads": 16,
-        "team_total_goals_home": 10,
-        "team_total_goals_away": 8,
-        "draw_no_bet": 6,
-        "double_chance": 3,
-        "clean_sheet_home": 2
+        "total_goals": 42,
+        "h2h": 27,
+        "btts": 18,
+        "totals": 8,
+        "draw_no_bet": 2
       },
       "reference_ready": {
-        "total_goals": 140,
-        "h2h": 66,
-        "btts": 32,
-        "totals": 20,
-        "team_total_goals_home": 10,
-        "team_total_goals_away": 8,
-        "draw_no_bet": 6,
-        "double_chance": 3,
-        "clean_sheet_home": 2
+        "total_goals": 42,
+        "h2h": 27,
+        "btts": 18,
+        "totals": 6,
+        "draw_no_bet": 2
       },
-      "positive_edge": {
-        "btts": 1,
-        "draw_no_bet": 1
-      }
+      "production_edge_ready": {}
     },
     "exact_price_age_buckets": {
-      "20_60m": 140,
-      "60_180m": 165,
-      "180m_plus": 338,
-      "0_20m": 315
+      "180m_plus": 320,
+      "20_60m": 9,
+      "0_20m": 97,
+      "60_180m": 52
     },
     "reference_depth_rejections_by_market": {
-      "spreads": 16,
-      "totals": 12
+      "totals": 2
+    },
+    "edge_distribution": {
+      "buckets": {
+        "negative": 93,
+        "0.5_1pct": 2
+      },
+      "nonnegative_rows": 2,
+      "best_edge": 0.005939,
+      "top_candidates": [
+        {
+          "event": "Shimizu S Pulse vs FC Tokyo",
+          "market": "h2h",
+          "pick": "Shimizu S Pulse",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 4.0,
+          "fair_probability": 0.255939,
+          "edge": 0.005939,
+          "ev": 0.023756
+        },
+        {
+          "event": "V-Varen Nagasaki vs Gamba Osaka",
+          "market": "h2h",
+          "pick": "V-Varen Nagasaki",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 3.75,
+          "fair_probability": 0.272162,
+          "edge": 0.005495,
+          "ev": 0.020608
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "h2h",
+          "pick": "Draw",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 3.9,
+          "fair_probability": 0.255272,
+          "edge": -0.001138,
+          "ev": -0.004439
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 3.5,
+          "books": 3,
+          "bet365_odds": 1.666,
+          "fair_probability": 0.595848,
+          "edge": -0.004392,
+          "ev": -0.007317
+        },
+        {
+          "event": "Mito HollyHock vs Kashima Antlers",
+          "market": "h2h",
+          "pick": "Draw",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 3.5,
+          "fair_probability": 0.278074,
+          "edge": -0.00764,
+          "ev": -0.026741
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 0.5,
+          "books": 3,
+          "bet365_odds": 21.0,
+          "fair_probability": 0.039557,
+          "edge": -0.008062,
+          "ev": -0.169303
+        },
+        {
+          "event": "JEF United Chiba vs Fagiano Okayama",
+          "market": "h2h",
+          "pick": "JEF United Chiba",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 4.0,
+          "fair_probability": 0.240642,
+          "edge": -0.009358,
+          "ev": -0.037432
+        },
+        {
+          "event": "JEF United Chiba vs Fagiano Okayama",
+          "market": "h2h",
+          "pick": "Draw",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 3.6,
+          "fair_probability": 0.267165,
+          "edge": -0.010613,
+          "ev": -0.038206
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 2.5,
+          "books": 3,
+          "bet365_odds": 2.6,
+          "fair_probability": 0.373678,
+          "edge": -0.010937,
+          "ev": -0.028437
+        },
+        {
+          "event": "V-Varen Nagasaki vs Gamba Osaka",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 2.5,
+          "books": 4,
+          "bet365_odds": 2.0,
+          "fair_probability": 0.488738,
+          "edge": -0.011262,
+          "ev": -0.022524
+        }
+      ]
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T15:59:40.570140+00:00",
+    "generated_at": "2026-09-01T16:03:25.906704+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -102,9 +209,9 @@
     "odds_calls": 8,
     "odds_multi_calls": 8,
     "fallback_odds_calls": 0,
-    "raw_market_observations": 65132,
-    "unique_markets": 106,
-    "matched_reference_candidates": 182,
+    "raw_market_observations": 57567,
+    "unique_markets": 111,
+    "matched_reference_candidates": 67,
     "errors": []
   },
   "policy": {
