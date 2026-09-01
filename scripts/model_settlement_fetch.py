@@ -28,21 +28,26 @@ def numeric_pair(obj):
             try:return float(obj[hk]),float(obj[ak])
             except Exception:pass
     return None
+def integer_score_pair(pair):
+    if not pair:return None
+    h,a=pair
+    if h<0 or a<0 or not h.is_integer() or not a.is_integer():return None
+    return int(h),int(a)
 def regulation_score_pair(event):
     scores=(event or {}).get('scores')
     if not isinstance(scores,dict):return None
     periods=scores.get('periods')
     if isinstance(periods,dict):
         for key in ('ft','full_time','fullTime','regulation'):
-            pair=numeric_pair(periods.get(key))
+            pair=integer_score_pair(numeric_pair(periods.get(key)))
             if pair:return pair
     return None
 def score_pair(event):
     event=event or {}; regulation=regulation_score_pair(event)
     if regulation:return regulation
-    scores=event.get('scores'); pair=numeric_pair(scores)
+    scores=event.get('scores'); pair=integer_score_pair(numeric_pair(scores))
     if pair:return pair
-    return numeric_pair(event)
+    return integer_score_pair(numeric_pair(event))
 def score_source(event):return 'regulation_ft' if regulation_score_pair(event) else 'top_level'
 def has_extra_time_or_penalties(event):
     event=event or {}; scores=event.get('scores')
@@ -72,6 +77,8 @@ def exact_goal_pick(row):
         return int(value) if value.is_integer() and value>=0 else None
     except Exception:return None
 def market_outcome(row,pair):
+    pair=integer_score_pair(tuple(float(x) for x in pair)) if pair else None
+    if not pair:return None
     h,a=pair;market=str(row.get('market') or '').lower();home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
     if not home:return None
     if market in ('h2h','ml','1x2'):
@@ -106,7 +113,7 @@ def market_outcome(row,pair):
         if pick in ('no','nej'):return 'loss' if yes else 'win'
         return None
     if market in ('odd_even','odd/even'):
-        wanted='odd' if int(h+a)%2 else 'even'
+        wanted='odd' if (h+a)%2 else 'even'
         return 'win' if pick==wanted else 'loss' if pick in ('odd','even') else None
     if market in ('clean_sheet_home','clean sheet home'):
         yes=a==0
@@ -121,7 +128,7 @@ def market_outcome(row,pair):
     if market in ('exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals'):
         wanted=exact_goal_pick(row)
         if wanted is None:return None
-        actual=int(h+a) if market in ('exact_total_goals','exact total goals') else int(h) if market in ('home_exact_goals','home team exact goals') else int(a)
+        actual=h+a if market in ('exact_total_goals','exact total goals') else h if market in ('home_exact_goals','home team exact goals') else a
         return 'win' if actual==wanted else 'loss'
     if market in ('spreads','spread'):
         try:line=float(row.get('line'))
