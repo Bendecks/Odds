@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-01T18:32:50.576313+00:00",
-  "as_of": "2026-09-01T18:32:50.486605+00:00",
-  "candidate_rows": 2853,
-  "note": "Diagnostic only. Simulates start-time, stake, per-event and per-run PAPER gates without changing production policy.",
+  "generated_at": "2026-09-01T18:43:30.016985+00:00",
+  "as_of": "2026-09-01T18:43:29.960860+00:00",
+  "candidate_rows": 1979,
+  "note": "Diagnostic only. PAPER may ignore the theoretical minimum-stake gate when policy explicitly allows it; actual Bet365 minimum stake is tracked separately.",
   "scenarios": [
     {
       "name": "production",
@@ -10,16 +10,17 @@
       "min_ev": 0.025,
       "min_reference_books": 3,
       "max_price_age_minutes": 20,
-      "gate_signals": 1,
-      "stake_eligible": 0,
+      "gate_signals": 0,
+      "theoretical_stake_eligible": 0,
+      "paper_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "edge": 821,
-        "identity": 1945,
-        "reference_depth": 86,
-        "stake": 1
+        "edge": 533,
+        "identity": 1406,
+        "invalid_dnb_probabilities": 2,
+        "reference_depth": 38
       }
     },
     {
@@ -28,17 +29,17 @@
       "min_ev": 0.02,
       "min_reference_books": 3,
       "max_price_age_minutes": 20,
-      "gate_signals": 1,
-      "stake_eligible": 0,
+      "gate_signals": 0,
+      "theoretical_stake_eligible": 0,
+      "paper_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "edge": 820,
-        "ev": 1,
-        "identity": 1945,
-        "reference_depth": 86,
-        "stake": 1
+        "edge": 533,
+        "identity": 1406,
+        "invalid_dnb_probabilities": 2,
+        "reference_depth": 38
       }
     },
     {
@@ -47,16 +48,17 @@
       "min_ev": 0.015,
       "min_reference_books": 3,
       "max_price_age_minutes": 30,
-      "gate_signals": 2,
-      "stake_eligible": 0,
+      "gate_signals": 0,
+      "theoretical_stake_eligible": 0,
+      "paper_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "edge": 820,
-        "identity": 1945,
-        "reference_depth": 86,
-        "stake": 2
+        "edge": 533,
+        "identity": 1406,
+        "invalid_dnb_probabilities": 2,
+        "reference_depth": 38
       }
     },
     {
@@ -65,16 +67,20 @@
       "min_ev": 0.01,
       "min_reference_books": 3,
       "max_price_age_minutes": 60,
-      "gate_signals": 5,
-      "stake_eligible": 0,
-      "shadow_paper_picks": 0,
-      "unique_events": 0,
-      "by_market": {},
+      "gate_signals": 2,
+      "theoretical_stake_eligible": 0,
+      "paper_eligible": 2,
+      "shadow_paper_picks": 2,
+      "unique_events": 2,
+      "by_market": {
+        "h2h": 1,
+        "odd_even": 1
+      },
       "rejection_reasons": {
-        "edge": 817,
-        "identity": 1945,
-        "reference_depth": 86,
-        "stake": 5
+        "edge": 531,
+        "identity": 1406,
+        "invalid_dnb_probabilities": 2,
+        "reference_depth": 38
       }
     },
     {
@@ -83,16 +89,21 @@
       "min_ev": 0.0,
       "min_reference_books": 2,
       "max_price_age_minutes": 60,
-      "gate_signals": 14,
-      "stake_eligible": 0,
-      "shadow_paper_picks": 0,
-      "unique_events": 0,
-      "by_market": {},
+      "gate_signals": 7,
+      "theoretical_stake_eligible": 0,
+      "paper_eligible": 7,
+      "shadow_paper_picks": 5,
+      "unique_events": 5,
+      "by_market": {
+        "double_chance": 1,
+        "h2h": 2,
+        "odd_even": 2
+      },
       "rejection_reasons": {
-        "edge": 820,
-        "identity": 1945,
-        "reference_depth": 74,
-        "stake": 14
+        "edge": 528,
+        "identity": 1406,
+        "invalid_dnb_probabilities": 2,
+        "reference_depth": 36
       }
     }
   ]
