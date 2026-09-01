@@ -10,8 +10,9 @@ MARKET_ALIASES={
  'clean_sheet_away':('clean sheet away',),
  'team_total_goals_home':('team total goals home',),
  'team_total_goals_away':('team total goals away',),
+ 'total_goals':('totals','alternative total goals','alternative goal line','goals over/under'),
 }
-LINE_AWARE=('team_total_goals_home','team_total_goals_away')
+LINE_AWARE=('team_total_goals_home','team_total_goals_away','total_goals')
 # Exact-goal provider observations currently expose selection="odds" without the
 # goal bucket in compact diagnostics. They deliberately remain unjoinable until
 # the provider payload exposes an unambiguous bucket/line identity.
@@ -20,10 +21,11 @@ def norm_line(value):
  if isinstance(value,bool):return None
  try:return round(float(value),3)
  except Exception:return None
-def valid_team_total_candidate(c):
+def valid_half_line_candidate(c):
  if c.get('market_semantics')!='binary_half_line_no_push':return False
  line=norm_line(c.get('line'))
  return line is not None and line>0 and abs((line%1)-0.5)<=1e-9
+def valid_team_total_candidate(c):return valid_half_line_candidate(c)
 def main():
  candidates=json.loads(CAND.read_text()) if CAND.exists() else []; observations=[]
  if OBS.exists():
@@ -56,7 +58,7 @@ def main():
    elif pick==away:wanted_selection='away'
    else:continue
   if market in LINE_AWARE:
-   if not valid_team_total_candidate(c):continue
+   if not valid_half_line_candidate(c):continue
    wanted_line=norm_line(c.get('line'))
    o=next((line_index.get((eid,wanted_market,wanted_selection,wanted_line)) for wanted_market in MARKET_ALIASES[market] if line_index.get((eid,wanted_market,wanted_selection,wanted_line))),None)
   else:o=next((index.get((eid,wanted_market,wanted_selection)) for wanted_market in MARKET_ALIASES[market] if index.get((eid,wanted_market,wanted_selection))),None)
