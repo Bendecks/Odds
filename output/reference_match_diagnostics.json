@@ -1,27 +1,38 @@
 {
-  "generated_at": "2026-09-01T19:16:38.911276+00:00",
-  "reference_rows": 492,
-  "reference_events": 36,
-  "exact_reference_events_in_bet365": 7,
-  "unmatched_reference_events": 29,
-  "exact_reference_rows": 96,
+  "generated_at": "2026-09-01T19:21:59.809819+00:00",
+  "reference_rows": 290,
+  "reference_events": 21,
+  "exact_reference_events_in_bet365": 4,
+  "unmatched_reference_events": 17,
+  "exact_reference_rows": 56,
   "exact_rows_not_queried": 0,
-  "queried_reference_rows_without_h2h_price": 39,
-  "matched_prices": 57,
+  "queried_reference_rows_without_h2h_price": 22,
+  "matched_prices": 34,
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 16,
+  "resolver_accepted_events": 10,
   "resolver_reason_counts": {
-    "no_candidate": 13,
-    "time_team_match": 16
+    "time_team_match": 10,
+    "no_candidate": 6,
+    "score_below_threshold": 1
   },
   "resolver_matches": [
     {
-      "reference_event": "Celtic vs Aberdeen",
-      "reference_start": "2026-09-02T18:45:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
+      "reference_event": "Flamengo vs Mirassol",
+      "reference_start": "2026-09-02T22:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 73936890,
+        "home": "CR Flamengo RJ",
+        "away": "Mirassol FC SP",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.8,
+        "away_score": 0.8889,
+        "combined_score": 0.8444
+      },
+      "margin": 0.8444
     },
     {
       "reference_event": "Real Betis vs Real Madrid",
@@ -40,6 +51,22 @@
       "margin": 0.86
     },
     {
+      "reference_event": "Anderlecht vs KV Kortrijk",
+      "reference_start": "2026-09-03T18:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 73394162,
+        "home": "RSC Anderlecht",
+        "away": "KV Kortrijk",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.8696,
+        "away_score": 1.0,
+        "combined_score": 0.9348
+      },
+      "margin": 0.9348
+    },
+    {
       "reference_event": "Lyon vs Auxerre",
       "reference_start": "2026-09-04T17:00:00Z",
       "accepted": false,
@@ -52,20 +79,10 @@
       "reason": "no_candidate"
     },
     {
-      "reference_event": "IFK Norrkoping vs Ljungskile SK",
-      "reference_start": "2026-09-04T17:00:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 67126326,
-        "home": "IFK Norrkoping FK",
-        "away": "Ljungskile SK",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.9286,
-        "away_score": 1.0,
-        "combined_score": 0.9643
-      },
-      "margin": 0.9643
+      "reference_event": "Gent vs Leuven",
+      "reference_start": "2026-09-03T18:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
     },
     {
       "reference_event": "Ipswich Town vs Liverpool",
@@ -84,48 +101,10 @@
       "margin": 1.0
     },
     {
-      "reference_event": "Falkirk F.C. vs Rangers",
-      "reference_start": "2026-09-02T19:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
       "reference_event": "Genoa vs Como",
       "reference_start": "2026-09-04T18:45:00Z",
       "accepted": false,
       "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Grasshopper Zürich vs FC St Gallen",
-      "reference_start": "2026-09-02T18:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72176918,
-        "home": "Grasshopper Club Zurich",
-        "away": "FC St. Gallen 1879",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 0.8,
-        "combined_score": 0.9
-      },
-      "margin": 0.9
-    },
-    {
-      "reference_event": "Las Palmas vs Leganés",
-      "reference_start": "2026-09-04T18:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72477372,
-        "home": "UD Las Palmas",
-        "away": "CD Leganes",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.9,
-        "away_score": 0.875,
-        "combined_score": 0.8875
-      },
-      "margin": 0.8875
     },
     {
       "reference_event": "Sparta Rotterdam vs FC Zwolle",
@@ -150,6 +129,28 @@
       "reason": "no_candidate"
     },
     {
+      "reference_event": "RB Salzburg vs Rapid Wien",
+      "reference_start": "2026-09-02T18:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Austria Wien vs WSG Tirol",
+      "reference_start": "2026-09-02T16:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 73735412,
+        "home": "FK Austria Wien",
+        "away": "WSG Tirol",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.9167,
+        "away_score": 1.0,
+        "combined_score": 0.9583
+      },
+      "margin": 0.9583
+    },
+    {
       "reference_event": "Viborg FF vs Lyngby",
       "reference_start": "2026-09-04T17:00:00Z",
       "accepted": true,
@@ -166,74 +167,20 @@
       "margin": 0.9286
     },
     {
-      "reference_event": "FC Thun vs FC Lausanne-Sport",
+      "reference_event": "Sint Truiden vs Union Saint-Gilloise",
       "reference_start": "2026-09-02T18:30:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 72176914,
-        "home": "FC Thun",
-        "away": "Lausanne-Sport",
+        "event_id": 72203076,
+        "home": "St. Truidense VV",
+        "away": "Union Saint-Gilloise",
         "time_delta_minutes": 0.0,
-        "home_score": 1.0,
+        "home_score": 0.75,
         "away_score": 1.0,
-        "combined_score": 1.0
+        "combined_score": 0.875
       },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "Motherwell vs Dundee United",
-      "reference_start": "2026-09-02T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72201620,
-        "home": "Motherwell FC",
-        "away": "Dundee United",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
-    {
-      "reference_event": "FC Basel vs FC Sion",
-      "reference_start": "2026-09-03T18:30:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "FC Lugano vs Servette",
-      "reference_start": "2026-09-03T18:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72176920,
-        "home": "FC Lugano",
-        "away": "Servette Geneva",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 0.7273,
-        "combined_score": 0.8636
-      },
-      "margin": 0.8636
-    },
-    {
-      "reference_event": "Dundee FC vs St Johnstone",
-      "reference_start": "2026-09-02T18:45:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72201612,
-        "home": "Dundee FC",
-        "away": "St. Johnstone FC",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
+      "margin": 0.875
     },
     {
       "reference_event": "Toulouse vs Lille",
@@ -252,106 +199,38 @@
       "margin": 0.8846
     },
     {
-      "reference_event": "Hibernian vs Hearts",
-      "reference_start": "2026-09-03T18:45:00Z",
+      "reference_event": "Londrina vs Juventude",
+      "reference_start": "2026-09-01T22:30:00Z",
       "accepted": false,
-      "reason": "no_candidate"
+      "reason": "score_below_threshold",
+      "best": {
+        "event_id": 68823212,
+        "home": "Londrina EC PR",
+        "away": "EC Juventude RS",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.8,
+        "away_score": 0.8182,
+        "combined_score": 0.8091
+      },
+      "margin": 0.8091
     },
     {
-      "reference_event": "Kilmarnock vs St Mirren",
-      "reference_start": "2026-09-02T18:45:00Z",
+      "reference_event": "Nautico PE vs Botafogo-SP",
+      "reference_start": "2026-09-03T23:00:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 72201618,
-        "home": "Kilmarnock FC",
-        "away": "St Mirren FC",
+        "event_id": 68823240,
+        "home": "Nautico PE",
+        "away": "Botafogo FC SP",
         "time_delta_minutes": 0.0,
         "home_score": 1.0,
         "away_score": 1.0,
         "combined_score": 1.0
       },
       "margin": 1.0
-    },
-    {
-      "reference_event": "Basaksehir vs Galatasaray",
-      "reference_start": "2026-09-04T17:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Real Madrid vs Ajax",
-      "reference_start": "2026-09-02T18:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Real Sociedad vs Chelsea",
-      "reference_start": "2026-09-02T17:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Servette FC vs Sparta Prague",
-      "reference_start": "2026-09-02T16:45:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "Inter Milan vs VfL Wolfsburg",
-      "reference_start": "2026-09-02T16:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 73655052,
-        "home": "Inter Milano",
-        "away": "VfL Wolfsburg",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.9524,
-        "away_score": 1.0,
-        "combined_score": 0.9762
-      },
-      "margin": 0.9762
-    },
-    {
-      "reference_event": "Juventus vs SKN St. Pölten",
-      "reference_start": "2026-09-02T18:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 73655056,
-        "home": "Juventus Turin",
-        "away": "SKN St. Polten",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.7619,
-        "away_score": 1.0,
-        "combined_score": 0.881
-      },
-      "margin": 0.881
-    },
-    {
-      "reference_event": "Leuven vs Czarni Sosnowiec",
-      "reference_start": "2026-09-02T18:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
-    },
-    {
-      "reference_event": "HB Køge vs PSV Eindhoven",
-      "reference_start": "2026-09-02T17:00:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 73655066,
-        "home": "HB Koege",
-        "away": "PSV Eindhoven",
-        "time_delta_minutes": 0.0,
-        "home_score": 0.8333,
-        "away_score": 1.0,
-        "combined_score": 0.9167
-      },
-      "margin": 0.9167
     }
   ],
-  "resolver_rows_persisted": 29,
+  "resolver_rows_persisted": 17,
   "resolver_rows_limit": 50
 }

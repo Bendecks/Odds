@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T19:16:36.614301+00:00",
+  "generated_at": "2026-09-01T19:21:56.669669+00:00",
   "model_version": "market-consensus-v6",
   "sports_source": "active-soccer-discovery",
   "active_soccer_pool_size": 48,
@@ -12,19 +12,19 @@
     "soccer_france_ligue_one",
     "soccer_netherlands_eredivisie",
     "soccer_uefa_champs_league",
-    "soccer_spain_segunda_division",
-    "soccer_spl",
-    "soccer_sweden_allsvenskan",
-    "soccer_sweden_superettan",
-    "soccer_switzerland_superleague",
-    "soccer_turkey_super_league",
-    "soccer_uefa_champs_league_women",
-    "soccer_uefa_europa_conference_league"
+    "soccer_uefa_europa_league",
+    "soccer_uefa_nations_league",
+    "soccer_usa_mls",
+    "soccer_argentina_primera_division",
+    "soccer_austria_bundesliga",
+    "soccer_belgium_first_div",
+    "soccer_brazil_campeonato",
+    "soccer_brazil_serie_b"
   ],
   "sports_count": 16,
   "sports_per_run": 16,
   "max_sports": 24,
-  "rotation_next_cursor": 37,
+  "rotation_next_cursor": 5,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -41,30 +41,30 @@
     "double_chance",
     "draw_no_bet"
   ],
-  "events_seen": 36,
-  "reference_observations": 492,
+  "events_seen": 21,
+  "reference_observations": 290,
   "quality_counts": {
-    "strong": 224,
-    "good": 82,
-    "limited": 10,
-    "weak": 176
+    "strong": 164,
+    "good": 42,
+    "limited": 2,
+    "weak": 82
   },
   "market_counts": {
-    "double_chance": 108,
-    "draw_no_bet": 72,
-    "h2h": 108,
-    "totals": 132,
-    "spreads": 72
+    "double_chance": 63,
+    "draw_no_bet": 42,
+    "h2h": 63,
+    "totals": 80,
+    "spreads": 42
   },
   "pick_type_counts": {
-    "draw": 36,
-    "team": 456
+    "draw": 21,
+    "team": 269
   },
   "discovery_policy": "active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus",
   "quota": {
-    "remaining": "89",
-    "used": "411",
-    "last": "0"
+    "remaining": "56",
+    "used": "444",
+    "last": "3"
   },
   "errors": []
 }
