@@ -7,13 +7,7 @@ import value_decision_engine as engine
 CAND=pathlib.Path('data/value_candidates.json')
 OUT=pathlib.Path('output/shadow_gate_analysis.json')
 STATUS=pathlib.Path('output/operational_status.json')
-SCENARIOS=(
- ('production',0.02,0.025,3,20),
- ('very_mild',0.015,0.02,3,20),
- ('mild',0.01,0.015,3,30),
- ('paper_data',0.005,0.01,3,60),
- ('nonnegative_two_books',0.0,0.0,2,60),
-)
+SCENARIOS=(('production',0.02,0.025,3,20),('very_mild',0.015,0.02,3,20),('mild',0.01,0.015,3,30),('paper_data',0.005,0.01,3,60),('nonnegative_two_books',0.0,0.0,2,60))
 
 def analysis_time():
  try:
@@ -40,22 +34,19 @@ def _evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age):
   except Exception:return None,'invalid_dnb_probabilities'
   if min(pw,pl,pp)<0 or abs(pw+pl+pp-1)>0.01 or pw+pl<=0:return None,'invalid_dnb_probabilities'
   q=pw/(pw+pl);edge=q-implied;ev=pw*(odds-1)-pl;full=max(0.0,(odds*q-1)/(odds-1))
- else:
-  edge=p-implied;ev=p*odds-1;full=max(0.0,(odds*p-1)/(odds-1))
+ else:edge=p-implied;ev=p*odds-1;full=max(0.0,(odds*p-1)/(odds-1))
  stake=min(engine.BANKROLL*engine.MAX_STAKE_PCT,engine.BANKROLL*full*engine.KELLY_FRACTION);stake=math.floor(stake*2)/2
- row={**c,'edge':edge,'ev':ev,'stake':stake,'score':ev*max(edge,0),'gate_eligible':books>=min_books and edge>=min_edge and ev>=min_ev,'stake_eligible':books>=min_books and edge>=min_edge and ev>=min_ev and stake>=engine.MIN_STAKE}
+ gate=books>=min_books and edge>=min_edge and ev>=min_ev;theoretical_stake_ok=stake>=engine.MIN_STAKE;paper_eligible=gate and (theoretical_stake_ok or not engine.stake_gate_required())
+ row={**c,'edge':edge,'ev':ev,'stake':stake,'score':ev*max(edge,0),'gate_eligible':gate,'stake_eligible':theoretical_stake_ok,'paper_eligible':paper_eligible}
  if books<min_books:return row,'reference_depth'
  if edge<min_edge:return row,'edge'
  if ev<min_ev:return row,'ev'
- if stake<engine.MIN_STAKE:return row,'stake'
+ if engine.stake_gate_required() and not theoretical_stake_ok:return row,'stake'
  return row,'eligible'
 
-def evaluate(c,now,min_edge,min_ev,min_books,max_age):
- return _evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age)[0]
-
+def evaluate(c,now,min_edge,min_ev,min_books,max_age):return _evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age)[0]
 def select(rows):
- ranked=sorted((r for r in rows if r['stake_eligible']),key=lambda r:r['score'],reverse=True);seen={};picks=[]
- per_event=max(1,int(engine.P.get('max_bets_per_event',1)));limit=max(1,int(engine.P.get('max_picks_per_run',25)))
+ ranked=sorted((r for r in rows if r['paper_eligible']),key=lambda r:r['score'],reverse=True);seen={};picks=[];per_event=max(1,int(engine.P.get('max_bets_per_event',1)));limit=max(1,int(engine.P.get('max_picks_per_run',25)))
  for row in ranked:
   ek=str(row.get('bet365_event_id') or row.get('event_id') or row.get('event'))
   if seen.get(ek,0)>=per_event:continue
@@ -69,11 +60,7 @@ def main():
  except Exception:candidates=[]
  scenarios=[]
  for name,min_edge,min_ev,min_books,max_age in SCENARIOS:
-  evaluated=[_evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age) for c in candidates]
-  rows=[row for row,_ in evaluated if row]
-  reasons=Counter(reason for _,reason in evaluated)
-  gate=[r for r in rows if r['gate_eligible']];stake=[r for r in rows if r['stake_eligible']];picks=select(rows)
-  scenarios.append({'name':name,'min_edge':min_edge,'min_ev':min_ev,'min_reference_books':min_books,'max_price_age_minutes':max_age,'gate_signals':len(gate),'stake_eligible':len(stake),'shadow_paper_picks':len(picks),'unique_events':len({r.get('bet365_event_id') for r in picks if r.get('bet365_event_id')}),'by_market':dict(sorted({m:sum(1 for r in picks if r.get('market')==m) for m in {r.get('market') for r in picks}}.items())),'rejection_reasons':dict(sorted((k,v) for k,v in reasons.items() if k!='eligible'))})
- report={'generated_at':datetime.now(timezone.utc).isoformat(),'as_of':now.isoformat(),'candidate_rows':len(candidates),'note':'Diagnostic only. Simulates start-time, stake, per-event and per-run PAPER gates without changing production policy.','scenarios':scenarios}
- OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False))
+  evaluated=[_evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age) for c in candidates];rows=[row for row,_ in evaluated if row];reasons=Counter(reason for _,reason in evaluated);gate=[r for r in rows if r['gate_eligible']];stake=[r for r in rows if r['stake_eligible']];eligible=[r for r in rows if r['paper_eligible']];picks=select(rows)
+  scenarios.append({'name':name,'min_edge':min_edge,'min_ev':min_ev,'min_reference_books':min_books,'max_price_age_minutes':max_age,'gate_signals':len(gate),'theoretical_stake_eligible':len(stake),'paper_eligible':len(eligible),'shadow_paper_picks':len(picks),'unique_events':len({r.get('bet365_event_id') for r in picks if r.get('bet365_event_id')}),'by_market':dict(sorted({m:sum(1 for r in picks if r.get('market')==m) for m in {r.get('market') for r in picks}}.items())),'rejection_reasons':dict(sorted((k,v) for k,v in reasons.items() if k!='eligible'))})
+ report={'generated_at':datetime.now(timezone.utc).isoformat(),'as_of':now.isoformat(),'candidate_rows':len(candidates),'note':'Diagnostic only. PAPER may ignore the theoretical minimum-stake gate when policy explicitly allows it; actual Bet365 minimum stake is tracked separately.','scenarios':scenarios};OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()
