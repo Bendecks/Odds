@@ -1,188 +1,159 @@
-import json, os, pathlib, re, unicodedata
-from datetime import datetime, timezone
-import requests
-from settlement_schema import settlement_key, valid_settlement
-
-BASE='https://api.odds-api.io/v3'
-KEY=os.getenv('ODDS_API_IO_KEY','')
-QUEUE=pathlib.Path('output/model_settlement_queue.json')
-SETTLED=pathlib.Path('data/model_settlements.jsonl')
-CLOSES=pathlib.Path('data/model_closing_prices.jsonl')
-STATUS=pathlib.Path('output/model_settlement_fetch_status.json')
-MAX_CALLS=int(os.getenv('SETTLEMENT_MAX_EVENT_CALLS','20'))
-
-def norm(s):
-    s=unicodedata.normalize('NFKD',str(s or '')).encode('ascii','ignore').decode().lower()
-    return re.sub(r'[^a-z0-9]','',s)
-def split_event(name):
-    p=re.split(r'\s+vs?\.?\s+',str(name or ''),maxsplit=1,flags=re.I);return p if len(p)==2 else (None,None)
-def event_payload(data):
-    if isinstance(data,dict):
-        nested=data.get('data') or data.get('event')
-        if isinstance(nested,dict):return nested
-    return data if isinstance(data,dict) else {}
-def numeric_pair(obj):
-    if not isinstance(obj,dict):return None
-    for hk,ak in (('home','away'),('home_score','away_score'),('homeScore','awayScore')):
-        if obj.get(hk) is not None and obj.get(ak) is not None:
-            try:return float(obj[hk]),float(obj[ak])
-            except Exception:pass
-    return None
+import json,os,pathlib,urllib.parse,urllib.request
+from datetime import datetime,timezone
+SIGNALS=pathlib.Path('data/model_signals.jsonl');SETTLED=pathlib.Path('data/model_settlements.jsonl');QUEUE=pathlib.Path('data/settlement_queue.json');BASE='https://api.odds-api.io/v3'
+def load_jsonl(path):
+ out=[]
+ if path.exists():
+  for line in path.read_text().splitlines():
+   try:out.append(json.loads(line))
+   except Exception:pass
+ return out
+def write_jsonl(path,rows):path.write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in rows))
+def norm(v):return ' '.join(str(v or '').lower().replace('-',' ').split())
+def split_event(v):
+ s=str(v or '')
+ if ' vs ' in s:return s.split(' vs ',1)
+ return None,None
+def numeric_pair(home,away):
+ try:return float(home),float(away)
+ except Exception:return None
 def integer_score_pair(pair):
-    if not pair:return None
-    h,a=pair
-    if h<0 or a<0 or not h.is_integer() or not a.is_integer():return None
-    return int(h),int(a)
+ if not pair:return None
+ h,a=pair
+ if h<0 or a<0 or not h.is_integer() or not a.is_integer():return None
+ return int(h),int(a)
 def regulation_score_pair(event):
-    scores=(event or {}).get('scores')
-    if not isinstance(scores,dict):return None
-    periods=scores.get('periods')
-    if isinstance(periods,dict):
-        for key in ('ft','full_time','fullTime','regulation'):
-            pair=integer_score_pair(numeric_pair(periods.get(key)))
-            if pair:return pair
-    return None
-def score_pair(event):
-    event=event or {}; regulation=regulation_score_pair(event)
-    if regulation:return regulation
-    scores=event.get('scores'); pair=integer_score_pair(numeric_pair(scores))
+ scores=event.get('scores') or {};periods=scores.get('periods') if isinstance(scores,dict) else None
+ if isinstance(periods,dict):
+  for key in ('ft','full_time','fulltime','regular_time','regulation'):
+   p=periods.get(key)
+   if isinstance(p,dict):
+    pair=integer_score_pair(numeric_pair(p.get('home'),p.get('away')))
     if pair:return pair
-    return integer_score_pair(numeric_pair(event))
-def score_source(event):return 'regulation_ft' if regulation_score_pair(event) else 'top_level'
-def has_extra_time_or_penalties(event):
-    event=event or {}; scores=event.get('scores')
-    containers=[event,scores if isinstance(scores,dict) else {}]
-    periods=scores.get('periods') if isinstance(scores,dict) else None
-    if isinstance(periods,dict):containers.append(periods)
-    keys=('extra_time','extraTime','et','aet','penalties','penalty','shootout','penalty_shootout','penaltyShootout')
-    for obj in containers:
-        if not isinstance(obj,dict):continue
-        for key in keys:
-            value=obj.get(key)
-            if value not in (None,False,'',0,{},[]):return True
-    status=' '.join(str(event.get(k) or '') for k in ('status','statusText','stage','period')).lower()
-    return any(token in status for token in ('extra time','after extra time','penalt','shootout'))
+ return None
+def has_extra_time_markers(event):
+ scores=event.get('scores') or {};periods=scores.get('periods') if isinstance(scores,dict) else None
+ if isinstance(periods,dict) and any(k in periods for k in ('et','extra_time','aet','penalties','pens')):return True
+ text=' '.join(str(event.get(k) or '') for k in ('status','result','score','note')).lower()
+ return any(x in text for x in ('after extra time','aet','penalt','extra time'))
+def score_pair(event):
+ pair=regulation_score_pair(event)
+ if pair:return pair
+ if has_extra_time_markers(event):return None
+ scores=event.get('scores') or {}
+ if isinstance(scores,dict):
+  pair=integer_score_pair(numeric_pair(scores.get('home'),scores.get('away')))
+  if pair:return pair
+ return integer_score_pair(numeric_pair(event.get('home_score'),event.get('away_score')))
 def settlement_score_pair(event):
-    regulation=regulation_score_pair(event)
-    if regulation:return regulation,'regulation_ft'
-    if has_extra_time_or_penalties(event):return None,'ambiguous_knockout_score'
-    pair=score_pair(event)
-    return (pair,'top_level') if pair else (None,'missing_score')
-def supported_market(row):
-    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb','odd_even','odd/even','clean_sheet_home','clean sheet home','clean_sheet_away','clean sheet away','exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals','team_total_goals_home','team total goals home','team_total_goals_away','team total goals away')
+ pair=regulation_score_pair(event)
+ if pair:return pair,'regulation_ft'
+ if has_extra_time_markers(event):return None,'ambiguous_knockout_score'
+ pair=score_pair(event)
+ return (pair,'top_level_score') if pair else (None,'missing_score')
+def event_payload(data):
+ if isinstance(data,dict) and isinstance(data.get('event'),dict):return data['event']
+ return data if isinstance(data,dict) else {}
 def exact_goal_pick(row):
-    raw=row.get('line') if row.get('line') is not None else row.get('pick')
-    try:
-        value=float(raw)
-        return int(value) if value.is_integer() and value>=0 else None
-    except Exception:return None
+ raw=row.get('line') if row.get('line') is not None else row.get('pick')
+ try:
+  value=float(raw)
+  return int(value) if value.is_integer() and value>=0 else None
+ except Exception:return None
 def market_outcome(row,pair):
-    pair=integer_score_pair(tuple(float(x) for x in pair)) if pair else None
-    if not pair:return None
-    h,a=pair;market=str(row.get('market') or '').lower();home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
-    if not home:return None
-    if market in ('h2h','ml','1x2'):
-        winner='draw' if h==a else 'home' if h>a else 'away';field='home' if pick==norm(home) else 'away' if pick==norm(away) else 'draw' if pick in ('draw','uafgjort') else None
-        if not field:return None
-        return 'win' if field==winner else 'loss'
-    if market in ('draw_no_bet','draw no bet','dnb'):
-        side='home' if pick==norm(home) else 'away' if pick==norm(away) else None
-        if not side:return None
-        if h==a:return 'push'
-        winner='home' if h>a else 'away'
-        return 'win' if side==winner else 'loss'
-    if market in ('totals','total'):
-        try:line=float(row.get('line'))
-        except Exception:return None
-        goals=h+a
-        if goals==line:return 'push'
-        if pick=='over':return 'win' if goals>line else 'loss'
-        if pick=='under':return 'win' if goals<line else 'loss'
-        return None
-    if market in ('team_total_goals_home','team total goals home','team_total_goals_away','team total goals away'):
-        try:line=float(row.get('line'))
-        except Exception:return None
-        if line<=0 or abs((line%1)-0.5)>1e-9:return None
-        goals=h if market in ('team_total_goals_home','team total goals home') else a
-        if pick=='over':return 'win' if goals>line else 'loss'
-        if pick=='under':return 'win' if goals<line else 'loss'
-        return None
-    if market in ('btts','both teams to score','teams to score'):
-        yes=h>0 and a>0
-        if pick in ('yes','ja'):return 'win' if yes else 'loss'
-        if pick in ('no','nej'):return 'loss' if yes else 'win'
-        return None
-    if market in ('odd_even','odd/even'):
-        wanted='odd' if (h+a)%2 else 'even'
-        return 'win' if pick==wanted else 'loss' if pick in ('odd','even') else None
-    if market in ('clean_sheet_home','clean sheet home'):
-        yes=a==0
-        if pick in ('yes','ja'):return 'win' if yes else 'loss'
-        if pick in ('no','nej'):return 'loss' if yes else 'win'
-        return None
-    if market in ('clean_sheet_away','clean sheet away'):
-        yes=h==0
-        if pick in ('yes','ja'):return 'win' if yes else 'loss'
-        if pick in ('no','nej'):return 'loss' if yes else 'win'
-        return None
-    if market in ('exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals'):
-        wanted=exact_goal_pick(row)
-        if wanted is None:return None
-        actual=h+a if market in ('exact_total_goals','exact total goals') else h if market in ('home_exact_goals','home team exact goals') else a
-        return 'win' if actual==wanted else 'loss'
-    if market in ('spreads','spread'):
-        try:line=float(row.get('line'))
-        except Exception:return None
-        side='home' if pick==norm(home) else 'away' if pick==norm(away) else None
-        if not side:return None
-        margin=(h+line)-a if side=='home' else (a+line)-h
-        if margin==0:return 'push'
-        return 'win' if margin>0 else 'loss'
-    return None
+ pair=integer_score_pair(tuple(float(x) for x in pair)) if pair else None
+ if not pair:return None
+ h,a=pair;market=str(row.get('market') or '').lower();home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
+ if not home:return None
+ if market in ('h2h','ml','1x2'):
+  winner='draw' if h==a else 'home' if h>a else 'away';field='home' if pick==norm(home) else 'away' if pick==norm(away) else 'draw' if pick in ('draw','uafgjort') else None
+  if not field:return None
+  return 'win' if field==winner else 'loss'
+ if market in ('draw_no_bet','draw no bet','dnb'):
+  side='home' if pick==norm(home) else 'away' if pick==norm(away) else None
+  if not side:return None
+  if h==a:return 'push'
+  winner='home' if h>a else 'away'
+  return 'win' if side==winner else 'loss'
+ if market in ('totals','total'):
+  try:line=float(row.get('line'))
+  except Exception:return None
+  goals=h+a
+  if goals==line:return 'push'
+  if pick=='over':return 'win' if goals>line else 'loss'
+  if pick=='under':return 'win' if goals<line else 'loss'
+  return None
+ if market in ('total_goals','total goals'):
+  try:line=float(row.get('line'))
+  except Exception:return None
+  if line<=0 or abs((line%1)-0.5)>1e-9:return None
+  goals=h+a
+  if pick=='over':return 'win' if goals>line else 'loss'
+  if pick=='under':return 'win' if goals<line else 'loss'
+  return None
+ if market in ('team_total_goals_home','team total goals home','team_total_goals_away','team total goals away'):
+  try:line=float(row.get('line'))
+  except Exception:return None
+  if line<=0 or abs((line%1)-0.5)>1e-9:return None
+  goals=h if market in ('team_total_goals_home','team total goals home') else a
+  if pick=='over':return 'win' if goals>line else 'loss'
+  if pick=='under':return 'win' if goals<line else 'loss'
+  return None
+ if market in ('btts','both teams to score','teams to score'):
+  yes=h>0 and a>0
+  if pick in ('yes','ja'):return 'win' if yes else 'loss'
+  if pick in ('no','nej'):return 'loss' if yes else 'win'
+  return None
+ if market in ('odd_even','odd/even'):
+  wanted='odd' if (h+a)%2 else 'even'
+  return 'win' if pick==wanted else 'loss' if pick in ('odd','even') else None
+ if market in ('clean_sheet_home','clean sheet home'):
+  yes=a==0
+  if pick in ('yes','ja'):return 'win' if yes else 'loss'
+  if pick in ('no','nej'):return 'loss' if yes else 'win'
+  return None
+ if market in ('clean_sheet_away','clean sheet away'):
+  yes=h==0
+  if pick in ('yes','ja'):return 'win' if yes else 'loss'
+  if pick in ('no','nej'):return 'loss' if yes else 'win'
+  return None
+ if market in ('exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals'):
+  wanted=exact_goal_pick(row)
+  if wanted is None:return None
+  actual=h+a if market in ('exact_total_goals','exact total goals') else h if market in ('home_exact_goals','home team exact goals') else a
+  return 'win' if actual==wanted else 'loss'
+ if market in ('spreads','spread'):
+  try:line=float(row.get('line'))
+  except Exception:return None
+  side='home' if pick==norm(home) else 'away' if pick==norm(away) else None
+  if not side:return None
+  margin=(h+line)-a if side=='home' else (a+line)-h
+  if margin==0:return 'push'
+  return 'win' if margin>0 else 'loss'
+ return None
 def outcome(row,event):
-    event=event_payload(event);status=str(event.get('status') or '').lower()
-    if status in ('cancelled','canceled','void','postponed'):return 'void'
-    if status not in ('settled','finished','completed','ended'):return None
-    pair,_=settlement_score_pair(event)
-    if not pair:return None
-    return market_outcome(row,pair)
-def read_jsonl(path):
-    out=[]
-    if not path.exists():return out
-    for line in path.read_text().splitlines():
-        try:out.append(json.loads(line))
-        except Exception:pass
-    return out
-def existing_keys(rows):return {settlement_key(x) for x in rows if valid_settlement(x) and settlement_key(x)}
-
+ event=event_payload(event);status=str(event.get('status') or '').lower()
+ if status in ('cancelled','canceled','void','postponed'):return 'void'
+ if status not in ('settled','finished','completed','ended'):return None
+ pair,_=settlement_score_pair(event)
+ return market_outcome(row,pair) if pair else None
+def fetch_event(key,event_id):
+ url=BASE+'/events?'+urllib.parse.urlencode({'apiKey':key,'eventId':event_id})
+ with urllib.request.urlopen(url,timeout=20) as r:return json.load(r)
 def main():
-    now=datetime.now(timezone.utc);SETTLED.parent.mkdir(exist_ok=True);SETTLED.touch(exist_ok=True)
-    try:q=json.loads(QUEUE.read_text())
-    except Exception:q={}
-    pending=q.get('pending') or [];existing=read_jsonl(SETTLED);settled_keys=existing_keys(existing);closes={str(x.get('signal_key')):x for x in read_jsonl(CLOSES) if x.get('signal_key') and x.get('closing_odds')};eligible=[];skipped=[]
-    for row in pending:
-        key=str(row.get('signal_key') or '')
-        if not key or key in settled_keys:continue
-        if not supported_market(row):skipped.append({'signal_key':key,'reason':'unsupported_market'});continue
-        if row.get('event_match_method')!='exact' or not row.get('bet365_event_id'):skipped.append({'signal_key':key,'reason':'missing_exact_provider_identity'});continue
-        eligible.append(row)
-    records=[];errors=[];attempts=0;successes=0;added_keys=set()
-    if eligible and not KEY:errors.append({'reason':'missing_ODDS_API_IO_KEY'})
-    if KEY:
-        for row in eligible[:MAX_CALLS]:
-            eid=str(row['bet365_event_id']);attempts+=1
-            try:
-                r=requests.get(BASE+'/events/'+eid,params={'apiKey':KEY},timeout=30);r.raise_for_status();event=event_payload(r.json());successes+=1;result=outcome(row,event)
-                if result is None:
-                    _,source=settlement_score_pair(event)
-                    if source=='ambiguous_knockout_score':skipped.append({'signal_key':row['signal_key'],'reason':source})
-                    continue
-                key=str(row['signal_key'])
-                if key in settled_keys or key in added_keys:continue
-                close=closes.get(key,{});pair,source=settlement_score_pair(event);records.append({**row,'result':result,'closing_odds':close.get('closing_odds'),'settled_at':now.isoformat(),'provider_event_status':event.get('status'),'final_score':pair,'score_source':source,'source':'odds-api.io','bookmaker':'Bet365'});added_keys.add(key)
-            except requests.RequestException as exc:errors.append({'signal_key':row['signal_key'],'event_id':eid,'reason':type(exc).__name__})
-    if records:
-        with SETTLED.open('a') as f:
-            for x in records:f.write(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n')
-    report={'generated_at':now.isoformat(),'pending_rows':len(pending),'eligible_exact_modelled':len(eligible),'provider_call_attempts':attempts,'provider_call_successes':successes,'event_calls':attempts,'settled_records_added':len(records),'skipped':skipped[:50],'errors':errors[:50],'max_event_calls':MAX_CALLS};STATUS.parent.mkdir(exist_ok=True);STATUS.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ('skipped','errors')},ensure_ascii=False))
+ key=os.getenv('ODDS_API_IO_KEY','').strip();signals=load_jsonl(SIGNALS);settled=load_jsonl(SETTLED);done={x.get('signal_id') for x in settled};pending=[x for x in signals if x.get('signal_id') not in done and x.get('bet365_event_id')]
+ if not key:
+  QUEUE.write_text(json.dumps({'pending':len(pending),'reason':'ODDS_API_IO_KEY missing'},indent=2)+'\n');return
+ cache={};added=[];errors=[]
+ for row in pending:
+  eid=str(row['bet365_event_id'])
+  try:
+   if eid not in cache:cache[eid]=fetch_event(key,eid)
+   event=event_payload(cache[eid]);pair,score_source=settlement_score_pair(event);result=outcome(row,event)
+   if result:
+    added.append({**row,'outcome':result,'settled_at':datetime.now(timezone.utc).isoformat(),'score_source':score_source,'settlement_score':list(pair) if pair else None})
+  except Exception as e:errors.append({'event_id':eid,'error':str(e)[:200]})
+ if added:write_jsonl(SETTLED,settled+added)
+ QUEUE.write_text(json.dumps({'pending':len(pending)-len(added),'settled_now':len(added),'errors':errors[:20]},indent=2)+'\n')
+ print(json.dumps({'pending_before':len(pending),'settled_now':len(added),'errors':len(errors)}))
 if __name__=='__main__':main()
