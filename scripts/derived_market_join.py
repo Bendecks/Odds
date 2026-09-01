@@ -8,11 +8,17 @@ MARKET_ALIASES={
  'odd_even':('odd/even',),
  'clean_sheet_home':('clean sheet home',),
  'clean_sheet_away':('clean sheet away',),
+ 'team_total_goals_home':('team total goals home',),
+ 'team_total_goals_away':('team total goals away',),
 }
+LINE_AWARE=('team_total_goals_home','team_total_goals_away')
 # Exact-goal provider observations currently expose selection="odds" without the
 # goal bucket in compact diagnostics. They deliberately remain unjoinable until
 # the provider payload exposes an unambiguous bucket/line identity.
 MATCHABLE=tuple(MARKET_ALIASES)
+def norm_line(value):
+ try:return round(float(value),3)
+ except Exception:return None
 def main():
  candidates=json.loads(CAND.read_text()) if CAND.exists() else []; observations=[]
  if OBS.exists():
@@ -23,17 +29,20 @@ def main():
  exact_ids={}
  for c in candidates:
   if c.get('event_match_method')=='exact' and c.get('bet365_event_id') and c.get('event_id'):exact_ids[str(c['event_id'])]=str(c['bet365_event_id'])
- index={}
+ index={};line_index={}
  for o in observations:
   eid=str(o.get('event_id') or '');market=str(o.get('market') or '').lower();selection=str(o.get('selection') or '').lower()
-  if eid:index[(eid,market,selection)]=o
+  if not eid:continue
+  index[(eid,market,selection)]=o
+  line=norm_line(o.get('line'))
+  if line is not None:line_index[(eid,market,selection,line)]=o
  matched={m:0 for m in MATCHABLE}
  for c in candidates:
   market=str(c.get('market') or '').lower()
   if market not in matched:continue
   eid=exact_ids.get(str(c.get('event_id') or ''))
   if not eid:continue
-  if market in ('double_chance','btts','odd_even','clean_sheet_home','clean_sheet_away'):wanted_selection=str(c.get('pick') or '').lower()
+  if market in ('double_chance','btts','odd_even','clean_sheet_home','clean_sheet_away',*LINE_AWARE):wanted_selection=str(c.get('pick') or '').lower()
   else:
    event=str(c.get('event') or '')
    if ' vs ' not in event:continue
@@ -41,7 +50,11 @@ def main():
    if pick==home:wanted_selection='home'
    elif pick==away:wanted_selection='away'
    else:continue
-  o=next((index.get((eid,wanted_market,wanted_selection)) for wanted_market in MARKET_ALIASES[market] if index.get((eid,wanted_market,wanted_selection))),None)
+  if market in LINE_AWARE:
+   wanted_line=norm_line(c.get('line'))
+   if wanted_line is None or abs((wanted_line%1)-0.5)>1e-9:continue
+   o=next((line_index.get((eid,wanted_market,wanted_selection,wanted_line)) for wanted_market in MARKET_ALIASES[market] if line_index.get((eid,wanted_market,wanted_selection,wanted_line))),None)
+  else:o=next((index.get((eid,wanted_market,wanted_selection)) for wanted_market in MARKET_ALIASES[market] if index.get((eid,wanted_market,wanted_selection))),None)
   if not o:continue
   try:odds=float(o.get('odds',0))
   except Exception:continue
