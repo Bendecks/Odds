@@ -1,5 +1,4 @@
 import math
-from derived_btts_model import model_probs
 
 
 def exact_goal_probability(lam, goals):
