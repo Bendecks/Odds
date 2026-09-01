@@ -50,12 +50,13 @@ def market_rows(event,markets,now):
         for line in m.get('odds') or []:
             if not isinstance(line,dict):continue
             line_value=line.get('handicap',line.get('hdp',line.get('point',line.get('line',line.get('total')))))
+            raw_name=line.get('name'); raw_label=line.get('label'); raw_id=line.get('id')
             for field,value in line.items():
                 if field in ('id','name','label','handicap','hdp','point','line','total'):continue
                 try:price=float(value)
                 except Exception:continue
                 if price<=1:continue
-                rows.append({'event_id':event.get('id'),'event':f"{event.get('home')} vs {event.get('away')}",'home':event.get('home'),'away':event.get('away'),'sport':event.get('sport'),'league':event.get('league'),'commence_time':event.get('date') or event.get('startTime') or event.get('commence_time'),'market':name,'selection':field,'odds':price,'line':line_value,'timestamp':updated,'bookmaker':'Bet365','source':'odds-api.io'})
+                rows.append({'event_id':event.get('id'),'event':f"{event.get('home')} vs {event.get('away')}",'home':event.get('home'),'away':event.get('away'),'sport':event.get('sport'),'league':event.get('league'),'commence_time':event.get('date') or event.get('startTime') or event.get('commence_time'),'market':name,'selection':field,'raw_selection_id':raw_id,'raw_selection_name':raw_name,'raw_selection_label':raw_label,'odds':price,'line':line_value,'timestamp':updated,'bookmaker':'Bet365','source':'odds-api.io'})
     return rows
 
 MARKET_ALIASES={
@@ -71,10 +72,8 @@ def market_matches(candidate_market, bet365_market):
     return actual in wanted
 
 def line_matches(candidate_line, bet365_line):
-    if candidate_line is None or candidate_line=='':
-        return True
-    if bet365_line is None or bet365_line=='':
-        return False
+    if candidate_line is None or candidate_line=='': return True
+    if bet365_line is None or bet365_line=='': return False
     try:return abs(float(candidate_line)-float(bet365_line))<0.001
     except Exception:return str(candidate_line)==str(bet365_line)
 
@@ -86,13 +85,11 @@ def candidate_line_for_bet365(candidate,field):
     return line
 
 def bet365_field(candidate,event):
-    market=str(candidate.get('market') or '').lower()
-    pick=norm(candidate.get('pick'))
+    market=str(candidate.get('market') or '').lower(); pick=norm(candidate.get('pick'))
     if market=='h2h':
         home=norm(event.get('home'));away=norm(event.get('away'))
         return 'home' if pick==home else 'away' if pick==away else 'draw' if pick in ('draw','uafgjort') else None
-    if market=='totals':
-        return 'over' if pick=='over' else 'under' if pick=='under' else None
+    if market=='totals': return 'over' if pick=='over' else 'under' if pick=='under' else None
     if market=='spreads':
         home=norm(event.get('home'));away=norm(event.get('away'))
         return 'home' if pick==home else 'away' if pick==away else None
@@ -189,7 +186,8 @@ def main():
         if not found:queried_without_h2h_price+=1
     CAND.write_text(json.dumps(refs,ensure_ascii=False,indent=2)+'\n');OBS.parent.mkdir(exist_ok=True);OBS.write_text(''.join(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n' for x in observations))
     markets=collections.Counter(x['market'] for x in observations); leagues=collections.Counter(str(x.get('league') or 'unknown') for x in observations); selections=collections.Counter(x['selection'] for x in observations)
-    summary={'generated_at':now.isoformat(),'events_queried':len(prioritized),'observations':len(observations),'unique_markets':len(markets),'top_markets':markets.most_common(100),'top_leagues':leagues.most_common(50),'selection_fields':selections.most_common(50)}
+    raw_names=collections.Counter(str(x.get('raw_selection_name')) for x in observations if x.get('raw_selection_name') is not None); raw_labels=collections.Counter(str(x.get('raw_selection_label')) for x in observations if x.get('raw_selection_label') is not None)
+    summary={'generated_at':now.isoformat(),'events_queried':len(prioritized),'observations':len(observations),'unique_markets':len(markets),'top_markets':markets.most_common(100),'top_leagues':leagues.most_common(50),'selection_fields':selections.most_common(50),'raw_selection_names':raw_names.most_common(100),'raw_selection_labels':raw_labels.most_common(100)}
     diagnostics={'generated_at':now.isoformat(),'reference_rows':len(refs),'reference_events':resolver_unique_events,'exact_reference_events_in_bet365':len(exact_ref_keys),'unmatched_reference_events':len(unique_ref_keys-exact_ref_keys),'exact_reference_rows':exact_rows,'exact_rows_not_queried':exact_but_not_queried,'queried_reference_rows_without_h2h_price':queried_without_h2h_price,'matched_prices':matched,'bet365_events_available':len(events),'bet365_events_queried':len(prioritized),'resolver_diagnostic_only':True,'resolver_accepted_events':len(resolver_event_ids),'resolver_reason_counts':dict(resolver_counts),'resolver_matches':resolver_rows,'resolver_rows_persisted':len(resolver_rows),'resolver_rows_limit':MAX_RESOLVER_ROWS}
     SUMMARY.parent.mkdir(exist_ok=True);SUMMARY.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n');DIAG.write_text(json.dumps(diagnostics,ensure_ascii=False,indent=2)+'\n');STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'source':'odds-api.io','provider_unavailable':False,'bet365_events_available':len(events),'events_queried':len(prioritized),'provider_call_attempts':attempts+1,'provider_call_successes':successes+1,'odds_calls':attempts,'batch_size':BATCH_SIZE,'batch_attempts':batch_attempts,'batch_successes':batch_successes,'fallback_attempts':fallback_attempts,'fallback_successes':fallback_successes,'raw_market_observations':len(observations),'unique_markets':len(markets),'matched_reference_candidates':matched,'resolver_accepted_events_diagnostic_only':len(resolver_event_ids),'max_odds_calls':MAX_ODDS_CALLS,'errors':errors},ensure_ascii=False,indent=2)+'\n')
     print(f'Bet365 universe: available={len(events)} queried={len(prioritized)} calls={attempts} batch={batch_successes}/{batch_attempts} fallback={fallback_successes}/{fallback_attempts} observations={len(observations)} reference_matches={matched} errors={len(errors)}')
