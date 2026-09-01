@@ -64,7 +64,13 @@ def settlement_score_pair(event):
     pair=score_pair(event)
     return (pair,'top_level') if pair else (None,'missing_score')
 def supported_market(row):
-    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb')
+    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb','odd_even','odd/even','clean_sheet_home','clean sheet home','clean_sheet_away','clean sheet away','exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals')
+def exact_goal_pick(row):
+    raw=row.get('line') if row.get('line') is not None else row.get('pick')
+    try:
+        value=float(raw)
+        return int(value) if value.is_integer() and value>=0 else None
+    except Exception:return None
 def market_outcome(row,pair):
     h,a=pair;market=str(row.get('market') or '').lower();home,away=split_event(row.get('event'));pick=norm(row.get('pick'))
     if not home:return None
@@ -91,6 +97,24 @@ def market_outcome(row,pair):
         if pick in ('yes','ja'):return 'win' if yes else 'loss'
         if pick in ('no','nej'):return 'loss' if yes else 'win'
         return None
+    if market in ('odd_even','odd/even'):
+        wanted='odd' if int(h+a)%2 else 'even'
+        return 'win' if pick==wanted else 'loss' if pick in ('odd','even') else None
+    if market in ('clean_sheet_home','clean sheet home'):
+        yes=a==0
+        if pick in ('yes','ja'):return 'win' if yes else 'loss'
+        if pick in ('no','nej'):return 'loss' if yes else 'win'
+        return None
+    if market in ('clean_sheet_away','clean sheet away'):
+        yes=h==0
+        if pick in ('yes','ja'):return 'win' if yes else 'loss'
+        if pick in ('no','nej'):return 'loss' if yes else 'win'
+        return None
+    if market in ('exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals'):
+        wanted=exact_goal_pick(row)
+        if wanted is None:return None
+        actual=int(h+a) if market in ('exact_total_goals','exact total goals') else int(h) if market in ('home_exact_goals','home team exact goals') else int(a)
+        return 'win' if actual==wanted else 'loss'
     if market in ('spreads','spread'):
         try:line=float(row.get('line'))
         except Exception:return None
