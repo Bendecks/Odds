@@ -6,6 +6,8 @@ MARKET_ALIASES={
  'draw_no_bet':('draw no bet',),
  'btts':('both teams to score','teams to score'),
  'odd_even':('odd/even',),
+ 'odd_even_home':('odd/even home',),
+ 'odd_even_away':('odd/even away',),
  'clean_sheet_home':('clean sheet home',),
  'clean_sheet_away':('clean sheet away',),
  'team_total_goals_home':('team total goals home',),
@@ -13,9 +15,6 @@ MARKET_ALIASES={
  'total_goals':('totals','alternative total goals','alternative goal line','goals over/under'),
 }
 LINE_AWARE=('team_total_goals_home','team_total_goals_away','total_goals')
-# Exact-goal provider observations currently expose selection="odds" without the
-# goal bucket in compact diagnostics. They deliberately remain unjoinable until
-# the provider payload exposes an unambiguous bucket/line identity.
 MATCHABLE=tuple(MARKET_ALIASES)
 def norm_line(value):
  if isinstance(value,bool):return None
@@ -32,7 +31,6 @@ def main():
   for line in OBS.read_text().splitlines():
    try:observations.append(json.loads(line))
    except Exception:pass
- # Reuse provider IDs already proven exact by the direct reference join. Never infer exact identity from names alone.
  exact_ids={}
  for c in candidates:
   if c.get('event_match_method')=='exact' and c.get('bet365_event_id') and c.get('event_id'):exact_ids[str(c['event_id'])]=str(c['bet365_event_id'])
@@ -49,7 +47,7 @@ def main():
   if market not in matched:continue
   eid=exact_ids.get(str(c.get('event_id') or ''))
   if not eid:continue
-  if market in ('double_chance','btts','odd_even','clean_sheet_home','clean_sheet_away',*LINE_AWARE):wanted_selection=str(c.get('pick') or '').lower()
+  if market in ('double_chance','btts','odd_even','odd_even_home','odd_even_away','clean_sheet_home','clean_sheet_away',*LINE_AWARE):wanted_selection=str(c.get('pick') or '').lower()
   else:
    event=str(c.get('event') or '')
    if ' vs ' not in event:continue

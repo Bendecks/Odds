@@ -2,7 +2,7 @@ import json, math, pathlib
 from derived_btts_model import event_inputs, fit_lambdas, MAX_RMSE
 
 CAND=pathlib.Path('data/value_candidates.json')
-MARKETS=('odd_even','clean_sheet_home','clean_sheet_away','exact_total_goals','home_exact_goals','away_exact_goals','team_total_goals_home','team_total_goals_away','total_goals')
+MARKETS=('odd_even','odd_even_home','odd_even_away','clean_sheet_home','clean_sheet_away','exact_total_goals','home_exact_goals','away_exact_goals','team_total_goals_home','team_total_goals_away','total_goals')
 TEAM_TOTAL_HALF_LINES=(0.5,1.5,2.5,3.5,4.5)
 TOTAL_HALF_LINES=(0.5,1.5,2.5,3.5,4.5,5.5,6.5)
 
@@ -15,9 +15,12 @@ def poisson_cdf(lam, goals):
     return sum(exact_goal_probability(lam,k) for k in range(goals+1))
 
 
+def odd_even_probabilities(lam):
+    even=(1.0+math.exp(-2.0*lam))/2.0
+    return {'odd':1.0-even,'even':even}
+
+
 def half_line_probabilities(lam, line):
-    # Safe binary markets only: x.5 cannot push or split. Integer/quarter lines
-    # are intentionally not generated until their settlement semantics are wired.
     if line<=0 or abs((line%1)-0.5)>1e-9:
         raise ValueError('total line must be a positive half-line')
     under=poisson_cdf(lam,int(math.floor(line)))
@@ -30,9 +33,10 @@ def team_total_half_line_probabilities(lam, line):
 
 def goal_market_probabilities(home_lambda, away_lambda):
     total = home_lambda + away_lambda
-    even = (1.0 + math.exp(-2.0 * total)) / 2.0
     return {
-        'odd_even': {'odd': 1.0 - even, 'even': even},
+        'odd_even': odd_even_probabilities(total),
+        'odd_even_home': odd_even_probabilities(home_lambda),
+        'odd_even_away': odd_even_probabilities(away_lambda),
         'clean_sheet_home': {'yes': math.exp(-away_lambda), 'no': 1.0 - math.exp(-away_lambda)},
         'clean_sheet_away': {'yes': math.exp(-home_lambda), 'no': 1.0 - math.exp(-home_lambda)},
         'exact_total_goals': {str(k): exact_goal_probability(total, k) for k in range(7)},
