@@ -35,15 +35,19 @@ class TestProviderSchemaReport(unittest.TestCase):
         rows.append({'market':None,'selection':None})
         with tempfile.TemporaryDirectory() as tmp:
             out=pathlib.Path(tmp) / 'schema.json'
-            with patch.object(report,'load_rows',return_value=rows), patch.object(report,'OUT',out):
+            target_out=pathlib.Path(tmp) / 'target-schema.json'
+            with patch.object(report,'load_rows',return_value=rows), patch.object(report,'OUT',out), patch.object(report,'TARGET_OUT',target_out):
                 report.main()
             data=json.loads(out.read_text())
+            targets=json.loads(target_out.read_text())
         self.assertEqual(data['observations'],21)
         exact=data['markets']['Exact Total Goals']
         self.assertEqual(exact['observations'],20)
         self.assertEqual(len(exact['schema_examples']),12)
         self.assertEqual(exact['selection_fields'][0],["over",10])
         self.assertEqual(data['markets']['unknown']['selection_fields'],[["unknown",1]])
+        self.assertEqual(targets['observations'],20)
+        self.assertEqual(list(targets['markets']),['Exact Total Goals'])
 
     def test_missing_raw_name_and_label_are_not_counted(self):
         rows=[
@@ -52,12 +56,20 @@ class TestProviderSchemaReport(unittest.TestCase):
         ]
         with tempfile.TemporaryDirectory() as tmp:
             out=pathlib.Path(tmp) / 'schema.json'
-            with patch.object(report,'load_rows',return_value=rows), patch.object(report,'OUT',out):
+            target_out=pathlib.Path(tmp) / 'target-schema.json'
+            with patch.object(report,'load_rows',return_value=rows), patch.object(report,'OUT',out), patch.object(report,'TARGET_OUT',target_out):
                 report.main()
             totals=json.loads(out.read_text())['markets']['Totals']
         self.assertEqual(totals['raw_selection_names'],[])
         self.assertEqual(totals['raw_selection_labels'],[])
         self.assertEqual(totals['lines'],[["2.5",2]])
+
+    def test_target_market_filter_is_narrow_and_case_insensitive(self):
+        self.assertTrue(report.is_target_market('Correct Score'))
+        self.assertTrue(report.is_target_market('Alternative Team Total Goals'))
+        self.assertTrue(report.is_target_market('Asian Handicap'))
+        self.assertFalse(report.is_target_market('Player Shots'))
+        self.assertFalse(report.is_target_market('Both Teams To Score'))
 
 
 if __name__ == '__main__':
