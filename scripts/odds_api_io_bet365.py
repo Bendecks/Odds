@@ -6,9 +6,16 @@ from event_match_diagnostics import conservative_match
 BASE='https://api.odds-api.io/v3'; KEY=os.getenv('ODDS_API_IO_KEY','')
 CAND=pathlib.Path('data/value_candidates.json'); OBS=pathlib.Path('data/bet365_observations.jsonl'); SUMMARY=pathlib.Path('output/bet365_market_summary.json'); STATUS=pathlib.Path('output/bet365_join_status.json'); DIAG=pathlib.Path('output/reference_match_diagnostics.json')
 MAX_HOURS=int(os.getenv('MAX_HOURS','72')); MAX_ODDS_CALLS=int(os.getenv('BET365_MAX_ODDS_CALLS','80')); MAX_RESOLVER_ROWS=int(os.getenv('BET365_MAX_RESOLVER_ROWS','50')); BATCH_SIZE=min(10,max(1,int(os.getenv('BET365_BATCH_SIZE','10'))))
+# Explicit provider aliases promoted only from observed same-kickoff resolver evidence. Fuzzy matching itself remains diagnostic-only.
+TEAM_ALIASES={
+ 'flamengo':'crflamengorj','mirassol':'mirassolfcsp','realbetis':'realbetisseville',
+ 'anderlecht':'rscanderlecht','liverpool':'liverpoolfc','fczwolle':'peczwolle',
+ 'austriawien':'fkaustriawien','lyngby':'lyngbybk','sinttruiden':'sttruidensevv',
+ 'toulouse':'toulousefc','lille':'lilleosc','botafogosp':'botafogofcsp',
+}
 
 def norm(s):
-    s=unicodedata.normalize('NFKD',str(s or '')).encode('ascii','ignore').decode().lower(); return re.sub(r'[^a-z0-9]','',s)
+    s=unicodedata.normalize('NFKD',str(s or '')).encode('ascii','ignore').decode().lower(); key=re.sub(r'[^a-z0-9]','',s); return TEAM_ALIASES.get(key,key)
 def get(path,params):
     r=requests.get(BASE+path,params={**params,'apiKey':KEY},timeout=30); r.raise_for_status(); return r.json()
 def event_key(home,away): return norm(home),norm(away)
@@ -76,7 +83,6 @@ def line_matches(candidate_line, bet365_line):
     if bet365_line is None or bet365_line=='': return False
     try:return abs(float(candidate_line)-float(bet365_line))<0.001
     except Exception:return str(candidate_line)==str(bet365_line)
-
 def candidate_line_for_bet365(candidate,field):
     line=candidate.get('line')
     if str(candidate.get('market') or '').lower()=='spreads' and field=='away':
@@ -176,7 +182,6 @@ def main():
         e=idx.get(event_key(home_name,away_name))
         if not e:continue
         exact_rows+=1
-        # Preserve exact event identity independently of whether this candidate's market/selection has a price.
         r.update({'bet365_event_id':e.get('id'),'event_match_method':'exact'})
         if str(e.get('id')) not in queried_ids:exact_but_not_queried+=1;continue
         found=False
