@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-31T19:08:02.516458+00:00",
-  "reference_rows": 54,
-  "reference_events": 4,
+  "generated_at": "2026-09-01T03:41:52.804606+00:00",
+  "reference_rows": 102,
+  "reference_events": 8,
   "exact_reference_events_in_bet365": 2,
-  "unmatched_reference_events": 2,
+  "unmatched_reference_events": 6,
   "exact_reference_rows": 28,
   "exact_rows_not_queried": 0,
   "queried_reference_rows_without_h2h_price": 10,
@@ -11,35 +11,48 @@
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 1,
+  "resolver_accepted_events": 0,
   "resolver_reason_counts": {
-    "time_team_match": 1,
-    "no_candidate": 1
+    "no_candidate": 6
   },
   "resolver_matches": [
-    {
-      "reference_event": "Barcelona vs Rayo Vallecano",
-      "reference_start": "2026-08-31T19:30:00Z",
-      "accepted": true,
-      "reason": "time_team_match",
-      "best": {
-        "event_id": 72478512,
-        "home": "FC Barcelona",
-        "away": "Rayo Vallecano",
-        "time_delta_minutes": 0.0,
-        "home_score": 1.0,
-        "away_score": 1.0,
-        "combined_score": 1.0
-      },
-      "margin": 1.0
-    },
     {
       "reference_event": "Real Sociedad vs Celta Vigo",
       "reference_start": "2026-09-03T19:00:00Z",
       "accepted": false,
       "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Lech Poznań vs Jagiellonia Białystok",
+      "reference_start": "2026-09-03T18:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Raków Częstochowa vs Górnik Zabrze",
+      "reference_start": "2026-09-03T16:00:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Al-Hilal vs Al-Ahli",
+      "reference_start": "2026-09-01T18:00:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Neom vs Al-Khaleej",
+      "reference_start": "2026-09-03T16:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Al-Fayha vs Al-Kholood",
+      "reference_start": "2026-09-03T15:55:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
     }
   ],
-  "resolver_rows_persisted": 2,
+  "resolver_rows_persisted": 6,
   "resolver_rows_limit": 50
 }
