@@ -22,7 +22,7 @@ def analysis_time():
  except Exception:pass
  return datetime.now(timezone.utc)
 
-def evaluate(c,now,min_edge,min_ev,min_books,max_age):
+def _evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age):
  if not ops.exact_identity(c):return None,'identity'
  stamp=ops.parse_dt(c.get('bet365_timestamp'));start=ops.parse_dt(c.get('commence_time'))
  if not stamp:return None,'missing_price_time'
@@ -50,6 +50,9 @@ def evaluate(c,now,min_edge,min_ev,min_books,max_age):
  if stake<engine.MIN_STAKE:return row,'stake'
  return row,'eligible'
 
+def evaluate(c,now,min_edge,min_ev,min_books,max_age):
+ return _evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age)[0]
+
 def select(rows):
  ranked=sorted((r for r in rows if r['stake_eligible']),key=lambda r:r['score'],reverse=True);seen={};picks=[]
  per_event=max(1,int(engine.P.get('max_bets_per_event',1)));limit=max(1,int(engine.P.get('max_picks_per_run',25)))
@@ -66,7 +69,7 @@ def main():
  except Exception:candidates=[]
  scenarios=[]
  for name,min_edge,min_ev,min_books,max_age in SCENARIOS:
-  evaluated=[evaluate(c,now,min_edge,min_ev,min_books,max_age) for c in candidates]
+  evaluated=[_evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age) for c in candidates]
   rows=[row for row,_ in evaluated if row]
   reasons=Counter(reason for _,reason in evaluated)
   gate=[r for r in rows if r['gate_eligible']];stake=[r for r in rows if r['stake_eligible']];picks=select(rows)
