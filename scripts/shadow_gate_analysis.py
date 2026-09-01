@@ -1,5 +1,5 @@
 import json,math,pathlib
-from collections import Counter
+from collections import Counter,defaultdict
 from datetime import datetime,timezone
 import operational_status as ops
 import value_decision_engine as engine
@@ -16,8 +16,16 @@ def analysis_time():
  except Exception:pass
  return datetime.now(timezone.utc)
 
+def identity_reason(c):
+ if not str(c.get('bet365_event_id') or '').strip():return 'event_identity'
+ if c.get('event_match_method')!='exact':return 'event_identity'
+ if c.get('bet365_odds') is None:return 'no_exact_bet365_price'
+ if not c.get('bet365_verified'):return 'market_identity'
+ return None
+
 def _evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age):
- if not ops.exact_identity(c):return None,'identity'
+ identity=identity_reason(c)
+ if identity:return None,identity
  stamp=ops.parse_dt(c.get('bet365_timestamp'));start=ops.parse_dt(c.get('commence_time'))
  if not stamp:return None,'missing_price_time'
  if not start:return None,'missing_start_time'
@@ -60,7 +68,10 @@ def main():
  except Exception:candidates=[]
  scenarios=[]
  for name,min_edge,min_ev,min_books,max_age in SCENARIOS:
-  evaluated=[_evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age) for c in candidates];rows=[row for row,_ in evaluated if row];reasons=Counter(reason for _,reason in evaluated);gate=[r for r in rows if r['gate_eligible']];stake=[r for r in rows if r['stake_eligible']];eligible=[r for r in rows if r['paper_eligible']];picks=select(rows)
-  scenarios.append({'name':name,'min_edge':min_edge,'min_ev':min_ev,'min_reference_books':min_books,'max_price_age_minutes':max_age,'gate_signals':len(gate),'theoretical_stake_eligible':len(stake),'paper_eligible':len(eligible),'shadow_paper_picks':len(picks),'unique_events':len({r.get('bet365_event_id') for r in picks if r.get('bet365_event_id')}),'by_market':dict(sorted({m:sum(1 for r in picks if r.get('market')==m) for m in {r.get('market') for r in picks}}.items())),'rejection_reasons':dict(sorted((k,v) for k,v in reasons.items() if k!='eligible'))})
- report={'generated_at':datetime.now(timezone.utc).isoformat(),'as_of':now.isoformat(),'candidate_rows':len(candidates),'note':'Diagnostic only. PAPER may ignore the theoretical minimum-stake gate when policy explicitly allows it; actual Bet365 minimum stake is tracked separately.','scenarios':scenarios};OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False))
+  evaluated=[_evaluate_with_reason(c,now,min_edge,min_ev,min_books,max_age) for c in candidates];rows=[row for row,_ in evaluated if row];reasons=Counter(reason for _,reason in evaluated);by_market=defaultdict(Counter)
+  for c,(_,reason) in zip(candidates,evaluated):
+   if reason!='eligible':by_market[str(c.get('market') or 'unknown')][reason]+=1
+  gate=[r for r in rows if r['gate_eligible']];stake=[r for r in rows if r['stake_eligible']];eligible=[r for r in rows if r['paper_eligible']];picks=select(rows)
+  scenarios.append({'name':name,'min_edge':min_edge,'min_ev':min_ev,'min_reference_books':min_books,'max_price_age_minutes':max_age,'gate_signals':len(gate),'theoretical_stake_eligible':len(stake),'paper_eligible':len(eligible),'shadow_paper_picks':len(picks),'unique_events':len({r.get('bet365_event_id') for r in picks if r.get('bet365_event_id')}),'by_market':dict(sorted({m:sum(1 for r in picks if r.get('market')==m) for m in {r.get('market') for r in picks}}.items())),'rejection_reasons':dict(sorted((k,v) for k,v in reasons.items() if k!='eligible')),'rejection_reasons_by_market':{m:dict(sorted(v.items())) for m,v in sorted(by_market.items())}})
+ report={'generated_at':datetime.now(timezone.utc).isoformat(),'as_of':now.isoformat(),'candidate_rows':len(candidates),'note':'Diagnostic only. Identity rejection is split into event identity, missing exact Bet365 price, and market identity so market-expansion work can target the largest safe unlocks.','scenarios':scenarios};OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__':main()
