@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-01T05:07:27.851495+00:00",
-  "reference_rows": 40,
-  "reference_events": 3,
+  "generated_at": "2026-09-01T06:30:04.713413+00:00",
+  "reference_rows": 166,
+  "reference_events": 12,
   "exact_reference_events_in_bet365": 2,
-  "unmatched_reference_events": 1,
+  "unmatched_reference_events": 10,
   "exact_reference_rows": 28,
   "exact_rows_not_queried": 0,
   "queried_reference_rows_without_h2h_price": 10,
@@ -11,18 +11,134 @@
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 0,
+  "resolver_accepted_events": 5,
   "resolver_reason_counts": {
-    "no_candidate": 1
+    "time_team_match": 5,
+    "no_candidate": 4,
+    "score_below_threshold": 1
   },
   "resolver_matches": [
+    {
+      "reference_event": "Flamengo vs Mirassol",
+      "reference_start": "2026-09-02T22:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 73936890,
+        "home": "CR Flamengo RJ",
+        "away": "Mirassol FC SP",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.8,
+        "away_score": 0.8889,
+        "combined_score": 0.8444
+      },
+      "margin": 0.8444
+    },
+    {
+      "reference_event": "Gent vs Leuven",
+      "reference_start": "2026-09-03T18:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Wolfsberger AC vs LASK",
+      "reference_start": "2026-09-01T17:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "RB Salzburg vs Rapid Wien",
+      "reference_start": "2026-09-02T18:30:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Austria Wien vs WSG Tirol",
+      "reference_start": "2026-09-02T16:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 73735412,
+        "home": "FK Austria Wien",
+        "away": "WSG Tirol",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.9167,
+        "away_score": 1.0,
+        "combined_score": 0.9583
+      },
+      "margin": 0.9583
+    },
     {
       "reference_event": "Real Sociedad vs Celta Vigo",
       "reference_start": "2026-09-03T19:00:00Z",
       "accepted": false,
       "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Sint Truiden vs Union Saint-Gilloise",
+      "reference_start": "2026-09-02T18:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72203076,
+        "home": "St. Truidense VV",
+        "away": "Union Saint-Gilloise",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.75,
+        "away_score": 1.0,
+        "combined_score": 0.875
+      },
+      "margin": 0.875
+    },
+    {
+      "reference_event": "Londrina vs Juventude",
+      "reference_start": "2026-09-01T22:30:00Z",
+      "accepted": false,
+      "reason": "score_below_threshold",
+      "best": {
+        "event_id": 68823212,
+        "home": "Londrina EC PR",
+        "away": "EC Juventude RS",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.8,
+        "away_score": 0.8182,
+        "combined_score": 0.8091
+      },
+      "margin": 0.8091
+    },
+    {
+      "reference_event": "Anderlecht vs KV Kortrijk",
+      "reference_start": "2026-09-03T18:30:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 73394162,
+        "home": "RSC Anderlecht",
+        "away": "KV Kortrijk",
+        "time_delta_minutes": 0.0,
+        "home_score": 0.8696,
+        "away_score": 1.0,
+        "combined_score": 0.9348
+      },
+      "margin": 0.9348
+    },
+    {
+      "reference_event": "Nautico PE vs Botafogo-SP",
+      "reference_start": "2026-09-03T23:00:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 68823240,
+        "home": "Nautico PE",
+        "away": "Botafogo FC SP",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
     }
   ],
-  "resolver_rows_persisted": 1,
+  "resolver_rows_persisted": 10,
   "resolver_rows_limit": 50
 }
