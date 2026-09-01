@@ -64,7 +64,7 @@ def settlement_score_pair(event):
     pair=score_pair(event)
     return (pair,'top_level') if pair else (None,'missing_score')
 def supported_market(row):
-    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb','odd_even','odd/even','clean_sheet_home','clean sheet home','clean_sheet_away','clean sheet away','exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals')
+    return str(row.get('market') or '').lower() in ('h2h','ml','1x2','totals','total','spreads','spread','btts','both teams to score','teams to score','draw_no_bet','draw no bet','dnb','odd_even','odd/even','clean_sheet_home','clean sheet home','clean_sheet_away','clean sheet away','exact_total_goals','exact total goals','home_exact_goals','home team exact goals','away_exact_goals','away team exact goals','team_total_goals_home','team total goals home','team_total_goals_away','team total goals away')
 def exact_goal_pick(row):
     raw=row.get('line') if row.get('line') is not None else row.get('pick')
     try:
@@ -89,6 +89,14 @@ def market_outcome(row,pair):
         except Exception:return None
         goals=h+a
         if goals==line:return 'push'
+        if pick=='over':return 'win' if goals>line else 'loss'
+        if pick=='under':return 'win' if goals<line else 'loss'
+        return None
+    if market in ('team_total_goals_home','team total goals home','team_total_goals_away','team total goals away'):
+        try:line=float(row.get('line'))
+        except Exception:return None
+        if line<=0 or abs((line%1)-0.5)>1e-9:return None
+        goals=h if market in ('team_total_goals_home','team total goals home') else a
         if pick=='over':return 'win' if goals>line else 'loss'
         if pick=='under':return 'win' if goals<line else 'loss'
         return None
