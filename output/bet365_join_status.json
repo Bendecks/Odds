@@ -1,19 +1,22 @@
 {
-  "generated_at": "2026-09-01T19:21:59.809819+00:00",
+  "generated_at": "2026-09-01T20:05:09.148324+00:00",
   "source": "odds-api.io",
-  "provider_unavailable": false,
-  "bet365_events_available": 500,
-  "events_queried": 80,
-  "provider_call_attempts": 8,
-  "provider_call_successes": 8,
-  "multi_calls": 8,
-  "multi_call_successes": 8,
-  "fallback_calls": 0,
-  "fallback_call_successes": 0,
-  "raw_market_observations": 57247,
-  "unique_markets": 117,
-  "matched_reference_candidates": 34,
-  "resolver_accepted_events_diagnostic_only": 10,
+  "provider_unavailable": true,
+  "bet365_events_available": 0,
+  "events_queried": 0,
+  "provider_call_attempts": 1,
+  "provider_call_successes": 0,
+  "odds_calls": 0,
+  "raw_market_observations": 0,
+  "unique_markets": 0,
+  "matched_reference_candidates": 0,
+  "resolver_accepted_events_diagnostic_only": 0,
   "max_odds_calls": 80,
-  "errors": []
+  "errors": [
+    {
+      "stage": "events",
+      "status": 429,
+      "reason": "rate_limited"
+    }
+  ]
 }

@@ -1,319 +1,77 @@
 {
-  "generated_at": "2026-09-01T19:22:10.576485+00:00",
+  "generated_at": "2026-09-01T20:05:12.729943+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
-  "bottleneck": "Ingen friske referenceklare kandidater passerer produktionskravet til edge.",
+  "bottleneck": "Ingen kandidater har eksakt Bet365-identitet.",
   "funnel": {
-    "candidate_rows": 1487,
-    "fair_probability_rows": 1487,
-    "reference_events": 21,
-    "exact_bet365_rows": 196,
-    "fresh_exact_bet365_rows": 196,
-    "reference_depth_ready_rows": 182,
+    "candidate_rows": 1482,
+    "fair_probability_rows": 1482,
+    "reference_events": 25,
+    "exact_bet365_rows": 0,
+    "fresh_exact_bet365_rows": 0,
+    "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 29
+    "decision_runs_recorded": 30
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "total_goals": 266,
-        "team_total_goals_away": 190,
-        "team_total_goals_home": 190,
-        "exact_total_goals": 133,
-        "away_exact_goals": 95,
-        "home_exact_goals": 95,
-        "totals": 80,
-        "double_chance": 63,
-        "h2h": 63,
-        "draw_no_bet": 42,
-        "spreads": 42,
-        "btts": 38,
-        "clean_sheet_away": 38,
-        "clean_sheet_home": 38,
-        "odd_even": 38,
-        "odd_even_away": 38,
-        "odd_even_home": 38
+        "total_goals": 252,
+        "team_total_goals_away": 180,
+        "team_total_goals_home": 180,
+        "exact_total_goals": 126,
+        "totals": 98,
+        "away_exact_goals": 90,
+        "home_exact_goals": 90,
+        "double_chance": 75,
+        "h2h": 75,
+        "draw_no_bet": 50,
+        "spreads": 50,
+        "btts": 36,
+        "clean_sheet_away": 36,
+        "clean_sheet_home": 36,
+        "odd_even": 36,
+        "odd_even_away": 36,
+        "odd_even_home": 36
       },
-      "exact": {
-        "total_goals": 56,
-        "team_total_goals_home": 20,
-        "team_total_goals_away": 18,
-        "totals": 16,
-        "double_chance": 12,
-        "h2h": 12,
-        "btts": 8,
-        "clean_sheet_away": 8,
-        "clean_sheet_home": 8,
-        "draw_no_bet": 8,
-        "odd_even": 8,
-        "odd_even_away": 8,
-        "odd_even_home": 8,
-        "spreads": 6
-      },
-      "fresh": {
-        "total_goals": 56,
-        "team_total_goals_home": 20,
-        "team_total_goals_away": 18,
-        "totals": 16,
-        "double_chance": 12,
-        "h2h": 12,
-        "btts": 8,
-        "clean_sheet_away": 8,
-        "clean_sheet_home": 8,
-        "draw_no_bet": 8,
-        "odd_even": 8,
-        "odd_even_away": 8,
-        "odd_even_home": 8,
-        "spreads": 6
-      },
-      "reference_ready": {
-        "total_goals": 56,
-        "team_total_goals_home": 20,
-        "team_total_goals_away": 18,
-        "double_chance": 12,
-        "h2h": 12,
-        "btts": 8,
-        "clean_sheet_away": 8,
-        "clean_sheet_home": 8,
-        "draw_no_bet": 8,
-        "odd_even": 8,
-        "odd_even_away": 8,
-        "odd_even_home": 8,
-        "totals": 8
-      },
+      "exact": {},
+      "fresh": {},
+      "reference_ready": {},
       "production_edge_ready": {}
     },
-    "freshness_by_market": {
-      "btts": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "clean_sheet_away": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "clean_sheet_home": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "double_chance": {
-        "exact": 12,
-        "fresh": 12,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "draw_no_bet": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "h2h": {
-        "exact": 12,
-        "fresh": 12,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "odd_even": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "odd_even_away": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "odd_even_home": {
-        "exact": 8,
-        "fresh": 8,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "spreads": {
-        "exact": 6,
-        "fresh": 6,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "team_total_goals_away": {
-        "exact": 18,
-        "fresh": 18,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "team_total_goals_home": {
-        "exact": 20,
-        "fresh": 20,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "total_goals": {
-        "exact": 56,
-        "fresh": 56,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "totals": {
-        "exact": 16,
-        "fresh": 16,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      }
-    },
-    "exact_price_age_buckets": {
-      "0_20m": 196
-    },
-    "reference_depth_rejections_by_market": {
-      "totals": 8,
-      "spreads": 6
-    },
+    "freshness_by_market": {},
+    "exact_price_age_buckets": {},
+    "reference_depth_rejections_by_market": {},
     "edge_distribution": {
-      "buckets": {
-        "negative": 181,
-        "0_0.5pct": 1
-      },
-      "nonnegative_rows": 1,
-      "best_edge": 0.004857,
-      "top_candidates": [
-        {
-          "event": "AGF Aarhus vs FC Midtjylland",
-          "market": "odd_even",
-          "pick": "odd",
-          "line": null,
-          "books": 3,
-          "bet365_odds": 2.025,
-          "fair_probability": 0.498684,
-          "edge": 0.004857,
-          "ev": 0.009835
-        },
-        {
-          "event": "Lommel SK vs Club Brugge",
-          "market": "double_chance",
-          "pick": "1X",
-          "line": null,
-          "books": 4,
-          "bet365_odds": 3.75,
-          "fair_probability": 0.266299,
-          "edge": -0.000368,
-          "ev": -0.001379
-        },
-        {
-          "event": "FC Copenhagen vs FC Nordsjaelland",
-          "market": "odd_even",
-          "pick": "odd",
-          "line": null,
-          "books": 3,
-          "bet365_odds": 2.0,
-          "fair_probability": 0.499218,
-          "edge": -0.000782,
-          "ev": -0.001564
-        },
-        {
-          "event": "FC Copenhagen vs FC Nordsjaelland",
-          "market": "h2h",
-          "pick": "Draw",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 3.9,
-          "fair_probability": 0.255272,
-          "edge": -0.001138,
-          "ev": -0.004439
-        },
-        {
-          "event": "FC Copenhagen vs FC Nordsjaelland",
-          "market": "clean_sheet_away",
-          "pick": "yes",
-          "line": null,
-          "books": 3,
-          "bet365_odds": 6.0,
-          "fair_probability": 0.165299,
-          "edge": -0.001368,
-          "ev": -0.008206
-        },
-        {
-          "event": "FC Copenhagen vs FC Nordsjaelland",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 3.5,
-          "books": 3,
-          "bet365_odds": 1.666,
-          "fair_probability": 0.595848,
-          "edge": -0.004392,
-          "ev": -0.007317
-        },
-        {
-          "event": "Lommel SK vs Club Brugge",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 2.5,
-          "books": 3,
-          "bet365_odds": 3.45,
-          "fair_probability": 0.285433,
-          "edge": -0.004422,
-          "ev": -0.015256
-        },
-        {
-          "event": "Paris Saint Germain vs AS Monaco",
-          "market": "h2h",
-          "pick": "Draw",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 5.0,
-          "fair_probability": 0.195174,
-          "edge": -0.004826,
-          "ev": -0.02413
-        },
-        {
-          "event": "Lommel SK vs Club Brugge",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 4.5,
-          "books": 3,
-          "bet365_odds": 1.444,
-          "fair_probability": 0.687219,
-          "edge": -0.005302,
-          "ev": -0.007656
-        },
-        {
-          "event": "Lommel SK vs Club Brugge",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 3.5,
-          "books": 3,
-          "bet365_odds": 2.0,
-          "fair_probability": 0.494153,
-          "edge": -0.005847,
-          "ev": -0.011694
-        }
-      ]
+      "buckets": {},
+      "nonnegative_rows": 0,
+      "best_edge": null,
+      "top_candidates": []
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T19:21:59.809819+00:00",
-    "available": true,
-    "bet365_events_available": 500,
-    "events_queried": 80,
-    "provider_call_attempts": 8,
-    "provider_call_successes": 8,
-    "odds_calls": null,
+    "generated_at": "2026-09-01T20:05:09.148324+00:00",
+    "available": false,
+    "bet365_events_available": 0,
+    "events_queried": 0,
+    "provider_call_attempts": 1,
+    "provider_call_successes": 0,
+    "odds_calls": 0,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 57247,
-    "unique_markets": 117,
-    "matched_reference_candidates": 34,
-    "errors": []
+    "raw_market_observations": 0,
+    "unique_markets": 0,
+    "matched_reference_candidates": 0,
+    "errors": [
+      {
+        "stage": "events",
+        "status": 429,
+        "reason": "rate_limited"
+      }
+    ]
   },
   "policy": {
     "bankroll_dkk": 50.0,
