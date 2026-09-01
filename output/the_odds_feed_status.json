@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T20:05:05.965849+00:00",
+  "generated_at": "2026-09-01T20:40:58.987131+00:00",
   "model_version": "market-consensus-v6",
   "sports_source": "active-soccer-discovery",
   "active_soccer_pool_size": 48,
@@ -12,19 +12,19 @@
     "soccer_france_ligue_one",
     "soccer_netherlands_eredivisie",
     "soccer_uefa_champs_league",
-    "soccer_chile_campeonato",
-    "soccer_china_superleague",
-    "soccer_concacaf_leagues_cup",
-    "soccer_conmebol_copa_libertadores",
-    "soccer_conmebol_copa_sudamericana",
-    "soccer_efl_champ",
-    "soccer_england_league1",
-    "soccer_england_league2"
+    "soccer_france_ligue_two",
+    "soccer_germany_bundesliga2",
+    "soccer_germany_dfb_pokal",
+    "soccer_germany_liga3",
+    "soccer_greece_super_league",
+    "soccer_italy_coppa_italia",
+    "soccer_italy_serie_b",
+    "soccer_japan_j_league"
   ],
   "sports_count": 16,
   "sports_per_run": 16,
   "max_sports": 24,
-  "rotation_next_cursor": 13,
+  "rotation_next_cursor": 21,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -41,30 +41,75 @@
     "double_chance",
     "draw_no_bet"
   ],
-  "events_seen": 25,
-  "reference_observations": 348,
+  "events_seen": 12,
+  "reference_observations": 164,
   "quality_counts": {
-    "strong": 206,
-    "good": 30,
-    "limited": 12,
-    "weak": 100
+    "strong": 100,
+    "good": 20,
+    "weak": 44
   },
   "market_counts": {
-    "double_chance": 75,
-    "draw_no_bet": 50,
-    "h2h": 75,
-    "totals": 98,
-    "spreads": 50
+    "double_chance": 36,
+    "draw_no_bet": 24,
+    "h2h": 36,
+    "totals": 44,
+    "spreads": 24
   },
   "pick_type_counts": {
-    "draw": 25,
-    "team": 323
+    "draw": 12,
+    "team": 152
   },
   "discovery_policy": "active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus",
   "quota": {
-    "remaining": "22",
-    "used": "478",
-    "last": "0"
+    "remaining": "1",
+    "used": "499",
+    "last": "3"
   },
-  "errors": []
+  "errors": [
+    {
+      "sport": "soccer_uefa_champs_league",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_france_ligue_two",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_germany_bundesliga2",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_germany_dfb_pokal",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_germany_liga3",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_greece_super_league",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_italy_coppa_italia",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_italy_serie_b",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    },
+    {
+      "sport": "soccer_japan_j_league",
+      "status": 401,
+      "error": "{\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n"
+    }
+  ]
 }
