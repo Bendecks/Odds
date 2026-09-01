@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T19:06:27.810091+00:00",
+  "generated_at": "2026-09-01T19:16:36.614301+00:00",
   "model_version": "market-consensus-v6",
   "sports_source": "active-soccer-discovery",
   "active_soccer_pool_size": 48,
@@ -12,19 +12,19 @@
     "soccer_france_ligue_one",
     "soccer_netherlands_eredivisie",
     "soccer_uefa_champs_league",
-    "soccer_korea_kleague1",
-    "soccer_league_of_ireland",
-    "soccer_mexico_ligamx",
-    "soccer_norway_eliteserien",
-    "soccer_poland_ekstraklasa",
-    "soccer_portugal_primeira_liga",
-    "soccer_russia_premier_league",
-    "soccer_saudi_arabia_pro_league"
+    "soccer_spain_segunda_division",
+    "soccer_spl",
+    "soccer_sweden_allsvenskan",
+    "soccer_sweden_superettan",
+    "soccer_switzerland_superleague",
+    "soccer_turkey_super_league",
+    "soccer_uefa_champs_league_women",
+    "soccer_uefa_europa_conference_league"
   ],
   "sports_count": 16,
   "sports_per_run": 16,
   "max_sports": 24,
-  "rotation_next_cursor": 29,
+  "rotation_next_cursor": 37,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -41,30 +41,30 @@
     "double_chance",
     "draw_no_bet"
   ],
-  "events_seen": 25,
-  "reference_observations": 326,
+  "events_seen": 36,
+  "reference_observations": 492,
   "quality_counts": {
-    "strong": 148,
-    "good": 52,
-    "limited": 36,
-    "weak": 90
+    "strong": 224,
+    "good": 82,
+    "limited": 10,
+    "weak": 176
   },
   "market_counts": {
-    "double_chance": 75,
-    "draw_no_bet": 50,
-    "h2h": 75,
-    "totals": 78,
-    "spreads": 48
+    "double_chance": 108,
+    "draw_no_bet": 72,
+    "h2h": 108,
+    "totals": 132,
+    "spreads": 72
   },
   "pick_type_counts": {
-    "draw": 25,
-    "team": 301
+    "draw": 36,
+    "team": 456
   },
   "discovery_policy": "active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus",
   "quota": {
-    "remaining": "131",
-    "used": "369",
-    "last": "3"
+    "remaining": "89",
+    "used": "411",
+    "last": "0"
   },
   "errors": []
 }
