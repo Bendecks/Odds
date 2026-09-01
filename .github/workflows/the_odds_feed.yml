@@ -37,6 +37,7 @@ jobs:
           python scripts/derived_market_join.py
           python scripts/bet365_observation_freshness.py
           python scripts/market_coverage_report.py
+          python scripts/identity_coverage_analysis.py
           python scripts/market_signal_candidates.py
           python scripts/observation_snapshot.py
           python scripts/value_decision_engine.py
@@ -60,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/value_candidates.json data/observation_snapshots.jsonl data/model_signals.jsonl data/model_closing_prices.jsonl data/decision_runs.jsonl data/reference_sport_rotation.json output/bet365_market_summary.json output/market_coverage_report.json output/market_signal_inventory.json output/reference_coverage_report.json output/quota_status.json output/signal_ledger_status.json output/decision_run_status.json output/closing_price_queue.json output/closing_price_status.json output/model_settlement_queue.json output/latest_decision.json output/the_odds_feed_status.json output/bet365_join_status.json output/reference_match_diagnostics.json output/validation_report.json output/model_validation_readiness.json output/operational_status.json output/shadow_gate_analysis.json
+          git add data/value_candidates.json data/observation_snapshots.jsonl data/model_signals.jsonl data/model_closing_prices.jsonl data/decision_runs.jsonl data/reference_sport_rotation.json output/bet365_market_summary.json output/market_coverage_report.json output/identity_coverage_analysis.json output/market_signal_inventory.json output/reference_coverage_report.json output/quota_status.json output/signal_ledger_status.json output/decision_run_status.json output/closing_price_queue.json output/closing_price_status.json output/model_settlement_queue.json output/latest_decision.json output/the_odds_feed_status.json output/bet365_join_status.json output/reference_match_diagnostics.json output/validation_report.json output/model_validation_readiness.json output/operational_status.json output/shadow_gate_analysis.json
           git diff --cached --quiet && exit 0
           git commit -m "Update value engine feed"
           git pull --rebase --autostash
