@@ -1,89 +1,86 @@
 {
-  "generated_at": "2026-09-01T15:19:22.491044+00:00",
+  "generated_at": "2026-09-01T15:56:45.424918+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
   "bottleneck": "Ingen friske referenceklare kandidater har positiv edge mod Bet365.",
   "funnel": {
-    "candidate_rows": 1291,
-    "fair_probability_rows": 1291,
-    "reference_events": 26,
-    "exact_bet365_rows": 239,
-    "fresh_exact_bet365_rows": 84,
-    "reference_depth_ready_rows": 77,
+    "candidate_rows": 871,
+    "fair_probability_rows": 871,
+    "reference_events": 13,
+    "exact_bet365_rows": 96,
+    "fresh_exact_bet365_rows": 46,
+    "reference_depth_ready_rows": 44,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 18
+    "decision_runs_recorded": 19
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "total_goals": 210,
-        "team_total_goals_away": 150,
-        "team_total_goals_home": 150,
-        "exact_total_goals": 105,
-        "totals": 86,
-        "double_chance": 78,
-        "h2h": 78,
-        "away_exact_goals": 75,
-        "home_exact_goals": 75,
-        "draw_no_bet": 52,
-        "spreads": 52,
-        "btts": 30,
-        "clean_sheet_away": 30,
-        "clean_sheet_home": 30,
-        "odd_even": 30,
-        "odd_even_away": 30,
-        "odd_even_home": 30
+        "total_goals": 154,
+        "team_total_goals_away": 110,
+        "team_total_goals_home": 110,
+        "exact_total_goals": 77,
+        "away_exact_goals": 55,
+        "home_exact_goals": 55,
+        "totals": 48,
+        "double_chance": 39,
+        "h2h": 39,
+        "draw_no_bet": 26,
+        "spreads": 26,
+        "btts": 22,
+        "clean_sheet_away": 22,
+        "clean_sheet_home": 22,
+        "odd_even": 22,
+        "odd_even_away": 22,
+        "odd_even_home": 22
       },
       "exact": {
-        "total_goals": 56,
-        "team_total_goals_away": 30,
-        "team_total_goals_home": 30,
-        "h2h": 18,
-        "totals": 18,
-        "double_chance": 15,
-        "draw_no_bet": 12,
-        "spreads": 12,
-        "btts": 8,
-        "clean_sheet_away": 8,
-        "clean_sheet_home": 8,
-        "odd_even": 8,
-        "odd_even_away": 8,
-        "odd_even_home": 8
+        "total_goals": 28,
+        "team_total_goals_away": 10,
+        "team_total_goals_home": 10,
+        "double_chance": 6,
+        "h2h": 6,
+        "totals": 6,
+        "btts": 4,
+        "clean_sheet_away": 4,
+        "clean_sheet_home": 4,
+        "draw_no_bet": 4,
+        "odd_even": 4,
+        "odd_even_away": 4,
+        "odd_even_home": 4,
+        "spreads": 2
       },
       "fresh": {
-        "total_goals": 42,
-        "h2h": 18,
-        "totals": 10,
-        "btts": 8,
-        "draw_no_bet": 4,
-        "odd_even": 2
+        "total_goals": 28,
+        "h2h": 6,
+        "totals": 6,
+        "btts": 4,
+        "draw_no_bet": 2
       },
       "reference_ready": {
-        "total_goals": 42,
-        "h2h": 15,
-        "btts": 8,
-        "totals": 6,
-        "draw_no_bet": 4,
-        "odd_even": 2
+        "total_goals": 28,
+        "h2h": 6,
+        "btts": 4,
+        "totals": 4,
+        "draw_no_bet": 2
       },
       "positive_edge": {}
     },
     "exact_price_age_buckets": {
-      "180m_plus": 89,
-      "60_180m": 42,
-      "0_20m": 84,
-      "20_60m": 24
+      "180m_plus": 22,
+      "20_60m": 4,
+      "0_20m": 46,
+      "60_180m": 24
     },
     "reference_depth_rejections_by_market": {
-      "totals": 4,
-      "h2h": 3
+      "totals": 2
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T15:19:17.054943+00:00",
+    "generated_at": "2026-09-01T15:56:37.132195+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -92,9 +89,9 @@
     "odds_calls": 8,
     "odds_multi_calls": 8,
     "fallback_odds_calls": 0,
-    "raw_market_observations": 37439,
-    "unique_markets": 103,
-    "matched_reference_candidates": 48,
+    "raw_market_observations": 46268,
+    "unique_markets": 105,
+    "matched_reference_candidates": 14,
     "errors": []
   },
   "policy": {
