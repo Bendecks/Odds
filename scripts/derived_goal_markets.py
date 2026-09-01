@@ -2,8 +2,9 @@ import json, math, pathlib
 from derived_btts_model import event_inputs, fit_lambdas, MAX_RMSE
 
 CAND=pathlib.Path('data/value_candidates.json')
-MARKETS=('odd_even','clean_sheet_home','clean_sheet_away','exact_total_goals','home_exact_goals','away_exact_goals','team_total_goals_home','team_total_goals_away')
+MARKETS=('odd_even','clean_sheet_home','clean_sheet_away','exact_total_goals','home_exact_goals','away_exact_goals','team_total_goals_home','team_total_goals_away','total_goals')
 TEAM_TOTAL_HALF_LINES=(0.5,1.5,2.5,3.5,4.5)
+TOTAL_HALF_LINES=(0.5,1.5,2.5,3.5,4.5,5.5,6.5)
 
 
 def exact_goal_probability(lam, goals):
@@ -14,13 +15,17 @@ def poisson_cdf(lam, goals):
     return sum(exact_goal_probability(lam,k) for k in range(goals+1))
 
 
-def team_total_half_line_probabilities(lam, line):
+def half_line_probabilities(lam, line):
     # Safe binary markets only: x.5 cannot push or split. Integer/quarter lines
     # are intentionally not generated until their settlement semantics are wired.
     if line<=0 or abs((line%1)-0.5)>1e-9:
-        raise ValueError('team total line must be a positive half-line')
+        raise ValueError('total line must be a positive half-line')
     under=poisson_cdf(lam,int(math.floor(line)))
     return {'over':1.0-under,'under':under}
+
+
+def team_total_half_line_probabilities(lam, line):
+    return half_line_probabilities(lam,line)
 
 
 def goal_market_probabilities(home_lambda, away_lambda):
@@ -52,9 +57,9 @@ def derive_for_event(rows):
             row={**common,'market':market,'pick':pick,'fair_probability':round(p,6),'reference_odds':round(1/p,3)}
             if market in ('exact_total_goals','home_exact_goals','away_exact_goals'):row['line']=int(pick)
             out.append(row)
-    for market,lam in (('team_total_goals_home',lh),('team_total_goals_away',la)):
-        for line in TEAM_TOTAL_HALF_LINES:
-            for pick,p in team_total_half_line_probabilities(lam,line).items():
+    for market,lam,lines in (('team_total_goals_home',lh,TEAM_TOTAL_HALF_LINES),('team_total_goals_away',la,TEAM_TOTAL_HALF_LINES),('total_goals',lh+la,TOTAL_HALF_LINES)):
+        for line in lines:
+            for pick,p in half_line_probabilities(lam,line).items():
                 if 0<p<1:out.append({**common,'market':market,'pick':pick,'line':line,'fair_probability':round(p,6),'reference_odds':round(1/p,3),'market_semantics':'binary_half_line_no_push'})
     return out
 
