@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-01T18:43:30.016985+00:00",
-  "as_of": "2026-09-01T18:43:29.960860+00:00",
-  "candidate_rows": 1979,
-  "note": "Diagnostic only. PAPER may ignore the theoretical minimum-stake gate when policy explicitly allows it; actual Bet365 minimum stake is tracked separately.",
+  "generated_at": "2026-09-01T19:06:40.579729+00:00",
+  "as_of": "2026-09-01T19:06:40.515662+00:00",
+  "candidate_rows": 1334,
+  "note": "Diagnostic only. Identity rejection is split into event identity, missing exact Bet365 price, and market identity so market-expansion work can target the largest safe unlocks.",
   "scenarios": [
     {
       "name": "production",
@@ -17,10 +17,77 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "edge": 533,
-        "identity": 1406,
-        "invalid_dnb_probabilities": 2,
-        "reference_depth": 38
+        "edge": 146,
+        "event_identity": 1178,
+        "reference_depth": 10
+      },
+      "rejection_reasons_by_market": {
+        "away_exact_goals": {
+          "event_identity": 80
+        },
+        "btts": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "double_chance": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "draw_no_bet": {
+          "edge": 6,
+          "event_identity": 44
+        },
+        "exact_total_goals": {
+          "event_identity": 112
+        },
+        "h2h": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "home_exact_goals": {
+          "event_identity": 80
+        },
+        "odd_even": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "spreads": {
+          "event_identity": 44,
+          "reference_depth": 4
+        },
+        "team_total_goals_away": {
+          "edge": 18,
+          "event_identity": 142
+        },
+        "team_total_goals_home": {
+          "edge": 20,
+          "event_identity": 140
+        },
+        "total_goals": {
+          "edge": 42,
+          "event_identity": 182
+        },
+        "totals": {
+          "edge": 6,
+          "event_identity": 66,
+          "reference_depth": 6
+        }
       }
     },
     {
@@ -36,10 +103,77 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "edge": 533,
-        "identity": 1406,
-        "invalid_dnb_probabilities": 2,
-        "reference_depth": 38
+        "edge": 146,
+        "event_identity": 1178,
+        "reference_depth": 10
+      },
+      "rejection_reasons_by_market": {
+        "away_exact_goals": {
+          "event_identity": 80
+        },
+        "btts": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "double_chance": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "draw_no_bet": {
+          "edge": 6,
+          "event_identity": 44
+        },
+        "exact_total_goals": {
+          "event_identity": 112
+        },
+        "h2h": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "home_exact_goals": {
+          "event_identity": 80
+        },
+        "odd_even": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "spreads": {
+          "event_identity": 44,
+          "reference_depth": 4
+        },
+        "team_total_goals_away": {
+          "edge": 18,
+          "event_identity": 142
+        },
+        "team_total_goals_home": {
+          "edge": 20,
+          "event_identity": 140
+        },
+        "total_goals": {
+          "edge": 42,
+          "event_identity": 182
+        },
+        "totals": {
+          "edge": 6,
+          "event_identity": 66,
+          "reference_depth": 6
+        }
       }
     },
     {
@@ -55,10 +189,77 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "edge": 533,
-        "identity": 1406,
-        "invalid_dnb_probabilities": 2,
-        "reference_depth": 38
+        "edge": 146,
+        "event_identity": 1178,
+        "reference_depth": 10
+      },
+      "rejection_reasons_by_market": {
+        "away_exact_goals": {
+          "event_identity": 80
+        },
+        "btts": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "double_chance": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "draw_no_bet": {
+          "edge": 6,
+          "event_identity": 44
+        },
+        "exact_total_goals": {
+          "event_identity": 112
+        },
+        "h2h": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "home_exact_goals": {
+          "event_identity": 80
+        },
+        "odd_even": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "spreads": {
+          "event_identity": 44,
+          "reference_depth": 4
+        },
+        "team_total_goals_away": {
+          "edge": 18,
+          "event_identity": 142
+        },
+        "team_total_goals_home": {
+          "edge": 20,
+          "event_identity": 140
+        },
+        "total_goals": {
+          "edge": 42,
+          "event_identity": 182
+        },
+        "totals": {
+          "edge": 6,
+          "event_identity": 66,
+          "reference_depth": 6
+        }
       }
     },
     {
@@ -67,20 +268,84 @@
       "min_ev": 0.01,
       "min_reference_books": 3,
       "max_price_age_minutes": 60,
-      "gate_signals": 2,
+      "gate_signals": 0,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 2,
-      "shadow_paper_picks": 2,
-      "unique_events": 2,
-      "by_market": {
-        "h2h": 1,
-        "odd_even": 1
-      },
+      "paper_eligible": 0,
+      "shadow_paper_picks": 0,
+      "unique_events": 0,
+      "by_market": {},
       "rejection_reasons": {
-        "edge": 531,
-        "identity": 1406,
-        "invalid_dnb_probabilities": 2,
-        "reference_depth": 38
+        "edge": 146,
+        "event_identity": 1178,
+        "reference_depth": 10
+      },
+      "rejection_reasons_by_market": {
+        "away_exact_goals": {
+          "event_identity": 80
+        },
+        "btts": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "double_chance": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "draw_no_bet": {
+          "edge": 6,
+          "event_identity": 44
+        },
+        "exact_total_goals": {
+          "event_identity": 112
+        },
+        "h2h": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "home_exact_goals": {
+          "event_identity": 80
+        },
+        "odd_even": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "spreads": {
+          "event_identity": 44,
+          "reference_depth": 4
+        },
+        "team_total_goals_away": {
+          "edge": 18,
+          "event_identity": 142
+        },
+        "team_total_goals_home": {
+          "edge": 20,
+          "event_identity": 140
+        },
+        "total_goals": {
+          "edge": 42,
+          "event_identity": 182
+        },
+        "totals": {
+          "edge": 6,
+          "event_identity": 66,
+          "reference_depth": 6
+        }
       }
     },
     {
@@ -89,21 +354,86 @@
       "min_ev": 0.0,
       "min_reference_books": 2,
       "max_price_age_minutes": 60,
-      "gate_signals": 7,
+      "gate_signals": 1,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 7,
-      "shadow_paper_picks": 5,
-      "unique_events": 5,
+      "paper_eligible": 1,
+      "shadow_paper_picks": 1,
+      "unique_events": 1,
       "by_market": {
-        "double_chance": 1,
-        "h2h": 2,
-        "odd_even": 2
+        "odd_even": 1
       },
       "rejection_reasons": {
-        "edge": 528,
-        "identity": 1406,
-        "invalid_dnb_probabilities": 2,
-        "reference_depth": 36
+        "edge": 145,
+        "event_identity": 1178,
+        "reference_depth": 10
+      },
+      "rejection_reasons_by_market": {
+        "away_exact_goals": {
+          "event_identity": 80
+        },
+        "btts": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "clean_sheet_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "double_chance": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "draw_no_bet": {
+          "edge": 6,
+          "event_identity": 44
+        },
+        "exact_total_goals": {
+          "event_identity": 112
+        },
+        "h2h": {
+          "edge": 9,
+          "event_identity": 66
+        },
+        "home_exact_goals": {
+          "event_identity": 80
+        },
+        "odd_even": {
+          "edge": 5,
+          "event_identity": 26
+        },
+        "odd_even_away": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "odd_even_home": {
+          "edge": 6,
+          "event_identity": 26
+        },
+        "spreads": {
+          "event_identity": 44,
+          "reference_depth": 4
+        },
+        "team_total_goals_away": {
+          "edge": 18,
+          "event_identity": 142
+        },
+        "team_total_goals_home": {
+          "edge": 20,
+          "event_identity": 140
+        },
+        "total_goals": {
+          "edge": 42,
+          "event_identity": 182
+        },
+        "totals": {
+          "edge": 6,
+          "event_identity": 66,
+          "reference_depth": 6
+        }
       }
     }
   ]
