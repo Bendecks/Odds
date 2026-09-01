@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T15:56:33.897260+00:00",
+  "generated_at": "2026-09-01T15:59:37.120692+00:00",
   "model_version": "market-consensus-v6",
   "sports_source": "active-soccer-discovery",
   "active_soccer_pool_size": 48,
@@ -12,19 +12,19 @@
     "soccer_france_ligue_one",
     "soccer_netherlands_eredivisie",
     "soccer_uefa_champs_league",
-    "soccer_uefa_europa_league",
-    "soccer_uefa_nations_league",
-    "soccer_usa_mls",
-    "soccer_argentina_primera_division",
-    "soccer_austria_bundesliga",
-    "soccer_belgium_first_div",
-    "soccer_brazil_campeonato",
-    "soccer_brazil_serie_b"
+    "soccer_chile_campeonato",
+    "soccer_china_superleague",
+    "soccer_concacaf_leagues_cup",
+    "soccer_conmebol_copa_libertadores",
+    "soccer_conmebol_copa_sudamericana",
+    "soccer_efl_champ",
+    "soccer_england_league1",
+    "soccer_england_league2"
   ],
   "sports_count": 16,
   "sports_per_run": 16,
   "max_sports": 24,
-  "rotation_next_cursor": 5,
+  "rotation_next_cursor": 13,
   "bookmakers": [
     "pinnacle",
     "betfair_ex_eu",
@@ -41,29 +41,29 @@
     "double_chance",
     "draw_no_bet"
   ],
-  "events_seen": 13,
-  "reference_observations": 178,
+  "events_seen": 44,
+  "reference_observations": 592,
   "quality_counts": {
-    "strong": 100,
-    "good": 26,
-    "limited": 2,
-    "weak": 50
+    "strong": 356,
+    "good": 58,
+    "limited": 24,
+    "weak": 154
   },
   "market_counts": {
-    "double_chance": 39,
-    "draw_no_bet": 26,
-    "h2h": 39,
-    "totals": 48,
-    "spreads": 26
+    "double_chance": 132,
+    "draw_no_bet": 88,
+    "h2h": 132,
+    "totals": 152,
+    "spreads": 88
   },
   "pick_type_counts": {
-    "draw": 13,
-    "team": 165
+    "draw": 44,
+    "team": 548
   },
   "discovery_policy": "active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus",
   "quota": {
-    "remaining": "332",
-    "used": "168",
+    "remaining": "308",
+    "used": "192",
     "last": "3"
   },
   "errors": []
