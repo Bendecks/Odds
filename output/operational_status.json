@@ -1,106 +1,213 @@
 {
-  "generated_at": "2026-09-01T16:43:17.362560+00:00",
+  "generated_at": "2026-09-01T18:23:02.955845+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
   "bottleneck": "Ingen friske referenceklare kandidater passerer produktionskravet til edge.",
   "funnel": {
-    "candidate_rows": 1293,
-    "fair_probability_rows": 1293,
-    "reference_events": 26,
-    "exact_bet365_rows": 237,
-    "fresh_exact_bet365_rows": 87,
-    "reference_depth_ready_rows": 76,
+    "candidate_rows": 1025,
+    "fair_probability_rows": 1025,
+    "reference_events": 15,
+    "exact_bet365_rows": 98,
+    "fresh_exact_bet365_rows": 98,
+    "reference_depth_ready_rows": 92,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 23
+    "decision_runs_recorded": 24
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "total_goals": 210,
-        "team_total_goals_away": 150,
-        "team_total_goals_home": 150,
-        "exact_total_goals": 105,
-        "totals": 88,
-        "double_chance": 78,
-        "h2h": 78,
-        "away_exact_goals": 75,
-        "home_exact_goals": 75,
-        "draw_no_bet": 52,
-        "spreads": 52,
-        "btts": 30,
-        "clean_sheet_away": 30,
-        "clean_sheet_home": 30,
-        "odd_even": 30,
-        "odd_even_away": 30,
-        "odd_even_home": 30
+        "total_goals": 182,
+        "team_total_goals_away": 130,
+        "team_total_goals_home": 130,
+        "exact_total_goals": 91,
+        "away_exact_goals": 65,
+        "home_exact_goals": 65,
+        "totals": 56,
+        "double_chance": 45,
+        "h2h": 45,
+        "draw_no_bet": 30,
+        "spreads": 30,
+        "btts": 26,
+        "clean_sheet_away": 26,
+        "clean_sheet_home": 26,
+        "odd_even": 26,
+        "odd_even_away": 26,
+        "odd_even_home": 26
       },
       "exact": {
-        "total_goals": 56,
-        "team_total_goals_away": 30,
-        "team_total_goals_home": 30,
-        "totals": 20,
-        "h2h": 18,
-        "double_chance": 15,
-        "draw_no_bet": 12,
-        "btts": 8,
-        "clean_sheet_away": 8,
-        "clean_sheet_home": 8,
-        "odd_even": 8,
-        "odd_even_away": 8,
-        "odd_even_home": 8,
-        "spreads": 8
+        "total_goals": 28,
+        "team_total_goals_away": 10,
+        "team_total_goals_home": 10,
+        "totals": 8,
+        "double_chance": 6,
+        "h2h": 6,
+        "btts": 4,
+        "clean_sheet_away": 4,
+        "clean_sheet_home": 4,
+        "draw_no_bet": 4,
+        "odd_even": 4,
+        "odd_even_away": 4,
+        "odd_even_home": 4,
+        "spreads": 2
       },
       "fresh": {
-        "total_goals": 42,
-        "h2h": 18,
-        "totals": 12,
-        "btts": 8,
-        "double_chance": 3,
-        "draw_no_bet": 2,
+        "total_goals": 28,
+        "team_total_goals_away": 10,
+        "team_total_goals_home": 10,
+        "totals": 8,
+        "double_chance": 6,
+        "h2h": 6,
+        "btts": 4,
+        "clean_sheet_away": 4,
+        "clean_sheet_home": 4,
+        "draw_no_bet": 4,
+        "odd_even": 4,
+        "odd_even_away": 4,
+        "odd_even_home": 4,
         "spreads": 2
       },
       "reference_ready": {
-        "total_goals": 42,
-        "h2h": 15,
-        "btts": 8,
-        "totals": 6,
-        "double_chance": 3,
-        "draw_no_bet": 2
+        "total_goals": 28,
+        "team_total_goals_away": 10,
+        "team_total_goals_home": 10,
+        "double_chance": 6,
+        "h2h": 6,
+        "btts": 4,
+        "clean_sheet_away": 4,
+        "clean_sheet_home": 4,
+        "draw_no_bet": 4,
+        "odd_even": 4,
+        "odd_even_away": 4,
+        "odd_even_home": 4,
+        "totals": 4
       },
       "production_edge_ready": {}
     },
+    "freshness_by_market": {
+      "btts": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "clean_sheet_away": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "clean_sheet_home": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "double_chance": {
+        "exact": 6,
+        "fresh": 6,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "draw_no_bet": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "h2h": {
+        "exact": 6,
+        "fresh": 6,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "odd_even": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "odd_even_away": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "odd_even_home": {
+        "exact": 4,
+        "fresh": 4,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "spreads": {
+        "exact": 2,
+        "fresh": 2,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "team_total_goals_away": {
+        "exact": 10,
+        "fresh": 10,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "team_total_goals_home": {
+        "exact": 10,
+        "fresh": 10,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "total_goals": {
+        "exact": 28,
+        "fresh": 28,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "totals": {
+        "exact": 8,
+        "fresh": 8,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      }
+    },
     "exact_price_age_buckets": {
-      "180m_plus": 96,
-      "0_20m": 87,
-      "60_180m": 28,
-      "20_60m": 26
+      "0_20m": 98
     },
     "reference_depth_rejections_by_market": {
-      "totals": 6,
-      "h2h": 3,
+      "totals": 4,
       "spreads": 2
     },
     "edge_distribution": {
       "buckets": {
-        "negative": 75,
+        "negative": 91,
         "0_0.5pct": 1
       },
       "nonnegative_rows": 1,
-      "best_edge": 0.002031,
+      "best_edge": 0.004857,
       "top_candidates": [
         {
-          "event": "FC Luzern vs FC Vaduz",
-          "market": "h2h",
-          "pick": "FC Vaduz",
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "odd_even",
+          "pick": "odd",
           "line": null,
-          "books": 5,
-          "bet365_odds": 5.0,
-          "fair_probability": 0.202031,
-          "edge": 0.002031,
-          "ev": 0.010155
+          "books": 3,
+          "bet365_odds": 2.025,
+          "fair_probability": 0.498684,
+          "edge": 0.004857,
+          "ev": 0.009835
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "odd_even",
+          "pick": "odd",
+          "line": null,
+          "books": 3,
+          "bet365_odds": 2.0,
+          "fair_probability": 0.499218,
+          "edge": -0.000782,
+          "ev": -0.001564
         },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
@@ -115,6 +222,17 @@
         },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "clean_sheet_away",
+          "pick": "yes",
+          "line": null,
+          "books": 3,
+          "bet365_odds": 6.0,
+          "fair_probability": 0.165299,
+          "edge": -0.001368,
+          "ev": -0.008206
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
           "market": "total_goals",
           "pick": "under",
           "line": 3.5,
@@ -125,48 +243,48 @@
           "ev": -0.007317
         },
         {
-          "event": "Helsingborgs IF vs Örebro SK",
-          "market": "totals",
-          "pick": "Over",
-          "line": 2.5,
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "team_total_goals_home",
+          "pick": "under",
+          "line": 4.5,
           "books": 3,
-          "bet365_odds": 1.75,
-          "fair_probability": 0.565789,
-          "edge": -0.00564,
-          "ev": -0.009869
+          "bet365_odds": 1.004,
+          "fair_probability": 0.988675,
+          "edge": -0.007341,
+          "ev": -0.00737
         },
         {
-          "event": "Helsingborgs IF vs Örebro SK",
+          "event": "FC Copenhagen vs FC Nordsjaelland",
           "market": "double_chance",
           "pick": "X2",
           "line": null,
           "books": 5,
-          "bet365_odds": 1.666,
-          "fair_probability": 0.594481,
-          "edge": -0.005759,
-          "ev": -0.009595
+          "bet365_odds": 1.8,
+          "fair_probability": 0.547895,
+          "edge": -0.007661,
+          "ev": -0.013789
         },
         {
-          "event": "FC Copenhagen vs FC Nordsjaelland",
-          "market": "total_goals",
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "clean_sheet_home",
+          "pick": "yes",
+          "line": null,
+          "books": 3,
+          "bet365_odds": 5.0,
+          "fair_probability": 0.19205,
+          "edge": -0.00795,
+          "ev": -0.03975
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "team_total_goals_away",
           "pick": "under",
           "line": 0.5,
           "books": 3,
-          "bet365_odds": 21.0,
-          "fair_probability": 0.039557,
-          "edge": -0.008062,
-          "ev": -0.169303
-        },
-        {
-          "event": "FC Luzern vs FC Vaduz",
-          "market": "h2h",
-          "pick": "Draw",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 4.333,
-          "fair_probability": 0.221723,
-          "edge": -0.009064,
-          "ev": -0.039274
+          "bet365_odds": 5.0,
+          "fair_probability": 0.19205,
+          "edge": -0.00795,
+          "ev": -0.03975
         },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
@@ -178,34 +296,12 @@
           "fair_probability": 0.373678,
           "edge": -0.010937,
           "ev": -0.028437
-        },
-        {
-          "event": "FC Luzern vs FC Vaduz",
-          "market": "btts",
-          "pick": "no",
-          "line": null,
-          "books": 3,
-          "bet365_odds": 2.75,
-          "fair_probability": 0.352424,
-          "edge": -0.011212,
-          "ev": -0.030834
-        },
-        {
-          "event": "Helsingborgs IF vs Örebro SK",
-          "market": "total_goals",
-          "pick": "over",
-          "line": 4.5,
-          "books": 3,
-          "bet365_odds": 5.5,
-          "fair_probability": 0.169848,
-          "edge": -0.01197,
-          "ev": -0.065836
         }
       ]
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T16:43:09.936505+00:00",
+    "generated_at": "2026-09-01T18:22:54.214729+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -214,9 +310,9 @@
     "odds_calls": 8,
     "odds_multi_calls": 8,
     "fallback_odds_calls": 0,
-    "raw_market_observations": 50346,
-    "unique_markets": 103,
-    "matched_reference_candidates": 46,
+    "raw_market_observations": 64779,
+    "unique_markets": 112,
+    "matched_reference_candidates": 16,
     "errors": []
   },
   "policy": {

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-01T16:43:17.410457+00:00",
-  "as_of": "2026-09-01T16:43:17.362560+00:00",
-  "candidate_rows": 1293,
+  "generated_at": "2026-09-01T18:23:03.013643+00:00",
+  "as_of": "2026-09-01T18:23:02.955845+00:00",
+  "candidate_rows": 1025,
   "note": "Diagnostic only. Simulates start-time, stake, per-event and per-run PAPER gates without changing production policy.",
   "scenarios": [
     {
@@ -14,7 +14,12 @@
       "stake_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
-      "by_market": {}
+      "by_market": {},
+      "rejection_reasons": {
+        "edge": 92,
+        "identity": 927,
+        "reference_depth": 6
+      }
     },
     {
       "name": "very_mild",
@@ -26,7 +31,12 @@
       "stake_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
-      "by_market": {}
+      "by_market": {},
+      "rejection_reasons": {
+        "edge": 92,
+        "identity": 927,
+        "reference_depth": 6
+      }
     },
     {
       "name": "mild",
@@ -38,7 +48,12 @@
       "stake_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
-      "by_market": {}
+      "by_market": {},
+      "rejection_reasons": {
+        "edge": 92,
+        "identity": 927,
+        "reference_depth": 6
+      }
     },
     {
       "name": "paper_data",
@@ -50,7 +65,12 @@
       "stake_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
-      "by_market": {}
+      "by_market": {},
+      "rejection_reasons": {
+        "edge": 92,
+        "identity": 927,
+        "reference_depth": 6
+      }
     },
     {
       "name": "nonnegative_two_books",
@@ -62,7 +82,13 @@
       "stake_eligible": 0,
       "shadow_paper_picks": 0,
       "unique_events": 0,
-      "by_market": {}
+      "by_market": {},
+      "rejection_reasons": {
+        "edge": 91,
+        "identity": 927,
+        "reference_depth": 6,
+        "stake": 1
+      }
     }
   ]
 }
