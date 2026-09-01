@@ -1,91 +1,107 @@
 {
-  "generated_at": "2026-09-01T16:40:13.095547+00:00",
+  "generated_at": "2026-09-01T16:43:17.362560+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
   "bottleneck": "Ingen friske referenceklare kandidater passerer produktionskravet til edge.",
   "funnel": {
-    "candidate_rows": 453,
-    "fair_probability_rows": 453,
-    "reference_events": 11,
-    "exact_bet365_rows": 98,
-    "fresh_exact_bet365_rows": 50,
-    "reference_depth_ready_rows": 44,
+    "candidate_rows": 1293,
+    "fair_probability_rows": 1293,
+    "reference_events": 26,
+    "exact_bet365_rows": 237,
+    "fresh_exact_bet365_rows": 87,
+    "reference_depth_ready_rows": 76,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 22
+    "decision_runs_recorded": 23
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "total_goals": 70,
-        "team_total_goals_away": 50,
-        "team_total_goals_home": 50,
-        "exact_total_goals": 35,
-        "double_chance": 33,
-        "h2h": 33,
-        "totals": 28,
-        "away_exact_goals": 25,
-        "home_exact_goals": 25,
-        "draw_no_bet": 22,
-        "spreads": 22,
-        "btts": 10,
-        "clean_sheet_away": 10,
-        "clean_sheet_home": 10,
-        "odd_even": 10,
-        "odd_even_away": 10,
-        "odd_even_home": 10
+        "total_goals": 210,
+        "team_total_goals_away": 150,
+        "team_total_goals_home": 150,
+        "exact_total_goals": 105,
+        "totals": 88,
+        "double_chance": 78,
+        "h2h": 78,
+        "away_exact_goals": 75,
+        "home_exact_goals": 75,
+        "draw_no_bet": 52,
+        "spreads": 52,
+        "btts": 30,
+        "clean_sheet_away": 30,
+        "clean_sheet_home": 30,
+        "odd_even": 30,
+        "odd_even_away": 30,
+        "odd_even_home": 30
       },
       "exact": {
-        "total_goals": 28,
-        "team_total_goals_away": 10,
-        "team_total_goals_home": 10,
-        "totals": 8,
-        "double_chance": 6,
-        "h2h": 6,
-        "btts": 4,
-        "clean_sheet_away": 4,
-        "clean_sheet_home": 4,
-        "draw_no_bet": 4,
-        "odd_even": 4,
-        "odd_even_away": 4,
-        "odd_even_home": 4,
-        "spreads": 2
+        "total_goals": 56,
+        "team_total_goals_away": 30,
+        "team_total_goals_home": 30,
+        "totals": 20,
+        "h2h": 18,
+        "double_chance": 15,
+        "draw_no_bet": 12,
+        "btts": 8,
+        "clean_sheet_away": 8,
+        "clean_sheet_home": 8,
+        "odd_even": 8,
+        "odd_even_away": 8,
+        "odd_even_home": 8,
+        "spreads": 8
       },
       "fresh": {
-        "total_goals": 28,
-        "totals": 8,
-        "h2h": 6,
-        "btts": 4,
+        "total_goals": 42,
+        "h2h": 18,
+        "totals": 12,
+        "btts": 8,
+        "double_chance": 3,
         "draw_no_bet": 2,
         "spreads": 2
       },
       "reference_ready": {
-        "total_goals": 28,
-        "h2h": 6,
-        "btts": 4,
-        "totals": 4,
+        "total_goals": 42,
+        "h2h": 15,
+        "btts": 8,
+        "totals": 6,
+        "double_chance": 3,
         "draw_no_bet": 2
       },
       "production_edge_ready": {}
     },
     "exact_price_age_buckets": {
-      "180m_plus": 22,
-      "60_180m": 26,
-      "0_20m": 50
+      "180m_plus": 96,
+      "0_20m": 87,
+      "60_180m": 28,
+      "20_60m": 26
     },
     "reference_depth_rejections_by_market": {
-      "totals": 4,
+      "totals": 6,
+      "h2h": 3,
       "spreads": 2
     },
     "edge_distribution": {
       "buckets": {
-        "negative": 44
+        "negative": 75,
+        "0_0.5pct": 1
       },
-      "nonnegative_rows": 0,
-      "best_edge": -0.001138,
+      "nonnegative_rows": 1,
+      "best_edge": 0.002031,
       "top_candidates": [
+        {
+          "event": "FC Luzern vs FC Vaduz",
+          "market": "h2h",
+          "pick": "FC Vaduz",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 5.0,
+          "fair_probability": 0.202031,
+          "edge": 0.002031,
+          "ev": 0.010155
+        },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
           "market": "h2h",
@@ -109,6 +125,28 @@
           "ev": -0.007317
         },
         {
+          "event": "Helsingborgs IF vs Örebro SK",
+          "market": "totals",
+          "pick": "Over",
+          "line": 2.5,
+          "books": 3,
+          "bet365_odds": 1.75,
+          "fair_probability": 0.565789,
+          "edge": -0.00564,
+          "ev": -0.009869
+        },
+        {
+          "event": "Helsingborgs IF vs Örebro SK",
+          "market": "double_chance",
+          "pick": "X2",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 1.666,
+          "fair_probability": 0.594481,
+          "edge": -0.005759,
+          "ev": -0.009595
+        },
+        {
           "event": "FC Copenhagen vs FC Nordsjaelland",
           "market": "total_goals",
           "pick": "under",
@@ -118,6 +156,17 @@
           "fair_probability": 0.039557,
           "edge": -0.008062,
           "ev": -0.169303
+        },
+        {
+          "event": "FC Luzern vs FC Vaduz",
+          "market": "h2h",
+          "pick": "Draw",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 4.333,
+          "fair_probability": 0.221723,
+          "edge": -0.009064,
+          "ev": -0.039274
         },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
@@ -131,76 +180,32 @@
           "ev": -0.028437
         },
         {
-          "event": "AGF Aarhus vs FC Midtjylland",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 6.5,
-          "books": 3,
-          "bet365_odds": 1.02,
-          "fair_probability": 0.967981,
-          "edge": -0.012411,
-          "ev": -0.012659
-        },
-        {
-          "event": "AGF Aarhus vs FC Midtjylland",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 3.5,
-          "books": 3,
-          "bet365_odds": 1.5,
-          "fair_probability": 0.653953,
-          "edge": -0.012714,
-          "ev": -0.01907
-        },
-        {
-          "event": "AGF Aarhus vs FC Midtjylland",
+          "event": "FC Luzern vs FC Vaduz",
           "market": "btts",
           "pick": "no",
           "line": null,
           "books": 3,
-          "bet365_odds": 2.375,
-          "fair_probability": 0.407882,
-          "edge": -0.013171,
-          "ev": -0.03128
+          "bet365_odds": 2.75,
+          "fair_probability": 0.352424,
+          "edge": -0.011212,
+          "ev": -0.030834
         },
         {
-          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "event": "Helsingborgs IF vs Örebro SK",
           "market": "total_goals",
-          "pick": "under",
-          "line": 1.5,
+          "pick": "over",
+          "line": 4.5,
           "books": 3,
           "bet365_odds": 5.5,
-          "fair_probability": 0.167328,
-          "edge": -0.01449,
-          "ev": -0.079696
-        },
-        {
-          "event": "AGF Aarhus vs FC Midtjylland",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 2.5,
-          "books": 3,
-          "bet365_odds": 2.25,
-          "fair_probability": 0.429945,
-          "edge": -0.014499,
-          "ev": -0.032624
-        },
-        {
-          "event": "AGF Aarhus vs FC Midtjylland",
-          "market": "total_goals",
-          "pick": "under",
-          "line": 0.5,
-          "books": 3,
-          "bet365_odds": 15.0,
-          "fair_probability": 0.051303,
-          "edge": -0.015364,
-          "ev": -0.230455
+          "fair_probability": 0.169848,
+          "edge": -0.01197,
+          "ev": -0.065836
         }
       ]
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T16:40:06.583922+00:00",
+    "generated_at": "2026-09-01T16:43:09.936505+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -209,9 +214,9 @@
     "odds_calls": 8,
     "odds_multi_calls": 8,
     "fallback_odds_calls": 0,
-    "raw_market_observations": 51787,
+    "raw_market_observations": 50346,
     "unique_markets": 103,
-    "matched_reference_candidates": 16,
+    "matched_reference_candidates": 46,
     "errors": []
   },
   "policy": {
