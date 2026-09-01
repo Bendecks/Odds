@@ -1,113 +1,91 @@
 {
-  "generated_at": "2026-09-01T16:03:35.691917+00:00",
+  "generated_at": "2026-09-01T16:40:13.095547+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
   "bottleneck": "Ingen friske referenceklare kandidater passerer produktionskravet til edge.",
   "funnel": {
-    "candidate_rows": 1120,
-    "fair_probability_rows": 1120,
-    "reference_events": 19,
-    "exact_bet365_rows": 478,
-    "fresh_exact_bet365_rows": 97,
-    "reference_depth_ready_rows": 95,
+    "candidate_rows": 453,
+    "fair_probability_rows": 453,
+    "reference_events": 11,
+    "exact_bet365_rows": 98,
+    "fresh_exact_bet365_rows": 50,
+    "reference_depth_ready_rows": 44,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 21
+    "decision_runs_recorded": 22
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "total_goals": 196,
-        "team_total_goals_away": 140,
-        "team_total_goals_home": 140,
-        "exact_total_goals": 98,
-        "away_exact_goals": 70,
-        "home_exact_goals": 70,
-        "double_chance": 57,
-        "h2h": 57,
-        "totals": 48,
-        "draw_no_bet": 38,
-        "spreads": 38,
-        "btts": 28,
-        "clean_sheet_away": 28,
-        "clean_sheet_home": 28,
-        "odd_even": 28,
-        "odd_even_away": 28,
-        "odd_even_home": 28
+        "total_goals": 70,
+        "team_total_goals_away": 50,
+        "team_total_goals_home": 50,
+        "exact_total_goals": 35,
+        "double_chance": 33,
+        "h2h": 33,
+        "totals": 28,
+        "away_exact_goals": 25,
+        "home_exact_goals": 25,
+        "draw_no_bet": 22,
+        "spreads": 22,
+        "btts": 10,
+        "clean_sheet_away": 10,
+        "clean_sheet_home": 10,
+        "odd_even": 10,
+        "odd_even_away": 10,
+        "odd_even_home": 10
       },
       "exact": {
-        "total_goals": 126,
-        "team_total_goals_away": 68,
-        "team_total_goals_home": 64,
-        "double_chance": 27,
-        "h2h": 27,
-        "totals": 24,
-        "btts": 18,
-        "clean_sheet_away": 18,
-        "clean_sheet_home": 18,
-        "draw_no_bet": 18,
-        "odd_even": 18,
-        "odd_even_away": 18,
-        "odd_even_home": 18,
-        "spreads": 16
+        "total_goals": 28,
+        "team_total_goals_away": 10,
+        "team_total_goals_home": 10,
+        "totals": 8,
+        "double_chance": 6,
+        "h2h": 6,
+        "btts": 4,
+        "clean_sheet_away": 4,
+        "clean_sheet_home": 4,
+        "draw_no_bet": 4,
+        "odd_even": 4,
+        "odd_even_away": 4,
+        "odd_even_home": 4,
+        "spreads": 2
       },
       "fresh": {
-        "total_goals": 42,
-        "h2h": 27,
-        "btts": 18,
+        "total_goals": 28,
         "totals": 8,
-        "draw_no_bet": 2
+        "h2h": 6,
+        "btts": 4,
+        "draw_no_bet": 2,
+        "spreads": 2
       },
       "reference_ready": {
-        "total_goals": 42,
-        "h2h": 27,
-        "btts": 18,
-        "totals": 6,
+        "total_goals": 28,
+        "h2h": 6,
+        "btts": 4,
+        "totals": 4,
         "draw_no_bet": 2
       },
       "production_edge_ready": {}
     },
     "exact_price_age_buckets": {
-      "180m_plus": 320,
-      "20_60m": 9,
-      "0_20m": 97,
-      "60_180m": 52
+      "180m_plus": 22,
+      "60_180m": 26,
+      "0_20m": 50
     },
     "reference_depth_rejections_by_market": {
-      "totals": 2
+      "totals": 4,
+      "spreads": 2
     },
     "edge_distribution": {
       "buckets": {
-        "negative": 93,
-        "0.5_1pct": 2
+        "negative": 44
       },
-      "nonnegative_rows": 2,
-      "best_edge": 0.005939,
+      "nonnegative_rows": 0,
+      "best_edge": -0.001138,
       "top_candidates": [
-        {
-          "event": "Shimizu S Pulse vs FC Tokyo",
-          "market": "h2h",
-          "pick": "Shimizu S Pulse",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 4.0,
-          "fair_probability": 0.255939,
-          "edge": 0.005939,
-          "ev": 0.023756
-        },
-        {
-          "event": "V-Varen Nagasaki vs Gamba Osaka",
-          "market": "h2h",
-          "pick": "V-Varen Nagasaki",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 3.75,
-          "fair_probability": 0.272162,
-          "edge": 0.005495,
-          "ev": 0.020608
-        },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
           "market": "h2h",
@@ -131,17 +109,6 @@
           "ev": -0.007317
         },
         {
-          "event": "Mito HollyHock vs Kashima Antlers",
-          "market": "h2h",
-          "pick": "Draw",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 3.5,
-          "fair_probability": 0.278074,
-          "edge": -0.00764,
-          "ev": -0.026741
-        },
-        {
           "event": "FC Copenhagen vs FC Nordsjaelland",
           "market": "total_goals",
           "pick": "under",
@@ -151,28 +118,6 @@
           "fair_probability": 0.039557,
           "edge": -0.008062,
           "ev": -0.169303
-        },
-        {
-          "event": "JEF United Chiba vs Fagiano Okayama",
-          "market": "h2h",
-          "pick": "JEF United Chiba",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 4.0,
-          "fair_probability": 0.240642,
-          "edge": -0.009358,
-          "ev": -0.037432
-        },
-        {
-          "event": "JEF United Chiba vs Fagiano Okayama",
-          "market": "h2h",
-          "pick": "Draw",
-          "line": null,
-          "books": 5,
-          "bet365_odds": 3.6,
-          "fair_probability": 0.267165,
-          "edge": -0.010613,
-          "ev": -0.038206
         },
         {
           "event": "FC Copenhagen vs FC Nordsjaelland",
@@ -186,21 +131,76 @@
           "ev": -0.028437
         },
         {
-          "event": "V-Varen Nagasaki vs Gamba Osaka",
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 6.5,
+          "books": 3,
+          "bet365_odds": 1.02,
+          "fair_probability": 0.967981,
+          "edge": -0.012411,
+          "ev": -0.012659
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 3.5,
+          "books": 3,
+          "bet365_odds": 1.5,
+          "fair_probability": 0.653953,
+          "edge": -0.012714,
+          "ev": -0.01907
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "btts",
+          "pick": "no",
+          "line": null,
+          "books": 3,
+          "bet365_odds": 2.375,
+          "fair_probability": 0.407882,
+          "edge": -0.013171,
+          "ev": -0.03128
+        },
+        {
+          "event": "FC Copenhagen vs FC Nordsjaelland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 1.5,
+          "books": 3,
+          "bet365_odds": 5.5,
+          "fair_probability": 0.167328,
+          "edge": -0.01449,
+          "ev": -0.079696
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
           "market": "total_goals",
           "pick": "under",
           "line": 2.5,
-          "books": 4,
-          "bet365_odds": 2.0,
-          "fair_probability": 0.488738,
-          "edge": -0.011262,
-          "ev": -0.022524
+          "books": 3,
+          "bet365_odds": 2.25,
+          "fair_probability": 0.429945,
+          "edge": -0.014499,
+          "ev": -0.032624
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 0.5,
+          "books": 3,
+          "bet365_odds": 15.0,
+          "fair_probability": 0.051303,
+          "edge": -0.015364,
+          "ev": -0.230455
         }
       ]
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T16:03:25.906704+00:00",
+    "generated_at": "2026-09-01T16:40:06.583922+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -209,9 +209,9 @@
     "odds_calls": 8,
     "odds_multi_calls": 8,
     "fallback_odds_calls": 0,
-    "raw_market_observations": 57567,
-    "unique_markets": 111,
-    "matched_reference_candidates": 67,
+    "raw_market_observations": 51787,
+    "unique_markets": 103,
+    "matched_reference_candidates": 16,
     "errors": []
   },
   "policy": {
