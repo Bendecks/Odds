@@ -1,27 +1,37 @@
 {
-  "generated_at": "2026-09-01T06:44:12.877343+00:00",
-  "reference_rows": 96,
-  "reference_events": 7,
-  "exact_reference_events_in_bet365": 4,
-  "unmatched_reference_events": 3,
-  "exact_reference_rows": 56,
+  "generated_at": "2026-09-01T06:45:18.476463+00:00",
+  "reference_rows": 520,
+  "reference_events": 39,
+  "exact_reference_events_in_bet365": 20,
+  "unmatched_reference_events": 19,
+  "exact_reference_rows": 270,
   "exact_rows_not_queried": 0,
-  "queried_reference_rows_without_h2h_price": 20,
-  "matched_prices": 36,
+  "queried_reference_rows_without_h2h_price": 104,
+  "matched_prices": 166,
   "bet365_events_available": 500,
   "bet365_events_queried": 80,
   "resolver_diagnostic_only": true,
-  "resolver_accepted_events": 1,
+  "resolver_accepted_events": 17,
   "resolver_reason_counts": {
-    "no_candidate": 2,
-    "time_team_match": 1
+    "time_team_match": 17,
+    "no_candidate": 2
   },
   "resolver_matches": [
     {
-      "reference_event": "Toluca vs León",
-      "reference_start": "2026-09-03T01:00:00Z",
-      "accepted": false,
-      "reason": "no_candidate"
+      "reference_event": "Swansea City vs Watford",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72339756,
+        "home": "Swansea City",
+        "away": "Watford FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
     },
     {
       "reference_event": "Real Sociedad vs Celta Vigo",
@@ -30,14 +40,260 @@
       "reason": "no_candidate"
     },
     {
-      "reference_event": "América vs Monterrey",
-      "reference_start": "2026-09-03T03:30:00Z",
+      "reference_event": "Portsmouth vs Derby County",
+      "reference_start": "2026-09-01T18:45:00Z",
       "accepted": true,
       "reason": "time_team_match",
       "best": {
-        "event_id": 74129918,
-        "home": "CF America",
-        "away": "CF Monterrey",
+        "event_id": 72339748,
+        "home": "Portsmouth FC",
+        "away": "Derby County",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Birmingham City vs Southampton",
+      "reference_start": "2026-09-01T19:00:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72339744,
+        "home": "Birmingham City",
+        "away": "Southampton FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Burnley vs Middlesbrough",
+      "reference_start": "2026-09-02T19:00:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72339760,
+        "home": "Burnley FC",
+        "away": "Middlesbrough FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Crewe Alexandra vs Walsall",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341880,
+        "home": "Crewe Alexandra",
+        "away": "Walsall FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Bromley FC vs Leyton Orient",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341098,
+        "home": "Bromley FC",
+        "away": "Leyton Orient London",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 0.8,
+        "combined_score": 0.9
+      },
+      "margin": 0.9
+    },
+    {
+      "reference_event": "Millwall vs Wrexham AFC",
+      "reference_start": "2026-09-02T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72339762,
+        "home": "Millwall FC",
+        "away": "Wrexham AFC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Chesterfield FC vs Gillingham",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341876,
+        "home": "Chesterfield FC",
+        "away": "Gillingham FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Bradford City vs Cambridge United",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341096,
+        "home": "Bradford City FC",
+        "away": "Cambridge United",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Burton Albion vs Wimbledon",
+      "reference_start": "2026-09-02T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341100,
+        "home": "Burton Albion",
+        "away": "AFC Wimbledon",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Cheltenham Town vs York City",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341872,
+        "home": "Cheltenham Town",
+        "away": "York City FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Exeter City vs Barnet",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341884,
+        "home": "Exeter City",
+        "away": "Barnet FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Luton vs Stockport County FC",
+      "reference_start": "2026-09-02T18:45:00Z",
+      "accepted": false,
+      "reason": "no_candidate"
+    },
+    {
+      "reference_event": "Reading vs Mansfield Town",
+      "reference_start": "2026-09-02T19:00:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341116,
+        "home": "Reading FC",
+        "away": "Mansfield Town",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Rochdale vs Shrewsbury Town",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341896,
+        "home": "Rochdale AFC",
+        "away": "Shrewsbury Town",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Barnsley vs Blackpool",
+      "reference_start": "2026-09-02T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341094,
+        "home": "Barnsley FC",
+        "away": "Blackpool FC",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Tranmere Rovers vs Rotherham United",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341906,
+        "home": "Tranmere Rovers FC",
+        "away": "Rotherham United",
+        "time_delta_minutes": 0.0,
+        "home_score": 1.0,
+        "away_score": 1.0,
+        "combined_score": 1.0
+      },
+      "margin": 1.0
+    },
+    {
+      "reference_event": "Peterborough United vs Stevenage",
+      "reference_start": "2026-09-01T18:45:00Z",
+      "accepted": true,
+      "reason": "time_team_match",
+      "best": {
+        "event_id": 72341114,
+        "home": "Peterborough United",
+        "away": "Stevenage FC",
         "time_delta_minutes": 0.0,
         "home_score": 1.0,
         "away_score": 1.0,
@@ -46,6 +302,6 @@
       "margin": 1.0
     }
   ],
-  "resolver_rows_persisted": 3,
+  "resolver_rows_persisted": 19,
   "resolver_rows_limit": 50
 }

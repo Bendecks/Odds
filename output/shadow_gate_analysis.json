@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-09-01T06:45:26.396757+00:00",
+  "candidate_rows": 1240,
+  "note": "Diagnostic only. Does not alter PAPER PICK or LIVE gates.",
+  "scenarios": [
+    {
+      "name": "production",
+      "min_edge": 0.02,
+      "min_ev": 0.025,
+      "min_reference_books": 3,
+      "max_price_age_minutes": 20,
+      "shadow_signals": 0,
+      "unique_events": 0,
+      "by_market": {}
+    },
+    {
+      "name": "very_mild",
+      "min_edge": 0.015,
+      "min_ev": 0.02,
+      "min_reference_books": 3,
+      "max_price_age_minutes": 20,
+      "shadow_signals": 0,
+      "unique_events": 0,
+      "by_market": {}
+    },
+    {
+      "name": "mild",
+      "min_edge": 0.01,
+      "min_ev": 0.015,
+      "min_reference_books": 3,
+      "max_price_age_minutes": 30,
+      "shadow_signals": 0,
+      "unique_events": 0,
+      "by_market": {}
+    },
+    {
+      "name": "paper_data",
+      "min_edge": 0.005,
+      "min_ev": 0.01,
+      "min_reference_books": 3,
+      "max_price_age_minutes": 60,
+      "shadow_signals": 2,
+      "unique_events": 2,
+      "by_market": {
+        "draw_no_bet": 1,
+        "h2h": 1
+      }
+    },
+    {
+      "name": "positive_two_books",
+      "min_edge": 0.0,
+      "min_ev": 0.0,
+      "min_reference_books": 2,
+      "max_price_age_minutes": 60,
+      "shadow_signals": 3,
+      "unique_events": 3,
+      "by_market": {
+        "draw_no_bet": 1,
+        "h2h": 2
+      }
+    }
+  ]
+}
