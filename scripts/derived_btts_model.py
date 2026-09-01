@@ -1,69 +1,58 @@
 import json, math, pathlib
 
-CAND = pathlib.Path('data/value_candidates.json')
-MIN_BOOKS = 3
-MAX_RMSE = 0.06
+CAND=pathlib.Path('data/value_candidates.json')
+MIN_BOOKS=3
+MAX_RMSE=0.06
 
 
-def poisson_probs(lam, max_goals=15):
-    vals = [math.exp(-lam)]
-    for k in range(1, max_goals + 1):
-        vals.append(vals[-1] * lam / k)
-    return vals
+def poisson_probs(lam,max_goals=15):
+    probs=[math.exp(-lam)]
+    for k in range(1,max_goals+1):probs.append(probs[-1]*lam/k)
+    return probs
 
 
-def model_probs(home_lambda, away_lambda):
-    hp = poisson_probs(home_lambda)
-    ap = poisson_probs(away_lambda)
-    home = draw = away = 0.0
-    for i, pi in enumerate(hp):
-        for j, pj in enumerate(ap):
-            p = pi * pj
-            if i > j:
-                home += p
-            elif i == j:
-                draw += p
-            else:
-                away += p
-    # The finite score grid deliberately truncates only an extremely small
-    # Poisson tail. Renormalize H/D/A over retained mass so these mutually
-    # exclusive outcomes remain a proper probability distribution.
-    retained = home + draw + away
-    if retained > 0:
-        home, draw, away = home / retained, draw / retained, away / retained
-    over25 = 1.0 - math.exp(-(home_lambda + away_lambda)) * (
-        1.0 + home_lambda + away_lambda + ((home_lambda + away_lambda) ** 2) / 2.0
-    )
-    btts = 1.0 - math.exp(-home_lambda) - math.exp(-away_lambda) + math.exp(-(home_lambda + away_lambda))
-    return home, draw, away, over25, btts
+def model_probs(home_lambda,away_lambda):
+    ph=poisson_probs(home_lambda);pa=poisson_probs(away_lambda)
+    home=draw=away=0.0
+    for i,p1 in enumerate(ph):
+        for j,p2 in enumerate(pa):
+            p=p1*p2
+            if i>j:home+=p
+            elif i==j:draw+=p
+            else:away+=p
+    total=home+draw+away
+    if total<=0:return None
+    home/=total;draw/=total;away/=total
+    lam=home_lambda+away_lambda
+    over25=1-math.exp(-lam)*(1+lam+lam*lam/2)
+    btts=1-math.exp(-home_lambda)-math.exp(-away_lambda)+math.exp(-lam)
+    return home,draw,away,over25,btts
 
 
-def fit_error(lh, la, targets):
-    ph, pd, pa, po, pb = model_probs(lh, la)
-    err = ((ph-targets[0])**2 + (pd-targets[1])**2 + (pa-targets[2])**2 + (po-targets[3])**2) / 4.0
-    return err, lh, la, pb
+def fit_error(home_lambda,away_lambda,targets):
+    probs=model_probs(home_lambda,away_lambda)
+    if not probs:return None
+    return sum((a-b)**2 for a,b in zip(probs[:4],targets))/4,probs
 
 
 def fit_lambdas(targets):
-    best = None
-    for hi in range(2, 41):
-        lh = hi / 10.0
-        for ai in range(2, 41):
-            candidate = fit_error(lh, ai / 10.0, targets)
-            if best is None or candidate[0] < best[0]:
-                best = candidate
-    if best is None:
-        return None
-    _, coarse_h, coarse_a, _ = best
-    h0 = max(0.2, coarse_h - 0.15); h1 = min(4.0, coarse_h + 0.15)
-    a0 = max(0.2, coarse_a - 0.15); a1 = min(4.0, coarse_a + 0.15)
-    hi0, hi1 = math.ceil(h0 * 100), math.floor(h1 * 100)
-    ai0, ai1 = math.ceil(a0 * 100), math.floor(a1 * 100)
-    for hi in range(hi0, hi1 + 1):
-        for ai in range(ai0, ai1 + 1):
-            candidate = fit_error(hi / 100.0, ai / 100.0, targets)
-            if candidate[0] < best[0]:
-                best = candidate
+    best=None
+    for hi in range(2,41):
+        lh=hi/10
+        for ai in range(2,41):
+            la=ai/10;result=fit_error(lh,la,targets)
+            if not result:continue
+            mse,probs=result
+            if best is None or mse<best[0]:best=(mse,lh,la,probs[4])
+    if not best:return None
+    _,bh,ba,_=best
+    for hi in range(max(5,int((bh-.15)*100)),int((bh+.15)*100)+1):
+        lh=hi/100
+        for ai in range(max(5,int((ba-.15)*100)),int((ba+.15)*100)+1):
+            la=ai/100;result=fit_error(lh,la,targets)
+            if not result:continue
+            mse,probs=result
+            if mse<best[0]:best=(mse,lh,la,probs[4])
     return best
 
 
@@ -86,6 +75,13 @@ def event_inputs(rows):
     return base, probs
 
 
+def exact_event_identity(rows):
+    for row in rows:
+        if row.get('bet365_event_id') and row.get('event_match_method') == 'exact':
+            return {'bet365_event_id':row['bet365_event_id'],'event_match_method':'exact'}
+    return {}
+
+
 def derive_for_event(rows):
     inputs = event_inputs(rows)
     if not inputs:return []
@@ -95,7 +91,7 @@ def derive_for_event(rows):
     if rmse > MAX_RMSE or not (0 < p_yes < 1):return []
     p_no = 1.0 - p_yes
     books = min(int(r.get('books') or 0) for r in base); r = base[0]
-    common = {'event':r.get('event'),'event_id':r.get('event_id'),'sport':r.get('sport'),'commence_time':r.get('commence_time'),'market':'btts','books':books,'reference_quality':'strong' if books >= 4 else 'good','discovery_eligible':True,'bookmaker':'DERIVED_REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v6-poisson-btts','model_inputs':'1x2_consensus+totals_2.5_consensus','poisson_home_lambda':round(lh,3),'poisson_away_lambda':round(la,3),'model_fit_rmse':round(rmse,6)}
+    common = {'event':r.get('event'),'event_id':r.get('event_id'),'sport':r.get('sport'),'commence_time':r.get('commence_time'),'market':'btts','books':books,'reference_quality':'strong' if books >= 4 else 'good','discovery_eligible':True,'bookmaker':'DERIVED_REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v6-poisson-btts','model_inputs':'1x2_consensus+totals_2.5_consensus','poisson_home_lambda':round(lh,3),'poisson_away_lambda':round(la,3),'model_fit_rmse':round(rmse,6),**exact_event_identity(rows)}
     return [{**common,'pick':'yes','fair_probability':round(p_yes,6),'reference_odds':round(1/p_yes,3)},{**common,'pick':'no','fair_probability':round(p_no,6),'reference_odds':round(1/p_no,3)}]
 
 
