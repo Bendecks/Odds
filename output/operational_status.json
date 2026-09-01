@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-01T06:45:26.352356+00:00",
+  "generated_at": "2026-09-01T13:33:17.912510+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge-, EV- og indsatskrav.",
   "bottleneck": "Ingen friske referenceklare kandidater har positiv edge mod Bet365.",
   "funnel": {
-    "candidate_rows": 1240,
-    "fair_probability_rows": 1240,
-    "reference_events": 39,
-    "exact_bet365_rows": 438,
-    "fresh_exact_bet365_rows": 159,
-    "reference_depth_ready_rows": 123,
+    "candidate_rows": 288,
+    "fair_probability_rows": 288,
+    "reference_events": 4,
+    "exact_bet365_rows": 72,
+    "fresh_exact_bet365_rows": 28,
+    "reference_depth_ready_rows": 26,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 14
+    "decision_runs_recorded": 15
   },
   "provider": {
-    "generated_at": "2026-09-01T06:45:18.476463+00:00",
+    "generated_at": "2026-09-01T13:33:12.774732+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -26,9 +26,9 @@
     "odds_calls": 8,
     "odds_multi_calls": 8,
     "fallback_odds_calls": 0,
-    "raw_market_observations": 55055,
-    "unique_markets": 106,
-    "matched_reference_candidates": 166,
+    "raw_market_observations": 30089,
+    "unique_markets": 103,
+    "matched_reference_candidates": 18,
     "errors": []
   },
   "policy": {
