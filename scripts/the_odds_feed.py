@@ -8,6 +8,7 @@ DEFAULT_SPORTS='soccer_denmark_superliga,soccer_epl,soccer_spain_la_liga,soccer_
 CORE_SPORTS=[x for x in DEFAULT_SPORTS.split(',') if x]
 SPORTS_OVERRIDE=os.getenv('THE_ODDS_SPORTS','').strip()
 MAX_SPORTS=int(os.getenv('THE_ODDS_MAX_SPORTS','24')); SPORTS_PER_RUN=max(1,int(os.getenv('THE_ODDS_SPORTS_PER_RUN','8')))
+QUOTA_RESERVE=max(0,int(os.getenv('THE_ODDS_QUOTA_RESERVE','25')))
 ROTATION_STATE=pathlib.Path('data/reference_sport_rotation.json')
 BOOKMAKERS=[x.strip() for x in os.getenv('THE_ODDS_BOOKMAKERS','pinnacle,betfair_ex_eu,betsson,nordicbet,williamhill').split(',') if x.strip()]
 MARKETS=[x.strip() for x in os.getenv('THE_ODDS_MARKETS','h2h,totals,spreads').split(',') if x.strip()]
@@ -15,6 +16,11 @@ MAX_HOURS=int(os.getenv('MAX_HOURS','72')); OUT=pathlib.Path('data/value_candida
 def api_time(dt):return dt.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 def get(path,params):
  r=requests.get(BASE+path,params={**params,'apiKey':KEY},timeout=30); meta={'remaining':r.headers.get('x-requests-remaining'),'used':r.headers.get('x-requests-used'),'last':r.headers.get('x-requests-last')}; r.raise_for_status(); return r.json(),meta
+def quota_remaining(meta):
+ try:return int(meta.get('remaining'))
+ except (TypeError,ValueError):return None
+def quota_exhausted(meta):
+ remaining=quota_remaining(meta);return remaining is not None and remaining<=QUOTA_RESERVE
 def active_sports():
  if SPORTS_OVERRIDE:return [x.strip() for x in SPORTS_OVERRIDE.split(',') if x.strip()],'override'
  try:
@@ -100,16 +106,23 @@ def market_candidates(event):
  rows.extend(derived_markets(event,rows));return rows
 def main():
  if not KEY:raise SystemExit('Missing THE_ODDS_API_KEY/ODDS_API_KEY')
- sports,source,pool,next_cursor=discover_sports();now=datetime.now(timezone.utc);end=now+timedelta(hours=MAX_HOURS);candidates=[];last_meta={};events_seen=0;errors=[];params={'bookmakers':','.join(BOOKMAKERS),'markets':','.join(MARKETS),'oddsFormat':'decimal','dateFormat':'iso','commenceTimeFrom':api_time(now),'commenceTimeTo':api_time(end)}
+ sports,source,pool,next_cursor=discover_sports();now=datetime.now(timezone.utc);end=now+timedelta(hours=MAX_HOURS);candidates=[];last_meta={};events_seen=0;errors=[];quota_stopped=False;requested=[];params={'bookmakers':','.join(BOOKMAKERS),'markets':','.join(MARKETS),'oddsFormat':'decimal','dateFormat':'iso','commenceTimeFrom':api_time(now),'commenceTimeTo':api_time(end)}
  for sport in sports:
+  if quota_exhausted(last_meta):quota_stopped=True;break
+  requested.append(sport)
   try:data,last_meta=get(f'/v4/sports/{sport}/odds',params)
-  except requests.HTTPError as e:errors.append({'sport':sport,'status':e.response.status_code if e.response is not None else None,'error':e.response.text[:500] if e.response is not None else str(e)});continue
+  except requests.HTTPError as e:
+   meta={'remaining':e.response.headers.get('x-requests-remaining'),'used':e.response.headers.get('x-requests-used'),'last':e.response.headers.get('x-requests-last')} if e.response is not None else {}
+   if meta:last_meta=meta
+   errors.append({'sport':sport,'status':e.response.status_code if e.response is not None else None,'error':e.response.text[:500] if e.response is not None else str(e)})
+   if quota_exhausted(last_meta):quota_stopped=True;break
+   continue
   events_seen+=len(data)
   for event in data:event['sport_key']=sport;candidates.extend(market_candidates(event))
  candidates.sort(key=lambda x:(x['books'],x['fair_probability'] or 0),reverse=True);quality_counts={};pick_counts={'draw':0,'team':0};market_counts={}
  for c in candidates:quality_counts[c['reference_quality']]=quality_counts.get(c['reference_quality'],0)+1;pick_counts['draw' if str(c['pick']).lower()=='draw' else 'team']+=1;market_counts[c['market']]=market_counts.get(c['market'],0)+1
  OUT.parent.mkdir(exist_ok=True);STATUS.parent.mkdir(exist_ok=True);ROTATION_STATE.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(candidates,ensure_ascii=False,indent=2)+'\n')
- if not SPORTS_OVERRIDE:ROTATION_STATE.write_text(json.dumps({'cursor':next_cursor,'pool_size':len(pool),'last_sports':sports,'updated_at':now.isoformat()},ensure_ascii=False,indent=2)+'\n')
- STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v6','sports_source':source,'active_soccer_pool_size':len(pool),'sports_requested':sports,'sports_count':len(sports),'sports_per_run':SPORTS_PER_RUN,'max_sports':MAX_SPORTS,'rotation_next_cursor':next_cursor,'bookmakers':BOOKMAKERS,'markets':MARKETS,'derived_markets':['double_chance','draw_no_bet'],'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'market_counts':market_counts,'pick_type_counts':pick_counts,'discovery_policy':'active-soccer quota rotation; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus','quota':last_meta,'errors':errors},ensure_ascii=False,indent=2)+'\n');print(f'{len(candidates)} reference observations from {events_seen} events; quota={last_meta}; errors={len(errors)}')
+ if not SPORTS_OVERRIDE:ROTATION_STATE.write_text(json.dumps({'cursor':next_cursor,'pool_size':len(pool),'last_sports':requested,'updated_at':now.isoformat()},ensure_ascii=False,indent=2)+'\n')
+ STATUS.write_text(json.dumps({'generated_at':now.isoformat(),'model_version':'market-consensus-v6','sports_source':source,'active_soccer_pool_size':len(pool),'sports_requested':requested,'sports_planned':sports,'sports_count':len(requested),'sports_per_run':SPORTS_PER_RUN,'max_sports':MAX_SPORTS,'rotation_next_cursor':next_cursor,'bookmakers':BOOKMAKERS,'markets':MARKETS,'derived_markets':['double_chance','draw_no_bet'],'events_seen':events_seen,'reference_observations':len(candidates),'quality_counts':quality_counts,'market_counts':market_counts,'pick_type_counts':pick_counts,'discovery_policy':'active-soccer quota rotation with quota reserve; direct h2h/totals/spreads plus derived double-chance and push-aware draw-no-bet from 1X2 consensus','quota':last_meta,'quota_reserve':QUOTA_RESERVE,'quota_stopped':quota_stopped,'errors':errors},ensure_ascii=False,indent=2)+'\n');print(f'{len(candidates)} reference observations from {events_seen} events; quota={last_meta}; quota_stopped={quota_stopped}; errors={len(errors)}')
  if errors and events_seen==0:raise SystemExit('No events returned; see feed status')
 if __name__=='__main__':main()
