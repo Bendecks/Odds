@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-01T20:41:04.244748+00:00",
+  "generated_at": "2026-09-02T16:34:57.378052+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
-  "bottleneck": "Ingen kandidater har eksakt Bet365-identitet.",
+  "bottleneck": "Ingen friske referenceklare kandidater passerer produktionskravet til edge.",
   "funnel": {
     "candidate_rows": 920,
     "fair_probability_rows": 920,
     "reference_events": 12,
-    "exact_bet365_rows": 0,
-    "fresh_exact_bet365_rows": 0,
-    "reference_depth_ready_rows": 0,
+    "exact_bet365_rows": 412,
+    "fresh_exact_bet365_rows": 412,
+    "reference_depth_ready_rows": 382,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 31
+    "decision_runs_recorded": 32
   },
   "funnel_diagnostics": {
     "by_market": {
@@ -37,41 +37,285 @@
         "odd_even_home": 24,
         "spreads": 24
       },
-      "exact": {},
-      "fresh": {},
-      "reference_ready": {},
+      "exact": {
+        "total_goals": 112,
+        "team_total_goals_away": 48,
+        "team_total_goals_home": 46,
+        "totals": 30,
+        "double_chance": 24,
+        "h2h": 24,
+        "btts": 16,
+        "clean_sheet_away": 16,
+        "clean_sheet_home": 16,
+        "draw_no_bet": 16,
+        "odd_even": 16,
+        "odd_even_away": 16,
+        "odd_even_home": 16,
+        "spreads": 16
+      },
+      "fresh": {
+        "total_goals": 112,
+        "team_total_goals_away": 48,
+        "team_total_goals_home": 46,
+        "totals": 30,
+        "double_chance": 24,
+        "h2h": 24,
+        "btts": 16,
+        "clean_sheet_away": 16,
+        "clean_sheet_home": 16,
+        "draw_no_bet": 16,
+        "odd_even": 16,
+        "odd_even_away": 16,
+        "odd_even_home": 16,
+        "spreads": 16
+      },
+      "reference_ready": {
+        "total_goals": 112,
+        "team_total_goals_away": 48,
+        "team_total_goals_home": 46,
+        "double_chance": 24,
+        "h2h": 24,
+        "btts": 16,
+        "clean_sheet_away": 16,
+        "clean_sheet_home": 16,
+        "draw_no_bet": 16,
+        "odd_even": 16,
+        "odd_even_away": 16,
+        "odd_even_home": 16,
+        "totals": 16
+      },
       "production_edge_ready": {}
     },
-    "freshness_by_market": {},
-    "exact_price_age_buckets": {},
-    "reference_depth_rejections_by_market": {},
+    "freshness_by_market": {
+      "btts": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "clean_sheet_away": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "clean_sheet_home": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "double_chance": {
+        "exact": 24,
+        "fresh": 24,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "draw_no_bet": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "h2h": {
+        "exact": 24,
+        "fresh": 24,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "odd_even": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "odd_even_away": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "odd_even_home": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "spreads": {
+        "exact": 16,
+        "fresh": 16,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "team_total_goals_away": {
+        "exact": 48,
+        "fresh": 48,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "team_total_goals_home": {
+        "exact": 46,
+        "fresh": 46,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "total_goals": {
+        "exact": 112,
+        "fresh": 112,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      },
+      "totals": {
+        "exact": 30,
+        "fresh": 30,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
+      }
+    },
+    "exact_price_age_buckets": {
+      "0_20m": 412
+    },
+    "reference_depth_rejections_by_market": {
+      "spreads": 16,
+      "totals": 14
+    },
     "edge_distribution": {
-      "buckets": {},
-      "nonnegative_rows": 0,
-      "best_edge": null,
-      "top_candidates": []
+      "buckets": {
+        "negative": 372,
+        "0_0.5pct": 6,
+        "0.5_1pct": 3,
+        "1_1.5pct": 1
+      },
+      "nonnegative_rows": 10,
+      "best_edge": 0.01489,
+      "top_candidates": [
+        {
+          "event": "Viborg FF vs Lyngby",
+          "market": "h2h",
+          "pick": "Draw",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 4.1,
+          "fair_probability": 0.258792,
+          "edge": 0.01489,
+          "ev": 0.061047
+        },
+        {
+          "event": "Real Betis vs Real Madrid",
+          "market": "total_goals",
+          "pick": "under",
+          "line": 3.5,
+          "books": 3,
+          "bet365_odds": 1.875,
+          "fair_probability": 0.54312,
+          "edge": 0.009787,
+          "ev": 0.01835
+        },
+        {
+          "event": "Real Betis vs Real Madrid",
+          "market": "team_total_goals_away",
+          "pick": "under",
+          "line": 1.5,
+          "books": 3,
+          "bet365_odds": 3.4,
+          "fair_probability": 0.301966,
+          "edge": 0.007848,
+          "ev": 0.026684
+        },
+        {
+          "event": "Viborg FF vs Lyngby",
+          "market": "draw_no_bet",
+          "pick": "Lyngby",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 3.0,
+          "fair_probability": 0.340562,
+          "edge": 0.007228,
+          "ev": 0.0161
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "odd_even",
+          "pick": "odd",
+          "line": null,
+          "books": 3,
+          "bet365_odds": 2.025,
+          "fair_probability": 0.498684,
+          "edge": 0.004857,
+          "ev": 0.009835
+        },
+        {
+          "event": "Toulouse vs Lille",
+          "market": "odd_even",
+          "pick": "odd",
+          "line": null,
+          "books": 4,
+          "bet365_odds": 2.025,
+          "fair_probability": 0.496763,
+          "edge": 0.002936,
+          "ev": 0.005945
+        },
+        {
+          "event": "Viborg FF vs Lyngby",
+          "market": "h2h",
+          "pick": "Lyngby",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 4.0,
+          "fair_probability": 0.252853,
+          "edge": 0.002853,
+          "ev": 0.011412
+        },
+        {
+          "event": "AGF Aarhus vs FC Midtjylland",
+          "market": "h2h",
+          "pick": "AGF Aarhus",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 3.4,
+          "fair_probability": 0.296019,
+          "edge": 0.001901,
+          "ev": 0.006465
+        },
+        {
+          "event": "Sparta Rotterdam vs FC Zwolle",
+          "market": "double_chance",
+          "pick": "X2",
+          "line": null,
+          "books": 5,
+          "bet365_odds": 2.05,
+          "fair_probability": 0.488459,
+          "edge": 0.000654,
+          "ev": 0.001341
+        },
+        {
+          "event": "Viborg FF vs Lyngby",
+          "market": "team_total_goals_away",
+          "pick": "over",
+          "line": 2.5,
+          "books": 3,
+          "bet365_odds": 7.0,
+          "fair_probability": 0.142888,
+          "edge": 3.1e-05,
+          "ev": 0.000216
+        }
+      ]
     }
   },
   "provider": {
-    "generated_at": "2026-09-01T20:41:01.977940+00:00",
-    "available": false,
-    "bet365_events_available": 0,
-    "events_queried": 0,
-    "provider_call_attempts": 1,
-    "provider_call_successes": 0,
-    "odds_calls": 0,
+    "generated_at": "2026-09-02T16:34:47.305335+00:00",
+    "available": true,
+    "bet365_events_available": 500,
+    "events_queried": 80,
+    "provider_call_attempts": 8,
+    "provider_call_successes": 8,
+    "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 0,
-    "unique_markets": 0,
-    "matched_reference_candidates": 0,
-    "errors": [
-      {
-        "stage": "events",
-        "status": 429,
-        "reason": "rate_limited"
-      }
-    ]
+    "raw_market_observations": 43295,
+    "unique_markets": 117,
+    "matched_reference_candidates": 86,
+    "errors": []
   },
   "policy": {
     "bankroll_dkk": 50.0,
