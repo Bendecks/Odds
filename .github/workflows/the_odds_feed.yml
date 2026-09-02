@@ -23,7 +23,7 @@ jobs:
           MAX_HOURS: '72'
           BET365_MAX_ODDS_CALLS: '80'
         run: |
-          python scripts/odds_api_io_bet365.py
+          python scripts/odds_api_io_bootstrap.py
           python scripts/provider_schema_report.py
           python scripts/derived_btts_model.py
           python scripts/derived_goal_markets.py
@@ -43,11 +43,13 @@ jobs:
           python scripts/model_validation_readiness.py
           PYTHONPATH=scripts python scripts/operational_status.py
           PYTHONPATH=scripts python scripts/shadow_gate_analysis.py
-      - name: Archive raw Bet365 snapshot
+      - name: Archive raw provider snapshot
         uses: actions/upload-artifact@v4
         with:
-          name: bet365-observations-${{ github.run_id }}
-          path: data/bet365_observations.jsonl
+          name: odds-api-io-observations-${{ github.run_id }}
+          path: |
+            data/bet365_observations.jsonl
+            data/unibet_observations.jsonl
           retention-days: 30
           compression-level: 9
       - name: Commit compact generated state
