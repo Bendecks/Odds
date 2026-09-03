@@ -1,7 +1,7 @@
 {
   "candidate_rows": 920,
-  "exact_rows": 412,
-  "missing_exact_rows": 508,
+  "exact_rows": 370,
+  "missing_exact_rows": 550,
   "markets": [
     {
       "market": "exact_total_goals",
@@ -15,11 +15,11 @@
     {
       "market": "team_total_goals_home",
       "candidate_rows": 120,
-      "exact_rows": 46,
-      "missing_exact_rows": 74,
-      "exact_rate": 0.3833,
-      "reference_ready_rows": 46,
-      "reference_ready_rate": 0.3833
+      "exact_rows": 44,
+      "missing_exact_rows": 76,
+      "exact_rate": 0.3667,
+      "reference_ready_rows": 44,
+      "reference_ready_rate": 0.3667
     },
     {
       "market": "team_total_goals_away",
@@ -29,6 +29,15 @@
       "exact_rate": 0.4,
       "reference_ready_rows": 48,
       "reference_ready_rate": 0.4
+    },
+    {
+      "market": "total_goals",
+      "candidate_rows": 168,
+      "exact_rows": 98,
+      "missing_exact_rows": 70,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 98,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "away_exact_goals",
@@ -49,110 +58,101 @@
       "reference_ready_rate": 0.0
     },
     {
-      "market": "total_goals",
-      "candidate_rows": 168,
-      "exact_rows": 112,
-      "missing_exact_rows": 56,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 112,
-      "reference_ready_rate": 0.6667
-    },
-    {
       "market": "totals",
       "candidate_rows": 44,
-      "exact_rows": 30,
-      "missing_exact_rows": 14,
-      "exact_rate": 0.6818,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.3636
+      "exact_rows": 26,
+      "missing_exact_rows": 18,
+      "exact_rate": 0.5909,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.3182
     },
     {
       "market": "double_chance",
       "candidate_rows": 36,
-      "exact_rows": 24,
-      "missing_exact_rows": 12,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 24,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 21,
+      "missing_exact_rows": 15,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 21,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "h2h",
       "candidate_rows": 36,
-      "exact_rows": 24,
-      "missing_exact_rows": 12,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 24,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 21,
+      "missing_exact_rows": 15,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 21,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "btts",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "clean_sheet_away",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "clean_sheet_home",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "draw_no_bet",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "odd_even",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "odd_even_away",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "odd_even_home",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
-      "reference_ready_rows": 16,
-      "reference_ready_rate": 0.6667
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
+      "reference_ready_rows": 14,
+      "reference_ready_rate": 0.5833
     },
     {
       "market": "spreads",
       "candidate_rows": 24,
-      "exact_rows": 16,
-      "missing_exact_rows": 8,
-      "exact_rate": 0.6667,
+      "exact_rows": 14,
+      "missing_exact_rows": 10,
+      "exact_rate": 0.5833,
       "reference_ready_rows": 0,
       "reference_ready_rate": 0.0
     }
