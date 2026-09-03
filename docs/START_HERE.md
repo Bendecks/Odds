@@ -1,120 +1,149 @@
 # Odds — START HERE
 
-This file is the canonical handoff for a fresh ChatGPT session. Do not trust remembered chat status over GitHub. Always inspect actual `main`, open PRs/branches, Actions runs and production outputs first.
+This is the canonical handoff for every fresh ChatGPT session. **Do not trust remembered chat status over GitHub.** Always inspect actual `main`, open PRs/branches, Actions/CI, scheduled runs, GitHub Pages and current outputs before changing anything. GitHub is the project's persistent memory between conversations.
 
 ## Mission
-Build a personal autonomous value-betting assistant. The machine must discover opportunities, estimate fair probability, verify the actual Bet365 price, decide whether a candidate qualifies and calculate a theoretical stake. Current bankroll is **50 DKK**.
+Build a personal autonomous value-betting assistant that discovers as many **legitimate PAPER PICKS** on Bet365 as possible across as many correctly modelled markets as possible, without lowering data-quality or value gates. Current bankroll: **50 DKK**.
 
-The system is **PAPER only** while it accumulates out-of-sample evidence. `PAPER PICK` means record and validate; it is not an instruction to place a real bet. LIVE/PLAY promotion requires robust evidence plus an explicit human decision.
+The system is PAPER only. `PAPER PICK` means record and validate, never a real-money instruction. LIVE/PLAY requires robust out-of-sample evidence plus an explicit human decision. No martingale or chasing losses.
 
-No profit guarantee. Never use martingale or chase losses.
+## Core rule — broad discovery, narrow final gate
+Preserve broad observations and attach quality/confidence metadata. Apply edge, EV, reference quality/depth, freshness, exact Bet365 identity and staking constraints at the final gate. Fuzzy matching is diagnostic only. Actionable candidates require exact provider identity.
 
-## Core design rule: broad discovery, narrow final gate
-Do not aggressively filter discovery. Preserve observations and attach quality/confidence metadata. Edge, EV, reference quality/depth, freshness, exact Bet365 identity and staking constraints belong at the final decision gate.
+Do not manufacture picks by lowering edge, EV, freshness, identity or reference-quality requirements.
 
-Fuzzy event matching is diagnostic/prioritization only. It must never set `bet365_verified` or cross the PAPER PICK/PLAY boundary. Actionable candidates require explicit exact provider identity.
+## Active odds-provider architecture
+**Odds-API.io is the only active odds provider.** `the-odds-api.com` is legacy/inactive and must not be reintroduced into the active pipeline.
 
-## Active provider architecture
-The active odds pipeline uses **Odds-API.io only**.
+Current free bookmaker slots:
+- **Bet365** = execution price.
+- **Unibet** = one separate recreational reference observation.
 
-### Odds-API.io
-- Official site: `odds-api.io`
-- Base: `https://api.odds-api.io/v3`
-- GitHub secret: `ODDS_API_IO_KEY`
-- Current free bookmaker slots: **Bet365 + Unibet**.
-- Bet365 is the execution-price source.
-- Unibet is a separate recreational reference observation.
-- A single bootstrap snapshot collects Bet365 + Unibet so reference construction does not require a second odds request.
-- Raw Bet365 and Unibet observations are archived as limited-retention workflow artifacts rather than permanent public history.
-- Relevant documented endpoints include `/sports`, `/bookmakers`, `/events`, `/odds`, `/odds/multi`, `/value-bets`, `/arbitrage-bets` and `/dropping-odds`.
-- `/odds/multi` supports up to 10 event IDs per request.
-- For settlement prefer explicit regulation/full-time `scores.periods.ft`; ambiguous knockout scores fail closed.
+A bootstrap snapshot collects Bet365 + Unibet. Fresh Unibet markets are de-vigged into reference probabilities. Unibet counts as **one economic reference only**. Bet365 has reference weight zero when evaluating Bet365 and must never define the fair probability against which its own price is tested.
 
-### Reference semantics
-Fresh Unibet markets are de-vigged into reference probabilities. **Unibet counts as one reference book only.** It must not be duplicated or otherwise represented as multiple independent sources. The existing final requirement of at least three reference books therefore remains fail-closed for these candidates.
+Raw provider streams are short-retention workflow artifacts rather than permanent public history. Never commit API keys or invent prices.
 
-Bet365 execution odds must not be used to define a fair probability and then be evaluated against themselves.
+## Provenance / independence semantics
+Merged PR #83 introduced explicit source provenance. Reference/evidence records must distinguish:
+- `transport_provider_id`
+- `economic_source_id`
+- `evidence_family`
+- `model_or_feed_version`
 
-The project currently needs a defensible additional independent probability/reference architecture before the normal 3-reference final gate can produce PAPER PICKs from the Odds-API.io-only setup. Do not lower that gate merely to manufacture picks.
+The same bookmaker/economic source delivered through multiple APIs/transports counts **once**, never multiple times. Missing provenance must fail closed rather than inflate reference depth. Bet365 execution also has explicit provenance.
 
-### Legacy provider code
-`the-odds-api.com` is no longer part of the active scheduled/manual odds pipeline. Historical scripts, tests or generated data referring to The Odds API may remain temporarily during staged cleanup, but they must not be treated as fresh active reference data. Active runs replace legacy candidate state rather than silently reusing it.
+The existing 3-reference final gate remains fail-closed until a replacement Reference Quality Gate has been shadow-tested and shown to be defensible. Do not simply lower `min_reference_books`.
 
-Never commit API keys. Never invent Bet365 odds.
+## Value policy
+Read actual `config/value_policy.json` before changing it. Current conceptual policy:
+- mode PAPER
+- bankroll 50 DKK
+- min edge 2%
+- min EV 2.5%
+- Kelly fraction 0.125
+- max stake 3% bankroll
+- max Bet365 price age 20 min
+- min reference books 3
+- max bets/event 1
+- validation target: at least 300 decisive new-model bets plus positive ROI/CLV and acceptable calibration
 
-## Current value policy
-Canonical policy lives in `config/value_policy.json`; read the actual file before changing it. Current conceptual policy:
-- mode: PAPER
-- bankroll: 50 DKK
-- min edge: 2%
-- min EV: 2.5%
-- Kelly fraction: 0.125
-- max stake: 3% bankroll
-- max Bet365 price age: 20 minutes
-- min reference books for final qualification: 3
-- max bets per event: 1
-- validation target: at least 300 decisive new-model bets plus positive ROI and positive CLV requirements
+Bet365 practical minimum stake is 2 DKK. During PAPER validation, a theoretical Kelly stake below 2 DKK must not suppress an otherwise qualifying observation. Before LIVE, reconcile the 2 DKK minimum with the current 3% bankroll cap (=1.50 DKK at 50 DKK).
 
-Bet365's practical real-money minimum stake is 2 DKK. During PAPER validation, a small theoretical Kelly stake must not suppress otherwise qualifying PAPER observations. This exception does not relax edge, EV, identity, freshness or reference-quality gates. Before any future LIVE mode, the 2 DKK practical minimum must be reconciled explicitly with the current 3% bankroll cap (1.50 DKK at a 50 DKK bankroll).
+## Deep Research — required development basis
+Development must combine the conclusions of the project's research work rather than following one report in isolation.
 
-Do not reuse legacy staking such as `max(10, round(edge_pct*4))`.
+### Research priority A — freshness / quota / identity
+A major short-term bottleneck is freshness and efficient use of provider calls. Prioritize robust exact event/market identity, freshness and quota-aware collection. WebSocket/streaming freshness and adaptive polling should be evaluated where the provider/free plan actually supports them. Validate current provider documentation/limits before implementing quota assumptions.
 
-## Current architecture
-Main active flow:
-1. `scripts/odds_api_io_bootstrap.py` collects the Bet365 + Unibet Odds-API.io snapshot, builds fresh Unibet no-vig reference candidates and attaches exact Bet365 execution prices from the same observation set.
-2. Provider-schema and market diagnostics preserve broad observations.
-3. Derived-model scripts may add modelled markets only when their input-quality requirements are met.
-4. `scripts/value_decision_engine.py` applies final safety/value gates. Actionable output requires verified Bet365 price + concrete Bet365 event ID + `event_match_method == exact`.
-5. Every evaluation is recorded in the decision-run ledger.
-6. Actionable new-model signals feed closing-price and settlement queues.
-7. Closing capture and settlement use exact provider identity; settlement uses regulation full-time semantics and fails closed on ambiguity.
-8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap ROI interval and model-version metrics. Promotion remains false until explicitly decided.
-9. GitHub Pages displays current decision, validation progress and PAPER PICK history.
+### Research priority B — stronger independent fair probability
+Do **not** add arbitrary free bookmaker feeds merely to satisfy a count of three. Target architecture from the latest research is approximately:
 
-## Important files
-- `config/value_policy.json` — risk/value policy.
-- `data/value_candidates.json` — current broad reference candidates with any exact Bet365 joins; active runs must not preserve stale legacy reference probabilities.
-- `data/model_signals.jsonl` — deduplicated new-model signal ledger.
-- `data/decision_runs.jsonl` — evaluation/funnel diagnostics.
-- `data/model_settlements.jsonl` — canonical new-model settlements.
-- `output/latest_decision.json` — current user-facing decision.
-- `output/model_validation_readiness.json` — validation state.
-- `output/bet365_join_status.json`, `output/reference_match_diagnostics.json`, `output/unibet_observer.json` — provider/reference diagnostics.
-- `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver.
-- `scripts/paper_pick_history.py` — compact public PAPER history for Pages.
-- `.github/workflows/` — production schedules, CI, closing capture, settlement and Pages.
+**Unibet no-vig + verified independent free external market price + Dixon–Coles/Elo model → calibrated ensemble → Reference Quality Gate → Bet365 execution**
+
+Candidate research directions:
+- first external PoC: API-Football/API-Sports
+- secondary PoCs: SportsGameOdds, FieldFunded
+- model-data candidates: Football-Data.co.uk, football-data.org, StatsBomb Open Data
+
+Any external odds/feed PoC must verify freshness, market coverage, bookmaker/economic provenance and compatibility with the project's Odds-API.io-only active-provider rule. Keep questionable/external architectures SHADOW_ONLY until explicitly promoted.
+
+Build a Bet365-independent football fair model using free public match data, initially **SHADOW_ONLY**. Dixon–Coles + Elo is the first model direction. Compare de-vig methods (at minimum multiplicative vs power) out-of-sample without changing production qualification until evidence supports it.
+
+A future Reference Quality Gate may combine independent market evidence and a calibrated model, but may replace the current gate only after documented shadow validation/non-inferiority.
+
+## Current active flow
+1. `scripts/odds_api_io_bootstrap.py` collects Bet365 + Unibet and builds fresh reference candidates.
+2. `scripts/odds_api_io_reference.py` de-vigs Unibet, attaches exact Bet365 prices and records provenance/economic-source identity.
+3. Diagnostics preserve broad provider/market observations.
+4. Derived/modelled markets are allowed only with sufficient input quality.
+5. `scripts/value_decision_engine.py` applies final gates; actionable output requires verified Bet365 price, concrete Bet365 event ID and exact match method.
+6. Evaluations enter `data/decision_runs.jsonl`; qualifying new-model signals enter model/closing/settlement ledgers.
+7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
+8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
+9. GitHub Pages displays current decision, funnel, PAPER history, validation and development status.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
 
-The dashboard exposes compact canonical state, not API keys or raw provider snapshots.
+Top navigation now contains Handling, Funnel, Paper picks, Validering, Udvikling and Status. Udvikling has its own highlighted navigation button.
 
-## Last verified development state at this handoff
-On 2026-09-03 PR #78, **Bootstrap reference and execution prices from Odds-API.io**, passed Value Engine CI run #213 and was squash-merged as `54c224d215690f4ac1275bcab590d534b9b3c997`.
+`output/development_status.json` is the living human-readable roadmap. Keep it updated after substantive milestones. The Pages workflow must explicitly publish this file; a prior bug omitted it and caused the Development module to show `-/10` / unavailable. PR #83 fixed the Pages artifact list to include it.
 
-PR #78 completed the active migration away from legacy The Odds API candidate state: one Odds-API.io snapshot collects Bet365 + Unibet, raw streams are separately archived, fresh Unibet no-vig reference candidates replace stale legacy candidates, and exact Bet365 execution prices are attached without a second provider odds request.
+Keep **current decision** and **historical PAPER picks** conceptually separate in UI and data. A current `NO BET` can coexist with historical paper records; do not present historical picks as current actionable candidates.
 
-The principal current blocker to legitimate PAPER PICK production is now reference strength rather than provider migration: with Bet365 reserved for execution and Unibet counting honestly as one independent recreational reference, the existing 3-book final reference gate remains unsatisfied.
+## Important files
+- `config/value_policy.json` — canonical risk/value policy
+- `data/value_candidates.json` — current broad candidates; active runs replace stale legacy reference state
+- `data/model_signals.jsonl` — deduplicated new-model signal ledger
+- `data/decision_runs.jsonl` — evaluation/funnel diagnostics
+- `data/model_settlements.jsonl` — canonical settlements
+- `output/latest_decision.json` — current user-facing decision
+- `output/model_validation_readiness.json` — validation state
+- `output/bet365_join_status.json`, `output/reference_match_diagnostics.json`, `output/unibet_observer.json` — diagnostics
+- `output/operational_status.json` — compact operational state
+- `output/paper_pick_history.json` — historical PAPER history for Pages
+- `output/development_status.json` — living development roadmap
+- `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver
+- `scripts/paper_pick_history.py` — public PAPER history builder
+- `.github/workflows/` — production, CI, closing, settlement and Pages
 
-Do not lower edge/EV/reference/identity/freshness safety thresholds merely to manufacture PAPER PICKs.
+## Last verified handoff state — 2026-09-04
+Always verify GitHub again; Actions can move `main` after this handoff.
 
-## Known caveats
-- GitHub Actions state commits can move `main`; always fetch current state before branching.
-- Do not manually trigger provider workflows merely to test code when unit/CI tests suffice. Preserve quota and wait for scheduled production runs unless real production verification is justified.
-- Signal-ledger deduplication means its row count is not evaluation count; use `data/decision_runs.jsonl` for operational diagnostics.
-- Legacy historical betting results do not validate the new model.
-- `data/bankroll.csv` is legacy and must not redefine the new 50 DKK bankroll.
-- Public repo: secrets must only live in GitHub Actions secrets.
+Recent milestones:
+- PR #78 migrated the active candidate/reference pipeline to one Odds-API.io Bet365 + Unibet snapshot and removed stale legacy candidate reuse.
+- PR #80 documented the Odds-API.io-only architecture and PAPER stake-floor semantics.
+- PR #81 added the persistent Development overview to Odds Lab.
+- PR #82 added sticky top navigation and a dedicated Development button.
+- A manual `Odds-API.io value feed` on 2026-09-03 processed about **320 candidates**, about **278 with verified Bet365 data**, and correctly returned **NO BET** under the new architecture. Two previously visible PAPER PICKS were old pre-migration state and were not reproduced by the fresh feed.
+- PR #83 added economic-source provenance/dedup regression protection and fixed Pages publication of `development_status.json`. It was squash-merged as `c191345c89f0c7e51b53a03118ff401beb39c650` after green Value Engine CI.
+- After that merge, scheduled closing-price automation moved `main` to `8843afca0bd089b343be9849287e0ebaa88c3187` (`Update model closing prices`). This illustrates why a fresh session must inspect actual current state before branching.
 
-## Next priorities for a fresh session
-1. Inspect actual GitHub and Actions state first.
-2. Find and consume the requested Deep Research on a **100% free fair-probability/reference architecture** when it becomes available. Evaluate free supplemental non-odds data sources only when they do not reactivate a second paid odds provider or weaken independence semantics.
-3. Build the strongest defensible independent probability/reference layer possible while keeping Odds-API.io as the only active odds provider.
-4. Maximize candidate breadth and exact Bet365 coverage without lowering edge, EV, freshness, exact-identity or reference-quality gates.
-5. Add tests before integrating any new reference/model source. Keep provenance explicit so model probabilities are not mislabeled as bookmaker consensus.
-6. Accumulate genuine future PAPER PICKs and exact settlements. Do not claim empirical validation before the data exists.
+Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
-## Required behavior for ChatGPT sessions
-Work autonomously. When the user says `Fortsæt`, make actual safe changes and take as many consecutive steps as possible without waiting for confirmation. Branch from actual latest `main`, add tests, open PR, inspect CI, fix failures, merge only when green, and verify post-merge state/deployment. Stop only for a genuine blocker requiring user input.
+## Next development sequence
+Use evidence and actual current diagnostics to adjust order, but the intended sequence is:
+1. Verify current main/CI/Pages/production and confirm Development module is actually populated after the Pages fix.
+2. Keep provenance/economic-source dedup enforced everywhere new evidence enters.
+3. Build/validate a **central quota guard** after checking current Odds-API.io limits; batch and reserve calls intelligently.
+4. Improve freshness and exact event/market identity; evaluate adaptive/streaming collection if supported.
+5. Add a **de-vig shadow comparison** (multiplicative vs power initially).
+6. Research/test the first defensible independent external reference PoC without weakening provider-independence rules.
+7. Build Dixon–Coles + Elo on free public match data in SHADOW_ONLY.
+8. Calibrate/ensemble independent signals and measure out-of-sample performance.
+9. Shadow-test a Reference Quality Gate; production promotion only after evidence of non-inferiority/benefit.
+10. Expand legitimate market breadth: 1X2 → DNB/double chance, goal model → totals/BTTS, then handicaps only with correct semantics.
+11. Accumulate at least 300 decisive current-model PAPER bets with exact closing/settlement evidence before considering LIVE.
 
-Do not replace actual GitHub inspection with this document. This document is a map; the repository and Actions state are authoritative.
+## What the user should be asked to do
+Work autonomously by default. Ask the user only for genuine external blockers, for example:
+- create/provide a free API account/key when a chosen PoC requires it;
+- manually run a GitHub Action when production verification genuinely requires a real feed run;
+- report/screenshoot a UI problem that cannot be reproduced from repository/deployment state.
+
+Do not ask the user to make routine code changes. Do not ask them to place real bets during PAPER validation. Do not ask them to add bankroll merely to work around the 2 DKK minimum.
+
+## Required behavior for fresh ChatGPT sessions
+When the user says `Fortsæt`, perform actual safe work rather than only describing a plan. Start from actual latest `main`; inspect open PRs/branches and Actions; branch; implement; add tests; open PR; inspect CI; fix failures; merge only when safe; verify post-merge state/deployment; update `output/development_status.json` and this handoff when architecture/strategy materially changes.
+
+GitHub is the persistent project memory. This document is the map; repository state and Actions are authoritative.
