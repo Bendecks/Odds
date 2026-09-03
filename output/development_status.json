@@ -1,0 +1,33 @@
+{
+  "updated_at": "2026-09-03T18:35:00Z",
+  "score": 8.3,
+  "phase": "Gratis referencearkitektur",
+  "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
+  "current": [
+    "Odds-API.io er eneste aktive oddsprovider; Bet365 er execution og Unibet er én reference.",
+    "PR #78 migrerede den aktive feed til ét Bet365+Unibet snapshot.",
+    "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret.",
+    "Deep Research anbefaler hybrid reference frem for at tælle tre tilfældige gratis oddsfeeds."
+  ],
+  "next": [
+    {"title":"Provenance og økonomisk source-dedup","state":"NEXT","detail":"Indfør transport_provider_id, economic_source_id, evidence_family og model_or_feed_version, så samme bookmaker aldrig kan tælle dobbelt."},
+    {"title":"Central quota guard","state":"PLANNED","detail":"Account-wide Odds-API.io budget med batching, concurrency og intern 90/time + 450/day reserve."},
+    {"title":"De-vig shadow test","state":"PLANNED","detail":"Sammenlign multiplicative og power de-vig out-of-sample uden at ændre production-gaten."},
+    {"title":"API-Football PoC","state":"RESEARCH","detail":"Mål gratis bookmaker IDs, market coverage, freshness og økonomisk uafhængighed før signalet må tælle."},
+    {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY."},
+    {"title":"Reference Quality Gate","state":"LATER","detail":"Unibet + ekstern market source + kalibreret model; promotion først efter dokumenteret non-inferiority."}
+  ],
+  "guardrails": [
+    "Bet365 referencevægt = 0 når Bet365 evalueres.",
+    "the-odds-api.com må ikke genintroduceres.",
+    "Ingen duplicate economic sources.",
+    "Ingen sænkning af edge, EV, freshness eller exact-identity krav for at skabe picks.",
+    "Nye referencearkitekturer starter SHADOW_ONLY."
+  ],
+  "research": {
+    "headline": "Anbefalet target: Unibet no-vig + verificeret gratis ekstern markedspris + Dixon-Coles/Elo model.",
+    "first_external_poc": "API-Football/API-Sports",
+    "secondary_pocs": ["SportsGameOdds", "FieldFunded"],
+    "model_data": ["Football-Data.co.uk", "football-data.org", "StatsBomb Open Data"]
+  }
+}

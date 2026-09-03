@@ -8,79 +8,13 @@
 </head>
 <body>
   <main class="wrap">
-    <header>
-      <div>
-        <p class="eyebrow">AUTONOMOUS VALUE ENGINE</p>
-        <h1>Odds Lab</h1>
-        <p>Maskinen vælger. Du skal kun reagere på den viste handling.</p>
-      </div>
-      <div class="badge">50 kr. startbank</div>
-    </header>
-
-    <section class="grid stats">
-      <article><span>Bankroll</span><strong id="bankroll">50 kr.</strong></article>
-      <article><span>Mode</span><strong id="mode">PAPER</strong></article>
-      <article><span>Bookmaker</span><strong>Bet365</strong></article>
-      <article><span>Beslutning</span><strong>Auto</strong></article>
-    </section>
-
-    <section class="panel">
-      <h2>Næste handling</h2>
-      <div id="result" class="result muted">Indlæser seneste beslutning...</div>
-    </section>
-
-    <section class="panel">
-      <h2>Funnel</h2>
-      <p id="funnel-bottleneck" class="muted">Indlæser driftsstatus...</p>
-      <div class="funnelGrid">
-        <article><span>Reference rows</span><strong id="funnel-candidates">-</strong></article>
-        <article><span>Fair probability</span><strong id="funnel-fair">-</strong></article>
-        <article><span>Eksakt Bet365</span><strong id="funnel-exact">-</strong></article>
-        <article><span>Friske priser</span><strong id="funnel-fresh">-</strong></article>
-        <article><span>Reference depth</span><strong id="funnel-depth">-</strong></article>
-        <article><span>Positiv edge</span><strong id="funnel-edge">-</strong></article>
-        <article><span>EV klar</span><strong id="funnel-ev">-</strong></article>
-        <article><span>Final gate</span><strong id="funnel-qualified">-</strong></article>
-      </div>
-      <div class="providerLine">
-        <span id="provider-events">Bet365 events: -</span>
-        <span id="provider-calls">API calls: -</span>
-        <span id="provider-markets">Markets: -</span>
-      </div>
-    </section>
-
-    <section class="panel">
-      <h2>Paper picks</h2>
-      <div class="grid stats">
-        <article><span>Registreret</span><strong id="paper-count">0</strong></article>
-        <article><span>Åbne</span><strong id="paper-open">0</strong></article>
-        <article><span>Resultat</span><strong id="paper-profit">-</strong></article>
-        <article><span>Paper ROI</span><strong id="paper-roi">-</strong></article>
-      </div>
-      <div id="paper-history" class="history muted">Ingen paper picks endnu.</div>
-    </section>
-
-    <section class="panel">
-      <h2>Validering</h2>
-      <div class="grid stats">
-        <article><span>Afsluttede picks</span><strong id="settled">0 / 300</strong></article>
-        <article><span>ROI</span><strong id="roi">-</strong></article>
-        <article><span>CLV</span><strong id="clv">-</strong></article>
-        <article><span>Kalibrering</span><strong id="calibration">-</strong></article>
-      </div>
-      <p id="validation-note">PAPER fortsætter, mens modellen samler dokumentation.</p>
-    </section>
-
-    <section class="panel rules">
-      <h2>Status</h2>
-      <ul>
-        <li>PAPER PICK betyder: modellen registrerer valget, men du skal ikke spille det endnu.</li>
-        <li>PLAY aktiveres først, når valideringskravene er opfyldt.</li>
-        <li>Bet365-prisen skal være verificeret og højst 20 minutter gammel.</li>
-        <li>NO BET kræver ingen handling.</li>
-      </ul>
-    </section>
-  </main>
-  <script src="app.js"></script>
-</body>
-</html>
+    <header><div><p class="eyebrow">AUTONOMOUS VALUE ENGINE</p><h1>Odds Lab</h1><p>Maskinen vælger. Du skal kun reagere på den viste handling.</p></div><div class="badge">50 kr. startbank</div></header>
+    <section class="grid stats"><article><span>Bankroll</span><strong id="bankroll">50 kr.</strong></article><article><span>Mode</span><strong id="mode">PAPER</strong></article><article><span>Bookmaker</span><strong>Bet365</strong></article><article><span>Beslutning</span><strong>Auto</strong></article></section>
+    <section class="panel"><h2>Næste handling</h2><div id="result" class="result muted">Indlæser seneste beslutning...</div></section>
+    <section class="panel"><h2>Funnel</h2><p id="funnel-bottleneck" class="muted">Indlæser driftsstatus...</p><div class="funnelGrid"><article><span>Reference rows</span><strong id="funnel-candidates">-</strong></article><article><span>Fair probability</span><strong id="funnel-fair">-</strong></article><article><span>Eksakt Bet365</span><strong id="funnel-exact">-</strong></article><article><span>Friske priser</span><strong id="funnel-fresh">-</strong></article><article><span>Reference depth</span><strong id="funnel-depth">-</strong></article><article><span>Positiv edge</span><strong id="funnel-edge">-</strong></article><article><span>EV klar</span><strong id="funnel-ev">-</strong></article><article><span>Final gate</span><strong id="funnel-qualified">-</strong></article></div><div class="providerLine"><span id="provider-events">Bet365 events: -</span><span id="provider-calls">API calls: -</span><span id="provider-markets">Markets: -</span></div></section>
+    <section class="panel"><h2>Paper picks</h2><div class="grid stats"><article><span>Registreret</span><strong id="paper-count">0</strong></article><article><span>Åbne</span><strong id="paper-open">0</strong></article><article><span>Resultat</span><strong id="paper-profit">-</strong></article><article><span>Paper ROI</span><strong id="paper-roi">-</strong></article></div><div id="paper-history" class="history muted">Ingen paper picks endnu.</div></section>
+    <section class="panel"><h2>Validering</h2><div class="grid stats"><article><span>Afsluttede picks</span><strong id="settled">0 / 300</strong></article><article><span>ROI</span><strong id="roi">-</strong></article><article><span>CLV</span><strong id="clv">-</strong></article><article><span>Kalibrering</span><strong id="calibration">-</strong></article></div><p id="validation-note">PAPER fortsætter, mens modellen samler dokumentation.</p></section>
+    <section class="panel development"><div class="sectionHead"><div><p class="eyebrow">PROJEKTOVERBLIK</p><h2>Udvikling</h2></div><strong id="dev-score" class="devScore">- / 10</strong></div><h3 id="dev-phase">Indlæser udviklingsstatus...</h3><p id="dev-objective" class="muted"></p><div class="developmentColumns"><div><h3>Hvor er vi nu?</h3><ul id="dev-current"></ul></div><div><h3>Næste skridt</h3><div id="dev-next" class="roadmap"></div></div></div><div class="developmentColumns"><div><h3>Research-retning</h3><div id="dev-research" class="muted"></div></div><div><h3>Faste sikkerhedsregler</h3><ul id="dev-guardrails"></ul></div></div><small id="dev-updated" class="muted"></small></section>
+    <section class="panel rules"><h2>Status</h2><ul><li>PAPER PICK betyder: modellen registrerer valget, men du skal ikke spille det endnu.</li><li>PLAY aktiveres først, når valideringskravene er opfyldt.</li><li>Bet365-prisen skal være verificeret og højst 20 minutter gammel.</li><li>NO BET kræver ingen handling.</li></ul></section>
+  </main><script src="app.js"></script>
+</body></html>
