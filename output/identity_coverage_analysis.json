@@ -15,11 +15,11 @@
     {
       "market": "team_total_goals_home",
       "candidate_rows": 120,
-      "exact_rows": 44,
-      "missing_exact_rows": 76,
-      "exact_rate": 0.3667,
-      "reference_ready_rows": 44,
-      "reference_ready_rate": 0.3667
+      "exact_rows": 46,
+      "missing_exact_rows": 74,
+      "exact_rate": 0.3833,
+      "reference_ready_rows": 46,
+      "reference_ready_rate": 0.3833
     },
     {
       "market": "team_total_goals_away",
@@ -85,6 +85,15 @@
       "reference_ready_rate": 0.5833
     },
     {
+      "market": "spreads",
+      "candidate_rows": 24,
+      "exact_rows": 12,
+      "missing_exact_rows": 12,
+      "exact_rate": 0.5,
+      "reference_ready_rows": 0,
+      "reference_ready_rate": 0.0
+    },
+    {
       "market": "btts",
       "candidate_rows": 24,
       "exact_rows": 14,
@@ -146,15 +155,6 @@
       "exact_rate": 0.5833,
       "reference_ready_rows": 14,
       "reference_ready_rate": 0.5833
-    },
-    {
-      "market": "spreads",
-      "candidate_rows": 24,
-      "exact_rows": 14,
-      "missing_exact_rows": 10,
-      "exact_rate": 0.5833,
-      "reference_ready_rows": 0,
-      "reference_ready_rate": 0.0
     }
   ],
   "priority_note": "Diagnostic only. High missing-exact counts identify where exact provider identity/market availability can add the most evaluated PAPER candidates; they do not authorize fuzzy joins."

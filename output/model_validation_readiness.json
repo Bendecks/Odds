@@ -1,7 +1,7 @@
 {
   "new_model_only": true,
-  "signals": 2,
-  "actionable_signals": 1,
+  "signals": 4,
+  "actionable_signals": 3,
   "settlement_records": 0,
   "valid_settlements": 0,
   "settled_decisive_bets": 0,
@@ -17,9 +17,11 @@
   "expected_calibration_error": null,
   "calibration_bins": [],
   "model_versions": {
-    "market-consensus-v6": 1
+    "market-consensus-v6": 1,
+    "market-consensus-v6-derived": 1,
+    "market-consensus-v6-poisson-goals": 1
   },
-  "current_model_version": "market-consensus-v6",
+  "current_model_version": "market-consensus-v6-poisson-goals",
   "settlement_metrics_by_model_version": {},
   "promotion_ready": false,
   "promotion_blockers": [

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-03T04:33:22.266657+00:00",
-  "as_of": "2026-09-03T04:33:22.200263+00:00",
+  "generated_at": "2026-09-03T16:25:38.198820+00:00",
+  "as_of": "2026-09-03T16:25:38.127820+00:00",
   "candidate_rows": 920,
   "note": "Diagnostic only. Identity rejection is split into event identity, missing exact Bet365 price, and market identity so market-expansion work can target the largest safe unlocks.",
   "scenarios": [
@@ -10,20 +10,21 @@
       "min_ev": 0.025,
       "min_reference_books": 3,
       "max_price_age_minutes": 20,
-      "gate_signals": 1,
+      "gate_signals": 8,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 1,
-      "shadow_paper_picks": 1,
-      "unique_events": 1,
+      "paper_eligible": 8,
+      "shadow_paper_picks": 2,
+      "unique_events": 2,
       "by_market": {
-        "h2h": 1
+        "draw_no_bet": 1,
+        "total_goals": 1
       },
       "rejection_reasons": {
-        "edge": 341,
+        "edge": 336,
         "event_identity": 383,
         "invalid_dnb_probabilities": 2,
         "no_exact_bet365_price": 167,
-        "reference_depth": 26
+        "reference_depth": 24
       },
       "rejection_reasons_by_market": {
         "away_exact_goals": {
@@ -47,7 +48,7 @@
           "event_identity": 15
         },
         "draw_no_bet": {
-          "edge": 12,
+          "edge": 11,
           "event_identity": 10,
           "invalid_dnb_probabilities": 2
         },
@@ -77,24 +78,25 @@
         },
         "spreads": {
           "event_identity": 10,
-          "reference_depth": 14
+          "no_exact_bet365_price": 2,
+          "reference_depth": 12
         },
         "team_total_goals_away": {
-          "edge": 48,
+          "edge": 47,
           "event_identity": 50,
           "no_exact_bet365_price": 22
         },
         "team_total_goals_home": {
-          "edge": 44,
+          "edge": 46,
           "event_identity": 50,
-          "no_exact_bet365_price": 26
+          "no_exact_bet365_price": 24
         },
         "total_goals": {
-          "edge": 98,
+          "edge": 94,
           "event_identity": 70
         },
         "totals": {
-          "edge": 14,
+          "edge": 13,
           "event_identity": 18,
           "reference_depth": 12
         }
@@ -106,21 +108,22 @@
       "min_ev": 0.02,
       "min_reference_books": 3,
       "max_price_age_minutes": 20,
-      "gate_signals": 2,
+      "gate_signals": 13,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 2,
-      "shadow_paper_picks": 2,
-      "unique_events": 2,
+      "paper_eligible": 13,
+      "shadow_paper_picks": 3,
+      "unique_events": 3,
       "by_market": {
-        "h2h": 1,
+        "double_chance": 1,
+        "draw_no_bet": 1,
         "total_goals": 1
       },
       "rejection_reasons": {
-        "edge": 340,
+        "edge": 331,
         "event_identity": 383,
         "invalid_dnb_probabilities": 2,
         "no_exact_bet365_price": 167,
-        "reference_depth": 26
+        "reference_depth": 24
       },
       "rejection_reasons_by_market": {
         "away_exact_goals": {
@@ -136,15 +139,15 @@
           "event_identity": 10
         },
         "clean_sheet_home": {
-          "edge": 14,
+          "edge": 13,
           "event_identity": 10
         },
         "double_chance": {
-          "edge": 21,
+          "edge": 20,
           "event_identity": 15
         },
         "draw_no_bet": {
-          "edge": 12,
+          "edge": 11,
           "event_identity": 10,
           "invalid_dnb_probabilities": 2
         },
@@ -174,24 +177,25 @@
         },
         "spreads": {
           "event_identity": 10,
-          "reference_depth": 14
+          "no_exact_bet365_price": 2,
+          "reference_depth": 12
         },
         "team_total_goals_away": {
-          "edge": 48,
+          "edge": 46,
           "event_identity": 50,
           "no_exact_bet365_price": 22
         },
         "team_total_goals_home": {
-          "edge": 44,
+          "edge": 46,
           "event_identity": 50,
-          "no_exact_bet365_price": 26
+          "no_exact_bet365_price": 24
         },
         "total_goals": {
-          "edge": 97,
+          "edge": 93,
           "event_identity": 70
         },
         "totals": {
-          "edge": 14,
+          "edge": 12,
           "event_identity": 18,
           "reference_depth": 12
         }
@@ -203,22 +207,23 @@
       "min_ev": 0.015,
       "min_reference_books": 3,
       "max_price_age_minutes": 30,
-      "gate_signals": 5,
+      "gate_signals": 16,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 5,
-      "shadow_paper_picks": 4,
-      "unique_events": 4,
+      "paper_eligible": 16,
+      "shadow_paper_picks": 3,
+      "unique_events": 3,
       "by_market": {
-        "double_chance": 1,
-        "h2h": 2,
+        "draw_no_bet": 1,
+        "h2h": 1,
         "total_goals": 1
       },
       "rejection_reasons": {
-        "edge": 337,
+        "edge": 326,
+        "ev": 2,
         "event_identity": 383,
         "invalid_dnb_probabilities": 2,
         "no_exact_bet365_price": 167,
-        "reference_depth": 26
+        "reference_depth": 24
       },
       "rejection_reasons_by_market": {
         "away_exact_goals": {
@@ -234,7 +239,7 @@
           "event_identity": 10
         },
         "clean_sheet_home": {
-          "edge": 14,
+          "edge": 13,
           "event_identity": 10
         },
         "double_chance": {
@@ -242,7 +247,7 @@
           "event_identity": 15
         },
         "draw_no_bet": {
-          "edge": 12,
+          "edge": 11,
           "event_identity": 10,
           "invalid_dnb_probabilities": 2
         },
@@ -251,7 +256,7 @@
           "no_exact_bet365_price": 49
         },
         "h2h": {
-          "edge": 19,
+          "edge": 18,
           "event_identity": 15
         },
         "home_exact_goals": {
@@ -272,24 +277,27 @@
         },
         "spreads": {
           "event_identity": 10,
-          "reference_depth": 14
+          "no_exact_bet365_price": 2,
+          "reference_depth": 12
         },
         "team_total_goals_away": {
-          "edge": 48,
+          "edge": 45,
+          "ev": 1,
           "event_identity": 50,
           "no_exact_bet365_price": 22
         },
         "team_total_goals_home": {
-          "edge": 44,
+          "edge": 46,
           "event_identity": 50,
-          "no_exact_bet365_price": 26
+          "no_exact_bet365_price": 24
         },
         "total_goals": {
-          "edge": 96,
+          "edge": 91,
+          "ev": 1,
           "event_identity": 70
         },
         "totals": {
-          "edge": 14,
+          "edge": 12,
           "event_identity": 18,
           "reference_depth": 12
         }
@@ -301,22 +309,24 @@
       "min_ev": 0.01,
       "min_reference_books": 3,
       "max_price_age_minutes": 60,
-      "gate_signals": 15,
+      "gate_signals": 29,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 15,
-      "shadow_paper_picks": 4,
-      "unique_events": 4,
+      "paper_eligible": 29,
+      "shadow_paper_picks": 6,
+      "unique_events": 6,
       "by_market": {
-        "h2h": 3,
-        "total_goals": 1
+        "draw_no_bet": 1,
+        "h2h": 2,
+        "odd_even": 1,
+        "total_goals": 2
       },
       "rejection_reasons": {
-        "edge": 326,
-        "ev": 1,
+        "edge": 313,
+        "ev": 2,
         "event_identity": 383,
         "invalid_dnb_probabilities": 2,
         "no_exact_bet365_price": 167,
-        "reference_depth": 26
+        "reference_depth": 24
       },
       "rejection_reasons_by_market": {
         "away_exact_goals": {
@@ -324,7 +334,7 @@
           "no_exact_bet365_price": 35
         },
         "btts": {
-          "edge": 14,
+          "edge": 13,
           "event_identity": 10
         },
         "clean_sheet_away": {
@@ -332,7 +342,7 @@
           "event_identity": 10
         },
         "clean_sheet_home": {
-          "edge": 14,
+          "edge": 12,
           "event_identity": 10
         },
         "double_chance": {
@@ -357,7 +367,7 @@
           "no_exact_bet365_price": 35
         },
         "odd_even": {
-          "edge": 14,
+          "edge": 13,
           "event_identity": 10
         },
         "odd_even_away": {
@@ -370,25 +380,27 @@
         },
         "spreads": {
           "event_identity": 10,
-          "reference_depth": 14
+          "no_exact_bet365_price": 2,
+          "reference_depth": 12
         },
         "team_total_goals_away": {
-          "edge": 45,
+          "edge": 41,
+          "ev": 1,
           "event_identity": 50,
           "no_exact_bet365_price": 22
         },
         "team_total_goals_home": {
-          "edge": 44,
+          "edge": 46,
           "event_identity": 50,
-          "no_exact_bet365_price": 26
+          "no_exact_bet365_price": 24
         },
         "total_goals": {
-          "edge": 93,
+          "edge": 88,
           "ev": 1,
           "event_identity": 70
         },
         "totals": {
-          "edge": 14,
+          "edge": 12,
           "event_identity": 18,
           "reference_depth": 12
         }
@@ -400,22 +412,23 @@
       "min_ev": 0.0,
       "min_reference_books": 2,
       "max_price_age_minutes": 60,
-      "gate_signals": 20,
+      "gate_signals": 37,
       "theoretical_stake_eligible": 0,
-      "paper_eligible": 20,
-      "shadow_paper_picks": 5,
-      "unique_events": 5,
+      "paper_eligible": 37,
+      "shadow_paper_picks": 7,
+      "unique_events": 7,
       "by_market": {
-        "double_chance": 1,
+        "draw_no_bet": 1,
         "h2h": 3,
-        "total_goals": 1
+        "odd_even": 1,
+        "total_goals": 2
       },
       "rejection_reasons": {
-        "edge": 322,
+        "edge": 307,
         "event_identity": 383,
         "invalid_dnb_probabilities": 2,
         "no_exact_bet365_price": 167,
-        "reference_depth": 26
+        "reference_depth": 24
       },
       "rejection_reasons_by_market": {
         "away_exact_goals": {
@@ -423,7 +436,7 @@
           "no_exact_bet365_price": 35
         },
         "btts": {
-          "edge": 14,
+          "edge": 12,
           "event_identity": 10
         },
         "clean_sheet_away": {
@@ -431,11 +444,11 @@
           "event_identity": 10
         },
         "clean_sheet_home": {
-          "edge": 14,
+          "edge": 12,
           "event_identity": 10
         },
         "double_chance": {
-          "edge": 18,
+          "edge": 19,
           "event_identity": 15
         },
         "draw_no_bet": {
@@ -448,7 +461,7 @@
           "no_exact_bet365_price": 49
         },
         "h2h": {
-          "edge": 17,
+          "edge": 16,
           "event_identity": 15
         },
         "home_exact_goals": {
@@ -456,7 +469,7 @@
           "no_exact_bet365_price": 35
         },
         "odd_even": {
-          "edge": 14,
+          "edge": 13,
           "event_identity": 10
         },
         "odd_even_away": {
@@ -469,24 +482,25 @@
         },
         "spreads": {
           "event_identity": 10,
-          "reference_depth": 14
+          "no_exact_bet365_price": 2,
+          "reference_depth": 12
         },
         "team_total_goals_away": {
-          "edge": 45,
+          "edge": 39,
           "event_identity": 50,
           "no_exact_bet365_price": 22
         },
         "team_total_goals_home": {
-          "edge": 44,
+          "edge": 46,
           "event_identity": 50,
-          "no_exact_bet365_price": 26
+          "no_exact_bet365_price": 24
         },
         "total_goals": {
-          "edge": 91,
+          "edge": 86,
           "event_identity": 70
         },
         "totals": {
-          "edge": 13,
+          "edge": 12,
           "event_identity": 18,
           "reference_depth": 12
         }
