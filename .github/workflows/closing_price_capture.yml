@@ -17,11 +17,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests
+      - name: Plan Odds-API.io request budget
+        run: python scripts/odds_api_io_quota_budget.py closing --requested-calls 10
       - name: Capture due exact Bet365 closing prices
         env:
           ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
           CLOSING_CAPTURE_WINDOW_MINUTES: '75'
-          CLOSING_MAX_ODDS_CALLS: '10'
         run: |
           python scripts/closing_price_queue.py
           python scripts/closing_price_fetch.py
@@ -31,7 +32,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/model_closing_prices.jsonl output/closing_price_queue.json output/closing_price_fetch_status.json output/closing_price_status.json output/model_validation_readiness.json
+          git add data/model_closing_prices.jsonl output/closing_price_queue.json output/closing_price_fetch_status.json output/closing_price_status.json output/model_validation_readiness.json output/odds_api_io_quota_budget.json
           git diff --cached --quiet && exit 0
           git commit -m "Update model closing prices"
           git pull --rebase --autostash

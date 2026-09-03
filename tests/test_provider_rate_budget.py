@@ -15,8 +15,13 @@ class ProviderRateBudgetTests(unittest.TestCase):
 
     def test_hourly_closing_cap_leaves_headroom_for_heavy_feed(self):
         closing=pathlib.Path('.github/workflows/closing_price_capture.yml').read_text()
-        self.assertIn("CLOSING_MAX_ODDS_CALLS: '10'",closing)
         feed=pathlib.Path('.github/workflows/the_odds_feed.yml').read_text()
-        self.assertIn("BET365_MAX_ODDS_CALLS: '80'",feed)
+        settle=pathlib.Path('.github/workflows/model_settlement.yml').read_text()
+        self.assertIn('python scripts/odds_api_io_quota_budget.py feed --requested-calls 80',feed)
+        self.assertIn('python scripts/odds_api_io_quota_budget.py closing --requested-calls 10',closing)
+        self.assertIn('python scripts/odds_api_io_quota_budget.py settlement --requested-calls 20',settle)
+        self.assertIn('output/odds_api_io_quota_budget.json',feed)
+        self.assertIn('output/odds_api_io_quota_budget.json',closing)
+        self.assertIn('output/odds_api_io_quota_budget.json',settle)
 
 if __name__=='__main__':unittest.main()
