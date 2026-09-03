@@ -1,17 +1,18 @@
 {
-  "updated_at": "2026-09-03T18:35:00Z",
-  "score": 8.3,
+  "updated_at": "2026-09-03T19:55:00Z",
+  "score": 8.7,
   "phase": "Gratis referencearkitektur",
   "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
   "current": [
     "Odds-API.io er eneste aktive oddsprovider; Bet365 er execution og Unibet er én reference.",
-    "PR #78 migrerede den aktive feed til ét Bet365+Unibet snapshot.",
-    "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret.",
-    "Deep Research anbefaler hybrid reference frem for at tælle tre tilfældige gratis oddsfeeds."
+    "Den friske manuelle Odds-API.io-kørsel 3/9 endte korrekt NO BET med 320 kandidater og 278 verificerede Bet365-rækker.",
+    "Hovednavigation med særskilt Udvikling-knap er merged i PR #82.",
+    "Referencekandidater får nu eksplicit provenance og økonomisk source-dedup, så samme bookmaker ikke kan tælle dobbelt via flere transports.",
+    "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret."
   ],
   "next": [
-    {"title":"Provenance og økonomisk source-dedup","state":"NEXT","detail":"Indfør transport_provider_id, economic_source_id, evidence_family og model_or_feed_version, så samme bookmaker aldrig kan tælle dobbelt."},
-    {"title":"Central quota guard","state":"PLANNED","detail":"Account-wide Odds-API.io budget med batching, concurrency og intern 90/time + 450/day reserve."},
+    {"title":"Provenance og økonomisk source-dedup","state":"DONE","detail":"transport_provider_id, economic_source_id, evidence_family og model_or_feed_version er indført for Unibet-reference og Bet365 execution; tests beskytter mod dobbeltælling."},
+    {"title":"Central quota guard","state":"NEXT","detail":"Verificér de aktuelle Odds-API.io-grænser og byg et account-wide budget med reserve før flere datakilder/markeder aktiveres."},
     {"title":"De-vig shadow test","state":"PLANNED","detail":"Sammenlign multiplicative og power de-vig out-of-sample uden at ændre production-gaten."},
     {"title":"API-Football PoC","state":"RESEARCH","detail":"Mål gratis bookmaker IDs, market coverage, freshness og økonomisk uafhængighed før signalet må tælle."},
     {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY."},
