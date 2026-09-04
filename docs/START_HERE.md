@@ -81,14 +81,14 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
-10. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, the latest de-vig shadow summary when present, the latest Odds-API.io quota-budget mode and price-age freshness pressure.
+10. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, the latest de-vig shadow summary when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
 
 Top navigation now contains Handling, Funnel, Paper picks, Validering, Udvikling and Status. Udvikling has its own highlighted navigation button.
 
-`output/development_status.json` is the living human-readable roadmap. Keep it updated after substantive milestones. The Pages workflow must explicitly publish this file; a prior bug omitted it and caused the Development module to show `-/10` / unavailable. PR #83 fixed the Pages artifact list to include it. The Pages workflow also publishes `output/devig_shadow_comparison.json` when present; the UI must fail soft until the next feed run generates the report. `output/operational_status.json` includes the compact `quota_budget` object so Pages can show whether the latest provider job used quota-aware caps or the default fallback. Pages also renders `exact_price_age_buckets` and `freshness_by_market` so freshness pressure is visible without changing final gates.
+`output/development_status.json` is the living human-readable roadmap. Keep it updated after substantive milestones. The Pages workflow must explicitly publish this file; a prior bug omitted it and caused the Development module to show `-/10` / unavailable. PR #83 fixed the Pages artifact list to include it. The Pages workflow also publishes `output/devig_shadow_comparison.json` when present; the UI must fail soft until the next feed run generates the report. `output/operational_status.json` includes the compact `quota_budget` object so Pages can show whether the latest provider job used quota-aware caps or the default fallback. Pages also renders `exact_price_age_buckets`, `freshness_by_market` and `reference_depth_rejections_by_market` so freshness/reference pressure is visible without changing final gates.
 
 Keep **current decision** and **historical PAPER picks** conceptually separate in UI and data. A current `NO BET` can coexist with historical paper records; do not present historical picks as current actionable candidates.
 
@@ -124,7 +124,8 @@ Recent milestones:
 - PR #86 began de-vig shadow comparison. Production fair probabilities remain multiplicative no-vig; power no-vig is recorded only as shadow metadata/reporting and must not affect current picks until validated.
 - PR #87 published the de-vig shadow report in Pages and renders the latest multiplicative-vs-power summary in the Development module when the report exists.
 - PR #88 surfaced the central Odds-API.io quota budget in operational status and Pages, including role, allowed/requested calls and budget mode.
-- PR #89 should surface operational freshness pressure in Pages, including exact price-age buckets, stale/invalid counts and fresh-rate by market.
+- PR #89 surfaced operational freshness pressure in Pages, including exact price-age buckets, stale/invalid counts and fresh-rate by market.
+- PR #90 should surface reference-depth gap in Pages, including rejection counts by market from operational status.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

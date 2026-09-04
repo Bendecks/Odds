@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-04T05:05:00Z",
-  "score": 9.1,
+  "updated_at": "2026-09-04T05:55:00Z",
+  "score": 9.2,
   "phase": "Gratis referencearkitektur",
   "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
   "current": [
@@ -10,6 +10,7 @@
     "Referencekandidater får nu eksplicit provenance og økonomisk source-dedup, så samme bookmaker ikke kan tælle dobbelt via flere transports.",
     "Central Odds-API.io quota guard fordeler feed/closing/settlement-caps med reserve og vises nu i operational status/Pages.",
     "Pages viser nu freshness pressure fra operational status: exact price age buckets, stale/invalid pres og fresh-rate pr. marked.",
+    "Pages viser nu reference-depth gap pr. marked, så det er tydeligt hvilke friske eksakte kandidater der stoppes af 3-reference-reglen.",
     "De-vig shadow comparison er påbegyndt og publiceres i Pages, så production multiplicative no-vig kan sammenlignes med power-metoden uden beslutningseffekt.",
     "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret."
   ],
@@ -17,6 +18,7 @@
     {"title":"Provenance og økonomisk source-dedup","state":"DONE","detail":"transport_provider_id, economic_source_id, evidence_family og model_or_feed_version er indført for Unibet-reference og Bet365 execution; tests beskytter mod dobbeltælling."},
     {"title":"Central quota guard","state":"DONE","detail":"Fælles Odds-API.io budgetscript planlægger role-specifikke caps for feed, closing og settlement med reserve; operational status og Pages viser seneste allowed/requested cap og budget-mode."},
     {"title":"Freshness observability","state":"DONE","detail":"Funnel/Pages viser nu 0-20m exact price buckets, stale/invalid pres, fresh-rate pr. marked og status-tidspunkt uden at ændre production gates."},
+    {"title":"Reference-gap observability","state":"DONE","detail":"Funnel/Pages viser nu reference-depth afvisninger pr. marked, så næste eksterne reference/model-PoC kan prioriteres efter faktisk bottleneck."},
     {"title":"De-vig shadow test","state":"IN_PROGRESS","detail":"Production-probability er fortsat multiplicative no-vig; power no-vig skrives i shadow-felter, samlet rapport og Pages-overblik til senere out-of-sample vurdering."},
     {"title":"API-Football PoC","state":"RESEARCH","detail":"Mål gratis bookmaker IDs, market coverage, freshness og økonomisk uafhængighed før signalet må tælle."},
     {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY."},

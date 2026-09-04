@@ -14,6 +14,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('shadowBox',html)
         self.assertIn('id="quota-budget"',html)
         self.assertIn('id="freshness-pressure"',html)
+        self.assertIn('id="reference-gap"',html)
 
     def test_dashboard_loads_shadow_report_fail_soft(self):
         app=pathlib.Path('app.js').read_text()
@@ -27,6 +28,9 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('exact_price_age_buckets',app)
         self.assertIn('freshness_by_market',app)
         self.assertIn('Freshness:',app)
+        self.assertIn('referenceGapSummary',app)
+        self.assertIn('reference_depth_rejections_by_market',app)
+        self.assertIn('Reference gap:',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()
