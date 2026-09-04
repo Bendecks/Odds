@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-03T19:55:00Z",
-  "score": 8.7,
+  "updated_at": "2026-09-04T03:15:00Z",
+  "score": 8.8,
   "phase": "Gratis referencearkitektur",
   "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
   "current": [
@@ -8,12 +8,14 @@
     "Den friske manuelle Odds-API.io-kørsel 3/9 endte korrekt NO BET med 320 kandidater og 278 verificerede Bet365-rækker.",
     "Hovednavigation med særskilt Udvikling-knap er merged i PR #82.",
     "Referencekandidater får nu eksplicit provenance og økonomisk source-dedup, så samme bookmaker ikke kan tælle dobbelt via flere transports.",
+    "Central Odds-API.io quota guard fordeler feed/closing/settlement-caps med reserve og fallback ved manglende quota-header.",
+    "De-vig shadow comparison er påbegyndt: production bruger stadig multiplicative no-vig, mens power-metoden måles separat uden beslutningseffekt.",
     "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret."
   ],
   "next": [
     {"title":"Provenance og økonomisk source-dedup","state":"DONE","detail":"transport_provider_id, economic_source_id, evidence_family og model_or_feed_version er indført for Unibet-reference og Bet365 execution; tests beskytter mod dobbeltælling."},
-    {"title":"Central quota guard","state":"NEXT","detail":"Verificér de aktuelle Odds-API.io-grænser og byg et account-wide budget med reserve før flere datakilder/markeder aktiveres."},
-    {"title":"De-vig shadow test","state":"PLANNED","detail":"Sammenlign multiplicative og power de-vig out-of-sample uden at ændre production-gaten."},
+    {"title":"Central quota guard","state":"DONE","detail":"Fælles Odds-API.io budgetscript planlægger role-specifikke caps for feed, closing og settlement med reserve; workflows committer budgetoutput."},
+    {"title":"De-vig shadow test","state":"IN_PROGRESS","detail":"Production-probability er fortsat multiplicative no-vig; power no-vig skrives i shadow-felter og samlet rapport til senere out-of-sample vurdering."},
     {"title":"API-Football PoC","state":"RESEARCH","detail":"Mål gratis bookmaker IDs, market coverage, freshness og økonomisk uafhængighed før signalet må tælle."},
     {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY."},
     {"title":"Reference Quality Gate","state":"LATER","detail":"Unibet + ekstern market source + kalibreret model; promotion først efter dokumenteret non-inferiority."}
