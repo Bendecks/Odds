@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-04T04:32:51Z",
+  "generated_at": "2026-09-04T07:24:01Z",
   "api": "odds-api.io",
-  "role": "feed",
-  "env_var": "BET365_MAX_ODDS_CALLS",
-  "requested_calls": 80,
-  "reserve_calls": 40,
+  "role": "settlement",
+  "env_var": "SETTLEMENT_MAX_EVENT_CALLS",
+  "requested_calls": 20,
+  "reserve_calls": 30,
   "remaining_calls": null,
-  "allowed_calls": 80,
+  "allowed_calls": 20,
   "mode": "default_cap_no_quota_header",
   "provider_configured": true,
   "provider_ok": true
