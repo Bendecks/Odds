@@ -80,7 +80,8 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 6. Evaluations enter `data/decision_runs.jsonl`; qualifying new-model signals enter model/closing/settlement ledgers.
 7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
-9. GitHub Pages displays current decision, funnel, PAPER history, validation and development status.
+9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
+10. GitHub Pages displays current decision, funnel, PAPER history, validation and development status.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
@@ -103,6 +104,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/operational_status.json` — compact operational state
 - `output/paper_pick_history.json` — historical PAPER history for Pages
 - `output/development_status.json` — living development roadmap
+- `output/devig_shadow_comparison.json` — multiplicative-vs-power no-vig shadow report
 - `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver
 - `scripts/paper_pick_history.py` — public PAPER history builder
 - `.github/workflows/` — production, CI, closing, settlement and Pages
@@ -118,6 +120,8 @@ Recent milestones:
 - A manual `Odds-API.io value feed` on 2026-09-03 processed about **320 candidates**, about **278 with verified Bet365 data**, and correctly returned **NO BET** under the new architecture. Two previously visible PAPER PICKS were old pre-migration state and were not reproduced by the fresh feed.
 - PR #83 added economic-source provenance/dedup regression protection and fixed Pages publication of `development_status.json`. It was squash-merged as `c191345c89f0c7e51b53a03118ff401beb39c650` after green Value Engine CI.
 - After that merge, scheduled closing-price automation moved `main` to `8843afca0bd089b343be9849287e0ebaa88c3187` (`Update model closing prices`). This illustrates why a fresh session must inspect actual current state before branching.
+- PR #85 added a central Odds-API.io quota budget guard for feed, closing and settlement workflows. It was squash-merged as `edc1f3010836635f110350079824d2235aed2c74`; subsequent scheduled automation moved `main` again.
+- PR #86 began de-vig shadow comparison. Production fair probabilities remain multiplicative no-vig; power no-vig is recorded only as shadow metadata/reporting and must not affect current picks until validated.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
@@ -125,9 +129,9 @@ Historical PAPER records may still exist from older architecture. They are usefu
 Use evidence and actual current diagnostics to adjust order, but the intended sequence is:
 1. Verify current main/CI/Pages/production and confirm Development module is actually populated after the Pages fix.
 2. Keep provenance/economic-source dedup enforced everywhere new evidence enters.
-3. Build/validate a **central quota guard** after checking current Odds-API.io limits; batch and reserve calls intelligently.
+3. Keep the central quota guard healthy and inspect real quota output after scheduled runs.
 4. Improve freshness and exact event/market identity; evaluate adaptive/streaming collection if supported.
-5. Add a **de-vig shadow comparison** (multiplicative vs power initially).
+5. Continue **de-vig shadow comparison** and evaluate multiplicative vs power out-of-sample.
 6. Research/test the first defensible independent external reference PoC without weakening provider-independence rules.
 7. Build Dixon–Coles + Elo on free public match data in SHADOW_ONLY.
 8. Calibrate/ensemble independent signals and measure out-of-sample performance.
