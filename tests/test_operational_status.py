@@ -5,13 +5,15 @@ sys.path.insert(0,str(ROOT/'scripts'))
 spec=importlib.util.spec_from_file_location('operational_status',ROOT/'scripts'/'operational_status.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 class OperationalStatusTests(unittest.TestCase):
  def run_status(self,candidates):
-  td=tempfile.TemporaryDirectory();p=pathlib.Path(td.name);c=p/'candidates.json';d=p/'decision.json';b=p/'bet365.json';r=p/'ref.json';mc=p/'market.json';runs=p/'runs.jsonl';out=p/'out.json'
-  c.write_text(json.dumps(candidates));d.write_text(json.dumps({'decision':'NO BET','mode':'PAPER','reason':'x'}));b.write_text(json.dumps({'provider_unavailable':False,'bet365_events_available':500,'events_queried':80,'provider_call_attempts':9,'batch_attempts':8,'fallback_attempts':1,'unique_markets':22,'raw_market_observations':1000}));r.write_text(json.dumps({'reference_events':2}));mc.write_text('{}');runs.write_text(json.dumps({'decision':'NO BET'})+'\n')
-  old=(m.CANDIDATES,m.DECISION,m.BET365,m.REFERENCE_DIAG,m.MARKET_COVERAGE,m.DECISION_RUNS,m.OUT);m.CANDIDATES,m.DECISION,m.BET365,m.REFERENCE_DIAG,m.MARKET_COVERAGE,m.DECISION_RUNS,m.OUT=c,d,b,r,mc,runs,out
+  td=tempfile.TemporaryDirectory();p=pathlib.Path(td.name);c=p/'candidates.json';d=p/'decision.json';b=p/'bet365.json';r=p/'ref.json';mc=p/'market.json';q=p/'quota.json';runs=p/'runs.jsonl';out=p/'out.json'
+  c.write_text(json.dumps(candidates));d.write_text(json.dumps({'decision':'NO BET','mode':'PAPER','reason':'x'}));b.write_text(json.dumps({'provider_unavailable':False,'bet365_events_available':500,'events_queried':80,'provider_call_attempts':9,'batch_attempts':8,'fallback_attempts':1,'unique_markets':22,'raw_market_observations':1000}));r.write_text(json.dumps({'reference_events':2}));mc.write_text('{}');q.write_text(json.dumps({'api':'odds-api.io','role':'feed','env_var':'BET365_MAX_ODDS_CALLS','requested_calls':80,'reserve_calls':40,'remaining_calls':90,'allowed_calls':50,'mode':'quota_aware','provider_configured':True,'provider_ok':True,'ignored':'private'}));runs.write_text(json.dumps({'decision':'NO BET'})+'\n')
+  old=(m.CANDIDATES,m.DECISION,m.BET365,m.REFERENCE_DIAG,m.MARKET_COVERAGE,m.QUOTA_BUDGET,m.DECISION_RUNS,m.OUT);m.CANDIDATES,m.DECISION,m.BET365,m.REFERENCE_DIAG,m.MARKET_COVERAGE,m.QUOTA_BUDGET,m.DECISION_RUNS,m.OUT=c,d,b,r,mc,q,runs,out
   try:m.main();return json.loads(out.read_text())
-  finally:m.CANDIDATES,m.DECISION,m.BET365,m.REFERENCE_DIAG,m.MARKET_COVERAGE,m.DECISION_RUNS,m.OUT=old;td.cleanup()
+  finally:m.CANDIDATES,m.DECISION,m.BET365,m.REFERENCE_DIAG,m.MARKET_COVERAGE,m.QUOTA_BUDGET,m.DECISION_RUNS,m.OUT=old;td.cleanup()
  def test_reports_exact_bet365_bottleneck_and_provider_health(self):
   data=self.run_status([{'event':'A vs B','fair_probability':.55,'books':3},{'event':'C vs D','fair_probability':.6,'books':3}]);self.assertEqual(data['funnel']['candidate_rows'],2);self.assertEqual(data['funnel']['exact_bet365_rows'],0);self.assertIn('Bet365',data['bottleneck']);self.assertIs(data['provider']['available'],True);self.assertEqual(data['provider']['odds_multi_calls'],8)
+ def test_includes_compact_quota_budget(self):
+  data=self.run_status([]);self.assertEqual(data['quota_budget']['api'],'odds-api.io');self.assertEqual(data['quota_budget']['allowed_calls'],50);self.assertEqual(data['quota_budget']['requested_calls'],80);self.assertEqual(data['quota_budget']['mode'],'quota_aware');self.assertNotIn('ignored',data['quota_budget'])
  def test_edge_and_ev_only_count_after_freshness_and_reference_gates(self):
   now=datetime.now(timezone.utc);fresh=now.isoformat();stale='2026-01-01T00:00:00+00:00';start='2099-01-01T00:00:00+00:00'
   base={'event':'A vs B','event_id':'1','commence_time':start,'market':'h2h','pick':'A','fair_probability':.60,'books':3,'bet365_verified':True,'bet365_event_id':'99','event_match_method':'exact','bet365_odds':2.0}
