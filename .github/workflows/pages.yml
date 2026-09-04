@@ -32,6 +32,7 @@ jobs:
           mkdir -p _site/output
           cp index.html styles.css app.js _site/
           cp output/latest_decision.json output/model_validation_readiness.json output/paper_pick_history.json output/operational_status.json output/development_status.json _site/output/
+          cp output/devig_shadow_comparison.json _site/output/ 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
