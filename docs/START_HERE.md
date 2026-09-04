@@ -81,14 +81,14 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
-10. GitHub Pages displays current decision, funnel, PAPER history, validation and development status.
+10. GitHub Pages displays current decision, funnel, PAPER history, validation, development status and the latest de-vig shadow summary when present.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
 
 Top navigation now contains Handling, Funnel, Paper picks, Validering, Udvikling and Status. Udvikling has its own highlighted navigation button.
 
-`output/development_status.json` is the living human-readable roadmap. Keep it updated after substantive milestones. The Pages workflow must explicitly publish this file; a prior bug omitted it and caused the Development module to show `-/10` / unavailable. PR #83 fixed the Pages artifact list to include it.
+`output/development_status.json` is the living human-readable roadmap. Keep it updated after substantive milestones. The Pages workflow must explicitly publish this file; a prior bug omitted it and caused the Development module to show `-/10` / unavailable. PR #83 fixed the Pages artifact list to include it. The Pages workflow also publishes `output/devig_shadow_comparison.json` when present; the UI must fail soft until the next feed run generates the report.
 
 Keep **current decision** and **historical PAPER picks** conceptually separate in UI and data. A current `NO BET` can coexist with historical paper records; do not present historical picks as current actionable candidates.
 
@@ -122,6 +122,7 @@ Recent milestones:
 - After that merge, scheduled closing-price automation moved `main` to `8843afca0bd089b343be9849287e0ebaa88c3187` (`Update model closing prices`). This illustrates why a fresh session must inspect actual current state before branching.
 - PR #85 added a central Odds-API.io quota budget guard for feed, closing and settlement workflows. It was squash-merged as `edc1f3010836635f110350079824d2235aed2c74`; subsequent scheduled automation moved `main` again.
 - PR #86 began de-vig shadow comparison. Production fair probabilities remain multiplicative no-vig; power no-vig is recorded only as shadow metadata/reporting and must not affect current picks until validated.
+- PR #87 should publish the de-vig shadow report in Pages and render the latest multiplicative-vs-power summary in the Development module when the report exists.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
