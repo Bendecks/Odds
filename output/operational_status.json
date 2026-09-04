@@ -1,61 +1,60 @@
 {
-  "generated_at": "2026-09-04T04:05:22.590682+00:00",
+  "generated_at": "2026-09-04T04:32:56.171303+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
-  "bottleneck": "Eksakte Bet365-priser er ikke friske nok til final gate.",
+  "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 320,
-    "fair_probability_rows": 320,
+    "candidate_rows": 176,
+    "fair_probability_rows": 176,
     "reference_events": 12,
-    "exact_bet365_rows": 278,
-    "fresh_exact_bet365_rows": 0,
+    "exact_bet365_rows": 116,
+    "fresh_exact_bet365_rows": 116,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 35
+    "decision_runs_recorded": 36
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 194,
-        "h2h": 96,
-        "spreads": 30
+        "totals": 112,
+        "h2h": 60,
+        "spreads": 4
       },
       "exact": {
-        "totals": 156,
-        "h2h": 96,
-        "spreads": 26
+        "h2h": 60,
+        "totals": 56
       },
-      "fresh": {},
+      "fresh": {
+        "h2h": 60,
+        "totals": 56
+      },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
-      "totals": {
-        "exact": 156,
-        "fresh": 0,
-        "stale_or_invalid": 156,
-        "fresh_rate": 0.0
-      },
       "h2h": {
-        "exact": 96,
-        "fresh": 0,
-        "stale_or_invalid": 96,
-        "fresh_rate": 0.0
+        "exact": 60,
+        "fresh": 60,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
       },
-      "spreads": {
-        "exact": 26,
-        "fresh": 0,
-        "stale_or_invalid": 26,
-        "fresh_rate": 0.0
+      "totals": {
+        "exact": 56,
+        "fresh": 56,
+        "stale_or_invalid": 0,
+        "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "180m_plus": 278
+      "0_20m": 116
     },
-    "reference_depth_rejections_by_market": {},
+    "reference_depth_rejections_by_market": {
+      "h2h": 60,
+      "totals": 56
+    },
     "edge_distribution": {
       "buckets": {},
       "nonnegative_rows": 0,
@@ -64,7 +63,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-09-03T19:18:13.033256+00:00",
+    "generated_at": "2026-09-04T04:32:51.828424+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -73,20 +72,20 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 20468,
-    "unique_markets": 105,
+    "raw_market_observations": 12694,
+    "unique_markets": 59,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-09-03T23:59:15Z",
+    "generated_at": "2026-09-04T04:32:51Z",
     "api": "odds-api.io",
-    "role": "closing",
-    "env_var": "CLOSING_MAX_ODDS_CALLS",
-    "requested_calls": 10,
-    "reserve_calls": 25,
+    "role": "feed",
+    "env_var": "BET365_MAX_ODDS_CALLS",
+    "requested_calls": 80,
+    "reserve_calls": 40,
     "remaining_calls": null,
-    "allowed_calls": 10,
+    "allowed_calls": 80,
     "mode": "default_cap_no_quota_header",
     "provider_configured": true,
     "provider_ok": true
