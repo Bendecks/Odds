@@ -13,6 +13,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('id="devig-shadow"',html)
         self.assertIn('shadowBox',html)
         self.assertIn('id="quota-budget"',html)
+        self.assertIn('id="freshness-pressure"',html)
 
     def test_dashboard_loads_shadow_report_fail_soft(self):
         app=pathlib.Path('app.js').read_text()
@@ -22,6 +23,10 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('rapporten vises efter næste feed-kørsel',app)
         self.assertIn('quota_budget',app)
         self.assertIn('Quota budget:',app)
+        self.assertIn('freshnessSummary',app)
+        self.assertIn('exact_price_age_buckets',app)
+        self.assertIn('freshness_by_market',app)
+        self.assertIn('Freshness:',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()
