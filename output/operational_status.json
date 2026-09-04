@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-03T19:18:18.615217+00:00",
+  "generated_at": "2026-09-04T04:05:22.590682+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
-  "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
+  "bottleneck": "Eksakte Bet365-priser er ikke friske nok til final gate.",
   "funnel": {
     "candidate_rows": 320,
     "fair_probability_rows": 320,
     "reference_events": 12,
     "exact_bet365_rows": 278,
-    "fresh_exact_bet365_rows": 278,
+    "fresh_exact_bet365_rows": 0,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
@@ -28,42 +28,34 @@
         "h2h": 96,
         "spreads": 26
       },
-      "fresh": {
-        "totals": 156,
-        "h2h": 96,
-        "spreads": 26
-      },
+      "fresh": {},
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
+      "totals": {
+        "exact": 156,
+        "fresh": 0,
+        "stale_or_invalid": 156,
+        "fresh_rate": 0.0
+      },
       "h2h": {
         "exact": 96,
-        "fresh": 96,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
+        "fresh": 0,
+        "stale_or_invalid": 96,
+        "fresh_rate": 0.0
       },
       "spreads": {
         "exact": 26,
-        "fresh": 26,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
-      },
-      "totals": {
-        "exact": 156,
-        "fresh": 156,
-        "stale_or_invalid": 0,
-        "fresh_rate": 1.0
+        "fresh": 0,
+        "stale_or_invalid": 26,
+        "fresh_rate": 0.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 278
+      "180m_plus": 278
     },
-    "reference_depth_rejections_by_market": {
-      "totals": 156,
-      "h2h": 96,
-      "spreads": 26
-    },
+    "reference_depth_rejections_by_market": {},
     "edge_distribution": {
       "buckets": {},
       "nonnegative_rows": 0,
@@ -85,6 +77,19 @@
     "unique_markets": 105,
     "matched_reference_candidates": null,
     "errors": []
+  },
+  "quota_budget": {
+    "generated_at": "2026-09-03T23:59:15Z",
+    "api": "odds-api.io",
+    "role": "closing",
+    "env_var": "CLOSING_MAX_ODDS_CALLS",
+    "requested_calls": 10,
+    "reserve_calls": 25,
+    "remaining_calls": null,
+    "allowed_calls": 10,
+    "mode": "default_cap_no_quota_header",
+    "provider_configured": true,
+    "provider_ok": true
   },
   "policy": {
     "bankroll_dkk": 50.0,
