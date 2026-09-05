@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-05T16:55:19Z",
+  "generated_at": "2026-09-05T18:11:38Z",
   "api": "odds-api.io",
-  "role": "settlement",
-  "env_var": "SETTLEMENT_MAX_EVENT_CALLS",
-  "requested_calls": 20,
-  "reserve_calls": 30,
+  "role": "closing",
+  "env_var": "CLOSING_MAX_ODDS_CALLS",
+  "requested_calls": 10,
+  "reserve_calls": 25,
   "remaining_calls": null,
-  "allowed_calls": 20,
+  "allowed_calls": 10,
   "mode": "default_cap_no_quota_header",
   "provider_configured": true,
   "provider_ok": true
