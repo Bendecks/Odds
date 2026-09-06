@@ -81,7 +81,7 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
-10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. This has no production impact.
+10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. It also ranks the largest role/market unlocks. This has no production impact.
 11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
@@ -128,7 +128,8 @@ Recent milestones:
 - PR #88 surfaced the central Odds-API.io quota budget in operational status and Pages, including role, allowed/requested calls and budget mode.
 - PR #89 surfaced operational freshness pressure in Pages, including exact price-age buckets, stale/invalid counts and fresh-rate by market.
 - PR #90 surfaced reference-depth gap in Pages, including rejection counts by market from operational status.
-- PR #91 should add a SHADOW_ONLY Reference Quality Gate readiness report and surface it in Pages without changing production decisions.
+- PR #91 added a SHADOW_ONLY Reference Quality Gate readiness report and surfaced it in Pages without changing production decisions.
+- PR #92 should add role/market unlock priorities to the Reference Quality shadow report so the next external-reference/model work targets the largest bottleneck first.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

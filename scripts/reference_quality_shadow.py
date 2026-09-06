@@ -158,6 +158,65 @@ def summarise(evaluations):
     }
 
 
+def unlock_priorities(fresh_exact):
+    role_gap = Counter()
+    paired_role_gap = Counter()
+    market_gap = defaultdict(lambda: {"fresh_exact": 0, "shadow_ready": 0, "missing_roles": Counter()})
+
+    for row in fresh_exact:
+        market = str(row.get("market") or "unknown")
+        market_gap[market]["fresh_exact"] += 1
+        if row["shadow_ready"]:
+            market_gap[market]["shadow_ready"] += 1
+        missing = tuple(sorted(row["missing_roles"]))
+        if missing:
+            paired_role_gap[" + ".join(missing)] += 1
+        for role in missing:
+            role_gap[role] += 1
+            market_gap[market]["missing_roles"][role] += 1
+
+    markets = []
+    for market, data in market_gap.items():
+        missing_roles = dict(sorted(data["missing_roles"].items()))
+        markets.append({
+            "market": market,
+            "fresh_exact_candidates": data["fresh_exact"],
+            "shadow_ready_candidates": data["shadow_ready"],
+            "missing_roles": missing_roles,
+            "largest_missing_role": max(missing_roles, key=missing_roles.get) if missing_roles else None,
+        })
+    markets.sort(key=lambda row: (-row["fresh_exact_candidates"], row["market"]))
+
+    role_actions = []
+    for role, count in sorted(role_gap.items(), key=lambda item: (-item[1], item[0])):
+        alone_unlocks = sum(1 for row in fresh_exact if row["missing_roles"] == [role])
+        role_actions.append({
+            "role": role,
+            "fresh_exact_candidates_blocked": count,
+            "would_unlock_if_added_alone": alone_unlocks,
+        })
+
+    paired = [
+        {"missing_role_set": role_set, "fresh_exact_candidates_blocked": count}
+        for role_set, count in sorted(paired_role_gap.items(), key=lambda item: (-item[1], item[0]))
+    ]
+    first_market = markets[0]["market"] if markets else None
+    first_market_rows = markets[0]["fresh_exact_candidates"] if markets else 0
+    return {
+        "role_gap_priorities": role_actions,
+        "paired_role_gaps": paired,
+        "market_priorities": markets,
+        "recommended_next_unlock": {
+            "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates."
+            if paired else "No current Reference Quality role gap among fresh exact candidates.",
+            "first_market_focus": first_market,
+            "first_market_fresh_exact_candidates": first_market_rows,
+            "single_role_unlock_possible": any(row["would_unlock_if_added_alone"] > 0 for row in role_actions),
+            "production_impact": "none",
+        },
+    }
+
+
 def build_report(candidates, now=None):
     now = now or analysis_time()
     evaluations = [evaluate_candidate(candidate, now) for candidate in candidates]
@@ -184,6 +243,7 @@ def build_report(candidates, now=None):
         "failure_reasons": summary["failure_reasons"],
         "missing_roles": summary["missing_roles"],
         "by_market": summary["by_market"],
+        "unlock_priorities": unlock_priorities(fresh_exact),
         "all_candidates_by_market": all_summary["by_market"],
         "sample_failures": [row for row in evaluations if not row["shadow_ready"]][:10],
         "sample_shadow_ready": shadow_ready[:10],
@@ -203,6 +263,7 @@ def main():
         "fresh_exact_candidates": report["fresh_exact_candidates"],
         "shadow_ready_candidates": report["shadow_ready_candidates"],
         "missing_roles": report["missing_roles"],
+        "recommended_next_unlock": report["unlock_priorities"]["recommended_next_unlock"],
     }, ensure_ascii=False))
 
 

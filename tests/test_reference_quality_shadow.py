@@ -79,6 +79,17 @@ class ReferenceQualityShadowTests(unittest.TestCase):
         self.assertEqual(report["shadow_ready_candidates"], 0)
         self.assertEqual(report["missing_roles"]["external_market_reference"], 2)
         self.assertEqual(report["by_market"]["h2h"]["missing_roles"]["model_reference"], 1)
+        self.assertEqual(report["unlock_priorities"]["market_priorities"][0]["fresh_exact_candidates"], 1)
+        self.assertFalse(report["unlock_priorities"]["recommended_next_unlock"]["single_role_unlock_possible"])
+
+    def test_single_role_unlock_is_visible_when_only_model_is_missing(self):
+        report = rqg.build_report([
+            candidate(source("unibet"), source("api-football:bookmaker-x")),
+        ], NOW)
+        actions = report["unlock_priorities"]["role_gap_priorities"]
+        self.assertEqual(actions[0]["role"], "model_reference")
+        self.assertEqual(actions[0]["would_unlock_if_added_alone"], 1)
+        self.assertTrue(report["unlock_priorities"]["recommended_next_unlock"]["single_role_unlock_possible"])
 
 
 if __name__ == "__main__":
