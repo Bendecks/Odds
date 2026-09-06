@@ -81,7 +81,8 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
-10. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, the latest de-vig shadow summary when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
+10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. This has no production impact.
+11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
@@ -105,6 +106,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/paper_pick_history.json` — historical PAPER history for Pages
 - `output/development_status.json` — living development roadmap
 - `output/devig_shadow_comparison.json` — multiplicative-vs-power no-vig shadow report
+- `output/reference_quality_shadow.json` — SHADOW_ONLY readiness report for a future Reference Quality Gate
 - `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver
 - `scripts/paper_pick_history.py` — public PAPER history builder
 - `.github/workflows/` — production, CI, closing, settlement and Pages
@@ -125,7 +127,8 @@ Recent milestones:
 - PR #87 published the de-vig shadow report in Pages and renders the latest multiplicative-vs-power summary in the Development module when the report exists.
 - PR #88 surfaced the central Odds-API.io quota budget in operational status and Pages, including role, allowed/requested calls and budget mode.
 - PR #89 surfaced operational freshness pressure in Pages, including exact price-age buckets, stale/invalid counts and fresh-rate by market.
-- PR #90 should surface reference-depth gap in Pages, including rejection counts by market from operational status.
+- PR #90 surfaced reference-depth gap in Pages, including rejection counts by market from operational status.
+- PR #91 should add a SHADOW_ONLY Reference Quality Gate readiness report and surface it in Pages without changing production decisions.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
