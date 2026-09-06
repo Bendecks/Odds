@@ -7,6 +7,7 @@ class DevigPagesTests(unittest.TestCase):
         workflow=pathlib.Path('.github/workflows/pages.yml').read_text()
         self.assertIn('output/devig_shadow_comparison.json',workflow)
         self.assertIn('output/reference_quality_shadow.json',workflow)
+        self.assertIn('output/paper_pick_readiness.json',workflow)
         self.assertIn('2>/dev/null || true',workflow)
 
     def test_dashboard_has_shadow_report_mount_point(self):
@@ -17,6 +18,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('id="freshness-pressure"',html)
         self.assertIn('id="reference-gap"',html)
         self.assertIn('id="reference-quality-shadow"',html)
+        self.assertIn('id="paper-pick-readiness"',html)
 
     def test_dashboard_loads_shadow_report_fail_soft(self):
         app=pathlib.Path('app.js').read_text()
@@ -38,6 +40,10 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('Reference Quality shadow',app)
         self.assertIn('rqgUnlockFocus',app)
         self.assertIn('Næste fokus',app)
+        self.assertIn('loadPaperPickReadiness',app)
+        self.assertIn('output/paper_pick_readiness.json',app)
+        self.assertIn('Paper pick readiness',app)
+        self.assertIn('readinessBlockers',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()
