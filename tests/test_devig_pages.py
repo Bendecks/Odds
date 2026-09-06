@@ -36,6 +36,8 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('loadReferenceQualityShadow',app)
         self.assertIn('output/reference_quality_shadow.json',app)
         self.assertIn('Reference Quality shadow',app)
+        self.assertIn('rqgUnlockFocus',app)
+        self.assertIn('Næste fokus',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()
