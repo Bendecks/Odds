@@ -8,6 +8,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('output/devig_shadow_comparison.json',workflow)
         self.assertIn('output/reference_quality_shadow.json',workflow)
         self.assertIn('output/paper_pick_readiness.json',workflow)
+        self.assertIn('output/api_football_poc_status.json',workflow)
         self.assertIn('2>/dev/null || true',workflow)
 
     def test_dashboard_has_shadow_report_mount_point(self):
@@ -19,6 +20,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('id="reference-gap"',html)
         self.assertIn('id="reference-quality-shadow"',html)
         self.assertIn('id="paper-pick-readiness"',html)
+        self.assertIn('id="api-football-poc"',html)
 
     def test_dashboard_loads_shadow_report_fail_soft(self):
         app=pathlib.Path('app.js').read_text()
@@ -44,6 +46,9 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('output/paper_pick_readiness.json',app)
         self.assertIn('Paper pick readiness',app)
         self.assertIn('readinessBlockers',app)
+        self.assertIn('loadApiFootballPoc',app)
+        self.assertIn('output/api_football_poc_status.json',app)
+        self.assertIn('API-Football PoC',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()

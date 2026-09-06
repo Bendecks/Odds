@@ -84,7 +84,7 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
 10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. It also ranks the largest role/market unlocks. This has no production impact.
-11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
+11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, API-Football PoC status, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
@@ -137,6 +137,7 @@ Recent milestones:
 - PR #93 added explicit provenance to market-consensus Poisson derived rows and protected the Reference Quality model role from being satisfied by market-derived probabilities.
 - PR #94 should surface Paper Pick readiness as a compact report/dashboard card: current candidate base, main blockers and biggest near-term unlock.
 - PR #95 should add a SHADOW_ONLY API-Football/API-Sports probe for credential, bookmaker-catalog and bet-catalog readiness before any external odds source can count as an independent market reference.
+- PR #96 should publish API-Football PoC status to Pages and surface it in the Development module so credential validation is visible after the manual API-status workflow runs.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
