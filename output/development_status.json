@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-04T05:55:00Z",
-  "score": 9.2,
+  "updated_at": "2026-09-06T16:05:00Z",
+  "score": 9.3,
   "phase": "Gratis referencearkitektur",
   "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
   "current": [
@@ -11,6 +11,7 @@
     "Central Odds-API.io quota guard fordeler feed/closing/settlement-caps med reserve og vises nu i operational status/Pages.",
     "Pages viser nu freshness pressure fra operational status: exact price age buckets, stale/invalid pres og fresh-rate pr. marked.",
     "Pages viser nu reference-depth gap pr. marked, så det er tydeligt hvilke friske eksakte kandidater der stoppes af 3-reference-reglen.",
+    "Reference Quality Gate kører nu som SHADOW_ONLY readiness-rapport: Unibet + ekstern markedsreference + model-reference kræves, og Bet365 tæller aldrig som reference.",
     "De-vig shadow comparison er påbegyndt og publiceres i Pages, så production multiplicative no-vig kan sammenlignes med power-metoden uden beslutningseffekt.",
     "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret."
   ],
@@ -22,7 +23,7 @@
     {"title":"De-vig shadow test","state":"IN_PROGRESS","detail":"Production-probability er fortsat multiplicative no-vig; power no-vig skrives i shadow-felter, samlet rapport og Pages-overblik til senere out-of-sample vurdering."},
     {"title":"API-Football PoC","state":"RESEARCH","detail":"Mål gratis bookmaker IDs, market coverage, freshness og økonomisk uafhængighed før signalet må tælle."},
     {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY."},
-    {"title":"Reference Quality Gate","state":"LATER","detail":"Unibet + ekstern market source + kalibreret model; promotion først efter dokumenteret non-inferiority."}
+    {"title":"Reference Quality Gate","state":"SHADOW","detail":"Ny shadow-rapport måler om friske eksakte Bet365-kandidater har Unibet-reference, ekstern markedsreference og model-reference. Production impact er fortsat none."}
   ],
   "guardrails": [
     "Bet365 referencevægt = 0 når Bet365 evalueres.",

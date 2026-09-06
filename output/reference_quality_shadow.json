@@ -1,0 +1,390 @@
+{
+  "generated_at": "2026-09-06T16:05:26.346247+00:00",
+  "as_of": "2026-09-06T15:27:56.691140+00:00",
+  "mode": "SHADOW_ONLY",
+  "production_impact": "none",
+  "target_gate_version": "reference-quality-shadow-v1",
+  "purpose": "Evaluate whether fresh exact Bet365 candidates have the independent evidence roles needed for a future replacement Reference Quality Gate.",
+  "requirements": {
+    "required_roles": [
+      "unibet_reference",
+      "external_market_reference",
+      "model_reference"
+    ],
+    "min_independent_economic_sources": 3,
+    "excluded_execution_source": "bet365",
+    "required_provenance_fields": [
+      "transport_provider_id",
+      "economic_source_id",
+      "evidence_family",
+      "model_or_feed_version"
+    ]
+  },
+  "total_candidates": 579,
+  "fresh_exact_candidates": 447,
+  "shadow_ready_candidates": 0,
+  "failure_reasons": {
+    "insufficient_independent_economic_sources": 447,
+    "missing_external_market_reference": 447,
+    "missing_model_reference": 447
+  },
+  "missing_roles": {
+    "external_market_reference": 447,
+    "model_reference": 447
+  },
+  "by_market": {
+    "h2h": {
+      "evaluated": 141,
+      "fresh_exact_bet365": 141,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 141,
+        "missing_external_market_reference": 141,
+        "missing_model_reference": 141
+      },
+      "missing_roles": {
+        "external_market_reference": 141,
+        "model_reference": 141
+      }
+    },
+    "spreads": {
+      "evaluated": 76,
+      "fresh_exact_bet365": 76,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 76,
+        "missing_external_market_reference": 76,
+        "missing_model_reference": 76
+      },
+      "missing_roles": {
+        "external_market_reference": 76,
+        "model_reference": 76
+      }
+    },
+    "totals": {
+      "evaluated": 230,
+      "fresh_exact_bet365": 230,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 230,
+        "missing_external_market_reference": 230,
+        "missing_model_reference": 230
+      },
+      "missing_roles": {
+        "external_market_reference": 230,
+        "model_reference": 230
+      }
+    }
+  },
+  "all_candidates_by_market": {
+    "h2h": {
+      "evaluated": 141,
+      "fresh_exact_bet365": 141,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 141,
+        "missing_external_market_reference": 141,
+        "missing_model_reference": 141
+      },
+      "missing_roles": {
+        "external_market_reference": 141,
+        "model_reference": 141
+      }
+    },
+    "spreads": {
+      "evaluated": 118,
+      "fresh_exact_bet365": 76,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 118,
+        "missing_external_market_reference": 118,
+        "missing_model_reference": 118,
+        "not_fresh_exact_bet365": 42
+      },
+      "missing_roles": {
+        "external_market_reference": 118,
+        "model_reference": 118
+      }
+    },
+    "totals": {
+      "evaluated": 320,
+      "fresh_exact_bet365": 230,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 320,
+        "missing_external_market_reference": 320,
+        "missing_model_reference": 320,
+        "not_fresh_exact_bet365": 90
+      },
+      "missing_roles": {
+        "external_market_reference": 320,
+        "model_reference": 320
+      }
+    }
+  },
+  "sample_failures": [
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "h2h",
+      "pick": "ES Sahel",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "h2h",
+      "pick": "JS Omrane",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Sahel vs JS Omrane",
+      "event_id": 74191592,
+      "bet365_event_id": 74191592,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Metlaoui vs ES Hammam Sousse",
+      "event_id": 74191594,
+      "bet365_event_id": 74191594,
+      "market": "h2h",
+      "pick": "ES Metlaoui",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Metlaoui vs ES Hammam Sousse",
+      "event_id": 74191594,
+      "bet365_event_id": 74191594,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "ES Metlaoui vs ES Hammam Sousse",
+      "event_id": 74191594,
+      "bet365_event_id": 74191594,
+      "market": "h2h",
+      "pick": "ES Hammam Sousse",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    }
+  ],
+  "sample_shadow_ready": []
+}
