@@ -24,4 +24,11 @@ class ProviderRateBudgetTests(unittest.TestCase):
         self.assertIn('output/odds_api_io_quota_budget.json',closing)
         self.assertIn('output/odds_api_io_quota_budget.json',settle)
 
+    def test_manual_api_check_includes_api_football_shadow_probe(self):
+        workflow=pathlib.Path('.github/workflows/api_quota_check.yml').read_text()
+        self.assertIn('python scripts/api_football_poc_probe.py',workflow)
+        self.assertIn('API_FOOTBALL_KEY',workflow)
+        self.assertIn('APISPORTS_KEY',workflow)
+        self.assertIn('output/api_football_poc_status.json',workflow)
+
 if __name__=='__main__':unittest.main()

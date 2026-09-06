@@ -110,6 +110,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/devig_shadow_comparison.json` — multiplicative-vs-power no-vig shadow report
 - `output/reference_quality_shadow.json` — SHADOW_ONLY readiness report for a future Reference Quality Gate
 - `output/paper_pick_readiness.json` — observability-only summary of how far current candidates are from many more PAPER PICKS
+- `output/api_football_poc_status.json`, `output/api_football_poc_status.md` — SHADOW_ONLY API-Football/API-Sports external-reference probe status
 - `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver
 - `scripts/paper_pick_history.py` — public PAPER history builder
 - `.github/workflows/` — production, CI, closing, settlement and Pages
@@ -135,6 +136,7 @@ Recent milestones:
 - PR #92 added role/market unlock priorities to the Reference Quality shadow report so the next external-reference/model work targets the largest bottleneck first.
 - PR #93 added explicit provenance to market-consensus Poisson derived rows and protected the Reference Quality model role from being satisfied by market-derived probabilities.
 - PR #94 should surface Paper Pick readiness as a compact report/dashboard card: current candidate base, main blockers and biggest near-term unlock.
+- PR #95 should add a SHADOW_ONLY API-Football/API-Sports probe for credential, bookmaker-catalog and bet-catalog readiness before any external odds source can count as an independent market reference.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

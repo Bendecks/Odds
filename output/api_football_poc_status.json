@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-09-06T18:38:15Z",
+  "mode": "SHADOW_ONLY",
+  "production_impact": "none",
+  "provider": "API-Football / API-Sports",
+  "base_url": "https://v3.football.api-sports.io",
+  "credential_secret_names": [
+    "API_FOOTBALL_KEY",
+    "APISPORTS_KEY"
+  ],
+  "configured_secret": null,
+  "configured": false,
+  "ok": false,
+  "purpose": "Probe API-Football as a potential independent external market reference without affecting PAPER PICK qualification.",
+  "required_before_reference_role": [
+    "API key configured",
+    "bookmaker ids observable",
+    "target markets observable",
+    "fresh pre-match odds for same events as Bet365 candidates",
+    "economic_source_id mapped per bookmaker"
+  ],
+  "provenance_contract": {
+    "transport_provider_id": "api-sports:api-football",
+    "economic_source_id": "api-football:bookmaker:<bookmaker_id>",
+    "evidence_family": "external_market_price",
+    "model_or_feed_version": "api-football-poc-v1"
+  },
+  "reference_quality_role_if_promoted": "external_market_reference",
+  "active_provider_policy": "Odds-API.io remains the active Bet365/Unibet provider; API-Football is SHADOW_ONLY until explicitly promoted as independent evidence.",
+  "bookmaker_catalog_observable": false,
+  "bet_catalog_observable": false,
+  "endpoints": [
+    {
+      "endpoint": null,
+      "configured": false,
+      "ok": false,
+      "status_code": null,
+      "headers": {},
+      "errors": "Missing one of API_FOOTBALL_KEY, APISPORTS_KEY in GitHub Secrets.",
+      "results": null,
+      "sample": null
+    }
+  ]
+}
