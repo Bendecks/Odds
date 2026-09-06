@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T19:57:51Z",
+  "generated_at": "2026-09-06T20:08:53Z",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "provider": "API-Football / API-Sports",
@@ -16,7 +16,43 @@
     "bookmakers_ok": false,
     "bookmakers_count": 0,
     "bets_ok": false,
-    "bets_count": 0
+    "bets_count": 0,
+    "diagnostics": {
+      "bookmakers": {
+        "endpoint": "/odds/bookmakers",
+        "ok": true,
+        "status_code": 200,
+        "results": 0,
+        "headers": {
+          "x-ratelimit-requests-limit": "100",
+          "x-ratelimit-requests-remaining": "99",
+          "x-ratelimit-limit": "10",
+          "x-ratelimit-remaining": "9"
+        },
+        "errors": {
+          "access": "Your account is suspended, check on https://dashboard.api-football.com."
+        },
+        "items_parsed": 0,
+        "sample": []
+      },
+      "bets": {
+        "endpoint": "/odds/bets",
+        "ok": true,
+        "status_code": 200,
+        "results": 0,
+        "headers": {
+          "x-ratelimit-requests-limit": "100",
+          "x-ratelimit-requests-remaining": "99",
+          "x-ratelimit-limit": "10",
+          "x-ratelimit-remaining": "9"
+        },
+        "errors": {
+          "access": "Your account is suspended, check on https://dashboard.api-football.com."
+        },
+        "items_parsed": 0,
+        "sample": []
+      }
+    }
   },
   "coverage": {
     "odds_calls": 0,

@@ -1,6 +1,6 @@
 # API-Football odds sample
 
-Generated: 2026-09-06T19:57:51Z
+Generated: 2026-09-06T20:08:53Z
 Mode: SHADOW_ONLY
 Production impact: none
 Configured: True
@@ -10,6 +10,10 @@ Configured: True
 - Successful odds calls: 0
 - Fixtures returned: 0
 - Selection observations: 0
+
+## Catalog diagnostics
+- Bookmakers parsed: 0
+- Bets parsed: 0
 
 ## Selected bookmakers
 
