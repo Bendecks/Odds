@@ -37,6 +37,7 @@ jobs:
           cp output/devig_shadow_comparison.json _site/output/ 2>/dev/null || true
           cp output/reference_quality_shadow.json _site/output/ 2>/dev/null || true
           cp output/paper_pick_readiness.json _site/output/ 2>/dev/null || true
+          cp output/api_football_poc_status.json _site/output/ 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
