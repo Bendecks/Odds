@@ -127,7 +127,18 @@ def pick_bookmakers(bookmakers):
             continue
         seen.add(row["id"])
         out.append(row)
-    return out[:3]
+    if out:
+        return out[:3]
+    for row in bookmakers:
+        name = norm(row.get("name"))
+        if any(excluded in name for excluded in EXCLUDED_BOOKMAKERS):
+            continue
+        if row.get("id") is None:
+            continue
+        out.append({"id": row["id"], "name": row.get("name")})
+        if len(out) >= 3:
+            break
+    return out
 
 
 def pick_bets(bets):
@@ -218,9 +229,26 @@ def missing_key_report(secret_name):
     }
 
 
-def build_report(secret_name, catalog_bookmakers, catalog_bets, odds_calls, dates, selected_bookmakers, selected_bets):
+def catalog_diagnostic(result):
+    if not result:
+        return {}
+    items = response_items(result)
+    return {
+        "endpoint": result.get("endpoint"),
+        "ok": result.get("ok"),
+        "status_code": result.get("status_code"),
+        "results": result.get("results"),
+        "headers": result.get("headers") or {},
+        "errors": result.get("errors"),
+        "items_parsed": len(items),
+        "sample": items[:5],
+    }
+
+
+def build_report(secret_name, catalog_bookmakers, catalog_bets, odds_calls, dates, selected_bookmakers, selected_bets, catalog_results=None):
     total_fixtures = sum(int(row.get("fixtures_returned") or 0) for row in odds_calls)
     total_observations = sum(int(row.get("selection_observations") or 0) for row in odds_calls)
+    catalog_results = catalog_results or {}
     return {
         "generated_at": now_iso(),
         "mode": "SHADOW_ONLY",
@@ -238,6 +266,10 @@ def build_report(secret_name, catalog_bookmakers, catalog_bets, odds_calls, date
             "bookmakers_count": len(catalog_bookmakers),
             "bets_ok": bool(catalog_bets),
             "bets_count": len(catalog_bets),
+            "diagnostics": {
+                "bookmakers": catalog_diagnostic(catalog_results.get("bookmakers")),
+                "bets": catalog_diagnostic(catalog_results.get("bets")),
+            },
         },
         "coverage": {
             "odds_calls": len(odds_calls),
@@ -276,6 +308,10 @@ def markdown(report):
         f"- Fixtures returned: {report['coverage']['fixtures_returned']}",
         f"- Selection observations: {report['coverage']['selection_observations']}",
         "",
+        "## Catalog diagnostics",
+        f"- Bookmakers parsed: {report['catalogs']['bookmakers_count']}",
+        f"- Bets parsed: {report['catalogs']['bets_count']}",
+        "",
         "## Selected bookmakers",
     ]
     lines.extend(f"- {row.get('id')}: {row.get('name')}" for row in report["selected_bookmakers"])
@@ -301,7 +337,16 @@ def main():
         bets = response_items(bets_result)
         dates = candidate_dates(load_candidates())
         odds_calls, selected_bookmakers, selected_bets = sample_odds(bookmakers, bets, dates, key)
-        report = build_report(secret_name, bookmakers, bets, odds_calls, dates, selected_bookmakers, selected_bets)
+        report = build_report(
+            secret_name,
+            bookmakers,
+            bets,
+            odds_calls,
+            dates,
+            selected_bookmakers,
+            selected_bets,
+            {"bookmakers": bookmakers_result, "bets": bets_result},
+        )
 
     OUT.mkdir(exist_ok=True)
     STATUS_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")

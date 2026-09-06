@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T20:10:00Z",
+  "updated_at": "2026-09-06T20:25:00Z",
   "score": 9.9,
   "phase": "Gratis referencearkitektur",
   "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
@@ -16,6 +16,7 @@
     "API-Football/API-Sports har nu en SHADOW_ONLY PoC-probe for credential, bookmaker-katalog, bet-katalog og provenance-kontrakt før ekstern markedsreference må tælle.",
     "API-Football PoC-status publiceres nu i Pages, så credential og endpoint-resultater kan ses direkte i Udvikling efter manuel API-statuskørsel.",
     "Et separat low-call API-Football odds sample workflow kan nu måle pre-match coverage mod aktuelle kandidatdatoer uden production impact.",
+    "API-Football odds sample får katalogdiagnostik og fallback-valg af uafhængige bookmaker IDs, så nul-samples forklares i stedet for bare at ende som 0.",
     "Market-consensus Poisson-afledte rækker har nu eksplicit derived-provenance, men tæller ikke som uafhængig model-reference i Reference Quality Gate.",
     "De-vig shadow comparison er påbegyndt og publiceres i Pages, så production multiplicative no-vig kan sammenlignes med power-metoden uden beslutningseffekt.",
     "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret."
@@ -27,7 +28,7 @@
     {"title":"Reference-gap observability","state":"DONE","detail":"Funnel/Pages viser nu reference-depth afvisninger pr. marked, så næste eksterne reference/model-PoC kan prioriteres efter faktisk bottleneck."},
     {"title":"Paper Pick readiness","state":"DONE","detail":"Pages viser nu hvor mange kandidater der er i råmaterialet, hvilke evidence-roller der blokerer, og hvilket marked der først bør unlockes for volumen."},
     {"title":"De-vig shadow test","state":"IN_PROGRESS","detail":"Production-probability er fortsat multiplicative no-vig; power no-vig skrives i shadow-felter, samlet rapport og Pages-overblik til senere out-of-sample vurdering."},
-    {"title":"API-Football PoC","state":"SHADOW","detail":"Credential og kataloger er verificeret. Næste manuelle workflow er API-Football odds sample, som tester få pre-match odds-kald mod aktuelle kandidatdatoer."},
+    {"title":"API-Football PoC","state":"SHADOW","detail":"Credential og kataloger er verificeret. Odds sample har nu katalogdiagnostik/fallback; næste manuelle kørsel skal vise om odds-endpointet har faktisk coverage eller om endpoint-parametre skal justeres."},
     {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY; market-consensus Poisson-afledninger er nu markeret som derived_probability og opfylder ikke modelrollen."},
     {"title":"Reference Quality Gate","state":"SHADOW","detail":"Shadow-rapporten måler nu både readiness og næste unlock-prioritet pr. rolle/marked. Production impact er fortsat none."}
   ],
