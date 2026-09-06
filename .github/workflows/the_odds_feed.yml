@@ -45,6 +45,7 @@ jobs:
           PYTHONPATH=scripts python scripts/operational_status.py
           PYTHONPATH=scripts python scripts/shadow_gate_analysis.py
           PYTHONPATH=scripts python scripts/reference_quality_shadow.py
+          python scripts/paper_pick_readiness.py
       - name: Archive raw provider snapshot
         uses: actions/upload-artifact@v4
         with:
@@ -58,7 +59,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/value_candidates.json data/observation_snapshots.jsonl data/model_signals.jsonl data/model_closing_prices.jsonl data/decision_runs.jsonl output/bet365_market_summary.json output/bet365_selection_schema.json output/bet365_target_schema.json output/unibet_observer.json output/market_coverage_report.json output/identity_coverage_analysis.json output/market_signal_inventory.json output/signal_ledger_status.json output/decision_run_status.json output/closing_price_queue.json output/closing_price_status.json output/model_settlement_queue.json output/latest_decision.json output/bet365_join_status.json output/reference_match_diagnostics.json output/validation_report.json output/model_validation_readiness.json output/operational_status.json output/shadow_gate_analysis.json output/reference_quality_shadow.json output/odds_api_io_quota_budget.json output/devig_shadow_comparison.json
+          git add data/value_candidates.json data/observation_snapshots.jsonl data/model_signals.jsonl data/model_closing_prices.jsonl data/decision_runs.jsonl output/bet365_market_summary.json output/bet365_selection_schema.json output/bet365_target_schema.json output/unibet_observer.json output/market_coverage_report.json output/identity_coverage_analysis.json output/market_signal_inventory.json output/signal_ledger_status.json output/decision_run_status.json output/closing_price_queue.json output/closing_price_status.json output/model_settlement_queue.json output/latest_decision.json output/bet365_join_status.json output/reference_match_diagnostics.json output/validation_report.json output/model_validation_readiness.json output/operational_status.json output/shadow_gate_analysis.json output/reference_quality_shadow.json output/paper_pick_readiness.json output/odds_api_io_quota_budget.json output/devig_shadow_comparison.json
           git diff --cached --quiet && exit 0
           git commit -m "Update value engine feed"
           git pull --rebase --autostash

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-06T17:35:00Z",
-  "score": 9.5,
+  "updated_at": "2026-09-06T18:05:00Z",
+  "score": 9.6,
   "phase": "Gratis referencearkitektur",
   "objective": "Flest mulige legitime PAPER PICKS uden at sænke krav til exact identity, freshness, edge, EV eller referencekvalitet.",
   "current": [
@@ -12,6 +12,7 @@
     "Pages viser nu freshness pressure fra operational status: exact price age buckets, stale/invalid pres og fresh-rate pr. marked.",
     "Pages viser nu reference-depth gap pr. marked, så det er tydeligt hvilke friske eksakte kandidater der stoppes af 3-reference-reglen.",
     "Reference Quality Gate kører nu som SHADOW_ONLY readiness-rapport: Unibet + ekstern markedsreference + model-reference kræves, Bet365 tæller aldrig som reference, og rapporten rangerer næste role/market unlocks.",
+    "Paper Pick readiness opsummerer nu kandidatbase, hovedblokeringer og største near-term unlock, så vejen til flere PAPER PICKS kan følges direkte i appen.",
     "Market-consensus Poisson-afledte rækker har nu eksplicit derived-provenance, men tæller ikke som uafhængig model-reference i Reference Quality Gate.",
     "De-vig shadow comparison er påbegyndt og publiceres i Pages, så production multiplicative no-vig kan sammenlignes med power-metoden uden beslutningseffekt.",
     "Den gamle 3-book gate forbliver fail-closed, indtil en ny Reference Quality Gate er shadow-valideret."
@@ -21,6 +22,7 @@
     {"title":"Central quota guard","state":"DONE","detail":"Fælles Odds-API.io budgetscript planlægger role-specifikke caps for feed, closing og settlement med reserve; operational status og Pages viser seneste allowed/requested cap og budget-mode."},
     {"title":"Freshness observability","state":"DONE","detail":"Funnel/Pages viser nu 0-20m exact price buckets, stale/invalid pres, fresh-rate pr. marked og status-tidspunkt uden at ændre production gates."},
     {"title":"Reference-gap observability","state":"DONE","detail":"Funnel/Pages viser nu reference-depth afvisninger pr. marked, så næste eksterne reference/model-PoC kan prioriteres efter faktisk bottleneck."},
+    {"title":"Paper Pick readiness","state":"DONE","detail":"Pages viser nu hvor mange kandidater der er i råmaterialet, hvilke evidence-roller der blokerer, og hvilket marked der først bør unlockes for volumen."},
     {"title":"De-vig shadow test","state":"IN_PROGRESS","detail":"Production-probability er fortsat multiplicative no-vig; power no-vig skrives i shadow-felter, samlet rapport og Pages-overblik til senere out-of-sample vurdering."},
     {"title":"API-Football PoC","state":"RESEARCH","detail":"Mål gratis bookmaker IDs, market coverage, freshness og økonomisk uafhængighed før signalet må tælle."},
     {"title":"Dixon-Coles + Elo","state":"RESEARCH","detail":"Byg Bet365-uafhængig football fair model på gratis offentlige kampdata og kør SHADOW_ONLY; market-consensus Poisson-afledninger er nu markeret som derived_probability og opfylder ikke modelrollen."},

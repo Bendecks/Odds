@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-06T17:59:06.398042+00:00",
+  "mode": "OBSERVABILITY_ONLY",
+  "production_impact": "none",
+  "stage": "evidence_roles_missing",
+  "summary": "Der er en stor frisk Bet365-kandidatbase, men uafhængig ekstern markedsreference og modelreference mangler stadig.",
+  "current_decision": "NO BET",
+  "candidate_base": {
+    "candidate_rows": 579,
+    "fair_probability_rows": 579,
+    "exact_bet365_rows": 447,
+    "fresh_exact_bet365_rows": 447,
+    "legacy_reference_depth_ready_rows": 0,
+    "reference_quality_shadow_ready_rows": 0,
+    "qualified_now_rows": 0,
+    "fresh_exact_share_of_candidates": 0.772,
+    "shadow_ready_share_of_fresh_exact": 0.0
+  },
+  "main_blockers": [
+    {
+      "blocker": "external_market_reference",
+      "fresh_exact_candidates_blocked": 447
+    },
+    {
+      "blocker": "legacy_min_reference_books",
+      "fresh_exact_candidates_blocked": 447
+    },
+    {
+      "blocker": "model_reference",
+      "fresh_exact_candidates_blocked": 447
+    }
+  ],
+  "near_term_unlock": {
+    "required": [
+      "external_market_reference",
+      "model_reference"
+    ],
+    "single_role_unlock_possible": false,
+    "largest_market": "totals",
+    "largest_market_fresh_exact_candidates": 230,
+    "potential_candidates_if_both_roles_added": 447,
+    "note": "Potentiale er ikke et pick-estimat; edge/EV/stake-gates gælder stadig efter evidence-unlock."
+  },
+  "market_priorities": [
+    {
+      "market": "totals",
+      "fresh_exact_candidates": 230,
+      "shadow_ready_candidates": 0,
+      "missing_roles": {
+        "external_market_reference": 230,
+        "model_reference": 230
+      }
+    },
+    {
+      "market": "h2h",
+      "fresh_exact_candidates": 141,
+      "shadow_ready_candidates": 0,
+      "missing_roles": {
+        "external_market_reference": 141,
+        "model_reference": 141
+      }
+    },
+    {
+      "market": "spreads",
+      "fresh_exact_candidates": 76,
+      "shadow_ready_candidates": 0,
+      "missing_roles": {
+        "external_market_reference": 76,
+        "model_reference": 76
+      }
+    }
+  ]
+}

@@ -84,7 +84,7 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
 10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. It also ranks the largest role/market unlocks. This has no production impact.
-11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
+11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
@@ -109,6 +109,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/development_status.json` — living development roadmap
 - `output/devig_shadow_comparison.json` — multiplicative-vs-power no-vig shadow report
 - `output/reference_quality_shadow.json` — SHADOW_ONLY readiness report for a future Reference Quality Gate
+- `output/paper_pick_readiness.json` — observability-only summary of how far current candidates are from many more PAPER PICKS
 - `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver
 - `scripts/paper_pick_history.py` — public PAPER history builder
 - `.github/workflows/` — production, CI, closing, settlement and Pages
@@ -132,7 +133,8 @@ Recent milestones:
 - PR #90 surfaced reference-depth gap in Pages, including rejection counts by market from operational status.
 - PR #91 added a SHADOW_ONLY Reference Quality Gate readiness report and surfaced it in Pages without changing production decisions.
 - PR #92 added role/market unlock priorities to the Reference Quality shadow report so the next external-reference/model work targets the largest bottleneck first.
-- PR #93 should add explicit provenance to market-consensus Poisson derived rows and protect the Reference Quality model role from being satisfied by market-derived probabilities.
+- PR #93 added explicit provenance to market-consensus Poisson derived rows and protected the Reference Quality model role from being satisfied by market-derived probabilities.
+- PR #94 should surface Paper Pick readiness as a compact report/dashboard card: current candidate base, main blockers and biggest near-term unlock.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
