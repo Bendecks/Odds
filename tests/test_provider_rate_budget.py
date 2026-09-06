@@ -31,4 +31,11 @@ class ProviderRateBudgetTests(unittest.TestCase):
         self.assertIn('APISPORTS_KEY',workflow)
         self.assertIn('output/api_football_poc_status.json',workflow)
 
+    def test_api_football_odds_sample_has_manual_workflow_and_low_call_cap(self):
+        workflow=pathlib.Path('.github/workflows/api_football_odds_sample.yml').read_text()
+        self.assertIn('workflow_dispatch',workflow)
+        self.assertIn('python scripts/api_football_odds_sample.py',workflow)
+        self.assertIn("API_FOOTBALL_SAMPLE_MAX_CALLS: '4'",workflow)
+        self.assertIn('output/api_football_odds_sample.json',workflow)
+
 if __name__=='__main__':unittest.main()
