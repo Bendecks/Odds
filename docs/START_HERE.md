@@ -140,6 +140,7 @@ Recent milestones:
 - PR #95 should add a SHADOW_ONLY API-Football/API-Sports probe for credential, bookmaker-catalog and bet-catalog readiness before any external odds source can count as an independent market reference.
 - PR #96 should publish API-Football PoC status to Pages and surface it in the Development module so credential validation is visible after the manual API-status workflow runs.
 - PR #97 should add a separate low-call API-Football odds sample workflow that measures actual pre-match coverage against current candidate dates without changing production qualification.
+- PR #98 should add catalog-call diagnostics and external-bookmaker fallback to the API-Football odds sample so zero-coverage runs explain whether the blocker is parsing, endpoint response, rate limit or true coverage.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

@@ -29,6 +29,17 @@ class ApiFootballOddsSampleTests(unittest.TestCase):
         self.assertEqual([row["name"] for row in selected_books], ["Betfair", "Marathonbet"])
         self.assertEqual([row["market"] for row in selected_bets], ["h2h", "totals", "btts"])
 
+    def test_bookmaker_selection_falls_back_to_external_catalog_rows(self):
+        bookmakers = [
+            {"id": 4, "name": "Bet365"},
+            {"id": 9, "name": "LocalBook"},
+            {"id": 10, "name": "AnotherBook"},
+        ]
+        self.assertEqual(
+            sample.pick_bookmakers(bookmakers),
+            [{"id": 9, "name": "LocalBook"}, {"id": 10, "name": "AnotherBook"}],
+        )
+
     def test_candidate_dates_prefer_verified_exact_candidate_dates(self):
         rows = [
             {"commence_time": "2026-09-07T12:00:00Z", "bet365_verified": True, "event_match_method": "exact"},
@@ -47,12 +58,17 @@ class ApiFootballOddsSampleTests(unittest.TestCase):
             ["2026-09-07"],
             [{"id": 3, "name": "Betfair"}],
             [{"market": "h2h", "id": 1, "name": "Match Winner"}],
+            {
+                "bookmakers": {"endpoint": "/odds/bookmakers", "ok": True, "status_code": 200, "results": 1, "headers": {}, "errors": [], "body": {"response": [{"id": 3, "name": "Betfair"}]}},
+                "bets": {"endpoint": "/odds/bets", "ok": True, "status_code": 200, "results": 1, "headers": {}, "errors": [], "body": {"response": [{"id": 1, "name": "Match Winner"}]}},
+            },
         )
         self.assertEqual(report["mode"], "SHADOW_ONLY")
         self.assertEqual(report["production_impact"], "none")
         self.assertTrue(report["coverage"]["has_external_market_sample"])
         self.assertIn("economic_source_id", report["provenance_template"])
         self.assertTrue(report["promotion_blockers"])
+        self.assertEqual(report["catalogs"]["diagnostics"]["bookmakers"]["items_parsed"], 1)
 
     def test_main_writes_report_without_secret(self):
         with tempfile.TemporaryDirectory() as td:
