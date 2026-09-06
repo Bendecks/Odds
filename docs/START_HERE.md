@@ -32,6 +32,8 @@ Merged PR #83 introduced explicit source provenance. Reference/evidence records 
 
 The same bookmaker/economic source delivered through multiple APIs/transports counts **once**, never multiple times. Missing provenance must fail closed rather than inflate reference depth. Bet365 execution also has explicit provenance.
 
+Market-consensus Poisson derived rows must carry their own provenance (`derived:market-consensus-poisson`) but must not be treated as the independent football model required by the future Reference Quality Gate. The model-reference role is reserved for Bet365-independent football/statistical models such as the planned Dixon-Coles/Elo path.
+
 The existing 3-reference final gate remains fail-closed until a replacement Reference Quality Gate has been shadow-tested and shown to be defensible. Do not simply lower `min_reference_books`.
 
 ## Value policy
@@ -75,7 +77,7 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 1. `scripts/odds_api_io_bootstrap.py` collects Bet365 + Unibet and builds fresh reference candidates.
 2. `scripts/odds_api_io_reference.py` de-vigs Unibet, attaches exact Bet365 prices and records provenance/economic-source identity.
 3. Diagnostics preserve broad provider/market observations.
-4. Derived/modelled markets are allowed only with sufficient input quality.
+4. Derived/modelled markets are allowed only with sufficient input quality and explicit provenance. Current market-consensus Poisson derived rows are discovery/reference expansions, not independent model evidence for the future Reference Quality Gate.
 5. `scripts/value_decision_engine.py` applies final gates; actionable output requires verified Bet365 price, concrete Bet365 event ID and exact match method.
 6. Evaluations enter `data/decision_runs.jsonl`; qualifying new-model signals enter model/closing/settlement ledgers.
 7. Closing capture and settlement use exact provider identity and fail closed on ambiguity.
@@ -129,7 +131,8 @@ Recent milestones:
 - PR #89 surfaced operational freshness pressure in Pages, including exact price-age buckets, stale/invalid counts and fresh-rate by market.
 - PR #90 surfaced reference-depth gap in Pages, including rejection counts by market from operational status.
 - PR #91 added a SHADOW_ONLY Reference Quality Gate readiness report and surfaced it in Pages without changing production decisions.
-- PR #92 should add role/market unlock priorities to the Reference Quality shadow report so the next external-reference/model work targets the largest bottleneck first.
+- PR #92 added role/market unlock priorities to the Reference Quality shadow report so the next external-reference/model work targets the largest bottleneck first.
+- PR #93 should add explicit provenance to market-consensus Poisson derived rows and protect the Reference Quality model role from being satisfied by market-derived probabilities.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

@@ -3,6 +3,12 @@ import json, math, pathlib
 CAND=pathlib.Path('data/value_candidates.json')
 MIN_BOOKS=3
 MAX_RMSE=0.06
+MODEL_VERSION='market-consensus-v6-poisson-btts'
+DERIVED_PROVENANCE={
+    'transport_provider_id':'local-derived-market-model',
+    'economic_source_id':'derived:market-consensus-poisson',
+    'evidence_family':'derived_probability',
+}
 
 
 def poisson_probs(lam,max_goals=15):
@@ -82,6 +88,20 @@ def exact_event_identity(rows):
     return {}
 
 
+def merge_reference_sources(rows, model_version):
+    sources=[];seen=set()
+    for row in rows:
+        for source in row.get('reference_sources') or []:
+            if not isinstance(source,dict):continue
+            key=str(source.get('economic_source_id') or '').strip().lower()
+            if not key or key in seen:continue
+            seen.add(key);sources.append(source)
+    derived={**DERIVED_PROVENANCE,'model_or_feed_version':model_version}
+    key=derived['economic_source_id']
+    if key not in seen:sources.append(derived)
+    return sources
+
+
 def derive_for_event(rows):
     inputs = event_inputs(rows)
     if not inputs:return []
@@ -91,7 +111,7 @@ def derive_for_event(rows):
     if rmse > MAX_RMSE or not (0 < p_yes < 1):return []
     p_no = 1.0 - p_yes
     books = min(int(r.get('books') or 0) for r in base); r = base[0]
-    common = {'event':r.get('event'),'event_id':r.get('event_id'),'sport':r.get('sport'),'commence_time':r.get('commence_time'),'market':'btts','books':books,'reference_quality':'strong' if books >= 4 else 'good','discovery_eligible':True,'bookmaker':'DERIVED_REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v6-poisson-btts','model_inputs':'1x2_consensus+totals_2.5_consensus','poisson_home_lambda':round(lh,3),'poisson_away_lambda':round(la,3),'model_fit_rmse':round(rmse,6),**exact_event_identity(rows)}
+    common = {'event':r.get('event'),'event_id':r.get('event_id'),'sport':r.get('sport'),'commence_time':r.get('commence_time'),'market':'btts','books':books,'reference_quality':'strong' if books >= 4 else 'good','discovery_eligible':True,'bookmaker':'DERIVED_REFERENCE_MARKET','bet365_verified':False,'model_version':MODEL_VERSION,'model_inputs':'1x2_consensus+totals_2.5_consensus','poisson_home_lambda':round(lh,3),'poisson_away_lambda':round(la,3),'model_fit_rmse':round(rmse,6),'reference_sources':merge_reference_sources(base,MODEL_VERSION),**exact_event_identity(rows)}
     return [{**common,'pick':'yes','fair_probability':round(p_yes,6),'reference_odds':round(1/p_yes,3)},{**common,'pick':'no','fair_probability':round(p_no,6),'reference_odds':round(1/p_no,3)}]
 
 

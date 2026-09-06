@@ -1,7 +1,8 @@
 import json, math, pathlib
-from derived_btts_model import event_inputs, fit_lambdas, MAX_RMSE, exact_event_identity
+from derived_btts_model import event_inputs, fit_lambdas, MAX_RMSE, exact_event_identity, merge_reference_sources
 
 CAND=pathlib.Path('data/value_candidates.json')
+MODEL_VERSION='market-consensus-v6-poisson-goals'
 MARKETS=('odd_even','odd_even_home','odd_even_away','clean_sheet_home','clean_sheet_away','exact_total_goals','home_exact_goals','away_exact_goals','team_total_goals_home','team_total_goals_away','total_goals')
 TEAM_TOTAL_HALF_LINES=(0.5,1.5,2.5,3.5,4.5)
 TOTAL_HALF_LINES=(0.5,1.5,2.5,3.5,4.5,5.5,6.5)
@@ -53,7 +54,7 @@ def derive_for_event(rows):
     mse,lh,la,_=fit;rmse=math.sqrt(mse)
     if rmse>MAX_RMSE:return []
     books=min(int(r.get('books') or 0) for r in base);r=base[0]
-    common={'event':r.get('event'),'event_id':r.get('event_id'),'sport':r.get('sport'),'commence_time':r.get('commence_time'),'books':books,'reference_quality':'strong' if books>=4 else 'good','discovery_eligible':True,'bookmaker':'DERIVED_REFERENCE_MARKET','bet365_verified':False,'model_version':'market-consensus-v6-poisson-goals','model_inputs':'1x2_consensus+totals_2.5_consensus','poisson_home_lambda':round(lh,3),'poisson_away_lambda':round(la,3),'model_fit_rmse':round(rmse,6),**exact_event_identity(rows)}
+    common={'event':r.get('event'),'event_id':r.get('event_id'),'sport':r.get('sport'),'commence_time':r.get('commence_time'),'books':books,'reference_quality':'strong' if books>=4 else 'good','discovery_eligible':True,'bookmaker':'DERIVED_REFERENCE_MARKET','bet365_verified':False,'model_version':MODEL_VERSION,'model_inputs':'1x2_consensus+totals_2.5_consensus','poisson_home_lambda':round(lh,3),'poisson_away_lambda':round(la,3),'model_fit_rmse':round(rmse,6),'reference_sources':merge_reference_sources(base,MODEL_VERSION),**exact_event_identity(rows)}
     out=[]
     for market,selections in goal_market_probabilities(lh,la).items():
         for pick,p in selections.items():
