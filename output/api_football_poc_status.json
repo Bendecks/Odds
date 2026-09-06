@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T18:38:15Z",
+  "generated_at": "2026-09-06T19:49:47Z",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "provider": "API-Football / API-Sports",
@@ -8,9 +8,9 @@
     "API_FOOTBALL_KEY",
     "APISPORTS_KEY"
   ],
-  "configured_secret": null,
-  "configured": false,
-  "ok": false,
+  "configured_secret": "API_FOOTBALL_KEY",
+  "configured": true,
+  "ok": true,
   "purpose": "Probe API-Football as a potential independent external market reference without affecting PAPER PICK qualification.",
   "required_before_reference_role": [
     "API key configured",
@@ -27,18 +27,86 @@
   },
   "reference_quality_role_if_promoted": "external_market_reference",
   "active_provider_policy": "Odds-API.io remains the active Bet365/Unibet provider; API-Football is SHADOW_ONLY until explicitly promoted as independent evidence.",
-  "bookmaker_catalog_observable": false,
-  "bet_catalog_observable": false,
+  "bookmaker_catalog_observable": true,
+  "bet_catalog_observable": true,
   "endpoints": [
     {
-      "endpoint": null,
-      "configured": false,
-      "ok": false,
-      "status_code": null,
-      "headers": {},
-      "errors": "Missing one of API_FOOTBALL_KEY, APISPORTS_KEY in GitHub Secrets.",
-      "results": null,
-      "sample": null
+      "endpoint": "/status",
+      "configured": true,
+      "ok": true,
+      "status_code": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "100",
+        "x-ratelimit-requests-remaining": "99",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9"
+      },
+      "errors": [],
+      "results": 0,
+      "sample": {
+        "get": "status",
+        "parameters": [],
+        "paging": {
+          "current": 1,
+          "total": 1
+        }
+      }
+    },
+    {
+      "endpoint": "/odds/bookmakers",
+      "configured": true,
+      "ok": true,
+      "status_code": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "100",
+        "x-ratelimit-requests-remaining": "97",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "8"
+      },
+      "errors": [],
+      "results": 33,
+      "sample": [
+        {
+          "id": 1,
+          "name": "10Bet"
+        },
+        {
+          "id": 2,
+          "name": "Marathonbet"
+        },
+        {
+          "id": 3,
+          "name": "Betfair"
+        }
+      ]
+    },
+    {
+      "endpoint": "/odds/bets",
+      "configured": true,
+      "ok": true,
+      "status_code": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "100",
+        "x-ratelimit-requests-remaining": "96",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "7"
+      },
+      "errors": [],
+      "results": 338,
+      "sample": [
+        {
+          "id": 1,
+          "name": "Match Winner"
+        },
+        {
+          "id": 2,
+          "name": "Home/Away"
+        },
+        {
+          "id": 3,
+          "name": "Second Half Winner"
+        }
+      ]
     }
   ]
 }

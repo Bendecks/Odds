@@ -1,10 +1,10 @@
 # API-Football external reference PoC
 
-Generated: 2026-09-06T18:38:15Z
+Generated: 2026-09-06T19:49:47Z
 Mode: SHADOW_ONLY
 Production impact: none
-Configured: False
-OK: False
+Configured: True
+OK: True
 
 This probe is only for evaluating API-Football/API-Sports as a future independent external market reference.
 It must not change PAPER PICK qualification until freshness, coverage and provenance are validated.
@@ -28,12 +28,47 @@ It must not change PAPER PICK qualification until freshness, coverage and proven
 
 ## Endpoint probes
 
-### credentials
-- configured: False
-- ok: False
-- status_code: None
-- results: None
-- errors:
+### /status
+- configured: True
+- ok: True
+- status_code: 200
+- results: 0
+- headers:
 ```json
-"Missing one of API_FOOTBALL_KEY, APISPORTS_KEY in GitHub Secrets."
+{
+  "x-ratelimit-requests-limit": "100",
+  "x-ratelimit-requests-remaining": "99",
+  "x-ratelimit-limit": "10",
+  "x-ratelimit-remaining": "9"
+}
+```
+
+### /odds/bookmakers
+- configured: True
+- ok: True
+- status_code: 200
+- results: 33
+- headers:
+```json
+{
+  "x-ratelimit-requests-limit": "100",
+  "x-ratelimit-requests-remaining": "97",
+  "x-ratelimit-limit": "10",
+  "x-ratelimit-remaining": "8"
+}
+```
+
+### /odds/bets
+- configured: True
+- ok: True
+- status_code: 200
+- results: 338
+- headers:
+```json
+{
+  "x-ratelimit-requests-limit": "100",
+  "x-ratelimit-requests-remaining": "96",
+  "x-ratelimit-limit": "10",
+  "x-ratelimit-remaining": "7"
+}
 ```

@@ -1,6 +1,6 @@
 # API QUOTA STATUS
 
-Generated: 2026-05-07T06:27:02Z
+Generated: 2026-09-06T19:49:46Z
 
 Dette workflow laver kun små status-kald. Det henter ikke odds for kampe.
 
