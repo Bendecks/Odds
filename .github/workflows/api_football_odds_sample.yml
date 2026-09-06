@@ -1,0 +1,44 @@
+name: API-Football odds sample
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: api-football-odds-sample
+  cancel-in-progress: true
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Sync latest main
+        run: git pull --rebase --autostash origin main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sample API-Football odds
+        run: python scripts/api_football_odds_sample.py
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+          API_FOOTBALL_SAMPLE_MAX_CALLS: '4'
+
+      - name: Commit sample status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+          git add output/api_football_odds_sample.json output/api_football_odds_sample.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Update API-Football odds sample"
+          git push

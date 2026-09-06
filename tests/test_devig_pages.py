@@ -9,6 +9,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('output/reference_quality_shadow.json',workflow)
         self.assertIn('output/paper_pick_readiness.json',workflow)
         self.assertIn('output/api_football_poc_status.json',workflow)
+        self.assertIn('output/api_football_odds_sample.json',workflow)
         self.assertIn('2>/dev/null || true',workflow)
 
     def test_dashboard_has_shadow_report_mount_point(self):
@@ -21,6 +22,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('id="reference-quality-shadow"',html)
         self.assertIn('id="paper-pick-readiness"',html)
         self.assertIn('id="api-football-poc"',html)
+        self.assertIn('id="api-football-odds-sample"',html)
 
     def test_dashboard_loads_shadow_report_fail_soft(self):
         app=pathlib.Path('app.js').read_text()
@@ -49,6 +51,9 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('loadApiFootballPoc',app)
         self.assertIn('output/api_football_poc_status.json',app)
         self.assertIn('API-Football PoC',app)
+        self.assertIn('loadApiFootballOddsSample',app)
+        self.assertIn('output/api_football_odds_sample.json',app)
+        self.assertIn('API-Football odds sample',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()

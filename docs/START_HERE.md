@@ -111,6 +111,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/reference_quality_shadow.json` — SHADOW_ONLY readiness report for a future Reference Quality Gate
 - `output/paper_pick_readiness.json` — observability-only summary of how far current candidates are from many more PAPER PICKS
 - `output/api_football_poc_status.json`, `output/api_football_poc_status.md` — SHADOW_ONLY API-Football/API-Sports external-reference probe status
+- `output/api_football_odds_sample.json`, `output/api_football_odds_sample.md` — SHADOW_ONLY low-call API-Football odds coverage sample
 - `scripts/event_match_diagnostics.py` — conservative fuzzy diagnostic resolver
 - `scripts/paper_pick_history.py` — public PAPER history builder
 - `.github/workflows/` — production, CI, closing, settlement and Pages
@@ -138,6 +139,7 @@ Recent milestones:
 - PR #94 should surface Paper Pick readiness as a compact report/dashboard card: current candidate base, main blockers and biggest near-term unlock.
 - PR #95 should add a SHADOW_ONLY API-Football/API-Sports probe for credential, bookmaker-catalog and bet-catalog readiness before any external odds source can count as an independent market reference.
 - PR #96 should publish API-Football PoC status to Pages and surface it in the Development module so credential validation is visible after the manual API-status workflow runs.
+- PR #97 should add a separate low-call API-Football odds sample workflow that measures actual pre-match coverage against current candidate dates without changing production qualification.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

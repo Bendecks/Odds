@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-09-06T19:53:56Z",
+  "mode": "SHADOW_ONLY",
+  "production_impact": "none",
+  "provider": "API-Football / API-Sports",
+  "configured_secret": null,
+  "configured": false,
+  "sample_version": "api-football-odds-sample-v1",
+  "max_odds_calls": 4,
+  "target_dates": [],
+  "selected_bookmakers": [],
+  "selected_bets": [],
+  "catalogs": {
+    "bookmakers_ok": false,
+    "bookmakers_count": 0,
+    "bets_ok": false,
+    "bets_count": 0
+  },
+  "coverage": {
+    "odds_calls": 0,
+    "successful_odds_calls": 0,
+    "fixtures_returned": 0,
+    "selection_observations": 0,
+    "has_external_market_sample": false,
+    "error": "Missing one of API_FOOTBALL_KEY, APISPORTS_KEY in GitHub Secrets."
+  },
+  "promotion_blockers": [
+    "No production use until fixture matching to Bet365 candidates is exact or defensibly conservative.",
+    "No production use until odds freshness/update timestamps are understood.",
+    "No production use until bookmaker economic_source_id is mapped per bookmaker."
+  ],
+  "provenance_template": {
+    "transport_provider_id": "api-sports:api-football",
+    "economic_source_id": "api-football:bookmaker:<bookmaker_id>",
+    "evidence_family": "external_market_price",
+    "model_or_feed_version": "api-football-odds-sample-v1"
+  },
+  "odds_calls": []
+}
