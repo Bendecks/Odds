@@ -1,13 +1,15 @@
 {
-  "generated_at": "2026-09-06T19:53:56Z",
+  "generated_at": "2026-09-06T19:57:51Z",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "provider": "API-Football / API-Sports",
-  "configured_secret": null,
-  "configured": false,
+  "configured_secret": "API_FOOTBALL_KEY",
+  "configured": true,
   "sample_version": "api-football-odds-sample-v1",
   "max_odds_calls": 4,
-  "target_dates": [],
+  "target_dates": [
+    "2026-09-06"
+  ],
   "selected_bookmakers": [],
   "selected_bets": [],
   "catalogs": {
@@ -21,8 +23,7 @@
     "successful_odds_calls": 0,
     "fixtures_returned": 0,
     "selection_observations": 0,
-    "has_external_market_sample": false,
-    "error": "Missing one of API_FOOTBALL_KEY, APISPORTS_KEY in GitHub Secrets."
+    "has_external_market_sample": false
   },
   "promotion_blockers": [
     "No production use until fixture matching to Bet365 candidates is exact or defensibly conservative.",

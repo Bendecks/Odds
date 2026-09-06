@@ -1,9 +1,9 @@
 # API-Football odds sample
 
-Generated: 2026-09-06T19:53:56Z
+Generated: 2026-09-06T19:57:51Z
 Mode: SHADOW_ONLY
 Production impact: none
-Configured: False
+Configured: True
 
 ## Coverage
 - Odds calls: 0
