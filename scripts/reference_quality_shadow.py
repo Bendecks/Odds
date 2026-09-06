@@ -19,6 +19,7 @@ PROVENANCE_FIELDS = (
     "model_or_feed_version",
 )
 BET365_IDS = {"bet365", "bookmaker:bet365", "odds-api.io:bet365"}
+MODEL_EVIDENCE_FAMILIES = {"football_model", "statistical_model", "calibrated_model"}
 
 
 def load_json(path, default):
@@ -52,7 +53,7 @@ def source_role(source):
     family = norm(source.get("evidence_family"))
     if economic_source == "unibet":
         return "unibet_reference"
-    if "model" in family or economic_source.startswith("model:"):
+    if family in MODEL_EVIDENCE_FAMILIES or economic_source.startswith("model:"):
         return "model_reference"
     if "market" in family or "price" in family or "bookmaker" in family:
         return "external_market_reference"
