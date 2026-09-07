@@ -85,7 +85,7 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
 10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. It also ranks the largest role/market unlocks. This has no production impact.
 11. Football model readiness measures whether current candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference. It is SHADOW_ONLY and does not satisfy the model-reference role.
-12. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, API-Football PoC status, Football model readiness, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
+12. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, API-Football PoC status, Football model readiness, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, provider event metadata coverage, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
@@ -147,6 +147,7 @@ Recent milestones:
 - Next PR should make Pages infer and display API-Football account-access blockers from the latest odds-sample diagnostics, so stale PoC snapshots cannot visually override a newer suspended-account sample.
 - Next model-readiness PR should preserve provider sport/league metadata on Odds-API.io value candidates, giving future Dixon-Coles/Elo and public-data coverage probes a real league key instead of only event names.
 - Next model-readiness PR should publish Football model readiness to Pages, so model-reference work can be prioritized by actual candidate metadata, league mapping and first model-scope rows.
+- Next provider-diagnostics PR should expose Odds-API.io event-payload sport/league coverage in operational status and Pages without extra provider calls, so missing model metadata can be diagnosed after the next feed.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
