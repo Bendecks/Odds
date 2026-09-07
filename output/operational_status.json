@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-09-07T04:40:58.253290+00:00",
+  "generated_at": "2026-09-07T17:45:01.882630+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 501,
-    "fair_probability_rows": 501,
+    "candidate_rows": 750,
+    "fair_probability_rows": 750,
     "reference_events": 12,
-    "exact_bet365_rows": 457,
-    "fresh_exact_bet365_rows": 457,
+    "exact_bet365_rows": 700,
+    "fresh_exact_bet365_rows": 700,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 42
+    "decision_runs_recorded": 43
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 292,
-        "h2h": 129,
-        "spreads": 80
+        "totals": 410,
+        "h2h": 174,
+        "spreads": 166
       },
       "exact": {
-        "totals": 248,
-        "h2h": 129,
-        "spreads": 80
+        "totals": 378,
+        "h2h": 174,
+        "spreads": 148
       },
       "fresh": {
-        "totals": 248,
-        "h2h": 129,
-        "spreads": 80
+        "totals": 378,
+        "h2h": 174,
+        "spreads": 148
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 129,
-        "fresh": 129,
+        "exact": 174,
+        "fresh": 174,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 80,
-        "fresh": 80,
+        "exact": 148,
+        "fresh": 148,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 248,
-        "fresh": 248,
+        "exact": 378,
+        "fresh": 378,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 457
+      "0_20m": 700
     },
     "reference_depth_rejections_by_market": {
-      "totals": 248,
-      "h2h": 129,
-      "spreads": 80
+      "totals": 378,
+      "h2h": 174,
+      "spreads": 148
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,22 +72,412 @@
     }
   },
   "provider": {
-    "generated_at": "2026-09-07T04:40:51.689907+00:00",
+    "generated_at": "2026-09-07T17:44:55.825474+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
+    "provider_event_metadata": {
+      "events_total": 500,
+      "prioritized_events": 80,
+      "rows_with_sport": 500,
+      "rows_with_league": 500,
+      "prioritized_with_sport": 80,
+      "prioritized_with_league": 80,
+      "top_sports": [
+        [
+          "{'name': 'Football', 'slug': 'football'}",
+          500
+        ]
+      ],
+      "top_leagues": [
+        [
+          "{'name': 'England - Championship', 'slug': 'england-championship'}",
+          20
+        ],
+        [
+          "{'name': 'Scotland - Challenge Cup', 'slug': 'scotland-challenge-cup'}",
+          19
+        ],
+        [
+          "{'name': 'International Clubs - UEFA Champions League', 'slug': 'international-clubs-uefa-champions-league'}",
+          18
+        ],
+        [
+          "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
+          14
+        ],
+        [
+          "{'name': 'England - League One', 'slug': 'england-league-one'}",
+          13
+        ],
+        [
+          "{'name': 'England - League Two', 'slug': 'england-league-two'}",
+          12
+        ],
+        [
+          "{'name': 'England Amateur - National League North', 'slug': 'england-amateur-national-league-north'}",
+          12
+        ],
+        [
+          "{'name': 'England - National League', 'slug': 'england-national-league'}",
+          11
+        ],
+        [
+          "{'name': 'Netherlands - Eerste Divisie', 'slug': 'netherlands-eerste-divisie'}",
+          11
+        ],
+        [
+          "{'name': 'England - FA Cup', 'slug': 'england-fa-cup'}",
+          10
+        ],
+        [
+          "{'name': 'England Amateur - National League South', 'slug': 'england-amateur-national-league-south'}",
+          10
+        ],
+        [
+          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+          9
+        ],
+        [
+          "{'name': 'France - Ligue 2', 'slug': 'france-ligue-2'}",
+          8
+        ],
+        [
+          "{'name': 'Italy - Serie B', 'slug': 'italy-serie-b'}",
+          8
+        ],
+        [
+          "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+          8
+        ],
+        [
+          "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
+          8
+        ],
+        [
+          "{'name': 'Sweden - Superettan', 'slug': 'sweden-superettan'}",
+          8
+        ],
+        [
+          "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
+          7
+        ],
+        [
+          "{'name': 'Estonia - Premium Liiga', 'slug': 'estonia-premium-liiga'}",
+          7
+        ],
+        [
+          "{'name': 'Portugal - U23 Liga Next Gen', 'slug': 'portugal-u23-liga-next-gen'}",
+          7
+        ],
+        [
+          "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+          7
+        ],
+        [
+          "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
+          6
+        ],
+        [
+          "{'name': 'Chile - Liga de Ascenso', 'slug': 'chile-liga-de-ascenso'}",
+          6
+        ],
+        [
+          "{'name': 'England - EFL Cup', 'slug': 'england-efl-cup'}",
+          6
+        ],
+        [
+          "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
+          6
+        ],
+        [
+          "{'name': 'Northern Ireland - Premiership', 'slug': 'northern-ireland-premiership'}",
+          6
+        ],
+        [
+          "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
+          6
+        ],
+        [
+          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+          5
+        ],
+        [
+          "{'name': 'Denmark - 1st Division', 'slug': 'denmark-1st-division'}",
+          5
+        ],
+        [
+          "{'name': 'England - Premier League', 'slug': 'england-premier-league'}",
+          5
+        ],
+        [
+          "{'name': 'Germany - 2. Bundesliga', 'slug': 'germany-2-bundesliga'}",
+          5
+        ],
+        [
+          "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
+          5
+        ],
+        [
+          "{'name': 'Ireland - Premier Division', 'slug': 'ireland-premier-division'}",
+          5
+        ],
+        [
+          "{'name': 'Scotland - League Two', 'slug': 'scotland-league-two'}",
+          5
+        ],
+        [
+          "{'name': 'Slovakia - Slovensky Pohar', 'slug': 'slovakia-slovensky-pohar'}",
+          5
+        ],
+        [
+          "{'name': 'Uruguay - Tercera Division, Reserves', 'slug': 'uruguay-tercera-division-reserves'}",
+          5
+        ],
+        [
+          "{'name': 'International Clubs - CONMEBOL Libertadores, Knockout stage', 'slug': 'international-clubs-conmebol-libertadores-knockout-stage'}",
+          4
+        ],
+        [
+          "{'name': 'International Clubs - CONMEBOL Sudamericana, Knockout stage', 'slug': 'international-clubs-conmebol-sudamericana-knockout-stage'}",
+          4
+        ],
+        [
+          "{'name': 'International Youth - U20 FIFA World Cup, Women, Group F', 'slug': 'international-youth-u20-fifa-world-cup-women-group-f'}",
+          4
+        ],
+        [
+          "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
+          4
+        ],
+        [
+          "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
+          4
+        ],
+        [
+          "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
+          4
+        ],
+        [
+          "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
+          4
+        ],
+        [
+          "{'name': 'Republic of Korea - K-League 2', 'slug': 'republic-of-korea-k-league-2'}",
+          4
+        ],
+        [
+          "{'name': 'Scotland - Championship', 'slug': 'scotland-championship'}",
+          4
+        ],
+        [
+          "{'name': 'Scotland - League One', 'slug': 'scotland-league-one'}",
+          4
+        ],
+        [
+          "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
+          4
+        ],
+        [
+          "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+          4
+        ],
+        [
+          "{'name': 'Uruguay - Copa Uruguay, Group F', 'slug': 'uruguay-copa-uruguay-group-f'}",
+          4
+        ],
+        [
+          "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+          3
+        ]
+      ],
+      "event_key_counts": [
+        [
+          "away",
+          500
+        ],
+        [
+          "awayId",
+          500
+        ],
+        [
+          "date",
+          500
+        ],
+        [
+          "home",
+          500
+        ],
+        [
+          "homeId",
+          500
+        ],
+        [
+          "id",
+          500
+        ],
+        [
+          "league",
+          500
+        ],
+        [
+          "scores",
+          500
+        ],
+        [
+          "sport",
+          500
+        ],
+        [
+          "status",
+          500
+        ]
+      ],
+      "samples": [
+        {
+          "id": 72044626,
+          "home": "Jong FC Utrecht",
+          "away": "FC Eindhoven",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Netherlands - Eerste Divisie",
+            "slug": "netherlands-eerste-divisie"
+          },
+          "date": "2026-09-07T18:00:00Z",
+          "keys": [
+            "away",
+            "awayId",
+            "date",
+            "home",
+            "homeId",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        },
+        {
+          "id": 72044628,
+          "home": "Jong PSV Eindhoven",
+          "away": "FC Den Bosch",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Netherlands - Eerste Divisie",
+            "slug": "netherlands-eerste-divisie"
+          },
+          "date": "2026-09-07T18:00:00Z",
+          "keys": [
+            "away",
+            "awayId",
+            "date",
+            "home",
+            "homeId",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        },
+        {
+          "id": 72083030,
+          "home": "OFK Beograd",
+          "away": "FK IMT Novi Beograd",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Serbia - Super Liga",
+            "slug": "serbia-super-liga"
+          },
+          "date": "2026-09-07T18:00:00Z",
+          "keys": [
+            "away",
+            "awayId",
+            "date",
+            "home",
+            "homeId",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        },
+        {
+          "id": 73217538,
+          "home": "Escobar FC",
+          "away": "CA Defensores de Vilelas",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Argentina - Torneo Federal A, Relegation Round, Group A",
+            "slug": "argentina-torneo-federal-a-relegation-round-group-a"
+          },
+          "date": "2026-09-07T18:00:00Z",
+          "keys": [
+            "away",
+            "awayId",
+            "date",
+            "home",
+            "homeId",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        },
+        {
+          "id": 67125952,
+          "home": "Deportivo Muniz",
+          "away": "CS Barracas",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Argentina - Primera C",
+            "slug": "argentina-primera-c"
+          },
+          "date": "2026-09-07T18:00:00Z",
+          "keys": [
+            "away",
+            "awayId",
+            "date",
+            "home",
+            "homeId",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        }
+      ]
+    },
     "provider_call_attempts": 8,
     "provider_call_successes": 8,
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 32169,
-    "unique_markets": 104,
+    "raw_market_observations": 30448,
+    "unique_markets": 87,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-09-07T04:40:51Z",
+    "generated_at": "2026-09-07T17:44:55Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",

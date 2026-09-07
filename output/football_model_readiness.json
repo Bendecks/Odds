@@ -1,41 +1,88 @@
 {
-  "generated_at": "2026-09-07T09:01:19.752141+00:00",
+  "generated_at": "2026-09-07T17:45:02.061786+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 501,
-  "exact_bet365_rows": 457,
+  "candidate_rows": 750,
+  "exact_bet365_rows": 700,
   "fresh_exact_rows_by_market": {
-    "h2h": 129,
-    "spreads": 80,
-    "totals": 248
+    "h2h": 174,
+    "spreads": 148,
+    "totals": 378
   },
   "metadata": {
-    "rows_with_sport": 0,
-    "rows_with_league": 0,
-    "rows_with_parseable_teams": 501,
-    "sport_coverage": 0.0,
-    "league_coverage": 0.0,
+    "rows_with_sport": 750,
+    "rows_with_league": 750,
+    "rows_with_parseable_teams": 750,
+    "sport_coverage": 1.0,
+    "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 129,
-      "spreads": 80,
-      "totals": 292
+      "h2h": 174,
+      "spreads": 166,
+      "totals": 410
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
-    "coverable_rows_by_market": {},
-    "first_model_scope_rows": 0
+    "coverable_rows_by_market": {
+      "h2h": 174,
+      "totals": 410
+    },
+    "first_model_scope_rows": 584
   },
   "league_mapping": {
-    "top_candidate_leagues": [],
-    "public_data_hints": {}
+    "top_candidate_leagues": [
+      [
+        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+        47
+      ],
+      [
+        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
+        41
+      ],
+      [
+        "{'name': 'Netherlands - Eerste Divisie', 'slug': 'netherlands-eerste-divisie'}",
+        36
+      ],
+      [
+        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        36
+      ],
+      [
+        "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
+        30
+      ],
+      [
+        "{'name': 'Paraguay - Division de Honor, Clausura', 'slug': 'paraguay-division-de-honor-clausura'}",
+        30
+      ],
+      [
+        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
+        28
+      ],
+      [
+        "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
+        23
+      ],
+      [
+        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+        21
+      ],
+      [
+        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+        21
+      ]
+    ],
+    "public_data_hints": {
+      "football-data.co.uk:E0": 45,
+      "football-data.co.uk:I1": 101
+    }
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -62,24 +109,12 @@
     "has_any_valid_league": true
   },
   "blockers": [
-    "candidate_league_metadata_missing_until_next_feed",
-    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
   "missing_by_market": {
-    "h2h": {
-      "league_missing": 129,
-      "sport_missing": 129
-    },
     "spreads": {
-      "league_missing": 80,
-      "market_not_first_model_scope": 80,
-      "sport_missing": 80
-    },
-    "totals": {
-      "league_missing": 292,
-      "sport_missing": 292
+      "market_not_first_model_scope": 166
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

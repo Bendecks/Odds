@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-07T04:40:58.366222+00:00",
-  "as_of": "2026-09-07T04:40:58.253290+00:00",
+  "generated_at": "2026-09-07T17:45:02.015884+00:00",
+  "as_of": "2026-09-07T17:45:01.882630+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 501,
-  "fresh_exact_candidates": 457,
+  "total_candidates": 750,
+  "fresh_exact_candidates": 700,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 457,
-    "missing_external_market_reference": 457,
-    "missing_model_reference": 457
+    "insufficient_independent_economic_sources": 700,
+    "missing_external_market_reference": 700,
+    "missing_model_reference": 700
   },
   "missing_roles": {
-    "external_market_reference": 457,
-    "model_reference": 457
+    "external_market_reference": 700,
+    "model_reference": 700
   },
   "by_market": {
     "h2h": {
-      "evaluated": 129,
-      "fresh_exact_bet365": 129,
+      "evaluated": 174,
+      "fresh_exact_bet365": 174,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 129,
-        "missing_external_market_reference": 129,
-        "missing_model_reference": 129
+        "insufficient_independent_economic_sources": 174,
+        "missing_external_market_reference": 174,
+        "missing_model_reference": 174
       },
       "missing_roles": {
-        "external_market_reference": 129,
-        "model_reference": 129
+        "external_market_reference": 174,
+        "model_reference": 174
       }
     },
     "spreads": {
-      "evaluated": 80,
-      "fresh_exact_bet365": 80,
+      "evaluated": 148,
+      "fresh_exact_bet365": 148,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 80,
-        "missing_external_market_reference": 80,
-        "missing_model_reference": 80
+        "insufficient_independent_economic_sources": 148,
+        "missing_external_market_reference": 148,
+        "missing_model_reference": 148
       },
       "missing_roles": {
-        "external_market_reference": 80,
-        "model_reference": 80
+        "external_market_reference": 148,
+        "model_reference": 148
       }
     },
     "totals": {
-      "evaluated": 248,
-      "fresh_exact_bet365": 248,
+      "evaluated": 378,
+      "fresh_exact_bet365": 378,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 248,
-        "missing_external_market_reference": 248,
-        "missing_model_reference": 248
+        "insufficient_independent_economic_sources": 378,
+        "missing_external_market_reference": 378,
+        "missing_model_reference": 378
       },
       "missing_roles": {
-        "external_market_reference": 248,
-        "model_reference": 248
+        "external_market_reference": 378,
+        "model_reference": 378
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 457,
+        "fresh_exact_candidates_blocked": 700,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 457,
+        "fresh_exact_candidates_blocked": 700,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 457
+        "fresh_exact_candidates_blocked": 700
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 248,
+        "fresh_exact_candidates": 378,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 248,
-          "model_reference": 248
+          "external_market_reference": 378,
+          "model_reference": 378
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 129,
+        "fresh_exact_candidates": 174,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 129,
-          "model_reference": 129
+          "external_market_reference": 174,
+          "model_reference": 174
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 80,
+        "fresh_exact_candidates": 148,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 80,
-          "model_reference": 80
+          "external_market_reference": 148,
+          "model_reference": 148
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 248,
+      "first_market_fresh_exact_candidates": 378,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 129,
-      "fresh_exact_bet365": 129,
+      "evaluated": 174,
+      "fresh_exact_bet365": 174,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 129,
-        "missing_external_market_reference": 129,
-        "missing_model_reference": 129
+        "insufficient_independent_economic_sources": 174,
+        "missing_external_market_reference": 174,
+        "missing_model_reference": 174
       },
       "missing_roles": {
-        "external_market_reference": 129,
-        "model_reference": 129
+        "external_market_reference": 174,
+        "model_reference": 174
       }
     },
     "spreads": {
-      "evaluated": 80,
-      "fresh_exact_bet365": 80,
+      "evaluated": 166,
+      "fresh_exact_bet365": 148,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 80,
-        "missing_external_market_reference": 80,
-        "missing_model_reference": 80
+        "insufficient_independent_economic_sources": 166,
+        "missing_external_market_reference": 166,
+        "missing_model_reference": 166,
+        "not_fresh_exact_bet365": 18
       },
       "missing_roles": {
-        "external_market_reference": 80,
-        "model_reference": 80
+        "external_market_reference": 166,
+        "model_reference": 166
       }
     },
     "totals": {
-      "evaluated": 292,
-      "fresh_exact_bet365": 248,
+      "evaluated": 410,
+      "fresh_exact_bet365": 378,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 292,
-        "missing_external_market_reference": 292,
-        "missing_model_reference": 292,
-        "not_fresh_exact_bet365": 44
+        "insufficient_independent_economic_sources": 410,
+        "missing_external_market_reference": 410,
+        "missing_model_reference": 410,
+        "not_fresh_exact_bet365": 32
       },
       "missing_roles": {
-        "external_market_reference": 292,
-        "model_reference": 292
+        "external_market_reference": 410,
+        "model_reference": 410
       }
     }
   },
   "sample_failures": [
     {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
       "market": "h2h",
-      "pick": "El Qanah FC",
+      "pick": "Jong FC Utrecht",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,191 +209,9 @@
       ]
     },
     {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
-      "market": "h2h",
-      "pick": "Talaea El Gaish",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "El Qanah FC vs Talaea El Gaish",
-      "event_id": 73463616,
-      "bet365_event_id": 73463616,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Umm-Salal SC vs Al-Khor SC",
-      "event_id": 73051294,
-      "bet365_event_id": 73051294,
-      "market": "h2h",
-      "pick": "Umm-Salal SC",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Umm-Salal SC vs Al-Khor SC",
-      "event_id": 73051294,
-      "bet365_event_id": 73051294,
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -416,12 +235,194 @@
       ]
     },
     {
-      "event": "Umm-Salal SC vs Al-Khor SC",
-      "event_id": 73051294,
-      "bet365_event_id": 73051294,
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
       "market": "h2h",
-      "pick": "Al-Khor SC",
+      "pick": "FC Eindhoven",
       "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "spreads",
+      "pick": "Jong FC Utrecht",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "spreads",
+      "pick": "FC Eindhoven",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "spreads",
+      "pick": "Jong FC Utrecht",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "spreads",
+      "pick": "FC Eindhoven",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Jong FC Utrecht vs FC Eindhoven",
+      "event_id": 72044626,
+      "bet365_event_id": 72044626,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
