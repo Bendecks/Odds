@@ -62,6 +62,17 @@ def devig_shadow(prices):
         out[selection]=row
     return out
 
+def event_metadata(*rows):
+    meta = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        for field in ("sport", "league"):
+            value = row.get(field)
+            if value is not None and value != "" and field not in meta:
+                meta[field] = value
+    return meta
+
 def shadow_report(records, market_groups):
     usable=[r for r in records if r.get('power_probability') is not None]
     abs_deltas=[abs(float(r.get('power_delta') or 0)) for r in usable]
@@ -98,11 +109,11 @@ def main():
             if market=='h2h': pick=home if selection=='home' else away if selection=='away' else 'Draw' if selection=='draw' else selection
             elif market=='totals': pick=selection.title()
             elif market=='spreads': pick=home if selection=='home' else away if selection=='away' else selection
-            row={'event':event,'event_id':eid,'commence_time':start,'market':market,'pick':pick,'reference_odds':round(1/p,3),'fair_probability':round(p,6),'devig_method':'multiplicative','devig_shadow':shadow.get(selection,{}),'books':books,'reference_books':['Unibet'],'reference_sources':provenance,'reference_quality':'weak','discovery_eligible':True,'bookmaker':'UNIBET_REFERENCE','bet365_verified':False,'model_version':REFERENCE_VERSION,'bet365_event_id':eid,'event_match_method':'exact'}
+            b=bet365_prices.get((str(eid),market,line,selection))
+            row={'event':event,'event_id':eid,'commence_time':start,'market':market,'pick':pick,'reference_odds':round(1/p,3),'fair_probability':round(p,6),'devig_method':'multiplicative','devig_shadow':shadow.get(selection,{}),'books':books,'reference_books':['Unibet'],'reference_sources':provenance,'reference_quality':'weak','discovery_eligible':True,'bookmaker':'UNIBET_REFERENCE','bet365_verified':False,'model_version':REFERENCE_VERSION,'bet365_event_id':eid,'event_match_method':'exact',**event_metadata(items[0],b)}
             if shadow.get(selection):
                 shadow_records.append({'event_id':eid,'event':event,'market':market,'line':line,'selection':selection,'pick':pick,**shadow[selection]})
             if line is not None: row['line']=line
-            b=bet365_prices.get((str(eid),market,line,selection))
             if b and float(b.get('odds') or 0)>1:
                 row.update({'bet365_odds':float(b['odds']),'bet365_timestamp':b.get('observed_at') or b.get('timestamp'),'bet365_provider_updated_at':b.get('timestamp'),'bet365_verified':True,'bet365_source':'odds-api.io','bet365_market':b.get('market'),'execution_source':{'transport_provider_id':'odds-api.io','economic_source_id':'bet365','evidence_family':'execution_price','model_or_feed_version':'odds-api-io-bet365-v1'}})
             out.append(row)
