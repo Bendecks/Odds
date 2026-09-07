@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T07:43:03.227517+00:00",
+  "generated_at": "2026-09-07T09:01:19.752141+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
@@ -38,16 +38,32 @@
     "public_data_hints": {}
   },
   "public_football_data_probe": {
-    "source_status": "source_unavailable",
+    "source_status": "ok",
     "season": "2627",
-    "leagues_data_ready": 0,
-    "leagues_attempted": 7,
-    "has_any_valid_league": false
+    "openfootball_season": "2026-27",
+    "leagues_data_ready": 7,
+    "leagues_attempted": 14,
+    "sources": {
+      "football-data.co.uk": {
+        "attempted": 7,
+        "data_ready": 0,
+        "rows": 0,
+        "completed_result_rows": 0,
+        "source_status": "source_unavailable"
+      },
+      "openfootball/football.json": {
+        "attempted": 7,
+        "data_ready": 7,
+        "rows": 2610,
+        "completed_result_rows": 166,
+        "source_status": "ok"
+      }
+    },
+    "has_any_valid_league": true
   },
   "blockers": [
     "candidate_league_metadata_missing_until_next_feed",
     "public_data_league_mapping_not_verified",
-    "public_football_data_probe_not_ready",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],

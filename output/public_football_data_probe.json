@@ -1,18 +1,35 @@
 {
-  "generated_at": "2026-09-07T07:43:03Z",
+  "generated_at": "2026-09-07T09:01:19Z",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "probe_version": "public-football-data-probe-v1",
-  "provider": "Football-Data.co.uk",
+  "provider": "public football results data",
   "base_url": "https://www.football-data.co.uk/mmz4281",
   "season": "2627",
-  "purpose": "Probe free public football results CSVs for a future Bet365-independent Dixon-Coles/Elo model reference.",
+  "openfootball_season": "2026-27",
+  "purpose": "Probe free public football results data for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
   "active_provider_policy": "Odds-API.io remains the only active odds provider; this is public historical results data and cannot create PAPER PICKS directly.",
-  "source_status": "source_unavailable",
-  "leagues_attempted": 7,
-  "leagues_data_ready": 0,
-  "has_any_valid_league": false,
+  "source_status": "ok",
+  "sources": {
+    "football-data.co.uk": {
+      "attempted": 7,
+      "data_ready": 0,
+      "rows": 0,
+      "completed_result_rows": 0,
+      "source_status": "source_unavailable"
+    },
+    "openfootball/football.json": {
+      "attempted": 7,
+      "data_ready": 7,
+      "rows": 2610,
+      "completed_result_rows": 166,
+      "source_status": "ok"
+    }
+  },
+  "leagues_attempted": 14,
+  "leagues_data_ready": 7,
+  "has_any_valid_league": true,
   "required_before_model_role": [
     "stable public results coverage for target leagues",
     "candidate league names mapped to public data league codes",
@@ -23,14 +40,16 @@
   "leagues": [
     {
       "code": "E0",
+      "openfootball": "en.1",
       "country": "England",
       "league": "Premier League",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
       "ok": false,
-      "status_code": 503,
+      "status_code": null,
       "content_type": null,
-      "error": "HTTPError: 503",
+      "error": "<urlopen error timed out>",
       "missing_required_columns": [
         "AwayTeam",
         "Date",
@@ -46,14 +65,16 @@
     },
     {
       "code": "E1",
+      "openfootball": "en.2",
       "country": "England",
       "league": "Championship",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E1.csv",
       "ok": false,
-      "status_code": 503,
+      "status_code": null,
       "content_type": null,
-      "error": "HTTPError: 503",
+      "error": "<urlopen error timed out>",
       "missing_required_columns": [
         "AwayTeam",
         "Date",
@@ -69,8 +90,10 @@
     },
     {
       "code": "D1",
+      "openfootball": "de.1",
       "country": "Germany",
       "league": "Bundesliga",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
       "ok": false,
@@ -92,14 +115,16 @@
     },
     {
       "code": "SP1",
+      "openfootball": "es.1",
       "country": "Spain",
       "league": "La Liga",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
       "ok": false,
-      "status_code": 503,
+      "status_code": null,
       "content_type": null,
-      "error": "HTTPError: 503",
+      "error": "<urlopen error timed out>",
       "missing_required_columns": [
         "AwayTeam",
         "Date",
@@ -115,8 +140,10 @@
     },
     {
       "code": "I1",
+      "openfootball": "it.1",
       "country": "Italy",
       "league": "Serie A",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
       "ok": false,
@@ -138,14 +165,16 @@
     },
     {
       "code": "F1",
+      "openfootball": "fr.1",
       "country": "France",
       "league": "Ligue 1",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
       "ok": false,
-      "status_code": 503,
+      "status_code": null,
       "content_type": null,
-      "error": "HTTPError: 503",
+      "error": "<urlopen error timed out>",
       "missing_required_columns": [
         "AwayTeam",
         "Date",
@@ -161,8 +190,10 @@
     },
     {
       "code": "N1",
+      "openfootball": "nl.1",
       "country": "Netherlands",
       "league": "Eredivisie",
+      "source": "football-data.co.uk",
       "season": "2627",
       "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
       "ok": false,
@@ -181,6 +212,426 @@
       "parseable_rows": 0,
       "completed_result_rows": 0,
       "sample": []
+    },
+    {
+      "code": "E0",
+      "openfootball": "en.1",
+      "country": "England",
+      "league": "Premier League",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.1.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "English Premier League 2026/27",
+      "missing_required_columns": [],
+      "row_count": 380,
+      "parseable_rows": 380,
+      "completed_result_rows": 20,
+      "sample": [
+        {
+          "date": "2026-08-21",
+          "home": "Arsenal FC",
+          "away": "Coventry City FC",
+          "home_goals": 3,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Hull City AFC",
+          "away": "Manchester United FC",
+          "home_goals": 2,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Ipswich Town FC",
+          "away": "Sunderland AFC",
+          "home_goals": 2,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Nottingham Forest FC",
+          "away": "Leeds United FC",
+          "home_goals": 0,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Everton FC",
+          "away": "Crystal Palace FC",
+          "home_goals": 2,
+          "away_goals": 0,
+          "result": null
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "openfootball": "en.2",
+      "country": "England",
+      "league": "Championship",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "English Championship 2026/27",
+      "missing_required_columns": [],
+      "row_count": 552,
+      "parseable_rows": 552,
+      "completed_result_rows": 36,
+      "sample": [
+        {
+          "date": "2026-08-14",
+          "home": "Wolverhampton Wanderers FC",
+          "away": "Blackburn Rovers FC",
+          "home_goals": 2,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-15",
+          "home": "Bolton Wanderers FC",
+          "away": "Preston North End FC",
+          "home_goals": 2,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-15",
+          "home": "Norwich City FC",
+          "away": "West Bromwich Albion FC",
+          "home_goals": 1,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-15",
+          "home": "Bristol City FC",
+          "away": "Millwall FC",
+          "home_goals": 0,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-15",
+          "home": "Middlesbrough FC",
+          "away": "Lincoln City FC",
+          "home_goals": 2,
+          "away_goals": 1,
+          "result": null
+        }
+      ]
+    },
+    {
+      "code": "D1",
+      "openfootball": "de.1",
+      "country": "Germany",
+      "league": "Bundesliga",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/de.1.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "Deutsche Bundesliga 2026/27",
+      "missing_required_columns": [],
+      "row_count": 306,
+      "parseable_rows": 306,
+      "completed_result_rows": 9,
+      "sample": [
+        {
+          "date": "2026-08-28",
+          "home": "FC Bayern München",
+          "away": "VfB Stuttgart",
+          "home_goals": 5,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-29",
+          "home": "RB Leipzig",
+          "away": "Borussia Mönchengladbach",
+          "home_goals": 3,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-29",
+          "home": "1. FSV Mainz 05",
+          "away": "SC Paderborn 07",
+          "home_goals": 0,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-29",
+          "home": "1. FC Union Berlin",
+          "away": "Eintracht Frankfurt",
+          "home_goals": 3,
+          "away_goals": 3,
+          "result": null
+        },
+        {
+          "date": "2026-08-29",
+          "home": "SV 07 Elversberg",
+          "away": "Bayer 04 Leverkusen",
+          "home_goals": 3,
+          "away_goals": 2,
+          "result": null
+        }
+      ]
+    },
+    {
+      "code": "SP1",
+      "openfootball": "es.1",
+      "country": "Spain",
+      "league": "La Liga",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/es.1.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "Spain Primera División 2026/27",
+      "missing_required_columns": [],
+      "row_count": 380,
+      "parseable_rows": 380,
+      "completed_result_rows": 30,
+      "sample": [
+        {
+          "date": "2026-08-15",
+          "home": "Deportivo Alavés",
+          "away": "Getafe CF",
+          "home_goals": 3,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-15",
+          "home": "Sevilla FC",
+          "away": "Rayo Vallecano de Madrid",
+          "home_goals": 2,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-16",
+          "home": "Real Racing Club de Santander",
+          "away": "Villarreal CF",
+          "home_goals": 2,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-16",
+          "home": "RCD Espanyol de Barcelona",
+          "away": "Levante UD",
+          "home_goals": 3,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-17",
+          "home": "RC Deportivo La Coruña",
+          "away": "Elche CF",
+          "home_goals": 1,
+          "away_goals": 1,
+          "result": null
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "openfootball": "it.1",
+      "country": "Italy",
+      "league": "Serie A",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/it.1.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "Italian Serie A 2026/27",
+      "missing_required_columns": [],
+      "row_count": 380,
+      "parseable_rows": 380,
+      "completed_result_rows": 20,
+      "sample": [
+        {
+          "date": "2026-08-22",
+          "home": "Udinese Calcio",
+          "away": "Como 1907",
+          "home_goals": 1,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "FC Internazionale Milano",
+          "away": "AC Monza",
+          "home_goals": 4,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Genoa CFC",
+          "away": "SSC Napoli",
+          "home_goals": 0,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Parma Calcio 1913",
+          "away": "Cagliari Calcio",
+          "home_goals": 0,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-23",
+          "home": "Frosinone Calcio",
+          "away": "Juventus FC",
+          "home_goals": 0,
+          "away_goals": 1,
+          "result": null
+        }
+      ]
+    },
+    {
+      "code": "F1",
+      "openfootball": "fr.1",
+      "country": "France",
+      "league": "Ligue 1",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/fr.1.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "French Ligue 1 2026/27",
+      "missing_required_columns": [],
+      "row_count": 306,
+      "parseable_rows": 306,
+      "completed_result_rows": 18,
+      "sample": [
+        {
+          "date": "2026-08-21",
+          "home": "Olympique de Marseille",
+          "away": "RC Strasbourg Alsace",
+          "home_goals": 4,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Racing Club de Lens",
+          "away": "AJ Auxerre",
+          "home_goals": 5,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Le Mans FC",
+          "away": "Stade Brestois 29",
+          "home_goals": 2,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "ES Troyes AC",
+          "away": "Paris FC",
+          "home_goals": 0,
+          "away_goals": 0,
+          "result": null
+        },
+        {
+          "date": "2026-08-22",
+          "home": "OGC Nice",
+          "away": "FC Lorient",
+          "home_goals": 0,
+          "away_goals": 0,
+          "result": null
+        }
+      ]
+    },
+    {
+      "code": "N1",
+      "openfootball": "nl.1",
+      "country": "Netherlands",
+      "league": "Eredivisie",
+      "source": "openfootball/football.json",
+      "season": "2026-27",
+      "url": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/nl.1.json",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "error": null,
+      "competition_name": "Netherlands Eredivisie 2026/27",
+      "missing_required_columns": [],
+      "row_count": 306,
+      "parseable_rows": 306,
+      "completed_result_rows": 33,
+      "sample": [
+        {
+          "date": "2026-08-07",
+          "home": "SC Cambuur-Leeuwarden",
+          "away": "SBV Excelsior",
+          "home_goals": 0,
+          "away_goals": 4,
+          "result": null
+        },
+        {
+          "date": "2026-08-08",
+          "home": "NEC",
+          "away": "Telstar 1963",
+          "home_goals": 1,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-08",
+          "home": "Go Ahead Eagles",
+          "away": "Willem II Tilburg",
+          "home_goals": 4,
+          "away_goals": 1,
+          "result": null
+        },
+        {
+          "date": "2026-08-08",
+          "home": "PSV",
+          "away": "Fortuna Sittard",
+          "home_goals": 2,
+          "away_goals": 2,
+          "result": null
+        },
+        {
+          "date": "2026-08-08",
+          "home": "AZ",
+          "away": "ADO Den Haag",
+          "home_goals": 2,
+          "away_goals": 0,
+          "result": null
+        }
+      ]
     }
   ]
 }

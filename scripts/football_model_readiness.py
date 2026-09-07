@@ -72,15 +72,19 @@ def public_probe_summary(probe):
         return {
             "source_status": "not_run",
             "season": None,
+            "openfootball_season": None,
             "leagues_data_ready": 0,
             "leagues_attempted": 0,
+            "sources": {},
             "has_any_valid_league": False,
         }
     return {
         "source_status": probe.get("source_status") or "unknown",
         "season": probe.get("season"),
+        "openfootball_season": probe.get("openfootball_season"),
         "leagues_data_ready": int(probe.get("leagues_data_ready") or 0),
         "leagues_attempted": int(probe.get("leagues_attempted") or 0),
+        "sources": probe.get("sources") if isinstance(probe.get("sources"), dict) else {},
         "has_any_valid_league": bool(probe.get("has_any_valid_league")),
     }
 

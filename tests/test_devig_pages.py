@@ -60,6 +60,7 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('footballModelBlockers',app)
         self.assertIn('publicFootballDataProbeLine',app)
         self.assertIn('Public data:',app)
+        self.assertIn('openfootball_season',app)
         self.assertIn('loadApiFootballPoc',app)
         self.assertIn('output/api_football_poc_status.json',app)
         self.assertIn('API-Football PoC',app)

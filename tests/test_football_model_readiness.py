@@ -45,8 +45,10 @@ class FootballModelReadinessTests(unittest.TestCase):
         public_probe = {
             "source_status": "ok",
             "season": "2627",
+            "openfootball_season": "2026-27",
             "leagues_data_ready": 1,
             "leagues_attempted": 7,
+            "sources": {"openfootball/football.json": {"data_ready": 1, "attempted": 7}},
             "has_any_valid_league": True,
         }
         report = model.build_report(candidates, rqg, public_probe)
@@ -57,6 +59,8 @@ class FootballModelReadinessTests(unittest.TestCase):
         self.assertEqual(report["market_scope"]["first_model_scope_rows"], 2)
         self.assertEqual(report["league_mapping"]["public_data_hints"]["football-data.co.uk:E0"], 3)
         self.assertEqual(report["public_football_data_probe"]["source_status"], "ok")
+        self.assertEqual(report["public_football_data_probe"]["openfootball_season"], "2026-27")
+        self.assertIn("openfootball/football.json", report["public_football_data_probe"]["sources"])
         self.assertIn("historical_results_adapter_not_yet_built", report["blockers"])
         self.assertNotIn("public_football_data_probe_not_ready", report["blockers"])
 

@@ -150,6 +150,7 @@ Recent milestones:
 - Next model-readiness PR should publish Football model readiness to Pages, so model-reference work can be prioritized by actual candidate metadata, league mapping and first model-scope rows.
 - Next provider-diagnostics PR should expose Odds-API.io event-payload sport/league coverage in operational status and Pages without extra provider calls, so missing model metadata can be diagnosed after the next feed.
 - PR #104 should add a SHADOW_ONLY public Football-Data.co.uk results-data probe and wire its status into Football model readiness/Pages without making Pages depend on third-party network availability. If the source is unavailable, report `source_unavailable` fail-soft and keep the model-reference role blocked.
+- PR #105 should add Openfootball/football.json as a SHADOW_ONLY public-results fallback source. GitHub-backed JSON has 2026-27 first-division coverage for the target leagues and removes the public-data availability blocker, but the model role remains blocked until candidate league metadata, mapping, adapter, calibration and shadow validation exist.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
