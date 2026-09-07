@@ -111,6 +111,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/devig_shadow_comparison.json` — multiplicative-vs-power no-vig shadow report
 - `output/reference_quality_shadow.json` — SHADOW_ONLY readiness report for a future Reference Quality Gate
 - `output/football_model_readiness.json` — SHADOW_ONLY metadata and market-scope report for future Dixon-Coles/Elo model work
+- `output/public_football_data_probe.json`, `output/public_football_data_probe.md` — SHADOW_ONLY public football results-data availability probe for future Dixon-Coles/Elo work
 - `output/paper_pick_readiness.json` — observability-only summary of how far current candidates are from many more PAPER PICKS
 - `output/api_football_poc_status.json`, `output/api_football_poc_status.md` — SHADOW_ONLY API-Football/API-Sports external-reference probe status
 - `output/api_football_odds_sample.json`, `output/api_football_odds_sample.md` — SHADOW_ONLY low-call API-Football odds coverage sample
@@ -148,6 +149,7 @@ Recent milestones:
 - Next model-readiness PR should preserve provider sport/league metadata on Odds-API.io value candidates, giving future Dixon-Coles/Elo and public-data coverage probes a real league key instead of only event names.
 - Next model-readiness PR should publish Football model readiness to Pages, so model-reference work can be prioritized by actual candidate metadata, league mapping and first model-scope rows.
 - Next provider-diagnostics PR should expose Odds-API.io event-payload sport/league coverage in operational status and Pages without extra provider calls, so missing model metadata can be diagnosed after the next feed.
+- PR #104 should add a SHADOW_ONLY public Football-Data.co.uk results-data probe and wire its status into Football model readiness/Pages without making Pages depend on third-party network availability. If the source is unavailable, report `source_unavailable` fail-soft and keep the model-reference role blocked.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
