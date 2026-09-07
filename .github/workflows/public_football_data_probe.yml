@@ -1,0 +1,42 @@
+name: Public football data probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-football-data-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Sync latest main
+        run: git pull --rebase --autostash origin main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Probe public football data
+        run: |
+          python scripts/public_football_data_probe.py
+          python scripts/football_model_readiness.py
+
+      - name: Commit public football data status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+          git add output/public_football_data_probe.json output/public_football_data_probe.md output/football_model_readiness.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update public football data probe"
+          git push

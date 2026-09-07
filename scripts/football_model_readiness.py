@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 
 CANDIDATES = pathlib.Path("data/value_candidates.json")
 REFERENCE_QUALITY = pathlib.Path("output/reference_quality_shadow.json")
+PUBLIC_FOOTBALL_DATA_PROBE = pathlib.Path("output/public_football_data_probe.json")
 OUT = pathlib.Path("output/football_model_readiness.json")
 
 MODEL_VERSION = "football-model-readiness-v1"
@@ -66,9 +67,28 @@ def fresh_exact_market_counts(rqg):
     }
 
 
-def build_report(candidates, rqg):
+def public_probe_summary(probe):
+    if not isinstance(probe, dict):
+        return {
+            "source_status": "not_run",
+            "season": None,
+            "leagues_data_ready": 0,
+            "leagues_attempted": 0,
+            "has_any_valid_league": False,
+        }
+    return {
+        "source_status": probe.get("source_status") or "unknown",
+        "season": probe.get("season"),
+        "leagues_data_ready": int(probe.get("leagues_data_ready") or 0),
+        "leagues_attempted": int(probe.get("leagues_attempted") or 0),
+        "has_any_valid_league": bool(probe.get("has_any_valid_league")),
+    }
+
+
+def build_report(candidates, rqg, public_probe=None):
     if not isinstance(candidates, list):
         candidates = []
+    public_probe = public_probe_summary(public_probe)
     market_counts = Counter(str(row.get("market") or "unknown") for row in candidates)
     exact = [
         row
@@ -115,6 +135,8 @@ def build_report(candidates, rqg):
         blockers.append("candidate_league_metadata_missing_until_next_feed")
     if not public_hints:
         blockers.append("public_data_league_mapping_not_verified")
+    if not public_probe["has_any_valid_league"]:
+        blockers.append("public_football_data_probe_not_ready")
     blockers.append("historical_results_adapter_not_yet_built")
     blockers.append("model_reference_must_remain_shadow_until_calibrated")
 
@@ -146,6 +168,7 @@ def build_report(candidates, rqg):
             "top_candidate_leagues": league_counts.most_common(10),
             "public_data_hints": dict(sorted(public_hints.items())),
         },
+        "public_football_data_probe": public_probe,
         "blockers": blockers,
         "missing_by_market": {
             market: dict(sorted(counter.items()))
@@ -156,7 +179,11 @@ def build_report(candidates, rqg):
 
 
 def main():
-    report = build_report(load_json(CANDIDATES, []), load_json(REFERENCE_QUALITY, {}))
+    report = build_report(
+        load_json(CANDIDATES, []),
+        load_json(REFERENCE_QUALITY, {}),
+        load_json(PUBLIC_FOOTBALL_DATA_PROBE, {}),
+    )
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
     print(json.dumps({

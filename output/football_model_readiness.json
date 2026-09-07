@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T05:04:20.186848+00:00",
+  "generated_at": "2026-09-07T07:43:03.227517+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
@@ -37,9 +37,17 @@
     "top_candidate_leagues": [],
     "public_data_hints": {}
   },
+  "public_football_data_probe": {
+    "source_status": "source_unavailable",
+    "season": "2627",
+    "leagues_data_ready": 0,
+    "leagues_attempted": 7,
+    "has_any_valid_league": false
+  },
   "blockers": [
     "candidate_league_metadata_missing_until_next_feed",
     "public_data_league_mapping_not_verified",
+    "public_football_data_probe_not_ready",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],

@@ -42,14 +42,23 @@ class FootballModelReadinessTests(unittest.TestCase):
                 ]
             }
         }
-        report = model.build_report(candidates, rqg)
+        public_probe = {
+            "source_status": "ok",
+            "season": "2627",
+            "leagues_data_ready": 1,
+            "leagues_attempted": 7,
+            "has_any_valid_league": True,
+        }
+        report = model.build_report(candidates, rqg, public_probe)
         self.assertEqual(report["mode"], "SHADOW_ONLY")
         self.assertEqual(report["production_impact"], "none")
         self.assertEqual(report["reference_quality_role_if_promoted"], "model_reference")
         self.assertEqual(report["metadata"]["league_coverage"], 1.0)
         self.assertEqual(report["market_scope"]["first_model_scope_rows"], 2)
         self.assertEqual(report["league_mapping"]["public_data_hints"]["football-data.co.uk:E0"], 3)
+        self.assertEqual(report["public_football_data_probe"]["source_status"], "ok")
         self.assertIn("historical_results_adapter_not_yet_built", report["blockers"])
+        self.assertNotIn("public_football_data_probe_not_ready", report["blockers"])
 
     def test_missing_metadata_fails_closed(self):
         report = model.build_report([{"event": "A vs B", "market": "h2h"}], {})
@@ -58,6 +67,7 @@ class FootballModelReadinessTests(unittest.TestCase):
         self.assertEqual(report["market_scope"]["first_model_scope_rows"], 0)
         self.assertIn("candidate_league_metadata_missing_until_next_feed", report["blockers"])
         self.assertIn("public_data_league_mapping_not_verified", report["blockers"])
+        self.assertIn("public_football_data_probe_not_ready", report["blockers"])
         self.assertEqual(report["missing_by_market"]["h2h"]["league_missing"], 1)
 
     def test_main_writes_public_report(self):
@@ -65,18 +75,21 @@ class FootballModelReadinessTests(unittest.TestCase):
             root = pathlib.Path(td)
             candidates = root / "candidates.json"
             rqg = root / "rqg.json"
+            probe = root / "public_probe.json"
             out = root / "football_model_readiness.json"
             candidates.write_text(json.dumps([{"event": "A vs B", "market": "h2h"}]))
             rqg.write_text(json.dumps({}))
-            old = (model.CANDIDATES, model.REFERENCE_QUALITY, model.OUT)
-            model.CANDIDATES, model.REFERENCE_QUALITY, model.OUT = candidates, rqg, out
+            probe.write_text(json.dumps({"source_status": "ok", "has_any_valid_league": True}))
+            old = (model.CANDIDATES, model.REFERENCE_QUALITY, model.PUBLIC_FOOTBALL_DATA_PROBE, model.OUT)
+            model.CANDIDATES, model.REFERENCE_QUALITY, model.PUBLIC_FOOTBALL_DATA_PROBE, model.OUT = candidates, rqg, probe, out
             try:
                 model.main()
                 data = json.loads(out.read_text())
             finally:
-                model.CANDIDATES, model.REFERENCE_QUALITY, model.OUT = old
+                model.CANDIDATES, model.REFERENCE_QUALITY, model.PUBLIC_FOOTBALL_DATA_PROBE, model.OUT = old
             self.assertEqual(data["production_impact"], "none")
             self.assertIn("metadata", data)
+            self.assertIn("public_football_data_probe", data)
 
 
 if __name__ == "__main__":
