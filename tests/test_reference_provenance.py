@@ -28,4 +28,18 @@ class ReferenceProvenanceTests(unittest.TestCase):
         sources=[{'transport_provider_id':'a'},{'transport_provider_id':'b','economic_source_id':''}]
         self.assertEqual(reference.unique_economic_source_count(sources),0)
 
+    def test_event_metadata_preserves_provider_sport_and_league(self):
+        meta=reference.event_metadata(
+            {'sport':'football','league':'Egypt Cup'},
+            {'sport':'football','league':'Egypt'}
+        )
+        self.assertEqual(meta, {'sport':'football','league':'Egypt Cup'})
+
+    def test_event_metadata_falls_back_to_later_rows(self):
+        meta=reference.event_metadata(
+            {'sport':'','league':None},
+            {'sport':'football','league':'Denmark Superliga'}
+        )
+        self.assertEqual(meta, {'sport':'football','league':'Denmark Superliga'})
+
 if __name__=='__main__': unittest.main()

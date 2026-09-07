@@ -34,9 +34,9 @@ class DevigShadowComparisonTests(unittest.TestCase):
                 reference.SHADOW_OUT=root/'output/devig_shadow_comparison.json'
                 reference.UNIBET.parent.mkdir()
                 rows=[
-                    {'event_id':'e1','event':'Home v Away','commence_time':'2026-09-05T12:00:00Z','market':'h2h','line':None,'selection':'home','odds':1.80,'home':'Home','away':'Away'},
-                    {'event_id':'e1','event':'Home v Away','commence_time':'2026-09-05T12:00:00Z','market':'h2h','line':None,'selection':'draw','odds':3.70,'home':'Home','away':'Away'},
-                    {'event_id':'e1','event':'Home v Away','commence_time':'2026-09-05T12:00:00Z','market':'h2h','line':None,'selection':'away','odds':4.80,'home':'Home','away':'Away'},
+                    {'event_id':'e1','event':'Home v Away','commence_time':'2026-09-05T12:00:00Z','market':'h2h','line':None,'selection':'home','odds':1.80,'home':'Home','away':'Away','sport':'football','league':'Test League'},
+                    {'event_id':'e1','event':'Home v Away','commence_time':'2026-09-05T12:00:00Z','market':'h2h','line':None,'selection':'draw','odds':3.70,'home':'Home','away':'Away','sport':'football','league':'Test League'},
+                    {'event_id':'e1','event':'Home v Away','commence_time':'2026-09-05T12:00:00Z','market':'h2h','line':None,'selection':'away','odds':4.80,'home':'Home','away':'Away','sport':'football','league':'Test League'},
                 ]
                 reference.UNIBET.write_text(''.join(json.dumps(x)+'\n' for x in rows))
                 reference.BET365.write_text('')
@@ -47,6 +47,8 @@ class DevigShadowComparisonTests(unittest.TestCase):
                 home=next(x for x in candidates if x['pick']=='Home')
                 expected=reference.novig({'home':1.80,'draw':3.70,'away':4.80})['home']
                 self.assertEqual(home['devig_method'],'multiplicative')
+                self.assertEqual(home['sport'],'football')
+                self.assertEqual(home['league'],'Test League')
                 self.assertAlmostEqual(home['fair_probability'],round(expected,6))
                 self.assertEqual(home['devig_shadow']['production_method'],'multiplicative')
                 report=json.loads(reference.SHADOW_OUT.read_text())
