@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-06T17:06:06.388608+00:00",
-  "as_of": "2026-09-06T15:27:56.691140+00:00",
+  "generated_at": "2026-09-07T04:40:58.366222+00:00",
+  "as_of": "2026-09-07T04:40:58.253290+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 579,
-  "fresh_exact_candidates": 447,
+  "total_candidates": 501,
+  "fresh_exact_candidates": 457,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 447,
-    "missing_external_market_reference": 447,
-    "missing_model_reference": 447
+    "insufficient_independent_economic_sources": 457,
+    "missing_external_market_reference": 457,
+    "missing_model_reference": 457
   },
   "missing_roles": {
-    "external_market_reference": 447,
-    "model_reference": 447
+    "external_market_reference": 457,
+    "model_reference": 457
   },
   "by_market": {
     "h2h": {
-      "evaluated": 141,
-      "fresh_exact_bet365": 141,
+      "evaluated": 129,
+      "fresh_exact_bet365": 129,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 141,
-        "missing_external_market_reference": 141,
-        "missing_model_reference": 141
+        "insufficient_independent_economic_sources": 129,
+        "missing_external_market_reference": 129,
+        "missing_model_reference": 129
       },
       "missing_roles": {
-        "external_market_reference": 141,
-        "model_reference": 141
+        "external_market_reference": 129,
+        "model_reference": 129
       }
     },
     "spreads": {
-      "evaluated": 76,
-      "fresh_exact_bet365": 76,
+      "evaluated": 80,
+      "fresh_exact_bet365": 80,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 76,
-        "missing_external_market_reference": 76,
-        "missing_model_reference": 76
+        "insufficient_independent_economic_sources": 80,
+        "missing_external_market_reference": 80,
+        "missing_model_reference": 80
       },
       "missing_roles": {
-        "external_market_reference": 76,
-        "model_reference": 76
+        "external_market_reference": 80,
+        "model_reference": 80
       }
     },
     "totals": {
-      "evaluated": 230,
-      "fresh_exact_bet365": 230,
+      "evaluated": 248,
+      "fresh_exact_bet365": 248,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 230,
-        "missing_external_market_reference": 230,
-        "missing_model_reference": 230
+        "insufficient_independent_economic_sources": 248,
+        "missing_external_market_reference": 248,
+        "missing_model_reference": 248
       },
       "missing_roles": {
-        "external_market_reference": 230,
-        "model_reference": 230
+        "external_market_reference": 248,
+        "model_reference": 248
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 447,
+        "fresh_exact_candidates_blocked": 457,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 447,
+        "fresh_exact_candidates_blocked": 457,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 447
+        "fresh_exact_candidates_blocked": 457
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 230,
+        "fresh_exact_candidates": 248,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 230,
-          "model_reference": 230
+          "external_market_reference": 248,
+          "model_reference": 248
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 141,
+        "fresh_exact_candidates": 129,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 141,
-          "model_reference": 141
+          "external_market_reference": 129,
+          "model_reference": 129
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 76,
+        "fresh_exact_candidates": 80,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 76,
-          "model_reference": 76
+          "external_market_reference": 80,
+          "model_reference": 80
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 230,
+      "first_market_fresh_exact_candidates": 248,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 141,
-      "fresh_exact_bet365": 141,
+      "evaluated": 129,
+      "fresh_exact_bet365": 129,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 141,
-        "missing_external_market_reference": 141,
-        "missing_model_reference": 141
+        "insufficient_independent_economic_sources": 129,
+        "missing_external_market_reference": 129,
+        "missing_model_reference": 129
       },
       "missing_roles": {
-        "external_market_reference": 141,
-        "model_reference": 141
+        "external_market_reference": 129,
+        "model_reference": 129
       }
     },
     "spreads": {
-      "evaluated": 118,
-      "fresh_exact_bet365": 76,
+      "evaluated": 80,
+      "fresh_exact_bet365": 80,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 118,
-        "missing_external_market_reference": 118,
-        "missing_model_reference": 118,
-        "not_fresh_exact_bet365": 42
+        "insufficient_independent_economic_sources": 80,
+        "missing_external_market_reference": 80,
+        "missing_model_reference": 80
       },
       "missing_roles": {
-        "external_market_reference": 118,
-        "model_reference": 118
+        "external_market_reference": 80,
+        "model_reference": 80
       }
     },
     "totals": {
-      "evaluated": 320,
-      "fresh_exact_bet365": 230,
+      "evaluated": 292,
+      "fresh_exact_bet365": 248,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 320,
-        "missing_external_market_reference": 320,
-        "missing_model_reference": 320,
-        "not_fresh_exact_bet365": 90
+        "insufficient_independent_economic_sources": 292,
+        "missing_external_market_reference": 292,
+        "missing_model_reference": 292,
+        "not_fresh_exact_bet365": 44
       },
       "missing_roles": {
-        "external_market_reference": 320,
-        "model_reference": 320
+        "external_market_reference": 292,
+        "model_reference": 292
       }
     }
   },
   "sample_failures": [
     {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
       "market": "h2h",
-      "pick": "ES Sahel",
+      "pick": "El Qanah FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
       "market": "h2h",
-      "pick": "JS Omrane",
+      "pick": "Talaea El Gaish",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +260,61 @@
       ]
     },
     {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +338,9 @@
       ]
     },
     {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
+      "event": "El Qanah FC vs Talaea El Gaish",
+      "event_id": 73463616,
+      "bet365_event_id": 73463616,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,65 +364,11 @@
       ]
     },
     {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "ES Sahel vs JS Omrane",
-      "event_id": 74191592,
-      "bet365_event_id": 74191592,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "ES Metlaoui vs ES Hammam Sousse",
-      "event_id": 74191594,
-      "bet365_event_id": 74191594,
+      "event": "Umm-Salal SC vs Al-Khor SC",
+      "event_id": 73051294,
+      "bet365_event_id": 73051294,
       "market": "h2h",
-      "pick": "ES Metlaoui",
+      "pick": "Umm-Salal SC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -393,9 +390,9 @@
       ]
     },
     {
-      "event": "ES Metlaoui vs ES Hammam Sousse",
-      "event_id": 74191594,
-      "bet365_event_id": 74191594,
+      "event": "Umm-Salal SC vs Al-Khor SC",
+      "event_id": 73051294,
+      "bet365_event_id": 73051294,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -419,11 +416,11 @@
       ]
     },
     {
-      "event": "ES Metlaoui vs ES Hammam Sousse",
-      "event_id": 74191594,
-      "bet365_event_id": 74191594,
+      "event": "Umm-Salal SC vs Al-Khor SC",
+      "event_id": 73051294,
+      "bet365_event_id": 73051294,
       "market": "h2h",
-      "pick": "ES Hammam Sousse",
+      "pick": "Al-Khor SC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
