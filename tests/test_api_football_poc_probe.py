@@ -37,6 +37,20 @@ class ApiFootballPocProbeTests(unittest.TestCase):
         self.assertEqual(contract["evidence_family"], "external_market_price")
         self.assertIn("<bookmaker_id>", contract["economic_source_id"])
 
+    def test_api_errors_make_successful_http_response_not_ok(self):
+        entries = [{
+            "endpoint": "/odds/bookmakers",
+            "configured": True,
+            "ok": False,
+            "status_code": 200,
+            "errors": {"access": "Your account is suspended"},
+            "results": 0,
+            "sample": [],
+        }]
+        report = probe.build_report(entries, "API_FOOTBALL_KEY")
+        self.assertFalse(report["ok"])
+        self.assertEqual(report["account_status"], "access_error")
+
     def test_main_writes_status_files_without_secret(self):
         with tempfile.TemporaryDirectory() as td:
             root = pathlib.Path(td)

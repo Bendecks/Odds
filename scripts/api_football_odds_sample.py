@@ -55,6 +55,28 @@ def safe_headers(headers):
     return {key: lower[key] for key in wanted if key in lower}
 
 
+def has_api_errors(body):
+    errors = body.get("errors") if isinstance(body, dict) else None
+    if isinstance(errors, dict):
+        return bool(errors)
+    if isinstance(errors, list):
+        return bool(errors)
+    return bool(errors)
+
+
+def account_status(catalog_results):
+    results = [row for row in (catalog_results or {}).values() if row]
+    for row in results:
+        errors = row.get("errors")
+        if isinstance(errors, dict) and "access" in errors:
+            return "access_error"
+    if not results:
+        return "missing_secret"
+    if all(row.get("ok") for row in results):
+        return "ok"
+    return "error"
+
+
 def request_body(path, key, params=None):
     req = urllib.request.Request(endpoint_url(path, params), headers={"x-apisports-key": key})
     try:
@@ -64,7 +86,7 @@ def request_body(path, key, params=None):
             return {
                 "endpoint": path,
                 "params": params or {},
-                "ok": 200 <= response.status < 300,
+                "ok": 200 <= response.status < 300 and not has_api_errors(body),
                 "status_code": response.status,
                 "headers": safe_headers(response.headers),
                 "errors": body.get("errors") if isinstance(body, dict) else None,
@@ -249,6 +271,7 @@ def build_report(secret_name, catalog_bookmakers, catalog_bets, odds_calls, date
     total_fixtures = sum(int(row.get("fixtures_returned") or 0) for row in odds_calls)
     total_observations = sum(int(row.get("selection_observations") or 0) for row in odds_calls)
     catalog_results = catalog_results or {}
+    status = account_status(catalog_results) if secret_name else "missing_secret"
     return {
         "generated_at": now_iso(),
         "mode": "SHADOW_ONLY",
@@ -256,6 +279,7 @@ def build_report(secret_name, catalog_bookmakers, catalog_bets, odds_calls, date
         "provider": "API-Football / API-Sports",
         "configured_secret": secret_name,
         "configured": bool(secret_name),
+        "account_status": status,
         "sample_version": SAMPLE_VERSION,
         "max_odds_calls": MAX_ODDS_CALLS,
         "target_dates": dates,
@@ -277,6 +301,7 @@ def build_report(secret_name, catalog_bookmakers, catalog_bets, odds_calls, date
             "fixtures_returned": total_fixtures,
             "selection_observations": total_observations,
             "has_external_market_sample": total_observations > 0,
+            "blocked_by_account_status": status != "ok",
         },
         "promotion_blockers": [
             "No production use until fixture matching to Bet365 candidates is exact or defensibly conservative.",

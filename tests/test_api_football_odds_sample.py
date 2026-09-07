@@ -69,6 +69,31 @@ class ApiFootballOddsSampleTests(unittest.TestCase):
         self.assertIn("economic_source_id", report["provenance_template"])
         self.assertTrue(report["promotion_blockers"])
         self.assertEqual(report["catalogs"]["diagnostics"]["bookmakers"]["items_parsed"], 1)
+        self.assertEqual(report["account_status"], "ok")
+        self.assertFalse(report["coverage"]["blocked_by_account_status"])
+
+    def test_catalog_access_error_blocks_sample_despite_http_200(self):
+        result = {
+            "endpoint": "/odds/bookmakers",
+            "ok": False,
+            "status_code": 200,
+            "results": 0,
+            "headers": {},
+            "errors": {"access": "Your account is suspended"},
+            "body": {"errors": {"access": "Your account is suspended"}, "response": []},
+        }
+        report = sample.build_report(
+            "API_FOOTBALL_KEY",
+            [],
+            [],
+            [],
+            ["2026-09-06"],
+            [],
+            [],
+            {"bookmakers": result, "bets": result},
+        )
+        self.assertEqual(report["account_status"], "access_error")
+        self.assertTrue(report["coverage"]["blocked_by_account_status"])
 
     def test_main_writes_report_without_secret(self):
         with tempfile.TemporaryDirectory() as td:
