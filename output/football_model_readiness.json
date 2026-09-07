@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-09-07T05:04:20.186848+00:00",
+  "mode": "SHADOW_ONLY",
+  "production_impact": "none",
+  "model_version": "football-model-readiness-v1",
+  "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
+  "reference_quality_role_if_promoted": "model_reference",
+  "candidate_rows": 501,
+  "exact_bet365_rows": 457,
+  "fresh_exact_rows_by_market": {
+    "h2h": 129,
+    "spreads": 80,
+    "totals": 248
+  },
+  "metadata": {
+    "rows_with_sport": 0,
+    "rows_with_league": 0,
+    "rows_with_parseable_teams": 501,
+    "sport_coverage": 0.0,
+    "league_coverage": 0.0,
+    "team_parse_coverage": 1.0
+  },
+  "market_scope": {
+    "candidate_markets": {
+      "h2h": 129,
+      "spreads": 80,
+      "totals": 292
+    },
+    "first_model_markets": [
+      "h2h",
+      "totals"
+    ],
+    "coverable_rows_by_market": {},
+    "first_model_scope_rows": 0
+  },
+  "league_mapping": {
+    "top_candidate_leagues": [],
+    "public_data_hints": {}
+  },
+  "blockers": [
+    "candidate_league_metadata_missing_until_next_feed",
+    "public_data_league_mapping_not_verified",
+    "historical_results_adapter_not_yet_built",
+    "model_reference_must_remain_shadow_until_calibrated"
+  ],
+  "missing_by_market": {
+    "h2h": {
+      "league_missing": 129,
+      "sport_missing": 129
+    },
+    "spreads": {
+      "league_missing": 80,
+      "market_not_first_model_scope": 80,
+      "sport_missing": 80
+    },
+    "totals": {
+      "league_missing": 292,
+      "sport_missing": 292
+    }
+  },
+  "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
+}
