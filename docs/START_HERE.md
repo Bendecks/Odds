@@ -142,6 +142,7 @@ Recent milestones:
 - PR #97 should add a separate low-call API-Football odds sample workflow that measures actual pre-match coverage against current candidate dates without changing production qualification.
 - PR #98 should add catalog-call diagnostics and external-bookmaker fallback to the API-Football odds sample so zero-coverage runs explain whether the blocker is parsing, endpoint response, rate limit or true coverage.
 - PR #99 should classify API-Football body-level access errors as failed probes even when HTTP status is 200, so suspended-account states are visible and cannot be mistaken for valid zero coverage.
+- Next PR should make Pages infer and display API-Football account-access blockers from the latest odds-sample diagnostics, so stale PoC snapshots cannot visually override a newer suspended-account sample.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 

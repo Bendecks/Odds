@@ -54,6 +54,10 @@ class DevigPagesTests(unittest.TestCase):
         self.assertIn('loadApiFootballOddsSample',app)
         self.assertIn('output/api_football_odds_sample.json',app)
         self.assertIn('API-Football odds sample',app)
+        self.assertIn('inferredApiFootballAccountStatus',app)
+        self.assertIn('hasApiFootballAccessError',app)
+        self.assertIn('Blokeret af account',app)
+        self.assertIn('account access error',app)
 
     def test_shadow_report_has_dashboard_styles(self):
         styles=pathlib.Path('styles.css').read_text()
