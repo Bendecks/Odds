@@ -46,6 +46,27 @@ def endpoint_url(path, params=None):
     return f"{BASE_URL}{path}" + (f"?{query}" if query else "")
 
 
+def has_api_errors(body):
+    errors = body.get("errors") if isinstance(body, dict) else None
+    if isinstance(errors, dict):
+        return bool(errors)
+    if isinstance(errors, list):
+        return bool(errors)
+    return bool(errors)
+
+
+def account_status(entries):
+    for row in entries:
+        errors = row.get("errors")
+        if isinstance(errors, dict) and "access" in errors:
+            return "access_error"
+    if not entries or not all(row.get("configured") for row in entries):
+        return "missing_secret"
+    if all(row.get("ok") for row in entries):
+        return "ok"
+    return "error"
+
+
 def request_json(path, key, params=None):
     url = endpoint_url(path, params)
     req = urllib.request.Request(url, headers={"x-apisports-key": key})
@@ -59,7 +80,7 @@ def request_json(path, key, params=None):
             return {
                 "endpoint": path,
                 "configured": True,
-                "ok": 200 <= response.status < 300,
+                "ok": 200 <= response.status < 300 and not has_api_errors(body),
                 "status_code": response.status,
                 "headers": safe_headers(response.headers),
                 "errors": body.get("errors") if isinstance(body, dict) else None,
@@ -130,9 +151,9 @@ def provenance_contract():
 
 def build_report(entries, secret_name):
     configured = bool(secret_name)
-    ok_entries = [row for row in entries if row.get("ok")]
     bookmaker_probe = next((row for row in entries if row.get("endpoint") == "/odds/bookmakers"), {})
     bet_probe = next((row for row in entries if row.get("endpoint") == "/odds/bets"), {})
+    status = account_status(entries)
     return {
         "generated_at": now_iso(),
         "mode": "SHADOW_ONLY",
@@ -142,7 +163,8 @@ def build_report(entries, secret_name):
         "credential_secret_names": list(SECRET_NAMES),
         "configured_secret": secret_name,
         "configured": configured,
-        "ok": configured and len(ok_entries) == len(entries),
+        "ok": configured and status == "ok",
+        "account_status": status,
         "purpose": "Probe API-Football as a potential independent external market reference without affecting PAPER PICK qualification.",
         "required_before_reference_role": [
             "API key configured",
@@ -169,6 +191,7 @@ def markdown(report):
         f"Production impact: {report['production_impact']}",
         f"Configured: {report['configured']}",
         f"OK: {report['ok']}",
+        f"Account status: {report['account_status']}",
         "",
         "This probe is only for evaluating API-Football/API-Sports as a future independent external market reference.",
         "It must not change PAPER PICK qualification until freshness, coverage and provenance are validated.",
