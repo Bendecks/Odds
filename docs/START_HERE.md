@@ -84,7 +84,8 @@ A future Reference Quality Gate may combine independent market evidence and a ca
 8. `scripts/model_validation_readiness.py` calculates ROI, CLV, Brier/calibration, ECE, bootstrap interval and version metrics.
 9. De-vig shadow comparison records multiplicative-vs-power differences without changing production qualification.
 10. Reference Quality Gate shadow analysis checks whether fresh exact Bet365 candidates have the required independent roles: Unibet reference, external market reference and model reference. It also ranks the largest role/market unlocks. This has no production impact.
-11. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, API-Football PoC status, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
+11. Football model readiness measures whether current candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference. It is SHADOW_ONLY and does not satisfy the model-reference role.
+12. GitHub Pages displays current decision, funnel, PAPER history, validation, development status, Paper Pick readiness, API-Football PoC status, Football model readiness, the latest de-vig shadow summary when present, the latest Reference Quality shadow status when present, the latest Odds-API.io quota-budget mode, price-age freshness pressure and reference-depth gap by market.
 
 ## Web app
 GitHub Pages: `https://bendecks.github.io/Odds/`
@@ -109,6 +110,7 @@ Keep **current decision** and **historical PAPER picks** conceptually separate i
 - `output/development_status.json` — living development roadmap
 - `output/devig_shadow_comparison.json` — multiplicative-vs-power no-vig shadow report
 - `output/reference_quality_shadow.json` — SHADOW_ONLY readiness report for a future Reference Quality Gate
+- `output/football_model_readiness.json` — SHADOW_ONLY metadata and market-scope report for future Dixon-Coles/Elo model work
 - `output/paper_pick_readiness.json` — observability-only summary of how far current candidates are from many more PAPER PICKS
 - `output/api_football_poc_status.json`, `output/api_football_poc_status.md` — SHADOW_ONLY API-Football/API-Sports external-reference probe status
 - `output/api_football_odds_sample.json`, `output/api_football_odds_sample.md` — SHADOW_ONLY low-call API-Football odds coverage sample
@@ -144,6 +146,7 @@ Recent milestones:
 - PR #99 should classify API-Football body-level access errors as failed probes even when HTTP status is 200, so suspended-account states are visible and cannot be mistaken for valid zero coverage.
 - Next PR should make Pages infer and display API-Football account-access blockers from the latest odds-sample diagnostics, so stale PoC snapshots cannot visually override a newer suspended-account sample.
 - Next model-readiness PR should preserve provider sport/league metadata on Odds-API.io value candidates, giving future Dixon-Coles/Elo and public-data coverage probes a real league key instead of only event names.
+- Next model-readiness PR should publish Football model readiness to Pages, so model-reference work can be prioritized by actual candidate metadata, league mapping and first model-scope rows.
 
 Historical PAPER records may still exist from older architecture. They are useful only as clearly labelled history and do **not** validate the current model. Validation requires genuine future new-model signals and exact settlements.
 
