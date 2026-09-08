@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T04:35:21.094737+00:00",
-  "as_of": "2026-09-08T04:35:20.981293+00:00",
+  "generated_at": "2026-09-08T16:38:10.625044+00:00",
+  "as_of": "2026-09-08T16:38:10.524858+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 526,
-  "fresh_exact_candidates": 500,
+  "total_candidates": 642,
+  "fresh_exact_candidates": 524,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 500,
-    "missing_external_market_reference": 500,
-    "missing_model_reference": 500
+    "insufficient_independent_economic_sources": 524,
+    "missing_external_market_reference": 524,
+    "missing_model_reference": 524
   },
   "missing_roles": {
-    "external_market_reference": 500,
-    "model_reference": 500
+    "external_market_reference": 524,
+    "model_reference": 524
   },
   "by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 150,
+      "fresh_exact_bet365": 150,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 150,
+        "missing_external_market_reference": 150,
+        "missing_model_reference": 150
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 150,
+        "model_reference": 150
       }
     },
     "spreads": {
-      "evaluated": 134,
-      "fresh_exact_bet365": 134,
+      "evaluated": 66,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 134,
-        "missing_external_market_reference": 134,
-        "missing_model_reference": 134
+        "insufficient_independent_economic_sources": 66,
+        "missing_external_market_reference": 66,
+        "missing_model_reference": 66
       },
       "missing_roles": {
-        "external_market_reference": 134,
-        "model_reference": 134
+        "external_market_reference": 66,
+        "model_reference": 66
       }
     },
     "totals": {
-      "evaluated": 258,
-      "fresh_exact_bet365": 258,
+      "evaluated": 308,
+      "fresh_exact_bet365": 308,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 258,
-        "missing_external_market_reference": 258,
-        "missing_model_reference": 258
+        "insufficient_independent_economic_sources": 308,
+        "missing_external_market_reference": 308,
+        "missing_model_reference": 308
       },
       "missing_roles": {
-        "external_market_reference": 258,
-        "model_reference": 258
+        "external_market_reference": 308,
+        "model_reference": 308
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 500,
+        "fresh_exact_candidates_blocked": 524,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 500,
+        "fresh_exact_candidates_blocked": 524,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 500
+        "fresh_exact_candidates_blocked": 524
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 258,
+        "fresh_exact_candidates": 308,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 258,
-          "model_reference": 258
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 134,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 134,
-          "model_reference": 134
+          "external_market_reference": 308,
+          "model_reference": 308
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 108,
+        "fresh_exact_candidates": 150,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 108,
-          "model_reference": 108
+          "external_market_reference": 150,
+          "model_reference": 150
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 66,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 66,
+          "model_reference": 66
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 258,
+      "first_market_fresh_exact_candidates": 308,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 150,
+      "fresh_exact_bet365": 150,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 150,
+        "missing_external_market_reference": 150,
+        "missing_model_reference": 150
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 150,
+        "model_reference": 150
       }
     },
     "spreads": {
-      "evaluated": 134,
-      "fresh_exact_bet365": 134,
+      "evaluated": 122,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 134,
-        "missing_external_market_reference": 134,
-        "missing_model_reference": 134
+        "insufficient_independent_economic_sources": 122,
+        "missing_external_market_reference": 122,
+        "missing_model_reference": 122,
+        "not_fresh_exact_bet365": 56
       },
       "missing_roles": {
-        "external_market_reference": 134,
-        "model_reference": 134
+        "external_market_reference": 122,
+        "model_reference": 122
       }
     },
     "totals": {
-      "evaluated": 284,
-      "fresh_exact_bet365": 258,
+      "evaluated": 370,
+      "fresh_exact_bet365": 308,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 284,
-        "missing_external_market_reference": 284,
-        "missing_model_reference": 284,
-        "not_fresh_exact_bet365": 26
+        "insufficient_independent_economic_sources": 370,
+        "missing_external_market_reference": 370,
+        "missing_model_reference": 370,
+        "not_fresh_exact_bet365": 62
       },
       "missing_roles": {
-        "external_market_reference": 284,
-        "model_reference": 284
+        "external_market_reference": 370,
+        "model_reference": 370
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "h2h",
-      "pick": "Incheon United FC",
+      "pick": "NEC Nijmegen",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "h2h",
-      "pick": "Bucheon FC 1995",
+      "pick": "Excelsior Rotterdam",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,13 +261,67 @@
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "spreads",
-      "pick": "Incheon United FC",
+      "pick": "NEC Nijmegen",
+      "line": -1.75,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
+      "market": "spreads",
+      "pick": "Excelsior Rotterdam",
+      "line": -1.75,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
+      "market": "spreads",
+      "pick": "NEC Nijmegen",
       "line": -1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -280,19 +335,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "spreads",
-      "pick": "Bucheon FC 1995",
+      "pick": "Excelsior Rotterdam",
       "line": -1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -306,19 +362,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "spreads",
-      "pick": "Incheon United FC",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
+      "pick": "NEC Nijmegen",
+      "line": -1.25,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -332,19 +389,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
       "market": "spreads",
-      "pick": "Bucheon FC 1995",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
+      "pick": "Excelsior Rotterdam",
+      "line": -1.25,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -358,70 +416,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Incheon United FC vs Bucheon FC 1995",
-      "event_id": 67817858,
-      "bet365_event_id": 67817858,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
+      "event": "NEC Nijmegen vs Excelsior Rotterdam",
+      "event_id": 74104028,
+      "bet365_event_id": 74104028,
+      "market": "spreads",
+      "pick": "NEC Nijmegen",
+      "line": -0.75,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [

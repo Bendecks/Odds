@@ -1,89 +1,89 @@
 {
-  "generated_at": "2026-09-08T04:35:21.136245+00:00",
+  "generated_at": "2026-09-08T16:38:10.662002+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 526,
-  "exact_bet365_rows": 500,
+  "candidate_rows": 642,
+  "exact_bet365_rows": 524,
   "fresh_exact_rows_by_market": {
-    "h2h": 108,
-    "spreads": 134,
-    "totals": 258
+    "h2h": 150,
+    "spreads": 66,
+    "totals": 308
   },
   "metadata": {
-    "rows_with_sport": 526,
-    "rows_with_league": 526,
-    "rows_with_parseable_teams": 526,
+    "rows_with_sport": 642,
+    "rows_with_league": 642,
+    "rows_with_parseable_teams": 642,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 108,
-      "spreads": 134,
-      "totals": 284
+      "h2h": 150,
+      "spreads": 122,
+      "totals": 370
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 108,
-      "totals": 284
+      "h2h": 150,
+      "totals": 370
     },
-    "first_model_scope_rows": 392
+    "first_model_scope_rows": 520
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
-        84
+        "{'name': 'Scotland - Challenge Cup', 'slug': 'scotland-challenge-cup'}",
+        153
+      ],
+      [
+        "{'name': 'England - Championship', 'slug': 'england-championship'}",
+        103
       ],
       [
         "{'name': 'International Clubs - UEFA Champions League', 'slug': 'international-clubs-uefa-champions-league'}",
         82
       ],
       [
-        "{'name': 'Finland - Veikkausliiga, Relegation Round', 'slug': 'finland-veikkausliiga-relegation-round'}",
-        47
-      ],
-      [
-        "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
-        43
-      ],
-      [
         "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
-        41
+        49
       ],
       [
-        "{'name': 'International Youth - U20 FIFA World Cup, Women, Group F', 'slug': 'international-youth-u20-fifa-world-cup-women-group-f'}",
-        36
+        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
+        45
       ],
       [
-        "{'name': 'Estonia - Premium Liiga', 'slug': 'estonia-premium-liiga'}",
-        34
+        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+        40
       ],
       [
-        "{'name': 'Finland - Veikkausliiga, Championship Round', 'slug': 'finland-veikkausliiga-championship-round'}",
-        32
+        "{'name': 'Brazil - U20 Copa do Brasil', 'slug': 'brazil-u20-copa-do-brasil'}",
+        35
       ],
       [
-        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
-        28
+        "{'name': 'Egypt - Premier League', 'slug': 'egypt-premier-league'}",
+        16
       ],
       [
         "{'name': 'Norway - NM Cup', 'slug': 'norway-nm-cup'}",
-        18
+        11
+      ],
+      [
+        "{'name': 'Croatia - U19 Prva NL Juniori', 'slug': 'croatia-u19-prva-nl-juniori'}",
+        11
       ]
     ],
     "public_data_hints": {
       "football-data.co.uk:CL": 82,
-      "football-data.co.uk:E0": 18,
-      "football-data.co.uk:E1": 32,
-      "football-data.co.uk:N1": 41
+      "football-data.co.uk:E0": 34,
+      "football-data.co.uk:E1": 103,
+      "football-data.co.uk:N1": 49
     }
   },
   "public_football_data_probe": {
@@ -116,7 +116,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 134
+      "market_not_first_model_scope": 122
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
