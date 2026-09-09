@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T16:38:10.625044+00:00",
-  "as_of": "2026-09-08T16:38:10.524858+00:00",
+  "generated_at": "2026-09-09T04:41:39.440083+00:00",
+  "as_of": "2026-09-09T04:41:39.332084+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 642,
-  "fresh_exact_candidates": 524,
+  "total_candidates": 402,
+  "fresh_exact_candidates": 362,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 524,
-    "missing_external_market_reference": 524,
-    "missing_model_reference": 524
+    "insufficient_independent_economic_sources": 362,
+    "missing_external_market_reference": 362,
+    "missing_model_reference": 362
   },
   "missing_roles": {
-    "external_market_reference": 524,
-    "model_reference": 524
+    "external_market_reference": 362,
+    "model_reference": 362
   },
   "by_market": {
     "h2h": {
-      "evaluated": 150,
-      "fresh_exact_bet365": 150,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 150,
-        "missing_external_market_reference": 150,
-        "missing_model_reference": 150
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 150,
-        "model_reference": 150
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
-      "evaluated": 66,
-      "fresh_exact_bet365": 66,
+      "evaluated": 40,
+      "fresh_exact_bet365": 40,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 66,
-        "missing_external_market_reference": 66,
-        "missing_model_reference": 66
+        "insufficient_independent_economic_sources": 40,
+        "missing_external_market_reference": 40,
+        "missing_model_reference": 40
       },
       "missing_roles": {
-        "external_market_reference": 66,
-        "model_reference": 66
+        "external_market_reference": 40,
+        "model_reference": 40
       }
     },
     "totals": {
-      "evaluated": 308,
-      "fresh_exact_bet365": 308,
+      "evaluated": 208,
+      "fresh_exact_bet365": 208,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 308,
-        "missing_external_market_reference": 308,
-        "missing_model_reference": 308
+        "insufficient_independent_economic_sources": 208,
+        "missing_external_market_reference": 208,
+        "missing_model_reference": 208
       },
       "missing_roles": {
-        "external_market_reference": 308,
-        "model_reference": 308
+        "external_market_reference": 208,
+        "model_reference": 208
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 524,
+        "fresh_exact_candidates_blocked": 362,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 524,
+        "fresh_exact_candidates_blocked": 362,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 524
+        "fresh_exact_candidates_blocked": 362
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 308,
+        "fresh_exact_candidates": 208,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 308,
-          "model_reference": 308
+          "external_market_reference": 208,
+          "model_reference": 208
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 150,
+        "fresh_exact_candidates": 114,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 150,
-          "model_reference": 150
+          "external_market_reference": 114,
+          "model_reference": 114
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 66,
+        "fresh_exact_candidates": 40,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 66,
-          "model_reference": 66
+          "external_market_reference": 40,
+          "model_reference": 40
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 308,
+      "first_market_fresh_exact_candidates": 208,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 150,
-      "fresh_exact_bet365": 150,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 150,
-        "missing_external_market_reference": 150,
-        "missing_model_reference": 150
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 150,
-        "model_reference": 150
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
-      "evaluated": 122,
-      "fresh_exact_bet365": 66,
+      "evaluated": 40,
+      "fresh_exact_bet365": 40,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 122,
-        "missing_external_market_reference": 122,
-        "missing_model_reference": 122,
-        "not_fresh_exact_bet365": 56
+        "insufficient_independent_economic_sources": 40,
+        "missing_external_market_reference": 40,
+        "missing_model_reference": 40
       },
       "missing_roles": {
-        "external_market_reference": 122,
-        "model_reference": 122
+        "external_market_reference": 40,
+        "model_reference": 40
       }
     },
     "totals": {
-      "evaluated": 370,
-      "fresh_exact_bet365": 308,
+      "evaluated": 248,
+      "fresh_exact_bet365": 208,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 370,
-        "missing_external_market_reference": 370,
-        "missing_model_reference": 370,
-        "not_fresh_exact_bet365": 62
+        "insufficient_independent_economic_sources": 248,
+        "missing_external_market_reference": 248,
+        "missing_model_reference": 248,
+        "not_fresh_exact_bet365": 40
       },
       "missing_roles": {
-        "external_market_reference": 370,
-        "model_reference": 370
+        "external_market_reference": 248,
+        "model_reference": 248
       }
     }
   },
   "sample_failures": [
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
       "market": "h2h",
-      "pick": "NEC Nijmegen",
+      "pick": "FC Viktoriya Sumy",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
       "market": "h2h",
-      "pick": "Excelsior Rotterdam",
+      "pick": "FC Metalist Kharkiv",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,12 +260,64 @@
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "NEC Nijmegen",
-      "line": -1.75,
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
       "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
@@ -288,12 +339,12 @@
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "Excelsior Rotterdam",
-      "line": -1.75,
+      "event": "FC Viktoriya Sumy vs FC Metalist Kharkiv",
+      "event_id": 74224342,
+      "bet365_event_id": 74224342,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
       "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
@@ -315,13 +366,13 @@
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "NEC Nijmegen",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
+      "event": "Sydney FC vs Melbourne Victory FC",
+      "event_id": 74115040,
+      "bet365_event_id": 74115040,
+      "market": "h2h",
+      "pick": "Sydney FC",
+      "line": null,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -335,20 +386,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "Excelsior Rotterdam",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
+      "event": "Sydney FC vs Melbourne Victory FC",
+      "event_id": 74115040,
+      "bet365_event_id": 74115040,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -362,73 +412,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "NEC Nijmegen",
-      "line": -1.25,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "Excelsior Rotterdam",
-      "line": -1.25,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "NEC Nijmegen vs Excelsior Rotterdam",
-      "event_id": 74104028,
-      "bet365_event_id": 74104028,
-      "market": "spreads",
-      "pick": "NEC Nijmegen",
-      "line": -0.75,
+      "event": "Sydney FC vs Melbourne Victory FC",
+      "event_id": 74115040,
+      "bet365_event_id": 74115040,
+      "market": "h2h",
+      "pick": "Melbourne Victory FC",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
