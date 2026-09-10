@@ -1,87 +1,87 @@
 {
-  "generated_at": "2026-09-10T04:42:11.888603+00:00",
+  "generated_at": "2026-09-10T16:24:10.018554+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 460,
-  "exact_bet365_rows": 402,
+  "candidate_rows": 740,
+  "exact_bet365_rows": 700,
   "fresh_exact_rows_by_market": {
-    "h2h": 120,
-    "spreads": 74,
-    "totals": 208
+    "h2h": 126,
+    "spreads": 258,
+    "totals": 316
   },
   "metadata": {
-    "rows_with_sport": 460,
-    "rows_with_league": 460,
-    "rows_with_parseable_teams": 460,
+    "rows_with_sport": 740,
+    "rows_with_league": 740,
+    "rows_with_parseable_teams": 740,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 120,
-      "spreads": 76,
-      "totals": 264
+      "h2h": 126,
+      "spreads": 276,
+      "totals": 338
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 120,
-      "totals": 264
+      "h2h": 126,
+      "totals": 338
     },
-    "first_model_scope_rows": 384
+    "first_model_scope_rows": 464
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
         "{'name': 'International Clubs - UEFA Champions League', 'slug': 'international-clubs-uefa-champions-league'}",
-        90
+        298
       ],
       [
         "{'name': 'Sweden - Superettan', 'slug': 'sweden-superettan'}",
-        64
+        62
       ],
       [
-        "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
-        49
+        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+        57
       ],
       [
-        "{'name': 'Estonia - Esiliiga', 'slug': 'estonia-esiliiga'}",
-        38
+        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
+        52
       ],
       [
-        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
-        28
+        "{'name': 'Guatemala - Liga Nacional, Apertura', 'slug': 'guatemala-liga-nacional-apertura'}",
+        25
       ],
       [
-        "{'name': 'United Arab Emirates - Pro League', 'slug': 'united-arab-emirates-pro-league'}",
-        27
+        "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
+        25
       ],
       [
-        "{'name': 'Azerbaijan - 1. Liga', 'slug': 'azerbaijan-1-liga'}",
-        18
+        "{'name': 'International Clubs - CONMEBOL Sudamericana, Knockout stage', 'slug': 'international-clubs-conmebol-sudamericana-knockout-stage'}",
+        23
       ],
       [
-        "{'name': 'Qatar - Stars League', 'slug': 'qatar-stars-league'}",
-        18
+        "{'name': 'International Clubs - CONMEBOL Libertadores, Knockout stage', 'slug': 'international-clubs-conmebol-libertadores-knockout-stage'}",
+        21
       ],
       [
-        "{'name': 'Israel - National League', 'slug': 'israel-national-league'}",
-        18
+        "{'name': 'Mexico - Liga MX, Apertura', 'slug': 'mexico-liga-mx-apertura'}",
+        21
       ],
       [
-        "{'name': 'Bahrain - Premier League', 'slug': 'bahrain-premier-league'}",
+        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
         18
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 90,
-      "football-data.co.uk:E0": 18
+      "football-data.co.uk:CL": 298,
+      "football-data.co.uk:F1": 7
     }
   },
   "public_football_data_probe": {
@@ -114,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 76
+      "market_not_first_model_scope": 276
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
