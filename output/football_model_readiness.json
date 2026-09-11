@@ -1,86 +1,89 @@
 {
-  "generated_at": "2026-09-11T04:39:58.539205+00:00",
+  "generated_at": "2026-09-11T16:28:25.621626+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 278,
-  "exact_bet365_rows": 216,
+  "candidate_rows": 516,
+  "exact_bet365_rows": 488,
   "fresh_exact_rows_by_market": {
-    "h2h": 90,
-    "spreads": 4,
-    "totals": 122
+    "h2h": 108,
+    "spreads": 114,
+    "totals": 266
   },
   "metadata": {
-    "rows_with_sport": 278,
-    "rows_with_league": 278,
-    "rows_with_parseable_teams": 278,
+    "rows_with_sport": 516,
+    "rows_with_league": 516,
+    "rows_with_parseable_teams": 516,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 90,
-      "spreads": 4,
-      "totals": 184
+      "h2h": 108,
+      "spreads": 120,
+      "totals": 288
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 90,
-      "totals": 184
+      "h2h": 108,
+      "totals": 288
     },
-    "first_model_scope_rows": 274
+    "first_model_scope_rows": 396
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Thailand - Thai League 1', 'slug': 'thailand-thai-league-1'}",
-        27
+        "{'name': 'Netherlands - Eerste Divisie', 'slug': 'netherlands-eerste-divisie'}",
+        140
       ],
       [
-        "{'name': 'Australia - Northern Territory Premier League', 'slug': 'australia-northern-territory-premier-league'}",
-        22
+        "{'name': 'France - Ligue 2', 'slug': 'france-ligue-2'}",
+        73
       ],
       [
-        "{'name': 'International Youth - U20 FIFA World Cup, Women, Group F', 'slug': 'international-youth-u20-fifa-world-cup-women-group-f'}",
+        "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
+        51
+      ],
+      [
+        "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
+        33
+      ],
+      [
+        "{'name': 'Germany - 2. Bundesliga', 'slug': 'germany-2-bundesliga'}",
+        32
+      ],
+      [
+        "{'name': 'Denmark - Superligaen', 'slug': 'denmark-superligaen'}",
+        19
+      ],
+      [
+        "{'name': 'Jordan - Jordan 1st Division', 'slug': 'jordan-jordan-1st-division'}",
+        18
+      ],
+      [
+        "{'name': 'Turkiye - Super Lig', 'slug': 'turkiye-super-lig'}",
         17
       ],
       [
-        "{'name': 'United Arab Emirates - Pro League', 'slug': 'united-arab-emirates-pro-league'}",
-        16
-      ],
-      [
-        "{'name': 'United Arab Emirates - Division 1', 'slug': 'united-arab-emirates-division-1'}",
-        16
-      ],
-      [
-        "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
+        "{'name': 'Sweden - Allsvenskan', 'slug': 'sweden-allsvenskan'}",
         15
       ],
       [
-        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
-        14
-      ],
-      [
-        "{'name': 'Singapore - Premier League', 'slug': 'singapore-premier-league'}",
-        11
-      ],
-      [
-        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
-        9
-      ],
-      [
-        "{'name': 'Australia - NSW League One, Rel/Prom Playoffs', 'slug': 'australia-nsw-league-one-rel-prom-playoffs'}",
-        9
+        "{'name': 'Austria - Bundesliga', 'slug': 'austria-bundesliga'}",
+        15
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 67
+      "football-data.co.uk:D1": 54,
+      "football-data.co.uk:E0": 9,
+      "football-data.co.uk:N1": 51,
+      "public-data:needs-provider-specific-mapping": 19
     }
   },
   "public_football_data_probe": {
@@ -113,7 +116,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 4
+      "market_not_first_model_scope": 120
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
