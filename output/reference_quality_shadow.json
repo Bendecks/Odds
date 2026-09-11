@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-10T16:24:09.980766+00:00",
-  "as_of": "2026-09-10T16:24:09.874810+00:00",
+  "generated_at": "2026-09-11T04:39:58.501444+00:00",
+  "as_of": "2026-09-11T04:39:58.408238+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 740,
-  "fresh_exact_candidates": 700,
+  "total_candidates": 278,
+  "fresh_exact_candidates": 216,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 700,
-    "missing_external_market_reference": 700,
-    "missing_model_reference": 700
+    "insufficient_independent_economic_sources": 216,
+    "missing_external_market_reference": 216,
+    "missing_model_reference": 216
   },
   "missing_roles": {
-    "external_market_reference": 700,
-    "model_reference": 700
+    "external_market_reference": 216,
+    "model_reference": 216
   },
   "by_market": {
     "h2h": {
-      "evaluated": 126,
-      "fresh_exact_bet365": 126,
+      "evaluated": 90,
+      "fresh_exact_bet365": 90,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 126,
-        "missing_external_market_reference": 126,
-        "missing_model_reference": 126
+        "insufficient_independent_economic_sources": 90,
+        "missing_external_market_reference": 90,
+        "missing_model_reference": 90
       },
       "missing_roles": {
-        "external_market_reference": 126,
-        "model_reference": 126
+        "external_market_reference": 90,
+        "model_reference": 90
       }
     },
     "spreads": {
-      "evaluated": 258,
-      "fresh_exact_bet365": 258,
+      "evaluated": 4,
+      "fresh_exact_bet365": 4,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 258,
-        "missing_external_market_reference": 258,
-        "missing_model_reference": 258
+        "insufficient_independent_economic_sources": 4,
+        "missing_external_market_reference": 4,
+        "missing_model_reference": 4
       },
       "missing_roles": {
-        "external_market_reference": 258,
-        "model_reference": 258
+        "external_market_reference": 4,
+        "model_reference": 4
       }
     },
     "totals": {
-      "evaluated": 316,
-      "fresh_exact_bet365": 316,
+      "evaluated": 122,
+      "fresh_exact_bet365": 122,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 316,
-        "missing_external_market_reference": 316,
-        "missing_model_reference": 316
+        "insufficient_independent_economic_sources": 122,
+        "missing_external_market_reference": 122,
+        "missing_model_reference": 122
       },
       "missing_roles": {
-        "external_market_reference": 316,
-        "model_reference": 316
+        "external_market_reference": 122,
+        "model_reference": 122
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 700,
+        "fresh_exact_candidates_blocked": 216,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 700,
+        "fresh_exact_candidates_blocked": 216,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 700
+        "fresh_exact_candidates_blocked": 216
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 316,
+        "fresh_exact_candidates": 122,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 316,
-          "model_reference": 316
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 258,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 258,
-          "model_reference": 258
+          "external_market_reference": 122,
+          "model_reference": 122
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 126,
+        "fresh_exact_candidates": 90,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 126,
-          "model_reference": 126
+          "external_market_reference": 90,
+          "model_reference": 90
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 4,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 4,
+          "model_reference": 4
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 316,
+      "first_market_fresh_exact_candidates": 122,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 126,
-      "fresh_exact_bet365": 126,
+      "evaluated": 90,
+      "fresh_exact_bet365": 90,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 126,
-        "missing_external_market_reference": 126,
-        "missing_model_reference": 126
+        "insufficient_independent_economic_sources": 90,
+        "missing_external_market_reference": 90,
+        "missing_model_reference": 90
       },
       "missing_roles": {
-        "external_market_reference": 126,
-        "model_reference": 126
+        "external_market_reference": 90,
+        "model_reference": 90
       }
     },
     "spreads": {
-      "evaluated": 276,
-      "fresh_exact_bet365": 258,
+      "evaluated": 4,
+      "fresh_exact_bet365": 4,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 276,
-        "missing_external_market_reference": 276,
-        "missing_model_reference": 276,
-        "not_fresh_exact_bet365": 18
+        "insufficient_independent_economic_sources": 4,
+        "missing_external_market_reference": 4,
+        "missing_model_reference": 4
       },
       "missing_roles": {
-        "external_market_reference": 276,
-        "model_reference": 276
+        "external_market_reference": 4,
+        "model_reference": 4
       }
     },
     "totals": {
-      "evaluated": 338,
-      "fresh_exact_bet365": 316,
+      "evaluated": 184,
+      "fresh_exact_bet365": 122,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 338,
-        "missing_external_market_reference": 338,
-        "missing_model_reference": 338,
-        "not_fresh_exact_bet365": 22
+        "insufficient_independent_economic_sources": 184,
+        "missing_external_market_reference": 184,
+        "missing_model_reference": 184,
+        "not_fresh_exact_bet365": 62
       },
       "missing_roles": {
-        "external_market_reference": 338,
-        "model_reference": 338
+        "external_market_reference": 184,
+        "model_reference": 184
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
       "market": "h2h",
-      "pick": "Fenerbahce Istanbul",
+      "pick": "Garuda Yaksa",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
       "market": "h2h",
-      "pick": "AS Roma",
+      "pick": "Persik Kediri",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,12 +260,12 @@
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "Fenerbahce Istanbul",
-      "line": -1.25,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -287,12 +286,12 @@
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "AS Roma",
-      "line": -1.25,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -313,13 +312,13 @@
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "Fenerbahce Istanbul",
-      "line": -1,
-      "fresh_exact_bet365": true,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -333,19 +332,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "AS Roma",
-      "line": -1,
-      "fresh_exact_bet365": true,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -359,19 +359,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "Fenerbahce Istanbul",
-      "line": -0.75,
-      "fresh_exact_bet365": true,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -385,19 +386,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "AS Roma",
-      "line": -0.75,
-      "fresh_exact_bet365": true,
+      "event": "Garuda Yaksa vs Persik Kediri",
+      "event_id": 73576614,
+      "bet365_event_id": 73576614,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -411,18 +413,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fenerbahce Istanbul vs AS Roma",
-      "event_id": 74165892,
-      "bet365_event_id": 74165892,
-      "market": "spreads",
-      "pick": "Fenerbahce Istanbul",
-      "line": -0.5,
+      "event": "Palmerston Rovers vs Hellenic Athletic Club",
+      "event_id": 71128036,
+      "bet365_event_id": 71128036,
+      "market": "h2h",
+      "pick": "Palmerston Rovers",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
