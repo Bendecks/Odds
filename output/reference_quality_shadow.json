@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-11T16:28:25.579923+00:00",
-  "as_of": "2026-09-11T16:28:25.465524+00:00",
+  "generated_at": "2026-09-12T04:33:48.295829+00:00",
+  "as_of": "2026-09-12T04:33:48.212857+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 516,
-  "fresh_exact_candidates": 488,
+  "total_candidates": 347,
+  "fresh_exact_candidates": 223,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 488,
-    "missing_external_market_reference": 488,
-    "missing_model_reference": 488
+    "insufficient_independent_economic_sources": 223,
+    "missing_external_market_reference": 223,
+    "missing_model_reference": 223
   },
   "missing_roles": {
-    "external_market_reference": 488,
-    "model_reference": 488
+    "external_market_reference": 223,
+    "model_reference": 223
   },
   "by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 99,
+      "fresh_exact_bet365": 99,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 99,
+        "missing_external_market_reference": 99,
+        "missing_model_reference": 99
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 99,
+        "model_reference": 99
       }
     },
     "spreads": {
-      "evaluated": 114,
-      "fresh_exact_bet365": 114,
+      "evaluated": 18,
+      "fresh_exact_bet365": 18,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 114,
-        "missing_external_market_reference": 114,
-        "missing_model_reference": 114
+        "insufficient_independent_economic_sources": 18,
+        "missing_external_market_reference": 18,
+        "missing_model_reference": 18
       },
       "missing_roles": {
-        "external_market_reference": 114,
-        "model_reference": 114
+        "external_market_reference": 18,
+        "model_reference": 18
       }
     },
     "totals": {
-      "evaluated": 266,
-      "fresh_exact_bet365": 266,
+      "evaluated": 106,
+      "fresh_exact_bet365": 106,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 266,
-        "missing_external_market_reference": 266,
-        "missing_model_reference": 266
+        "insufficient_independent_economic_sources": 106,
+        "missing_external_market_reference": 106,
+        "missing_model_reference": 106
       },
       "missing_roles": {
-        "external_market_reference": 266,
-        "model_reference": 266
+        "external_market_reference": 106,
+        "model_reference": 106
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 488,
+        "fresh_exact_candidates_blocked": 223,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 488,
+        "fresh_exact_candidates_blocked": 223,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 488
+        "fresh_exact_candidates_blocked": 223
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 266,
+        "fresh_exact_candidates": 106,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 266,
-          "model_reference": 266
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 114,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 114,
-          "model_reference": 114
+          "external_market_reference": 106,
+          "model_reference": 106
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 108,
+        "fresh_exact_candidates": 99,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 108,
-          "model_reference": 108
+          "external_market_reference": 99,
+          "model_reference": 99
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 18,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 18,
+          "model_reference": 18
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 266,
+      "first_market_fresh_exact_candidates": 106,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 99,
+      "fresh_exact_bet365": 99,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 99,
+        "missing_external_market_reference": 99,
+        "missing_model_reference": 99
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 99,
+        "model_reference": 99
       }
     },
     "spreads": {
-      "evaluated": 120,
-      "fresh_exact_bet365": 114,
+      "evaluated": 34,
+      "fresh_exact_bet365": 18,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 120,
-        "missing_external_market_reference": 120,
-        "missing_model_reference": 120,
-        "not_fresh_exact_bet365": 6
+        "insufficient_independent_economic_sources": 34,
+        "missing_external_market_reference": 34,
+        "missing_model_reference": 34,
+        "not_fresh_exact_bet365": 16
       },
       "missing_roles": {
-        "external_market_reference": 120,
-        "model_reference": 120
+        "external_market_reference": 34,
+        "model_reference": 34
       }
     },
     "totals": {
-      "evaluated": 288,
-      "fresh_exact_bet365": 266,
+      "evaluated": 214,
+      "fresh_exact_bet365": 106,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 288,
-        "missing_external_market_reference": 288,
-        "missing_model_reference": 288,
-        "not_fresh_exact_bet365": 22
+        "insufficient_independent_economic_sources": 214,
+        "missing_external_market_reference": 214,
+        "missing_model_reference": 214,
+        "not_fresh_exact_bet365": 108
       },
       "missing_roles": {
-        "external_market_reference": 288,
-        "model_reference": 288
+        "external_market_reference": 214,
+        "model_reference": 214
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "h2h",
-      "pick": "Werder Bremen",
+      "pick": "UWA Nedlands FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "h2h",
-      "pick": "Hamburger SV",
+      "pick": "Mandurah City",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +261,9 @@
       ]
     },
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +287,9 @@
       ]
     },
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,13 +313,13 @@
       ]
     },
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -333,19 +333,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Werder Bremen vs Hamburger SV",
-      "event_id": 72960994,
-      "bet365_event_id": 72960994,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -359,19 +360,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "SV Darmstadt 98 vs Arminia Bielefeld",
-      "event_id": 72513856,
-      "bet365_event_id": 72513856,
-      "market": "h2h",
-      "pick": "SV Darmstadt 98",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -385,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "SV Darmstadt 98 vs Arminia Bielefeld",
-      "event_id": 72513856,
-      "bet365_event_id": 72513856,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "UWA Nedlands FC vs Mandurah City",
+      "event_id": 74250330,
+      "bet365_event_id": 74250330,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -411,17 +414,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "SV Darmstadt 98 vs Arminia Bielefeld",
-      "event_id": 72513856,
-      "bet365_event_id": 72513856,
+      "event": "Essendon Royals SC vs Avondale FC",
+      "event_id": 74401822,
+      "bet365_event_id": 74401822,
       "market": "h2h",
-      "pick": "Arminia Bielefeld",
+      "pick": "Essendon Royals SC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,

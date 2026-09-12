@@ -1,167 +1,48 @@
 {
-  "observations": 23949,
-  "unique_markets": 71,
+  "observations": 10219,
+  "unique_markets": 66,
   "markets": [
     {
       "market": "Correct Score",
-      "observations": 2625,
-      "events": 79,
-      "core_family": false,
-      "avg_observations_per_event": 33.23
-    },
-    {
-      "market": "Totals",
-      "observations": 2234,
+      "observations": 2454,
       "events": 80,
-      "core_family": true,
-      "avg_observations_per_event": 27.93
-    },
-    {
-      "market": "Spread",
-      "observations": 1750,
-      "events": 79,
-      "core_family": true,
-      "avg_observations_per_event": 22.15
+      "core_family": false,
+      "avg_observations_per_event": 30.68
     },
     {
       "market": "Correct Score HT",
-      "observations": 1404,
+      "observations": 1272,
       "events": 80,
       "core_family": false,
-      "avg_observations_per_event": 17.55
-    },
-    {
-      "market": "Team Goalscorer",
-      "observations": 1326,
-      "events": 12,
-      "core_family": false,
-      "avg_observations_per_event": 110.5
-    },
-    {
-      "market": "Multi Scorers",
-      "observations": 1278,
-      "events": 12,
-      "core_family": false,
-      "avg_observations_per_event": 106.5
-    },
-    {
-      "market": "Player Shots",
-      "observations": 974,
-      "events": 4,
-      "core_family": false,
-      "avg_observations_per_event": 243.5
+      "avg_observations_per_event": 15.9
     },
     {
       "market": "Half Time / Full Time",
-      "observations": 684,
-      "events": 76,
+      "observations": 666,
+      "events": 74,
       "core_family": false,
       "avg_observations_per_event": 9.0
     },
     {
-      "market": "Anytime Goalscorer",
-      "observations": 638,
-      "events": 12,
-      "core_family": false,
-      "avg_observations_per_event": 53.17
+      "market": "Totals",
+      "observations": 546,
+      "events": 80,
+      "core_family": true,
+      "avg_observations_per_event": 6.83
     },
     {
-      "market": "Player To Score or Assist",
-      "observations": 564,
-      "events": 9,
-      "core_family": false,
-      "avg_observations_per_event": 62.67
+      "market": "Spread",
+      "observations": 478,
+      "events": 80,
+      "core_family": true,
+      "avg_observations_per_event": 5.97
     },
     {
-      "market": "Alternative Corners",
-      "observations": 548,
-      "events": 41,
+      "market": "Player Shots",
+      "observations": 329,
+      "events": 1,
       "core_family": false,
-      "avg_observations_per_event": 13.37
-    },
-    {
-      "market": "Totals HT",
-      "observations": 516,
-      "events": 77,
-      "core_family": false,
-      "avg_observations_per_event": 6.7
-    },
-    {
-      "market": "Player Cards",
-      "observations": 492,
-      "events": 3,
-      "core_family": false,
-      "avg_observations_per_event": 164.0
-    },
-    {
-      "market": "Player Shots on Target",
-      "observations": 489,
-      "events": 4,
-      "core_family": false,
-      "avg_observations_per_event": 122.25
-    },
-    {
-      "market": "Winning Margin",
-      "observations": 450,
-      "events": 45,
-      "core_family": false,
-      "avg_observations_per_event": 10.0
-    },
-    {
-      "market": "Totals 2H",
-      "observations": 424,
-      "events": 43,
-      "core_family": false,
-      "avg_observations_per_event": 9.86
-    },
-    {
-      "market": "Team Total Home",
-      "observations": 378,
-      "events": 34,
-      "core_family": false,
-      "avg_observations_per_event": 11.12
-    },
-    {
-      "market": "European Handicap",
-      "observations": 348,
-      "events": 33,
-      "core_family": false,
-      "avg_observations_per_event": 10.55
-    },
-    {
-      "market": "Team Total Away",
-      "observations": 324,
-      "events": 34,
-      "core_family": false,
-      "avg_observations_per_event": 9.53
-    },
-    {
-      "market": "European Handicap HT",
-      "observations": 315,
-      "events": 48,
-      "core_family": false,
-      "avg_observations_per_event": 6.56
-    },
-    {
-      "market": "Exact Total Goals",
-      "observations": 264,
-      "events": 33,
-      "core_family": false,
-      "avg_observations_per_event": 8.0
-    },
-    {
-      "market": "Exact 2nd Half Goals",
-      "observations": 252,
-      "events": 42,
-      "core_family": false,
-      "avg_observations_per_event": 6.0
-    },
-    {
-      "market": "Exact 1st Half Goals",
-      "observations": 252,
-      "events": 42,
-      "core_family": false,
-      "avg_observations_per_event": 6.0
+      "avg_observations_per_event": 329.0
     },
     {
       "market": "ML",
@@ -171,329 +52,413 @@
       "avg_observations_per_event": 3.0
     },
     {
+      "market": "Totals HT",
+      "observations": 238,
+      "events": 76,
+      "core_family": false,
+      "avg_observations_per_event": 3.13
+    },
+    {
       "market": "Double Chance",
-      "observations": 240,
-      "events": 80,
+      "observations": 234,
+      "events": 78,
       "core_family": true,
       "avg_observations_per_event": 3.0
     },
     {
       "market": "ML HT",
-      "observations": 240,
-      "events": 80,
-      "core_family": false,
-      "avg_observations_per_event": 3.0
-    },
-    {
-      "market": "First Team To Score",
-      "observations": 231,
-      "events": 77,
+      "observations": 234,
+      "events": 78,
       "core_family": false,
       "avg_observations_per_event": 3.0
     },
     {
       "market": "Double Chance HT",
-      "observations": 231,
-      "events": 77,
+      "observations": 234,
+      "events": 78,
       "core_family": false,
       "avg_observations_per_event": 3.0
     },
     {
-      "market": "Total Corners",
-      "observations": 205,
-      "events": 41,
+      "market": "First Team To Score",
+      "observations": 228,
+      "events": 76,
       "core_family": false,
-      "avg_observations_per_event": 5.0
+      "avg_observations_per_event": 3.0
     },
     {
-      "market": "Away Team Exact Goals",
-      "observations": 176,
-      "events": 44,
+      "market": "Player Shots on Target",
+      "observations": 163,
+      "events": 1,
       "core_family": false,
-      "avg_observations_per_event": 4.0
+      "avg_observations_per_event": 163.0
     },
     {
-      "market": "Home Team Exact Goals",
-      "observations": 176,
-      "events": 44,
-      "core_family": false,
-      "avg_observations_per_event": 4.0
-    },
-    {
-      "market": "Teams to Score",
-      "observations": 176,
-      "events": 44,
-      "core_family": false,
-      "avg_observations_per_event": 4.0
-    },
-    {
-      "market": "Player to be Booked",
-      "observations": 164,
-      "events": 3,
-      "core_family": false,
-      "avg_observations_per_event": 54.67
-    },
-    {
-      "market": "Corners Totals",
-      "observations": 162,
-      "events": 56,
+      "market": "Draw No Bet",
+      "observations": 160,
+      "events": 80,
       "core_family": true,
-      "avg_observations_per_event": 2.89
+      "avg_observations_per_event": 2.0
     },
     {
-      "market": "Odd/Even",
+      "market": "Goals Over/Under",
       "observations": 160,
       "events": 80,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
-      "market": "Draw No Bet",
-      "observations": 158,
-      "events": 79,
-      "core_family": true,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Goal Method",
-      "observations": 158,
-      "events": 6,
-      "core_family": false,
-      "avg_observations_per_event": 26.33
-    },
-    {
-      "market": "Goals Over/Under",
-      "observations": 154,
-      "events": 77,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Odd/Even 2H",
-      "observations": 154,
-      "events": 77,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Odd/Even HT",
+      "market": "Odd/Even",
       "observations": 150,
       "events": 75,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
-      "market": "Last Team To Score",
-      "observations": 144,
-      "events": 48,
+      "market": "Odd/Even 2H",
+      "observations": 138,
+      "events": 69,
       "core_family": false,
-      "avg_observations_per_event": 3.0
+      "avg_observations_per_event": 2.0
     },
     {
-      "market": "ML 2H",
-      "observations": 141,
-      "events": 47,
+      "market": "Odd/Even HT",
+      "observations": 136,
+      "events": 68,
       "core_family": false,
-      "avg_observations_per_event": 3.0
+      "avg_observations_per_event": 2.0
     },
     {
-      "market": "Number of Goals In Match",
-      "observations": 135,
-      "events": 45,
+      "market": "Alternative Corners",
+      "observations": 132,
+      "events": 11,
       "core_family": false,
-      "avg_observations_per_event": 3.0
+      "avg_observations_per_event": 12.0
+    },
+    {
+      "market": "Team Goalscorer",
+      "observations": 128,
+      "events": 1,
+      "core_family": false,
+      "avg_observations_per_event": 128.0
+    },
+    {
+      "market": "Multi Scorers",
+      "observations": 124,
+      "events": 1,
+      "core_family": false,
+      "avg_observations_per_event": 124.0
+    },
+    {
+      "market": "Winning Margin",
+      "observations": 110,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 10.0
     },
     {
       "market": "Spread HT",
-      "observations": 134,
-      "events": 55,
+      "observations": 104,
+      "events": 52,
       "core_family": false,
-      "avg_observations_per_event": 2.44
+      "avg_observations_per_event": 2.0
     },
     {
-      "market": "Half With Most Goals",
-      "observations": 126,
-      "events": 42,
+      "market": "Totals 2H",
+      "observations": 100,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 9.09
+    },
+    {
+      "market": "European Handicap HT",
+      "observations": 87,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 7.91
+    },
+    {
+      "market": "Corners Totals",
+      "observations": 84,
+      "events": 31,
+      "core_family": true,
+      "avg_observations_per_event": 2.71
+    },
+    {
+      "market": "Team Total Home",
+      "observations": 74,
+      "events": 7,
+      "core_family": false,
+      "avg_observations_per_event": 10.57
+    },
+    {
+      "market": "Team Total Away",
+      "observations": 70,
+      "events": 7,
+      "core_family": false,
+      "avg_observations_per_event": 10.0
+    },
+    {
+      "market": "Exact 1st Half Goals",
+      "observations": 66,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 6.0
+    },
+    {
+      "market": "Exact 2nd Half Goals",
+      "observations": 66,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 6.0
+    },
+    {
+      "market": "Corners",
+      "observations": 62,
+      "events": 31,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Anytime Goalscorer",
+      "observations": 62,
+      "events": 1,
+      "core_family": false,
+      "avg_observations_per_event": 62.0
+    },
+    {
+      "market": "European Handicap",
+      "observations": 60,
+      "events": 7,
+      "core_family": false,
+      "avg_observations_per_event": 8.57
+    },
+    {
+      "market": "Corners Totals HT",
+      "observations": 56,
+      "events": 28,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Total Corners",
+      "observations": 55,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 5.0
+    },
+    {
+      "market": "Corners Race",
+      "observations": 48,
+      "events": 6,
+      "core_family": false,
+      "avg_observations_per_event": 8.0
+    },
+    {
+      "market": "Away Team Exact Goals",
+      "observations": 44,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 4.0
+    },
+    {
+      "market": "Home Team Exact Goals",
+      "observations": 44,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 4.0
+    },
+    {
+      "market": "Teams to Score",
+      "observations": 44,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 4.0
+    },
+    {
+      "market": "Exact Total Goals",
+      "observations": 40,
+      "events": 5,
+      "core_family": false,
+      "avg_observations_per_event": 8.0
+    },
+    {
+      "market": "Number of Goals In Match",
+      "observations": 33,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 3.0
+    },
+    {
+      "market": "Last Team To Score",
+      "observations": 33,
+      "events": 11,
       "core_family": false,
       "avg_observations_per_event": 3.0
     },
     {
       "market": "Away Team Highest Scoring Half",
-      "observations": 126,
-      "events": 42,
+      "observations": 33,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 3.0
+    },
+    {
+      "market": "Half With Most Goals",
+      "observations": 33,
+      "events": 11,
       "core_family": false,
       "avg_observations_per_event": 3.0
     },
     {
       "market": "Home Team Highest Scoring Half",
-      "observations": 120,
-      "events": 40,
+      "observations": 33,
+      "events": 11,
       "core_family": false,
       "avg_observations_per_event": 3.0
     },
     {
-      "market": "Corners Totals HT",
-      "observations": 116,
-      "events": 56,
+      "market": "ML 2H",
+      "observations": 33,
+      "events": 11,
       "core_family": false,
-      "avg_observations_per_event": 2.07
-    },
-    {
-      "market": "Corners",
-      "observations": 106,
-      "events": 53,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Corners Race",
-      "observations": 104,
-      "events": 13,
-      "core_family": false,
-      "avg_observations_per_event": 8.0
+      "avg_observations_per_event": 3.0
     },
     {
       "market": "Both Teams To Score",
-      "observations": 96,
-      "events": 48,
+      "observations": 22,
+      "events": 11,
       "core_family": true,
       "avg_observations_per_event": 2.0
     },
     {
-      "market": "Both Teams To Score 2H",
-      "observations": 96,
-      "events": 48,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
       "market": "Both Teams To Score HT",
-      "observations": 96,
-      "events": 48,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Clean Sheet Away",
-      "observations": 96,
-      "events": 48,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Clean Sheet Home",
-      "observations": 96,
-      "events": 48,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Odd/Even Home",
-      "observations": 90,
-      "events": 45,
+      "observations": 22,
+      "events": 11,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
       "market": "Specials",
-      "observations": 90,
-      "events": 45,
+      "observations": 22,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Odd/Even Home",
+      "observations": 22,
+      "events": 11,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
       "market": "Odd/Even Away",
-      "observations": 88,
-      "events": 44,
+      "observations": 22,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Clean Sheet Away",
+      "observations": 22,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Clean Sheet Home",
+      "observations": 22,
+      "events": 11,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Both Teams To Score 2H",
+      "observations": 22,
+      "events": 11,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
       "market": "First 10 Minutes (00:00 - 09:59)",
-      "observations": 46,
-      "events": 23,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Time of First Corner",
-      "observations": 26,
-      "events": 13,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Corners Totals Home",
-      "observations": 26,
-      "events": 13,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "First Match Corner",
-      "observations": 26,
-      "events": 13,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Last Match Corner",
-      "observations": 26,
-      "events": 13,
+      "observations": 16,
+      "events": 8,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
       "market": "Corners Totals Away",
-      "observations": 26,
-      "events": 13,
+      "observations": 12,
+      "events": 6,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Last Match Corner",
+      "observations": 12,
+      "events": 6,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Time of First Corner",
+      "observations": 12,
+      "events": 6,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Corners Totals Home",
+      "observations": 12,
+      "events": 6,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "First Match Corner",
+      "observations": 12,
+      "events": 6,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
       "market": "Multicorners",
-      "observations": 26,
-      "events": 13,
+      "observations": 12,
+      "events": 6,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "To Qualify",
+      "observations": 10,
+      "events": 5,
+      "core_family": false,
+      "avg_observations_per_event": 2.0
+    },
+    {
+      "market": "Method of Victory",
+      "observations": 10,
+      "events": 5,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
       "market": "Corners Spread",
-      "observations": 18,
-      "events": 9,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Corner Handicap",
-      "observations": 11,
-      "events": 4,
-      "core_family": false,
-      "avg_observations_per_event": 2.75
-    },
-    {
-      "market": "1st Half Corners",
       "observations": 8,
       "events": 4,
       "core_family": false,
       "avg_observations_per_event": 2.0
     },
     {
-      "market": "Number of Cards In Match",
-      "observations": 2,
-      "events": 1,
+      "market": "Corner Handicap",
+      "observations": 7,
+      "events": 3,
       "core_family": false,
-      "avg_observations_per_event": 2.0
+      "avg_observations_per_event": 2.33
     },
     {
-      "market": "Bookings Totals Away",
-      "observations": 2,
-      "events": 1,
-      "core_family": false,
-      "avg_observations_per_event": 2.0
-    },
-    {
-      "market": "Bookings Totals Home",
+      "market": "1st Half Corners",
       "observations": 2,
       "events": 1,
       "core_family": false,
@@ -503,17 +468,17 @@
   "core_market_coverage": [
     {
       "market": "Totals",
-      "observations": 2234,
+      "observations": 546,
       "events": 80,
       "core_family": true,
-      "avg_observations_per_event": 27.93
+      "avg_observations_per_event": 6.83
     },
     {
       "market": "Spread",
-      "observations": 1750,
-      "events": 79,
+      "observations": 478,
+      "events": 80,
       "core_family": true,
-      "avg_observations_per_event": 22.15
+      "avg_observations_per_event": 5.97
     },
     {
       "market": "ML",
@@ -524,119 +489,119 @@
     },
     {
       "market": "Double Chance",
-      "observations": 240,
-      "events": 80,
+      "observations": 234,
+      "events": 78,
       "core_family": true,
       "avg_observations_per_event": 3.0
     },
     {
-      "market": "Corners Totals",
-      "observations": 162,
-      "events": 56,
-      "core_family": true,
-      "avg_observations_per_event": 2.89
-    },
-    {
       "market": "Draw No Bet",
-      "observations": 158,
-      "events": 79,
+      "observations": 160,
+      "events": 80,
       "core_family": true,
       "avg_observations_per_event": 2.0
     },
     {
+      "market": "Corners Totals",
+      "observations": 84,
+      "events": 31,
+      "core_family": true,
+      "avg_observations_per_event": 2.71
+    },
+    {
       "market": "Both Teams To Score",
-      "observations": 96,
-      "events": 48,
+      "observations": 22,
+      "events": 11,
       "core_family": true,
       "avg_observations_per_event": 2.0
     }
   ],
   "selection_diagnostics": {
     "Away Team Exact Goals": {
-      "events": 44,
-      "observations": 176,
+      "events": 11,
+      "observations": 44,
       "selection_examples": [
         {
           "selection": "odds",
-          "observations": 176
+          "observations": 44
         }
       ],
       "line_examples": []
     },
     "Clean Sheet Away": {
-      "events": 48,
-      "observations": 96,
+      "events": 11,
+      "observations": 22,
       "selection_examples": [
         {
           "selection": "no",
-          "observations": 48
+          "observations": 11
         },
         {
           "selection": "yes",
-          "observations": 48
+          "observations": 11
         }
       ],
       "line_examples": []
     },
     "Clean Sheet Home": {
-      "events": 48,
-      "observations": 96,
+      "events": 11,
+      "observations": 22,
       "selection_examples": [
         {
           "selection": "no",
-          "observations": 48
+          "observations": 11
         },
         {
           "selection": "yes",
-          "observations": 48
+          "observations": 11
         }
       ],
       "line_examples": []
     },
     "Correct Score": {
-      "events": 79,
-      "observations": 2625,
+      "events": 80,
+      "observations": 2454,
       "selection_examples": [
         {
           "selection": "odds",
-          "observations": 2625
+          "observations": 2454
         }
       ],
       "line_examples": []
     },
     "Exact Total Goals": {
-      "events": 33,
-      "observations": 264,
+      "events": 5,
+      "observations": 40,
       "selection_examples": [
         {
           "selection": "odds",
-          "observations": 264
+          "observations": 40
         }
       ],
       "line_examples": []
     },
     "Home Team Exact Goals": {
-      "events": 44,
-      "observations": 176,
+      "events": 11,
+      "observations": 44,
       "selection_examples": [
         {
           "selection": "odds",
-          "observations": 176
+          "observations": 44
         }
       ],
       "line_examples": []
     },
     "Odd/Even": {
-      "events": 80,
-      "observations": 160,
+      "events": 75,
+      "observations": 150,
       "selection_examples": [
         {
           "selection": "even",
-          "observations": 80
+          "observations": 75
         },
         {
           "selection": "odd",
-          "observations": 80
+          "observations": 75
         }
       ],
       "line_examples": []
