@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-12T04:33:48.295829+00:00",
-  "as_of": "2026-09-12T04:33:48.212857+00:00",
+  "generated_at": "2026-09-12T15:31:26.844277+00:00",
+  "as_of": "2026-09-12T15:31:26.765127+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 347,
-  "fresh_exact_candidates": 223,
+  "total_candidates": 510,
+  "fresh_exact_candidates": 466,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 223,
-    "missing_external_market_reference": 223,
-    "missing_model_reference": 223
+    "insufficient_independent_economic_sources": 466,
+    "missing_external_market_reference": 466,
+    "missing_model_reference": 466
   },
   "missing_roles": {
-    "external_market_reference": 223,
-    "model_reference": 223
+    "external_market_reference": 466,
+    "model_reference": 466
   },
   "by_market": {
     "h2h": {
-      "evaluated": 99,
-      "fresh_exact_bet365": 99,
+      "evaluated": 138,
+      "fresh_exact_bet365": 138,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 99,
-        "missing_external_market_reference": 99,
-        "missing_model_reference": 99
+        "insufficient_independent_economic_sources": 138,
+        "missing_external_market_reference": 138,
+        "missing_model_reference": 138
       },
       "missing_roles": {
-        "external_market_reference": 99,
-        "model_reference": 99
+        "external_market_reference": 138,
+        "model_reference": 138
       }
     },
     "spreads": {
-      "evaluated": 18,
-      "fresh_exact_bet365": 18,
+      "evaluated": 66,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 18,
-        "missing_external_market_reference": 18,
-        "missing_model_reference": 18
+        "insufficient_independent_economic_sources": 66,
+        "missing_external_market_reference": 66,
+        "missing_model_reference": 66
       },
       "missing_roles": {
-        "external_market_reference": 18,
-        "model_reference": 18
+        "external_market_reference": 66,
+        "model_reference": 66
       }
     },
     "totals": {
-      "evaluated": 106,
-      "fresh_exact_bet365": 106,
+      "evaluated": 262,
+      "fresh_exact_bet365": 262,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 106,
-        "missing_external_market_reference": 106,
-        "missing_model_reference": 106
+        "insufficient_independent_economic_sources": 262,
+        "missing_external_market_reference": 262,
+        "missing_model_reference": 262
       },
       "missing_roles": {
-        "external_market_reference": 106,
-        "model_reference": 106
+        "external_market_reference": 262,
+        "model_reference": 262
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 223,
+        "fresh_exact_candidates_blocked": 466,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 223,
+        "fresh_exact_candidates_blocked": 466,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 223
+        "fresh_exact_candidates_blocked": 466
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 106,
+        "fresh_exact_candidates": 262,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 106,
-          "model_reference": 106
+          "external_market_reference": 262,
+          "model_reference": 262
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 99,
+        "fresh_exact_candidates": 138,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 99,
-          "model_reference": 99
+          "external_market_reference": 138,
+          "model_reference": 138
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 18,
+        "fresh_exact_candidates": 66,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 18,
-          "model_reference": 18
+          "external_market_reference": 66,
+          "model_reference": 66
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 106,
+      "first_market_fresh_exact_candidates": 262,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 99,
-      "fresh_exact_bet365": 99,
+      "evaluated": 138,
+      "fresh_exact_bet365": 138,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 99,
-        "missing_external_market_reference": 99,
-        "missing_model_reference": 99
+        "insufficient_independent_economic_sources": 138,
+        "missing_external_market_reference": 138,
+        "missing_model_reference": 138
       },
       "missing_roles": {
-        "external_market_reference": 99,
-        "model_reference": 99
+        "external_market_reference": 138,
+        "model_reference": 138
       }
     },
     "spreads": {
-      "evaluated": 34,
-      "fresh_exact_bet365": 18,
+      "evaluated": 68,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 34,
-        "missing_external_market_reference": 34,
-        "missing_model_reference": 34,
-        "not_fresh_exact_bet365": 16
+        "insufficient_independent_economic_sources": 68,
+        "missing_external_market_reference": 68,
+        "missing_model_reference": 68,
+        "not_fresh_exact_bet365": 2
       },
       "missing_roles": {
-        "external_market_reference": 34,
-        "model_reference": 34
+        "external_market_reference": 68,
+        "model_reference": 68
       }
     },
     "totals": {
-      "evaluated": 214,
-      "fresh_exact_bet365": 106,
+      "evaluated": 304,
+      "fresh_exact_bet365": 262,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 214,
-        "missing_external_market_reference": 214,
-        "missing_model_reference": 214,
-        "not_fresh_exact_bet365": 108
+        "insufficient_independent_economic_sources": 304,
+        "missing_external_market_reference": 304,
+        "missing_model_reference": 304,
+        "not_fresh_exact_bet365": 42
       },
       "missing_roles": {
-        "external_market_reference": 214,
-        "model_reference": 214
+        "external_market_reference": 304,
+        "model_reference": 304
       }
     }
   },
   "sample_failures": [
     {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
       "market": "h2h",
-      "pick": "UWA Nedlands FC",
+      "pick": "Al-Taawoun FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
       "market": "h2h",
-      "pick": "Mandurah City",
+      "pick": "Al Hilal SFC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,11 +261,115 @@
       ]
     },
     {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
-      "market": "totals",
-      "pick": "Over",
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
+      "market": "spreads",
+      "pick": "Al-Taawoun FC",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
+      "market": "spreads",
+      "pick": "Al Hilal SFC",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
+      "market": "spreads",
+      "pick": "Al-Taawoun FC",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
+      "market": "spreads",
+      "pick": "Al Hilal SFC",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
+      "market": "spreads",
+      "pick": "Al-Taawoun FC",
       "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -287,11 +391,11 @@
       ]
     },
     {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
-      "market": "totals",
-      "pick": "Under",
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
+      "market": "spreads",
+      "pick": "Al Hilal SFC",
       "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -313,120 +417,12 @@
       ]
     },
     {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
+      "event": "Al-Taawoun FC vs Al Hilal SFC",
+      "event_id": 73215742,
+      "bet365_event_id": 73215742,
       "market": "totals",
       "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "UWA Nedlands FC vs Mandurah City",
-      "event_id": 74250330,
-      "bet365_event_id": 74250330,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Essendon Royals SC vs Avondale FC",
-      "event_id": 74401822,
-      "bet365_event_id": 74401822,
-      "market": "h2h",
-      "pick": "Essendon Royals SC",
-      "line": null,
+      "line": 5.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
