@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-13T04:47:01.580771+00:00",
-  "as_of": "2026-09-13T04:47:01.527004+00:00",
+  "generated_at": "2026-09-13T16:16:34.633551+00:00",
+  "as_of": "2026-09-13T16:16:34.512795+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 263,
-  "fresh_exact_candidates": 189,
+  "total_candidates": 577,
+  "fresh_exact_candidates": 505,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 189,
-    "missing_external_market_reference": 189,
-    "missing_model_reference": 189
+    "insufficient_independent_economic_sources": 505,
+    "missing_external_market_reference": 505,
+    "missing_model_reference": 505
   },
   "missing_roles": {
-    "external_market_reference": 189,
-    "model_reference": 189
+    "external_market_reference": 505,
+    "model_reference": 505
   },
   "by_market": {
     "h2h": {
-      "evaluated": 81,
-      "fresh_exact_bet365": 81,
+      "evaluated": 129,
+      "fresh_exact_bet365": 129,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 81,
-        "missing_external_market_reference": 81,
-        "missing_model_reference": 81
+        "insufficient_independent_economic_sources": 129,
+        "missing_external_market_reference": 129,
+        "missing_model_reference": 129
       },
       "missing_roles": {
-        "external_market_reference": 81,
-        "model_reference": 81
+        "external_market_reference": 129,
+        "model_reference": 129
       }
     },
     "spreads": {
-      "evaluated": 12,
-      "fresh_exact_bet365": 12,
+      "evaluated": 132,
+      "fresh_exact_bet365": 132,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 12,
-        "missing_external_market_reference": 12,
-        "missing_model_reference": 12
+        "insufficient_independent_economic_sources": 132,
+        "missing_external_market_reference": 132,
+        "missing_model_reference": 132
       },
       "missing_roles": {
-        "external_market_reference": 12,
-        "model_reference": 12
+        "external_market_reference": 132,
+        "model_reference": 132
       }
     },
     "totals": {
-      "evaluated": 96,
-      "fresh_exact_bet365": 96,
+      "evaluated": 244,
+      "fresh_exact_bet365": 244,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 96,
-        "missing_external_market_reference": 96,
-        "missing_model_reference": 96
+        "insufficient_independent_economic_sources": 244,
+        "missing_external_market_reference": 244,
+        "missing_model_reference": 244
       },
       "missing_roles": {
-        "external_market_reference": 96,
-        "model_reference": 96
+        "external_market_reference": 244,
+        "model_reference": 244
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 189,
+        "fresh_exact_candidates_blocked": 505,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 189,
+        "fresh_exact_candidates_blocked": 505,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 189
+        "fresh_exact_candidates_blocked": 505
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 96,
+        "fresh_exact_candidates": 244,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 96,
-          "model_reference": 96
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "h2h",
-        "fresh_exact_candidates": 81,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 81,
-          "model_reference": 81
+          "external_market_reference": 244,
+          "model_reference": 244
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 12,
+        "fresh_exact_candidates": 132,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 12,
-          "model_reference": 12
+          "external_market_reference": 132,
+          "model_reference": 132
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "h2h",
+        "fresh_exact_candidates": 129,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 129,
+          "model_reference": 129
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 96,
+      "first_market_fresh_exact_candidates": 244,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 81,
-      "fresh_exact_bet365": 81,
+      "evaluated": 129,
+      "fresh_exact_bet365": 129,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 81,
-        "missing_external_market_reference": 81,
-        "missing_model_reference": 81
+        "insufficient_independent_economic_sources": 129,
+        "missing_external_market_reference": 129,
+        "missing_model_reference": 129
       },
       "missing_roles": {
-        "external_market_reference": 81,
-        "model_reference": 81
+        "external_market_reference": 129,
+        "model_reference": 129
       }
     },
     "spreads": {
-      "evaluated": 16,
-      "fresh_exact_bet365": 12,
+      "evaluated": 138,
+      "fresh_exact_bet365": 132,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 16,
-        "missing_external_market_reference": 16,
-        "missing_model_reference": 16,
-        "not_fresh_exact_bet365": 4
+        "insufficient_independent_economic_sources": 138,
+        "missing_external_market_reference": 138,
+        "missing_model_reference": 138,
+        "not_fresh_exact_bet365": 6
       },
       "missing_roles": {
-        "external_market_reference": 16,
-        "model_reference": 16
+        "external_market_reference": 138,
+        "model_reference": 138
       }
     },
     "totals": {
-      "evaluated": 166,
-      "fresh_exact_bet365": 96,
+      "evaluated": 310,
+      "fresh_exact_bet365": 244,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 166,
-        "missing_external_market_reference": 166,
-        "missing_model_reference": 166,
-        "not_fresh_exact_bet365": 70
+        "insufficient_independent_economic_sources": 310,
+        "missing_external_market_reference": 310,
+        "missing_model_reference": 310,
+        "not_fresh_exact_bet365": 66
       },
       "missing_roles": {
-        "external_market_reference": 166,
-        "model_reference": 166
+        "external_market_reference": 310,
+        "model_reference": 310
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
       "market": "h2h",
-      "pick": "Yuen Long FC",
+      "pick": "RCD Mallorca",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
       "market": "h2h",
-      "pick": "Kui Tan SC",
+      "pick": "CE Sabadell FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,120 +261,12 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "spreads",
+      "pick": "RCD Mallorca",
+      "line": -1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -395,12 +287,12 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Kui Tan SC",
-      "event_id": 74058558,
-      "bet365_event_id": 74058558,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "spreads",
+      "pick": "CE Sabadell FC",
+      "line": -1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -421,12 +313,116 @@
       ]
     },
     {
-      "event": "Canberra Croatia FC vs Belconnen United",
-      "event_id": 74403226,
-      "bet365_event_id": 74403226,
-      "market": "h2h",
-      "pick": "Canberra Croatia FC",
-      "line": null,
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "spreads",
+      "pick": "RCD Mallorca",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "spreads",
+      "pick": "CE Sabadell FC",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RCD Mallorca vs CE Sabadell FC",
+      "event_id": 72477398,
+      "bet365_event_id": 72477398,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
