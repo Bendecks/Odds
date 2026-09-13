@@ -1,90 +1,87 @@
 {
-  "generated_at": "2026-09-12T15:31:26.873492+00:00",
+  "generated_at": "2026-09-13T04:47:01.602700+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 510,
-  "exact_bet365_rows": 466,
+  "candidate_rows": 263,
+  "exact_bet365_rows": 189,
   "fresh_exact_rows_by_market": {
-    "h2h": 138,
-    "spreads": 66,
-    "totals": 262
+    "h2h": 81,
+    "spreads": 12,
+    "totals": 96
   },
   "metadata": {
-    "rows_with_sport": 510,
-    "rows_with_league": 510,
-    "rows_with_parseable_teams": 510,
+    "rows_with_sport": 263,
+    "rows_with_league": 263,
+    "rows_with_parseable_teams": 263,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 138,
-      "spreads": 68,
-      "totals": 304
+      "h2h": 81,
+      "spreads": 16,
+      "totals": 166
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 138,
-      "totals": 304
+      "h2h": 81,
+      "totals": 166
     },
-    "first_model_scope_rows": 442
+    "first_model_scope_rows": 247
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Switzerland - Super League', 'slug': 'switzerland-super-league'}",
-        36
+        "{'name': 'Hong Kong, China - 1. Division', 'slug': 'hong-kong-china-1-division'}",
+        52
       ],
       [
-        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
-        33
+        "{'name': 'Estonia - Esiliiga', 'slug': 'estonia-esiliiga'}",
+        29
       ],
       [
-        "{'name': 'Finland - Veikkausliiga, Relegation Round', 'slug': 'finland-veikkausliiga-relegation-round'}",
-        30
+        "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
+        28
       ],
       [
-        "{'name': 'Slovakia - Superliga', 'slug': 'slovakia-superliga'}",
-        27
-      ],
-      [
-        "{'name': 'Italy - Serie C, Group C', 'slug': 'italy-serie-c-group-c'}",
-        27
-      ],
-      [
-        "{'name': 'Italy - Serie C, Group B', 'slug': 'italy-serie-c-group-b'}",
-        23
-      ],
-      [
-        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
-        21
-      ],
-      [
-        "{'name': 'Belgium - First Division A', 'slug': 'belgium-first-division-a'}",
-        19
-      ],
-      [
-        "{'name': 'International Youth - U20 FIFA World Cup, Women, Group B', 'slug': 'international-youth-u20-fifa-world-cup-women-group-b'}",
+        "{'name': 'Hong Kong, China - Premier League', 'slug': 'hong-kong-china-premier-league'}",
         18
       ],
       [
-        "{'name': 'Cyprus - 1st Division', 'slug': 'cyprus-1st-division'}",
+        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
         18
+      ],
+      [
+        "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+        18
+      ],
+      [
+        "{'name': 'Slovakia - 2. Liga', 'slug': 'slovakia-2-liga'}",
+        16
+      ],
+      [
+        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
+        15
+      ],
+      [
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        15
+      ],
+      [
+        "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
+        11
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 16,
-      "football-data.co.uk:E0": 34,
-      "football-data.co.uk:E1": 15,
-      "football-data.co.uk:I1": 33,
-      "public-data:needs-provider-specific-mapping": 27
+      "football-data.co.uk:E0": 18,
+      "football-data.co.uk:E1": 9
     }
   },
   "public_football_data_probe": {
@@ -117,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 68
+      "market_not_first_model_scope": 16
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
