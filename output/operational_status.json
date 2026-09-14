@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-09-13T16:16:34.512795+00:00",
+  "generated_at": "2026-09-14T04:56:09.008158+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 577,
-    "fair_probability_rows": 577,
+    "candidate_rows": 571,
+    "fair_probability_rows": 571,
     "reference_events": 12,
-    "exact_bet365_rows": 505,
-    "fresh_exact_bet365_rows": 505,
+    "exact_bet365_rows": 475,
+    "fresh_exact_bet365_rows": 475,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 55
+    "decision_runs_recorded": 56
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 310,
-        "spreads": 138,
-        "h2h": 129
+        "totals": 336,
+        "h2h": 141,
+        "spreads": 94
       },
       "exact": {
-        "totals": 244,
-        "spreads": 132,
-        "h2h": 129
+        "totals": 242,
+        "h2h": 141,
+        "spreads": 92
       },
       "fresh": {
-        "totals": 244,
-        "spreads": 132,
-        "h2h": 129
+        "totals": 242,
+        "h2h": 141,
+        "spreads": 92
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 129,
-        "fresh": 129,
+        "exact": 141,
+        "fresh": 141,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 132,
-        "fresh": 132,
+        "exact": 92,
+        "fresh": 92,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 244,
-        "fresh": 244,
+        "exact": 242,
+        "fresh": 242,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 505
+      "0_20m": 475
     },
     "reference_depth_rejections_by_market": {
-      "totals": 244,
-      "spreads": 132,
-      "h2h": 129
+      "totals": 242,
+      "h2h": 141,
+      "spreads": 92
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,50 +72,70 @@
     }
   },
   "provider": {
-    "generated_at": "2026-09-13T16:16:27.480745+00:00",
+    "generated_at": "2026-09-14T04:56:03.495899+00:00",
     "available": true,
-    "bet365_events_available": 500,
+    "bet365_events_available": 483,
     "events_queried": 80,
     "provider_event_metadata": {
-      "events_total": 500,
+      "events_total": 483,
       "prioritized_events": 80,
-      "rows_with_sport": 500,
-      "rows_with_league": 500,
+      "rows_with_sport": 483,
+      "rows_with_league": 483,
       "prioritized_with_sport": 80,
       "prioritized_with_league": 80,
       "top_sports": [
         [
           "{'name': 'Football', 'slug': 'football'}",
-          500
+          483
         ]
       ],
       "top_leagues": [
+        [
+          "{'name': 'England - National League', 'slug': 'england-national-league'}",
+          24
+        ],
+        [
+          "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+          20
+        ],
         [
           "{'name': 'International Clubs - UEFA Europa League', 'slug': 'international-clubs-uefa-europa-league'}",
           18
         ],
         [
-          "{'name': 'England - National League', 'slug': 'england-national-league'}",
-          13
+          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+          17
+        ],
+        [
+          "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
+          15
+        ],
+        [
+          "{'name': 'England - Championship', 'slug': 'england-championship'}",
+          14
         ],
         [
           "{'name': 'International Clubs - AFC Champions League Elite, West Region', 'slug': 'international-clubs-afc-champions-league-elite-west-region'}",
+          14
+        ],
+        [
+          "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
           13
         ],
         [
-          "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-          13
-        ],
-        [
-          "{'name': 'USA - MLS Next Pro', 'slug': 'usa-mls-next-pro'}",
+          "{'name': 'England - League One', 'slug': 'england-league-one'}",
           12
         ],
         [
-          "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
-          10
+          "{'name': 'England - League Two', 'slug': 'england-league-two'}",
+          12
         ],
         [
-          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+          "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+          11
+        ],
+        [
+          "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
           10
         ],
         [
@@ -123,23 +143,67 @@
           10
         ],
         [
+          "{'name': 'England - Premier League', 'slug': 'england-premier-league'}",
+          10
+        ],
+        [
           "{'name': 'England Amateur - Isthmian League, Premier Division', 'slug': 'england-amateur-isthmian-league-premier-division'}",
           10
         ],
         [
-          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+          "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
+          10
+        ],
+        [
+          "{'name': 'France - Ligue 1', 'slug': 'france-ligue-1'}",
           9
+        ],
+        [
+          "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
+          9
+        ],
+        [
+          "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
+          9
+        ],
+        [
+          "{'name': 'Scotland - Premiership', 'slug': 'scotland-premiership'}",
+          9
+        ],
+        [
+          "{'name': 'Uruguay - Tercera Division, Reserves', 'slug': 'uruguay-tercera-division-reserves'}",
+          9
+        ],
+        [
+          "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+          8
         ],
         [
           "{'name': 'Egypt - Premier League', 'slug': 'egypt-premier-league'}",
           7
         ],
         [
-          "{'name': 'Israel - Premier League', 'slug': 'israel-premier-league'}",
-          7
+          "{'name': 'Austria - Bundesliga', 'slug': 'austria-bundesliga'}",
+          6
         ],
         [
-          "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
+          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+          6
+        ],
+        [
+          "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
+          6
+        ],
+        [
+          "{'name': 'Israel - Premier League', 'slug': 'israel-premier-league'}",
+          6
+        ],
+        [
+          "{'name': 'Scotland - Championship', 'slug': 'scotland-championship'}",
+          6
+        ],
+        [
+          "{'name': 'Scotland - League One', 'slug': 'scotland-league-one'}",
           6
         ],
         [
@@ -147,47 +211,15 @@
           6
         ],
         [
-          "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
+          "{'name': 'Scotland - League Two', 'slug': 'scotland-league-two'}",
           5
-        ],
-        [
-          "{'name': 'Brazil - Gaucho, Serie A2', 'slug': 'brazil-gaucho-serie-a2'}",
-          5
-        ],
-        [
-          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
-          5
-        ],
-        [
-          "{'name': 'Ecuador - Serie A', 'slug': 'ecuador-serie-a'}",
-          5
-        ],
-        [
-          "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
-          5
-        ],
-        [
-          "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
-          5
-        ],
-        [
-          "{'name': 'Brazil - Carioca, Serie B2', 'slug': 'brazil-carioca-serie-b2'}",
-          4
-        ],
-        [
-          "{'name': 'Chile - Primera Division', 'slug': 'chile-primera-division'}",
-          4
-        ],
-        [
-          "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
-          4
-        ],
-        [
-          "{'name': 'England - Championship', 'slug': 'england-championship'}",
-          4
         ],
         [
           "{'name': 'International - Asian Games, Women, Group F', 'slug': 'international-asian-games-women-group-f'}",
+          4
+        ],
+        [
+          "{'name': 'International - UEFA Nations League, League C, Gr. 2', 'slug': 'international-uefa-nations-league-league-c-gr-2'}",
           4
         ],
         [
@@ -199,51 +231,15 @@
           4
         ],
         [
-          "{'name': 'Iraq - Stars League', 'slug': 'iraq-stars-league'}",
-          4
-        ],
-        [
           "{'name': 'Ireland - Premier Division', 'slug': 'ireland-premier-division'}",
           4
         ],
         [
-          "{'name': 'Mexico - Liga MX, Apertura', 'slug': 'mexico-liga-mx-apertura'}",
+          "{'name': 'Saudi Arabia - U21 Elite League', 'slug': 'saudi-arabia-u21-elite-league'}",
           4
-        ],
-        [
-          "{'name': 'Montenegro - 1. CFL', 'slug': 'montenegro-1-cfl'}",
-          4
-        ],
-        [
-          "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
-          4
-        ],
-        [
-          "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
-          4
-        ],
-        [
-          "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
-          4
-        ],
-        [
-          "{'name': 'Argentina - Torneo Federal A, Main round, Group A', 'slug': 'argentina-torneo-federal-a-main-round-group-a'}",
-          3
-        ],
-        [
-          "{'name': 'Argentina - Torneo Federal A, Main round, Group B', 'slug': 'argentina-torneo-federal-a-main-round-group-b'}",
-          3
         ],
         [
           "{'name': 'Bahrain - First Division', 'slug': 'bahrain-first-division'}",
-          3
-        ],
-        [
-          "{'name': 'Bolivia - Division Profesional', 'slug': 'bolivia-division-profesional'}",
-          3
-        ],
-        [
-          "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
           3
         ],
         [
@@ -251,11 +247,7 @@
           3
         ],
         [
-          "{'name': 'El Salvador - Primera Division, Apertura', 'slug': 'el-salvador-primera-division-apertura'}",
-          3
-        ],
-        [
-          "{'name': 'El Salvador - Primera Division, Reserves, Apertura', 'slug': 'el-salvador-primera-division-reserves-apertura'}",
+          "{'name': 'Chile - Liga de Ascenso', 'slug': 'chile-liga-de-ascenso'}",
           3
         ],
         [
@@ -263,90 +255,98 @@
           3
         ],
         [
-          "{'name': 'Faroe Islands - Premier League', 'slug': 'faroe-islands-premier-league'}",
-          3
-        ],
-        [
           "{'name': 'Georgia - Erovnuli Liga', 'slug': 'georgia-erovnuli-liga'}",
           3
         ],
         [
-          "{'name': 'Greece - Super League', 'slug': 'greece-super-league'}",
+          "{'name': 'Montenegro - 1. CFL', 'slug': 'montenegro-1-cfl'}",
           3
         ],
         [
-          "{'name': 'Guatemala - Liga Nacional, Apertura', 'slug': 'guatemala-liga-nacional-apertura'}",
+          "{'name': 'Norway - 3rd Division, Group 5', 'slug': 'norway-3rd-division-group-5'}",
           3
         ],
         [
-          "{'name': 'Honduras - Liga Nacional, Apertura', 'slug': 'honduras-liga-nacional-apertura'}",
+          "{'name': 'Poland - Ekstraklasa', 'slug': 'poland-ekstraklasa'}",
           3
         ],
         [
-          "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
+          "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
           3
         ],
         [
-          "{'name': 'Kosovo - Superliga', 'slug': 'kosovo-superliga'}",
+          "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
           3
+        ],
+        [
+          "{'name': 'Sweden - Allsvenskan', 'slug': 'sweden-allsvenskan'}",
+          3
+        ],
+        [
+          "{'name': 'Argentina - Copa Argentina', 'slug': 'argentina-copa-argentina'}",
+          2
+        ],
+        [
+          "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
+          2
         ]
       ],
       "event_key_counts": [
         [
           "away",
-          500
+          483
         ],
         [
           "awayId",
-          500
+          483
         ],
         [
           "date",
-          500
+          483
         ],
         [
           "home",
-          500
+          483
         ],
         [
           "homeId",
-          500
+          483
         ],
         [
           "id",
-          500
+          483
         ],
         [
           "league",
-          500
+          483
         ],
         [
           "scores",
-          500
+          483
         ],
         [
           "sport",
-          500
+          483
         ],
         [
           "status",
-          500
+          483
         ]
       ],
       "samples": [
         {
-          "id": 72575970,
-          "home": "FK Pardubice",
-          "away": "SK Artis Brno",
+          "id": 73842242,
+          "home": "Philippines",
+          "away": "Uzbekistan",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Czechia - 2. Liga, Women",
-            "slug": "czechia-2-liga-women"
+            "name": "International - Asian Games, Women, Group G",
+            "slug": "international-asian-games-women-group-g"
           },
-          "date": "2026-09-13T14:00:00Z",
+          "date": "2026-09-14T05:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 72548394,
-          "home": "Wolfsberger AC (A)",
-          "away": "Atus Velden",
+          "id": 73842204,
+          "home": "Chinese Taipei",
+          "away": "Vietnam",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Austria Amateur - Regionalliga Sud",
-            "slug": "austria-amateur-regionalliga-sud"
+            "name": "International - Asian Games, Women, Group F",
+            "slug": "international-asian-games-women-group-f"
           },
-          "date": "2026-09-13T14:30:00Z",
+          "date": "2026-09-14T07:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 72559046,
-          "home": "CD Lugo",
-          "away": "CD Coria",
+          "id": 73842222,
+          "home": "DPR Korea",
+          "away": "Bangladesh",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Spain - Primera Federacion, Group 1",
-            "slug": "spain-primera-federacion-group-1"
+            "name": "International - Asian Games, Women, Group F",
+            "slug": "international-asian-games-women-group-f"
           },
-          "date": "2026-09-13T16:15:00Z",
+          "date": "2026-09-14T07:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 67850112,
-          "home": "NSI Runavik",
-          "away": "Vikingur Gota",
+          "id": 74486842,
+          "home": "United Sports Club",
+          "away": "Mohun Bagan SG Reserves",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Faroe Islands - Premier League",
-            "slug": "faroe-islands-premier-league"
+            "name": "India - Calcutta Premier Division, Championship Round",
+            "slug": "india-calcutta-premier-division-championship-round"
           },
-          "date": "2026-09-13T16:15:00Z",
+          "date": "2026-09-14T09:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 73556240,
-          "home": "CD Revilla",
-          "away": "CD Atletico Mineros",
+          "id": 74486844,
+          "home": "East BengaL FC Reserves",
+          "away": "Mohammedan SC Reserves",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Spain Amateur - Tercera Federacion, Group 3",
-            "slug": "spain-amateur-tercera-federacion-group-3"
+            "name": "India - Calcutta Premier Division, Championship Round",
+            "slug": "india-calcutta-premier-division-championship-round"
           },
-          "date": "2026-09-13T16:15:00Z",
+          "date": "2026-09-14T09:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 25475,
-    "unique_markets": 83,
+    "raw_market_observations": 20476,
+    "unique_markets": 85,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-09-13T16:16:27Z",
+    "generated_at": "2026-09-14T04:56:03Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",
