@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-14T04:56:09.261111+00:00",
-  "as_of": "2026-09-14T04:56:09.008158+00:00",
+  "generated_at": "2026-09-14T18:05:02.009511+00:00",
+  "as_of": "2026-09-14T18:05:01.863670+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,17 +20,17 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 571,
-  "fresh_exact_candidates": 475,
+  "total_candidates": 753,
+  "fresh_exact_candidates": 707,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 475,
-    "missing_external_market_reference": 475,
-    "missing_model_reference": 475
+    "insufficient_independent_economic_sources": 707,
+    "missing_external_market_reference": 707,
+    "missing_model_reference": 707
   },
   "missing_roles": {
-    "external_market_reference": 475,
-    "model_reference": 475
+    "external_market_reference": 707,
+    "model_reference": 707
   },
   "by_market": {
     "h2h": {
@@ -48,31 +48,31 @@
       }
     },
     "spreads": {
-      "evaluated": 92,
-      "fresh_exact_bet365": 92,
+      "evaluated": 214,
+      "fresh_exact_bet365": 214,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 92,
-        "missing_external_market_reference": 92,
-        "missing_model_reference": 92
+        "insufficient_independent_economic_sources": 214,
+        "missing_external_market_reference": 214,
+        "missing_model_reference": 214
       },
       "missing_roles": {
-        "external_market_reference": 92,
-        "model_reference": 92
+        "external_market_reference": 214,
+        "model_reference": 214
       }
     },
     "totals": {
-      "evaluated": 242,
-      "fresh_exact_bet365": 242,
+      "evaluated": 352,
+      "fresh_exact_bet365": 352,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 242,
-        "missing_external_market_reference": 242,
-        "missing_model_reference": 242
+        "insufficient_independent_economic_sources": 352,
+        "missing_external_market_reference": 352,
+        "missing_model_reference": 352
       },
       "missing_roles": {
-        "external_market_reference": 242,
-        "model_reference": 242
+        "external_market_reference": 352,
+        "model_reference": 352
       }
     }
   },
@@ -80,29 +80,39 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 475,
+        "fresh_exact_candidates_blocked": 707,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 475,
+        "fresh_exact_candidates_blocked": 707,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 475
+        "fresh_exact_candidates_blocked": 707
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 242,
+        "fresh_exact_candidates": 352,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 242,
-          "model_reference": 242
+          "external_market_reference": 352,
+          "model_reference": 352
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 214,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 214,
+          "model_reference": 214
         },
         "largest_missing_role": "external_market_reference"
       },
@@ -115,22 +125,12 @@
           "model_reference": 141
         },
         "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 92,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 92,
-          "model_reference": 92
-        },
-        "largest_missing_role": "external_market_reference"
       }
     ],
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 242,
+      "first_market_fresh_exact_candidates": 352,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
@@ -151,43 +151,43 @@
       }
     },
     "spreads": {
-      "evaluated": 94,
-      "fresh_exact_bet365": 92,
+      "evaluated": 230,
+      "fresh_exact_bet365": 214,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 94,
-        "missing_external_market_reference": 94,
-        "missing_model_reference": 94,
-        "not_fresh_exact_bet365": 2
+        "insufficient_independent_economic_sources": 230,
+        "missing_external_market_reference": 230,
+        "missing_model_reference": 230,
+        "not_fresh_exact_bet365": 16
       },
       "missing_roles": {
-        "external_market_reference": 94,
-        "model_reference": 94
+        "external_market_reference": 230,
+        "model_reference": 230
       }
     },
     "totals": {
-      "evaluated": 336,
-      "fresh_exact_bet365": 242,
+      "evaluated": 382,
+      "fresh_exact_bet365": 352,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 336,
-        "missing_external_market_reference": 336,
-        "missing_model_reference": 336,
-        "not_fresh_exact_bet365": 94
+        "insufficient_independent_economic_sources": 382,
+        "missing_external_market_reference": 382,
+        "missing_model_reference": 382,
+        "not_fresh_exact_bet365": 30
       },
       "missing_roles": {
-        "external_market_reference": 336,
-        "model_reference": 336
+        "external_market_reference": 382,
+        "model_reference": 382
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
       "market": "h2h",
-      "pick": "Philippines",
+      "pick": "Al Qadsiah",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
       "market": "h2h",
-      "pick": "Uzbekistan",
+      "pick": "Al Wasl FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,172 +261,174 @@
       ]
     },
     {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
+      "market": "spreads",
+      "pick": "Al Qadsiah",
+      "line": -2.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
+      "market": "spreads",
+      "pick": "Al Wasl FC",
+      "line": -2.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
+      "market": "spreads",
+      "pick": "Al Qadsiah",
+      "line": -1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
+      "market": "spreads",
+      "pick": "Al Wasl FC",
+      "line": -1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
+      "market": "spreads",
+      "pick": "Al Qadsiah",
+      "line": -0.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
+      "market": "spreads",
+      "pick": "Al Wasl FC",
+      "line": -0.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Qadsiah vs Al Wasl FC",
+      "event_id": 73835144,
+      "bet365_event_id": 73835144,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Philippines vs Uzbekistan",
-      "event_id": 73842242,
-      "bet365_event_id": 73842242,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Korea Republic vs Myanmar",
-      "event_id": 73842224,
-      "bet365_event_id": 73842224,
-      "market": "h2h",
-      "pick": "Korea Republic",
-      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
