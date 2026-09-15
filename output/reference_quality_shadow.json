@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-15T04:54:05.438707+00:00",
-  "as_of": "2026-09-15T04:54:05.320290+00:00",
+  "generated_at": "2026-09-15T16:58:55.608490+00:00",
+  "as_of": "2026-09-15T16:58:55.476479+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 492,
-  "fresh_exact_candidates": 438,
+  "total_candidates": 659,
+  "fresh_exact_candidates": 623,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 438,
-    "missing_external_market_reference": 438,
-    "missing_model_reference": 438
+    "insufficient_independent_economic_sources": 623,
+    "missing_external_market_reference": 623,
+    "missing_model_reference": 623
   },
   "missing_roles": {
-    "external_market_reference": 438,
-    "model_reference": 438
+    "external_market_reference": 623,
+    "model_reference": 623
   },
   "by_market": {
     "h2h": {
-      "evaluated": 126,
-      "fresh_exact_bet365": 126,
+      "evaluated": 147,
+      "fresh_exact_bet365": 147,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 126,
-        "missing_external_market_reference": 126,
-        "missing_model_reference": 126
+        "insufficient_independent_economic_sources": 147,
+        "missing_external_market_reference": 147,
+        "missing_model_reference": 147
       },
       "missing_roles": {
-        "external_market_reference": 126,
-        "model_reference": 126
+        "external_market_reference": 147,
+        "model_reference": 147
       }
     },
     "spreads": {
-      "evaluated": 70,
-      "fresh_exact_bet365": 70,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 70,
-        "missing_external_market_reference": 70,
-        "missing_model_reference": 70
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 70,
-        "model_reference": 70
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "totals": {
-      "evaluated": 242,
-      "fresh_exact_bet365": 242,
+      "evaluated": 362,
+      "fresh_exact_bet365": 362,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 242,
-        "missing_external_market_reference": 242,
-        "missing_model_reference": 242
+        "insufficient_independent_economic_sources": 362,
+        "missing_external_market_reference": 362,
+        "missing_model_reference": 362
       },
       "missing_roles": {
-        "external_market_reference": 242,
-        "model_reference": 242
+        "external_market_reference": 362,
+        "model_reference": 362
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 438,
+        "fresh_exact_candidates_blocked": 623,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 438,
+        "fresh_exact_candidates_blocked": 623,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 438
+        "fresh_exact_candidates_blocked": 623
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 242,
+        "fresh_exact_candidates": 362,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 242,
-          "model_reference": 242
+          "external_market_reference": 362,
+          "model_reference": 362
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 126,
+        "fresh_exact_candidates": 147,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 126,
-          "model_reference": 126
+          "external_market_reference": 147,
+          "model_reference": 147
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 70,
+        "fresh_exact_candidates": 114,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 70,
-          "model_reference": 70
+          "external_market_reference": 114,
+          "model_reference": 114
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 242,
+      "first_market_fresh_exact_candidates": 362,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 126,
-      "fresh_exact_bet365": 126,
+      "evaluated": 147,
+      "fresh_exact_bet365": 147,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 126,
-        "missing_external_market_reference": 126,
-        "missing_model_reference": 126
+        "insufficient_independent_economic_sources": 147,
+        "missing_external_market_reference": 147,
+        "missing_model_reference": 147
       },
       "missing_roles": {
-        "external_market_reference": 126,
-        "model_reference": 126
+        "external_market_reference": 147,
+        "model_reference": 147
       }
     },
     "spreads": {
-      "evaluated": 72,
-      "fresh_exact_bet365": 70,
+      "evaluated": 142,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 72,
-        "missing_external_market_reference": 72,
-        "missing_model_reference": 72,
-        "not_fresh_exact_bet365": 2
+        "insufficient_independent_economic_sources": 142,
+        "missing_external_market_reference": 142,
+        "missing_model_reference": 142,
+        "not_fresh_exact_bet365": 28
       },
       "missing_roles": {
-        "external_market_reference": 72,
-        "model_reference": 72
+        "external_market_reference": 142,
+        "model_reference": 142
       }
     },
     "totals": {
-      "evaluated": 294,
-      "fresh_exact_bet365": 242,
+      "evaluated": 370,
+      "fresh_exact_bet365": 362,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 294,
-        "missing_external_market_reference": 294,
-        "missing_model_reference": 294,
-        "not_fresh_exact_bet365": 52
+        "insufficient_independent_economic_sources": 370,
+        "missing_external_market_reference": 370,
+        "missing_model_reference": 370,
+        "not_fresh_exact_bet365": 8
       },
       "missing_roles": {
-        "external_market_reference": 294,
-        "model_reference": 294
+        "external_market_reference": 370,
+        "model_reference": 370
       }
     }
   },
   "sample_failures": [
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "h2h",
-      "pick": "South Melbourne FC",
+      "pick": "Beitar Jerusalem FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "h2h",
-      "pick": "Lions FC",
+      "pick": "Maccabi Petah Tikva FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +261,9 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +287,9 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,9 +313,9 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
@@ -339,9 +339,9 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
@@ -365,12 +365,12 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "totals",
       "pick": "Over",
-      "line": 4.5,
+      "line": 1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -391,12 +391,12 @@
       ]
     },
     {
-      "event": "South Melbourne FC vs Lions FC",
-      "event_id": 74115098,
-      "bet365_event_id": 74115098,
+      "event": "Beitar Jerusalem FC vs Maccabi Petah Tikva FC",
+      "event_id": 72225146,
+      "bet365_event_id": 72225146,
       "market": "totals",
       "pick": "Under",
-      "line": 4.5,
+      "line": 1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -417,11 +417,11 @@
       ]
     },
     {
-      "event": "Uzbekistan vs Philippines",
-      "event_id": 73841798,
-      "bet365_event_id": 73841798,
+      "event": "IFK Varnamo vs Osters IF",
+      "event_id": 67126360,
+      "bet365_event_id": 67126360,
       "market": "h2h",
-      "pick": "Uzbekistan",
+      "pick": "IFK Varnamo",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,

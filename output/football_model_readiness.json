@@ -1,46 +1,54 @@
 {
-  "generated_at": "2026-09-15T04:54:05.483817+00:00",
+  "generated_at": "2026-09-15T16:58:55.657141+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 492,
-  "exact_bet365_rows": 438,
+  "candidate_rows": 659,
+  "exact_bet365_rows": 623,
   "fresh_exact_rows_by_market": {
-    "h2h": 126,
-    "spreads": 70,
-    "totals": 242
+    "h2h": 147,
+    "spreads": 114,
+    "totals": 362
   },
   "metadata": {
-    "rows_with_sport": 492,
-    "rows_with_league": 492,
-    "rows_with_parseable_teams": 492,
+    "rows_with_sport": 659,
+    "rows_with_league": 659,
+    "rows_with_parseable_teams": 659,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 126,
-      "spreads": 72,
-      "totals": 294
+      "h2h": 147,
+      "spreads": 142,
+      "totals": 370
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 126,
-      "totals": 294
+      "h2h": 147,
+      "totals": 370
     },
-    "first_model_scope_rows": 420
+    "first_model_scope_rows": 517
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International Clubs - AFC Champions League Elite, West Region', 'slug': 'international-clubs-afc-champions-league-elite-west-region'}",
-        104
+        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+        82
+      ],
+      [
+        "{'name': 'Scotland - Premiership', 'slug': 'scotland-premiership'}",
+        63
+      ],
+      [
+        "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
+        59
       ],
       [
         "{'name': 'Germany - 3. Liga', 'slug': 'germany-3-liga'}",
@@ -51,37 +59,31 @@
         51
       ],
       [
-        "{'name': 'Italy - Serie C, Group C', 'slug': 'italy-serie-c-group-c'}",
-        27
+        "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
+        51
       ],
       [
-        "{'name': 'Egypt - Premier League', 'slug': 'egypt-premier-league'}",
-        25
+        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
+        45
       ],
       [
-        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-        25
+        "{'name': 'Northern Ireland - Premiership', 'slug': 'northern-ireland-premiership'}",
+        36
       ],
       [
-        "{'name': 'Rwanda - Premier League', 'slug': 'rwanda-premier-league'}",
-        21
+        "{'name': 'International Clubs - AFC Champions League Elite, West Region', 'slug': 'international-clubs-afc-champions-league-elite-west-region'}",
+        19
       ],
       [
-        "{'name': 'International Clubs - AFC Champions League Two, Group E', 'slug': 'international-clubs-afc-champions-league-two-group-e'}",
-        18
-      ],
-      [
-        "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
-        18
-      ],
-      [
-        "{'name': 'International Youth - Asian Games, Group C', 'slug': 'international-youth-asian-games-group-c'}",
-        16
+        "{'name': 'England - Championship', 'slug': 'england-championship'}",
+        19
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 122,
-      "football-data.co.uk:E0": 55
+      "football-data.co.uk:CL": 19,
+      "football-data.co.uk:E0": 38,
+      "football-data.co.uk:E1": 34,
+      "football-data.co.uk:N1": 51
     }
   },
   "public_football_data_probe": {
@@ -114,7 +116,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 72
+      "market_not_first_model_scope": 142
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
