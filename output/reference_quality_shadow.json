@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-14T18:05:02.009511+00:00",
-  "as_of": "2026-09-14T18:05:01.863670+00:00",
+  "generated_at": "2026-09-15T04:54:05.438707+00:00",
+  "as_of": "2026-09-15T04:54:05.320290+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 753,
-  "fresh_exact_candidates": 707,
+  "total_candidates": 492,
+  "fresh_exact_candidates": 438,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 707,
-    "missing_external_market_reference": 707,
-    "missing_model_reference": 707
+    "insufficient_independent_economic_sources": 438,
+    "missing_external_market_reference": 438,
+    "missing_model_reference": 438
   },
   "missing_roles": {
-    "external_market_reference": 707,
-    "model_reference": 707
+    "external_market_reference": 438,
+    "model_reference": 438
   },
   "by_market": {
     "h2h": {
-      "evaluated": 141,
-      "fresh_exact_bet365": 141,
+      "evaluated": 126,
+      "fresh_exact_bet365": 126,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 141,
-        "missing_external_market_reference": 141,
-        "missing_model_reference": 141
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126
       },
       "missing_roles": {
-        "external_market_reference": 141,
-        "model_reference": 141
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     },
     "spreads": {
-      "evaluated": 214,
-      "fresh_exact_bet365": 214,
+      "evaluated": 70,
+      "fresh_exact_bet365": 70,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 214,
-        "missing_external_market_reference": 214,
-        "missing_model_reference": 214
+        "insufficient_independent_economic_sources": 70,
+        "missing_external_market_reference": 70,
+        "missing_model_reference": 70
       },
       "missing_roles": {
-        "external_market_reference": 214,
-        "model_reference": 214
+        "external_market_reference": 70,
+        "model_reference": 70
       }
     },
     "totals": {
-      "evaluated": 352,
-      "fresh_exact_bet365": 352,
+      "evaluated": 242,
+      "fresh_exact_bet365": 242,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 352,
-        "missing_external_market_reference": 352,
-        "missing_model_reference": 352
+        "insufficient_independent_economic_sources": 242,
+        "missing_external_market_reference": 242,
+        "missing_model_reference": 242
       },
       "missing_roles": {
-        "external_market_reference": 352,
-        "model_reference": 352
+        "external_market_reference": 242,
+        "model_reference": 242
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 707,
+        "fresh_exact_candidates_blocked": 438,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 707,
+        "fresh_exact_candidates_blocked": 438,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 707
+        "fresh_exact_candidates_blocked": 438
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 352,
+        "fresh_exact_candidates": 242,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 352,
-          "model_reference": 352
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 214,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 214,
-          "model_reference": 214
+          "external_market_reference": 242,
+          "model_reference": 242
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 141,
+        "fresh_exact_candidates": 126,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 141,
-          "model_reference": 141
+          "external_market_reference": 126,
+          "model_reference": 126
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 70,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 70,
+          "model_reference": 70
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 352,
+      "first_market_fresh_exact_candidates": 242,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 141,
-      "fresh_exact_bet365": 141,
+      "evaluated": 126,
+      "fresh_exact_bet365": 126,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 141,
-        "missing_external_market_reference": 141,
-        "missing_model_reference": 141
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126
       },
       "missing_roles": {
-        "external_market_reference": 141,
-        "model_reference": 141
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     },
     "spreads": {
-      "evaluated": 230,
-      "fresh_exact_bet365": 214,
+      "evaluated": 72,
+      "fresh_exact_bet365": 70,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 230,
-        "missing_external_market_reference": 230,
-        "missing_model_reference": 230,
-        "not_fresh_exact_bet365": 16
+        "insufficient_independent_economic_sources": 72,
+        "missing_external_market_reference": 72,
+        "missing_model_reference": 72,
+        "not_fresh_exact_bet365": 2
       },
       "missing_roles": {
-        "external_market_reference": 230,
-        "model_reference": 230
+        "external_market_reference": 72,
+        "model_reference": 72
       }
     },
     "totals": {
-      "evaluated": 382,
-      "fresh_exact_bet365": 352,
+      "evaluated": 294,
+      "fresh_exact_bet365": 242,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 382,
-        "missing_external_market_reference": 382,
-        "missing_model_reference": 382,
-        "not_fresh_exact_bet365": 30
+        "insufficient_independent_economic_sources": 294,
+        "missing_external_market_reference": 294,
+        "missing_model_reference": 294,
+        "not_fresh_exact_bet365": 52
       },
       "missing_roles": {
-        "external_market_reference": 382,
-        "model_reference": 382
+        "external_market_reference": 294,
+        "model_reference": 294
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
       "market": "h2h",
-      "pick": "Al Qadsiah",
+      "pick": "South Melbourne FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
       "market": "h2h",
-      "pick": "Al Wasl FC",
+      "pick": "Lions FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,174 +261,168 @@
       ]
     },
     {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
-      "market": "spreads",
-      "pick": "Al Qadsiah",
-      "line": -2.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
-      "market": "spreads",
-      "pick": "Al Wasl FC",
-      "line": -2.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
-      "market": "spreads",
-      "pick": "Al Qadsiah",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
-      "market": "spreads",
-      "pick": "Al Wasl FC",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
-      "market": "spreads",
-      "pick": "Al Qadsiah",
-      "line": -0.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
-      "market": "spreads",
-      "pick": "Al Wasl FC",
-      "line": -0.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al Qadsiah vs Al Wasl FC",
-      "event_id": 73835144,
-      "bet365_event_id": 73835144,
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
       "market": "totals",
       "pick": "Over",
-      "line": 1.5,
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "South Melbourne FC vs Lions FC",
+      "event_id": 74115098,
+      "bet365_event_id": 74115098,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Uzbekistan vs Philippines",
+      "event_id": 73841798,
+      "bet365_event_id": 73841798,
+      "market": "h2h",
+      "pick": "Uzbekistan",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
