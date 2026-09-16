@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-16T04:48:48.571706+00:00",
-  "as_of": "2026-09-16T04:48:48.471383+00:00",
+  "generated_at": "2026-09-16T16:54:47.985761+00:00",
+  "as_of": "2026-09-16T16:54:47.872418+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 407,
-  "fresh_exact_candidates": 257,
+  "total_candidates": 560,
+  "fresh_exact_candidates": 462,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 257,
-    "missing_external_market_reference": 257,
-    "missing_model_reference": 257
+    "insufficient_independent_economic_sources": 462,
+    "missing_external_market_reference": 462,
+    "missing_model_reference": 462
   },
   "missing_roles": {
-    "external_market_reference": 257,
-    "model_reference": 257
+    "external_market_reference": 462,
+    "model_reference": 462
   },
   "by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 150,
+      "fresh_exact_bet365": 150,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 150,
+        "missing_external_market_reference": 150,
+        "missing_model_reference": 150
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 150,
+        "model_reference": 150
       }
     },
     "spreads": {
-      "evaluated": 8,
-      "fresh_exact_bet365": 8,
+      "evaluated": 38,
+      "fresh_exact_bet365": 38,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 8,
-        "missing_external_market_reference": 8,
-        "missing_model_reference": 8
+        "insufficient_independent_economic_sources": 38,
+        "missing_external_market_reference": 38,
+        "missing_model_reference": 38
       },
       "missing_roles": {
-        "external_market_reference": 8,
-        "model_reference": 8
+        "external_market_reference": 38,
+        "model_reference": 38
       }
     },
     "totals": {
-      "evaluated": 114,
-      "fresh_exact_bet365": 114,
+      "evaluated": 274,
+      "fresh_exact_bet365": 274,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 114,
-        "missing_external_market_reference": 114,
-        "missing_model_reference": 114
+        "insufficient_independent_economic_sources": 274,
+        "missing_external_market_reference": 274,
+        "missing_model_reference": 274
       },
       "missing_roles": {
-        "external_market_reference": 114,
-        "model_reference": 114
+        "external_market_reference": 274,
+        "model_reference": 274
       }
     }
   },
@@ -80,113 +80,114 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 257,
+        "fresh_exact_candidates_blocked": 462,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 257,
+        "fresh_exact_candidates_blocked": 462,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 257
+        "fresh_exact_candidates_blocked": 462
       }
     ],
     "market_priorities": [
       {
-        "market": "h2h",
-        "fresh_exact_candidates": 135,
+        "market": "totals",
+        "fresh_exact_candidates": 274,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 135,
-          "model_reference": 135
+          "external_market_reference": 274,
+          "model_reference": 274
         },
         "largest_missing_role": "external_market_reference"
       },
       {
-        "market": "totals",
-        "fresh_exact_candidates": 114,
+        "market": "h2h",
+        "fresh_exact_candidates": 150,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 114,
-          "model_reference": 114
+          "external_market_reference": 150,
+          "model_reference": 150
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 8,
+        "fresh_exact_candidates": 38,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 8,
-          "model_reference": 8
+          "external_market_reference": 38,
+          "model_reference": 38
         },
         "largest_missing_role": "external_market_reference"
       }
     ],
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
-      "first_market_focus": "h2h",
-      "first_market_fresh_exact_candidates": 135,
+      "first_market_focus": "totals",
+      "first_market_fresh_exact_candidates": 274,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 150,
+      "fresh_exact_bet365": 150,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 150,
+        "missing_external_market_reference": 150,
+        "missing_model_reference": 150
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 150,
+        "model_reference": 150
       }
     },
     "spreads": {
-      "evaluated": 8,
-      "fresh_exact_bet365": 8,
+      "evaluated": 78,
+      "fresh_exact_bet365": 38,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 8,
-        "missing_external_market_reference": 8,
-        "missing_model_reference": 8
+        "insufficient_independent_economic_sources": 78,
+        "missing_external_market_reference": 78,
+        "missing_model_reference": 78,
+        "not_fresh_exact_bet365": 40
       },
       "missing_roles": {
-        "external_market_reference": 8,
-        "model_reference": 8
+        "external_market_reference": 78,
+        "model_reference": 78
       }
     },
     "totals": {
-      "evaluated": 264,
-      "fresh_exact_bet365": 114,
+      "evaluated": 332,
+      "fresh_exact_bet365": 274,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 264,
-        "missing_external_market_reference": 264,
-        "missing_model_reference": 264,
-        "not_fresh_exact_bet365": 150
+        "insufficient_independent_economic_sources": 332,
+        "missing_external_market_reference": 332,
+        "missing_model_reference": 332,
+        "not_fresh_exact_bet365": 58
       },
       "missing_roles": {
-        "external_market_reference": 264,
-        "model_reference": 264
+        "external_market_reference": 332,
+        "model_reference": 332
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "h2h",
-      "pick": "Tsirang FC",
+      "pick": "Eidsvold TF",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "h2h",
-      "pick": "Thimphu FC",
+      "pick": "Kongsvinger IL Toppfotball",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,63 +261,9 @@
       ]
     },
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -340,9 +287,9 @@
       ]
     },
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -366,13 +313,65 @@
       ]
     },
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "totals",
       "pick": "Over",
       "line": 4.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -386,20 +385,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Tsirang FC vs Thimphu FC",
-      "event_id": 28374716779,
-      "bet365_event_id": 28374716779,
+      "event": "Eidsvold TF vs Kongsvinger IL Toppfotball",
+      "event_id": 74288586,
+      "bet365_event_id": 74288586,
       "market": "totals",
       "pick": "Under",
       "line": 4.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -413,18 +411,17 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "United Arab Emirates vs Iran",
-      "event_id": 73841636,
-      "bet365_event_id": 73841636,
+      "event": "Atromitos Athinon vs PAOK Thessaloniki",
+      "event_id": 74069130,
+      "bet365_event_id": 74069130,
       "market": "h2h",
-      "pick": "United Arab Emirates",
+      "pick": "Atromitos Athinon",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
