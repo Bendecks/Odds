@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-09-17T16:59:58.151952+00:00",
+  "generated_at": "2026-09-18T04:43:16.588611+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 721,
-    "fair_probability_rows": 721,
+    "candidate_rows": 311,
+    "fair_probability_rows": 311,
     "reference_events": 12,
-    "exact_bet365_rows": 655,
-    "fresh_exact_bet365_rows": 655,
+    "exact_bet365_rows": 237,
+    "fresh_exact_bet365_rows": 237,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 63
+    "decision_runs_recorded": 64
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 338,
-        "spreads": 242,
-        "h2h": 141
+        "totals": 202,
+        "h2h": 105,
+        "spreads": 4
       },
       "exact": {
-        "totals": 298,
-        "spreads": 216,
-        "h2h": 141
+        "totals": 128,
+        "h2h": 105,
+        "spreads": 4
       },
       "fresh": {
-        "totals": 298,
-        "spreads": 216,
-        "h2h": 141
+        "totals": 128,
+        "h2h": 105,
+        "spreads": 4
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 141,
-        "fresh": 141,
+        "exact": 105,
+        "fresh": 105,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 216,
-        "fresh": 216,
+        "exact": 4,
+        "fresh": 4,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 298,
-        "fresh": 298,
+        "exact": 128,
+        "fresh": 128,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 655
+      "0_20m": 237
     },
     "reference_depth_rejections_by_market": {
-      "totals": 298,
-      "spreads": 216,
-      "h2h": 141
+      "totals": 128,
+      "h2h": 105,
+      "spreads": 4
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,7 +72,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-09-17T16:59:51.673742+00:00",
+    "generated_at": "2026-09-18T04:43:13.093766+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -91,15 +91,19 @@
       ],
       "top_leagues": [
         [
-          "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
-          9
-        ],
-        [
           "{'name': 'England Amateur - U21 Premier League 2', 'slug': 'england-amateur-u21-premier-league-2'}",
           8
         ],
         [
           "{'name': 'France - Ligue 2', 'slug': 'france-ligue-2'}",
+          8
+        ],
+        [
+          "{'name': 'France - Ligue 3', 'slug': 'france-ligue-3'}",
+          8
+        ],
+        [
+          "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
           8
         ],
         [
@@ -115,19 +119,11 @@
           8
         ],
         [
-          "{'name': 'Sweden - Ettan, Sodra', 'slug': 'sweden-ettan-sodra'}",
-          8
-        ],
-        [
           "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
           7
         ],
         [
-          "{'name': 'France - Ligue 3', 'slug': 'france-ligue-3'}",
-          7
-        ],
-        [
-          "{'name': 'International Clubs - UEFA Europa League', 'slug': 'international-clubs-uefa-europa-league'}",
+          "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
           7
         ],
         [
@@ -143,10 +139,6 @@
           7
         ],
         [
-          "{'name': 'Algeria - Ligue 1', 'slug': 'algeria-ligue-1'}",
-          6
-        ],
-        [
           "{'name': 'Algeria - Ligue 2, Centre-East', 'slug': 'algeria-ligue-2-centre-east'}",
           6
         ],
@@ -157,10 +149,6 @@
         [
           "{'name': 'Sweden - Division 2, Sodra Svealand', 'slug': 'sweden-division-2-sodra-svealand'}",
           6
-        ],
-        [
-          "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
-          5
         ],
         [
           "{'name': 'Austria Amateur - Regionalliga East', 'slug': 'austria-amateur-regionalliga-east'}",
@@ -191,7 +179,7 @@
           5
         ],
         [
-          "{'name': 'Israel - Liga Alef South', 'slug': 'israel-liga-alef-south'}",
+          "{'name': 'Israel - Liga Alef North', 'slug': 'israel-liga-alef-north'}",
           5
         ],
         [
@@ -199,7 +187,19 @@
           5
         ],
         [
+          "{'name': 'Sweden - Superettan', 'slug': 'sweden-superettan'}",
+          5
+        ],
+        [
+          "{'name': 'Algeria - Ligue 1', 'slug': 'algeria-ligue-1'}",
+          4
+        ],
+        [
           "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
+          4
+        ],
+        [
+          "{'name': 'Bangladesh - Football League', 'slug': 'bangladesh-football-league'}",
           4
         ],
         [
@@ -207,15 +207,7 @@
           4
         ],
         [
-          "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
-          4
-        ],
-        [
           "{'name': 'Czechia - FNL', 'slug': 'czechia-fnl'}",
-          4
-        ],
-        [
-          "{'name': 'Ecuador - Serie B, Promotion Round', 'slug': 'ecuador-serie-b-promotion-round'}",
           4
         ],
         [
@@ -224,6 +216,10 @@
         ],
         [
           "{'name': 'England - Championship', 'slug': 'england-championship'}",
+          4
+        ],
+        [
+          "{'name': 'Finland - Kolmonen, Western, Group 3', 'slug': 'finland-kolmonen-western-group-3'}",
           4
         ],
         [
@@ -239,15 +235,7 @@
           4
         ],
         [
-          "{'name': 'Israel - Liga Alef North', 'slug': 'israel-liga-alef-north'}",
-          4
-        ],
-        [
-          "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
-          4
-        ],
-        [
-          "{'name': 'Mexico - Liga de Expansion MX, Apertura', 'slug': 'mexico-liga-de-expansion-mx-apertura'}",
+          "{'name': 'Israel - Liga Alef South', 'slug': 'israel-liga-alef-south'}",
           4
         ],
         [
@@ -256,10 +244,6 @@
         ],
         [
           "{'name': 'Republic of Korea - K-League 2', 'slug': 'republic-of-korea-k-league-2'}",
-          4
-        ],
-        [
-          "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
           4
         ],
         [
@@ -283,11 +267,27 @@
           3
         ],
         [
-          "{'name': 'Bolivia - Division Profesional', 'slug': 'bolivia-division-profesional'}",
+          "{'name': 'Austria Amateur - Regionalliga West', 'slug': 'austria-amateur-regionalliga-west'}",
           3
         ],
         [
           "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+          3
+        ],
+        [
+          "{'name': 'China - China League 2, Promotion Round', 'slug': 'china-china-league-2-promotion-round'}",
+          3
+        ],
+        [
+          "{'name': 'Czechia - 1. Liga', 'slug': 'czechia-1-liga'}",
+          3
+        ],
+        [
+          "{'name': 'Czechia - CFL, Group A', 'slug': 'czechia-cfl-group-a'}",
+          3
+        ],
+        [
+          "{'name': 'Denmark - 1st Division', 'slug': 'denmark-1st-division'}",
           3
         ]
       ],
@@ -335,18 +335,18 @@
       ],
       "samples": [
         {
-          "id": 73961620,
-          "home": "Express FC",
-          "away": "Kitara FC",
+          "id": 73841802,
+          "home": "Philippines",
+          "away": "Vietnam",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Uganda - Premier League",
-            "slug": "uganda-premier-league"
+            "name": "International Youth - Asian Games, Group C",
+            "slug": "international-youth-asian-games-group-c"
           },
-          "date": "2026-09-17T17:00:00Z",
+          "date": "2026-09-18T06:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 72478570,
-          "home": "Real Betis Seville",
-          "away": "Getafe CF",
+          "id": 74455048,
+          "home": "Changchun Xidu",
+          "away": "Guangdong Mingtu",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Spain - LaLiga",
-            "slug": "spain-laliga"
+            "name": "China - China League 2, Relegation Round, Gr. B",
+            "slug": "china-china-league-2-relegation-round-gr-b"
           },
-          "date": "2026-09-17T17:00:00Z",
+          "date": "2026-09-18T08:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 68311124,
-          "home": "FC Stockholm Internazionale",
-          "away": "IFK Stocksund",
+          "id": 74455050,
+          "home": "Lanzhou Longyuan Athletic",
+          "away": "Wenzhou Professional FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Sweden - Ettan, Sodra",
-            "slug": "sweden-ettan-sodra"
+            "name": "China - China League 2, Relegation Round, Gr. B",
+            "slug": "china-china-league-2-relegation-round-gr-b"
           },
-          "date": "2026-09-17T17:00:00Z",
+          "date": "2026-09-18T08:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 68311126,
-          "home": "Vasalunds IF",
-          "away": "Hammarby Talang FF",
+          "id": 73576632,
+          "home": "Arema FC",
+          "away": "Persik Kediri",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Sweden - Ettan, Sodra",
-            "slug": "sweden-ettan-sodra"
+            "name": "Indonesia - Indonesia Super League",
+            "slug": "indonesia-indonesia-super-league"
           },
-          "date": "2026-09-17T17:00:00Z",
+          "date": "2026-09-18T08:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 68311832,
-          "home": "Eskilsminne IF",
-          "away": "Tvaakers IF",
+          "id": 73929272,
+          "home": "Persipura Jayapura",
+          "away": "Kendal Tornado FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Sweden - Ettan, Sodra",
-            "slug": "sweden-ettan-sodra"
+            "name": "Indonesia - Championship, Group B",
+            "slug": "indonesia-championship-group-b"
           },
-          "date": "2026-09-17T17:00:00Z",
+          "date": "2026-09-18T08:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 31661,
-    "unique_markets": 87,
+    "raw_market_observations": 10275,
+    "unique_markets": 63,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-09-17T16:59:51Z",
+    "generated_at": "2026-09-18T04:43:12Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",
