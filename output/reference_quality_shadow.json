@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T04:37:07.451091+00:00",
-  "as_of": "2026-09-19T04:37:07.359024+00:00",
+  "generated_at": "2026-09-19T15:53:13.686147+00:00",
+  "as_of": "2026-09-19T15:53:13.598339+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,20 +20,34 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 314,
-  "fresh_exact_candidates": 212,
+  "total_candidates": 502,
+  "fresh_exact_candidates": 426,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 212,
-    "missing_external_market_reference": 212,
-    "missing_model_reference": 212
+    "insufficient_independent_economic_sources": 426,
+    "missing_external_market_reference": 426,
+    "missing_model_reference": 426
   },
   "missing_roles": {
-    "external_market_reference": 212,
-    "model_reference": 212
+    "external_market_reference": 426,
+    "model_reference": 426
   },
   "by_market": {
     "h2h": {
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
+      },
+      "missing_roles": {
+        "external_market_reference": 114,
+        "model_reference": 114
+      }
+    },
+    "spreads": {
       "evaluated": 84,
       "fresh_exact_bet365": 84,
       "shadow_ready": 0,
@@ -47,32 +61,18 @@
         "model_reference": 84
       }
     },
-    "spreads": {
-      "evaluated": 24,
-      "fresh_exact_bet365": 24,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 24,
-        "missing_external_market_reference": 24,
-        "missing_model_reference": 24
-      },
-      "missing_roles": {
-        "external_market_reference": 24,
-        "model_reference": 24
-      }
-    },
     "totals": {
-      "evaluated": 104,
-      "fresh_exact_bet365": 104,
+      "evaluated": 228,
+      "fresh_exact_bet365": 228,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 104,
-        "missing_external_market_reference": 104,
-        "missing_model_reference": 104
+        "insufficient_independent_economic_sources": 228,
+        "missing_external_market_reference": 228,
+        "missing_model_reference": 228
       },
       "missing_roles": {
-        "external_market_reference": 104,
-        "model_reference": 104
+        "external_market_reference": 228,
+        "model_reference": 228
       }
     }
   },
@@ -80,34 +80,44 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 212,
+        "fresh_exact_candidates_blocked": 426,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 212,
+        "fresh_exact_candidates_blocked": 426,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 212
+        "fresh_exact_candidates_blocked": 426
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 104,
+        "fresh_exact_candidates": 228,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 104,
-          "model_reference": 104
+          "external_market_reference": 228,
+          "model_reference": 228
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
+        "fresh_exact_candidates": 114,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 114,
+          "model_reference": 114
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
         "fresh_exact_candidates": 84,
         "shadow_ready_candidates": 0,
         "missing_roles": {
@@ -115,79 +125,69 @@
           "model_reference": 84
         },
         "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 24,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 24,
-          "model_reference": 24
-        },
-        "largest_missing_role": "external_market_reference"
       }
     ],
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 104,
+      "first_market_fresh_exact_candidates": 228,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 84,
-      "fresh_exact_bet365": 84,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 84,
-        "missing_external_market_reference": 84,
-        "missing_model_reference": 84
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 84,
-        "model_reference": 84
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
-      "evaluated": 48,
-      "fresh_exact_bet365": 24,
+      "evaluated": 116,
+      "fresh_exact_bet365": 84,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 48,
-        "missing_external_market_reference": 48,
-        "missing_model_reference": 48,
-        "not_fresh_exact_bet365": 24
+        "insufficient_independent_economic_sources": 116,
+        "missing_external_market_reference": 116,
+        "missing_model_reference": 116,
+        "not_fresh_exact_bet365": 32
       },
       "missing_roles": {
-        "external_market_reference": 48,
-        "model_reference": 48
+        "external_market_reference": 116,
+        "model_reference": 116
       }
     },
     "totals": {
-      "evaluated": 182,
-      "fresh_exact_bet365": 104,
+      "evaluated": 272,
+      "fresh_exact_bet365": 228,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 182,
-        "missing_external_market_reference": 182,
-        "missing_model_reference": 182,
-        "not_fresh_exact_bet365": 78
+        "insufficient_independent_economic_sources": 272,
+        "missing_external_market_reference": 272,
+        "missing_model_reference": 272,
+        "not_fresh_exact_bet365": 44
       },
       "missing_roles": {
-        "external_market_reference": 182,
-        "model_reference": 182
+        "external_market_reference": 272,
+        "model_reference": 272
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "h2h",
-      "pick": "Oakleigh Cannons",
+      "pick": "Shabab AL Ordun",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "h2h",
-      "pick": "Avondale FC",
+      "pick": "Al Hussein Irbid",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +261,63 @@
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +341,9 @@
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,13 +367,13 @@
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -333,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
+      "event": "Shabab AL Ordun vs Al Hussein Irbid",
+      "event_id": 74173596,
+      "bet365_event_id": 74173596,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -359,69 +414,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Oakleigh Cannons vs Avondale FC",
-      "event_id": 74625628,
-      "bet365_event_id": 74625628,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Armadale SC vs UWA Nedlands FC",
-      "event_id": 74682232,
-      "bet365_event_id": 74682232,
+      "event": "FC Arda Kardzhali vs PFC Cherno More Varna",
+      "event_id": 71998200,
+      "bet365_event_id": 71998200,
       "market": "h2h",
-      "pick": "Armadale SC",
+      "pick": "FC Arda Kardzhali",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
