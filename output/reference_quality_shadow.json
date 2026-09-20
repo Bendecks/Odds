@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T04:53:24.078989+00:00",
-  "as_of": "2026-09-20T04:53:23.990861+00:00",
+  "generated_at": "2026-09-20T16:05:55.347622+00:00",
+  "as_of": "2026-09-20T16:05:55.204373+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 250,
-  "fresh_exact_candidates": 186,
+  "total_candidates": 613,
+  "fresh_exact_candidates": 569,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 186,
-    "missing_external_market_reference": 186,
-    "missing_model_reference": 186
+    "insufficient_independent_economic_sources": 569,
+    "missing_external_market_reference": 569,
+    "missing_model_reference": 569
   },
   "missing_roles": {
-    "external_market_reference": 186,
-    "model_reference": 186
+    "external_market_reference": 569,
+    "model_reference": 569
   },
   "by_market": {
     "h2h": {
-      "evaluated": 72,
-      "fresh_exact_bet365": 72,
+      "evaluated": 129,
+      "fresh_exact_bet365": 129,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 72,
-        "missing_external_market_reference": 72,
-        "missing_model_reference": 72
+        "insufficient_independent_economic_sources": 129,
+        "missing_external_market_reference": 129,
+        "missing_model_reference": 129
       },
       "missing_roles": {
-        "external_market_reference": 72,
-        "model_reference": 72
+        "external_market_reference": 129,
+        "model_reference": 129
       }
     },
     "spreads": {
-      "evaluated": 16,
-      "fresh_exact_bet365": 16,
+      "evaluated": 156,
+      "fresh_exact_bet365": 156,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 16,
-        "missing_external_market_reference": 16,
-        "missing_model_reference": 16
+        "insufficient_independent_economic_sources": 156,
+        "missing_external_market_reference": 156,
+        "missing_model_reference": 156
       },
       "missing_roles": {
-        "external_market_reference": 16,
-        "model_reference": 16
+        "external_market_reference": 156,
+        "model_reference": 156
       }
     },
     "totals": {
-      "evaluated": 98,
-      "fresh_exact_bet365": 98,
+      "evaluated": 284,
+      "fresh_exact_bet365": 284,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 98,
-        "missing_external_market_reference": 98,
-        "missing_model_reference": 98
+        "insufficient_independent_economic_sources": 284,
+        "missing_external_market_reference": 284,
+        "missing_model_reference": 284
       },
       "missing_roles": {
-        "external_market_reference": 98,
-        "model_reference": 98
+        "external_market_reference": 284,
+        "model_reference": 284
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 186,
+        "fresh_exact_candidates_blocked": 569,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 186,
+        "fresh_exact_candidates_blocked": 569,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 186
+        "fresh_exact_candidates_blocked": 569
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 98,
+        "fresh_exact_candidates": 284,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 98,
-          "model_reference": 98
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "h2h",
-        "fresh_exact_candidates": 72,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 72,
-          "model_reference": 72
+          "external_market_reference": 284,
+          "model_reference": 284
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 16,
+        "fresh_exact_candidates": 156,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 16,
-          "model_reference": 16
+          "external_market_reference": 156,
+          "model_reference": 156
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "h2h",
+        "fresh_exact_candidates": 129,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 129,
+          "model_reference": 129
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 98,
+      "first_market_fresh_exact_candidates": 284,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 72,
-      "fresh_exact_bet365": 72,
+      "evaluated": 129,
+      "fresh_exact_bet365": 129,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 72,
-        "missing_external_market_reference": 72,
-        "missing_model_reference": 72
+        "insufficient_independent_economic_sources": 129,
+        "missing_external_market_reference": 129,
+        "missing_model_reference": 129
       },
       "missing_roles": {
-        "external_market_reference": 72,
-        "model_reference": 72
+        "external_market_reference": 129,
+        "model_reference": 129
       }
     },
     "spreads": {
-      "evaluated": 20,
-      "fresh_exact_bet365": 16,
+      "evaluated": 162,
+      "fresh_exact_bet365": 156,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 20,
-        "missing_external_market_reference": 20,
-        "missing_model_reference": 20,
-        "not_fresh_exact_bet365": 4
+        "insufficient_independent_economic_sources": 162,
+        "missing_external_market_reference": 162,
+        "missing_model_reference": 162,
+        "not_fresh_exact_bet365": 6
       },
       "missing_roles": {
-        "external_market_reference": 20,
-        "model_reference": 20
+        "external_market_reference": 162,
+        "model_reference": 162
       }
     },
     "totals": {
-      "evaluated": 158,
-      "fresh_exact_bet365": 98,
+      "evaluated": 322,
+      "fresh_exact_bet365": 284,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 158,
-        "missing_external_market_reference": 158,
-        "missing_model_reference": 158,
-        "not_fresh_exact_bet365": 60
+        "insufficient_independent_economic_sources": 322,
+        "missing_external_market_reference": 322,
+        "missing_model_reference": 322,
+        "not_fresh_exact_bet365": 38
       },
       "missing_roles": {
-        "external_market_reference": 158,
-        "model_reference": 158
+        "external_market_reference": 322,
+        "model_reference": 322
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "h2h",
-      "pick": "Sham Shui Po SA",
+      "pick": "Al Jazira (UAE)",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "h2h",
-      "pick": "Leaper",
+      "pick": "Al Wahda FC (UAE)",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +261,63 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +341,9 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,9 +367,9 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
@@ -340,9 +394,9 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
+      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
+      "event_id": 74606358,
+      "bet365_event_id": 74606358,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
@@ -367,65 +421,11 @@
       ]
     },
     {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Sham Shui Po SA vs Leaper",
-      "event_id": 74058572,
-      "bet365_event_id": 74058572,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Box Hill United vs Avondale FC",
-      "event_id": 74617440,
-      "bet365_event_id": 74617440,
+      "event": "Al Dhafra SSC vs Baniyas Club",
+      "event_id": 74606356,
+      "bet365_event_id": 74606356,
       "market": "h2h",
-      "pick": "Box Hill United",
+      "pick": "Al Dhafra SSC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
