@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T16:05:55.347622+00:00",
-  "as_of": "2026-09-20T16:05:55.204373+00:00",
+  "generated_at": "2026-09-21T04:55:14.386382+00:00",
+  "as_of": "2026-09-21T04:55:14.283451+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 613,
-  "fresh_exact_candidates": 569,
+  "total_candidates": 402,
+  "fresh_exact_candidates": 346,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 569,
-    "missing_external_market_reference": 569,
-    "missing_model_reference": 569
+    "insufficient_independent_economic_sources": 346,
+    "missing_external_market_reference": 346,
+    "missing_model_reference": 346
   },
   "missing_roles": {
-    "external_market_reference": 569,
-    "model_reference": 569
+    "external_market_reference": 346,
+    "model_reference": 346
   },
   "by_market": {
     "h2h": {
-      "evaluated": 129,
-      "fresh_exact_bet365": 129,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 129,
-        "missing_external_market_reference": 129,
-        "missing_model_reference": 129
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 129,
-        "model_reference": 129
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
-      "evaluated": 156,
-      "fresh_exact_bet365": 156,
+      "evaluated": 46,
+      "fresh_exact_bet365": 46,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 156,
-        "missing_external_market_reference": 156,
-        "missing_model_reference": 156
+        "insufficient_independent_economic_sources": 46,
+        "missing_external_market_reference": 46,
+        "missing_model_reference": 46
       },
       "missing_roles": {
-        "external_market_reference": 156,
-        "model_reference": 156
+        "external_market_reference": 46,
+        "model_reference": 46
       }
     },
     "totals": {
-      "evaluated": 284,
-      "fresh_exact_bet365": 284,
+      "evaluated": 186,
+      "fresh_exact_bet365": 186,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 284,
-        "missing_external_market_reference": 284,
-        "missing_model_reference": 284
+        "insufficient_independent_economic_sources": 186,
+        "missing_external_market_reference": 186,
+        "missing_model_reference": 186
       },
       "missing_roles": {
-        "external_market_reference": 284,
-        "model_reference": 284
+        "external_market_reference": 186,
+        "model_reference": 186
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 569,
+        "fresh_exact_candidates_blocked": 346,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 569,
+        "fresh_exact_candidates_blocked": 346,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 569
+        "fresh_exact_candidates_blocked": 346
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 284,
+        "fresh_exact_candidates": 186,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 284,
-          "model_reference": 284
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 156,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 156,
-          "model_reference": 156
+          "external_market_reference": 186,
+          "model_reference": 186
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 129,
+        "fresh_exact_candidates": 114,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 129,
-          "model_reference": 129
+          "external_market_reference": 114,
+          "model_reference": 114
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 46,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 46,
+          "model_reference": 46
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 284,
+      "first_market_fresh_exact_candidates": 186,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 129,
-      "fresh_exact_bet365": 129,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 129,
-        "missing_external_market_reference": 129,
-        "missing_model_reference": 129
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 129,
-        "model_reference": 129
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
-      "evaluated": 162,
-      "fresh_exact_bet365": 156,
+      "evaluated": 46,
+      "fresh_exact_bet365": 46,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 162,
-        "missing_external_market_reference": 162,
-        "missing_model_reference": 162,
-        "not_fresh_exact_bet365": 6
+        "insufficient_independent_economic_sources": 46,
+        "missing_external_market_reference": 46,
+        "missing_model_reference": 46
       },
       "missing_roles": {
-        "external_market_reference": 162,
-        "model_reference": 162
+        "external_market_reference": 46,
+        "model_reference": 46
       }
     },
     "totals": {
-      "evaluated": 322,
-      "fresh_exact_bet365": 284,
+      "evaluated": 242,
+      "fresh_exact_bet365": 186,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 322,
-        "missing_external_market_reference": 322,
-        "missing_model_reference": 322,
-        "not_fresh_exact_bet365": 38
+        "insufficient_independent_economic_sources": 242,
+        "missing_external_market_reference": 242,
+        "missing_model_reference": 242,
+        "not_fresh_exact_bet365": 56
       },
       "missing_roles": {
-        "external_market_reference": 322,
-        "model_reference": 322
+        "external_market_reference": 242,
+        "model_reference": 242
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "h2h",
-      "pick": "Al Jazira (UAE)",
+      "pick": "Fiji",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "h2h",
-      "pick": "Al Wahda FC (UAE)",
+      "pick": "Vanuatu",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +260,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -288,9 +287,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -315,9 +314,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -341,9 +340,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -367,9 +366,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
@@ -394,9 +393,9 @@
       ]
     },
     {
-      "event": "Al Jazira (UAE) vs Al Wahda FC (UAE)",
-      "event_id": 74606358,
-      "bet365_event_id": 74606358,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
@@ -421,13 +420,13 @@
       ]
     },
     {
-      "event": "Al Dhafra SSC vs Baniyas Club",
-      "event_id": 74606356,
-      "bet365_event_id": 74606356,
-      "market": "h2h",
-      "pick": "Al Dhafra SSC",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "Fiji vs Vanuatu",
+      "event_id": 74891206,
+      "bet365_event_id": 74891206,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -441,6 +440,7 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"

@@ -1,42 +1,38 @@
 {
-  "generated_at": "2026-09-20T16:05:47.901879+00:00",
+  "generated_at": "2026-09-21T04:55:10.360122+00:00",
   "source": "odds-api.io",
   "provider_unavailable": false,
-  "bet365_events_available": 449,
+  "bet365_events_available": 257,
   "events_queried": 80,
   "provider_event_metadata": {
-    "events_total": 449,
+    "events_total": 257,
     "prioritized_events": 80,
-    "rows_with_sport": 449,
-    "rows_with_league": 449,
+    "rows_with_sport": 257,
+    "rows_with_league": 257,
     "prioritized_with_sport": 80,
     "prioritized_with_league": 80,
     "top_sports": [
       [
         "{'name': 'Football', 'slug': 'football'}",
-        449
+        257
       ]
     ],
     "top_leagues": [
       [
+        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+        20
+      ],
+      [
         "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
-        17
+        16
       ],
       [
         "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-        15
-      ],
-      [
-        "{'name': 'USA - MLS Next Pro', 'slug': 'usa-mls-next-pro'}",
-        14
+        13
       ],
       [
         "{'name': 'Scotland - Challenge Cup', 'slug': 'scotland-challenge-cup'}",
         13
-      ],
-      [
-        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
-        12
       ],
       [
         "{'name': 'England - League Two', 'slug': 'england-league-two'}",
@@ -55,15 +51,11 @@
         8
       ],
       [
-        "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
-        7
-      ],
-      [
         "{'name': 'Serbia - Prva Liga', 'slug': 'serbia-prva-liga'}",
         7
       ],
       [
-        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+        "{'name': 'Brazil - U20 Paulista, Playoffs', 'slug': 'brazil-u20-paulista-playoffs'}",
         6
       ],
       [
@@ -71,19 +63,15 @@
         6
       ],
       [
-        "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
+        "{'name': 'International Clubs - UEFA Champions League, Women', 'slug': 'international-clubs-uefa-champions-league-women'}",
         6
       ],
       [
-        "{'name': 'Bulgaria - Vtora Liga', 'slug': 'bulgaria-vtora-liga'}",
+        "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
         5
       ],
       [
         "{'name': 'England - EFL Trophy, Southern Group H', 'slug': 'england-efl-trophy-southern-group-h'}",
-        5
-      ],
-      [
-        "{'name': 'Italy - Serie C, Group B', 'slug': 'italy-serie-c-group-b'}",
         5
       ],
       [
@@ -95,31 +83,7 @@
         5
       ],
       [
-        "{'name': \"USA - National Women's Soccer League\", 'slug': \"usa-national-women's-soccer-league\"}",
-        4
-      ],
-      [
-        "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
-        4
-      ],
-      [
-        "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
-        4
-      ],
-      [
-        "{'name': 'Argentina - Torneo Federal A, Main round, Group A', 'slug': 'argentina-torneo-federal-a-main-round-group-a'}",
-        4
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
-        4
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        4
-      ],
-      [
-        "{'name': 'Brazil - Carioca, Serie B2', 'slug': 'brazil-carioca-serie-b2'}",
+        "{'name': 'Bulgaria - Vtora Liga', 'slug': 'bulgaria-vtora-liga'}",
         4
       ],
       [
@@ -131,11 +95,7 @@
         4
       ],
       [
-        "{'name': 'International Clubs - UEFA Champions League, Women', 'slug': 'international-clubs-uefa-champions-league-women'}",
-        4
-      ],
-      [
-        "{'name': 'Jamaica - Premier League', 'slug': 'jamaica-premier-league'}",
+        "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
         4
       ],
       [
@@ -147,134 +107,174 @@
         4
       ],
       [
-        "{'name': 'Uruguay - Primera Division, Clausura', 'slug': 'uruguay-primera-division-clausura'}",
-        4
-      ],
-      [
-        "{'name': 'Argentina - Torneo Federal A, Relegation Round, Group B', 'slug': 'argentina-torneo-federal-a-relegation-round-group-b'}",
-        3
-      ],
-      [
-        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
-        3
-      ],
-      [
         "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
         3
       ],
       [
-        "{'name': 'Ecuador - Serie A, Relegation Round', 'slug': 'ecuador-serie-a-relegation-round'}",
+        "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
         3
       ],
       [
-        "{'name': 'El Salvador - Primera Division, Apertura', 'slug': 'el-salvador-primera-division-apertura'}",
+        "{'name': 'Italy - Serie C, Group B', 'slug': 'italy-serie-c-group-b'}",
         3
       ],
       [
-        "{'name': 'Guatemala - Liga Nacional, Apertura', 'slug': 'guatemala-liga-nacional-apertura'}",
-        3
+        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
+        2
       ],
       [
-        "{'name': 'Mexico - Liga MX, Apertura', 'slug': 'mexico-liga-mx-apertura'}",
-        3
+        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+        2
       ],
       [
-        "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
-        3
+        "{'name': 'Brazil - Carioca, Serie B2', 'slug': 'brazil-carioca-serie-b2'}",
+        2
       ],
       [
-        "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
-        3
+        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+        2
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Northern Group A', 'slug': 'england-efl-trophy-northern-group-a'}",
+        2
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Northern Group C', 'slug': 'england-efl-trophy-northern-group-c'}",
+        2
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Northern Group F', 'slug': 'england-efl-trophy-northern-group-f'}",
+        2
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Southern Group B', 'slug': 'england-efl-trophy-southern-group-b'}",
+        2
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Southern Group D', 'slug': 'england-efl-trophy-southern-group-d'}",
+        2
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Southern Group E', 'slug': 'england-efl-trophy-southern-group-e'}",
+        2
+      ],
+      [
+        "{'name': 'England Amateur - Isthmian League, Premier Division', 'slug': 'england-amateur-isthmian-league-premier-division'}",
+        2
+      ],
+      [
+        "{'name': 'England Amateur - Northern Premier League, Premier Division', 'slug': 'england-amateur-northern-premier-league-premier-division'}",
+        2
+      ],
+      [
+        "{'name': 'Greece - Super League 2', 'slug': 'greece-super-league-2'}",
+        2
+      ],
+      [
+        "{'name': 'International - Asian Games, Women, Group F', 'slug': 'international-asian-games-women-group-f'}",
+        2
+      ],
+      [
+        "{'name': 'International - Asian Games, Women, Group G', 'slug': 'international-asian-games-women-group-g'}",
+        2
+      ],
+      [
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        2
+      ],
+      [
+        "{'name': 'International - UEFA Nations League, League A, Gr. 2', 'slug': 'international-uefa-nations-league-league-a-gr-2'}",
+        2
+      ],
+      [
+        "{'name': 'International - UEFA Nations League, League A, Gr. 4', 'slug': 'international-uefa-nations-league-league-a-gr-4'}",
+        2
+      ],
+      [
+        "{'name': 'International - UEFA Nations League, League B, Gr. 3', 'slug': 'international-uefa-nations-league-league-b-gr-3'}",
+        2
+      ],
+      [
+        "{'name': 'Portugal - U23 Liga Next Gen', 'slug': 'portugal-u23-liga-next-gen'}",
+        2
+      ],
+      [
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        2
       ],
       [
         "{'name': 'Romania - Superliga', 'slug': 'romania-superliga'}",
-        3
+        2
       ],
       [
-        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
-        3
+        "{'name': 'Uruguay - Primera Division, Clausura', 'slug': 'uruguay-primera-division-clausura'}",
+        2
       ],
       [
-        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-        3
+        "{'name': 'Argentina - Copa Argentina', 'slug': 'argentina-copa-argentina'}",
+        1
       ],
       [
-        "{'name': 'Spain - Primera Federacion, Group 1', 'slug': 'spain-primera-federacion-group-1'}",
-        3
-      ],
-      [
-        "{'name': 'Spain - Primera Federacion, Group 2', 'slug': 'spain-primera-federacion-group-2'}",
-        3
-      ],
-      [
-        "{'name': 'Spain - Segunda Federacion, Group II', 'slug': 'spain-segunda-federacion-group-ii'}",
-        3
-      ],
-      [
-        "{'name': 'Spain - Segunda Federacion, Group IV', 'slug': 'spain-segunda-federacion-group-iv'}",
-        3
-      ],
-      [
-        "{'name': 'Venezuela - Primera Division, Clausura', 'slug': 'venezuela-primera-division-clausura'}",
-        3
+        "{'name': 'Argentina - Supercopa Internacional', 'slug': 'argentina-supercopa-internacional'}",
+        1
       ]
     ],
     "event_key_counts": [
       [
         "away",
-        449
+        257
       ],
       [
         "awayId",
-        449
+        257
       ],
       [
         "date",
-        449
+        257
       ],
       [
         "home",
-        449
+        257
       ],
       [
         "homeId",
-        449
+        257
       ],
       [
         "id",
-        449
+        257
       ],
       [
         "league",
-        449
+        257
       ],
       [
         "scores",
-        449
+        257
       ],
       [
         "sport",
-        449
+        257
       ],
       [
         "status",
-        449
+        257
       ]
     ],
     "samples": [
       {
-        "id": 72575988,
-        "home": "FC Viktoria Plzen B",
-        "away": "FK Pardubice",
+        "id": 74321130,
+        "home": "Rancho Santana FC",
+        "away": "Managua FC",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "Czechia - 2. Liga, Women",
-          "slug": "czechia-2-liga-women"
+          "name": "Nicaragua - Primera Division, Apertura",
+          "slug": "nicaragua-primera-division-apertura"
         },
-        "date": "2026-09-20T13:00:00Z",
+        "date": "2026-09-20T23:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -289,18 +289,18 @@
         ]
       },
       {
-        "id": 72700540,
-        "home": "Grenoble Foot 38",
-        "away": "AJ Auxerre",
+        "id": 72664954,
+        "home": "Okinawa SV",
+        "away": "Tiamo Hirakata",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "France - Seconde Ligue, Women",
-          "slug": "france-seconde-ligue-women"
+          "name": "Japan - Japan Football League",
+          "slug": "japan-japan-football-league"
         },
-        "date": "2026-09-20T13:00:00Z",
+        "date": "2026-09-21T06:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -315,18 +315,18 @@
         ]
       },
       {
-        "id": 73111478,
-        "home": "Rennes Ta U19",
-        "away": "Stade Poitevin FC U19",
+        "id": 74891206,
+        "home": "Fiji",
+        "away": "Vanuatu",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "France - U19 National, Group C",
-          "slug": "france-u19-national-group-c"
+          "name": "International - International Matches",
+          "slug": "international-international-matches"
         },
-        "date": "2026-09-20T13:00:00Z",
+        "date": "2026-09-21T07:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -341,18 +341,18 @@
         ]
       },
       {
-        "id": 73632524,
-        "home": "US Palmese 1914",
-        "away": "ASD Real Normanna",
+        "id": 73842250,
+        "home": "China PR",
+        "away": "Philippines",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "Italy - Serie D, Group H",
-          "slug": "italy-serie-d-group-h"
+          "name": "International - Asian Games, Women, Group G",
+          "slug": "international-asian-games-women-group-g"
         },
-        "date": "2026-09-20T13:00:00Z",
+        "date": "2026-09-21T07:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -367,18 +367,18 @@
         ]
       },
       {
-        "id": 72575986,
-        "home": "SK Artis Brno",
-        "away": "Sparta Prague B",
+        "id": 73842252,
+        "home": "Uzbekistan",
+        "away": "Hong Kong",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "Czechia - 2. Liga, Women",
-          "slug": "czechia-2-liga-women"
+          "name": "International - Asian Games, Women, Group G",
+          "slug": "international-asian-games-women-group-g"
         },
-        "date": "2026-09-20T14:30:00Z",
+        "date": "2026-09-21T07:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -400,9 +400,9 @@
   "multi_call_successes": 8,
   "fallback_calls": 0,
   "fallback_call_successes": 0,
-  "raw_market_observations": 31122,
-  "unibet_observations": 4307,
-  "unique_markets": 87,
+  "raw_market_observations": 20389,
+  "unibet_observations": 2423,
+  "unique_markets": 78,
   "max_odds_calls": 80,
   "errors": []
 }
