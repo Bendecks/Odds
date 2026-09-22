@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-21T18:12:32.986478+00:00",
-  "as_of": "2026-09-21T18:12:32.898578+00:00",
+  "generated_at": "2026-09-22T04:55:28.579987+00:00",
+  "as_of": "2026-09-22T04:55:28.462312+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 479,
-  "fresh_exact_candidates": 433,
+  "total_candidates": 536,
+  "fresh_exact_candidates": 444,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 433,
-    "missing_external_market_reference": 433,
-    "missing_model_reference": 433
+    "insufficient_independent_economic_sources": 444,
+    "missing_external_market_reference": 444,
+    "missing_model_reference": 444
   },
   "missing_roles": {
-    "external_market_reference": 433,
-    "model_reference": 433
+    "external_market_reference": 444,
+    "model_reference": 444
   },
   "by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 168,
+      "fresh_exact_bet365": 168,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 168,
+        "missing_external_market_reference": 168,
+        "missing_model_reference": 168
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 168,
+        "model_reference": 168
       }
     },
     "spreads": {
-      "evaluated": 38,
-      "fresh_exact_bet365": 38,
+      "evaluated": 12,
+      "fresh_exact_bet365": 12,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 38,
-        "missing_external_market_reference": 38,
-        "missing_model_reference": 38
+        "insufficient_independent_economic_sources": 12,
+        "missing_external_market_reference": 12,
+        "missing_model_reference": 12
       },
       "missing_roles": {
-        "external_market_reference": 38,
-        "model_reference": 38
+        "external_market_reference": 12,
+        "model_reference": 12
       }
     },
     "totals": {
-      "evaluated": 260,
-      "fresh_exact_bet365": 260,
+      "evaluated": 264,
+      "fresh_exact_bet365": 264,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 260,
-        "missing_external_market_reference": 260,
-        "missing_model_reference": 260
+        "insufficient_independent_economic_sources": 264,
+        "missing_external_market_reference": 264,
+        "missing_model_reference": 264
       },
       "missing_roles": {
-        "external_market_reference": 260,
-        "model_reference": 260
+        "external_market_reference": 264,
+        "model_reference": 264
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 433,
+        "fresh_exact_candidates_blocked": 444,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 433,
+        "fresh_exact_candidates_blocked": 444,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 433
+        "fresh_exact_candidates_blocked": 444
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 260,
+        "fresh_exact_candidates": 264,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 260,
-          "model_reference": 260
+          "external_market_reference": 264,
+          "model_reference": 264
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 135,
+        "fresh_exact_candidates": 168,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 135,
-          "model_reference": 135
+          "external_market_reference": 168,
+          "model_reference": 168
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 38,
+        "fresh_exact_candidates": 12,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 38,
-          "model_reference": 38
+          "external_market_reference": 12,
+          "model_reference": 12
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 260,
+      "first_market_fresh_exact_candidates": 264,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 168,
+      "fresh_exact_bet365": 168,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 168,
+        "missing_external_market_reference": 168,
+        "missing_model_reference": 168
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 168,
+        "model_reference": 168
       }
     },
     "spreads": {
-      "evaluated": 48,
-      "fresh_exact_bet365": 38,
+      "evaluated": 20,
+      "fresh_exact_bet365": 12,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 48,
-        "missing_external_market_reference": 48,
-        "missing_model_reference": 48,
-        "not_fresh_exact_bet365": 10
+        "insufficient_independent_economic_sources": 20,
+        "missing_external_market_reference": 20,
+        "missing_model_reference": 20,
+        "not_fresh_exact_bet365": 8
       },
       "missing_roles": {
-        "external_market_reference": 48,
-        "model_reference": 48
+        "external_market_reference": 20,
+        "model_reference": 20
       }
     },
     "totals": {
-      "evaluated": 296,
-      "fresh_exact_bet365": 260,
+      "evaluated": 348,
+      "fresh_exact_bet365": 264,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 296,
-        "missing_external_market_reference": 296,
-        "missing_model_reference": 296,
-        "not_fresh_exact_bet365": 36
+        "insufficient_independent_economic_sources": 348,
+        "missing_external_market_reference": 348,
+        "missing_model_reference": 348,
+        "not_fresh_exact_bet365": 84
       },
       "missing_roles": {
-        "external_market_reference": 296,
-        "model_reference": 296
+        "external_market_reference": 348,
+        "model_reference": 348
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "h2h",
-      "pick": "Guidonia Montecelio 1937 FC",
+      "pick": "Vietnam",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "h2h",
-      "pick": "US Livorno 1915",
+      "pick": "Uzbekistan",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,13 +261,13 @@
       ]
     },
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -281,19 +281,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -307,15 +308,16 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -339,9 +341,9 @@
       ]
     },
     {
-      "event": "Guidonia Montecelio 1937 FC vs US Livorno 1915",
-      "event_id": 73293924,
-      "bet365_event_id": 73293924,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -365,13 +367,13 @@
       ]
     },
     {
-      "event": "Dolomiti Bellunesi vs AC Lumezzane",
-      "event_id": 73293178,
-      "bet365_event_id": 73293178,
-      "market": "h2h",
-      "pick": "Dolomiti Bellunesi",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -385,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Dolomiti Bellunesi vs AC Lumezzane",
-      "event_id": 73293178,
-      "bet365_event_id": 73293178,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "Vietnam vs Uzbekistan",
+      "event_id": 73841806,
+      "bet365_event_id": 73841806,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -411,17 +414,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Dolomiti Bellunesi vs AC Lumezzane",
-      "event_id": 73293178,
-      "bet365_event_id": 73293178,
+      "event": "Republic of Korea vs Saudi Arabia",
+      "event_id": 73841814,
+      "bet365_event_id": 73841814,
       "market": "h2h",
-      "pick": "AC Lumezzane",
+      "pick": "Republic of Korea",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,

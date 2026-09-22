@@ -1,49 +1,53 @@
 {
-  "generated_at": "2026-09-21T18:12:33.022392+00:00",
+  "generated_at": "2026-09-22T04:55:28.623369+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 479,
-  "exact_bet365_rows": 433,
+  "candidate_rows": 536,
+  "exact_bet365_rows": 444,
   "fresh_exact_rows_by_market": {
-    "h2h": 135,
-    "spreads": 38,
-    "totals": 260
+    "h2h": 168,
+    "spreads": 12,
+    "totals": 264
   },
   "metadata": {
-    "rows_with_sport": 479,
-    "rows_with_league": 479,
-    "rows_with_parseable_teams": 479,
+    "rows_with_sport": 536,
+    "rows_with_league": 536,
+    "rows_with_parseable_teams": 536,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 135,
-      "spreads": 48,
-      "totals": 296
+      "h2h": 168,
+      "spreads": 20,
+      "totals": 348
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 135,
-      "totals": 296
+      "h2h": 168,
+      "totals": 348
     },
-    "first_model_scope_rows": 431
+    "first_model_scope_rows": 516
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        36
+        "{'name': 'Netherlands - KNVB beker', 'slug': 'netherlands-knvb-beker'}",
+        81
       ],
       [
-        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        "{'name': 'England - EFL Trophy, Southern Group H', 'slug': 'england-efl-trophy-southern-group-h'}",
+        47
+      ],
+      [
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
         34
       ],
       [
@@ -51,37 +55,33 @@
         34
       ],
       [
-        "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
-        32
+        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
+        34
       ],
       [
-        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
-        32
+        "{'name': 'England - EFL Trophy, Southern Group E', 'slug': 'england-efl-trophy-southern-group-e'}",
+        20
       ],
       [
-        "{'name': 'England - EFL Trophy, Southern Group H', 'slug': 'england-efl-trophy-southern-group-h'}",
-        29
+        "{'name': 'England - EFL Trophy, Southern Group B', 'slug': 'england-efl-trophy-southern-group-b'}",
+        20
       ],
       [
-        "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
-        27
+        "{'name': 'International Youth - Asian Games, Group C', 'slug': 'international-youth-asian-games-group-c'}",
+        18
       ],
       [
-        "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
-        25
+        "{'name': 'Qatar - QSL Cup', 'slug': 'qatar-qsl-cup'}",
+        18
       ],
       [
-        "{'name': 'Italy - Serie C, Group B', 'slug': 'italy-serie-c-group-b'}",
-        23
-      ],
-      [
-        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
+        "{'name': 'England - EFL Trophy, Southern Group D', 'slug': 'england-efl-trophy-southern-group-d'}",
         18
       ]
     ],
     "public_data_hints": {
       "football-data.co.uk:CL": 34,
-      "football-data.co.uk:I1": 17
+      "football-data.co.uk:F1": 7
     }
   },
   "public_football_data_probe": {
@@ -114,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 48
+      "market_not_first_model_scope": 20
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
