@@ -1,62 +1,58 @@
 {
-  "generated_at": "2026-09-22T04:55:28.623369+00:00",
+  "generated_at": "2026-09-22T16:57:22.133419+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 536,
-  "exact_bet365_rows": 444,
+  "candidate_rows": 583,
+  "exact_bet365_rows": 557,
   "fresh_exact_rows_by_market": {
-    "h2h": 168,
-    "spreads": 12,
-    "totals": 264
+    "h2h": 189,
+    "spreads": 2,
+    "totals": 366
   },
   "metadata": {
-    "rows_with_sport": 536,
-    "rows_with_league": 536,
-    "rows_with_parseable_teams": 536,
+    "rows_with_sport": 583,
+    "rows_with_league": 583,
+    "rows_with_parseable_teams": 583,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 168,
-      "spreads": 20,
-      "totals": 348
+      "h2h": 189,
+      "spreads": 6,
+      "totals": 388
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 168,
-      "totals": 348
+      "h2h": 189,
+      "totals": 388
     },
-    "first_model_scope_rows": 516
+    "first_model_scope_rows": 577
   },
   "league_mapping": {
     "top_candidate_leagues": [
+      [
+        "{'name': 'Scotland - Challenge Cup', 'slug': 'scotland-challenge-cup'}",
+        148
+      ],
       [
         "{'name': 'Netherlands - KNVB beker', 'slug': 'netherlands-knvb-beker'}",
         81
       ],
       [
+        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
+        52
+      ],
+      [
         "{'name': 'England - EFL Trophy, Southern Group H', 'slug': 'england-efl-trophy-southern-group-h'}",
         47
-      ],
-      [
-        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
-        34
-      ],
-      [
-        "{'name': 'International Clubs - UEFA Champions League, Women', 'slug': 'international-clubs-uefa-champions-league-women'}",
-        34
-      ],
-      [
-        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
-        34
       ],
       [
         "{'name': 'England - EFL Trophy, Southern Group E', 'slug': 'england-efl-trophy-southern-group-e'}",
@@ -67,22 +63,23 @@
         20
       ],
       [
-        "{'name': 'International Youth - Asian Games, Group C', 'slug': 'international-youth-asian-games-group-c'}",
-        18
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        19
       ],
       [
         "{'name': 'Qatar - QSL Cup', 'slug': 'qatar-qsl-cup'}",
         18
       ],
       [
-        "{'name': 'England - EFL Trophy, Southern Group D', 'slug': 'england-efl-trophy-southern-group-d'}",
+        "{'name': 'England - EFL Trophy, Northern Group A', 'slug': 'england-efl-trophy-northern-group-a'}",
+        18
+      ],
+      [
+        "{'name': 'England - EFL Trophy, Northern Group C', 'slug': 'england-efl-trophy-northern-group-c'}",
         18
       ]
     ],
-    "public_data_hints": {
-      "football-data.co.uk:CL": 34,
-      "football-data.co.uk:F1": 7
-    }
+    "public_data_hints": {}
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -109,12 +106,13 @@
     "has_any_valid_league": true
   },
   "blockers": [
+    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 20
+      "market_not_first_model_scope": 6
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
