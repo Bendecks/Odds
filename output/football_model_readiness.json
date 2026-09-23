@@ -1,85 +1,87 @@
 {
-  "generated_at": "2026-09-22T16:57:22.133419+00:00",
+  "generated_at": "2026-09-23T04:44:49.652894+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 583,
-  "exact_bet365_rows": 557,
+  "candidate_rows": 267,
+  "exact_bet365_rows": 203,
   "fresh_exact_rows_by_market": {
-    "h2h": 189,
-    "spreads": 2,
-    "totals": 366
+    "h2h": 87,
+    "spreads": 4,
+    "totals": 112
   },
   "metadata": {
-    "rows_with_sport": 583,
-    "rows_with_league": 583,
-    "rows_with_parseable_teams": 583,
+    "rows_with_sport": 267,
+    "rows_with_league": 267,
+    "rows_with_parseable_teams": 267,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 189,
-      "spreads": 6,
-      "totals": 388
+      "h2h": 87,
+      "spreads": 4,
+      "totals": 176
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 189,
-      "totals": 388
+      "h2h": 87,
+      "totals": 176
     },
-    "first_model_scope_rows": 577
+    "first_model_scope_rows": 263
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Scotland - Challenge Cup', 'slug': 'scotland-challenge-cup'}",
-        148
+        "{'name': 'International Clubs - UEFA Europa Cup, Women', 'slug': 'international-clubs-uefa-europa-cup-women'}",
+        56
       ],
       [
-        "{'name': 'Netherlands - KNVB beker', 'slug': 'netherlands-knvb-beker'}",
-        81
+        "{'name': 'Japan - Emperor Cup', 'slug': 'japan-emperor-cup'}",
+        43
       ],
       [
-        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
-        52
+        "{'name': 'England Amateur - League Cup, Women, Southern', 'slug': 'england-amateur-league-cup-women-southern'}",
+        36
       ],
       [
-        "{'name': 'England - EFL Trophy, Southern Group H', 'slug': 'england-efl-trophy-southern-group-h'}",
-        47
-      ],
-      [
-        "{'name': 'England - EFL Trophy, Southern Group E', 'slug': 'england-efl-trophy-southern-group-e'}",
-        20
-      ],
-      [
-        "{'name': 'England - EFL Trophy, Southern Group B', 'slug': 'england-efl-trophy-southern-group-b'}",
-        20
-      ],
-      [
-        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
-        19
-      ],
-      [
-        "{'name': 'Qatar - QSL Cup', 'slug': 'qatar-qsl-cup'}",
+        "{'name': 'International Youth - Asian Games, Group B', 'slug': 'international-youth-asian-games-group-b'}",
         18
       ],
       [
-        "{'name': 'England - EFL Trophy, Northern Group A', 'slug': 'england-efl-trophy-northern-group-a'}",
+        "{'name': 'International Youth - Asian Games, Group A', 'slug': 'international-youth-asian-games-group-a'}",
         18
       ],
       [
-        "{'name': 'England - EFL Trophy, Northern Group C', 'slug': 'england-efl-trophy-northern-group-c'}",
-        18
+        "{'name': 'International Clubs - UEFA Champions League, Women', 'slug': 'international-clubs-uefa-champions-league-women'}",
+        15
+      ],
+      [
+        "{'name': 'Norway - NM Cup', 'slug': 'norway-nm-cup'}",
+        11
+      ],
+      [
+        "{'name': 'Spain - Division de Honor Juvenil - Grupo V', 'slug': 'spain-division-de-honor-juvenil-grupo-v'}",
+        9
+      ],
+      [
+        "{'name': 'Slovakia - Slovensky Pohar', 'slug': 'slovakia-slovensky-pohar'}",
+        9
+      ],
+      [
+        "{'name': 'International Youth - U20 FIFA World Cup, Women, Knockout stage', 'slug': 'international-youth-u20-fifa-world-cup-women-knockout-stage'}",
+        9
       ]
     ],
-    "public_data_hints": {}
+    "public_data_hints": {
+      "football-data.co.uk:CL": 15
+    }
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -106,13 +108,12 @@
     "has_any_valid_league": true
   },
   "blockers": [
-    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 6
+      "market_not_first_model_scope": 4
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

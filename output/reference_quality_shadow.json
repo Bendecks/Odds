@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-22T16:57:22.090716+00:00",
-  "as_of": "2026-09-22T16:57:21.971712+00:00",
+  "generated_at": "2026-09-23T04:44:49.618920+00:00",
+  "as_of": "2026-09-23T04:44:49.533662+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 583,
-  "fresh_exact_candidates": 557,
+  "total_candidates": 267,
+  "fresh_exact_candidates": 203,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 557,
-    "missing_external_market_reference": 557,
-    "missing_model_reference": 557
+    "insufficient_independent_economic_sources": 203,
+    "missing_external_market_reference": 203,
+    "missing_model_reference": 203
   },
   "missing_roles": {
-    "external_market_reference": 557,
-    "model_reference": 557
+    "external_market_reference": 203,
+    "model_reference": 203
   },
   "by_market": {
     "h2h": {
-      "evaluated": 189,
-      "fresh_exact_bet365": 189,
+      "evaluated": 87,
+      "fresh_exact_bet365": 87,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 189,
-        "missing_external_market_reference": 189,
-        "missing_model_reference": 189
+        "insufficient_independent_economic_sources": 87,
+        "missing_external_market_reference": 87,
+        "missing_model_reference": 87
       },
       "missing_roles": {
-        "external_market_reference": 189,
-        "model_reference": 189
+        "external_market_reference": 87,
+        "model_reference": 87
       }
     },
     "spreads": {
-      "evaluated": 2,
-      "fresh_exact_bet365": 2,
+      "evaluated": 4,
+      "fresh_exact_bet365": 4,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 2,
-        "missing_external_market_reference": 2,
-        "missing_model_reference": 2
+        "insufficient_independent_economic_sources": 4,
+        "missing_external_market_reference": 4,
+        "missing_model_reference": 4
       },
       "missing_roles": {
-        "external_market_reference": 2,
-        "model_reference": 2
+        "external_market_reference": 4,
+        "model_reference": 4
       }
     },
     "totals": {
-      "evaluated": 366,
-      "fresh_exact_bet365": 366,
+      "evaluated": 112,
+      "fresh_exact_bet365": 112,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 366,
-        "missing_external_market_reference": 366,
-        "missing_model_reference": 366
+        "insufficient_independent_economic_sources": 112,
+        "missing_external_market_reference": 112,
+        "missing_model_reference": 112
       },
       "missing_roles": {
-        "external_market_reference": 366,
-        "model_reference": 366
+        "external_market_reference": 112,
+        "model_reference": 112
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 557,
+        "fresh_exact_candidates_blocked": 203,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 557,
+        "fresh_exact_candidates_blocked": 203,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 557
+        "fresh_exact_candidates_blocked": 203
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 366,
+        "fresh_exact_candidates": 112,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 366,
-          "model_reference": 366
+          "external_market_reference": 112,
+          "model_reference": 112
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 189,
+        "fresh_exact_candidates": 87,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 189,
-          "model_reference": 189
+          "external_market_reference": 87,
+          "model_reference": 87
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 2,
+        "fresh_exact_candidates": 4,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 2,
-          "model_reference": 2
+          "external_market_reference": 4,
+          "model_reference": 4
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 366,
+      "first_market_fresh_exact_candidates": 112,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 189,
-      "fresh_exact_bet365": 189,
+      "evaluated": 87,
+      "fresh_exact_bet365": 87,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 189,
-        "missing_external_market_reference": 189,
-        "missing_model_reference": 189
+        "insufficient_independent_economic_sources": 87,
+        "missing_external_market_reference": 87,
+        "missing_model_reference": 87
       },
       "missing_roles": {
-        "external_market_reference": 189,
-        "model_reference": 189
+        "external_market_reference": 87,
+        "model_reference": 87
       }
     },
     "spreads": {
-      "evaluated": 6,
-      "fresh_exact_bet365": 2,
+      "evaluated": 4,
+      "fresh_exact_bet365": 4,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 6,
-        "missing_external_market_reference": 6,
-        "missing_model_reference": 6,
-        "not_fresh_exact_bet365": 4
+        "insufficient_independent_economic_sources": 4,
+        "missing_external_market_reference": 4,
+        "missing_model_reference": 4
       },
       "missing_roles": {
-        "external_market_reference": 6,
-        "model_reference": 6
+        "external_market_reference": 4,
+        "model_reference": 4
       }
     },
     "totals": {
-      "evaluated": 388,
-      "fresh_exact_bet365": 366,
+      "evaluated": 176,
+      "fresh_exact_bet365": 112,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 388,
-        "missing_external_market_reference": 388,
-        "missing_model_reference": 388,
-        "not_fresh_exact_bet365": 22
+        "insufficient_independent_economic_sources": 176,
+        "missing_external_market_reference": 176,
+        "missing_model_reference": 176,
+        "not_fresh_exact_bet365": 64
       },
       "missing_roles": {
-        "external_market_reference": 388,
-        "model_reference": 388
+        "external_market_reference": 176,
+        "model_reference": 176
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "h2h",
-      "pick": "Husqvarna FF",
+      "pick": "China",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "h2h",
-      "pick": "Vaxjo DFF",
+      "pick": "United Arab Emirates",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,13 +260,65 @@
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -281,20 +332,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -308,20 +358,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -335,20 +384,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
+      "event": "China vs United Arab Emirates",
+      "event_id": 73841650,
+      "bet365_event_id": 73841650,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -362,72 +410,17 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Husqvarna FF vs Vaxjo DFF",
-      "event_id": 74197328,
-      "bet365_event_id": 74197328,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Asa Targu Mures vs CS Dinamo Bucuresti",
-      "event_id": 74551764,
-      "bet365_event_id": 74551764,
+      "event": "Iran vs Korea DPR",
+      "event_id": 73841652,
+      "bet365_event_id": 73841652,
       "market": "h2h",
-      "pick": "Asa Targu Mures",
+      "pick": "Iran",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
