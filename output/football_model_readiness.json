@@ -1,82 +1,82 @@
 {
-  "generated_at": "2026-09-24T04:50:05.523959+00:00",
+  "generated_at": "2026-09-24T17:10:34.977397+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 443,
-  "exact_bet365_rows": 393,
+  "candidate_rows": 531,
+  "exact_bet365_rows": 489,
   "fresh_exact_rows_by_market": {
-    "h2h": 123,
-    "spreads": 58,
-    "totals": 212
+    "h2h": 135,
+    "spreads": 70,
+    "totals": 284
   },
   "metadata": {
-    "rows_with_sport": 443,
-    "rows_with_league": 443,
-    "rows_with_parseable_teams": 443,
+    "rows_with_sport": 531,
+    "rows_with_league": 531,
+    "rows_with_parseable_teams": 531,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 123,
-      "spreads": 60,
-      "totals": 260
+      "h2h": 135,
+      "spreads": 70,
+      "totals": 326
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 123,
-      "totals": 260
+      "h2h": 135,
+      "totals": 326
     },
-    "first_model_scope_rows": 383
+    "first_model_scope_rows": 461
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        54
+        "{'name': 'International - UEFA Nations League, League A, Gr. 4', 'slug': 'international-uefa-nations-league-league-a-gr-4'}",
+        48
       ],
       [
         "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
         45
       ],
       [
-        "{'name': 'International - UEFA Nations League, League A, Gr. 4', 'slug': 'international-uefa-nations-league-league-a-gr-4'}",
-        44
-      ],
-      [
         "{'name': 'International - UEFA Nations League, League A, Gr. 2', 'slug': 'international-uefa-nations-league-league-a-gr-2'}",
         40
-      ],
-      [
-        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
-        37
       ],
       [
         "{'name': 'International - UEFA Nations League, League B, Gr. 3', 'slug': 'international-uefa-nations-league-league-b-gr-3'}",
         34
       ],
       [
-        "{'name': 'International Youth - U19 Friendly Games', 'slug': 'international-youth-u19-friendly-games'}",
+        "{'name': 'International - Asian Games, Women, Knockout stage', 'slug': 'international-asian-games-women-knockout-stage'}",
+        28
+      ],
+      [
+        "{'name': 'International - CONCACAF Nations League, League A, Group A', 'slug': 'international-concacaf-nations-league-league-a-group-a'}",
         27
       ],
       [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group G', 'slug': 'international-africa-cup-of-nations-qualification-group-g'}",
-        16
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        19
       ],
       [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group H', 'slug': 'international-africa-cup-of-nations-qualification-group-h'}",
-        16
+        "{'name': 'International - CONCACAF Nations League, League B, Group A', 'slug': 'international-concacaf-nations-league-league-b-group-a'}",
+        18
       ],
       [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group E', 'slug': 'international-africa-cup-of-nations-qualification-group-e'}",
-        16
+        "{'name': 'Chile - Copa Chile, Knockout stage', 'slug': 'chile-copa-chile-knockout-stage'}",
+        18
+      ],
+      [
+        "{'name': 'International Youth - Asian Games, Knockout stage', 'slug': 'international-youth-asian-games-knockout-stage'}",
+        18
       ]
     ],
     "public_data_hints": {}
@@ -112,7 +112,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 60
+      "market_not_first_model_scope": 70
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
