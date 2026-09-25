@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24T17:10:34.935431+00:00",
-  "as_of": "2026-09-24T17:10:34.819764+00:00",
+  "generated_at": "2026-09-25T04:57:20.383979+00:00",
+  "as_of": "2026-09-25T04:57:20.286632+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 531,
-  "fresh_exact_candidates": 489,
+  "total_candidates": 394,
+  "fresh_exact_candidates": 326,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 489,
-    "missing_external_market_reference": 489,
-    "missing_model_reference": 489
+    "insufficient_independent_economic_sources": 326,
+    "missing_external_market_reference": 326,
+    "missing_model_reference": 326
   },
   "missing_roles": {
-    "external_market_reference": 489,
-    "model_reference": 489
+    "external_market_reference": 326,
+    "model_reference": 326
   },
   "by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 70,
-      "fresh_exact_bet365": 70,
+      "evaluated": 44,
+      "fresh_exact_bet365": 44,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 70,
-        "missing_external_market_reference": 70,
-        "missing_model_reference": 70
+        "insufficient_independent_economic_sources": 44,
+        "missing_external_market_reference": 44,
+        "missing_model_reference": 44
       },
       "missing_roles": {
-        "external_market_reference": 70,
-        "model_reference": 70
+        "external_market_reference": 44,
+        "model_reference": 44
       }
     },
     "totals": {
-      "evaluated": 284,
-      "fresh_exact_bet365": 284,
+      "evaluated": 174,
+      "fresh_exact_bet365": 174,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 284,
-        "missing_external_market_reference": 284,
-        "missing_model_reference": 284
+        "insufficient_independent_economic_sources": 174,
+        "missing_external_market_reference": 174,
+        "missing_model_reference": 174
       },
       "missing_roles": {
-        "external_market_reference": 284,
-        "model_reference": 284
+        "external_market_reference": 174,
+        "model_reference": 174
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 489,
+        "fresh_exact_candidates_blocked": 326,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 489,
+        "fresh_exact_candidates_blocked": 326,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 489
+        "fresh_exact_candidates_blocked": 326
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 284,
+        "fresh_exact_candidates": 174,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 284,
-          "model_reference": 284
+          "external_market_reference": 174,
+          "model_reference": 174
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 135,
+        "fresh_exact_candidates": 108,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 135,
-          "model_reference": 135
+          "external_market_reference": 108,
+          "model_reference": 108
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 70,
+        "fresh_exact_candidates": 44,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 70,
-          "model_reference": 70
+          "external_market_reference": 44,
+          "model_reference": 44
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,61 +130,191 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 284,
+      "first_market_fresh_exact_candidates": 174,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 70,
-      "fresh_exact_bet365": 70,
+      "evaluated": 44,
+      "fresh_exact_bet365": 44,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 70,
-        "missing_external_market_reference": 70,
-        "missing_model_reference": 70
+        "insufficient_independent_economic_sources": 44,
+        "missing_external_market_reference": 44,
+        "missing_model_reference": 44
       },
       "missing_roles": {
-        "external_market_reference": 70,
-        "model_reference": 70
+        "external_market_reference": 44,
+        "model_reference": 44
       }
     },
     "totals": {
-      "evaluated": 326,
-      "fresh_exact_bet365": 284,
+      "evaluated": 242,
+      "fresh_exact_bet365": 174,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 326,
-        "missing_external_market_reference": 326,
-        "missing_model_reference": 326,
-        "not_fresh_exact_bet365": 42
+        "insufficient_independent_economic_sources": 242,
+        "missing_external_market_reference": 242,
+        "missing_model_reference": 242,
+        "not_fresh_exact_bet365": 68
       },
       "missing_roles": {
-        "external_market_reference": 326,
-        "model_reference": 326
+        "external_market_reference": 242,
+        "model_reference": 242
       }
     }
   },
   "sample_failures": [
     {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
+      "market": "h2h",
+      "pick": "Uzbekistan",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
+      "market": "h2h",
+      "pick": "Saudi Arabia",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -208,9 +338,9 @@
       ]
     },
     {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -234,66 +364,12 @@
       ]
     },
     {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -314,12 +390,12 @@
       ]
     },
     {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
+      "event": "Uzbekistan vs Saudi Arabia",
+      "event_id": 74986118,
+      "bet365_event_id": 74986118,
       "market": "totals",
       "pick": "Under",
-      "line": 4.5,
+      "line": 3.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -340,13 +416,13 @@
       ]
     },
     {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
-      "market": "totals",
-      "pick": "Over",
-      "line": 5.5,
-      "fresh_exact_bet365": false,
+      "event": "China PR vs Vietnam",
+      "event_id": 74952886,
+      "bet365_event_id": 74952886,
+      "market": "h2h",
+      "pick": "China PR",
+      "line": null,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -360,88 +436,6 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
-      "market": "totals",
-      "pick": "Under",
-      "line": 5.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
-      "market": "totals",
-      "pick": "Over",
-      "line": 6.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "San Marino U21 vs Kosovo U21",
-      "event_id": 58208351,
-      "bet365_event_id": 58208351,
-      "market": "totals",
-      "pick": "Under",
-      "line": 6.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"

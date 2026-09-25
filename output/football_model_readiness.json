@@ -1,81 +1,81 @@
 {
-  "generated_at": "2026-09-24T17:10:34.977397+00:00",
+  "generated_at": "2026-09-25T04:57:20.421496+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 531,
-  "exact_bet365_rows": 489,
+  "candidate_rows": 394,
+  "exact_bet365_rows": 326,
   "fresh_exact_rows_by_market": {
-    "h2h": 135,
-    "spreads": 70,
-    "totals": 284
+    "h2h": 108,
+    "spreads": 44,
+    "totals": 174
   },
   "metadata": {
-    "rows_with_sport": 531,
-    "rows_with_league": 531,
-    "rows_with_parseable_teams": 531,
+    "rows_with_sport": 394,
+    "rows_with_league": 394,
+    "rows_with_parseable_teams": 394,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 135,
-      "spreads": 70,
-      "totals": 326
+      "h2h": 108,
+      "spreads": 44,
+      "totals": 242
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 135,
-      "totals": 326
+      "h2h": 108,
+      "totals": 242
     },
-    "first_model_scope_rows": 461
+    "first_model_scope_rows": 350
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - UEFA Nations League, League A, Gr. 4', 'slug': 'international-uefa-nations-league-league-a-gr-4'}",
-        48
+        "{'name': 'Romania - Liga III, Seria 8', 'slug': 'romania-liga-iii-seria-8'}",
+        36
       ],
       [
-        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
-        45
-      ],
-      [
-        "{'name': 'International - UEFA Nations League, League A, Gr. 2', 'slug': 'international-uefa-nations-league-league-a-gr-2'}",
-        40
-      ],
-      [
-        "{'name': 'International - UEFA Nations League, League B, Gr. 3', 'slug': 'international-uefa-nations-league-league-b-gr-3'}",
+        "{'name': 'International Youth - U21 EURO, Qualification, Group B', 'slug': 'international-youth-u21-euro-qualification-group-b'}",
         34
+      ],
+      [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group A', 'slug': 'international-youth-u21-euro-qualification-group-a'}",
+        32
+      ],
+      [
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        30
+      ],
+      [
+        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
+        30
+      ],
+      [
+        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
+        30
       ],
       [
         "{'name': 'International - Asian Games, Women, Knockout stage', 'slug': 'international-asian-games-women-knockout-stage'}",
         28
       ],
       [
-        "{'name': 'International - CONCACAF Nations League, League A, Group A', 'slug': 'international-concacaf-nations-league-league-a-group-a'}",
-        27
-      ],
-      [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        19
-      ],
-      [
-        "{'name': 'International - CONCACAF Nations League, League B, Group A', 'slug': 'international-concacaf-nations-league-league-b-group-a'}",
-        18
-      ],
-      [
-        "{'name': 'Chile - Copa Chile, Knockout stage', 'slug': 'chile-copa-chile-knockout-stage'}",
-        18
-      ],
-      [
         "{'name': 'International Youth - Asian Games, Knockout stage', 'slug': 'international-youth-asian-games-knockout-stage'}",
+        18
+      ],
+      [
+        "{'name': 'International - FIFA ASEAN Cup, Premier Division, Gr. A', 'slug': 'international-fifa-asean-cup-premier-division-gr-a'}",
+        18
+      ],
+      [
+        "{'name': 'International Youth - U19 Friendly Games', 'slug': 'international-youth-u19-friendly-games'}",
         18
       ]
     ],
@@ -112,7 +112,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 70
+      "market_not_first_model_scope": 44
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
