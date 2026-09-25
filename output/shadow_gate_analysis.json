@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-25T04:57:20.343233+00:00",
-  "as_of": "2026-09-25T04:57:20.286632+00:00",
-  "candidate_rows": 394,
+  "generated_at": "2026-09-25T17:10:48.117119+00:00",
+  "as_of": "2026-09-25T17:10:48.057498+00:00",
+  "candidate_rows": 560,
   "note": "Diagnostic only. Identity rejection is split into event identity, missing exact Bet365 price, and market identity so market-expansion work can target the largest safe unlocks.",
   "scenarios": [
     {
@@ -17,19 +17,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 68,
-        "reference_depth": 326
+        "no_exact_bet365_price": 44,
+        "reference_depth": 516
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 108
+          "reference_depth": 132
         },
         "spreads": {
-          "reference_depth": 44
+          "no_exact_bet365_price": 6,
+          "reference_depth": 94
         },
         "totals": {
-          "no_exact_bet365_price": 68,
-          "reference_depth": 174
+          "no_exact_bet365_price": 38,
+          "reference_depth": 290
         }
       }
     },
@@ -46,19 +47,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 68,
-        "reference_depth": 326
+        "no_exact_bet365_price": 44,
+        "reference_depth": 516
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 108
+          "reference_depth": 132
         },
         "spreads": {
-          "reference_depth": 44
+          "no_exact_bet365_price": 6,
+          "reference_depth": 94
         },
         "totals": {
-          "no_exact_bet365_price": 68,
-          "reference_depth": 174
+          "no_exact_bet365_price": 38,
+          "reference_depth": 290
         }
       }
     },
@@ -75,19 +77,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 68,
-        "reference_depth": 326
+        "no_exact_bet365_price": 44,
+        "reference_depth": 516
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 108
+          "reference_depth": 132
         },
         "spreads": {
-          "reference_depth": 44
+          "no_exact_bet365_price": 6,
+          "reference_depth": 94
         },
         "totals": {
-          "no_exact_bet365_price": 68,
-          "reference_depth": 174
+          "no_exact_bet365_price": 38,
+          "reference_depth": 290
         }
       }
     },
@@ -104,19 +107,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 68,
-        "reference_depth": 326
+        "no_exact_bet365_price": 44,
+        "reference_depth": 516
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 108
+          "reference_depth": 132
         },
         "spreads": {
-          "reference_depth": 44
+          "no_exact_bet365_price": 6,
+          "reference_depth": 94
         },
         "totals": {
-          "no_exact_bet365_price": 68,
-          "reference_depth": 174
+          "no_exact_bet365_price": 38,
+          "reference_depth": 290
         }
       }
     },
@@ -133,19 +137,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 68,
-        "reference_depth": 326
+        "no_exact_bet365_price": 44,
+        "reference_depth": 516
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 108
+          "reference_depth": 132
         },
         "spreads": {
-          "reference_depth": 44
+          "no_exact_bet365_price": 6,
+          "reference_depth": 94
         },
         "totals": {
-          "no_exact_bet365_price": 68,
-          "reference_depth": 174
+          "no_exact_bet365_price": 38,
+          "reference_depth": 290
         }
       }
     }

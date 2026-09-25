@@ -1,85 +1,87 @@
 {
-  "generated_at": "2026-09-25T04:57:20.421496+00:00",
+  "generated_at": "2026-09-25T17:10:48.198551+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 394,
-  "exact_bet365_rows": 326,
+  "candidate_rows": 560,
+  "exact_bet365_rows": 516,
   "fresh_exact_rows_by_market": {
-    "h2h": 108,
-    "spreads": 44,
-    "totals": 174
+    "h2h": 132,
+    "spreads": 94,
+    "totals": 290
   },
   "metadata": {
-    "rows_with_sport": 394,
-    "rows_with_league": 394,
-    "rows_with_parseable_teams": 394,
+    "rows_with_sport": 560,
+    "rows_with_league": 560,
+    "rows_with_parseable_teams": 560,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 108,
-      "spreads": 44,
-      "totals": 242
+      "h2h": 132,
+      "spreads": 100,
+      "totals": 328
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 108,
-      "totals": 242
+      "h2h": 132,
+      "totals": 328
     },
-    "first_model_scope_rows": 350
+    "first_model_scope_rows": 460
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Romania - Liga III, Seria 8', 'slug': 'romania-liga-iii-seria-8'}",
+        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
+        124
+      ],
+      [
+        "{'name': 'Scotland - Championship', 'slug': 'scotland-championship'}",
+        60
+      ],
+      [
+        "{'name': 'Ireland - First Division', 'slug': 'ireland-first-division'}",
         36
       ],
       [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group B', 'slug': 'international-youth-u21-euro-qualification-group-b'}",
-        34
+        "{'name': 'International Youth - U21 EURO, Qualification, Group D', 'slug': 'international-youth-u21-euro-qualification-group-d'}",
+        19
       ],
       [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group A', 'slug': 'international-youth-u21-euro-qualification-group-a'}",
-        32
+        "{'name': 'International - Africa Cup of Nations, Qualification, Group A', 'slug': 'international-africa-cup-of-nations-qualification-group-a'}",
+        19
       ],
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        30
-      ],
-      [
-        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
-        30
-      ],
-      [
-        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
-        30
-      ],
-      [
-        "{'name': 'International - Asian Games, Women, Knockout stage', 'slug': 'international-asian-games-women-knockout-stage'}",
-        28
-      ],
-      [
-        "{'name': 'International Youth - Asian Games, Knockout stage', 'slug': 'international-youth-asian-games-knockout-stage'}",
+        "{'name': 'Iceland - Besta deild, Women, Relegation round', 'slug': 'iceland-besta-deild-women-relegation-round'}",
         18
       ],
       [
-        "{'name': 'International - FIFA ASEAN Cup, Premier Division, Gr. A', 'slug': 'international-fifa-asean-cup-premier-division-gr-a'}",
+        "{'name': 'International Clubs - Club Friendly Games', 'slug': 'international-clubs-club-friendly-games'}",
         18
       ],
       [
-        "{'name': 'International Youth - U19 Friendly Games', 'slug': 'international-youth-u19-friendly-games'}",
+        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
+        18
+      ],
+      [
+        "{'name': 'Northern Ireland - Championship 1', 'slug': 'northern-ireland-championship-1'}",
+        18
+      ],
+      [
+        "{'name': 'England Amateur - FA Trophy', 'slug': 'england-amateur-fa-trophy'}",
         18
       ]
     ],
-    "public_data_hints": {}
+    "public_data_hints": {
+      "football-data.co.uk:E1": 89
+    }
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -106,13 +108,12 @@
     "has_any_valid_league": true
   },
   "blockers": [
-    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 44
+      "market_not_first_model_scope": 100
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
