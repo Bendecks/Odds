@@ -1,21 +1,30 @@
 {
-  "candidate_rows": 186,
-  "exact_rows": 148,
+  "candidate_rows": 383,
+  "exact_rows": 345,
   "missing_exact_rows": 38,
   "markets": [
     {
       "market": "totals",
-      "candidate_rows": 126,
-      "exact_rows": 88,
-      "missing_exact_rows": 38,
-      "exact_rate": 0.6984,
+      "candidate_rows": 226,
+      "exact_rows": 204,
+      "missing_exact_rows": 22,
+      "exact_rate": 0.9027,
+      "reference_ready_rows": 0,
+      "reference_ready_rate": 0.0
+    },
+    {
+      "market": "spreads",
+      "candidate_rows": 46,
+      "exact_rows": 30,
+      "missing_exact_rows": 16,
+      "exact_rate": 0.6522,
       "reference_ready_rows": 0,
       "reference_ready_rate": 0.0
     },
     {
       "market": "h2h",
-      "candidate_rows": 60,
-      "exact_rows": 60,
+      "candidate_rows": 111,
+      "exact_rows": 111,
       "missing_exact_rows": 0,
       "exact_rate": 1.0,
       "reference_ready_rows": 0,
