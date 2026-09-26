@@ -1,86 +1,84 @@
 {
-  "generated_at": "2026-09-25T17:10:48.198551+00:00",
+  "generated_at": "2026-09-26T04:57:45.867227+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 560,
-  "exact_bet365_rows": 516,
+  "candidate_rows": 186,
+  "exact_bet365_rows": 148,
   "fresh_exact_rows_by_market": {
-    "h2h": 132,
-    "spreads": 94,
-    "totals": 290
+    "h2h": 60,
+    "totals": 88
   },
   "metadata": {
-    "rows_with_sport": 560,
-    "rows_with_league": 560,
-    "rows_with_parseable_teams": 560,
+    "rows_with_sport": 186,
+    "rows_with_league": 186,
+    "rows_with_parseable_teams": 186,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 132,
-      "spreads": 100,
-      "totals": 328
+      "h2h": 60,
+      "totals": 126
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 132,
-      "totals": 328
+      "h2h": 60,
+      "totals": 126
     },
-    "first_model_scope_rows": 460
+    "first_model_scope_rows": 186
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
-        124
+        "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+        94
       ],
       [
-        "{'name': 'Scotland - Championship', 'slug': 'scotland-championship'}",
-        60
+        "{'name': 'Czechia - 1. Liga, Women', 'slug': 'czechia-1-liga-women'}",
+        11
       ],
       [
-        "{'name': 'Ireland - First Division', 'slug': 'ireland-first-division'}",
-        36
+        "{'name': 'International Youth - Asian Games, Knockout stage', 'slug': 'international-youth-asian-games-knockout-stage'}",
+        9
       ],
       [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group D', 'slug': 'international-youth-u21-euro-qualification-group-d'}",
-        19
+        "{'name': 'Indonesia - Championship, Group A', 'slug': 'indonesia-championship-group-a'}",
+        9
       ],
       [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group A', 'slug': 'international-africa-cup-of-nations-qualification-group-a'}",
-        19
+        "{'name': 'International - FIFA ASEAN Cup, Premier Division, Gr. B', 'slug': 'international-fifa-asean-cup-premier-division-gr-b'}",
+        9
       ],
       [
-        "{'name': 'Iceland - Besta deild, Women, Relegation round', 'slug': 'iceland-besta-deild-women-relegation-round'}",
-        18
+        "{'name': 'Hungary - U19 National', 'slug': 'hungary-u19-national'}",
+        9
       ],
       [
-        "{'name': 'International Clubs - Club Friendly Games', 'slug': 'international-clubs-club-friendly-games'}",
-        18
+        "{'name': 'Portugal - Campeonato Nacional, Women', 'slug': 'portugal-campeonato-nacional-women'}",
+        9
       ],
       [
-        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
-        18
+        "{'name': 'Poland - Ekstraliga, Women', 'slug': 'poland-ekstraliga-women'}",
+        9
       ],
       [
-        "{'name': 'Northern Ireland - Championship 1', 'slug': 'northern-ireland-championship-1'}",
-        18
+        "{'name': 'Spain - Primera Division Femenina', 'slug': 'spain-primera-division-femenina'}",
+        9
       ],
       [
-        "{'name': 'England Amateur - FA Trophy', 'slug': 'england-amateur-fa-trophy'}",
-        18
+        "{'name': 'Spain - Primera Federacion, Women', 'slug': 'spain-primera-federacion-women'}",
+        9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E1": 89
+      "football-data.co.uk:E1": 9
     }
   },
   "public_football_data_probe": {
@@ -111,10 +109,6 @@
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
-  "missing_by_market": {
-    "spreads": {
-      "market_not_first_model_scope": 100
-    }
-  },
+  "missing_by_market": {},
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
 }

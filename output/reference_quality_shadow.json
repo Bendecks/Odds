@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-25T17:10:48.160314+00:00",
-  "as_of": "2026-09-25T17:10:48.057498+00:00",
+  "generated_at": "2026-09-26T04:57:45.847118+00:00",
+  "as_of": "2026-09-26T04:57:45.798333+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,45 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 560,
-  "fresh_exact_candidates": 516,
+  "total_candidates": 186,
+  "fresh_exact_candidates": 148,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 516,
-    "missing_external_market_reference": 516,
-    "missing_model_reference": 516
+    "insufficient_independent_economic_sources": 148,
+    "missing_external_market_reference": 148,
+    "missing_model_reference": 148
   },
   "missing_roles": {
-    "external_market_reference": 516,
-    "model_reference": 516
+    "external_market_reference": 148,
+    "model_reference": 148
   },
   "by_market": {
     "h2h": {
-      "evaluated": 132,
-      "fresh_exact_bet365": 132,
+      "evaluated": 60,
+      "fresh_exact_bet365": 60,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 132,
-        "missing_external_market_reference": 132,
-        "missing_model_reference": 132
+        "insufficient_independent_economic_sources": 60,
+        "missing_external_market_reference": 60,
+        "missing_model_reference": 60
       },
       "missing_roles": {
-        "external_market_reference": 132,
-        "model_reference": 132
-      }
-    },
-    "spreads": {
-      "evaluated": 94,
-      "fresh_exact_bet365": 94,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 94,
-        "missing_external_market_reference": 94,
-        "missing_model_reference": 94
-      },
-      "missing_roles": {
-        "external_market_reference": 94,
-        "model_reference": 94
+        "external_market_reference": 60,
+        "model_reference": 60
       }
     },
     "totals": {
-      "evaluated": 290,
-      "fresh_exact_bet365": 290,
+      "evaluated": 88,
+      "fresh_exact_bet365": 88,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 290,
-        "missing_external_market_reference": 290,
-        "missing_model_reference": 290
+        "insufficient_independent_economic_sources": 88,
+        "missing_external_market_reference": 88,
+        "missing_model_reference": 88
       },
       "missing_roles": {
-        "external_market_reference": 290,
-        "model_reference": 290
+        "external_market_reference": 88,
+        "model_reference": 88
       }
     }
   },
@@ -80,49 +66,39 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 516,
+        "fresh_exact_candidates_blocked": 148,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 516,
+        "fresh_exact_candidates_blocked": 148,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 516
+        "fresh_exact_candidates_blocked": 148
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 290,
+        "fresh_exact_candidates": 88,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 290,
-          "model_reference": 290
+          "external_market_reference": 88,
+          "model_reference": 88
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 132,
+        "fresh_exact_candidates": 60,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 132,
-          "model_reference": 132
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 94,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 94,
-          "model_reference": 94
+          "external_market_reference": 60,
+          "model_reference": 60
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +106,49 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 290,
+      "first_market_fresh_exact_candidates": 88,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 132,
-      "fresh_exact_bet365": 132,
+      "evaluated": 60,
+      "fresh_exact_bet365": 60,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 132,
-        "missing_external_market_reference": 132,
-        "missing_model_reference": 132
+        "insufficient_independent_economic_sources": 60,
+        "missing_external_market_reference": 60,
+        "missing_model_reference": 60
       },
       "missing_roles": {
-        "external_market_reference": 132,
-        "model_reference": 132
-      }
-    },
-    "spreads": {
-      "evaluated": 100,
-      "fresh_exact_bet365": 94,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 100,
-        "missing_external_market_reference": 100,
-        "missing_model_reference": 100,
-        "not_fresh_exact_bet365": 6
-      },
-      "missing_roles": {
-        "external_market_reference": 100,
-        "model_reference": 100
+        "external_market_reference": 60,
+        "model_reference": 60
       }
     },
     "totals": {
-      "evaluated": 328,
-      "fresh_exact_bet365": 290,
+      "evaluated": 126,
+      "fresh_exact_bet365": 88,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 328,
-        "missing_external_market_reference": 328,
-        "missing_model_reference": 328,
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126,
         "not_fresh_exact_bet365": 38
       },
       "missing_roles": {
-        "external_market_reference": 328,
-        "model_reference": 328
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "h2h",
-      "pick": "Thor/KA",
+      "pick": "China",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +170,9 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +196,11 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "h2h",
-      "pick": "Fram",
+      "pick": "Thailand",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +222,63 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +302,9 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,9 +328,9 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
@@ -340,9 +355,9 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
+      "event": "China vs Thailand",
+      "event_id": 74999568,
+      "bet365_event_id": 74999568,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
@@ -367,65 +382,11 @@
       ]
     },
     {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Thor/KA vs Fram",
-      "event_id": 74610576,
-      "bet365_event_id": 74610576,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Switzerland U21 vs Luxembourg U21",
-      "event_id": 58208621,
-      "bet365_event_id": 58208621,
+      "event": "Blaublitz Akita vs Albirex Niigata",
+      "event_id": 72151166,
+      "bet365_event_id": 72151166,
       "market": "h2h",
-      "pick": "Switzerland U21",
+      "pick": "Blaublitz Akita",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
