@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-27T05:18:04.355329+00:00",
-  "as_of": "2026-09-27T05:18:04.279119+00:00",
+  "generated_at": "2026-09-27T16:57:47.466449+00:00",
+  "as_of": "2026-09-27T16:57:47.369749+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 85,
-  "fresh_exact_candidates": 65,
+  "total_candidates": 494,
+  "fresh_exact_candidates": 468,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 65,
-    "missing_external_market_reference": 65,
-    "missing_model_reference": 65
+    "insufficient_independent_economic_sources": 468,
+    "missing_external_market_reference": 468,
+    "missing_model_reference": 468
   },
   "missing_roles": {
-    "external_market_reference": 65,
-    "model_reference": 65
+    "external_market_reference": 468,
+    "model_reference": 468
   },
   "by_market": {
     "h2h": {
-      "evaluated": 27,
-      "fresh_exact_bet365": 27,
+      "evaluated": 126,
+      "fresh_exact_bet365": 126,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 27,
-        "missing_external_market_reference": 27,
-        "missing_model_reference": 27
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126
       },
       "missing_roles": {
-        "external_market_reference": 27,
-        "model_reference": 27
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     },
     "spreads": {
-      "evaluated": 4,
-      "fresh_exact_bet365": 4,
+      "evaluated": 76,
+      "fresh_exact_bet365": 76,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 4,
-        "missing_external_market_reference": 4,
-        "missing_model_reference": 4
+        "insufficient_independent_economic_sources": 76,
+        "missing_external_market_reference": 76,
+        "missing_model_reference": 76
       },
       "missing_roles": {
-        "external_market_reference": 4,
-        "model_reference": 4
+        "external_market_reference": 76,
+        "model_reference": 76
       }
     },
     "totals": {
-      "evaluated": 34,
-      "fresh_exact_bet365": 34,
+      "evaluated": 266,
+      "fresh_exact_bet365": 266,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 34,
-        "missing_external_market_reference": 34,
-        "missing_model_reference": 34
+        "insufficient_independent_economic_sources": 266,
+        "missing_external_market_reference": 266,
+        "missing_model_reference": 266
       },
       "missing_roles": {
-        "external_market_reference": 34,
-        "model_reference": 34
+        "external_market_reference": 266,
+        "model_reference": 266
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 65,
+        "fresh_exact_candidates_blocked": 468,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 65,
+        "fresh_exact_candidates_blocked": 468,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 65
+        "fresh_exact_candidates_blocked": 468
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 34,
+        "fresh_exact_candidates": 266,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 34,
-          "model_reference": 34
+          "external_market_reference": 266,
+          "model_reference": 266
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 27,
+        "fresh_exact_candidates": 126,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 27,
-          "model_reference": 27
+          "external_market_reference": 126,
+          "model_reference": 126
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 4,
+        "fresh_exact_candidates": 76,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 4,
-          "model_reference": 4
+          "external_market_reference": 76,
+          "model_reference": 76
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 34,
+      "first_market_fresh_exact_candidates": 266,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 27,
-      "fresh_exact_bet365": 27,
+      "evaluated": 126,
+      "fresh_exact_bet365": 126,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 27,
-        "missing_external_market_reference": 27,
-        "missing_model_reference": 27
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126
       },
       "missing_roles": {
-        "external_market_reference": 27,
-        "model_reference": 27
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     },
     "spreads": {
-      "evaluated": 4,
-      "fresh_exact_bet365": 4,
+      "evaluated": 76,
+      "fresh_exact_bet365": 76,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 4,
-        "missing_external_market_reference": 4,
-        "missing_model_reference": 4
+        "insufficient_independent_economic_sources": 76,
+        "missing_external_market_reference": 76,
+        "missing_model_reference": 76
       },
       "missing_roles": {
-        "external_market_reference": 4,
-        "model_reference": 4
+        "external_market_reference": 76,
+        "model_reference": 76
       }
     },
     "totals": {
-      "evaluated": 54,
-      "fresh_exact_bet365": 34,
+      "evaluated": 292,
+      "fresh_exact_bet365": 266,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 54,
-        "missing_external_market_reference": 54,
-        "missing_model_reference": 54,
-        "not_fresh_exact_bet365": 20
+        "insufficient_independent_economic_sources": 292,
+        "missing_external_market_reference": 292,
+        "missing_model_reference": 292,
+        "not_fresh_exact_bet365": 26
       },
       "missing_roles": {
-        "external_market_reference": 54,
-        "model_reference": 54
+        "external_market_reference": 292,
+        "model_reference": 292
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "h2h",
-      "pick": "Yuen Long FC",
+      "pick": "CD Mictlan",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +208,9 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +234,11 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "h2h",
-      "pick": "Tung Sing",
+      "pick": "CSD Sacachispas",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,9 +260,63 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -286,9 +340,9 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -312,9 +366,9 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
@@ -339,9 +393,9 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
+      "event": "CD Mictlan vs CSD Sacachispas",
+      "event_id": 74508496,
+      "bet365_event_id": 74508496,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
@@ -366,65 +420,11 @@
       ]
     },
     {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Yuen Long FC vs Tung Sing",
-      "event_id": 74058586,
-      "bet365_event_id": 74058586,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Lucky Mile vs Hoi King",
-      "event_id": 74058590,
-      "bet365_event_id": 74058590,
+      "event": "FC Santa Lucia Cotzumalguapa vs Huehuetecos FC",
+      "event_id": 74508404,
+      "bet365_event_id": 74508404,
       "market": "h2h",
-      "pick": "Lucky Mile",
+      "pick": "FC Santa Lucia Cotzumalguapa",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
