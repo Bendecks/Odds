@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-28T05:23:30.138708+00:00",
-  "as_of": "2026-09-28T05:23:30.030618+00:00",
+  "generated_at": "2026-09-28T19:40:46.443946+00:00",
+  "as_of": "2026-09-28T19:40:46.326045+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,45 +20,45 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 517,
-  "fresh_exact_candidates": 467,
+  "total_candidates": 477,
+  "fresh_exact_candidates": 453,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 467,
-    "missing_external_market_reference": 467,
-    "missing_model_reference": 467
+    "insufficient_independent_economic_sources": 453,
+    "missing_external_market_reference": 453,
+    "missing_model_reference": 453
   },
   "missing_roles": {
-    "external_market_reference": 467,
-    "model_reference": 467
+    "external_market_reference": 453,
+    "model_reference": 453
   },
   "by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 123,
+      "fresh_exact_bet365": 123,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 123,
+        "missing_external_market_reference": 123,
+        "missing_model_reference": 123
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 123,
+        "model_reference": 123
       }
     },
     "spreads": {
-      "evaluated": 74,
-      "fresh_exact_bet365": 74,
+      "evaluated": 72,
+      "fresh_exact_bet365": 72,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 74,
-        "missing_external_market_reference": 74,
-        "missing_model_reference": 74
+        "insufficient_independent_economic_sources": 72,
+        "missing_external_market_reference": 72,
+        "missing_model_reference": 72
       },
       "missing_roles": {
-        "external_market_reference": 74,
-        "model_reference": 74
+        "external_market_reference": 72,
+        "model_reference": 72
       }
     },
     "totals": {
@@ -80,19 +80,19 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 467,
+        "fresh_exact_candidates_blocked": 453,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 467,
+        "fresh_exact_candidates_blocked": 453,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 467
+        "fresh_exact_candidates_blocked": 453
       }
     ],
     "market_priorities": [
@@ -108,21 +108,21 @@
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 135,
+        "fresh_exact_candidates": 123,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 135,
-          "model_reference": 135
+          "external_market_reference": 123,
+          "model_reference": 123
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 74,
+        "fresh_exact_candidates": 72,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 74,
-          "model_reference": 74
+          "external_market_reference": 72,
+          "model_reference": 72
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -137,57 +137,56 @@
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 135,
-      "fresh_exact_bet365": 135,
+      "evaluated": 123,
+      "fresh_exact_bet365": 123,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 135,
-        "missing_external_market_reference": 135,
-        "missing_model_reference": 135
+        "insufficient_independent_economic_sources": 123,
+        "missing_external_market_reference": 123,
+        "missing_model_reference": 123
       },
       "missing_roles": {
-        "external_market_reference": 135,
-        "model_reference": 135
+        "external_market_reference": 123,
+        "model_reference": 123
       }
     },
     "spreads": {
-      "evaluated": 76,
-      "fresh_exact_bet365": 74,
+      "evaluated": 72,
+      "fresh_exact_bet365": 72,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 76,
-        "missing_external_market_reference": 76,
-        "missing_model_reference": 76,
-        "not_fresh_exact_bet365": 2
+        "insufficient_independent_economic_sources": 72,
+        "missing_external_market_reference": 72,
+        "missing_model_reference": 72
       },
       "missing_roles": {
-        "external_market_reference": 76,
-        "model_reference": 76
+        "external_market_reference": 72,
+        "model_reference": 72
       }
     },
     "totals": {
-      "evaluated": 306,
+      "evaluated": 282,
       "fresh_exact_bet365": 258,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 306,
-        "missing_external_market_reference": 306,
-        "missing_model_reference": 306,
-        "not_fresh_exact_bet365": 48
+        "insufficient_independent_economic_sources": 282,
+        "missing_external_market_reference": 282,
+        "missing_model_reference": 282,
+        "not_fresh_exact_bet365": 24
       },
       "missing_roles": {
-        "external_market_reference": 306,
-        "model_reference": 306
+        "external_market_reference": 282,
+        "model_reference": 282
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "h2h",
-      "pick": "Singapore",
+      "pick": "Independiente Valle Del Cauca",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "h2h",
-      "pick": "Bangladesh",
+      "pick": "Orsomarso SC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,13 +260,13 @@
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -281,20 +280,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -308,16 +306,15 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -341,9 +338,9 @@
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -367,13 +364,13 @@
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -387,20 +384,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Singapore vs Bangladesh",
-      "event_id": 74557124,
-      "bet365_event_id": 74557124,
+      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
+      "event_id": 72636232,
+      "bet365_event_id": 72636232,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -414,18 +410,17 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Korea Republic vs Uruguay",
-      "event_id": 73685530,
-      "bet365_event_id": 73685530,
+      "event": "Cuba vs Bonaire",
+      "event_id": 73220886,
+      "bet365_event_id": 73220886,
       "market": "h2h",
-      "pick": "Korea Republic",
+      "pick": "Cuba",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,

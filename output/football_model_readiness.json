@@ -1,53 +1,61 @@
 {
-  "generated_at": "2026-09-28T05:23:30.178539+00:00",
+  "generated_at": "2026-09-28T19:40:46.486770+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 517,
-  "exact_bet365_rows": 467,
+  "candidate_rows": 477,
+  "exact_bet365_rows": 453,
   "fresh_exact_rows_by_market": {
-    "h2h": 135,
-    "spreads": 74,
+    "h2h": 123,
+    "spreads": 72,
     "totals": 258
   },
   "metadata": {
-    "rows_with_sport": 517,
-    "rows_with_league": 517,
-    "rows_with_parseable_teams": 517,
+    "rows_with_sport": 477,
+    "rows_with_league": 477,
+    "rows_with_parseable_teams": 477,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 135,
-      "spreads": 76,
-      "totals": 306
+      "h2h": 123,
+      "spreads": 72,
+      "totals": 282
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 135,
-      "totals": 306
+      "h2h": 123,
+      "totals": 282
     },
-    "first_model_scope_rows": 441
+    "first_model_scope_rows": 405
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
-        142
+        "{'name': 'Japan - J. League Cup', 'slug': 'japan-j-league-cup'}",
+        36
       ],
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        41
+        "{'name': 'International Youth - U21 EURO, Qualification, Group C', 'slug': 'international-youth-u21-euro-qualification-group-c'}",
+        33
+      ],
+      [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group G', 'slug': 'international-youth-u21-euro-qualification-group-g'}",
+        32
       ],
       [
         "{'name': 'Paraguay - Division de Honor, Clausura', 'slug': 'paraguay-division-de-honor-clausura'}",
+        30
+      ],
+      [
+        "{'name': 'International - UEFA Nations League, League C, Gr. 2', 'slug': 'international-uefa-nations-league-league-c-gr-2'}",
         30
       ],
       [
@@ -55,28 +63,20 @@
         27
       ],
       [
-        "{'name': 'Qatar - QSL Cup', 'slug': 'qatar-qsl-cup'}",
-        25
-      ],
-      [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group E', 'slug': 'international-africa-cup-of-nations-qualification-group-e'}",
-        22
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        19
-      ],
-      [
-        "{'name': 'International - FIFA ASEAN Cup, Premier Division, Gr. A', 'slug': 'international-fifa-asean-cup-premier-division-gr-a'}",
-        18
-      ],
-      [
-        "{'name': 'Israel - National League', 'slug': 'israel-national-league'}",
-        18
-      ],
-      [
         "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
-        18
+        27
+      ],
+      [
+        "{'name': 'International - CONCACAF Nations League, League A, Group B', 'slug': 'international-concacaf-nations-league-league-a-group-b'}",
+        27
+      ],
+      [
+        "{'name': 'International - Africa Cup of Nations, Qualification, Group J', 'slug': 'international-africa-cup-of-nations-qualification-group-j'}",
+        24
+      ],
+      [
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        23
       ]
     ],
     "public_data_hints": {}
@@ -112,7 +112,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 76
+      "market_not_first_model_scope": 72
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
