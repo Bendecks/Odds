@@ -1,88 +1,85 @@
 {
-  "generated_at": "2026-09-27T16:57:47.502392+00:00",
+  "generated_at": "2026-09-28T05:23:30.178539+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 494,
-  "exact_bet365_rows": 468,
+  "candidate_rows": 517,
+  "exact_bet365_rows": 467,
   "fresh_exact_rows_by_market": {
-    "h2h": 126,
-    "spreads": 76,
-    "totals": 266
+    "h2h": 135,
+    "spreads": 74,
+    "totals": 258
   },
   "metadata": {
-    "rows_with_sport": 494,
-    "rows_with_league": 494,
-    "rows_with_parseable_teams": 494,
+    "rows_with_sport": 517,
+    "rows_with_league": 517,
+    "rows_with_parseable_teams": 517,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 126,
+      "h2h": 135,
       "spreads": 76,
-      "totals": 292
+      "totals": 306
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 126,
-      "totals": 292
+      "h2h": 135,
+      "totals": 306
     },
-    "first_model_scope_rows": 418
+    "first_model_scope_rows": 441
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
-        131
+        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
+        142
       ],
       [
-        "{'name': 'International - UEFA Nations League, League C, Gr. 4', 'slug': 'international-uefa-nations-league-league-c-gr-4'}",
-        67
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        41
       ],
       [
-        "{'name': 'Mexico - Liga MX, Apertura', 'slug': 'mexico-liga-mx-apertura'}",
-        19
+        "{'name': 'Paraguay - Division de Honor, Clausura', 'slug': 'paraguay-division-de-honor-clausura'}",
+        30
+      ],
+      [
+        "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
+        27
+      ],
+      [
+        "{'name': 'Qatar - QSL Cup', 'slug': 'qatar-qsl-cup'}",
+        25
+      ],
+      [
+        "{'name': 'International - Africa Cup of Nations, Qualification, Group E', 'slug': 'international-africa-cup-of-nations-qualification-group-e'}",
+        22
       ],
       [
         "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
         19
       ],
       [
-        "{'name': 'Guatemala - Primera Division, Apertura, Group A', 'slug': 'guatemala-primera-division-apertura-group-a'}",
+        "{'name': 'International - FIFA ASEAN Cup, Premier Division, Gr. A', 'slug': 'international-fifa-asean-cup-premier-division-gr-a'}",
         18
       ],
       [
-        "{'name': 'Argentina - Primera Division A, Women, Clausura', 'slug': 'argentina-primera-division-a-women-clausura'}",
+        "{'name': 'Israel - National League', 'slug': 'israel-national-league'}",
         18
       ],
       [
-        "{'name': 'Italy - Serie C, Group C', 'slug': 'italy-serie-c-group-c'}",
+        "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
         18
-      ],
-      [
-        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
-        15
-      ],
-      [
-        "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
-        14
-      ],
-      [
-        "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
-        14
       ]
     ],
-    "public_data_hints": {
-      "football-data.co.uk:E0": 9,
-      "football-data.co.uk:SP1": 9
-    }
+    "public_data_hints": {}
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -109,6 +106,7 @@
     "has_any_valid_league": true
   },
   "blockers": [
+    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
