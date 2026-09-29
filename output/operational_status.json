@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-09-28T19:40:46.326045+00:00",
+  "generated_at": "2026-09-29T05:43:34.132752+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 477,
-    "fair_probability_rows": 477,
+    "candidate_rows": 632,
+    "fair_probability_rows": 632,
     "reference_events": 12,
-    "exact_bet365_rows": 453,
-    "fresh_exact_bet365_rows": 453,
+    "exact_bet365_rows": 576,
+    "fresh_exact_bet365_rows": 576,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 85
+    "decision_runs_recorded": 86
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 282,
-        "h2h": 123,
-        "spreads": 72
+        "totals": 386,
+        "h2h": 180,
+        "spreads": 66
       },
       "exact": {
-        "totals": 258,
-        "h2h": 123,
-        "spreads": 72
+        "totals": 330,
+        "h2h": 180,
+        "spreads": 66
       },
       "fresh": {
-        "totals": 258,
-        "h2h": 123,
-        "spreads": 72
+        "totals": 330,
+        "h2h": 180,
+        "spreads": 66
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 123,
-        "fresh": 123,
+        "exact": 180,
+        "fresh": 180,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 72,
-        "fresh": 72,
+        "exact": 66,
+        "fresh": 66,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 258,
-        "fresh": 258,
+        "exact": 330,
+        "fresh": 330,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 453
+      "0_20m": 576
     },
     "reference_depth_rejections_by_market": {
-      "totals": 258,
-      "h2h": 123,
-      "spreads": 72
+      "totals": 330,
+      "h2h": 180,
+      "spreads": 66
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,7 +72,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-09-28T19:40:41.461725+00:00",
+    "generated_at": "2026-09-29T05:43:29.673220+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -103,11 +103,11 @@
           16
         ],
         [
-          "{'name': 'USA - USL, Championship', 'slug': 'usa-usl-championship'}",
-          16
+          "{'name': 'England - League One', 'slug': 'england-league-one'}",
+          15
         ],
         [
-          "{'name': 'England - League One', 'slug': 'england-league-one'}",
+          "{'name': 'USA - USL, Championship', 'slug': 'usa-usl-championship'}",
           15
         ],
         [
@@ -116,6 +116,10 @@
         ],
         [
           "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+          12
+        ],
+        [
+          "{'name': 'International Clubs - UEFA Europa Cup, Women', 'slug': 'international-clubs-uefa-europa-cup-women'}",
           12
         ],
         [
@@ -139,14 +143,6 @@
           10
         ],
         [
-          "{'name': 'Uruguay - Primera Division, Clausura', 'slug': 'uruguay-primera-division-clausura'}",
-          10
-        ],
-        [
-          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-          9
-        ],
-        [
           "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
           9
         ],
@@ -155,7 +151,15 @@
           9
         ],
         [
+          "{'name': 'Uruguay - Primera Division, Clausura', 'slug': 'uruguay-primera-division-clausura'}",
+          9
+        ],
+        [
           "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
+          8
+        ],
+        [
+          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
           8
         ],
         [
@@ -191,15 +195,15 @@
           7
         ],
         [
-          "{'name': 'Bulgaria - Vtora Liga', 'slug': 'bulgaria-vtora-liga'}",
-          6
-        ],
-        [
           "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
           6
         ],
         [
-          "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
+          "{'name': 'Belgium - Nationale 1 VV', 'slug': 'belgium-nationale-1-vv'}",
+          5
+        ],
+        [
+          "{'name': 'Bulgaria - Vtora Liga', 'slug': 'bulgaria-vtora-liga'}",
           5
         ],
         [
@@ -251,6 +255,10 @@
           4
         ],
         [
+          "{'name': 'International Youth - U20 Friendly Games', 'slug': 'international-youth-u20-friendly-games'}",
+          4
+        ],
+        [
           "{'name': 'Northern Ireland - Premiership', 'slug': 'northern-ireland-premiership'}",
           4
         ],
@@ -271,23 +279,15 @@
           4
         ],
         [
+          "{'name': 'Belgium - Nationale 1 FFA', 'slug': 'belgium-nationale-1-ffa'}",
+          3
+        ],
+        [
           "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
           3
         ],
         [
           "{'name': 'International - Africa Cup of Nations, Qualification, Group K', 'slug': 'international-africa-cup-of-nations-qualification-group-k'}",
-          3
-        ],
-        [
-          "{'name': 'International - CONCACAF Nations League, League A, Group B', 'slug': 'international-concacaf-nations-league-league-a-group-b'}",
-          3
-        ],
-        [
-          "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
-          3
-        ],
-        [
-          "{'name': 'International Youth - U20 Friendly Games', 'slug': 'international-youth-u20-friendly-games'}",
           3
         ]
       ],
@@ -335,18 +335,18 @@
       ],
       "samples": [
         {
-          "id": 75030468,
-          "home": "Club Oriental de Football",
-          "away": "Cerro Largo FC",
+          "id": 75046890,
+          "home": "DPR Korea",
+          "away": "China PR",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Uruguay - Tercera Division, Reserves",
-            "slug": "uruguay-tercera-division-reserves"
+            "name": "International - Asian Games, Women, Knockout stage",
+            "slug": "international-asian-games-women-knockout-stage"
           },
-          "date": "2026-09-28T17:00:00Z",
+          "date": "2026-09-29T06:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 74894938,
-          "home": "CA Tembetary Ypane",
-          "away": "Paraguari AC",
+          "id": 74557136,
+          "home": "Philippines",
+          "away": "Pakistan",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Paraguay - Division Intermedia",
-            "slug": "paraguay-division-intermedia"
+            "name": "International - FIFA ASEAN Cup, Premier Division, Gr. B",
+            "slug": "international-fifa-asean-cup-premier-division-gr-b"
           },
-          "date": "2026-09-28T19:30:00Z",
+          "date": "2026-09-29T09:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 73038566,
-          "home": "Sportivo San Lorenzo",
-          "away": "Recoleta FC",
+          "id": 29350424908,
+          "home": "Mawlai SC",
+          "away": "Meghalaya Police FT",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Paraguay - Division de Honor, Clausura",
-            "slug": "paraguay-division-de-honor-clausura"
+            "name": "India - Shillong Premier League",
+            "slug": "india-shillong-premier-league"
           },
-          "date": "2026-09-28T20:00:00Z",
+          "date": "2026-09-29T09:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 31793205636,
-          "home": "Sportivo Luqueño Reserve",
-          "away": "Guaraní Reserve",
+          "id": 74870108,
+          "home": "Dinthar FC",
+          "away": "Ramthar Veng FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Paraguay - Reserve League",
-            "slug": "paraguay-reserve-league"
+            "name": "India - Mizoram Premier League",
+            "slug": "india-mizoram-premier-league"
           },
-          "date": "2026-09-28T20:00:00Z",
+          "date": "2026-09-29T09:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 72636232,
-          "home": "Independiente Valle Del Cauca",
-          "away": "Orsomarso SC",
+          "id": 74717700,
+          "home": "England U20",
+          "away": "France U20",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Colombia - Torneo DIMAYOR, Clausura",
-            "slug": "colombia-torneo-dimayor-clausura"
+            "name": "International Youth - U20 Friendly Games",
+            "slug": "international-youth-u20-friendly-games"
           },
-          "date": "2026-09-28T20:30:00Z",
+          "date": "2026-09-29T09:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 20675,
-    "unique_markets": 79,
+    "raw_market_observations": 19213,
+    "unique_markets": 66,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-09-28T19:40:41Z",
+    "generated_at": "2026-09-29T05:43:29Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",

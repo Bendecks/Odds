@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-28T19:40:46.443946+00:00",
-  "as_of": "2026-09-28T19:40:46.326045+00:00",
+  "generated_at": "2026-09-29T05:43:34.266981+00:00",
+  "as_of": "2026-09-29T05:43:34.132752+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 477,
-  "fresh_exact_candidates": 453,
+  "total_candidates": 632,
+  "fresh_exact_candidates": 576,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 453,
-    "missing_external_market_reference": 453,
-    "missing_model_reference": 453
+    "insufficient_independent_economic_sources": 576,
+    "missing_external_market_reference": 576,
+    "missing_model_reference": 576
   },
   "missing_roles": {
-    "external_market_reference": 453,
-    "model_reference": 453
+    "external_market_reference": 576,
+    "model_reference": 576
   },
   "by_market": {
     "h2h": {
-      "evaluated": 123,
-      "fresh_exact_bet365": 123,
+      "evaluated": 180,
+      "fresh_exact_bet365": 180,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 123,
-        "missing_external_market_reference": 123,
-        "missing_model_reference": 123
+        "insufficient_independent_economic_sources": 180,
+        "missing_external_market_reference": 180,
+        "missing_model_reference": 180
       },
       "missing_roles": {
-        "external_market_reference": 123,
-        "model_reference": 123
+        "external_market_reference": 180,
+        "model_reference": 180
       }
     },
     "spreads": {
-      "evaluated": 72,
-      "fresh_exact_bet365": 72,
+      "evaluated": 66,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 72,
-        "missing_external_market_reference": 72,
-        "missing_model_reference": 72
+        "insufficient_independent_economic_sources": 66,
+        "missing_external_market_reference": 66,
+        "missing_model_reference": 66
       },
       "missing_roles": {
-        "external_market_reference": 72,
-        "model_reference": 72
+        "external_market_reference": 66,
+        "model_reference": 66
       }
     },
     "totals": {
-      "evaluated": 258,
-      "fresh_exact_bet365": 258,
+      "evaluated": 330,
+      "fresh_exact_bet365": 330,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 258,
-        "missing_external_market_reference": 258,
-        "missing_model_reference": 258
+        "insufficient_independent_economic_sources": 330,
+        "missing_external_market_reference": 330,
+        "missing_model_reference": 330
       },
       "missing_roles": {
-        "external_market_reference": 258,
-        "model_reference": 258
+        "external_market_reference": 330,
+        "model_reference": 330
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 453,
+        "fresh_exact_candidates_blocked": 576,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 453,
+        "fresh_exact_candidates_blocked": 576,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 453
+        "fresh_exact_candidates_blocked": 576
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 258,
+        "fresh_exact_candidates": 330,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 258,
-          "model_reference": 258
+          "external_market_reference": 330,
+          "model_reference": 330
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 123,
+        "fresh_exact_candidates": 180,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 123,
-          "model_reference": 123
+          "external_market_reference": 180,
+          "model_reference": 180
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 72,
+        "fresh_exact_candidates": 66,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 72,
-          "model_reference": 72
+          "external_market_reference": 66,
+          "model_reference": 66
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 258,
+      "first_market_fresh_exact_candidates": 330,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 123,
-      "fresh_exact_bet365": 123,
+      "evaluated": 180,
+      "fresh_exact_bet365": 180,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 123,
-        "missing_external_market_reference": 123,
-        "missing_model_reference": 123
+        "insufficient_independent_economic_sources": 180,
+        "missing_external_market_reference": 180,
+        "missing_model_reference": 180
       },
       "missing_roles": {
-        "external_market_reference": 123,
-        "model_reference": 123
+        "external_market_reference": 180,
+        "model_reference": 180
       }
     },
     "spreads": {
-      "evaluated": 72,
-      "fresh_exact_bet365": 72,
+      "evaluated": 66,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 72,
-        "missing_external_market_reference": 72,
-        "missing_model_reference": 72
+        "insufficient_independent_economic_sources": 66,
+        "missing_external_market_reference": 66,
+        "missing_model_reference": 66
       },
       "missing_roles": {
-        "external_market_reference": 72,
-        "model_reference": 72
+        "external_market_reference": 66,
+        "model_reference": 66
       }
     },
     "totals": {
-      "evaluated": 282,
-      "fresh_exact_bet365": 258,
+      "evaluated": 386,
+      "fresh_exact_bet365": 330,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 282,
-        "missing_external_market_reference": 282,
-        "missing_model_reference": 282,
-        "not_fresh_exact_bet365": 24
+        "insufficient_independent_economic_sources": 386,
+        "missing_external_market_reference": 386,
+        "missing_model_reference": 386,
+        "not_fresh_exact_bet365": 56
       },
       "missing_roles": {
-        "external_market_reference": 282,
-        "model_reference": 282
+        "external_market_reference": 386,
+        "model_reference": 386
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "h2h",
-      "pick": "Independiente Valle Del Cauca",
+      "pick": "USA U19",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +208,9 @@
       ]
     },
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +234,11 @@
       ]
     },
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "h2h",
-      "pick": "Orsomarso SC",
+      "pick": "Wales U19",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,61 +260,9 @@
       ]
     },
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -338,9 +286,9 @@
       ]
     },
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -364,13 +312,13 @@
       ]
     },
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -384,19 +332,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Independiente Valle Del Cauca vs Orsomarso SC",
-      "event_id": 72636232,
-      "bet365_event_id": 72636232,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -410,17 +359,72 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Cuba vs Bonaire",
-      "event_id": 73220886,
-      "bet365_event_id": 73220886,
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "USA U19 vs Wales U19",
+      "event_id": 74717698,
+      "bet365_event_id": 74717698,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Portugal U20 vs Switzerland U20",
+      "event_id": 74834906,
+      "bet365_event_id": 74834906,
       "market": "h2h",
-      "pick": "Cuba",
+      "pick": "Portugal U20",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
