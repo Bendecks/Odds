@@ -1,82 +1,82 @@
 {
-  "generated_at": "2026-09-29T05:43:34.316893+00:00",
+  "generated_at": "2026-09-29T18:04:54.700569+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 632,
-  "exact_bet365_rows": 576,
+  "candidate_rows": 452,
+  "exact_bet365_rows": 406,
   "fresh_exact_rows_by_market": {
-    "h2h": 180,
+    "h2h": 114,
     "spreads": 66,
-    "totals": 330
+    "totals": 226
   },
   "metadata": {
-    "rows_with_sport": 632,
-    "rows_with_league": 632,
-    "rows_with_parseable_teams": 632,
+    "rows_with_sport": 452,
+    "rows_with_league": 452,
+    "rows_with_parseable_teams": 452,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 180,
-      "spreads": 66,
-      "totals": 386
+      "h2h": 114,
+      "spreads": 70,
+      "totals": 268
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 180,
-      "totals": 386
+      "h2h": 114,
+      "totals": 268
     },
-    "first_model_scope_rows": 566
+    "first_model_scope_rows": 382
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Japan - J. League Cup', 'slug': 'japan-j-league-cup'}",
-        133
-      ],
-      [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group C', 'slug': 'international-youth-u21-euro-qualification-group-c'}",
-        33
-      ],
-      [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group G', 'slug': 'international-youth-u21-euro-qualification-group-g'}",
-        32
-      ],
-      [
         "{'name': 'International - UEFA Nations League, League C, Gr. 2', 'slug': 'international-uefa-nations-league-league-c-gr-2'}",
-        28
+        136
       ],
       [
-        "{'name': 'International Youth - U20 Friendly Games', 'slug': 'international-youth-u20-friendly-games'}",
-        27
-      ],
-      [
-        "{'name': 'Qatar - QSL Cup', 'slug': 'qatar-qsl-cup'}",
-        27
-      ],
-      [
-        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
-        27
-      ],
-      [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group J', 'slug': 'international-africa-cup-of-nations-qualification-group-j'}",
-        24
-      ],
-      [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group L', 'slug': 'international-africa-cup-of-nations-qualification-group-l'}",
-        24
+        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
+        88
       ],
       [
         "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        23
+        38
+      ],
+      [
+        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+        30
+      ],
+      [
+        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
+        27
+      ],
+      [
+        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+        21
+      ],
+      [
+        "{'name': 'International - CONCACAF Nations League, League B, Group D', 'slug': 'international-concacaf-nations-league-league-b-group-d'}",
+        16
+      ],
+      [
+        "{'name': 'El Salvador - Primera Division, Apertura', 'slug': 'el-salvador-primera-division-apertura'}",
+        15
+      ],
+      [
+        "{'name': 'International - Africa Cup of Nations, Qualification, Group C', 'slug': 'international-africa-cup-of-nations-qualification-group-c'}",
+        11
+      ],
+      [
+        "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
+        9
       ]
     ],
     "public_data_hints": {}
@@ -112,7 +112,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 66
+      "market_not_first_model_scope": 70
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

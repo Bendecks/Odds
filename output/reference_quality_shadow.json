@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-29T05:43:34.266981+00:00",
-  "as_of": "2026-09-29T05:43:34.132752+00:00",
+  "generated_at": "2026-09-29T18:04:54.668171+00:00",
+  "as_of": "2026-09-29T18:04:54.579909+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,31 +20,31 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 632,
-  "fresh_exact_candidates": 576,
+  "total_candidates": 452,
+  "fresh_exact_candidates": 406,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 576,
-    "missing_external_market_reference": 576,
-    "missing_model_reference": 576
+    "insufficient_independent_economic_sources": 406,
+    "missing_external_market_reference": 406,
+    "missing_model_reference": 406
   },
   "missing_roles": {
-    "external_market_reference": 576,
-    "model_reference": 576
+    "external_market_reference": 406,
+    "model_reference": 406
   },
   "by_market": {
     "h2h": {
-      "evaluated": 180,
-      "fresh_exact_bet365": 180,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 180,
-        "missing_external_market_reference": 180,
-        "missing_model_reference": 180
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 180,
-        "model_reference": 180
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
@@ -62,17 +62,17 @@
       }
     },
     "totals": {
-      "evaluated": 330,
-      "fresh_exact_bet365": 330,
+      "evaluated": 226,
+      "fresh_exact_bet365": 226,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 330,
-        "missing_external_market_reference": 330,
-        "missing_model_reference": 330
+        "insufficient_independent_economic_sources": 226,
+        "missing_external_market_reference": 226,
+        "missing_model_reference": 226
       },
       "missing_roles": {
-        "external_market_reference": 330,
-        "model_reference": 330
+        "external_market_reference": 226,
+        "model_reference": 226
       }
     }
   },
@@ -80,39 +80,39 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 576,
+        "fresh_exact_candidates_blocked": 406,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 576,
+        "fresh_exact_candidates_blocked": 406,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 576
+        "fresh_exact_candidates_blocked": 406
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 330,
+        "fresh_exact_candidates": 226,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 330,
-          "model_reference": 330
+          "external_market_reference": 226,
+          "model_reference": 226
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 180,
+        "fresh_exact_candidates": 114,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 180,
-          "model_reference": 180
+          "external_market_reference": 114,
+          "model_reference": 114
         },
         "largest_missing_role": "external_market_reference"
       },
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 330,
+      "first_market_fresh_exact_candidates": 226,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 180,
-      "fresh_exact_bet365": 180,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 180,
-        "missing_external_market_reference": 180,
-        "missing_model_reference": 180
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 180,
-        "model_reference": 180
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "spreads": {
-      "evaluated": 66,
+      "evaluated": 70,
       "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 66,
-        "missing_external_market_reference": 66,
-        "missing_model_reference": 66
+        "insufficient_independent_economic_sources": 70,
+        "missing_external_market_reference": 70,
+        "missing_model_reference": 70,
+        "not_fresh_exact_bet365": 4
       },
       "missing_roles": {
-        "external_market_reference": 66,
-        "model_reference": 66
+        "external_market_reference": 70,
+        "model_reference": 70
       }
     },
     "totals": {
-      "evaluated": 386,
-      "fresh_exact_bet365": 330,
+      "evaluated": 268,
+      "fresh_exact_bet365": 226,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 386,
-        "missing_external_market_reference": 386,
-        "missing_model_reference": 386,
-        "not_fresh_exact_bet365": 56
+        "insufficient_independent_economic_sources": 268,
+        "missing_external_market_reference": 268,
+        "missing_model_reference": 268,
+        "not_fresh_exact_bet365": 42
       },
       "missing_roles": {
-        "external_market_reference": 386,
-        "model_reference": 386
+        "external_market_reference": 268,
+        "model_reference": 268
       }
     }
   },
   "sample_failures": [
     {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
       "market": "h2h",
-      "pick": "USA U19",
+      "pick": "Slovenia",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
       "market": "h2h",
-      "pick": "Wales U19",
+      "pick": "North Macedonia",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,12 +261,120 @@
       ]
     },
     {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
+      "market": "spreads",
+      "pick": "Slovenia",
+      "line": -1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
+      "market": "spreads",
+      "pick": "North Macedonia",
+      "line": -1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
+      "market": "spreads",
+      "pick": "Slovenia",
+      "line": -0.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
+      "market": "spreads",
+      "pick": "North Macedonia",
+      "line": -0.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
       "market": "totals",
       "pick": "Over",
-      "line": 2.5,
+      "line": 1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -286,12 +395,12 @@
       ]
     },
     {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
       "market": "totals",
       "pick": "Under",
-      "line": 2.5,
+      "line": 1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -312,120 +421,12 @@
       ]
     },
     {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
+      "event": "Slovenia vs North Macedonia",
+      "event_id": 68932786,
+      "bet365_event_id": 68932786,
       "market": "totals",
       "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "USA U19 vs Wales U19",
-      "event_id": 74717698,
-      "bet365_event_id": 74717698,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Portugal U20 vs Switzerland U20",
-      "event_id": 74834906,
-      "bet365_event_id": 74834906,
-      "market": "h2h",
-      "pick": "Portugal U20",
-      "line": null,
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
