@@ -1,86 +1,87 @@
 {
-  "generated_at": "2026-09-30T05:31:57.803930+00:00",
+  "generated_at": "2026-09-30T17:59:58.278862+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 352,
-  "exact_bet365_rows": 310,
+  "candidate_rows": 412,
+  "exact_bet365_rows": 314,
   "fresh_exact_rows_by_market": {
-    "h2h": 90,
-    "spreads": 40,
-    "totals": 180
+    "h2h": 108,
+    "spreads": 38,
+    "totals": 168
   },
   "metadata": {
-    "rows_with_sport": 352,
-    "rows_with_league": 352,
-    "rows_with_parseable_teams": 352,
+    "rows_with_sport": 412,
+    "rows_with_league": 412,
+    "rows_with_parseable_teams": 412,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 90,
-      "spreads": 40,
-      "totals": 222
+      "h2h": 108,
+      "spreads": 46,
+      "totals": 258
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 90,
-      "totals": 222
+      "h2h": 108,
+      "totals": 258
     },
-    "first_model_scope_rows": 312
+    "first_model_scope_rows": 366
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International Clubs - UEFA Europa Cup, Women', 'slug': 'international-clubs-uefa-europa-cup-women'}",
-        65
+        "{'name': 'England Amateur - League Cup, Women, Southern', 'slug': 'england-amateur-league-cup-women-southern'}",
+        38
+      ],
+      [
+        "{'name': 'Guatemala - Primera Division, Apertura, Group A', 'slug': 'guatemala-primera-division-apertura-group-a'}",
+        36
       ],
       [
         "{'name': 'International Clubs - UEFA Champions League, Women', 'slug': 'international-clubs-uefa-champions-league-women'}",
-        51
+        32
       ],
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        29
+        "{'name': 'Paraguay - Copa Paraguay', 'slug': 'paraguay-copa-paraguay'}",
+        30
       ],
       [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group A', 'slug': 'international-youth-u21-euro-qualification-group-a'}",
-        28
-      ],
-      [
-        "{'name': 'Spain - Cup, Women', 'slug': 'spain-cup-women'}",
+        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
         27
       ],
       [
-        "{'name': 'International Youth - U19 Friendly Games', 'slug': 'international-youth-u19-friendly-games'}",
+        "{'name': 'International Youth - U21 EURO, Qualification, Group B', 'slug': 'international-youth-u21-euro-qualification-group-b'}",
+        27
+      ],
+      [
+        "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
         25
       ],
       [
-        "{'name': 'International Youth - Asian Games, Knockout stage', 'slug': 'international-youth-asian-games-knockout-stage'}",
+        "{'name': 'England Amateur - League Cup, Women, Northern', 'slug': 'england-amateur-league-cup-women-northern'}",
+        24
+      ],
+      [
+        "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
+        19
+      ],
+      [
+        "{'name': 'International Youth - U21 Premier League International Cup, Group C', 'slug': 'international-youth-u21-premier-league-international-cup-group-c'}",
         18
-      ],
-      [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group F', 'slug': 'international-youth-u21-euro-qualification-group-f'}",
-        18
-      ],
-      [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group D', 'slug': 'international-africa-cup-of-nations-qualification-group-d'}",
-        17
-      ],
-      [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group E', 'slug': 'international-youth-u21-euro-qualification-group-e'}",
-        15
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 51
+      "football-data.co.uk:CL": 32,
+      "football-data.co.uk:E0": 29
     }
   },
   "public_football_data_probe": {
@@ -113,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 40
+      "market_not_first_model_scope": 46
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

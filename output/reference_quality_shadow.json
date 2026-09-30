@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T05:31:57.773170+00:00",
-  "as_of": "2026-09-30T05:31:57.694904+00:00",
+  "generated_at": "2026-09-30T17:59:58.254418+00:00",
+  "as_of": "2026-09-30T17:59:58.191673+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 352,
-  "fresh_exact_candidates": 310,
+  "total_candidates": 412,
+  "fresh_exact_candidates": 314,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 310,
-    "missing_external_market_reference": 310,
-    "missing_model_reference": 310
+    "insufficient_independent_economic_sources": 314,
+    "missing_external_market_reference": 314,
+    "missing_model_reference": 314
   },
   "missing_roles": {
-    "external_market_reference": 310,
-    "model_reference": 310
+    "external_market_reference": 314,
+    "model_reference": 314
   },
   "by_market": {
     "h2h": {
-      "evaluated": 90,
-      "fresh_exact_bet365": 90,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 90,
-        "missing_external_market_reference": 90,
-        "missing_model_reference": 90
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 90,
-        "model_reference": 90
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 40,
-      "fresh_exact_bet365": 40,
+      "evaluated": 38,
+      "fresh_exact_bet365": 38,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 40,
-        "missing_external_market_reference": 40,
-        "missing_model_reference": 40
+        "insufficient_independent_economic_sources": 38,
+        "missing_external_market_reference": 38,
+        "missing_model_reference": 38
       },
       "missing_roles": {
-        "external_market_reference": 40,
-        "model_reference": 40
+        "external_market_reference": 38,
+        "model_reference": 38
       }
     },
     "totals": {
-      "evaluated": 180,
-      "fresh_exact_bet365": 180,
+      "evaluated": 168,
+      "fresh_exact_bet365": 168,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 180,
-        "missing_external_market_reference": 180,
-        "missing_model_reference": 180
+        "insufficient_independent_economic_sources": 168,
+        "missing_external_market_reference": 168,
+        "missing_model_reference": 168
       },
       "missing_roles": {
-        "external_market_reference": 180,
-        "model_reference": 180
+        "external_market_reference": 168,
+        "model_reference": 168
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 310,
+        "fresh_exact_candidates_blocked": 314,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 310,
+        "fresh_exact_candidates_blocked": 314,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 310
+        "fresh_exact_candidates_blocked": 314
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 180,
+        "fresh_exact_candidates": 168,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 180,
-          "model_reference": 180
+          "external_market_reference": 168,
+          "model_reference": 168
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 90,
+        "fresh_exact_candidates": 108,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 90,
-          "model_reference": 90
+          "external_market_reference": 108,
+          "model_reference": 108
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 40,
+        "fresh_exact_candidates": 38,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 40,
-          "model_reference": 40
+          "external_market_reference": 38,
+          "model_reference": 38
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 180,
+      "first_market_fresh_exact_candidates": 168,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 90,
-      "fresh_exact_bet365": 90,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 90,
-        "missing_external_market_reference": 90,
-        "missing_model_reference": 90
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 90,
-        "model_reference": 90
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 40,
-      "fresh_exact_bet365": 40,
+      "evaluated": 46,
+      "fresh_exact_bet365": 38,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 40,
-        "missing_external_market_reference": 40,
-        "missing_model_reference": 40
+        "insufficient_independent_economic_sources": 46,
+        "missing_external_market_reference": 46,
+        "missing_model_reference": 46,
+        "not_fresh_exact_bet365": 8
       },
       "missing_roles": {
-        "external_market_reference": 40,
-        "model_reference": 40
+        "external_market_reference": 46,
+        "model_reference": 46
       }
     },
     "totals": {
-      "evaluated": 222,
-      "fresh_exact_bet365": 180,
+      "evaluated": 258,
+      "fresh_exact_bet365": 168,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 222,
-        "missing_external_market_reference": 222,
-        "missing_model_reference": 222,
-        "not_fresh_exact_bet365": 42
+        "insufficient_independent_economic_sources": 258,
+        "missing_external_market_reference": 258,
+        "missing_model_reference": 258,
+        "not_fresh_exact_bet365": 90
       },
       "missing_roles": {
-        "external_market_reference": 222,
-        "model_reference": 222
+        "external_market_reference": 258,
+        "model_reference": 258
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "h2h",
-      "pick": "Republic of Korea",
+      "pick": "Leicester City U21",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "h2h",
-      "pick": "China",
+      "pick": "Real Sociedad San Sebastian B U21",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,65 +261,13 @@
       ]
     },
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -332,19 +281,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -358,19 +308,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -384,19 +335,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Republic of Korea vs China",
-      "event_id": 75066458,
-      "bet365_event_id": 75066458,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -410,17 +362,72 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fiji vs New Caledonia",
-      "event_id": 74931122,
-      "bet365_event_id": 74931122,
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
+      "event_id": 73735010,
+      "bet365_event_id": 73735010,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Nottingham Forest FC U21 vs Sporting Cp U21",
+      "event_id": 73735012,
+      "bet365_event_id": 73735012,
       "market": "h2h",
-      "pick": "Fiji",
+      "pick": "Nottingham Forest FC U21",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
