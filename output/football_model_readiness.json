@@ -1,85 +1,87 @@
 {
-  "generated_at": "2026-09-29T18:04:54.700569+00:00",
+  "generated_at": "2026-09-30T05:31:57.803930+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 452,
-  "exact_bet365_rows": 406,
+  "candidate_rows": 352,
+  "exact_bet365_rows": 310,
   "fresh_exact_rows_by_market": {
-    "h2h": 114,
-    "spreads": 66,
-    "totals": 226
+    "h2h": 90,
+    "spreads": 40,
+    "totals": 180
   },
   "metadata": {
-    "rows_with_sport": 452,
-    "rows_with_league": 452,
-    "rows_with_parseable_teams": 452,
+    "rows_with_sport": 352,
+    "rows_with_league": 352,
+    "rows_with_parseable_teams": 352,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 114,
-      "spreads": 70,
-      "totals": 268
+      "h2h": 90,
+      "spreads": 40,
+      "totals": 222
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 114,
-      "totals": 268
+      "h2h": 90,
+      "totals": 222
     },
-    "first_model_scope_rows": 382
+    "first_model_scope_rows": 312
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - UEFA Nations League, League C, Gr. 2', 'slug': 'international-uefa-nations-league-league-c-gr-2'}",
-        136
+        "{'name': 'International Clubs - UEFA Europa Cup, Women', 'slug': 'international-clubs-uefa-europa-cup-women'}",
+        65
       ],
       [
-        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
-        88
+        "{'name': 'International Clubs - UEFA Champions League, Women', 'slug': 'international-clubs-uefa-champions-league-women'}",
+        51
       ],
       [
         "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        38
+        29
       ],
       [
-        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
-        30
+        "{'name': 'International Youth - U21 EURO, Qualification, Group A', 'slug': 'international-youth-u21-euro-qualification-group-a'}",
+        28
       ],
       [
-        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
+        "{'name': 'Spain - Cup, Women', 'slug': 'spain-cup-women'}",
         27
       ],
       [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        21
+        "{'name': 'International Youth - U19 Friendly Games', 'slug': 'international-youth-u19-friendly-games'}",
+        25
       ],
       [
-        "{'name': 'International - CONCACAF Nations League, League B, Group D', 'slug': 'international-concacaf-nations-league-league-b-group-d'}",
-        16
+        "{'name': 'International Youth - Asian Games, Knockout stage', 'slug': 'international-youth-asian-games-knockout-stage'}",
+        18
       ],
       [
-        "{'name': 'El Salvador - Primera Division, Apertura', 'slug': 'el-salvador-primera-division-apertura'}",
+        "{'name': 'International Youth - U21 EURO, Qualification, Group F', 'slug': 'international-youth-u21-euro-qualification-group-f'}",
+        18
+      ],
+      [
+        "{'name': 'International - Africa Cup of Nations, Qualification, Group D', 'slug': 'international-africa-cup-of-nations-qualification-group-d'}",
+        17
+      ],
+      [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group E', 'slug': 'international-youth-u21-euro-qualification-group-e'}",
         15
-      ],
-      [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group C', 'slug': 'international-africa-cup-of-nations-qualification-group-c'}",
-        11
-      ],
-      [
-        "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
-        9
       ]
     ],
-    "public_data_hints": {}
+    "public_data_hints": {
+      "football-data.co.uk:CL": 51
+    }
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -106,13 +108,12 @@
     "has_any_valid_league": true
   },
   "blockers": [
-    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 70
+      "market_not_first_model_scope": 40
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

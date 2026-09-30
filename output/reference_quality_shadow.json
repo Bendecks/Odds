@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-29T18:04:54.668171+00:00",
-  "as_of": "2026-09-29T18:04:54.579909+00:00",
+  "generated_at": "2026-09-30T05:31:57.773170+00:00",
+  "as_of": "2026-09-30T05:31:57.694904+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 452,
-  "fresh_exact_candidates": 406,
+  "total_candidates": 352,
+  "fresh_exact_candidates": 310,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 406,
-    "missing_external_market_reference": 406,
-    "missing_model_reference": 406
+    "insufficient_independent_economic_sources": 310,
+    "missing_external_market_reference": 310,
+    "missing_model_reference": 310
   },
   "missing_roles": {
-    "external_market_reference": 406,
-    "model_reference": 406
+    "external_market_reference": 310,
+    "model_reference": 310
   },
   "by_market": {
     "h2h": {
-      "evaluated": 114,
-      "fresh_exact_bet365": 114,
+      "evaluated": 90,
+      "fresh_exact_bet365": 90,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 114,
-        "missing_external_market_reference": 114,
-        "missing_model_reference": 114
+        "insufficient_independent_economic_sources": 90,
+        "missing_external_market_reference": 90,
+        "missing_model_reference": 90
       },
       "missing_roles": {
-        "external_market_reference": 114,
-        "model_reference": 114
+        "external_market_reference": 90,
+        "model_reference": 90
       }
     },
     "spreads": {
-      "evaluated": 66,
-      "fresh_exact_bet365": 66,
+      "evaluated": 40,
+      "fresh_exact_bet365": 40,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 66,
-        "missing_external_market_reference": 66,
-        "missing_model_reference": 66
+        "insufficient_independent_economic_sources": 40,
+        "missing_external_market_reference": 40,
+        "missing_model_reference": 40
       },
       "missing_roles": {
-        "external_market_reference": 66,
-        "model_reference": 66
+        "external_market_reference": 40,
+        "model_reference": 40
       }
     },
     "totals": {
-      "evaluated": 226,
-      "fresh_exact_bet365": 226,
+      "evaluated": 180,
+      "fresh_exact_bet365": 180,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 226,
-        "missing_external_market_reference": 226,
-        "missing_model_reference": 226
+        "insufficient_independent_economic_sources": 180,
+        "missing_external_market_reference": 180,
+        "missing_model_reference": 180
       },
       "missing_roles": {
-        "external_market_reference": 226,
-        "model_reference": 226
+        "external_market_reference": 180,
+        "model_reference": 180
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 406,
+        "fresh_exact_candidates_blocked": 310,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 406,
+        "fresh_exact_candidates_blocked": 310,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 406
+        "fresh_exact_candidates_blocked": 310
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 226,
+        "fresh_exact_candidates": 180,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 226,
-          "model_reference": 226
+          "external_market_reference": 180,
+          "model_reference": 180
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 114,
+        "fresh_exact_candidates": 90,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 114,
-          "model_reference": 114
+          "external_market_reference": 90,
+          "model_reference": 90
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 66,
+        "fresh_exact_candidates": 40,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 66,
-          "model_reference": 66
+          "external_market_reference": 40,
+          "model_reference": 40
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 226,
+      "first_market_fresh_exact_candidates": 180,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 114,
-      "fresh_exact_bet365": 114,
+      "evaluated": 90,
+      "fresh_exact_bet365": 90,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 114,
-        "missing_external_market_reference": 114,
-        "missing_model_reference": 114
+        "insufficient_independent_economic_sources": 90,
+        "missing_external_market_reference": 90,
+        "missing_model_reference": 90
       },
       "missing_roles": {
-        "external_market_reference": 114,
-        "model_reference": 114
+        "external_market_reference": 90,
+        "model_reference": 90
       }
     },
     "spreads": {
-      "evaluated": 70,
-      "fresh_exact_bet365": 66,
+      "evaluated": 40,
+      "fresh_exact_bet365": 40,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 70,
-        "missing_external_market_reference": 70,
-        "missing_model_reference": 70,
-        "not_fresh_exact_bet365": 4
+        "insufficient_independent_economic_sources": 40,
+        "missing_external_market_reference": 40,
+        "missing_model_reference": 40
       },
       "missing_roles": {
-        "external_market_reference": 70,
-        "model_reference": 70
+        "external_market_reference": 40,
+        "model_reference": 40
       }
     },
     "totals": {
-      "evaluated": 268,
-      "fresh_exact_bet365": 226,
+      "evaluated": 222,
+      "fresh_exact_bet365": 180,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 268,
-        "missing_external_market_reference": 268,
-        "missing_model_reference": 268,
+        "insufficient_independent_economic_sources": 222,
+        "missing_external_market_reference": 222,
+        "missing_model_reference": 222,
         "not_fresh_exact_bet365": 42
       },
       "missing_roles": {
-        "external_market_reference": 268,
-        "model_reference": 268
+        "external_market_reference": 222,
+        "model_reference": 222
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
       "market": "h2h",
-      "pick": "Slovenia",
+      "pick": "Republic of Korea",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
       "market": "h2h",
-      "pick": "North Macedonia",
+      "pick": "China",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,117 +260,9 @@
       ]
     },
     {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
-      "market": "spreads",
-      "pick": "Slovenia",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
-      "market": "spreads",
-      "pick": "North Macedonia",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
-      "market": "spreads",
-      "pick": "Slovenia",
-      "line": -0.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
-      "market": "spreads",
-      "pick": "North Macedonia",
-      "line": -0.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -395,9 +286,9 @@
       ]
     },
     {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -421,12 +312,116 @@
       ]
     },
     {
-      "event": "Slovenia vs North Macedonia",
-      "event_id": 68932786,
-      "bet365_event_id": 68932786,
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Republic of Korea vs China",
+      "event_id": 75066458,
+      "bet365_event_id": 75066458,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Fiji vs New Caledonia",
+      "event_id": 74931122,
+      "bet365_event_id": 74931122,
+      "market": "h2h",
+      "pick": "Fiji",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
