@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T17:59:58.254418+00:00",
-  "as_of": "2026-09-30T17:59:58.191673+00:00",
+  "generated_at": "2026-10-01T05:52:54.680513+00:00",
+  "as_of": "2026-10-01T05:52:54.573798+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 412,
-  "fresh_exact_candidates": 314,
+  "total_candidates": 467,
+  "fresh_exact_candidates": 417,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 314,
-    "missing_external_market_reference": 314,
-    "missing_model_reference": 314
+    "insufficient_independent_economic_sources": 417,
+    "missing_external_market_reference": 417,
+    "missing_model_reference": 417
   },
   "missing_roles": {
-    "external_market_reference": 314,
-    "model_reference": 314
+    "external_market_reference": 417,
+    "model_reference": 417
   },
   "by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 123,
+      "fresh_exact_bet365": 123,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 123,
+        "missing_external_market_reference": 123,
+        "missing_model_reference": 123
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 123,
+        "model_reference": 123
       }
     },
     "spreads": {
-      "evaluated": 38,
-      "fresh_exact_bet365": 38,
+      "evaluated": 58,
+      "fresh_exact_bet365": 58,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 38,
-        "missing_external_market_reference": 38,
-        "missing_model_reference": 38
+        "insufficient_independent_economic_sources": 58,
+        "missing_external_market_reference": 58,
+        "missing_model_reference": 58
       },
       "missing_roles": {
-        "external_market_reference": 38,
-        "model_reference": 38
+        "external_market_reference": 58,
+        "model_reference": 58
       }
     },
     "totals": {
-      "evaluated": 168,
-      "fresh_exact_bet365": 168,
+      "evaluated": 236,
+      "fresh_exact_bet365": 236,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 168,
-        "missing_external_market_reference": 168,
-        "missing_model_reference": 168
+        "insufficient_independent_economic_sources": 236,
+        "missing_external_market_reference": 236,
+        "missing_model_reference": 236
       },
       "missing_roles": {
-        "external_market_reference": 168,
-        "model_reference": 168
+        "external_market_reference": 236,
+        "model_reference": 236
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 314,
+        "fresh_exact_candidates_blocked": 417,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 314,
+        "fresh_exact_candidates_blocked": 417,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 314
+        "fresh_exact_candidates_blocked": 417
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 168,
+        "fresh_exact_candidates": 236,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 168,
-          "model_reference": 168
+          "external_market_reference": 236,
+          "model_reference": 236
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 108,
+        "fresh_exact_candidates": 123,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 108,
-          "model_reference": 108
+          "external_market_reference": 123,
+          "model_reference": 123
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 38,
+        "fresh_exact_candidates": 58,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 38,
-          "model_reference": 38
+          "external_market_reference": 58,
+          "model_reference": 58
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 168,
+      "first_market_fresh_exact_candidates": 236,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 123,
+      "fresh_exact_bet365": 123,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 123,
+        "missing_external_market_reference": 123,
+        "missing_model_reference": 123
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 123,
+        "model_reference": 123
       }
     },
     "spreads": {
-      "evaluated": 46,
-      "fresh_exact_bet365": 38,
+      "evaluated": 58,
+      "fresh_exact_bet365": 58,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 46,
-        "missing_external_market_reference": 46,
-        "missing_model_reference": 46,
-        "not_fresh_exact_bet365": 8
+        "insufficient_independent_economic_sources": 58,
+        "missing_external_market_reference": 58,
+        "missing_model_reference": 58
       },
       "missing_roles": {
-        "external_market_reference": 46,
-        "model_reference": 46
+        "external_market_reference": 58,
+        "model_reference": 58
       }
     },
     "totals": {
-      "evaluated": 258,
-      "fresh_exact_bet365": 168,
+      "evaluated": 286,
+      "fresh_exact_bet365": 236,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 258,
-        "missing_external_market_reference": 258,
-        "missing_model_reference": 258,
-        "not_fresh_exact_bet365": 90
+        "insufficient_independent_economic_sources": 286,
+        "missing_external_market_reference": 286,
+        "missing_model_reference": 286,
+        "not_fresh_exact_bet365": 50
       },
       "missing_roles": {
-        "external_market_reference": 258,
-        "model_reference": 258
+        "external_market_reference": 286,
+        "model_reference": 286
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
       "market": "h2h",
-      "pick": "Leicester City U21",
+      "pick": "Panama",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
       "market": "h2h",
-      "pick": "Real Sociedad San Sebastian B U21",
+      "pick": "New Zealand",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,174 +260,168 @@
       ]
     },
     {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
+      "market": "spreads",
+      "pick": "Panama",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
+      "market": "spreads",
+      "pick": "New Zealand",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
+      "market": "spreads",
+      "pick": "Panama",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
+      "market": "spreads",
+      "pick": "New Zealand",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Panama vs New Zealand",
+      "event_id": 74297752,
+      "bet365_event_id": 74297752,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Leicester City U21 vs Real Sociedad San Sebastian B U21",
-      "event_id": 73735010,
-      "bet365_event_id": 73735010,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Nottingham Forest FC U21 vs Sporting Cp U21",
-      "event_id": 73735012,
-      "bet365_event_id": 73735012,
-      "market": "h2h",
-      "pick": "Nottingham Forest FC U21",
-      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [

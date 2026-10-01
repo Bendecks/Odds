@@ -1,49 +1,57 @@
 {
-  "generated_at": "2026-09-30T17:59:58.278862+00:00",
+  "generated_at": "2026-10-01T05:52:54.719601+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 412,
-  "exact_bet365_rows": 314,
+  "candidate_rows": 467,
+  "exact_bet365_rows": 417,
   "fresh_exact_rows_by_market": {
-    "h2h": 108,
-    "spreads": 38,
-    "totals": 168
+    "h2h": 123,
+    "spreads": 58,
+    "totals": 236
   },
   "metadata": {
-    "rows_with_sport": 412,
-    "rows_with_league": 412,
-    "rows_with_parseable_teams": 412,
+    "rows_with_sport": 467,
+    "rows_with_league": 467,
+    "rows_with_parseable_teams": 467,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 108,
-      "spreads": 46,
-      "totals": 258
+      "h2h": 123,
+      "spreads": 58,
+      "totals": 286
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 108,
-      "totals": 258
+      "h2h": 123,
+      "totals": 286
     },
-    "first_model_scope_rows": 366
+    "first_model_scope_rows": 409
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'England Amateur - League Cup, Women, Southern', 'slug': 'england-amateur-league-cup-women-southern'}",
-        38
+        "{'name': 'International - UEFA Nations League, League C, Gr. 4', 'slug': 'international-uefa-nations-league-league-c-gr-4'}",
+        135
       ],
       [
-        "{'name': 'Guatemala - Primera Division, Apertura, Group A', 'slug': 'guatemala-primera-division-apertura-group-a'}",
+        "{'name': 'International Youth - U19 Friendly Games', 'slug': 'international-youth-u19-friendly-games'}",
+        56
+      ],
+      [
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        45
+      ],
+      [
+        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
         36
       ],
       [
@@ -51,37 +59,28 @@
         32
       ],
       [
-        "{'name': 'Paraguay - Copa Paraguay', 'slug': 'paraguay-copa-paraguay'}",
-        30
+        "{'name': 'International Clubs - Club Friendly Games', 'slug': 'international-clubs-club-friendly-games'}",
+        29
       ],
       [
-        "{'name': 'Argentina - Primera LPF, Reserves, Clausura, Group B', 'slug': 'argentina-primera-lpf-reserves-clausura-group-b'}",
-        27
+        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
+        28
       ],
       [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group B', 'slug': 'international-youth-u21-euro-qualification-group-b'}",
-        27
-      ],
-      [
-        "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
+        "{'name': 'United Arab Emirates - Arabian Gulf Cup, Knockout stage', 'slug': 'united-arab-emirates-arabian-gulf-cup-knockout-stage'}",
         25
       ],
       [
-        "{'name': 'England Amateur - League Cup, Women, Northern', 'slug': 'england-amateur-league-cup-women-northern'}",
-        24
+        "{'name': 'Norway - NM Cup', 'slug': 'norway-nm-cup'}",
+        20
       ],
       [
-        "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
-        19
-      ],
-      [
-        "{'name': 'International Youth - U21 Premier League International Cup, Group C', 'slug': 'international-youth-u21-premier-league-international-cup-group-c'}",
+        "{'name': 'International - FIFA ASEAN Cup, Premier Division, Gr. A', 'slug': 'international-fifa-asean-cup-premier-division-gr-a'}",
         18
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 32,
-      "football-data.co.uk:E0": 29
+      "football-data.co.uk:CL": 32
     }
   },
   "public_football_data_probe": {
@@ -114,7 +113,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 46
+      "market_not_first_model_scope": 58
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
