@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-01T05:52:54.680513+00:00",
-  "as_of": "2026-10-01T05:52:54.573798+00:00",
+  "generated_at": "2026-10-01T18:25:30.179386+00:00",
+  "as_of": "2026-10-01T18:25:30.071693+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 467,
-  "fresh_exact_candidates": 417,
+  "total_candidates": 470,
+  "fresh_exact_candidates": 432,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 417,
-    "missing_external_market_reference": 417,
-    "missing_model_reference": 417
+    "insufficient_independent_economic_sources": 432,
+    "missing_external_market_reference": 432,
+    "missing_model_reference": 432
   },
   "missing_roles": {
-    "external_market_reference": 417,
-    "model_reference": 417
+    "external_market_reference": 432,
+    "model_reference": 432
   },
   "by_market": {
     "h2h": {
-      "evaluated": 123,
-      "fresh_exact_bet365": 123,
+      "evaluated": 102,
+      "fresh_exact_bet365": 102,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 123,
-        "missing_external_market_reference": 123,
-        "missing_model_reference": 123
+        "insufficient_independent_economic_sources": 102,
+        "missing_external_market_reference": 102,
+        "missing_model_reference": 102
       },
       "missing_roles": {
-        "external_market_reference": 123,
-        "model_reference": 123
+        "external_market_reference": 102,
+        "model_reference": 102
       }
     },
     "spreads": {
-      "evaluated": 58,
-      "fresh_exact_bet365": 58,
+      "evaluated": 86,
+      "fresh_exact_bet365": 86,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 58,
-        "missing_external_market_reference": 58,
-        "missing_model_reference": 58
+        "insufficient_independent_economic_sources": 86,
+        "missing_external_market_reference": 86,
+        "missing_model_reference": 86
       },
       "missing_roles": {
-        "external_market_reference": 58,
-        "model_reference": 58
+        "external_market_reference": 86,
+        "model_reference": 86
       }
     },
     "totals": {
-      "evaluated": 236,
-      "fresh_exact_bet365": 236,
+      "evaluated": 244,
+      "fresh_exact_bet365": 244,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 236,
-        "missing_external_market_reference": 236,
-        "missing_model_reference": 236
+        "insufficient_independent_economic_sources": 244,
+        "missing_external_market_reference": 244,
+        "missing_model_reference": 244
       },
       "missing_roles": {
-        "external_market_reference": 236,
-        "model_reference": 236
+        "external_market_reference": 244,
+        "model_reference": 244
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 417,
+        "fresh_exact_candidates_blocked": 432,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 417,
+        "fresh_exact_candidates_blocked": 432,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 417
+        "fresh_exact_candidates_blocked": 432
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 236,
+        "fresh_exact_candidates": 244,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 236,
-          "model_reference": 236
+          "external_market_reference": 244,
+          "model_reference": 244
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 123,
+        "fresh_exact_candidates": 102,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 123,
-          "model_reference": 123
+          "external_market_reference": 102,
+          "model_reference": 102
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 58,
+        "fresh_exact_candidates": 86,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 58,
-          "model_reference": 58
+          "external_market_reference": 86,
+          "model_reference": 86
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 236,
+      "first_market_fresh_exact_candidates": 244,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 123,
-      "fresh_exact_bet365": 123,
+      "evaluated": 102,
+      "fresh_exact_bet365": 102,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 123,
-        "missing_external_market_reference": 123,
-        "missing_model_reference": 123
+        "insufficient_independent_economic_sources": 102,
+        "missing_external_market_reference": 102,
+        "missing_model_reference": 102
       },
       "missing_roles": {
-        "external_market_reference": 123,
-        "model_reference": 123
+        "external_market_reference": 102,
+        "model_reference": 102
       }
     },
     "spreads": {
-      "evaluated": 58,
-      "fresh_exact_bet365": 58,
+      "evaluated": 102,
+      "fresh_exact_bet365": 86,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 58,
-        "missing_external_market_reference": 58,
-        "missing_model_reference": 58
+        "insufficient_independent_economic_sources": 102,
+        "missing_external_market_reference": 102,
+        "missing_model_reference": 102,
+        "not_fresh_exact_bet365": 16
       },
       "missing_roles": {
-        "external_market_reference": 58,
-        "model_reference": 58
+        "external_market_reference": 102,
+        "model_reference": 102
       }
     },
     "totals": {
-      "evaluated": 286,
-      "fresh_exact_bet365": 236,
+      "evaluated": 266,
+      "fresh_exact_bet365": 244,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 286,
-        "missing_external_market_reference": 286,
-        "missing_model_reference": 286,
-        "not_fresh_exact_bet365": 50
+        "insufficient_independent_economic_sources": 266,
+        "missing_external_market_reference": 266,
+        "missing_model_reference": 266,
+        "not_fresh_exact_bet365": 22
       },
       "missing_roles": {
-        "external_market_reference": 286,
-        "model_reference": 286
+        "external_market_reference": 266,
+        "model_reference": 266
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
       "market": "h2h",
-      "pick": "Panama",
+      "pick": "CD Fuerte San Francisco",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
       "market": "h2h",
-      "pick": "New Zealand",
+      "pick": "CD Luis Angel Firpo",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,168 +261,172 @@
       ]
     },
     {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
-      "market": "spreads",
-      "pick": "Panama",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
-      "market": "spreads",
-      "pick": "New Zealand",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
-      "market": "spreads",
-      "pick": "Panama",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
-      "market": "spreads",
-      "pick": "New Zealand",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Panama vs New Zealand",
-      "event_id": 74297752,
-      "bet365_event_id": 74297752,
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CD Fuerte San Francisco vs CD Luis Angel Firpo",
+      "event_id": 75107960,
+      "bet365_event_id": 75107960,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Denmark vs Portugal",
+      "event_id": 68931862,
+      "bet365_event_id": 68931862,
+      "market": "h2h",
+      "pick": "Denmark",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
