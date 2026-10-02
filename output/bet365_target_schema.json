@@ -1,16 +1,12 @@
 {
-  "observations": 7168,
+  "observations": 4434,
   "markets": {
     "Correct Score": {
-      "observations": 2453,
+      "observations": 2295,
       "selection_fields": [
         [
           "odds",
-          2428
-        ],
-        [
-          "away",
-          25
+          2295
         ]
       ],
       "raw_selection_names": [],
@@ -25,6 +21,10 @@
         ],
         [
           "0-2",
+          79
+        ],
+        [
+          "0-3",
           79
         ],
         [
@@ -52,18 +52,6 @@
           79
         ],
         [
-          "3-2",
-          79
-        ],
-        [
-          "0-3",
-          78
-        ],
-        [
-          "1-3",
-          78
-        ],
-        [
           "2-3",
           78
         ],
@@ -72,8 +60,12 @@
           78
         ],
         [
-          "3-3",
+          "3-2",
           78
+        ],
+        [
+          "1-3",
+          77
         ],
         [
           "3-0",
@@ -81,59 +73,63 @@
         ],
         [
           "4-1",
-          73
+          74
         ],
         [
-          "1-4",
-          71
+          "3-3",
+          72
         ],
         [
           "4-2",
-          71
-        ],
-        [
-          "4-0",
           70
         ],
         [
+          "1-4",
+          69
+        ],
+        [
+          "4-0",
+          69
+        ],
+        [
           "2-4",
-          66
+          62
         ],
         [
           "0-4",
-          65
-        ],
-        [
-          "5-1",
-          61
+          60
         ],
         [
           "5-0",
-          58
+          57
+        ],
+        [
+          "5-1",
+          56
         ],
         [
           "3-4",
-          54
+          48
         ],
         [
           "4-3",
-          51
+          44
         ],
         [
           "5-2",
-          50
+          44
         ],
         [
           "1-5",
-          46
+          40
+        ],
+        [
+          "6-0",
+          38
         ],
         [
           "0-5",
-          41
-        ],
-        [
-          "2-5",
-          41
+          36
         ]
       ],
       "lines": [],
@@ -176,6 +172,12 @@
         },
         {
           "raw_selection_name": null,
+          "raw_selection_label": "0-6",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
           "raw_selection_label": "1-0",
           "selection": "odds",
           "line": null
@@ -203,232 +205,15 @@
           "raw_selection_label": "1-4",
           "selection": "odds",
           "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1-5",
-          "selection": "odds",
-          "line": null
-        }
-      ]
-    },
-    "Team Goalscorer": {
-      "observations": 1488,
-      "selection_fields": [
-        [
-          "over",
-          1488
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [
-        [
-          "Dejan Joveljic (First)",
-          2
-        ],
-        [
-          "Dejan Joveljic (Last)",
-          2
-        ],
-        [
-          "Adam Daghim (First)",
-          1
-        ],
-        [
-          "Adam Daghim (Last)",
-          1
-        ],
-        [
-          "Albert Gronbaek (First)",
-          1
-        ],
-        [
-          "Albert Gronbaek (Last)",
-          1
-        ],
-        [
-          "Anton Gaaei (First)",
-          1
-        ],
-        [
-          "Anton Gaaei (Last)",
-          1
-        ],
-        [
-          "Bernardo Silva (First)",
-          1
-        ],
-        [
-          "Bernardo Silva (Last)",
-          1
-        ],
-        [
-          "Bruno Fernandes (First)",
-          1
-        ],
-        [
-          "Bruno Fernandes (Last)",
-          1
-        ],
-        [
-          "Diogo Dalot (First)",
-          1
-        ],
-        [
-          "Diogo Dalot (Last)",
-          1
-        ],
-        [
-          "Francisco Conceicao (First)",
-          1
-        ],
-        [
-          "Francisco Conceicao (Last)",
-          1
-        ],
-        [
-          "Francisco Trincao (First)",
-          1
-        ],
-        [
-          "Francisco Trincao (Last)",
-          1
-        ],
-        [
-          "Goncalo Inacio (First)",
-          1
-        ],
-        [
-          "Goncalo Inacio (Last)",
-          1
-        ],
-        [
-          "Goncalo Ramos (First)",
-          1
-        ],
-        [
-          "Goncalo Ramos (Last)",
-          1
-        ],
-        [
-          "Gustav Isaksen (First)",
-          1
-        ],
-        [
-          "Gustav Isaksen (Last)",
-          1
-        ],
-        [
-          "Joachim Andersen (First)",
-          1
-        ],
-        [
-          "Joachim Andersen (Last)",
-          1
-        ],
-        [
-          "Joakim Maehle (First)",
-          1
-        ],
-        [
-          "Joakim Maehle (Last)",
-          1
-        ],
-        [
-          "Joao Cancelo (First)",
-          1
-        ],
-        [
-          "Joao Cancelo (Last)",
-          1
-        ]
-      ],
-      "lines": [],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Adam Daghim (First)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Adam Daghim (Last)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Albert Gronbaek (First)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Albert Gronbaek (Last)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Anton Gaaei (First)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Anton Gaaei (Last)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Bernardo Silva (First)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Bernardo Silva (Last)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Bruno Fernandes (First)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Bruno Fernandes (Last)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Diogo Dalot (First)",
-          "selection": "over",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Diogo Dalot (Last)",
-          "selection": "over",
-          "line": null
         }
       ]
     },
     "Correct Score HT": {
-      "observations": 1333,
+      "observations": 1237,
       "selection_fields": [
         [
           "odds",
-          1319
-        ],
-        [
-          "away",
-          14
+          1237
         ]
       ],
       "raw_selection_names": [],
@@ -475,82 +260,66 @@
         ],
         [
           "3-0",
-          73
+          74
         ],
         [
           "3-1",
-          70
+          68
         ],
         [
           "1-3",
-          66
+          61
         ],
         [
           "4-0",
-          55
+          52
         ],
         [
           "4-1",
-          38
-        ],
-        [
-          "0-4",
-          37
-        ],
-        [
-          "2-3",
-          37
+          32
         ],
         [
           "3-2",
-          36
+          30
         ],
         [
-          "1-4",
-          25
+          "0-4",
+          28
+        ],
+        [
+          "2-3",
+          27
         ],
         [
           "5-0",
-          24
+          21
+        ],
+        [
+          "1-4",
+          18
         ],
         [
           "0-5",
-          15
+          10
         ],
         [
           "4-2",
-          10
-        ],
-        [
-          "5-1",
-          10
-        ],
-        [
-          "1-5",
-          7
-        ],
-        [
-          "2-4",
-          7
-        ],
-        [
-          "3-3",
-          7
-        ],
-        [
-          "6-0",
-          6
-        ],
-        [
-          "0-6",
           5
         ],
         [
-          "5-2",
+          "5-1",
+          5
+        ],
+        [
+          "6-0",
+          3
+        ],
+        [
+          "0-6",
           2
         ],
         [
-          "6-1",
+          "1-5",
           2
         ]
       ],
@@ -582,6 +351,12 @@
         },
         {
           "raw_selection_name": null,
+          "raw_selection_label": "0-4",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
           "raw_selection_label": "1-0",
           "selection": "odds",
           "line": null
@@ -606,6 +381,12 @@
         },
         {
           "raw_selection_name": null,
+          "raw_selection_label": "1-4",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
           "raw_selection_label": "2-0",
           "selection": "odds",
           "line": null
@@ -615,281 +396,130 @@
           "raw_selection_label": "2-1",
           "selection": "odds",
           "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "2-2",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "3-0",
-          "selection": "odds",
-          "line": null
         }
       ]
     },
     "Spread": {
-      "observations": 988,
+      "observations": 428,
       "selection_fields": [
         [
           "home",
-          494
+          214
         ],
         [
           "away",
-          494
+          214
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [],
       "lines": [
-        [
-          "-0.75",
-          64
-        ],
-        [
-          "0",
-          60
-        ],
         [
           "-0.25",
-          60
-        ],
-        [
-          "-0.5",
-          58
-        ],
-        [
-          "0.5",
-          52
-        ],
-        [
-          "0.25",
-          52
-        ],
-        [
-          "-1.5",
-          50
-        ],
-        [
-          "-1.25",
-          48
-        ],
-        [
-          "-1",
-          46
-        ],
-        [
-          "0.75",
-          46
-        ],
-        [
-          "1",
-          36
-        ],
-        [
-          "1.25",
-          36
-        ],
-        [
-          "-1.75",
-          34
-        ],
-        [
-          "1.5",
-          30
-        ],
-        [
-          "1.75",
-          28
-        ],
-        [
-          "-2.5",
-          28
-        ],
-        [
-          "-2.25",
-          28
-        ],
-        [
-          "-2",
-          26
-        ],
-        [
-          "2.5",
-          24
-        ],
-        [
-          "-2.75",
-          24
-        ],
-        [
-          "2",
-          22
-        ],
-        [
-          "2.25",
-          16
-        ],
-        [
-          "-3.25",
-          16
-        ],
-        [
-          "2.75",
-          14
-        ],
-        [
-          "-3",
-          14
-        ],
-        [
-          "3",
-          8
-        ],
-        [
-          "3.5",
-          8
-        ],
-        [
-          "-3.5",
-          8
-        ],
-        [
-          "-4.5",
-          6
-        ],
-        [
-          "-4",
-          6
-        ]
-      ],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -1.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -1.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -1.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -1.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.75
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.75
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.5
-        }
-      ]
-    },
-    "Team Total Home": {
-      "observations": 230,
-      "selection_fields": [
-        [
-          "over",
-          115
-        ],
-        [
-          "under",
-          115
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [],
-      "lines": [
-        [
-          "0.5",
-          42
-        ],
-        [
-          "1.5",
-          42
-        ],
-        [
-          "2.5",
-          42
-        ],
-        [
-          "3.5",
           38
         ],
         [
-          "4.5",
-          30
+          "-0.5",
+          34
         ],
         [
-          "5.5",
+          "0",
+          34
+        ],
+        [
+          "-0.75",
+          34
+        ],
+        [
+          "-1",
+          32
+        ],
+        [
+          "0.75",
+          24
+        ],
+        [
+          "0.5",
+          22
+        ],
+        [
+          "0.25",
+          22
+        ],
+        [
+          "-1.25",
+          20
+        ],
+        [
+          "-1.75",
+          18
+        ],
+        [
+          "1.25",
+          18
+        ],
+        [
+          "-1.5",
+          18
+        ],
+        [
+          "1.5",
           16
         ],
         [
-          "6.5",
+          "-2.5",
           12
         ],
         [
-          "7.5",
+          "1",
+          12
+        ],
+        [
+          "-2",
+          12
+        ],
+        [
+          "-2.25",
+          10
+        ],
+        [
+          "1.75",
+          8
+        ],
+        [
+          "2",
+          8
+        ],
+        [
+          "-2.75",
+          8
+        ],
+        [
+          "2.5",
           6
         ],
         [
-          "8.5",
+          "-3.25",
+          6
+        ],
+        [
+          "2.25",
+          4
+        ],
+        [
+          "-3.5",
+          4
+        ],
+        [
+          "-3",
+          4
+        ],
+        [
+          "2.75",
+          2
+        ],
+        [
+          "3",
           2
         ]
       ],
@@ -897,87 +527,421 @@
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "over",
+          "selection": "home",
           "line": 0.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "under",
+          "selection": "away",
           "line": 0.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "over",
-          "line": 1.5
+          "selection": "home",
+          "line": -1
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "under",
-          "line": 1.5
+          "selection": "away",
+          "line": -1
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "over",
+          "selection": "home",
+          "line": -1.75
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -1.75
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
           "line": 2.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "under",
+          "selection": "away",
           "line": 2.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "over",
-          "line": 3.5
+          "selection": "home",
+          "line": -2.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "under",
-          "line": 3.5
+          "selection": "away",
+          "line": -2.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "over",
-          "line": 4.5
+          "selection": "home",
+          "line": -0.25
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "under",
-          "line": 4.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 5.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 5.5
+          "selection": "away",
+          "line": -0.25
         }
       ]
     },
-    "Team Total Away": {
-      "observations": 218,
+    "Spread HT": {
+      "observations": 98,
+      "selection_fields": [
+        [
+          "home",
+          49
+        ],
+        [
+          "away",
+          49
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [],
+      "lines": [
+        [
+          "-0.25",
+          30
+        ],
+        [
+          "0",
+          26
+        ],
+        [
+          "0.25",
+          14
+        ],
+        [
+          "-0.75",
+          8
+        ],
+        [
+          "-0.5",
+          8
+        ],
+        [
+          "0.5",
+          6
+        ],
+        [
+          "-1",
+          2
+        ],
+        [
+          "0.75",
+          2
+        ],
+        [
+          "-1.25",
+          2
+        ]
+      ],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": 0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": 0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -0.75
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -0.75
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -1
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -1
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": 0
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": 0
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -0.5
+        }
+      ]
+    },
+    "Team Goalscorer": {
+      "observations": 98,
       "selection_fields": [
         [
           "over",
-          109
+          98
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [
+        [
+          "Aleksandr Shirobokov (First)",
+          1
+        ],
+        [
+          "Aleksandr Shirobokov (Last)",
+          1
+        ],
+        [
+          "Alexander Mrynskiy (First)",
+          1
+        ],
+        [
+          "Alexander Mrynskiy (Last)",
+          1
+        ],
+        [
+          "Alibek Kasym (First)",
+          1
+        ],
+        [
+          "Alibek Kasym (Last)",
+          1
+        ],
+        [
+          "Arsen Ashirbek (First)",
+          1
+        ],
+        [
+          "Arsen Ashirbek (Last)",
+          1
+        ],
+        [
+          "Artur Shushenachev (First)",
+          1
+        ],
+        [
+          "Artur Shushenachev (Last)",
+          1
+        ],
+        [
+          "Azamat Tuyakbaev (First)",
+          1
+        ],
+        [
+          "Azamat Tuyakbaev (Last)",
+          1
+        ],
+        [
+          "Bauyrzhan Islamkhan (First)",
+          1
+        ],
+        [
+          "Bauyrzhan Islamkhan (Last)",
+          1
+        ],
+        [
+          "Catalin Cucos (First)",
+          1
+        ],
+        [
+          "Catalin Cucos (Last)",
+          1
+        ],
+        [
+          "Cristian Dros (First)",
+          1
+        ],
+        [
+          "Cristian Dros (Last)",
+          1
+        ],
+        [
+          "Damir Kasabulat (First)",
+          1
+        ],
+        [
+          "Damir Kasabulat (Last)",
+          1
+        ],
+        [
+          "Daniel Dumbravanu (First)",
+          1
+        ],
+        [
+          "Daniel Dumbravanu (Last)",
+          1
+        ],
+        [
+          "Danila Forov (First)",
+          1
+        ],
+        [
+          "Danila Forov (Last)",
+          1
+        ],
+        [
+          "Dinmukhamed Karaman (First)",
+          1
+        ],
+        [
+          "Dinmukhamed Karaman (Last)",
+          1
+        ],
+        [
+          "Dmitrii Mandricenco (First)",
+          1
+        ],
+        [
+          "Dmitrii Mandricenco (Last)",
+          1
+        ],
+        [
+          "Elkhan Astanov (First)",
+          1
+        ],
+        [
+          "Elkhan Astanov (Last)",
+          1
+        ]
+      ],
+      "lines": [],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Aleksandr Shirobokov (First)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Aleksandr Shirobokov (Last)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Alexander Mrynskiy (First)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Alexander Mrynskiy (Last)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Alibek Kasym (First)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Alibek Kasym (Last)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Arsen Ashirbek (First)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Arsen Ashirbek (Last)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Artur Shushenachev (First)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Artur Shushenachev (Last)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Azamat Tuyakbaev (First)",
+          "selection": "over",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Azamat Tuyakbaev (Last)",
+          "selection": "over",
+          "line": null
+        }
+      ]
+    },
+    "Team Total Home": {
+      "observations": 68,
+      "selection_fields": [
+        [
+          "over",
+          34
         ],
         [
           "under",
-          109
+          34
         ]
       ],
       "raw_selection_names": [],
@@ -985,34 +949,30 @@
       "lines": [
         [
           "0.5",
-          42
+          12
         ],
         [
           "1.5",
-          42
+          12
         ],
         [
           "2.5",
-          42
+          12
         ],
         [
           "3.5",
-          36
+          12
         ],
         [
           "4.5",
-          30
+          12
         ],
         [
           "5.5",
-          16
+          6
         ],
         [
           "6.5",
-          8
-        ],
-        [
-          "7.5",
           2
         ]
       ],
@@ -1092,46 +1052,46 @@
       ]
     },
     "Exact Total Goals": {
-      "observations": 128,
+      "observations": 64,
       "selection_fields": [
         [
           "odds",
-          128
+          64
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [
         [
           "0 Goals",
-          16
+          8
         ],
         [
           "1 Goal",
-          16
+          8
         ],
         [
           "2 Goals",
-          16
+          8
         ],
         [
           "3 Goals",
-          16
+          8
         ],
         [
           "4 Goals",
-          16
+          8
         ],
         [
           "5 Goals",
-          16
+          8
         ],
         [
           "6 Goals",
-          16
+          8
         ],
         [
           "7+ Goals",
-          16
+          8
         ]
       ],
       "lines": [],
@@ -1186,134 +1146,249 @@
         }
       ]
     },
+    "Team Total Away": {
+      "observations": 56,
+      "selection_fields": [
+        [
+          "over",
+          28
+        ],
+        [
+          "under",
+          28
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [],
+      "lines": [
+        [
+          "0.5",
+          12
+        ],
+        [
+          "1.5",
+          12
+        ],
+        [
+          "2.5",
+          12
+        ],
+        [
+          "3.5",
+          12
+        ],
+        [
+          "4.5",
+          6
+        ],
+        [
+          "5.5",
+          2
+        ]
+      ],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 1.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 1.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 2.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 2.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 3.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 3.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 4.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 4.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 5.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 5.5
+        }
+      ]
+    },
     "Away Team Exact Goals": {
-      "observations": 108,
+      "observations": 44,
       "selection_fields": [
         [
           "odds",
-          108
+          44
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [
         [
-          "Portugal - 0 Goals",
+          "Norway U19 - 0 Goals",
           1
         ],
         [
-          "Portugal - 1 Goal",
+          "Norway U19 - 1 Goal",
           1
         ],
         [
-          "Portugal - 2 Goals",
+          "Norway U19 - 2 Goals",
           1
         ],
         [
-          "Portugal - 3+ Goals",
+          "Norway U19 - 3+ Goals",
           1
         ],
         [
-          "Norway - 0 Goals",
+          "Palestine - 0 Goals",
           1
         ],
         [
-          "Norway - 1 Goal",
+          "Palestine - 1 Goal",
           1
         ],
         [
-          "Norway - 2 Goals",
+          "Palestine - 2 Goals",
           1
         ],
         [
-          "Norway - 3+ Goals",
+          "Palestine - 3+ Goals",
           1
         ],
         [
-          "Kosovo - 0 Goals",
+          "Japan (W) - 0 Goals",
           1
         ],
         [
-          "Kosovo - 1 Goal",
+          "Japan (W) - 1 Goal",
           1
         ],
         [
-          "Kosovo - 2 Goals",
+          "Japan (W) - 2 Goals",
           1
         ],
         [
-          "Kosovo - 3+ Goals",
+          "Japan (W) - 3+ Goals",
           1
         ],
         [
-          "Gibraltar - 0 Goals",
+          "Venezuela - 0 Goals",
           1
         ],
         [
-          "Gibraltar - 1 Goal",
+          "Venezuela - 1 Goal",
           1
         ],
         [
-          "Gibraltar - 2 Goals",
+          "Venezuela - 2 Goals",
           1
         ],
         [
-          "Gibraltar - 3+ Goals",
+          "Venezuela - 3+ Goals",
           1
         ],
         [
-          "US Orleans - 0 Goals",
+          "Al Ittihad Kalba - 0 Goals",
           1
         ],
         [
-          "US Orleans - 1 Goal",
+          "Al Ittihad Kalba - 1 Goal",
           1
         ],
         [
-          "US Orleans - 2 Goals",
+          "Al Ittihad Kalba - 2 Goals",
           1
         ],
         [
-          "US Orleans - 3+ Goals",
+          "Al Ittihad Kalba - 3+ Goals",
           1
         ],
         [
-          "Georgia U21 - 0 Goals",
+          "Ajman SCC - 0 Goals",
           1
         ],
         [
-          "Georgia U21 - 1 Goal",
+          "Ajman SCC - 1 Goal",
           1
         ],
         [
-          "Georgia U21 - 2 Goals",
+          "Ajman SCC - 2 Goals",
           1
         ],
         [
-          "Georgia U21 - 3+ Goals",
+          "Ajman SCC - 3+ Goals",
           1
         ],
         [
-          "Serbia - 0 Goals",
+          "Northern Ireland U19 - 0 Goals",
           1
         ],
         [
-          "Serbia - 1 Goal",
+          "Northern Ireland U19 - 1 Goal",
           1
         ],
         [
-          "Serbia - 2 Goals",
+          "Northern Ireland U19 - 2 Goals",
           1
         ],
         [
-          "Serbia - 3+ Goals",
+          "Northern Ireland U19 - 3+ Goals",
           1
         ],
         [
-          "Netherlands - 0 Goals",
+          "Moldova - 0 Goals",
           1
         ],
         [
-          "Netherlands - 1 Goal",
+          "Moldova - 1 Goal",
           1
         ]
       ],
@@ -1321,206 +1396,206 @@
       "schema_examples": [
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Portugal - 0 Goals",
+          "raw_selection_label": "Norway U19 - 0 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Portugal - 1 Goal",
+          "raw_selection_label": "Norway U19 - 1 Goal",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Portugal - 2 Goals",
+          "raw_selection_label": "Norway U19 - 2 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Portugal - 3+ Goals",
+          "raw_selection_label": "Norway U19 - 3+ Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Norway - 0 Goals",
+          "raw_selection_label": "Palestine - 0 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Norway - 1 Goal",
+          "raw_selection_label": "Palestine - 1 Goal",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Norway - 2 Goals",
+          "raw_selection_label": "Palestine - 2 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Norway - 3+ Goals",
+          "raw_selection_label": "Palestine - 3+ Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Kosovo - 0 Goals",
+          "raw_selection_label": "Japan (W) - 0 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Kosovo - 1 Goal",
+          "raw_selection_label": "Japan (W) - 1 Goal",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Kosovo - 2 Goals",
+          "raw_selection_label": "Japan (W) - 2 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Kosovo - 3+ Goals",
+          "raw_selection_label": "Japan (W) - 3+ Goals",
           "selection": "odds",
           "line": null
         }
       ]
     },
     "Home Team Exact Goals": {
-      "observations": 108,
+      "observations": 44,
       "selection_fields": [
         [
           "odds",
-          108
+          44
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [
         [
-          "Denmark - 0 Goals",
+          "Wales U19 - 0 Goals",
           1
         ],
         [
-          "Denmark - 1 Goal",
+          "Wales U19 - 1 Goal",
           1
         ],
         [
-          "Denmark - 2 Goals",
+          "Wales U19 - 2 Goals",
           1
         ],
         [
-          "Denmark - 3+ Goals",
+          "Wales U19 - 3+ Goals",
           1
         ],
         [
-          "Wales - 0 Goals",
+          "China PR - 0 Goals",
           1
         ],
         [
-          "Wales - 1 Goal",
+          "China PR - 1 Goal",
           1
         ],
         [
-          "Wales - 2 Goals",
+          "China PR - 2 Goals",
           1
         ],
         [
-          "Wales - 3+ Goals",
+          "China PR - 3+ Goals",
           1
         ],
         [
-          "Israel - 0 Goals",
+          "North Korea (W) - 0 Goals",
           1
         ],
         [
-          "Israel - 1 Goal",
+          "North Korea (W) - 1 Goal",
           1
         ],
         [
-          "Israel - 2 Goals",
+          "North Korea (W) - 2 Goals",
           1
         ],
         [
-          "Israel - 3+ Goals",
+          "North Korea (W) - 3+ Goals",
           1
         ],
         [
-          "Malta - 0 Goals",
+          "South Korea - 0 Goals",
           1
         ],
         [
-          "Malta - 1 Goal",
+          "South Korea - 1 Goal",
           1
         ],
         [
-          "Malta - 2 Goals",
+          "South Korea - 2 Goals",
           1
         ],
         [
-          "Malta - 3+ Goals",
+          "South Korea - 3+ Goals",
           1
         ],
         [
-          "SC Bastia - 0 Goals",
+          "Al Wasl SC - 0 Goals",
           1
         ],
         [
-          "SC Bastia - 1 Goal",
+          "Al Wasl SC - 1 Goal",
           1
         ],
         [
-          "SC Bastia - 2 Goals",
+          "Al Wasl SC - 2 Goals",
           1
         ],
         [
-          "SC Bastia - 3+ Goals",
+          "Al Wasl SC - 3+ Goals",
           1
         ],
         [
-          "Northern Ireland U21 - 0 Goals",
+          "Al Ain SCC - 0 Goals",
           1
         ],
         [
-          "Northern Ireland U21 - 1 Goal",
+          "Al Ain SCC - 1 Goal",
           1
         ],
         [
-          "Northern Ireland U21 - 2 Goals",
+          "Al Ain SCC - 2 Goals",
           1
         ],
         [
-          "Northern Ireland U21 - 3+ Goals",
+          "Al Ain SCC - 3+ Goals",
           1
         ],
         [
-          "Germany - 0 Goals",
+          "Belgium U19 - 0 Goals",
           1
         ],
         [
-          "Germany - 1 Goal",
+          "Belgium U19 - 1 Goal",
           1
         ],
         [
-          "Germany - 2 Goals",
+          "Belgium U19 - 2 Goals",
           1
         ],
         [
-          "Germany - 3+ Goals",
+          "Belgium U19 - 3+ Goals",
           1
         ],
         [
-          "Greece - 0 Goals",
+          "Kazakhstan - 0 Goals",
           1
         ],
         [
-          "Greece - 1 Goal",
+          "Kazakhstan - 1 Goal",
           1
         ]
       ],
@@ -1528,326 +1603,99 @@
       "schema_examples": [
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Denmark - 0 Goals",
+          "raw_selection_label": "Wales U19 - 0 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Denmark - 1 Goal",
+          "raw_selection_label": "Wales U19 - 1 Goal",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Denmark - 2 Goals",
+          "raw_selection_label": "Wales U19 - 2 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Denmark - 3+ Goals",
+          "raw_selection_label": "Wales U19 - 3+ Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Wales - 0 Goals",
+          "raw_selection_label": "China PR - 0 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Wales - 1 Goal",
+          "raw_selection_label": "China PR - 1 Goal",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Wales - 2 Goals",
+          "raw_selection_label": "China PR - 2 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Wales - 3+ Goals",
+          "raw_selection_label": "China PR - 3+ Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Israel - 0 Goals",
+          "raw_selection_label": "North Korea (W) - 0 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Israel - 1 Goal",
+          "raw_selection_label": "North Korea (W) - 1 Goal",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Israel - 2 Goals",
+          "raw_selection_label": "North Korea (W) - 2 Goals",
           "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Israel - 3+ Goals",
+          "raw_selection_label": "North Korea (W) - 3+ Goals",
           "selection": "odds",
           "line": null
-        }
-      ]
-    },
-    "Spread HT": {
-      "observations": 84,
-      "selection_fields": [
-        [
-          "home",
-          42
-        ],
-        [
-          "away",
-          42
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [],
-      "lines": [
-        [
-          "-0.25",
-          26
-        ],
-        [
-          "0",
-          20
-        ],
-        [
-          "0.25",
-          10
-        ],
-        [
-          "-0.5",
-          8
-        ],
-        [
-          "0.5",
-          6
-        ],
-        [
-          "-1.25",
-          4
-        ],
-        [
-          "-1",
-          2
-        ],
-        [
-          "1",
-          2
-        ],
-        [
-          "1.25",
-          2
-        ],
-        [
-          "-0.75",
-          2
-        ],
-        [
-          "0.75",
-          2
-        ]
-      ],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 1
         }
       ]
     },
     "Corners Spread": {
-      "observations": 20,
+      "observations": 2,
       "selection_fields": [
         [
           "home",
-          10
+          1
         ],
         [
           "away",
-          10
+          1
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [],
       "lines": [
-        [
-          "0.5",
-          4
-        ],
-        [
-          "-4",
-          2
-        ],
-        [
-          "-4.5",
-          2
-        ],
-        [
-          "1",
-          2
-        ],
-        [
-          "0",
-          2
-        ],
         [
           "-2",
           2
-        ],
-        [
-          "-1",
-          2
-        ],
-        [
-          "-2.5",
-          2
-        ],
-        [
-          "-0.5",
-          2
         ]
       ],
       "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -4
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -4
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -4.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -4.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 1
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0
-        },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
@@ -1859,73 +1707,6 @@
           "raw_selection_label": null,
           "selection": "away",
           "line": -2
-        }
-      ]
-    },
-    "Bookings Spread": {
-      "observations": 10,
-      "selection_fields": [
-        [
-          "home",
-          5
-        ],
-        [
-          "away",
-          5
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [],
-      "lines": [
-        [
-          "0",
-          4
-        ],
-        [
-          "0.5",
-          4
-        ],
-        [
-          "-0.5",
-          2
-        ]
-      ],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0.5
         }
       ]
     }
