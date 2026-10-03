@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-03T05:18:14.527098+00:00",
-  "as_of": "2026-10-03T05:18:14.487743+00:00",
-  "candidate_rows": 180,
+  "generated_at": "2026-10-03T16:17:19.580973+00:00",
+  "as_of": "2026-10-03T16:17:19.516210+00:00",
+  "candidate_rows": 385,
   "note": "Diagnostic only. Identity rejection is split into event identity, missing exact Bet365 price, and market identity so market-expansion work can target the largest safe unlocks.",
   "scenarios": [
     {
@@ -17,16 +17,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 42,
-        "reference_depth": 138
+        "no_exact_bet365_price": 34,
+        "reference_depth": 351
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 60
+          "reference_depth": 105
+        },
+        "spreads": {
+          "no_exact_bet365_price": 10,
+          "reference_depth": 46
         },
         "totals": {
-          "no_exact_bet365_price": 42,
-          "reference_depth": 78
+          "no_exact_bet365_price": 24,
+          "reference_depth": 200
         }
       }
     },
@@ -43,16 +47,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 42,
-        "reference_depth": 138
+        "no_exact_bet365_price": 34,
+        "reference_depth": 351
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 60
+          "reference_depth": 105
+        },
+        "spreads": {
+          "no_exact_bet365_price": 10,
+          "reference_depth": 46
         },
         "totals": {
-          "no_exact_bet365_price": 42,
-          "reference_depth": 78
+          "no_exact_bet365_price": 24,
+          "reference_depth": 200
         }
       }
     },
@@ -69,16 +77,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 42,
-        "reference_depth": 138
+        "no_exact_bet365_price": 34,
+        "reference_depth": 351
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 60
+          "reference_depth": 105
+        },
+        "spreads": {
+          "no_exact_bet365_price": 10,
+          "reference_depth": 46
         },
         "totals": {
-          "no_exact_bet365_price": 42,
-          "reference_depth": 78
+          "no_exact_bet365_price": 24,
+          "reference_depth": 200
         }
       }
     },
@@ -95,16 +107,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 42,
-        "reference_depth": 138
+        "no_exact_bet365_price": 34,
+        "reference_depth": 351
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 60
+          "reference_depth": 105
+        },
+        "spreads": {
+          "no_exact_bet365_price": 10,
+          "reference_depth": 46
         },
         "totals": {
-          "no_exact_bet365_price": 42,
-          "reference_depth": 78
+          "no_exact_bet365_price": 24,
+          "reference_depth": 200
         }
       }
     },
@@ -121,16 +137,20 @@
       "unique_events": 0,
       "by_market": {},
       "rejection_reasons": {
-        "no_exact_bet365_price": 42,
-        "reference_depth": 138
+        "no_exact_bet365_price": 34,
+        "reference_depth": 351
       },
       "rejection_reasons_by_market": {
         "h2h": {
-          "reference_depth": 60
+          "reference_depth": 105
+        },
+        "spreads": {
+          "no_exact_bet365_price": 10,
+          "reference_depth": 46
         },
         "totals": {
-          "no_exact_bet365_price": 42,
-          "reference_depth": 78
+          "no_exact_bet365_price": 24,
+          "reference_depth": 200
         }
       }
     }
