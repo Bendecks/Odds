@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04T05:51:59.330113+00:00",
-  "as_of": "2026-10-04T05:51:59.248411+00:00",
+  "generated_at": "2026-10-04T16:50:49.406581+00:00",
+  "as_of": "2026-10-04T16:50:49.257494+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,45 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 128,
-  "fresh_exact_candidates": 92,
+  "total_candidates": 698,
+  "fresh_exact_candidates": 664,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 92,
-    "missing_external_market_reference": 92,
-    "missing_model_reference": 92
+    "insufficient_independent_economic_sources": 664,
+    "missing_external_market_reference": 664,
+    "missing_model_reference": 664
   },
   "missing_roles": {
-    "external_market_reference": 92,
-    "model_reference": 92
+    "external_market_reference": 664,
+    "model_reference": 664
   },
   "by_market": {
     "h2h": {
-      "evaluated": 42,
-      "fresh_exact_bet365": 42,
+      "evaluated": 180,
+      "fresh_exact_bet365": 180,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 42,
-        "missing_external_market_reference": 42,
-        "missing_model_reference": 42
+        "insufficient_independent_economic_sources": 180,
+        "missing_external_market_reference": 180,
+        "missing_model_reference": 180
       },
       "missing_roles": {
-        "external_market_reference": 42,
-        "model_reference": 42
+        "external_market_reference": 180,
+        "model_reference": 180
+      }
+    },
+    "spreads": {
+      "evaluated": 106,
+      "fresh_exact_bet365": 106,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 106,
+        "missing_external_market_reference": 106,
+        "missing_model_reference": 106
+      },
+      "missing_roles": {
+        "external_market_reference": 106,
+        "model_reference": 106
       }
     },
     "totals": {
-      "evaluated": 50,
-      "fresh_exact_bet365": 50,
+      "evaluated": 378,
+      "fresh_exact_bet365": 378,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 50,
-        "missing_external_market_reference": 50,
-        "missing_model_reference": 50
+        "insufficient_independent_economic_sources": 378,
+        "missing_external_market_reference": 378,
+        "missing_model_reference": 378
       },
       "missing_roles": {
-        "external_market_reference": 50,
-        "model_reference": 50
+        "external_market_reference": 378,
+        "model_reference": 378
       }
     }
   },
@@ -66,39 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 92,
+        "fresh_exact_candidates_blocked": 664,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 92,
+        "fresh_exact_candidates_blocked": 664,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 92
+        "fresh_exact_candidates_blocked": 664
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 50,
+        "fresh_exact_candidates": 378,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 50,
-          "model_reference": 50
+          "external_market_reference": 378,
+          "model_reference": 378
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 42,
+        "fresh_exact_candidates": 180,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 42,
-          "model_reference": 42
+          "external_market_reference": 180,
+          "model_reference": 180
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 106,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 106,
+          "model_reference": 106
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -106,49 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 50,
+      "first_market_fresh_exact_candidates": 378,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 42,
-      "fresh_exact_bet365": 42,
+      "evaluated": 180,
+      "fresh_exact_bet365": 180,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 42,
-        "missing_external_market_reference": 42,
-        "missing_model_reference": 42
+        "insufficient_independent_economic_sources": 180,
+        "missing_external_market_reference": 180,
+        "missing_model_reference": 180
       },
       "missing_roles": {
-        "external_market_reference": 42,
-        "model_reference": 42
+        "external_market_reference": 180,
+        "model_reference": 180
+      }
+    },
+    "spreads": {
+      "evaluated": 106,
+      "fresh_exact_bet365": 106,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 106,
+        "missing_external_market_reference": 106,
+        "missing_model_reference": 106
+      },
+      "missing_roles": {
+        "external_market_reference": 106,
+        "model_reference": 106
       }
     },
     "totals": {
-      "evaluated": 86,
-      "fresh_exact_bet365": 50,
+      "evaluated": 412,
+      "fresh_exact_bet365": 378,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 86,
-        "missing_external_market_reference": 86,
-        "missing_model_reference": 86,
-        "not_fresh_exact_bet365": 36
+        "insufficient_independent_economic_sources": 412,
+        "missing_external_market_reference": 412,
+        "missing_model_reference": 412,
+        "not_fresh_exact_bet365": 34
       },
       "missing_roles": {
-        "external_market_reference": 86,
-        "model_reference": 86
+        "external_market_reference": 412,
+        "model_reference": 412
       }
     }
   },
   "sample_failures": [
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "h2h",
-      "pick": "South China FC",
+      "pick": "FC Barcelona",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -170,9 +208,9 @@
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -196,11 +234,11 @@
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "h2h",
-      "pick": "Tung Sing",
+      "pick": "Real Madrid",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -222,9 +260,9 @@
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -248,9 +286,9 @@
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -274,13 +312,13 @@
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -294,20 +332,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -321,20 +358,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "totals",
       "pick": "Over",
       "line": 4.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -348,20 +384,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "South China FC vs Tung Sing",
-      "event_id": 74058604,
-      "bet365_event_id": 74058604,
+      "event": "FC Barcelona vs Real Madrid",
+      "event_id": 72491366,
+      "bet365_event_id": 72491366,
       "market": "totals",
       "pick": "Under",
       "line": 4.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -375,18 +410,17 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Citizen AA vs Yuen Long FC",
-      "event_id": 74058608,
-      "bet365_event_id": 74058608,
+      "event": "Gotham FC vs Angel City FC",
+      "event_id": 67912354,
+      "bet365_event_id": 67912354,
       "market": "h2h",
-      "pick": "Citizen AA",
+      "pick": "Gotham FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
