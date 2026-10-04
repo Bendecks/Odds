@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-10-03T16:17:19.679117+00:00",
+  "generated_at": "2026-10-04T05:51:59.363380+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 385,
-  "exact_bet365_rows": 351,
+  "candidate_rows": 128,
+  "exact_bet365_rows": 92,
   "fresh_exact_rows_by_market": {
-    "h2h": 105,
-    "spreads": 46,
-    "totals": 200
+    "h2h": 42,
+    "totals": 50
   },
   "metadata": {
-    "rows_with_sport": 385,
-    "rows_with_league": 385,
-    "rows_with_parseable_teams": 385,
+    "rows_with_sport": 128,
+    "rows_with_league": 128,
+    "rows_with_parseable_teams": 128,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 105,
-      "spreads": 56,
-      "totals": 224
+      "h2h": 42,
+      "totals": 86
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 105,
-      "totals": 224
+      "h2h": 42,
+      "totals": 86
     },
-    "first_model_scope_rows": 329
+    "first_model_scope_rows": 128
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
-        82
-      ],
-      [
-        "{'name': 'Netherlands - Eerste Divisie', 'slug': 'netherlands-eerste-divisie'}",
-        74
-      ],
-      [
-        "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
-        49
-      ],
-      [
-        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-        19
-      ],
-      [
-        "{'name': 'France - Premiere Ligue, Women', 'slug': 'france-premiere-ligue-women'}",
+        "{'name': 'Hong Kong, China - 1. Division', 'slug': 'hong-kong-china-1-division'}",
         18
       ],
       [
-        "{'name': 'Chile - Liga de Ascenso', 'slug': 'chile-liga-de-ascenso'}",
+        "{'name': 'Spain - Primera Federacion, Women', 'slug': 'spain-primera-federacion-women'}",
         18
       ],
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        17
+        "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+        11
       ],
       [
-        "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
-        14
+        "{'name': 'Slovakia - 2. Liga', 'slug': 'slovakia-2-liga'}",
+        9
       ],
       [
-        "{'name': 'Morocco - Botola Pro D1', 'slug': 'morocco-botola-pro-d1'}",
-        14
+        "{'name': 'Indonesia - Championship, Group B', 'slug': 'indonesia-championship-group-b'}",
+        9
       ],
       [
-        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
-        13
+        "{'name': 'France - U19 National, Group B', 'slug': 'france-u19-national-group-b'}",
+        9
+      ],
+      [
+        "{'name': 'International Youth - U20 Friendly Games', 'slug': 'international-youth-u20-friendly-games'}",
+        9
+      ],
+      [
+        "{'name': 'France - U19 National , Group D', 'slug': 'france-u19-national-group-d'}",
+        9
+      ],
+      [
+        "{'name': 'Denmark - A Liga, Women', 'slug': 'denmark-a-liga-women'}",
+        9
+      ],
+      [
+        "{'name': 'Ukraine - Persha Liga', 'slug': 'ukraine-persha-liga'}",
+        9
       ]
     ],
-    "public_data_hints": {}
+    "public_data_hints": {
+      "football-data.co.uk:E1": 9
+    }
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -106,14 +106,9 @@
     "has_any_valid_league": true
   },
   "blockers": [
-    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
-  "missing_by_market": {
-    "spreads": {
-      "market_not_first_model_scope": 56
-    }
-  },
+  "missing_by_market": {},
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
 }

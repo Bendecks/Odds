@@ -1,74 +1,78 @@
 {
-  "observations": 5600,
+  "observations": 3781,
   "markets": {
     "Correct Score": {
-      "observations": 2224,
+      "observations": 2194,
       "selection_fields": [
         [
           "odds",
-          2224
+          2194
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [
         [
           "0-0",
-          79
+          80
         ],
         [
           "0-1",
-          79
+          80
         ],
         [
           "0-2",
-          79
+          80
         ],
         [
           "0-3",
-          79
+          80
         ],
         [
           "1-0",
-          79
+          80
         ],
         [
           "1-1",
-          79
+          80
         ],
         [
           "1-2",
-          79
+          80
         ],
         [
           "1-3",
-          79
+          80
         ],
         [
           "2-0",
-          79
+          80
         ],
         [
           "2-1",
-          79
+          80
         ],
         [
           "2-2",
-          79
+          80
         ],
         [
           "2-3",
-          79
+          80
         ],
         [
           "3-0",
-          79
+          80
         ],
         [
           "3-1",
-          79
+          80
         ],
         [
           "3-2",
+          80
+        ],
+        [
+          "3-3",
           79
         ],
         [
@@ -76,60 +80,235 @@
           79
         ],
         [
-          "3-3",
-          78
-        ],
-        [
           "4-0",
-          78
-        ],
-        [
-          "4-2",
           76
         ],
         [
-          "1-4",
-          74
+          "4-2",
+          75
         ],
         [
-          "0-4",
-          69
+          "1-4",
+          70
         ],
         [
           "2-4",
-          67
-        ],
-        [
-          "5-1",
           66
         ],
         [
-          "5-0",
+          "5-1",
           64
         ],
         [
+          "0-4",
+          63
+        ],
+        [
+          "5-0",
+          61
+        ],
+        [
           "4-3",
-          51
-        ],
-        [
-          "5-2",
-          43
-        ],
-        [
-          "3-4",
           39
-        ],
-        [
-          "1-5",
-          38
         ],
         [
           "0-5",
           37
         ],
         [
+          "1-5",
+          36
+        ],
+        [
+          "5-2",
+          36
+        ],
+        [
+          "3-4",
+          33
+        ],
+        [
           "6-0",
-          29
+          31
+        ]
+      ],
+      "lines": [],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0-0",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0-1",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0-2",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0-3",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0-4",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0-5",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1-0",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1-1",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1-2",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1-3",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1-4",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1-5",
+          "selection": "odds",
+          "line": null
+        }
+      ]
+    },
+    "Correct Score HT": {
+      "observations": 1169,
+      "selection_fields": [
+        [
+          "odds",
+          1169
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [
+        [
+          "0-0",
+          80
+        ],
+        [
+          "0-1",
+          80
+        ],
+        [
+          "0-2",
+          80
+        ],
+        [
+          "0-3",
+          80
+        ],
+        [
+          "1-0",
+          80
+        ],
+        [
+          "1-1",
+          80
+        ],
+        [
+          "1-2",
+          80
+        ],
+        [
+          "2-0",
+          80
+        ],
+        [
+          "2-1",
+          80
+        ],
+        [
+          "2-2",
+          80
+        ],
+        [
+          "3-0",
+          78
+        ],
+        [
+          "3-1",
+          74
+        ],
+        [
+          "1-3",
+          59
+        ],
+        [
+          "4-0",
+          47
+        ],
+        [
+          "0-4",
+          23
+        ],
+        [
+          "3-2",
+          20
+        ],
+        [
+          "4-1",
+          20
+        ],
+        [
+          "2-3",
+          15
+        ],
+        [
+          "5-0",
+          14
+        ],
+        [
+          "1-4",
+          12
+        ],
+        [
+          "0-5",
+          5
+        ],
+        [
+          "5-1",
+          1
+        ],
+        [
+          "6-0",
+          1
         ]
       ],
       "lines": [],
@@ -190,187 +369,6 @@
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "1-4",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1-5",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "2-0",
-          "selection": "odds",
-          "line": null
-        }
-      ]
-    },
-    "Correct Score HT": {
-      "observations": 1200,
-      "selection_fields": [
-        [
-          "odds",
-          1200
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [
-        [
-          "0-0",
-          79
-        ],
-        [
-          "0-1",
-          79
-        ],
-        [
-          "0-2",
-          79
-        ],
-        [
-          "0-3",
-          79
-        ],
-        [
-          "1-0",
-          79
-        ],
-        [
-          "1-1",
-          79
-        ],
-        [
-          "1-2",
-          79
-        ],
-        [
-          "2-0",
-          79
-        ],
-        [
-          "2-1",
-          79
-        ],
-        [
-          "2-2",
-          79
-        ],
-        [
-          "3-0",
-          79
-        ],
-        [
-          "3-1",
-          76
-        ],
-        [
-          "1-3",
-          65
-        ],
-        [
-          "4-0",
-          48
-        ],
-        [
-          "3-2",
-          32
-        ],
-        [
-          "4-1",
-          25
-        ],
-        [
-          "0-4",
-          23
-        ],
-        [
-          "2-3",
-          22
-        ],
-        [
-          "5-0",
-          12
-        ],
-        [
-          "1-4",
-          12
-        ],
-        [
-          "2-4",
-          4
-        ],
-        [
-          "3-3",
-          4
-        ],
-        [
-          "4-2",
-          4
-        ],
-        [
-          "0-5",
-          2
-        ],
-        [
-          "5-1",
-          2
-        ]
-      ],
-      "lines": [],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "0-0",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "0-1",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "0-2",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "0-3",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1-0",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1-1",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1-2",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1-3",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
           "raw_selection_label": "2-0",
           "selection": "odds",
           "line": null
@@ -386,25 +384,19 @@
           "raw_selection_label": "2-2",
           "selection": "odds",
           "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "3-0",
-          "selection": "odds",
-          "line": null
         }
       ]
     },
     "Spread": {
-      "observations": 1000,
+      "observations": 266,
       "selection_fields": [
         [
           "home",
-          500
+          133
         ],
         [
           "away",
-          500
+          133
         ]
       ],
       "raw_selection_names": [],
@@ -412,94 +404,78 @@
       "lines": [
         [
           "-0.25",
-          88
+          34
         ],
         [
           "0",
-          82
-        ],
-        [
-          "-0.75",
-          80
-        ],
-        [
-          "-0.5",
-          76
+          30
         ],
         [
           "0.25",
-          70
+          24
         ],
         [
-          "-1",
-          66
+          "-0.5",
+          24
         ],
         [
-          "0.5",
-          66
+          "-0.75",
+          22
         ],
         [
           "-1.25",
-          64
-        ],
-        [
-          "0.75",
-          62
-        ],
-        [
-          "-1.5",
-          56
-        ],
-        [
-          "1",
-          50
-        ],
-        [
-          "-1.75",
-          46
-        ],
-        [
-          "1.25",
-          40
-        ],
-        [
-          "1.5",
-          38
-        ],
-        [
-          "1.75",
-          28
-        ],
-        [
-          "-2",
-          20
-        ],
-        [
-          "-2.5",
           18
         ],
         [
-          "-2.25",
+          "1",
           16
         ],
         [
-          "-2.75",
+          "-1.5",
+          14
+        ],
+        [
+          "-1",
+          14
+        ],
+        [
+          "0.75",
+          14
+        ],
+        [
+          "0.5",
           10
         ],
         [
-          "2.5",
+          "-1.75",
           8
         ],
         [
-          "-3.25",
+          "1.25",
+          8
+        ],
+        [
+          "1.5",
+          8
+        ],
+        [
+          "-2",
           4
         ],
         [
-          "-3",
+          "-2.5",
           4
         ],
         [
-          "-3.5",
+          "-2.25",
+          2
+        ],
+        [
+          "-2.75",
+          2
+        ],
+        [
+          "1.75",
           2
         ],
         [
@@ -508,6 +484,10 @@
         ],
         [
           "2.25",
+          2
+        ],
+        [
+          "2.5",
           2
         ],
         [
@@ -520,204 +500,346 @@
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "home",
-          "line": -1
+          "line": 0
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "away",
-          "line": -1
+          "line": 0
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "home",
-          "line": -3.25
+          "line": 0.25
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "away",
-          "line": -3.25
+          "line": 0.25
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "home",
-          "line": -3
+          "line": -0.25
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "away",
-          "line": -3
+          "line": -0.25
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "home",
-          "line": -2.75
+          "line": -1.75
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "away",
-          "line": -2.75
+          "line": -1.75
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "home",
-          "line": -2.5
+          "line": -1.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "away",
-          "line": -2.5
+          "line": -1.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "home",
-          "line": -2.25
+          "line": -1.25
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
           "selection": "away",
-          "line": -2.25
+          "line": -1.25
         }
       ]
     },
-    "Team Goalscorer": {
-      "observations": 352,
+    "Spread HT": {
+      "observations": 82,
       "selection_fields": [
         [
-          "over",
-          352
+          "home",
+          41
+        ],
+        [
+          "away",
+          41
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [],
+      "lines": [
+        [
+          "0",
+          32
+        ],
+        [
+          "-0.25",
+          24
+        ],
+        [
+          "0.25",
+          10
+        ],
+        [
+          "-0.5",
+          8
+        ],
+        [
+          "0.5",
+          4
+        ],
+        [
+          "-0.75",
+          2
+        ],
+        [
+          "-1",
+          2
+        ]
+      ],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": 0
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": 0
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": 0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": 0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": 0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": 0.25
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -0.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "home",
+          "line": -0.75
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "away",
+          "line": -0.75
+        }
+      ]
+    },
+    "Exact Total Goals": {
+      "observations": 24,
+      "selection_fields": [
+        [
+          "odds",
+          24
         ]
       ],
       "raw_selection_names": [],
       "raw_selection_labels": [
         [
-          "Aimen Moueffek (First)",
+          "0 Goals",
+          3
+        ],
+        [
+          "1 Goal",
+          3
+        ],
+        [
+          "2 Goals",
+          3
+        ],
+        [
+          "3 Goals",
+          3
+        ],
+        [
+          "4 Goals",
+          3
+        ],
+        [
+          "5 Goals",
+          3
+        ],
+        [
+          "6 Goals",
+          3
+        ],
+        [
+          "7+ Goals",
+          3
+        ]
+      ],
+      "lines": [],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "0 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "1 Goal",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "2 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "3 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "4 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "5 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "6 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "7+ Goals",
+          "selection": "odds",
+          "line": null
+        }
+      ]
+    },
+    "Away Team Exact Goals": {
+      "observations": 12,
+      "selection_fields": [
+        [
+          "odds",
+          12
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [
+        [
+          "Jubilo Iwata - 0 Goals",
           1
         ],
         [
-          "Aimen Moueffek (Last)",
+          "Jubilo Iwata - 1 Goal",
           1
         ],
         [
-          "Alex Fita (First)",
+          "Jubilo Iwata - 2 Goals",
           1
         ],
         [
-          "Alex Fita (Last)",
+          "Jubilo Iwata - 3+ Goals",
           1
         ],
         [
-          "Alex Millan (First)",
+          "Türkiye U19 - 0 Goals",
           1
         ],
         [
-          "Alex Millan (Last)",
+          "Türkiye U19 - 1 Goal",
           1
         ],
         [
-          "Alex Sancris (First)",
+          "Türkiye U19 - 2 Goals",
           1
         ],
         [
-          "Alex Sancris (Last)",
+          "Türkiye U19 - 3+ Goals",
           1
         ],
         [
-          "Alvaro Morata (First)",
+          "Eibar (W) - 0 Goals",
           1
         ],
         [
-          "Alvaro Morata (Last)",
+          "Eibar (W) - 1 Goal",
           1
         ],
         [
-          "Alvaro Tejero (First)",
+          "Eibar (W) - 2 Goals",
           1
         ],
         [
-          "Alvaro Tejero (Last)",
-          1
-        ],
-        [
-          "Amadou Diawara (First)",
-          1
-        ],
-        [
-          "Amadou Diawara (Last)",
-          1
-        ],
-        [
-          "Andres Campos Bautista (First)",
-          1
-        ],
-        [
-          "Andres Campos Bautista (Last)",
-          1
-        ],
-        [
-          "Antonito Cordero (First)",
-          1
-        ],
-        [
-          "Antonito Cordero (Last)",
-          1
-        ],
-        [
-          "Beltran Auguste (First)",
-          1
-        ],
-        [
-          "Beltran Auguste (Last)",
-          1
-        ],
-        [
-          "Benat de Jesus (First)",
-          1
-        ],
-        [
-          "Benat de Jesus (Last)",
-          1
-        ],
-        [
-          "Bojan Kovacevic (First)",
-          1
-        ],
-        [
-          "Bojan Kovacevic (Last)",
-          1
-        ],
-        [
-          "Borja Vazquez (First)",
-          1
-        ],
-        [
-          "Borja Vazquez (Last)",
-          1
-        ],
-        [
-          "Cesar Diaz (First)",
-          1
-        ],
-        [
-          "Cesar Diaz (Last)",
-          1
-        ],
-        [
-          "Cristian Gutierrez (First)",
-          1
-        ],
-        [
-          "Cristian Gutierrez (Last)",
+          "Eibar (W) - 3+ Goals",
           1
         ]
       ],
@@ -725,88 +847,223 @@
       "schema_examples": [
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Aimen Moueffek (First)",
-          "selection": "over",
+          "raw_selection_label": "Jubilo Iwata - 0 Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Aimen Moueffek (Last)",
-          "selection": "over",
+          "raw_selection_label": "Jubilo Iwata - 1 Goal",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alex Fita (First)",
-          "selection": "over",
+          "raw_selection_label": "Jubilo Iwata - 2 Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alex Fita (Last)",
-          "selection": "over",
+          "raw_selection_label": "Jubilo Iwata - 3+ Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alex Millan (First)",
-          "selection": "over",
+          "raw_selection_label": "Türkiye U19 - 0 Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alex Millan (Last)",
-          "selection": "over",
+          "raw_selection_label": "Türkiye U19 - 1 Goal",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alex Sancris (First)",
-          "selection": "over",
+          "raw_selection_label": "Türkiye U19 - 2 Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alex Sancris (Last)",
-          "selection": "over",
+          "raw_selection_label": "Türkiye U19 - 3+ Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alvaro Morata (First)",
-          "selection": "over",
+          "raw_selection_label": "Eibar (W) - 0 Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alvaro Morata (Last)",
-          "selection": "over",
+          "raw_selection_label": "Eibar (W) - 1 Goal",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alvaro Tejero (First)",
-          "selection": "over",
+          "raw_selection_label": "Eibar (W) - 2 Goals",
+          "selection": "odds",
           "line": null
         },
         {
           "raw_selection_name": null,
-          "raw_selection_label": "Alvaro Tejero (Last)",
-          "selection": "over",
+          "raw_selection_label": "Eibar (W) - 3+ Goals",
+          "selection": "odds",
+          "line": null
+        }
+      ]
+    },
+    "Home Team Exact Goals": {
+      "observations": 12,
+      "selection_fields": [
+        [
+          "odds",
+          12
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [
+        [
+          "Vegalta Sendai - 0 Goals",
+          1
+        ],
+        [
+          "Vegalta Sendai - 1 Goal",
+          1
+        ],
+        [
+          "Vegalta Sendai - 2 Goals",
+          1
+        ],
+        [
+          "Vegalta Sendai - 3+ Goals",
+          1
+        ],
+        [
+          "Croatia U19 - 0 Goals",
+          1
+        ],
+        [
+          "Croatia U19 - 1 Goal",
+          1
+        ],
+        [
+          "Croatia U19 - 2 Goals",
+          1
+        ],
+        [
+          "Croatia U19 - 3+ Goals",
+          1
+        ],
+        [
+          "Granada (W) - 0 Goals",
+          1
+        ],
+        [
+          "Granada (W) - 1 Goal",
+          1
+        ],
+        [
+          "Granada (W) - 2 Goals",
+          1
+        ],
+        [
+          "Granada (W) - 3+ Goals",
+          1
+        ]
+      ],
+      "lines": [],
+      "schema_examples": [
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Vegalta Sendai - 0 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Vegalta Sendai - 1 Goal",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Vegalta Sendai - 2 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Vegalta Sendai - 3+ Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Croatia U19 - 0 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Croatia U19 - 1 Goal",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Croatia U19 - 2 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Croatia U19 - 3+ Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Granada (W) - 0 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Granada (W) - 1 Goal",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Granada (W) - 2 Goals",
+          "selection": "odds",
+          "line": null
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": "Granada (W) - 3+ Goals",
+          "selection": "odds",
           "line": null
         }
       ]
     },
     "Team Total Home": {
-      "observations": 192,
+      "observations": 12,
       "selection_fields": [
         [
           "over",
-          96
+          6
         ],
         [
           "under",
-          96
+          6
         ]
       ],
       "raw_selection_names": [],
@@ -814,31 +1071,27 @@
       "lines": [
         [
           "0.5",
-          36
+          2
         ],
         [
           "1.5",
-          36
+          2
         ],
         [
           "2.5",
-          36
+          2
         ],
         [
           "3.5",
-          36
+          2
         ],
         [
           "4.5",
-          30
+          2
         ],
         [
           "5.5",
-          12
-        ],
-        [
-          "6.5",
-          6
+          2
         ]
       ],
       "schema_examples": [
@@ -917,15 +1170,15 @@
       ]
     },
     "Team Total Away": {
-      "observations": 164,
+      "observations": 8,
       "selection_fields": [
         [
           "over",
-          82
+          4
         ],
         [
           "under",
-          82
+          4
         ]
       ],
       "raw_selection_names": [],
@@ -933,733 +1186,18 @@
       "lines": [
         [
           "0.5",
-          36
+          2
         ],
         [
           "1.5",
-          36
+          2
         ],
         [
           "2.5",
-          36
+          2
         ],
         [
           "3.5",
-          32
-        ],
-        [
-          "4.5",
-          20
-        ],
-        [
-          "5.5",
-          4
-        ]
-      ],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 1.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 1.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 2.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 2.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 3.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 3.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 4.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 4.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "over",
-          "line": 5.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "under",
-          "line": 5.5
-        }
-      ]
-    },
-    "Exact Total Goals": {
-      "observations": 136,
-      "selection_fields": [
-        [
-          "odds",
-          136
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [
-        [
-          "0 Goals",
-          17
-        ],
-        [
-          "1 Goal",
-          17
-        ],
-        [
-          "2 Goals",
-          17
-        ],
-        [
-          "3 Goals",
-          17
-        ],
-        [
-          "4 Goals",
-          17
-        ],
-        [
-          "5 Goals",
-          17
-        ],
-        [
-          "6 Goals",
-          17
-        ],
-        [
-          "7+ Goals",
-          17
-        ]
-      ],
-      "lines": [],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "3 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "4 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "5 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "6 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "7+ Goals",
-          "selection": "odds",
-          "line": null
-        }
-      ]
-    },
-    "Away Team Exact Goals": {
-      "observations": 128,
-      "selection_fields": [
-        [
-          "odds",
-          128
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [
-        [
-          "Peterhead - 0 Goals",
-          1
-        ],
-        [
-          "Peterhead - 1 Goal",
-          1
-        ],
-        [
-          "Peterhead - 2 Goals",
-          1
-        ],
-        [
-          "Peterhead - 3+ Goals",
-          1
-        ],
-        [
-          "Leganes - 0 Goals",
-          1
-        ],
-        [
-          "Leganes - 1 Goal",
-          1
-        ],
-        [
-          "Leganes - 2 Goals",
-          1
-        ],
-        [
-          "Leganes - 3+ Goals",
-          1
-        ],
-        [
-          "Marseille (W) - 0 Goals",
-          1
-        ],
-        [
-          "Marseille (W) - 1 Goal",
-          1
-        ],
-        [
-          "Marseille (W) - 2 Goals",
-          1
-        ],
-        [
-          "Marseille (W) - 3+ Goals",
-          1
-        ],
-        [
-          "Juventud Torremolinos CF - 0 Goals",
-          1
-        ],
-        [
-          "Juventud Torremolinos CF - 1 Goal",
-          1
-        ],
-        [
-          "Juventud Torremolinos CF - 2 Goals",
-          1
-        ],
-        [
-          "Juventud Torremolinos CF - 3+ Goals",
-          1
-        ],
-        [
-          "Aguilas - 0 Goals",
-          1
-        ],
-        [
-          "Aguilas - 1 Goal",
-          1
-        ],
-        [
-          "Aguilas - 2 Goals",
-          1
-        ],
-        [
-          "Aguilas - 3+ Goals",
-          1
-        ],
-        [
-          "Montpellier (W) - 0 Goals",
-          1
-        ],
-        [
-          "Montpellier (W) - 1 Goal",
-          1
-        ],
-        [
-          "Montpellier (W) - 2 Goals",
-          1
-        ],
-        [
-          "Montpellier (W) - 3+ Goals",
-          1
-        ],
-        [
-          "Denmark U19 - 0 Goals",
-          1
-        ],
-        [
-          "Denmark U19 - 1 Goal",
-          1
-        ],
-        [
-          "Denmark U19 - 2 Goals",
-          1
-        ],
-        [
-          "Denmark U19 - 3+ Goals",
-          1
-        ],
-        [
-          "Cultural Leonesa - 0 Goals",
-          1
-        ],
-        [
-          "Cultural Leonesa - 1 Goal",
-          1
-        ]
-      ],
-      "lines": [],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Peterhead - 0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Peterhead - 1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Peterhead - 2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Peterhead - 3+ Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Leganes - 0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Leganes - 1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Leganes - 2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Leganes - 3+ Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Marseille (W) - 0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Marseille (W) - 1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Marseille (W) - 2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Marseille (W) - 3+ Goals",
-          "selection": "odds",
-          "line": null
-        }
-      ]
-    },
-    "Home Team Exact Goals": {
-      "observations": 128,
-      "selection_fields": [
-        [
-          "odds",
-          128
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [
-        [
-          "Hamilton - 0 Goals",
-          1
-        ],
-        [
-          "Hamilton - 1 Goal",
-          1
-        ],
-        [
-          "Hamilton - 2 Goals",
-          1
-        ],
-        [
-          "Hamilton - 3+ Goals",
-          1
-        ],
-        [
-          "Cadiz - 0 Goals",
-          1
-        ],
-        [
-          "Cadiz - 1 Goal",
-          1
-        ],
-        [
-          "Cadiz - 2 Goals",
-          1
-        ],
-        [
-          "Cadiz - 3+ Goals",
-          1
-        ],
-        [
-          "Strasbourg (W) - 0 Goals",
-          1
-        ],
-        [
-          "Strasbourg (W) - 1 Goal",
-          1
-        ],
-        [
-          "Strasbourg (W) - 2 Goals",
-          1
-        ],
-        [
-          "Strasbourg (W) - 3+ Goals",
-          1
-        ],
-        [
-          "Alcorcon - 0 Goals",
-          1
-        ],
-        [
-          "Alcorcon - 1 Goal",
-          1
-        ],
-        [
-          "Alcorcon - 2 Goals",
-          1
-        ],
-        [
-          "Alcorcon - 3+ Goals",
-          1
-        ],
-        [
-          "FC Cartagena - 0 Goals",
-          1
-        ],
-        [
-          "FC Cartagena - 1 Goal",
-          1
-        ],
-        [
-          "FC Cartagena - 2 Goals",
-          1
-        ],
-        [
-          "FC Cartagena - 3+ Goals",
-          1
-        ],
-        [
-          "Nantes (W) - 0 Goals",
-          1
-        ],
-        [
-          "Nantes (W) - 1 Goal",
-          1
-        ],
-        [
-          "Nantes (W) - 2 Goals",
-          1
-        ],
-        [
-          "Nantes (W) - 3+ Goals",
-          1
-        ],
-        [
-          "Portugal U19 - 0 Goals",
-          1
-        ],
-        [
-          "Portugal U19 - 1 Goal",
-          1
-        ],
-        [
-          "Portugal U19 - 2 Goals",
-          1
-        ],
-        [
-          "Portugal U19 - 3+ Goals",
-          1
-        ],
-        [
-          "Unionistas de Salamanca CF - 0 Goals",
-          1
-        ],
-        [
-          "Unionistas de Salamanca CF - 1 Goal",
-          1
-        ]
-      ],
-      "lines": [],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Hamilton - 0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Hamilton - 1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Hamilton - 2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Hamilton - 3+ Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Cadiz - 0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Cadiz - 1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Cadiz - 2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Cadiz - 3+ Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Strasbourg (W) - 0 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Strasbourg (W) - 1 Goal",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Strasbourg (W) - 2 Goals",
-          "selection": "odds",
-          "line": null
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": "Strasbourg (W) - 3+ Goals",
-          "selection": "odds",
-          "line": null
-        }
-      ]
-    },
-    "Spread HT": {
-      "observations": 70,
-      "selection_fields": [
-        [
-          "home",
-          35
-        ],
-        [
-          "away",
-          35
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [],
-      "lines": [
-        [
-          "0",
-          34
-        ],
-        [
-          "-0.25",
-          18
-        ],
-        [
-          "0.25",
-          8
-        ],
-        [
-          "-0.5",
-          6
-        ],
-        [
-          "-0.75",
-          4
-        ]
-      ],
-      "schema_examples": [
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.75
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.75
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": 0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": 0.25
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.5
-        },
-        {
-          "raw_selection_name": null,
-          "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.5
-        }
-      ]
-    },
-    "Corners Spread": {
-      "observations": 6,
-      "selection_fields": [
-        [
-          "home",
-          3
-        ],
-        [
-          "away",
-          3
-        ]
-      ],
-      "raw_selection_names": [],
-      "raw_selection_labels": [],
-      "lines": [
-        [
-          "-0.5",
-          4
-        ],
-        [
-          "-1",
           2
         ]
       ],
@@ -1667,15 +1205,74 @@
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "home",
-          "line": -0.5
+          "selection": "over",
+          "line": 0.5
         },
         {
           "raw_selection_name": null,
           "raw_selection_label": null,
-          "selection": "away",
-          "line": -0.5
+          "selection": "under",
+          "line": 0.5
         },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 1.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 1.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 2.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 2.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "over",
+          "line": 3.5
+        },
+        {
+          "raw_selection_name": null,
+          "raw_selection_label": null,
+          "selection": "under",
+          "line": 3.5
+        }
+      ]
+    },
+    "Corners Spread": {
+      "observations": 2,
+      "selection_fields": [
+        [
+          "home",
+          1
+        ],
+        [
+          "away",
+          1
+        ]
+      ],
+      "raw_selection_names": [],
+      "raw_selection_labels": [],
+      "lines": [
+        [
+          "-1",
+          2
+        ]
+      ],
+      "schema_examples": [
         {
           "raw_selection_name": null,
           "raw_selection_label": null,

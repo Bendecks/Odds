@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T16:17:19.625496+00:00",
-  "as_of": "2026-10-03T16:17:19.516210+00:00",
+  "generated_at": "2026-10-04T05:51:59.330113+00:00",
+  "as_of": "2026-10-04T05:51:59.248411+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,45 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 385,
-  "fresh_exact_candidates": 351,
+  "total_candidates": 128,
+  "fresh_exact_candidates": 92,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 351,
-    "missing_external_market_reference": 351,
-    "missing_model_reference": 351
+    "insufficient_independent_economic_sources": 92,
+    "missing_external_market_reference": 92,
+    "missing_model_reference": 92
   },
   "missing_roles": {
-    "external_market_reference": 351,
-    "model_reference": 351
+    "external_market_reference": 92,
+    "model_reference": 92
   },
   "by_market": {
     "h2h": {
-      "evaluated": 105,
-      "fresh_exact_bet365": 105,
+      "evaluated": 42,
+      "fresh_exact_bet365": 42,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 105,
-        "missing_external_market_reference": 105,
-        "missing_model_reference": 105
+        "insufficient_independent_economic_sources": 42,
+        "missing_external_market_reference": 42,
+        "missing_model_reference": 42
       },
       "missing_roles": {
-        "external_market_reference": 105,
-        "model_reference": 105
-      }
-    },
-    "spreads": {
-      "evaluated": 46,
-      "fresh_exact_bet365": 46,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 46,
-        "missing_external_market_reference": 46,
-        "missing_model_reference": 46
-      },
-      "missing_roles": {
-        "external_market_reference": 46,
-        "model_reference": 46
+        "external_market_reference": 42,
+        "model_reference": 42
       }
     },
     "totals": {
-      "evaluated": 200,
-      "fresh_exact_bet365": 200,
+      "evaluated": 50,
+      "fresh_exact_bet365": 50,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 200,
-        "missing_external_market_reference": 200,
-        "missing_model_reference": 200
+        "insufficient_independent_economic_sources": 50,
+        "missing_external_market_reference": 50,
+        "missing_model_reference": 50
       },
       "missing_roles": {
-        "external_market_reference": 200,
-        "model_reference": 200
+        "external_market_reference": 50,
+        "model_reference": 50
       }
     }
   },
@@ -80,49 +66,39 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 351,
+        "fresh_exact_candidates_blocked": 92,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 351,
+        "fresh_exact_candidates_blocked": 92,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 351
+        "fresh_exact_candidates_blocked": 92
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 200,
+        "fresh_exact_candidates": 50,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 200,
-          "model_reference": 200
+          "external_market_reference": 50,
+          "model_reference": 50
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 105,
+        "fresh_exact_candidates": 42,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 105,
-          "model_reference": 105
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 46,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 46,
-          "model_reference": 46
+          "external_market_reference": 42,
+          "model_reference": 42
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +106,49 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 200,
+      "first_market_fresh_exact_candidates": 50,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 105,
-      "fresh_exact_bet365": 105,
+      "evaluated": 42,
+      "fresh_exact_bet365": 42,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 105,
-        "missing_external_market_reference": 105,
-        "missing_model_reference": 105
+        "insufficient_independent_economic_sources": 42,
+        "missing_external_market_reference": 42,
+        "missing_model_reference": 42
       },
       "missing_roles": {
-        "external_market_reference": 105,
-        "model_reference": 105
-      }
-    },
-    "spreads": {
-      "evaluated": 56,
-      "fresh_exact_bet365": 46,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 56,
-        "missing_external_market_reference": 56,
-        "missing_model_reference": 56,
-        "not_fresh_exact_bet365": 10
-      },
-      "missing_roles": {
-        "external_market_reference": 56,
-        "model_reference": 56
+        "external_market_reference": 42,
+        "model_reference": 42
       }
     },
     "totals": {
-      "evaluated": 224,
-      "fresh_exact_bet365": 200,
+      "evaluated": 86,
+      "fresh_exact_bet365": 50,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 224,
-        "missing_external_market_reference": 224,
-        "missing_model_reference": 224,
-        "not_fresh_exact_bet365": 24
+        "insufficient_independent_economic_sources": 86,
+        "missing_external_market_reference": 86,
+        "missing_model_reference": 86,
+        "not_fresh_exact_bet365": 36
       },
       "missing_roles": {
-        "external_market_reference": 224,
-        "model_reference": 224
+        "external_market_reference": 86,
+        "model_reference": 86
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "h2h",
-      "pick": "Hamilton Academical FC",
+      "pick": "South China FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +170,9 @@
       ]
     },
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +196,11 @@
       ]
     },
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "h2h",
-      "pick": "Peterhead FC",
+      "pick": "Tung Sing",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,61 +222,9 @@
       ]
     },
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -339,9 +248,9 @@
       ]
     },
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -365,13 +274,13 @@
       ]
     },
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -385,19 +294,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Hamilton Academical FC vs Peterhead FC",
-      "event_id": 72203920,
-      "bet365_event_id": 72203920,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -411,17 +321,72 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Cadiz CF vs CD Leganes",
-      "event_id": 72477454,
-      "bet365_event_id": 72477454,
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "South China FC vs Tung Sing",
+      "event_id": 74058604,
+      "bet365_event_id": 74058604,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Citizen AA vs Yuen Long FC",
+      "event_id": 74058608,
+      "bet365_event_id": 74058608,
       "market": "h2h",
-      "pick": "Cadiz CF",
+      "pick": "Citizen AA",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
