@@ -1,87 +1,86 @@
 {
-  "generated_at": "2026-10-04T16:50:49.475524+00:00",
+  "generated_at": "2026-10-05T05:39:03.925873+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 698,
-  "exact_bet365_rows": 664,
+  "candidate_rows": 580,
+  "exact_bet365_rows": 546,
   "fresh_exact_rows_by_market": {
-    "h2h": 180,
-    "spreads": 106,
-    "totals": 378
+    "h2h": 144,
+    "spreads": 96,
+    "totals": 306
   },
   "metadata": {
-    "rows_with_sport": 698,
-    "rows_with_league": 698,
-    "rows_with_parseable_teams": 698,
+    "rows_with_sport": 580,
+    "rows_with_league": 580,
+    "rows_with_parseable_teams": 580,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 180,
-      "spreads": 106,
-      "totals": 412
+      "h2h": 144,
+      "spreads": 100,
+      "totals": 336
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 180,
-      "totals": 412
+      "h2h": 144,
+      "totals": 336
     },
-    "first_model_scope_rows": 592
+    "first_model_scope_rows": 480
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
-        135
-      ],
-      [
-        "{'name': 'International - UEFA Nations League, League C, Gr. 4', 'slug': 'international-uefa-nations-league-league-c-gr-4'}",
-        99
-      ],
-      [
-        "{'name': 'Guatemala - Primera Division, Apertura, Group A', 'slug': 'guatemala-primera-division-apertura-group-a'}",
-        36
+        "{'name': 'International - UEFA Nations League, League D, Gr. 2', 'slug': 'international-uefa-nations-league-league-d-gr-2'}",
+        144
       ],
       [
         "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-        34
+        72
       ],
       [
-        "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
-        30
-      ],
-      [
-        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
-        30
+        "{'name': 'International Youth - U21 EURO, Qualification, Group E', 'slug': 'international-youth-u21-euro-qualification-group-e'}",
+        47
       ],
       [
         "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        28
+        43
       ],
       [
-        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
-        28
+        "{'name': 'Argentina - Primera C', 'slug': 'argentina-primera-c'}",
+        21
       ],
       [
-        "{'name': 'Italy - Serie C, Group C', 'slug': 'italy-serie-c-group-c'}",
-        27
-      ],
-      [
-        "{'name': 'Spain - Primera Division Femenina', 'slug': 'spain-primera-division-femenina'}",
+        "{'name': 'International - FIFA ASEAN Cup, Challenge Final', 'slug': 'international-fifa-asean-cup-challenge-final'}",
         18
+      ],
+      [
+        "{'name': 'International - CONCACAF Nations League, League A, Group B', 'slug': 'international-concacaf-nations-league-league-a-group-b'}",
+        18
+      ],
+      [
+        "{'name': 'International - CONCACAF Nations League, League B, Group C', 'slug': 'international-concacaf-nations-league-league-b-group-c'}",
+        18
+      ],
+      [
+        "{'name': 'Norway - 1st Division', 'slug': 'norway-1st-division'}",
+        17
+      ],
+      [
+        "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
+        16
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 16,
-      "football-data.co.uk:E1": 9
+      "football-data.co.uk:E0": 9
     }
   },
   "public_football_data_probe": {
@@ -114,7 +113,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 106
+      "market_not_first_model_scope": 100
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
