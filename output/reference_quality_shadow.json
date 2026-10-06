@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-05T20:33:52.183426+00:00",
-  "as_of": "2026-10-05T20:33:52.087168+00:00",
+  "generated_at": "2026-10-06T06:19:56.269439+00:00",
+  "as_of": "2026-10-06T06:19:56.203458+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 501,
-  "fresh_exact_candidates": 469,
+  "total_candidates": 550,
+  "fresh_exact_candidates": 518,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 469,
-    "missing_external_market_reference": 469,
-    "missing_model_reference": 469
+    "insufficient_independent_economic_sources": 518,
+    "missing_external_market_reference": 518,
+    "missing_model_reference": 518
   },
   "missing_roles": {
-    "external_market_reference": 469,
-    "model_reference": 469
+    "external_market_reference": 518,
+    "model_reference": 518
   },
   "by_market": {
     "h2h": {
-      "evaluated": 129,
-      "fresh_exact_bet365": 129,
+      "evaluated": 132,
+      "fresh_exact_bet365": 132,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 129,
-        "missing_external_market_reference": 129,
-        "missing_model_reference": 129
+        "insufficient_independent_economic_sources": 132,
+        "missing_external_market_reference": 132,
+        "missing_model_reference": 132
       },
       "missing_roles": {
-        "external_market_reference": 129,
-        "model_reference": 129
+        "external_market_reference": 132,
+        "model_reference": 132
       }
     },
     "spreads": {
-      "evaluated": 78,
-      "fresh_exact_bet365": 78,
+      "evaluated": 90,
+      "fresh_exact_bet365": 90,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 78,
-        "missing_external_market_reference": 78,
-        "missing_model_reference": 78
+        "insufficient_independent_economic_sources": 90,
+        "missing_external_market_reference": 90,
+        "missing_model_reference": 90
       },
       "missing_roles": {
-        "external_market_reference": 78,
-        "model_reference": 78
+        "external_market_reference": 90,
+        "model_reference": 90
       }
     },
     "totals": {
-      "evaluated": 262,
-      "fresh_exact_bet365": 262,
+      "evaluated": 296,
+      "fresh_exact_bet365": 296,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 262,
-        "missing_external_market_reference": 262,
-        "missing_model_reference": 262
+        "insufficient_independent_economic_sources": 296,
+        "missing_external_market_reference": 296,
+        "missing_model_reference": 296
       },
       "missing_roles": {
-        "external_market_reference": 262,
-        "model_reference": 262
+        "external_market_reference": 296,
+        "model_reference": 296
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 469,
+        "fresh_exact_candidates_blocked": 518,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 469,
+        "fresh_exact_candidates_blocked": 518,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 469
+        "fresh_exact_candidates_blocked": 518
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 262,
+        "fresh_exact_candidates": 296,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 262,
-          "model_reference": 262
+          "external_market_reference": 296,
+          "model_reference": 296
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 129,
+        "fresh_exact_candidates": 132,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 129,
-          "model_reference": 129
+          "external_market_reference": 132,
+          "model_reference": 132
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 78,
+        "fresh_exact_candidates": 90,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 78,
-          "model_reference": 78
+          "external_market_reference": 90,
+          "model_reference": 90
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 262,
+      "first_market_fresh_exact_candidates": 296,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 129,
-      "fresh_exact_bet365": 129,
+      "evaluated": 132,
+      "fresh_exact_bet365": 132,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 129,
-        "missing_external_market_reference": 129,
-        "missing_model_reference": 129
+        "insufficient_independent_economic_sources": 132,
+        "missing_external_market_reference": 132,
+        "missing_model_reference": 132
       },
       "missing_roles": {
-        "external_market_reference": 129,
-        "model_reference": 129
+        "external_market_reference": 132,
+        "model_reference": 132
       }
     },
     "spreads": {
-      "evaluated": 82,
-      "fresh_exact_bet365": 78,
+      "evaluated": 98,
+      "fresh_exact_bet365": 90,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 82,
-        "missing_external_market_reference": 82,
-        "missing_model_reference": 82,
-        "not_fresh_exact_bet365": 4
+        "insufficient_independent_economic_sources": 98,
+        "missing_external_market_reference": 98,
+        "missing_model_reference": 98,
+        "not_fresh_exact_bet365": 8
       },
       "missing_roles": {
-        "external_market_reference": 82,
-        "model_reference": 82
+        "external_market_reference": 98,
+        "model_reference": 98
       }
     },
     "totals": {
-      "evaluated": 290,
-      "fresh_exact_bet365": 262,
+      "evaluated": 320,
+      "fresh_exact_bet365": 296,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 290,
-        "missing_external_market_reference": 290,
-        "missing_model_reference": 290,
-        "not_fresh_exact_bet365": 28
+        "insufficient_independent_economic_sources": 320,
+        "missing_external_market_reference": 320,
+        "missing_model_reference": 320,
+        "not_fresh_exact_bet365": 24
       },
       "missing_roles": {
-        "external_market_reference": 290,
-        "model_reference": 290
+        "external_market_reference": 320,
+        "model_reference": 320
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "h2h",
-      "pick": "Chapelton Maroons FC",
+      "pick": "Shanghai Second",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "h2h",
-      "pick": "Waterhouse FC",
+      "pick": "Wenzhou Professional FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,13 +261,13 @@
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -281,19 +281,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -307,15 +308,16 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -339,9 +341,9 @@
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
+      "event": "Shanghai Second vs Wenzhou Professional FC",
+      "event_id": 74455058,
+      "bet365_event_id": 74455058,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -365,63 +367,63 @@
       ]
     },
     {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Chapelton Maroons FC vs Waterhouse FC",
-      "event_id": 74695448,
-      "bet365_event_id": 74695448,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Cuba vs Saint Kitts and Nevis",
-      "event_id": 73220894,
-      "bet365_event_id": 73220894,
+      "event": "Beijing Institute of Technology vs Chengdu Rongcheng B",
+      "event_id": 74455168,
+      "bet365_event_id": 74455168,
       "market": "h2h",
-      "pick": "Cuba",
+      "pick": "Beijing Institute of Technology",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Beijing Institute of Technology vs Chengdu Rongcheng B",
+      "event_id": 74455168,
+      "bet365_event_id": 74455168,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Beijing Institute of Technology vs Chengdu Rongcheng B",
+      "event_id": 74455168,
+      "bet365_event_id": 74455168,
+      "market": "h2h",
+      "pick": "Chengdu Rongcheng B",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,

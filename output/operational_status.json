@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-10-05T20:33:52.087168+00:00",
+  "generated_at": "2026-10-06T06:19:56.203458+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 501,
-    "fair_probability_rows": 501,
+    "candidate_rows": 550,
+    "fair_probability_rows": 550,
     "reference_events": 12,
-    "exact_bet365_rows": 469,
-    "fresh_exact_bet365_rows": 469,
+    "exact_bet365_rows": 518,
+    "fresh_exact_bet365_rows": 518,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 99
+    "decision_runs_recorded": 100
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 290,
-        "h2h": 129,
-        "spreads": 82
+        "totals": 320,
+        "h2h": 132,
+        "spreads": 98
       },
       "exact": {
-        "totals": 262,
-        "h2h": 129,
-        "spreads": 78
+        "totals": 296,
+        "h2h": 132,
+        "spreads": 90
       },
       "fresh": {
-        "totals": 262,
-        "h2h": 129,
-        "spreads": 78
+        "totals": 296,
+        "h2h": 132,
+        "spreads": 90
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 129,
-        "fresh": 129,
+        "exact": 132,
+        "fresh": 132,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 78,
-        "fresh": 78,
+        "exact": 90,
+        "fresh": 90,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 262,
-        "fresh": 262,
+        "exact": 296,
+        "fresh": 296,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 469
+      "0_20m": 518
     },
     "reference_depth_rejections_by_market": {
-      "totals": 262,
-      "h2h": 129,
-      "spreads": 78
+      "totals": 296,
+      "h2h": 132,
+      "spreads": 90
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,7 +72,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-10-05T20:33:47.402509+00:00",
+    "generated_at": "2026-10-06T06:19:51.647907+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -131,6 +131,10 @@
           10
         ],
         [
+          "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+          9
+        ],
+        [
           "{'name': 'Wales - Cymru Championship, South', 'slug': 'wales-cymru-championship-south'}",
           9
         ],
@@ -139,16 +143,8 @@
           8
         ],
         [
-          "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-          8
-        ],
-        [
           "{'name': 'Wales - Cymru Championship, North', 'slug': 'wales-cymru-championship-north'}",
           8
-        ],
-        [
-          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-          7
         ],
         [
           "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
@@ -169,6 +165,10 @@
         [
           "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
           7
+        ],
+        [
+          "{'name': 'Algeria - Ligue 1', 'slug': 'algeria-ligue-1'}",
+          6
         ],
         [
           "{'name': 'Argentina - Primera LPF, Reserves, Clausura', 'slug': 'argentina-primera-lpf-reserves-clausura'}",
@@ -203,7 +203,7 @@
           5
         ],
         [
-          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+          "{'name': 'China - Chinese Super League', 'slug': 'china-chinese-super-league'}",
           5
         ],
         [
@@ -224,10 +224,6 @@
         ],
         [
           "{'name': 'Germany - 2. Bundesliga', 'slug': 'germany-2-bundesliga'}",
-          5
-        ],
-        [
-          "{'name': 'Hungary - NB II', 'slug': 'hungary-nb-ii'}",
           5
         ],
         [
@@ -255,7 +251,11 @@
           4
         ],
         [
-          "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
+          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+          4
+        ],
+        [
+          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
           4
         ],
         [
@@ -279,15 +279,15 @@
           4
         ],
         [
+          "{'name': 'Ivory Coast - Ligue 1', 'slug': 'ivory-coast-ligue-1'}",
+          4
+        ],
+        [
           "{'name': 'Poland - 1. Liga', 'slug': 'poland-1-liga'}",
           4
         ],
         [
           "{'name': 'Romania - Superliga', 'slug': 'romania-superliga'}",
-          4
-        ],
-        [
-          "{'name': 'Scotland - Premiership', 'slug': 'scotland-premiership'}",
           4
         ]
       ],
@@ -335,18 +335,18 @@
       ],
       "samples": [
         {
-          "id": 73220894,
-          "home": "Cuba",
-          "away": "Saint Kitts and Nevis",
+          "id": 74455056,
+          "home": "Changchun Xidu",
+          "away": "Guangzhou Dandelion Alpha FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "International - CONCACAF Nations League, League B, Group C",
-            "slug": "international-concacaf-nations-league-league-b-group-c"
+            "name": "China - China League 2, Relegation Round, Gr. B",
+            "slug": "china-china-league-2-relegation-round-gr-b"
           },
-          "date": "2026-10-05T21:00:00Z",
+          "date": "2026-10-06T07:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 72636256,
-          "home": "Bogota FC",
-          "away": "Envigado FC",
+          "id": 74455058,
+          "home": "Shanghai Second",
+          "away": "Wenzhou Professional FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Colombia - Torneo DIMAYOR, Clausura",
-            "slug": "colombia-torneo-dimayor-clausura"
+            "name": "China - China League 2, Relegation Round, Gr. B",
+            "slug": "china-china-league-2-relegation-round-gr-b"
           },
-          "date": "2026-10-05T22:00:00Z",
+          "date": "2026-10-06T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 67119808,
-          "home": "Deportivo Merlo",
-          "away": "CA Brown de Adrogue",
+          "id": 74455168,
+          "home": "Beijing Institute of Technology",
+          "away": "Chengdu Rongcheng B",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Argentina - Primera B",
-            "slug": "argentina-primera-b"
+            "name": "China - China League 2, Relegation Round, Gr. B",
+            "slug": "china-china-league-2-relegation-round-gr-b"
           },
-          "date": "2026-10-05T22:00:00Z",
+          "date": "2026-10-06T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 73220788,
-          "home": "Martinique",
-          "away": "El Salvador",
+          "id": 74455170,
+          "home": "Qingdao Red Lions",
+          "away": "Wuhan Three Towns B",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "International - CONCACAF Nations League, League A, Group B",
-            "slug": "international-concacaf-nations-league-league-a-group-b"
+            "name": "China - China League 2, Relegation Round, Gr. B",
+            "slug": "china-china-league-2-relegation-round-gr-b"
           },
-          "date": "2026-10-05T22:00:00Z",
+          "date": "2026-10-06T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 73265356,
-          "home": "Estudiantes de La Plata",
-          "away": "Gimnasia y Esgrima Mendoza",
+          "id": 73550060,
+          "home": "Lam Dong FC",
+          "away": "Song Lam Nghe An",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Argentina - Primera LPF, Clausura",
-            "slug": "argentina-primera-lpf-clausura"
+            "name": "Vietnam - Vietnam Cup",
+            "slug": "vietnam-vietnam-cup"
           },
-          "date": "2026-10-05T22:00:00Z",
+          "date": "2026-10-06T08:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 18496,
-    "unique_markets": 79,
+    "raw_market_observations": 15191,
+    "unique_markets": 64,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-10-05T20:33:47Z",
+    "generated_at": "2026-10-06T06:19:51Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",

@@ -1,87 +1,85 @@
 {
-  "generated_at": "2026-10-05T20:33:52.219911+00:00",
+  "generated_at": "2026-10-06T06:19:56.293760+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 501,
-  "exact_bet365_rows": 469,
+  "candidate_rows": 550,
+  "exact_bet365_rows": 518,
   "fresh_exact_rows_by_market": {
-    "h2h": 129,
-    "spreads": 78,
-    "totals": 262
+    "h2h": 132,
+    "spreads": 90,
+    "totals": 296
   },
   "metadata": {
-    "rows_with_sport": 501,
-    "rows_with_league": 501,
-    "rows_with_parseable_teams": 501,
+    "rows_with_sport": 550,
+    "rows_with_league": 550,
+    "rows_with_parseable_teams": 550,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 129,
-      "spreads": 82,
-      "totals": 290
+      "h2h": 132,
+      "spreads": 98,
+      "totals": 320
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 129,
-      "totals": 290
+      "h2h": 132,
+      "totals": 320
     },
-    "first_model_scope_rows": 419
+    "first_model_scope_rows": 452
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-        55
+        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        63
       ],
       [
         "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
-        55
+        62
+      ],
+      [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group C', 'slug': 'international-youth-u21-euro-qualification-group-c'}",
+        49
+      ],
+      [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group D', 'slug': 'international-youth-u21-euro-qualification-group-d'}",
+        47
       ],
       [
         "{'name': 'International Youth - U21 EURO, Qualification, Group F', 'slug': 'international-youth-u21-euro-qualification-group-f'}",
         47
       ],
       [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group A', 'slug': 'international-youth-u21-euro-qualification-group-a'}",
+        44
+      ],
+      [
         "{'name': 'International Youth - U21 EURO, Qualification, Group B', 'slug': 'international-youth-u21-euro-qualification-group-b'}",
         41
       ],
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
+        "{'name': 'International Youth - U21 EURO, Qualification, Group G', 'slug': 'international-youth-u21-euro-qualification-group-g'}",
         34
+      ],
+      [
+        "{'name': 'International Youth - U21 EURO, Qualification, Group H', 'slug': 'international-youth-u21-euro-qualification-group-h'}",
+        32
       ],
       [
         "{'name': 'International Youth - U21 EURO, Qualification, Group I', 'slug': 'international-youth-u21-euro-qualification-group-i'}",
         30
-      ],
-      [
-        "{'name': 'International - CONCACAF Nations League, League A, Group B', 'slug': 'international-concacaf-nations-league-league-a-group-b'}",
-        27
-      ],
-      [
-        "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
-        27
-      ],
-      [
-        "{'name': 'International Youth - U21 EURO, Qualification, Group G', 'slug': 'international-youth-u21-euro-qualification-group-g'}",
-        19
-      ],
-      [
-        "{'name': 'Jamaica - Premier League', 'slug': 'jamaica-premier-league'}",
-        18
       ]
     ],
-    "public_data_hints": {
-      "football-data.co.uk:E0": 18
-    }
+    "public_data_hints": {}
   },
   "public_football_data_probe": {
     "source_status": "ok",
@@ -108,12 +106,13 @@
     "has_any_valid_league": true
   },
   "blockers": [
+    "public_data_league_mapping_not_verified",
     "historical_results_adapter_not_yet_built",
     "model_reference_must_remain_shadow_until_calibrated"
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 82
+      "market_not_first_model_scope": 98
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
