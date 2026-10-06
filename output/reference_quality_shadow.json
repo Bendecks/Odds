@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-06T06:19:56.269439+00:00",
-  "as_of": "2026-10-06T06:19:56.203458+00:00",
+  "generated_at": "2026-10-06T18:21:42.110535+00:00",
+  "as_of": "2026-10-06T18:21:42.042073+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 550,
-  "fresh_exact_candidates": 518,
+  "total_candidates": 521,
+  "fresh_exact_candidates": 493,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 518,
-    "missing_external_market_reference": 518,
-    "missing_model_reference": 518
+    "insufficient_independent_economic_sources": 493,
+    "missing_external_market_reference": 493,
+    "missing_model_reference": 493
   },
   "missing_roles": {
-    "external_market_reference": 518,
-    "model_reference": 518
+    "external_market_reference": 493,
+    "model_reference": 493
   },
   "by_market": {
     "h2h": {
-      "evaluated": 132,
-      "fresh_exact_bet365": 132,
+      "evaluated": 105,
+      "fresh_exact_bet365": 105,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 132,
-        "missing_external_market_reference": 132,
-        "missing_model_reference": 132
+        "insufficient_independent_economic_sources": 105,
+        "missing_external_market_reference": 105,
+        "missing_model_reference": 105
       },
       "missing_roles": {
-        "external_market_reference": 132,
-        "model_reference": 132
+        "external_market_reference": 105,
+        "model_reference": 105
       }
     },
     "spreads": {
-      "evaluated": 90,
-      "fresh_exact_bet365": 90,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 90,
-        "missing_external_market_reference": 90,
-        "missing_model_reference": 90
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 90,
-        "model_reference": 90
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "totals": {
-      "evaluated": 296,
-      "fresh_exact_bet365": 296,
+      "evaluated": 274,
+      "fresh_exact_bet365": 274,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 296,
-        "missing_external_market_reference": 296,
-        "missing_model_reference": 296
+        "insufficient_independent_economic_sources": 274,
+        "missing_external_market_reference": 274,
+        "missing_model_reference": 274
       },
       "missing_roles": {
-        "external_market_reference": 296,
-        "model_reference": 296
+        "external_market_reference": 274,
+        "model_reference": 274
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 518,
+        "fresh_exact_candidates_blocked": 493,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 518,
+        "fresh_exact_candidates_blocked": 493,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 518
+        "fresh_exact_candidates_blocked": 493
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 296,
+        "fresh_exact_candidates": 274,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 296,
-          "model_reference": 296
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "h2h",
-        "fresh_exact_candidates": 132,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 132,
-          "model_reference": 132
+          "external_market_reference": 274,
+          "model_reference": 274
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 90,
+        "fresh_exact_candidates": 114,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 90,
-          "model_reference": 90
+          "external_market_reference": 114,
+          "model_reference": 114
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "h2h",
+        "fresh_exact_candidates": 105,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 105,
+          "model_reference": 105
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 296,
+      "first_market_fresh_exact_candidates": 274,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 132,
-      "fresh_exact_bet365": 132,
+      "evaluated": 105,
+      "fresh_exact_bet365": 105,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 132,
-        "missing_external_market_reference": 132,
-        "missing_model_reference": 132
+        "insufficient_independent_economic_sources": 105,
+        "missing_external_market_reference": 105,
+        "missing_model_reference": 105
       },
       "missing_roles": {
-        "external_market_reference": 132,
-        "model_reference": 132
+        "external_market_reference": 105,
+        "model_reference": 105
       }
     },
     "spreads": {
-      "evaluated": 98,
-      "fresh_exact_bet365": 90,
+      "evaluated": 114,
+      "fresh_exact_bet365": 114,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 98,
-        "missing_external_market_reference": 98,
-        "missing_model_reference": 98,
-        "not_fresh_exact_bet365": 8
+        "insufficient_independent_economic_sources": 114,
+        "missing_external_market_reference": 114,
+        "missing_model_reference": 114
       },
       "missing_roles": {
-        "external_market_reference": 98,
-        "model_reference": 98
+        "external_market_reference": 114,
+        "model_reference": 114
       }
     },
     "totals": {
-      "evaluated": 320,
-      "fresh_exact_bet365": 296,
+      "evaluated": 302,
+      "fresh_exact_bet365": 274,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 320,
-        "missing_external_market_reference": 320,
-        "missing_model_reference": 320,
-        "not_fresh_exact_bet365": 24
+        "insufficient_independent_economic_sources": 302,
+        "missing_external_market_reference": 302,
+        "missing_model_reference": 302,
+        "not_fresh_exact_bet365": 28
       },
       "missing_roles": {
-        "external_market_reference": 320,
-        "model_reference": 320
+        "external_market_reference": 302,
+        "model_reference": 302
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
       "market": "h2h",
-      "pick": "Shanghai Second",
+      "pick": "Belarus",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,193 +208,9 @@
       ]
     },
     {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
-      "market": "h2h",
-      "pick": "Wenzhou Professional FC",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Shanghai Second vs Wenzhou Professional FC",
-      "event_id": 74455058,
-      "bet365_event_id": 74455058,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Beijing Institute of Technology vs Chengdu Rongcheng B",
-      "event_id": 74455168,
-      "bet365_event_id": 74455168,
-      "market": "h2h",
-      "pick": "Beijing Institute of Technology",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Beijing Institute of Technology vs Chengdu Rongcheng B",
-      "event_id": 74455168,
-      "bet365_event_id": 74455168,
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -419,12 +234,194 @@
       ]
     },
     {
-      "event": "Beijing Institute of Technology vs Chengdu Rongcheng B",
-      "event_id": 74455168,
-      "bet365_event_id": 74455168,
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
       "market": "h2h",
-      "pick": "Chengdu Rongcheng B",
+      "pick": "Finland",
       "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "spreads",
+      "pick": "Belarus",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "spreads",
+      "pick": "Finland",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "totals",
+      "pick": "Over",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "totals",
+      "pick": "Under",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Belarus vs Finland",
+      "event_id": 68932516,
+      "bet365_event_id": 68932516,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
