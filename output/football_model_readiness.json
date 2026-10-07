@@ -1,86 +1,87 @@
 {
-  "generated_at": "2026-10-06T18:21:42.136362+00:00",
+  "generated_at": "2026-10-07T05:58:50.608321+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 521,
-  "exact_bet365_rows": 493,
+  "candidate_rows": 348,
+  "exact_bet365_rows": 270,
   "fresh_exact_rows_by_market": {
-    "h2h": 105,
-    "spreads": 114,
-    "totals": 274
+    "h2h": 114,
+    "spreads": 4,
+    "totals": 152
   },
   "metadata": {
-    "rows_with_sport": 521,
-    "rows_with_league": 521,
-    "rows_with_parseable_teams": 521,
+    "rows_with_sport": 348,
+    "rows_with_league": 348,
+    "rows_with_parseable_teams": 348,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 105,
-      "spreads": 114,
-      "totals": 302
+      "h2h": 114,
+      "spreads": 4,
+      "totals": 230
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 105,
-      "totals": 302
+      "h2h": 114,
+      "totals": 230
     },
-    "first_model_scope_rows": 407
+    "first_model_scope_rows": 344
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - UEFA Nations League, League C, Gr. 2', 'slug': 'international-uefa-nations-league-league-c-gr-2'}",
-        160
+        "{'name': 'Italy - Coppa Italia Serie D', 'slug': 'italy-coppa-italia-serie-d'}",
+        88
       ],
       [
-        "{'name': 'International - International Matches', 'slug': 'international-international-matches'}",
-        84
+        "{'name': 'Japan - Emperor Cup', 'slug': 'japan-emperor-cup'}",
+        70
       ],
       [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        59
+        "{'name': 'Turkiye - Turkiye Kupasi', 'slug': 'turkiye-turkiye-kupasi'}",
+        52
       ],
       [
-        "{'name': 'England - FA Cup', 'slug': 'england-fa-cup'}",
-        45
+        "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
+        33
       ],
       [
-        "{'name': 'Paraguay - Division de Honor, Clausura', 'slug': 'paraguay-division-de-honor-clausura'}",
-        30
+        "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
+        16
       ],
       [
-        "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
-        25
-      ],
-      [
-        "{'name': 'International - CONCACAF Nations League, League B, Group D', 'slug': 'international-concacaf-nations-league-league-b-group-d'}",
-        18
-      ],
-      [
-        "{'name': 'International - Africa Cup of Nations, Qualification, Group D', 'slug': 'international-africa-cup-of-nations-qualification-group-d'}",
+        "{'name': 'Finland - Veikkausliiga, Championship Round', 'slug': 'finland-veikkausliiga-championship-round'}",
         15
       ],
       [
-        "{'name': 'England - EFL Trophy, Southern Group H', 'slug': 'england-efl-trophy-southern-group-h'}",
+        "{'name': 'Canada - Canadian Premier League', 'slug': 'canada-canadian-premier-league'}",
         11
       ],
       [
-        "{'name': 'International - CONCACAF Nations League, League C, Group C', 'slug': 'international-concacaf-nations-league-league-c-group-c'}",
-        11
+        "{'name': 'Republic of Korea - WK-League', 'slug': 'republic-of-korea-wk-league'}",
+        9
+      ],
+      [
+        "{'name': 'Azerbaijan - 1. Liga', 'slug': 'azerbaijan-1-liga'}",
+        9
+      ],
+      [
+        "{'name': 'Hungary - U19 National', 'slug': 'hungary-u19-national'}",
+        9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:SP1": 9
+      "football-data.co.uk:E0": 11,
+      "football-data.co.uk:E1": 24
     }
   },
   "public_football_data_probe": {
@@ -113,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 114
+      "market_not_first_model_scope": 4
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
