@@ -1,89 +1,88 @@
 {
-  "generated_at": "2026-10-07T18:56:59.687328+00:00",
+  "generated_at": "2026-10-08T06:04:10.143974+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 391,
-  "exact_bet365_rows": 363,
+  "candidate_rows": 203,
+  "exact_bet365_rows": 161,
   "fresh_exact_rows_by_market": {
-    "h2h": 99,
-    "spreads": 54,
-    "totals": 210
+    "h2h": 63,
+    "spreads": 16,
+    "totals": 82
   },
   "metadata": {
-    "rows_with_sport": 391,
-    "rows_with_league": 391,
-    "rows_with_parseable_teams": 391,
+    "rows_with_sport": 203,
+    "rows_with_league": 203,
+    "rows_with_parseable_teams": 203,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 99,
-      "spreads": 54,
-      "totals": 238
+      "h2h": 63,
+      "spreads": 16,
+      "totals": 124
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 99,
-      "totals": 238
+      "h2h": 63,
+      "totals": 124
     },
-    "first_model_scope_rows": 337
+    "first_model_scope_rows": 187
   },
   "league_mapping": {
     "top_candidate_leagues": [
-      [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        97
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
-        97
-      ],
-      [
-        "{'name': 'Guatemala - Primera Division, Apertura, Group A', 'slug': 'guatemala-primera-division-apertura-group-a'}",
-        45
-      ],
       [
         "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
         39
       ],
       [
-        "{'name': 'Bolivia - Copa Bolivia', 'slug': 'bolivia-copa-bolivia'}",
+        "{'name': 'Finland - Veikkausliiga, Championship Round', 'slug': 'finland-veikkausliiga-championship-round'}",
+        30
+      ],
+      [
+        "{'name': 'Iraq - Stars League', 'slug': 'iraq-stars-league'}",
         27
       ],
       [
-        "{'name': 'Chile - Copa Chile, Knockout stage', 'slug': 'chile-copa-chile-knockout-stage'}",
+        "{'name': 'Qatar - Stars League', 'slug': 'qatar-stars-league'}",
         16
       ],
       [
-        "{'name': 'Canada - Canadian Premier League', 'slug': 'canada-canadian-premier-league'}",
-        11
+        "{'name': 'Romania - Superliga', 'slug': 'romania-superliga'}",
+        15
       ],
       [
-        "{'name': 'Algeria - Ligue 1', 'slug': 'algeria-ligue-1'}",
+        "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
+        15
+      ],
+      [
+        "{'name': 'International Clubs - Club Friendly Games', 'slug': 'international-clubs-club-friendly-games'}",
         9
       ],
       [
-        "{'name': 'Ecuador - Serie B, Promotion Round', 'slug': 'ecuador-serie-b-promotion-round'}",
+        "{'name': 'Azerbaijan - 1. Liga', 'slug': 'azerbaijan-1-liga'}",
         9
       ],
       [
-        "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
+        "{'name': 'International Clubs - ASEAN Club Championship, Group B', 'slug': 'international-clubs-asean-club-championship-group-b'}",
+        9
+      ],
+      [
+        "{'name': 'Bhutan - Premier League', 'slug': 'bhutan-premier-league'}",
         9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 11,
-      "football-data.co.uk:E1": 9,
-      "football-data.co.uk:F1": 9,
-      "football-data.co.uk:I1": 97
+      "football-data.co.uk:E0": 9,
+      "football-data.co.uk:E1": 39,
+      "public-data:needs-provider-specific-mapping": 15
     }
   },
   "public_football_data_probe": {
@@ -116,7 +115,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 54
+      "market_not_first_model_scope": 16
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
