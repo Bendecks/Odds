@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-08T06:04:10.117137+00:00",
-  "as_of": "2026-10-08T06:04:10.051979+00:00",
+  "generated_at": "2026-10-08T18:50:45.383945+00:00",
+  "as_of": "2026-10-08T18:50:45.314620+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 203,
-  "fresh_exact_candidates": 161,
+  "total_candidates": 450,
+  "fresh_exact_candidates": 398,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 161,
-    "missing_external_market_reference": 161,
-    "missing_model_reference": 161
+    "insufficient_independent_economic_sources": 398,
+    "missing_external_market_reference": 398,
+    "missing_model_reference": 398
   },
   "missing_roles": {
-    "external_market_reference": 161,
-    "model_reference": 161
+    "external_market_reference": 398,
+    "model_reference": 398
   },
   "by_market": {
     "h2h": {
-      "evaluated": 63,
-      "fresh_exact_bet365": 63,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 63,
-        "missing_external_market_reference": 63,
-        "missing_model_reference": 63
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 63,
-        "model_reference": 63
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 16,
-      "fresh_exact_bet365": 16,
+      "evaluated": 78,
+      "fresh_exact_bet365": 78,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 16,
-        "missing_external_market_reference": 16,
-        "missing_model_reference": 16
+        "insufficient_independent_economic_sources": 78,
+        "missing_external_market_reference": 78,
+        "missing_model_reference": 78
       },
       "missing_roles": {
-        "external_market_reference": 16,
-        "model_reference": 16
+        "external_market_reference": 78,
+        "model_reference": 78
       }
     },
     "totals": {
-      "evaluated": 82,
-      "fresh_exact_bet365": 82,
+      "evaluated": 212,
+      "fresh_exact_bet365": 212,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 82,
-        "missing_external_market_reference": 82,
-        "missing_model_reference": 82
+        "insufficient_independent_economic_sources": 212,
+        "missing_external_market_reference": 212,
+        "missing_model_reference": 212
       },
       "missing_roles": {
-        "external_market_reference": 82,
-        "model_reference": 82
+        "external_market_reference": 212,
+        "model_reference": 212
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 161,
+        "fresh_exact_candidates_blocked": 398,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 161,
+        "fresh_exact_candidates_blocked": 398,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 161
+        "fresh_exact_candidates_blocked": 398
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 82,
+        "fresh_exact_candidates": 212,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 82,
-          "model_reference": 82
+          "external_market_reference": 212,
+          "model_reference": 212
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 63,
+        "fresh_exact_candidates": 108,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 63,
-          "model_reference": 63
+          "external_market_reference": 108,
+          "model_reference": 108
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 16,
+        "fresh_exact_candidates": 78,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 16,
-          "model_reference": 16
+          "external_market_reference": 78,
+          "model_reference": 78
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 82,
+      "first_market_fresh_exact_candidates": 212,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 63,
-      "fresh_exact_bet365": 63,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 63,
-        "missing_external_market_reference": 63,
-        "missing_model_reference": 63
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 63,
-        "model_reference": 63
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 16,
-      "fresh_exact_bet365": 16,
+      "evaluated": 82,
+      "fresh_exact_bet365": 78,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 16,
-        "missing_external_market_reference": 16,
-        "missing_model_reference": 16
+        "insufficient_independent_economic_sources": 82,
+        "missing_external_market_reference": 82,
+        "missing_model_reference": 82,
+        "not_fresh_exact_bet365": 4
       },
       "missing_roles": {
-        "external_market_reference": 16,
-        "model_reference": 16
+        "external_market_reference": 82,
+        "model_reference": 82
       }
     },
     "totals": {
-      "evaluated": 124,
-      "fresh_exact_bet365": 82,
+      "evaluated": 260,
+      "fresh_exact_bet365": 212,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 124,
-        "missing_external_market_reference": 124,
-        "missing_model_reference": 124,
-        "not_fresh_exact_bet365": 42
+        "insufficient_independent_economic_sources": 260,
+        "missing_external_market_reference": 260,
+        "missing_model_reference": 260,
+        "not_fresh_exact_bet365": 48
       },
       "missing_roles": {
-        "external_market_reference": 124,
-        "model_reference": 124
+        "external_market_reference": 260,
+        "model_reference": 260
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "h2h",
-      "pick": "Adelaide City FC",
+      "pick": "Atletico Rojiblanco",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "h2h",
-      "pick": "Adelaide United FC",
+      "pick": "San Antonio FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,9 +261,63 @@
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -286,9 +341,9 @@
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -312,13 +367,13 @@
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -332,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
+      "event": "Atletico Rojiblanco vs San Antonio FC",
+      "event_id": 73998610,
+      "bet365_event_id": 73998610,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -358,69 +414,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Adelaide City FC vs Adelaide United FC",
-      "event_id": 75254616,
-      "bet365_event_id": 75254616,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Sabail FK vs FK Karvan Yevlakh",
-      "event_id": 73730282,
-      "bet365_event_id": 73730282,
+      "event": "CR Flamengo RJ U20 vs CR Vasco da Gama RJ U20",
+      "event_id": 74981174,
+      "bet365_event_id": 74981174,
       "market": "h2h",
-      "pick": "Sabail FK",
+      "pick": "CR Flamengo RJ U20",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
