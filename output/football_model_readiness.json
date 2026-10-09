@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-08T18:50:45.410123+00:00",
+  "generated_at": "2026-10-09T06:08:11.920128+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 450,
-  "exact_bet365_rows": 398,
+  "candidate_rows": 358,
+  "exact_bet365_rows": 270,
   "fresh_exact_rows_by_market": {
     "h2h": 108,
-    "spreads": 78,
-    "totals": 212
+    "spreads": 28,
+    "totals": 134
   },
   "metadata": {
-    "rows_with_sport": 450,
-    "rows_with_league": 450,
-    "rows_with_parseable_teams": 450,
+    "rows_with_sport": 358,
+    "rows_with_league": 358,
+    "rows_with_parseable_teams": 358,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
@@ -23,8 +23,8 @@
   "market_scope": {
     "candidate_markets": {
       "h2h": 108,
-      "spreads": 82,
-      "totals": 260
+      "spreads": 30,
+      "totals": 220
     },
     "first_model_markets": [
       "h2h",
@@ -32,57 +32,56 @@
     ],
     "coverable_rows_by_market": {
       "h2h": 108,
-      "totals": 260
+      "totals": 220
     },
-    "first_model_scope_rows": 368
+    "first_model_scope_rows": 328
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
-        80
-      ],
-      [
-        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
-        43
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        38
-      ],
-      [
-        "{'name': 'Brazil - U20 Copa do Brasil', 'slug': 'brazil-u20-copa-do-brasil'}",
-        32
-      ],
-      [
         "{'name': 'China - Chinese Super League', 'slug': 'china-chinese-super-league'}",
-        32
+        51
+      ],
+      [
+        "{'name': 'Czechia - U19 1. Liga', 'slug': 'czechia-u19-1-liga'}",
+        49
       ],
       [
         "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
         30
       ],
       [
-        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
         28
+      ],
+      [
+        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
+        28
+      ],
+      [
+        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
+        18
       ],
       [
         "{'name': 'Azerbaijan - 1. Liga', 'slug': 'azerbaijan-1-liga'}",
         18
       ],
       [
-        "{'name': 'Ireland - Premier Division', 'slug': 'ireland-premier-division'}",
-        17
+        "{'name': 'Romania - Liga III, Seria 3', 'slug': 'romania-liga-iii-seria-3'}",
+        18
       ],
       [
-        "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
-        15
+        "{'name': 'Indonesia - Championship, Group B', 'slug': 'indonesia-championship-group-b'}",
+        9
+      ],
+      [
+        "{'name': 'International - International Friendly Games, Women', 'slug': 'international-international-friendly-games-women'}",
+        9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E1": 9,
-      "football-data.co.uk:F1": 7,
-      "football-data.co.uk:I1": 80
+      "football-data.co.uk:E0": 34,
+      "football-data.co.uk:E1": 9
     }
   },
   "public_football_data_probe": {
@@ -115,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 82
+      "market_not_first_model_scope": 30
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

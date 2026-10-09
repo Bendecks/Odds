@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-08T18:50:45.383945+00:00",
-  "as_of": "2026-10-08T18:50:45.314620+00:00",
+  "generated_at": "2026-10-09T06:08:11.837249+00:00",
+  "as_of": "2026-10-09T06:08:11.617406+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,17 +20,17 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 450,
-  "fresh_exact_candidates": 398,
+  "total_candidates": 358,
+  "fresh_exact_candidates": 270,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 398,
-    "missing_external_market_reference": 398,
-    "missing_model_reference": 398
+    "insufficient_independent_economic_sources": 270,
+    "missing_external_market_reference": 270,
+    "missing_model_reference": 270
   },
   "missing_roles": {
-    "external_market_reference": 398,
-    "model_reference": 398
+    "external_market_reference": 270,
+    "model_reference": 270
   },
   "by_market": {
     "h2h": {
@@ -48,31 +48,31 @@
       }
     },
     "spreads": {
-      "evaluated": 78,
-      "fresh_exact_bet365": 78,
+      "evaluated": 28,
+      "fresh_exact_bet365": 28,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 78,
-        "missing_external_market_reference": 78,
-        "missing_model_reference": 78
+        "insufficient_independent_economic_sources": 28,
+        "missing_external_market_reference": 28,
+        "missing_model_reference": 28
       },
       "missing_roles": {
-        "external_market_reference": 78,
-        "model_reference": 78
+        "external_market_reference": 28,
+        "model_reference": 28
       }
     },
     "totals": {
-      "evaluated": 212,
-      "fresh_exact_bet365": 212,
+      "evaluated": 134,
+      "fresh_exact_bet365": 134,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 212,
-        "missing_external_market_reference": 212,
-        "missing_model_reference": 212
+        "insufficient_independent_economic_sources": 134,
+        "missing_external_market_reference": 134,
+        "missing_model_reference": 134
       },
       "missing_roles": {
-        "external_market_reference": 212,
-        "model_reference": 212
+        "external_market_reference": 134,
+        "model_reference": 134
       }
     }
   },
@@ -80,29 +80,29 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 398,
+        "fresh_exact_candidates_blocked": 270,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 398,
+        "fresh_exact_candidates_blocked": 270,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 398
+        "fresh_exact_candidates_blocked": 270
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 212,
+        "fresh_exact_candidates": 134,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 212,
-          "model_reference": 212
+          "external_market_reference": 134,
+          "model_reference": 134
         },
         "largest_missing_role": "external_market_reference"
       },
@@ -118,11 +118,11 @@
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 78,
+        "fresh_exact_candidates": 28,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 78,
-          "model_reference": 78
+          "external_market_reference": 28,
+          "model_reference": 28
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,7 +130,7 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 212,
+      "first_market_fresh_exact_candidates": 134,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
@@ -151,43 +151,43 @@
       }
     },
     "spreads": {
-      "evaluated": 82,
-      "fresh_exact_bet365": 78,
+      "evaluated": 30,
+      "fresh_exact_bet365": 28,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 82,
-        "missing_external_market_reference": 82,
-        "missing_model_reference": 82,
-        "not_fresh_exact_bet365": 4
+        "insufficient_independent_economic_sources": 30,
+        "missing_external_market_reference": 30,
+        "missing_model_reference": 30,
+        "not_fresh_exact_bet365": 2
       },
       "missing_roles": {
-        "external_market_reference": 82,
-        "model_reference": 82
+        "external_market_reference": 30,
+        "model_reference": 30
       }
     },
     "totals": {
-      "evaluated": 260,
-      "fresh_exact_bet365": 212,
+      "evaluated": 220,
+      "fresh_exact_bet365": 134,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 260,
-        "missing_external_market_reference": 260,
-        "missing_model_reference": 260,
-        "not_fresh_exact_bet365": 48
+        "insufficient_independent_economic_sources": 220,
+        "missing_external_market_reference": 220,
+        "missing_model_reference": 220,
+        "not_fresh_exact_bet365": 86
       },
       "missing_roles": {
-        "external_market_reference": 260,
-        "model_reference": 260
+        "external_market_reference": 220,
+        "model_reference": 220
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
       "market": "h2h",
-      "pick": "Atletico Rojiblanco",
+      "pick": "Gangwon FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
       "market": "h2h",
-      "pick": "San Antonio FC",
+      "pick": "Bucheon FC 1995",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,66 +261,12 @@
       ]
     },
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
+      "market": "spreads",
+      "pick": "Gangwon FC",
+      "line": -1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -341,12 +287,12 @@
       ]
     },
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
+      "market": "spreads",
+      "pick": "Bucheon FC 1995",
+      "line": -1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -367,13 +313,65 @@
       ]
     },
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
+      "market": "spreads",
+      "pick": "Gangwon FC",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
+      "market": "spreads",
+      "pick": "Bucheon FC 1995",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
       "market": "totals",
       "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
+      "line": 1.5,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -387,20 +385,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Atletico Rojiblanco vs San Antonio FC",
-      "event_id": 73998610,
-      "bet365_event_id": 73998610,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
       "market": "totals",
       "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
+      "line": 1.5,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -414,19 +411,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "CR Flamengo RJ U20 vs CR Vasco da Gama RJ U20",
-      "event_id": 74981174,
-      "bet365_event_id": 74981174,
-      "market": "h2h",
-      "pick": "CR Flamengo RJ U20",
-      "line": null,
+      "event": "Gangwon FC vs Bucheon FC 1995",
+      "event_id": 67817896,
+      "bet365_event_id": 67817896,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [

@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-10-08T18:50:45.314620+00:00",
+  "generated_at": "2026-10-09T06:08:11.617406+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 450,
-    "fair_probability_rows": 450,
+    "candidate_rows": 358,
+    "fair_probability_rows": 358,
     "reference_events": 12,
-    "exact_bet365_rows": 398,
-    "fresh_exact_bet365_rows": 398,
+    "exact_bet365_rows": 270,
+    "fresh_exact_bet365_rows": 270,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 105
+    "decision_runs_recorded": 106
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 260,
+        "totals": 220,
         "h2h": 108,
-        "spreads": 82
+        "spreads": 30
       },
       "exact": {
-        "totals": 212,
+        "totals": 134,
         "h2h": 108,
-        "spreads": 78
+        "spreads": 28
       },
       "fresh": {
-        "totals": 212,
+        "totals": 134,
         "h2h": 108,
-        "spreads": 78
+        "spreads": 28
       },
       "reference_ready": {},
       "production_edge_ready": {}
@@ -44,25 +44,25 @@
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 78,
-        "fresh": 78,
+        "exact": 28,
+        "fresh": 28,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 212,
-        "fresh": 212,
+        "exact": 134,
+        "fresh": 134,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 398
+      "0_20m": 270
     },
     "reference_depth_rejections_by_market": {
-      "totals": 212,
+      "totals": 134,
       "h2h": 108,
-      "spreads": 78
+      "spreads": 28
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,7 +72,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-10-08T18:50:40.332280+00:00",
+    "generated_at": "2026-10-09T06:08:08.183689+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -111,10 +111,6 @@
           8
         ],
         [
-          "{'name': 'Republic of Korea - K-League 2', 'slug': 'republic-of-korea-k-league-2'}",
-          7
-        ],
-        [
           "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
           7
         ],
@@ -139,11 +135,15 @@
           6
         ],
         [
-          "{'name': 'Belgium - U21 Pro League, Group 1', 'slug': 'belgium-u21-pro-league-group-1'}",
+          "{'name': 'Republic of Korea - K-League 2', 'slug': 'republic-of-korea-k-league-2'}",
+          6
+        ],
+        [
+          "{'name': 'Bangladesh - Football League', 'slug': 'bangladesh-football-league'}",
           5
         ],
         [
-          "{'name': 'Brazil - U20 Copa do Brasil', 'slug': 'brazil-u20-copa-do-brasil'}",
+          "{'name': 'Belgium - U21 Pro League, Group 1', 'slug': 'belgium-u21-pro-league-group-1'}",
           5
         ],
         [
@@ -175,18 +175,6 @@
           5
         ],
         [
-          "{'name': 'Panama - Liga Prom, Apertura', 'slug': 'panama-liga-prom-apertura'}",
-          5
-        ],
-        [
-          "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
-          5
-        ],
-        [
-          "{'name': 'Republic of Korea - K3 League', 'slug': 'republic-of-korea-k3-league'}",
-          5
-        ],
-        [
           "{'name': 'Switzerland - Challenge League', 'slug': 'switzerland-challenge-league'}",
           5
         ],
@@ -211,19 +199,7 @@
           4
         ],
         [
-          "{'name': 'Bangladesh - Football League', 'slug': 'bangladesh-football-league'}",
-          4
-        ],
-        [
-          "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
-          4
-        ],
-        [
           "{'name': 'Brazil - U20 Paulista, Playoffs', 'slug': 'brazil-u20-paulista-playoffs'}",
-          4
-        ],
-        [
-          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
           4
         ],
         [
@@ -239,11 +215,11 @@
           4
         ],
         [
-          "{'name': 'England - Championship', 'slug': 'england-championship'}",
+          "{'name': 'Finland - Ykkosliiga', 'slug': 'finland-ykkosliiga'}",
           4
         ],
         [
-          "{'name': 'Finland - Ykkosliiga', 'slug': 'finland-ykkosliiga'}",
+          "{'name': 'Hungary - NB III, Group South East', 'slug': 'hungary-nb-iii-group-south-east'}",
           4
         ],
         [
@@ -263,6 +239,14 @@
           4
         ],
         [
+          "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
+          4
+        ],
+        [
+          "{'name': 'Republic of Korea - K3 League', 'slug': 'republic-of-korea-k3-league'}",
+          4
+        ],
+        [
           "{'name': 'Sweden - Ettan, Norra', 'slug': 'sweden-ettan-norra'}",
           4
         ],
@@ -275,11 +259,11 @@
           4
         ],
         [
-          "{'name': 'Algeria - Ligue 1', 'slug': 'algeria-ligue-1'}",
+          "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
           3
         ],
         [
-          "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
+          "{'name': 'Austria Amateur - Wiener Stadtliga', 'slug': 'austria-amateur-wiener-stadtliga'}",
           3
         ],
         [
@@ -288,6 +272,22 @@
         ],
         [
           "{'name': 'Chinese Taipei - Mulan Football League, Women', 'slug': 'chinese-taipei-mulan-football-league-women'}",
+          3
+        ],
+        [
+          "{'name': 'Czechia - Divize B', 'slug': 'czechia-divize-b'}",
+          3
+        ],
+        [
+          "{'name': 'Denmark - 3rd Division', 'slug': 'denmark-3rd-division'}",
+          3
+        ],
+        [
+          "{'name': 'Hong Kong, China - Premier League', 'slug': 'hong-kong-china-premier-league'}",
+          3
+        ],
+        [
+          "{'name': 'Hungary - NB III, Group North East', 'slug': 'hungary-nb-iii-group-north-east'}",
           3
         ]
       ],
@@ -335,18 +335,18 @@
       ],
       "samples": [
         {
-          "id": 72304304,
-          "home": "FK Bokelj Kotor",
-          "away": "OFK Petrovac",
+          "id": 74796848,
+          "home": "Kaohsiung Attackers",
+          "away": "Hualian WFT",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Montenegro - 1. CFL",
-            "slug": "montenegro-1-cfl"
+            "name": "Chinese Taipei - Mulan Football League, Women",
+            "slug": "chinese-taipei-mulan-football-league-women"
           },
-          "date": "2026-10-08T16:00:00Z",
+          "date": "2026-10-09T07:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 73700656,
-          "home": "Cerro Largo FC",
-          "away": "Progreso",
+          "id": 67817896,
+          "home": "Gangwon FC",
+          "away": "Bucheon FC 1995",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Uruguay - Tercera Division, Reserves",
-            "slug": "uruguay-tercera-division-reserves"
+            "name": "Republic of Korea - K-League 1",
+            "slug": "republic-of-korea-k-league-1"
           },
-          "date": "2026-10-08T18:00:00Z",
+          "date": "2026-10-09T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 66854214,
-          "home": "Shamrock Rovers",
-          "away": "Drogheda United FC",
+          "id": 67817898,
+          "home": "Incheon United FC",
+          "away": "FC Pohang Steelers",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Ireland - Premier Division",
-            "slug": "ireland-premier-division"
+            "name": "Republic of Korea - K-League 1",
+            "slug": "republic-of-korea-k-league-1"
           },
-          "date": "2026-10-08T19:00:00Z",
+          "date": "2026-10-09T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 75044060,
-          "home": "MC Oran",
-          "away": "ES Setif",
+          "id": 68046768,
+          "home": "Chungbuk Cheongju FC",
+          "away": "Seongnam Ilhwa",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Algeria - Ligue 1",
-            "slug": "algeria-ligue-1"
+            "name": "Republic of Korea - K-League 2",
+            "slug": "republic-of-korea-k-league-2"
           },
-          "date": "2026-10-08T19:00:00Z",
+          "date": "2026-10-09T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 73998610,
-          "home": "Atletico Rojiblanco",
-          "away": "San Antonio FC",
+          "id": 68046770,
+          "home": "Gimpo FC",
+          "away": "Seoul E-Land FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Ecuador - Serie B, Promotion Round",
-            "slug": "ecuador-serie-b-promotion-round"
+            "name": "Republic of Korea - K-League 2",
+            "slug": "republic-of-korea-k-league-2"
           },
-          "date": "2026-10-08T19:15:00Z",
+          "date": "2026-10-09T07:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 25712,
-    "unique_markets": 85,
+    "raw_market_observations": 12632,
+    "unique_markets": 64,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-10-08T18:50:40Z",
+    "generated_at": "2026-10-09T06:08:07Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",
