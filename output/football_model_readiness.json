@@ -1,89 +1,83 @@
 {
-  "generated_at": "2026-10-09T18:21:02.138623+00:00",
+  "generated_at": "2026-10-10T05:52:02.378119+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 622,
-  "exact_bet365_rows": 570,
+  "candidate_rows": 220,
+  "exact_bet365_rows": 136,
   "fresh_exact_rows_by_market": {
-    "h2h": 126,
-    "spreads": 116,
-    "totals": 328
+    "h2h": 54,
+    "spreads": 12,
+    "totals": 70
   },
   "metadata": {
-    "rows_with_sport": 622,
-    "rows_with_league": 622,
-    "rows_with_parseable_teams": 622,
+    "rows_with_sport": 220,
+    "rows_with_league": 220,
+    "rows_with_parseable_teams": 220,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 126,
-      "spreads": 160,
-      "totals": 336
+      "h2h": 54,
+      "spreads": 38,
+      "totals": 128
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 126,
-      "totals": 336
+      "h2h": 54,
+      "totals": 128
     },
-    "first_model_scope_rows": 462
+    "first_model_scope_rows": 182
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-        55
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        88
       ],
       [
-        "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
-        53
+        "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
+        32
       ],
       [
-        "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
-        49
+        "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+        20
       ],
       [
-        "{'name': 'Ireland - First Division', 'slug': 'ireland-first-division'}",
-        47
+        "{'name': 'Hong Kong, China - Premier League', 'slug': 'hong-kong-china-premier-league'}",
+        18
       ],
       [
-        "{'name': 'France - Ligue 1', 'slug': 'france-ligue-1'}",
-        41
+        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
+        18
       ],
       [
-        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-        41
+        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
+        17
       ],
       [
-        "{'name': 'Uruguay - Primera Division, Clausura', 'slug': 'uruguay-primera-division-clausura'}",
-        30
+        "{'name': 'Indonesia - Championship, Group A', 'slug': 'indonesia-championship-group-a'}",
+        9
       ],
       [
-        "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
-        25
+        "{'name': 'Spain - Division de Honor Juvenil - Grupo III', 'slug': 'spain-division-de-honor-juvenil-grupo-iii'}",
+        9
       ],
       [
-        "{'name': 'Belgium - First Division A', 'slug': 'belgium-first-division-a'}",
-        21
-      ],
-      [
-        "{'name': 'Mexico - Liga MX, Apertura', 'slug': 'mexico-liga-mx-apertura'}",
-        21
+        "{'name': 'Australia - Australia Cup, Knockout Stage', 'slug': 'australia-australia-cup-knockout-stage'}",
+        9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:D1": 49,
-      "football-data.co.uk:E1": 28,
-      "football-data.co.uk:F1": 50,
-      "football-data.co.uk:I1": 11
+      "football-data.co.uk:E0": 18,
+      "football-data.co.uk:E1": 9
     }
   },
   "public_football_data_probe": {
@@ -116,7 +110,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 160
+      "market_not_first_model_scope": 38
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
