@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-10T05:52:02.347547+00:00",
-  "as_of": "2026-10-10T05:52:02.271749+00:00",
+  "generated_at": "2026-10-10T17:20:42.352280+00:00",
+  "as_of": "2026-10-10T17:20:42.215185+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 220,
-  "fresh_exact_candidates": 136,
+  "total_candidates": 818,
+  "fresh_exact_candidates": 782,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 136,
-    "missing_external_market_reference": 136,
-    "missing_model_reference": 136
+    "insufficient_independent_economic_sources": 782,
+    "missing_external_market_reference": 782,
+    "missing_model_reference": 782
   },
   "missing_roles": {
-    "external_market_reference": 136,
-    "model_reference": 136
+    "external_market_reference": 782,
+    "model_reference": 782
   },
   "by_market": {
     "h2h": {
-      "evaluated": 54,
-      "fresh_exact_bet365": 54,
+      "evaluated": 126,
+      "fresh_exact_bet365": 126,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 54,
-        "missing_external_market_reference": 54,
-        "missing_model_reference": 54
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126
       },
       "missing_roles": {
-        "external_market_reference": 54,
-        "model_reference": 54
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     },
     "spreads": {
-      "evaluated": 12,
-      "fresh_exact_bet365": 12,
+      "evaluated": 322,
+      "fresh_exact_bet365": 322,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 12,
-        "missing_external_market_reference": 12,
-        "missing_model_reference": 12
+        "insufficient_independent_economic_sources": 322,
+        "missing_external_market_reference": 322,
+        "missing_model_reference": 322
       },
       "missing_roles": {
-        "external_market_reference": 12,
-        "model_reference": 12
+        "external_market_reference": 322,
+        "model_reference": 322
       }
     },
     "totals": {
-      "evaluated": 70,
-      "fresh_exact_bet365": 70,
+      "evaluated": 334,
+      "fresh_exact_bet365": 334,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 70,
-        "missing_external_market_reference": 70,
-        "missing_model_reference": 70
+        "insufficient_independent_economic_sources": 334,
+        "missing_external_market_reference": 334,
+        "missing_model_reference": 334
       },
       "missing_roles": {
-        "external_market_reference": 70,
-        "model_reference": 70
+        "external_market_reference": 334,
+        "model_reference": 334
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 136,
+        "fresh_exact_candidates_blocked": 782,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 136,
+        "fresh_exact_candidates_blocked": 782,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 136
+        "fresh_exact_candidates_blocked": 782
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 70,
+        "fresh_exact_candidates": 334,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 70,
-          "model_reference": 70
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "h2h",
-        "fresh_exact_candidates": 54,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 54,
-          "model_reference": 54
+          "external_market_reference": 334,
+          "model_reference": 334
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 12,
+        "fresh_exact_candidates": 322,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 12,
-          "model_reference": 12
+          "external_market_reference": 322,
+          "model_reference": 322
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "h2h",
+        "fresh_exact_candidates": 126,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 126,
+          "model_reference": 126
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 70,
+      "first_market_fresh_exact_candidates": 334,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 54,
-      "fresh_exact_bet365": 54,
+      "evaluated": 126,
+      "fresh_exact_bet365": 126,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 54,
-        "missing_external_market_reference": 54,
-        "missing_model_reference": 54
+        "insufficient_independent_economic_sources": 126,
+        "missing_external_market_reference": 126,
+        "missing_model_reference": 126
       },
       "missing_roles": {
-        "external_market_reference": 54,
-        "model_reference": 54
+        "external_market_reference": 126,
+        "model_reference": 126
       }
     },
     "spreads": {
-      "evaluated": 38,
-      "fresh_exact_bet365": 12,
+      "evaluated": 336,
+      "fresh_exact_bet365": 322,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 38,
-        "missing_external_market_reference": 38,
-        "missing_model_reference": 38,
-        "not_fresh_exact_bet365": 26
+        "insufficient_independent_economic_sources": 336,
+        "missing_external_market_reference": 336,
+        "missing_model_reference": 336,
+        "not_fresh_exact_bet365": 14
       },
       "missing_roles": {
-        "external_market_reference": 38,
-        "model_reference": 38
+        "external_market_reference": 336,
+        "model_reference": 336
       }
     },
     "totals": {
-      "evaluated": 128,
-      "fresh_exact_bet365": 70,
+      "evaluated": 356,
+      "fresh_exact_bet365": 334,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 128,
-        "missing_external_market_reference": 128,
-        "missing_model_reference": 128,
-        "not_fresh_exact_bet365": 58
+        "insufficient_independent_economic_sources": 356,
+        "missing_external_market_reference": 356,
+        "missing_model_reference": 356,
+        "not_fresh_exact_bet365": 22
       },
       "missing_roles": {
-        "external_market_reference": 128,
-        "model_reference": 128
+        "external_market_reference": 356,
+        "model_reference": 356
       }
     }
   },
   "sample_failures": [
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "h2h",
-      "pick": "FC Tokyo",
+      "pick": "SS Arezzo",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "h2h",
-      "pick": "Urawa Red Diamonds",
+      "pick": "US Cremonese",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,65 +261,11 @@
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "spreads",
-      "pick": "FC Tokyo",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
-      "market": "spreads",
-      "pick": "Urawa Red Diamonds",
-      "line": -1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
-      "market": "spreads",
-      "pick": "FC Tokyo",
+      "pick": "SS Arezzo",
       "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -341,11 +287,11 @@
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "spreads",
-      "pick": "Urawa Red Diamonds",
+      "pick": "US Cremonese",
       "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -367,13 +313,13 @@
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "spreads",
-      "pick": "FC Tokyo",
+      "pick": "SS Arezzo",
       "line": 0.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -387,20 +333,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "spreads",
-      "pick": "Urawa Red Diamonds",
+      "pick": "US Cremonese",
       "line": 0.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -414,19 +359,70 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "FC Tokyo vs Urawa Red Diamonds",
-      "event_id": 72149762,
-      "bet365_event_id": 72149762,
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "SS Arezzo vs US Cremonese",
+      "event_id": 73092952,
+      "bet365_event_id": 73092952,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
