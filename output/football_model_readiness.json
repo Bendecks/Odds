@@ -1,86 +1,90 @@
 {
-  "generated_at": "2026-10-11T05:45:56.822123+00:00",
+  "generated_at": "2026-10-11T17:41:22.771163+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 245,
-  "exact_bet365_rows": 173,
+  "candidate_rows": 836,
+  "exact_bet365_rows": 792,
   "fresh_exact_rows_by_market": {
-    "h2h": 75,
-    "spreads": 14,
-    "totals": 84
+    "h2h": 174,
+    "spreads": 202,
+    "totals": 416
   },
   "metadata": {
-    "rows_with_sport": 245,
-    "rows_with_league": 245,
-    "rows_with_parseable_teams": 245,
+    "rows_with_sport": 836,
+    "rows_with_league": 836,
+    "rows_with_parseable_teams": 836,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 75,
-      "spreads": 16,
-      "totals": 154
+      "h2h": 174,
+      "spreads": 224,
+      "totals": 438
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 75,
-      "totals": 154
+      "h2h": 174,
+      "totals": 438
     },
-    "first_model_scope_rows": 229
+    "first_model_scope_rows": 612
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
-        45
+        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+        155
       ],
       [
-        "{'name': 'Hong Kong, China - 1. Division', 'slug': 'hong-kong-china-1-division'}",
-        27
+        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+        67
       ],
       [
-        "{'name': 'Slovakia - 2. Liga', 'slug': 'slovakia-2-liga'}",
-        25
+        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+        53
       ],
       [
-        "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
-        20
+        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        51
       ],
       [
-        "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
-        18
+        "{'name': 'France - Ligue 1', 'slug': 'france-ligue-1'}",
+        49
       ],
       [
-        "{'name': 'China - China League 2, Relegation Round, Gr. A', 'slug': 'china-china-league-2-relegation-round-gr-a'}",
-        18
+        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
+        41
       ],
       [
-        "{'name': 'Chinese Taipei - Premier League', 'slug': 'chinese-taipei-premier-league'}",
-        18
+        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+        41
       ],
       [
-        "{'name': 'China - China League 2, Promotion Round', 'slug': 'china-china-league-2-promotion-round'}",
-        16
+        "{'name': 'Chile - Primera Division', 'slug': 'chile-primera-division'}",
+        30
       ],
       [
-        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
-        15
+        "{'name': 'Argentina - Torneo Federal A, Promotion Playoffs', 'slug': 'argentina-torneo-federal-a-promotion-playoffs'}",
+        30
       ],
       [
-        "{'name': 'France - U19 National , Group D', 'slug': 'france-u19-national-group-d'}",
-        9
+        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+        21
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 34
+      "football-data.co.uk:E0": 18,
+      "football-data.co.uk:E1": 20,
+      "football-data.co.uk:F1": 49,
+      "football-data.co.uk:I1": 108,
+      "public-data:needs-provider-specific-mapping": 17
     }
   },
   "public_football_data_probe": {
@@ -113,7 +117,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 16
+      "market_not_first_model_scope": 224
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
