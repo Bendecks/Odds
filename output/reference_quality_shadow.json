@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-10T17:20:42.352280+00:00",
-  "as_of": "2026-10-10T17:20:42.215185+00:00",
+  "generated_at": "2026-10-11T05:45:56.799047+00:00",
+  "as_of": "2026-10-11T05:45:56.743703+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 818,
-  "fresh_exact_candidates": 782,
+  "total_candidates": 245,
+  "fresh_exact_candidates": 173,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 782,
-    "missing_external_market_reference": 782,
-    "missing_model_reference": 782
+    "insufficient_independent_economic_sources": 173,
+    "missing_external_market_reference": 173,
+    "missing_model_reference": 173
   },
   "missing_roles": {
-    "external_market_reference": 782,
-    "model_reference": 782
+    "external_market_reference": 173,
+    "model_reference": 173
   },
   "by_market": {
     "h2h": {
-      "evaluated": 126,
-      "fresh_exact_bet365": 126,
+      "evaluated": 75,
+      "fresh_exact_bet365": 75,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 126,
-        "missing_external_market_reference": 126,
-        "missing_model_reference": 126
+        "insufficient_independent_economic_sources": 75,
+        "missing_external_market_reference": 75,
+        "missing_model_reference": 75
       },
       "missing_roles": {
-        "external_market_reference": 126,
-        "model_reference": 126
+        "external_market_reference": 75,
+        "model_reference": 75
       }
     },
     "spreads": {
-      "evaluated": 322,
-      "fresh_exact_bet365": 322,
+      "evaluated": 14,
+      "fresh_exact_bet365": 14,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 322,
-        "missing_external_market_reference": 322,
-        "missing_model_reference": 322
+        "insufficient_independent_economic_sources": 14,
+        "missing_external_market_reference": 14,
+        "missing_model_reference": 14
       },
       "missing_roles": {
-        "external_market_reference": 322,
-        "model_reference": 322
+        "external_market_reference": 14,
+        "model_reference": 14
       }
     },
     "totals": {
-      "evaluated": 334,
-      "fresh_exact_bet365": 334,
+      "evaluated": 84,
+      "fresh_exact_bet365": 84,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 334,
-        "missing_external_market_reference": 334,
-        "missing_model_reference": 334
+        "insufficient_independent_economic_sources": 84,
+        "missing_external_market_reference": 84,
+        "missing_model_reference": 84
       },
       "missing_roles": {
-        "external_market_reference": 334,
-        "model_reference": 334
+        "external_market_reference": 84,
+        "model_reference": 84
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 782,
+        "fresh_exact_candidates_blocked": 173,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 782,
+        "fresh_exact_candidates_blocked": 173,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 782
+        "fresh_exact_candidates_blocked": 173
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 334,
+        "fresh_exact_candidates": 84,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 334,
-          "model_reference": 334
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 322,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 322,
-          "model_reference": 322
+          "external_market_reference": 84,
+          "model_reference": 84
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 126,
+        "fresh_exact_candidates": 75,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 126,
-          "model_reference": 126
+          "external_market_reference": 75,
+          "model_reference": 75
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 14,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 14,
+          "model_reference": 14
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 334,
+      "first_market_fresh_exact_candidates": 84,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 126,
-      "fresh_exact_bet365": 126,
+      "evaluated": 75,
+      "fresh_exact_bet365": 75,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 126,
-        "missing_external_market_reference": 126,
-        "missing_model_reference": 126
+        "insufficient_independent_economic_sources": 75,
+        "missing_external_market_reference": 75,
+        "missing_model_reference": 75
       },
       "missing_roles": {
-        "external_market_reference": 126,
-        "model_reference": 126
+        "external_market_reference": 75,
+        "model_reference": 75
       }
     },
     "spreads": {
-      "evaluated": 336,
-      "fresh_exact_bet365": 322,
+      "evaluated": 16,
+      "fresh_exact_bet365": 14,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 336,
-        "missing_external_market_reference": 336,
-        "missing_model_reference": 336,
-        "not_fresh_exact_bet365": 14
+        "insufficient_independent_economic_sources": 16,
+        "missing_external_market_reference": 16,
+        "missing_model_reference": 16,
+        "not_fresh_exact_bet365": 2
       },
       "missing_roles": {
-        "external_market_reference": 336,
-        "model_reference": 336
+        "external_market_reference": 16,
+        "model_reference": 16
       }
     },
     "totals": {
-      "evaluated": 356,
-      "fresh_exact_bet365": 334,
+      "evaluated": 154,
+      "fresh_exact_bet365": 84,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 356,
-        "missing_external_market_reference": 356,
-        "missing_model_reference": 356,
-        "not_fresh_exact_bet365": 22
+        "insufficient_independent_economic_sources": 154,
+        "missing_external_market_reference": 154,
+        "missing_model_reference": 154,
+        "not_fresh_exact_bet365": 70
       },
       "missing_roles": {
-        "external_market_reference": 356,
-        "model_reference": 356
+        "external_market_reference": 154,
+        "model_reference": 154
       }
     }
   },
   "sample_failures": [
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "h2h",
-      "pick": "SS Arezzo",
+      "pick": "Mito Hollyhock",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "h2h",
-      "pick": "US Cremonese",
+      "pick": "Shimizu S-Pulse",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,11 +261,11 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "spreads",
-      "pick": "SS Arezzo",
+      "pick": "Mito Hollyhock",
       "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -287,11 +287,11 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "spreads",
-      "pick": "US Cremonese",
+      "pick": "Shimizu S-Pulse",
       "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -313,11 +313,11 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "spreads",
-      "pick": "SS Arezzo",
+      "pick": "Mito Hollyhock",
       "line": 0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -339,11 +339,11 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "spreads",
-      "pick": "US Cremonese",
+      "pick": "Shimizu S-Pulse",
       "line": 0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -365,9 +365,9 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -391,9 +391,9 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -417,9 +417,9 @@
       ]
     },
     {
-      "event": "SS Arezzo vs US Cremonese",
-      "event_id": 73092952,
-      "bet365_event_id": 73092952,
+      "event": "Mito Hollyhock vs Shimizu S-Pulse",
+      "event_id": 72149756,
+      "bet365_event_id": 72149756,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
