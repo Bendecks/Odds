@@ -1,90 +1,91 @@
 {
-  "generated_at": "2026-10-11T17:41:22.771163+00:00",
+  "generated_at": "2026-10-12T05:57:11.602462+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 836,
-  "exact_bet365_rows": 792,
+  "candidate_rows": 516,
+  "exact_bet365_rows": 472,
   "fresh_exact_rows_by_market": {
-    "h2h": 174,
-    "spreads": 202,
-    "totals": 416
+    "h2h": 132,
+    "spreads": 92,
+    "totals": 248
   },
   "metadata": {
-    "rows_with_sport": 836,
-    "rows_with_league": 836,
-    "rows_with_parseable_teams": 836,
+    "rows_with_sport": 516,
+    "rows_with_league": 516,
+    "rows_with_parseable_teams": 516,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 174,
-      "spreads": 224,
-      "totals": 438
+      "h2h": 132,
+      "spreads": 92,
+      "totals": 292
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 174,
-      "totals": 438
+      "h2h": 132,
+      "totals": 292
     },
-    "first_model_scope_rows": 612
+    "first_model_scope_rows": 424
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
-        155
+        "{'name': 'International Clubs - AFC Champions League Elite, East Region', 'slug': 'international-clubs-afc-champions-league-elite-east-region'}",
+        47
       ],
       [
-        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
-        67
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        53
-      ],
-      [
-        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
-        51
-      ],
-      [
-        "{'name': 'France - Ligue 1', 'slug': 'france-ligue-1'}",
-        49
+        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
+        45
       ],
       [
         "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
         41
       ],
       [
-        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-        41
+        "{'name': 'Egypt - Premier League', 'slug': 'egypt-premier-league'}",
+        34
       ],
       [
-        "{'name': 'Chile - Primera Division', 'slug': 'chile-primera-division'}",
+        "{'name': 'Sweden - Allsvenskan', 'slug': 'sweden-allsvenskan'}",
+        32
+      ],
+      [
+        "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
         30
       ],
       [
-        "{'name': 'Argentina - Torneo Federal A, Promotion Playoffs', 'slug': 'argentina-torneo-federal-a-promotion-playoffs'}",
+        "{'name': 'Finland - Veikkausliiga, Championship Round', 'slug': 'finland-veikkausliiga-championship-round'}",
         30
       ],
       [
-        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
-        21
+        "{'name': 'International Youth - U23 Friendly Games, Women', 'slug': 'international-youth-u23-friendly-games-women'}",
+        18
+      ],
+      [
+        "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
+        18
+      ],
+      [
+        "{'name': 'Greece - Super League', 'slug': 'greece-super-league'}",
+        17
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 18,
-      "football-data.co.uk:E1": 20,
-      "football-data.co.uk:F1": 49,
-      "football-data.co.uk:I1": 108,
-      "public-data:needs-provider-specific-mapping": 17
+      "football-data.co.uk:CL": 47,
+      "football-data.co.uk:E0": 63,
+      "football-data.co.uk:E1": 30,
+      "football-data.co.uk:F1": 14,
+      "football-data.co.uk:I1": 41,
+      "public-data:needs-provider-specific-mapping": 15
     }
   },
   "public_football_data_probe": {
@@ -117,7 +118,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 224
+      "market_not_first_model_scope": 92
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

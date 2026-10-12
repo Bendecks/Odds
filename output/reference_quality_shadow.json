@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T17:41:22.721431+00:00",
-  "as_of": "2026-10-11T17:41:22.575150+00:00",
+  "generated_at": "2026-10-12T05:57:11.568832+00:00",
+  "as_of": "2026-10-12T05:57:11.476497+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 836,
-  "fresh_exact_candidates": 792,
+  "total_candidates": 516,
+  "fresh_exact_candidates": 472,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 792,
-    "missing_external_market_reference": 792,
-    "missing_model_reference": 792
+    "insufficient_independent_economic_sources": 472,
+    "missing_external_market_reference": 472,
+    "missing_model_reference": 472
   },
   "missing_roles": {
-    "external_market_reference": 792,
-    "model_reference": 792
+    "external_market_reference": 472,
+    "model_reference": 472
   },
   "by_market": {
     "h2h": {
-      "evaluated": 174,
-      "fresh_exact_bet365": 174,
+      "evaluated": 132,
+      "fresh_exact_bet365": 132,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 174,
-        "missing_external_market_reference": 174,
-        "missing_model_reference": 174
+        "insufficient_independent_economic_sources": 132,
+        "missing_external_market_reference": 132,
+        "missing_model_reference": 132
       },
       "missing_roles": {
-        "external_market_reference": 174,
-        "model_reference": 174
+        "external_market_reference": 132,
+        "model_reference": 132
       }
     },
     "spreads": {
-      "evaluated": 202,
-      "fresh_exact_bet365": 202,
+      "evaluated": 92,
+      "fresh_exact_bet365": 92,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 202,
-        "missing_external_market_reference": 202,
-        "missing_model_reference": 202
+        "insufficient_independent_economic_sources": 92,
+        "missing_external_market_reference": 92,
+        "missing_model_reference": 92
       },
       "missing_roles": {
-        "external_market_reference": 202,
-        "model_reference": 202
+        "external_market_reference": 92,
+        "model_reference": 92
       }
     },
     "totals": {
-      "evaluated": 416,
-      "fresh_exact_bet365": 416,
+      "evaluated": 248,
+      "fresh_exact_bet365": 248,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 416,
-        "missing_external_market_reference": 416,
-        "missing_model_reference": 416
+        "insufficient_independent_economic_sources": 248,
+        "missing_external_market_reference": 248,
+        "missing_model_reference": 248
       },
       "missing_roles": {
-        "external_market_reference": 416,
-        "model_reference": 416
+        "external_market_reference": 248,
+        "model_reference": 248
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 792,
+        "fresh_exact_candidates_blocked": 472,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 792,
+        "fresh_exact_candidates_blocked": 472,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 792
+        "fresh_exact_candidates_blocked": 472
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 416,
+        "fresh_exact_candidates": 248,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 416,
-          "model_reference": 416
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 202,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 202,
-          "model_reference": 202
+          "external_market_reference": 248,
+          "model_reference": 248
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 174,
+        "fresh_exact_candidates": 132,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 174,
-          "model_reference": 174
+          "external_market_reference": 132,
+          "model_reference": 132
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 92,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 92,
+          "model_reference": 92
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 416,
+      "first_market_fresh_exact_candidates": 248,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 174,
-      "fresh_exact_bet365": 174,
+      "evaluated": 132,
+      "fresh_exact_bet365": 132,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 174,
-        "missing_external_market_reference": 174,
-        "missing_model_reference": 174
+        "insufficient_independent_economic_sources": 132,
+        "missing_external_market_reference": 132,
+        "missing_model_reference": 132
       },
       "missing_roles": {
-        "external_market_reference": 174,
-        "model_reference": 174
+        "external_market_reference": 132,
+        "model_reference": 132
       }
     },
     "spreads": {
-      "evaluated": 224,
-      "fresh_exact_bet365": 202,
+      "evaluated": 92,
+      "fresh_exact_bet365": 92,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 224,
-        "missing_external_market_reference": 224,
-        "missing_model_reference": 224,
-        "not_fresh_exact_bet365": 22
+        "insufficient_independent_economic_sources": 92,
+        "missing_external_market_reference": 92,
+        "missing_model_reference": 92
       },
       "missing_roles": {
-        "external_market_reference": 224,
-        "model_reference": 224
+        "external_market_reference": 92,
+        "model_reference": 92
       }
     },
     "totals": {
-      "evaluated": 438,
-      "fresh_exact_bet365": 416,
+      "evaluated": 292,
+      "fresh_exact_bet365": 248,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 438,
-        "missing_external_market_reference": 438,
-        "missing_model_reference": 438,
-        "not_fresh_exact_bet365": 22
+        "insufficient_independent_economic_sources": 292,
+        "missing_external_market_reference": 292,
+        "missing_model_reference": 292,
+        "not_fresh_exact_bet365": 44
       },
       "missing_roles": {
-        "external_market_reference": 438,
-        "model_reference": 438
+        "external_market_reference": 292,
+        "model_reference": 292
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
       "market": "h2h",
-      "pick": "Al-Shabab FC (SA)",
+      "pick": "Guangzhou Dandelion Alpha FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
       "market": "h2h",
-      "pick": "Al-Taawoun FC",
+      "pick": "Shanghai Second",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,168 +260,170 @@
       ]
     },
     {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
-      "market": "spreads",
-      "pick": "Al-Shabab FC (SA)",
-      "line": -1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
-      "market": "spreads",
-      "pick": "Al-Taawoun FC",
-      "line": -1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
-      "market": "spreads",
-      "pick": "Al-Shabab FC (SA)",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
-      "market": "spreads",
-      "pick": "Al-Taawoun FC",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
-      "market": "spreads",
-      "pick": "Al-Shabab FC (SA)",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
-      "market": "spreads",
-      "pick": "Al-Taawoun FC",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Al-Shabab FC (SA) vs Al-Taawoun FC",
-      "event_id": 73215764,
-      "bet365_event_id": 73215764,
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
       "market": "totals",
       "pick": "Over",
-      "line": 0.5,
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Guangzhou Dandelion Alpha FC vs Shanghai Second",
+      "event_id": 74455068,
+      "bet365_event_id": 74455068,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Shanxi Chongde Ronghai vs Jiangxi Lushan",
+      "event_id": 74454982,
+      "bet365_event_id": 74454982,
+      "market": "h2h",
+      "pick": "Shanxi Chongde Ronghai",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Shanxi Chongde Ronghai vs Jiangxi Lushan",
+      "event_id": 74454982,
+      "bet365_event_id": 74454982,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Shanxi Chongde Ronghai vs Jiangxi Lushan",
+      "event_id": 74454982,
+      "bet365_event_id": 74454982,
+      "market": "h2h",
+      "pick": "Jiangxi Lushan",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
