@@ -1,91 +1,88 @@
 {
-  "generated_at": "2026-10-12T05:57:11.602462+00:00",
+  "generated_at": "2026-10-12T21:16:04.007359+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 516,
-  "exact_bet365_rows": 472,
+  "candidate_rows": 348,
+  "exact_bet365_rows": 330,
   "fresh_exact_rows_by_market": {
-    "h2h": 132,
-    "spreads": 92,
-    "totals": 248
+    "h2h": 78,
+    "spreads": 60,
+    "totals": 192
   },
   "metadata": {
-    "rows_with_sport": 516,
-    "rows_with_league": 516,
-    "rows_with_parseable_teams": 516,
+    "rows_with_sport": 348,
+    "rows_with_league": 348,
+    "rows_with_parseable_teams": 348,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 132,
-      "spreads": 92,
-      "totals": 292
+      "h2h": 78,
+      "spreads": 62,
+      "totals": 208
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 132,
-      "totals": 292
+      "h2h": 78,
+      "totals": 208
     },
-    "first_model_scope_rows": 424
+    "first_model_scope_rows": 286
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
+        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+        59
+      ],
+      [
         "{'name': 'International Clubs - AFC Champions League Elite, East Region', 'slug': 'international-clubs-afc-champions-league-elite-east-region'}",
-        47
+        49
       ],
       [
-        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
-        45
+        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+        48
       ],
       [
-        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
-        41
+        "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
+        37
+      ],
+      [
+        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        19
+      ],
+      [
+        "{'name': 'Jamaica - Premier League', 'slug': 'jamaica-premier-league'}",
+        18
+      ],
+      [
+        "{'name': 'Turkiye - 1. Lig', 'slug': 'turkiye-1-lig'}",
+        18
       ],
       [
         "{'name': 'Egypt - Premier League', 'slug': 'egypt-premier-league'}",
-        34
-      ],
-      [
-        "{'name': 'Sweden - Allsvenskan', 'slug': 'sweden-allsvenskan'}",
-        32
-      ],
-      [
-        "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
-        30
-      ],
-      [
-        "{'name': 'Finland - Veikkausliiga, Championship Round', 'slug': 'finland-veikkausliiga-championship-round'}",
-        30
-      ],
-      [
-        "{'name': 'International Youth - U23 Friendly Games, Women', 'slug': 'international-youth-u23-friendly-games-women'}",
         18
       ],
       [
-        "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
-        18
+        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+        15
       ],
       [
-        "{'name': 'Greece - Super League', 'slug': 'greece-super-league'}",
-        17
+        "{'name': 'Paraguay - Division de Honor, Clausura', 'slug': 'paraguay-division-de-honor-clausura'}",
+        15
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 47,
-      "football-data.co.uk:E0": 63,
-      "football-data.co.uk:E1": 30,
-      "football-data.co.uk:F1": 14,
-      "football-data.co.uk:I1": 41,
-      "public-data:needs-provider-specific-mapping": 15
+      "football-data.co.uk:CL": 49,
+      "football-data.co.uk:E0": 36,
+      "football-data.co.uk:I1": 55
     }
   },
   "public_football_data_probe": {
@@ -118,7 +115,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 92
+      "market_not_first_model_scope": 62
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
