@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-13T06:46:52.054612+00:00",
-  "as_of": "2026-10-13T06:46:51.951488+00:00",
+  "generated_at": "2026-10-13T19:16:59.830161+00:00",
+  "as_of": "2026-10-13T19:16:59.738302+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 473,
-  "fresh_exact_candidates": 387,
+  "total_candidates": 276,
+  "fresh_exact_candidates": 254,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 387,
-    "missing_external_market_reference": 387,
-    "missing_model_reference": 387
+    "insufficient_independent_economic_sources": 254,
+    "missing_external_market_reference": 254,
+    "missing_model_reference": 254
   },
   "missing_roles": {
-    "external_market_reference": 387,
-    "model_reference": 387
+    "external_market_reference": 254,
+    "model_reference": 254
   },
   "by_market": {
     "h2h": {
-      "evaluated": 147,
-      "fresh_exact_bet365": 147,
+      "evaluated": 66,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 147,
-        "missing_external_market_reference": 147,
-        "missing_model_reference": 147
+        "insufficient_independent_economic_sources": 66,
+        "missing_external_market_reference": 66,
+        "missing_model_reference": 66
       },
       "missing_roles": {
-        "external_market_reference": 147,
-        "model_reference": 147
+        "external_market_reference": 66,
+        "model_reference": 66
       }
     },
     "spreads": {
-      "evaluated": 26,
-      "fresh_exact_bet365": 26,
+      "evaluated": 44,
+      "fresh_exact_bet365": 44,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 26,
-        "missing_external_market_reference": 26,
-        "missing_model_reference": 26
+        "insufficient_independent_economic_sources": 44,
+        "missing_external_market_reference": 44,
+        "missing_model_reference": 44
       },
       "missing_roles": {
-        "external_market_reference": 26,
-        "model_reference": 26
+        "external_market_reference": 44,
+        "model_reference": 44
       }
     },
     "totals": {
-      "evaluated": 214,
-      "fresh_exact_bet365": 214,
+      "evaluated": 144,
+      "fresh_exact_bet365": 144,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 214,
-        "missing_external_market_reference": 214,
-        "missing_model_reference": 214
+        "insufficient_independent_economic_sources": 144,
+        "missing_external_market_reference": 144,
+        "missing_model_reference": 144
       },
       "missing_roles": {
-        "external_market_reference": 214,
-        "model_reference": 214
+        "external_market_reference": 144,
+        "model_reference": 144
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 387,
+        "fresh_exact_candidates_blocked": 254,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 387,
+        "fresh_exact_candidates_blocked": 254,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 387
+        "fresh_exact_candidates_blocked": 254
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 214,
+        "fresh_exact_candidates": 144,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 214,
-          "model_reference": 214
+          "external_market_reference": 144,
+          "model_reference": 144
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 147,
+        "fresh_exact_candidates": 66,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 147,
-          "model_reference": 147
+          "external_market_reference": 66,
+          "model_reference": 66
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 26,
+        "fresh_exact_candidates": 44,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 26,
-          "model_reference": 26
+          "external_market_reference": 44,
+          "model_reference": 44
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 214,
+      "first_market_fresh_exact_candidates": 144,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 147,
-      "fresh_exact_bet365": 147,
+      "evaluated": 66,
+      "fresh_exact_bet365": 66,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 147,
-        "missing_external_market_reference": 147,
-        "missing_model_reference": 147
+        "insufficient_independent_economic_sources": 66,
+        "missing_external_market_reference": 66,
+        "missing_model_reference": 66
       },
       "missing_roles": {
-        "external_market_reference": 147,
-        "model_reference": 147
+        "external_market_reference": 66,
+        "model_reference": 66
       }
     },
     "spreads": {
-      "evaluated": 26,
-      "fresh_exact_bet365": 26,
+      "evaluated": 48,
+      "fresh_exact_bet365": 44,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 26,
-        "missing_external_market_reference": 26,
-        "missing_model_reference": 26
+        "insufficient_independent_economic_sources": 48,
+        "missing_external_market_reference": 48,
+        "missing_model_reference": 48,
+        "not_fresh_exact_bet365": 4
       },
       "missing_roles": {
-        "external_market_reference": 26,
-        "model_reference": 26
+        "external_market_reference": 48,
+        "model_reference": 48
       }
     },
     "totals": {
-      "evaluated": 300,
-      "fresh_exact_bet365": 214,
+      "evaluated": 162,
+      "fresh_exact_bet365": 144,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 300,
-        "missing_external_market_reference": 300,
-        "missing_model_reference": 300,
-        "not_fresh_exact_bet365": 86
+        "insufficient_independent_economic_sources": 162,
+        "missing_external_market_reference": 162,
+        "missing_model_reference": 162,
+        "not_fresh_exact_bet365": 18
       },
       "missing_roles": {
-        "external_market_reference": 300,
-        "model_reference": 300
+        "external_market_reference": 162,
+        "model_reference": 162
       }
     }
   },
   "sample_failures": [
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
       "market": "h2h",
-      "pick": "FC Pohang Steelers",
+      "pick": "Venezuela",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
       "market": "h2h",
-      "pick": "Johor Darul Ta'zim",
+      "pick": "Colombia",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,63 +261,11 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
-      "market": "spreads",
-      "pick": "FC Pohang Steelers",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
-      "market": "spreads",
-      "pick": "Johor Darul Ta'zim",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
-      "market": "spreads",
-      "pick": "FC Pohang Steelers",
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
+      "market": "totals",
+      "pick": "Over",
       "line": 0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -338,11 +287,11 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
-      "market": "spreads",
-      "pick": "Johor Darul Ta'zim",
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
+      "market": "totals",
+      "pick": "Under",
       "line": 0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -364,9 +313,9 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -390,9 +339,9 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -416,12 +365,64 @@
       ]
     },
     {
-      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
-      "event_id": 73835476,
-      "bet365_event_id": 73835476,
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Venezuela vs Colombia",
+      "event_id": 75573474,
+      "bet365_event_id": 75573474,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
