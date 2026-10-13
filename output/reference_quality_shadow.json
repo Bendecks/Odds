@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-12T21:16:03.975933+00:00",
-  "as_of": "2026-10-12T21:16:03.893263+00:00",
+  "generated_at": "2026-10-13T06:46:52.054612+00:00",
+  "as_of": "2026-10-13T06:46:51.951488+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 348,
-  "fresh_exact_candidates": 330,
+  "total_candidates": 473,
+  "fresh_exact_candidates": 387,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 330,
-    "missing_external_market_reference": 330,
-    "missing_model_reference": 330
+    "insufficient_independent_economic_sources": 387,
+    "missing_external_market_reference": 387,
+    "missing_model_reference": 387
   },
   "missing_roles": {
-    "external_market_reference": 330,
-    "model_reference": 330
+    "external_market_reference": 387,
+    "model_reference": 387
   },
   "by_market": {
     "h2h": {
-      "evaluated": 78,
-      "fresh_exact_bet365": 78,
+      "evaluated": 147,
+      "fresh_exact_bet365": 147,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 78,
-        "missing_external_market_reference": 78,
-        "missing_model_reference": 78
+        "insufficient_independent_economic_sources": 147,
+        "missing_external_market_reference": 147,
+        "missing_model_reference": 147
       },
       "missing_roles": {
-        "external_market_reference": 78,
-        "model_reference": 78
+        "external_market_reference": 147,
+        "model_reference": 147
       }
     },
     "spreads": {
-      "evaluated": 60,
-      "fresh_exact_bet365": 60,
+      "evaluated": 26,
+      "fresh_exact_bet365": 26,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 60,
-        "missing_external_market_reference": 60,
-        "missing_model_reference": 60
+        "insufficient_independent_economic_sources": 26,
+        "missing_external_market_reference": 26,
+        "missing_model_reference": 26
       },
       "missing_roles": {
-        "external_market_reference": 60,
-        "model_reference": 60
+        "external_market_reference": 26,
+        "model_reference": 26
       }
     },
     "totals": {
-      "evaluated": 192,
-      "fresh_exact_bet365": 192,
+      "evaluated": 214,
+      "fresh_exact_bet365": 214,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 192,
-        "missing_external_market_reference": 192,
-        "missing_model_reference": 192
+        "insufficient_independent_economic_sources": 214,
+        "missing_external_market_reference": 214,
+        "missing_model_reference": 214
       },
       "missing_roles": {
-        "external_market_reference": 192,
-        "model_reference": 192
+        "external_market_reference": 214,
+        "model_reference": 214
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 330,
+        "fresh_exact_candidates_blocked": 387,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 330,
+        "fresh_exact_candidates_blocked": 387,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 330
+        "fresh_exact_candidates_blocked": 387
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 192,
+        "fresh_exact_candidates": 214,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 192,
-          "model_reference": 192
+          "external_market_reference": 214,
+          "model_reference": 214
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 78,
+        "fresh_exact_candidates": 147,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 78,
-          "model_reference": 78
+          "external_market_reference": 147,
+          "model_reference": 147
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 60,
+        "fresh_exact_candidates": 26,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 60,
-          "model_reference": 60
+          "external_market_reference": 26,
+          "model_reference": 26
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 192,
+      "first_market_fresh_exact_candidates": 214,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 78,
-      "fresh_exact_bet365": 78,
+      "evaluated": 147,
+      "fresh_exact_bet365": 147,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 78,
-        "missing_external_market_reference": 78,
-        "missing_model_reference": 78
+        "insufficient_independent_economic_sources": 147,
+        "missing_external_market_reference": 147,
+        "missing_model_reference": 147
       },
       "missing_roles": {
-        "external_market_reference": 78,
-        "model_reference": 78
+        "external_market_reference": 147,
+        "model_reference": 147
       }
     },
     "spreads": {
-      "evaluated": 62,
-      "fresh_exact_bet365": 60,
+      "evaluated": 26,
+      "fresh_exact_bet365": 26,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 62,
-        "missing_external_market_reference": 62,
-        "missing_model_reference": 62,
-        "not_fresh_exact_bet365": 2
+        "insufficient_independent_economic_sources": 26,
+        "missing_external_market_reference": 26,
+        "missing_model_reference": 26
       },
       "missing_roles": {
-        "external_market_reference": 62,
-        "model_reference": 62
+        "external_market_reference": 26,
+        "model_reference": 26
       }
     },
     "totals": {
-      "evaluated": 208,
-      "fresh_exact_bet365": 192,
+      "evaluated": 300,
+      "fresh_exact_bet365": 214,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 208,
-        "missing_external_market_reference": 208,
-        "missing_model_reference": 208,
-        "not_fresh_exact_bet365": 16
+        "insufficient_independent_economic_sources": 300,
+        "missing_external_market_reference": 300,
+        "missing_model_reference": 300,
+        "not_fresh_exact_bet365": 86
       },
       "missing_roles": {
-        "external_market_reference": 208,
-        "model_reference": 208
+        "external_market_reference": 300,
+        "model_reference": 300
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "h2h",
-      "pick": "Gimnasia y Esgrima Mendoza",
+      "pick": "FC Pohang Steelers",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "h2h",
-      "pick": "Newell's Old Boys",
+      "pick": "Johor Darul Ta'zim",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,63 +260,11 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "spreads",
-      "pick": "Gimnasia y Esgrima Mendoza",
-      "line": -1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
-      "market": "spreads",
-      "pick": "Newell's Old Boys",
-      "line": -1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
-      "market": "spreads",
-      "pick": "Gimnasia y Esgrima Mendoza",
+      "pick": "FC Pohang Steelers",
       "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -339,11 +286,11 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "spreads",
-      "pick": "Newell's Old Boys",
+      "pick": "Johor Darul Ta'zim",
       "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -365,11 +312,11 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "spreads",
-      "pick": "Gimnasia y Esgrima Mendoza",
+      "pick": "FC Pohang Steelers",
       "line": 0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -391,11 +338,11 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "spreads",
-      "pick": "Newell's Old Boys",
+      "pick": "Johor Darul Ta'zim",
       "line": 0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -417,12 +364,64 @@
       ]
     },
     {
-      "event": "Gimnasia y Esgrima Mendoza vs Newell's Old Boys",
-      "event_id": 73265380,
-      "bet365_event_id": 73265380,
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
       "market": "totals",
       "pick": "Over",
-      "line": 0.5,
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "FC Pohang Steelers vs Johor Darul Ta'zim",
+      "event_id": 73835476,
+      "bet365_event_id": 73835476,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
