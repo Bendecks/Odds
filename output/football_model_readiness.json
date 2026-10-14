@@ -1,86 +1,86 @@
 {
-  "generated_at": "2026-10-13T19:16:59.865689+00:00",
+  "generated_at": "2026-10-14T04:53:06.848153+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 276,
-  "exact_bet365_rows": 254,
+  "candidate_rows": 360,
+  "exact_bet365_rows": 318,
   "fresh_exact_rows_by_market": {
-    "h2h": 66,
-    "spreads": 44,
-    "totals": 144
+    "h2h": 108,
+    "spreads": 22,
+    "totals": 188
   },
   "metadata": {
-    "rows_with_sport": 276,
-    "rows_with_league": 276,
-    "rows_with_parseable_teams": 276,
+    "rows_with_sport": 360,
+    "rows_with_league": 360,
+    "rows_with_parseable_teams": 360,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 66,
-      "spreads": 48,
-      "totals": 162
+      "h2h": 108,
+      "spreads": 22,
+      "totals": 230
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 66,
-      "totals": 162
+      "h2h": 108,
+      "totals": 230
     },
-    "first_model_scope_rows": 228
+    "first_model_scope_rows": 338
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International - International Friendly Games, Women', 'slug': 'international-international-friendly-games-women'}",
-        38
+        "{'name': 'Japan - J. League Cup', 'slug': 'japan-j-league-cup'}",
+        72
       ],
       [
-        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
-        32
+        "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
+        72
+      ],
+      [
+        "{'name': 'Slovakia - Slovensky Pohar', 'slug': 'slovakia-slovensky-pohar'}",
+        45
       ],
       [
         "{'name': 'International Clubs - AFC Champions League Elite, East Region', 'slug': 'international-clubs-afc-champions-league-elite-east-region'}",
         32
       ],
       [
-        "{'name': 'Costa Rica - Primera Division, Apertura', 'slug': 'costa-rica-primera-division-apertura'}",
-        30
-      ],
-      [
         "{'name': 'Kazakhstan - Premier League', 'slug': 'kazakhstan-premier-league'}",
         20
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
-        19
-      ],
-      [
-        "{'name': 'International Clubs - CONMEBOL Sudamericana, Knockout stage', 'slug': 'international-clubs-conmebol-sudamericana-knockout-stage'}",
-        19
       ],
       [
         "{'name': 'Norway - 1st Division', 'slug': 'norway-1st-division'}",
         19
       ],
       [
+        "{'name': 'International Clubs - AFC Champions League Two, Group E', 'slug': 'international-clubs-afc-champions-league-two-group-e'}",
+        16
+      ],
+      [
         "{'name': 'Estonia - Premium Liiga', 'slug': 'estonia-premium-liiga'}",
         15
       ],
       [
-        "{'name': 'International Clubs - CONCACAF Caribbean Cup, Knockout Stage', 'slug': 'international-clubs-concacaf-caribbean-cup-knockout-stage'}",
+        "{'name': 'Czechia - 1. Liga', 'slug': 'czechia-1-liga'}",
+        15
+      ],
+      [
+        "{'name': 'Poland - II Liga', 'slug': 'poland-ii-liga'}",
         9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 32,
+      "football-data.co.uk:CL": 48,
       "football-data.co.uk:E0": 20
     }
   },
@@ -114,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 48
+      "market_not_first_model_scope": 22
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
