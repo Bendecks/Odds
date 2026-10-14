@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-14T04:53:06.813726+00:00",
-  "as_of": "2026-10-14T04:53:06.725646+00:00",
+  "generated_at": "2026-10-14T17:09:59.579053+00:00",
+  "as_of": "2026-10-14T17:09:59.442862+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 360,
-  "fresh_exact_candidates": 318,
+  "total_candidates": 767,
+  "fresh_exact_candidates": 717,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 318,
-    "missing_external_market_reference": 318,
-    "missing_model_reference": 318
+    "insufficient_independent_economic_sources": 717,
+    "missing_external_market_reference": 717,
+    "missing_model_reference": 717
   },
   "missing_roles": {
-    "external_market_reference": 318,
-    "model_reference": 318
+    "external_market_reference": 717,
+    "model_reference": 717
   },
   "by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 117,
+      "fresh_exact_bet365": 117,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 117,
+        "missing_external_market_reference": 117,
+        "missing_model_reference": 117
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 117,
+        "model_reference": 117
       }
     },
     "spreads": {
-      "evaluated": 22,
-      "fresh_exact_bet365": 22,
+      "evaluated": 306,
+      "fresh_exact_bet365": 306,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 22,
-        "missing_external_market_reference": 22,
-        "missing_model_reference": 22
+        "insufficient_independent_economic_sources": 306,
+        "missing_external_market_reference": 306,
+        "missing_model_reference": 306
       },
       "missing_roles": {
-        "external_market_reference": 22,
-        "model_reference": 22
+        "external_market_reference": 306,
+        "model_reference": 306
       }
     },
     "totals": {
-      "evaluated": 188,
-      "fresh_exact_bet365": 188,
+      "evaluated": 294,
+      "fresh_exact_bet365": 294,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 188,
-        "missing_external_market_reference": 188,
-        "missing_model_reference": 188
+        "insufficient_independent_economic_sources": 294,
+        "missing_external_market_reference": 294,
+        "missing_model_reference": 294
       },
       "missing_roles": {
-        "external_market_reference": 188,
-        "model_reference": 188
+        "external_market_reference": 294,
+        "model_reference": 294
       }
     }
   },
@@ -80,113 +80,114 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 318,
+        "fresh_exact_candidates_blocked": 717,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 318,
+        "fresh_exact_candidates_blocked": 717,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 318
+        "fresh_exact_candidates_blocked": 717
       }
     ],
     "market_priorities": [
       {
-        "market": "totals",
-        "fresh_exact_candidates": 188,
+        "market": "spreads",
+        "fresh_exact_candidates": 306,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 188,
-          "model_reference": 188
+          "external_market_reference": 306,
+          "model_reference": 306
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "totals",
+        "fresh_exact_candidates": 294,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 294,
+          "model_reference": 294
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 108,
+        "fresh_exact_candidates": 117,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 108,
-          "model_reference": 108
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 22,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 22,
-          "model_reference": 22
+          "external_market_reference": 117,
+          "model_reference": 117
         },
         "largest_missing_role": "external_market_reference"
       }
     ],
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
-      "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 188,
+      "first_market_focus": "spreads",
+      "first_market_fresh_exact_candidates": 306,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 108,
-      "fresh_exact_bet365": 108,
+      "evaluated": 117,
+      "fresh_exact_bet365": 117,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 108,
-        "missing_external_market_reference": 108,
-        "missing_model_reference": 108
+        "insufficient_independent_economic_sources": 117,
+        "missing_external_market_reference": 117,
+        "missing_model_reference": 117
       },
       "missing_roles": {
-        "external_market_reference": 108,
-        "model_reference": 108
+        "external_market_reference": 117,
+        "model_reference": 117
       }
     },
     "spreads": {
-      "evaluated": 22,
-      "fresh_exact_bet365": 22,
+      "evaluated": 312,
+      "fresh_exact_bet365": 306,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 22,
-        "missing_external_market_reference": 22,
-        "missing_model_reference": 22
+        "insufficient_independent_economic_sources": 312,
+        "missing_external_market_reference": 312,
+        "missing_model_reference": 312,
+        "not_fresh_exact_bet365": 6
       },
       "missing_roles": {
-        "external_market_reference": 22,
-        "model_reference": 22
+        "external_market_reference": 312,
+        "model_reference": 312
       }
     },
     "totals": {
-      "evaluated": 230,
-      "fresh_exact_bet365": 188,
+      "evaluated": 338,
+      "fresh_exact_bet365": 294,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 230,
-        "missing_external_market_reference": 230,
-        "missing_model_reference": 230,
-        "not_fresh_exact_bet365": 42
+        "insufficient_independent_economic_sources": 338,
+        "missing_external_market_reference": 338,
+        "missing_model_reference": 338,
+        "not_fresh_exact_bet365": 44
       },
       "missing_roles": {
-        "external_market_reference": 230,
-        "model_reference": 230
+        "external_market_reference": 338,
+        "model_reference": 338
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "h2h",
-      "pick": "Yokohama F Marinos",
+      "pick": "Colon de Santa Fe Reserve",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "h2h",
-      "pick": "Shimizu S-Pulse",
+      "pick": "Independiente Rivadavia de Mendoza Reserve",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,13 +261,13 @@
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -280,19 +281,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -306,15 +308,16 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -338,9 +341,9 @@
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -364,13 +367,13 @@
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -384,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Yokohama F Marinos vs Shimizu S-Pulse",
-      "event_id": 75172402,
-      "bet365_event_id": 75172402,
+      "event": "Colon de Santa Fe Reserve vs Independiente Rivadavia de Mendoza Reserve",
+      "event_id": 75133472,
+      "bet365_event_id": 75133472,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -410,17 +414,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Melbourne Victory FC vs FC Seoul",
-      "event_id": 73835276,
-      "bet365_event_id": 73835276,
+      "event": "Santa Cruz FC PE U20 vs Sao Raimundo EC RR U20",
+      "event_id": 75489224,
+      "bet365_event_id": 75489224,
       "market": "h2h",
-      "pick": "Melbourne Victory FC",
+      "pick": "Santa Cruz FC PE U20",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
