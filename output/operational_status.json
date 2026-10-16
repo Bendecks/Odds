@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-10-16T04:31:27.042147+00:00",
+  "generated_at": "2026-10-16T16:39:03.733522+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 351,
-    "fair_probability_rows": 351,
+    "candidate_rows": 596,
+    "fair_probability_rows": 596,
     "reference_events": 12,
-    "exact_bet365_rows": 291,
-    "fresh_exact_bet365_rows": 291,
+    "exact_bet365_rows": 556,
+    "fresh_exact_bet365_rows": 556,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 120
+    "decision_runs_recorded": 121
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 210,
-        "h2h": 105,
-        "spreads": 36
+        "totals": 316,
+        "spreads": 160,
+        "h2h": 120
       },
       "exact": {
-        "totals": 158,
-        "h2h": 105,
-        "spreads": 28
+        "totals": 296,
+        "spreads": 140,
+        "h2h": 120
       },
       "fresh": {
-        "totals": 158,
-        "h2h": 105,
-        "spreads": 28
+        "totals": 296,
+        "spreads": 140,
+        "h2h": 120
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 105,
-        "fresh": 105,
+        "exact": 120,
+        "fresh": 120,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 28,
-        "fresh": 28,
+        "exact": 140,
+        "fresh": 140,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 158,
-        "fresh": 158,
+        "exact": 296,
+        "fresh": 296,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 291
+      "0_20m": 556
     },
     "reference_depth_rejections_by_market": {
-      "totals": 158,
-      "h2h": 105,
-      "spreads": 28
+      "totals": 296,
+      "spreads": 140,
+      "h2h": 120
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,7 +72,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-10-16T04:31:23.194387+00:00",
+    "generated_at": "2026-10-16T16:38:57.194861+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -91,16 +91,12 @@
       ],
       "top_leagues": [
         [
+          "{'name': 'Hungary - NB III, Group South West', 'slug': 'hungary-nb-iii-group-south-west'}",
+          13
+        ],
+        [
           "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
           9
-        ],
-        [
-          "{'name': 'Croatia - Druga NL', 'slug': 'croatia-druga-nl'}",
-          8
-        ],
-        [
-          "{'name': 'France - Ligue 3', 'slug': 'france-ligue-3'}",
-          8
         ],
         [
           "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
@@ -111,20 +107,16 @@
           8
         ],
         [
+          "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
+          7
+        ],
+        [
           "{'name': 'France - Ligue 2', 'slug': 'france-ligue-2'}",
           7
         ],
         [
-          "{'name': 'Albania - Kategoria e Pare', 'slug': 'albania-kategoria-e-pare'}",
-          6
-        ],
-        [
-          "{'name': 'Cyprus - 2nd Division', 'slug': 'cyprus-2nd-division'}",
-          6
-        ],
-        [
-          "{'name': 'Czechia - FNL', 'slug': 'czechia-fnl'}",
-          6
+          "{'name': 'Poland - IV Liga', 'slug': 'poland-iv-liga'}",
+          7
         ],
         [
           "{'name': 'Czechia - U19 1. Liga', 'slug': 'czechia-u19-1-liga'}",
@@ -135,23 +127,19 @@
           6
         ],
         [
-          "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
+          "{'name': 'Japan - J-League 3', 'slug': 'japan-j-league-3'}",
           6
         ],
         [
-          "{'name': 'Romania - Liga III, Seria 8', 'slug': 'romania-liga-iii-seria-8'}",
+          "{'name': 'Japan - Japan Football League', 'slug': 'japan-japan-football-league'}",
           6
         ],
         [
-          "{'name': 'Slovakia - 2. Liga', 'slug': 'slovakia-2-liga'}",
+          "{'name': 'Sweden - Division 2, Sodra Gotaland', 'slug': 'sweden-division-2-sodra-gotaland'}",
           6
         ],
         [
-          "{'name': 'Bangladesh - Football League', 'slug': 'bangladesh-football-league'}",
-          5
-        ],
-        [
-          "{'name': 'Czechia - MSFL', 'slug': 'czechia-msfl'}",
+          "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
           5
         ],
         [
@@ -159,15 +147,11 @@
           5
         ],
         [
-          "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
+          "{'name': 'England Amateur - U21 Premier League 2', 'slug': 'england-amateur-u21-premier-league-2'}",
           5
         ],
         [
-          "{'name': 'Finland - Ykkosliiga', 'slug': 'finland-ykkosliiga'}",
-          5
-        ],
-        [
-          "{'name': 'Germany - 2. Bundesliga', 'slug': 'germany-2-bundesliga'}",
+          "{'name': 'Greece - U19 Super League', 'slug': 'greece-u19-super-league'}",
           5
         ],
         [
@@ -175,11 +159,15 @@
           5
         ],
         [
-          "{'name': 'Italy - Serie C, Group B', 'slug': 'italy-serie-c-group-b'}",
+          "{'name': 'Japan - U21 J League', 'slug': 'japan-u21-j-league'}",
           5
         ],
         [
-          "{'name': 'Lithuania - 1 Lyga', 'slug': 'lithuania-1-lyga'}",
+          "{'name': 'Poland - III Liga, Group 2', 'slug': 'poland-iii-liga-group-2'}",
+          5
+        ],
+        [
+          "{'name': 'Poland - III Liga, Group 3', 'slug': 'poland-iii-liga-group-3'}",
           5
         ],
         [
@@ -187,11 +175,15 @@
           5
         ],
         [
-          "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
-          4
+          "{'name': 'Romania - Liga III, Seria 8', 'slug': 'romania-liga-iii-seria-8'}",
+          5
         ],
         [
-          "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
+          "{'name': 'Slovakia - U19 1. Liga', 'slug': 'slovakia-u19-1-liga'}",
+          5
+        ],
+        [
+          "{'name': 'Albania - Kategoria e Pare', 'slug': 'albania-kategoria-e-pare'}",
           4
         ],
         [
@@ -207,7 +199,11 @@
           4
         ],
         [
-          "{'name': 'China - Chinese Super League', 'slug': 'china-chinese-super-league'}",
+          "{'name': 'Bulgaria - Bulgarian Cup', 'slug': 'bulgaria-bulgarian-cup'}",
+          4
+        ],
+        [
+          "{'name': 'Cyprus - 2nd Division', 'slug': 'cyprus-2nd-division'}",
           4
         ],
         [
@@ -223,19 +219,11 @@
           4
         ],
         [
-          "{'name': 'England Amateur - U21 Premier League 2', 'slug': 'england-amateur-u21-premier-league-2'}",
-          4
-        ],
-        [
-          "{'name': 'Iraq - Stars League', 'slug': 'iraq-stars-league'}",
-          4
-        ],
-        [
           "{'name': 'Ireland - Premier Division', 'slug': 'ireland-premier-division'}",
           4
         ],
         [
-          "{'name': 'Israel - National League', 'slug': 'israel-national-league'}",
+          "{'name': 'Italy - Primavera 2, Girone B', 'slug': 'italy-primavera-2-girone-b'}",
           4
         ],
         [
@@ -247,20 +235,24 @@
           4
         ],
         [
+          "{'name': 'Slovakia - 3. Liga, West', 'slug': 'slovakia-3-liga-west'}",
+          4
+        ],
+        [
+          "{'name': 'South Africa - Premier League, Reserve', 'slug': 'south-africa-premier-league-reserve'}",
+          4
+        ],
+        [
           "{'name': 'Sweden - Ettan, Sodra', 'slug': 'sweden-ettan-sodra'}",
-          4
-        ],
-        [
-          "{'name': 'Thailand - Thai League 1', 'slug': 'thailand-thai-league-1'}",
-          4
-        ],
-        [
-          "{'name': 'United Arab Emirates - Division 1', 'slug': 'united-arab-emirates-division-1'}",
           4
         ],
         [
           "{'name': 'Wales - Welsh Cup', 'slug': 'wales-welsh-cup'}",
           4
+        ],
+        [
+          "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
+          3
         ],
         [
           "{'name': 'Australia - A-League, Women', 'slug': 'australia-a-league-women'}",
@@ -271,11 +263,7 @@
           3
         ],
         [
-          "{'name': 'Austria Amateur - Wiener Stadtliga', 'slug': 'austria-amateur-wiener-stadtliga'}",
-          3
-        ],
-        [
-          "{'name': 'Azerbaijan - Premier League', 'slug': 'azerbaijan-premier-league'}",
+          "{'name': 'Bangladesh - Football League', 'slug': 'bangladesh-football-league'}",
           3
         ],
         [
@@ -283,11 +271,23 @@
           3
         ],
         [
-          "{'name': 'Croatia - Prva NL', 'slug': 'croatia-prva-nl'}",
+          "{'name': 'China - Chinese Super League', 'slug': 'china-chinese-super-league'}",
           3
         ],
         [
           "{'name': 'Czechia - Divize B', 'slug': 'czechia-divize-b'}",
+          3
+        ],
+        [
+          "{'name': 'Denmark - A Liga, Women', 'slug': 'denmark-a-liga-women'}",
+          3
+        ],
+        [
+          "{'name': 'Finland - Veikkausliiga, Relegation Round', 'slug': 'finland-veikkausliiga-relegation-round'}",
+          3
+        ],
+        [
+          "{'name': 'Germany - 2. Bundesliga', 'slug': 'germany-2-bundesliga'}",
           3
         ]
       ],
@@ -335,9 +335,9 @@
       ],
       "samples": [
         {
-          "id": 31051182382,
-          "home": "Stride Sports FC",
-          "away": "Kodagu FC",
+          "id": 31755945707,
+          "home": "Kickstart FC",
+          "away": "South United FC",
           "sport": {
             "name": "Football",
             "slug": "football"
@@ -346,7 +346,7 @@
             "name": "India - Bangalore Super Division",
             "slug": "india-bangalore-super-division"
           },
-          "date": "2026-10-16T05:30:00Z",
+          "date": "2026-10-16T10:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 31909238692,
-          "home": "Nongrim Hills SC",
-          "away": "Ryntih FC",
+          "id": 74100708,
+          "home": "Tritones Vallarta MFC",
+          "away": "H2O Purepechas FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "India - Shillong First Division",
-            "slug": "india-shillong-first-division"
+            "name": "Mexico - Liga Primera Premier, Group Stage",
+            "slug": "mexico-liga-primera-premier-group-stage"
           },
-          "date": "2026-10-16T06:30:00Z",
+          "date": "2026-10-16T16:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 30826805568,
-          "home": "Roots FC",
-          "away": "Bengaluru FC II",
+          "id": 73374524,
+          "home": "Al Shahaniya",
+          "away": "Al Arabi Doha SC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "India - Bangalore Super Division",
-            "slug": "india-bangalore-super-division"
+            "name": "Qatar - Stars League",
+            "slug": "qatar-stars-league"
           },
-          "date": "2026-10-16T08:00:00Z",
+          "date": "2026-10-16T16:45:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 73576668,
-          "home": "Psim Yogyakarta",
-          "away": "PSM Makassar",
+          "id": 72499090,
+          "home": "Naestved BK",
+          "away": "B93 Copenhagen",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Indonesia - Indonesia Super League",
-            "slug": "indonesia-indonesia-super-league"
+            "name": "Denmark - 2nd Division",
+            "slug": "denmark-2nd-division"
           },
-          "date": "2026-10-16T08:30:00Z",
+          "date": "2026-10-16T17:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 74827304,
-          "home": "Adelaide City FC",
-          "away": "Avondale FC",
+          "id": 72499088,
+          "home": "BK Fremad Amager",
+          "away": "Nykoebing FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Australia - Australian Championship, Group B",
-            "slug": "australia-australian-championship-group-b"
+            "name": "Denmark - 2nd Division",
+            "slug": "denmark-2nd-division"
           },
-          "date": "2026-10-16T08:30:00Z",
+          "date": "2026-10-16T17:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 13779,
-    "unique_markets": 71,
+    "raw_market_observations": 26163,
+    "unique_markets": 84,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-10-16T04:31:23Z",
+    "generated_at": "2026-10-16T16:38:57Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",
