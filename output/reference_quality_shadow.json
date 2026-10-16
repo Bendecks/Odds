@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-15T17:00:09.309171+00:00",
-  "as_of": "2026-10-15T17:00:09.206013+00:00",
+  "generated_at": "2026-10-16T04:31:27.118867+00:00",
+  "as_of": "2026-10-16T04:31:27.042147+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 877,
-  "fresh_exact_candidates": 813,
+  "total_candidates": 351,
+  "fresh_exact_candidates": 291,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 813,
-    "missing_external_market_reference": 813,
-    "missing_model_reference": 813
+    "insufficient_independent_economic_sources": 291,
+    "missing_external_market_reference": 291,
+    "missing_model_reference": 291
   },
   "missing_roles": {
-    "external_market_reference": 813,
-    "model_reference": 813
+    "external_market_reference": 291,
+    "model_reference": 291
   },
   "by_market": {
     "h2h": {
-      "evaluated": 165,
-      "fresh_exact_bet365": 165,
+      "evaluated": 105,
+      "fresh_exact_bet365": 105,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 165,
-        "missing_external_market_reference": 165,
-        "missing_model_reference": 165
+        "insufficient_independent_economic_sources": 105,
+        "missing_external_market_reference": 105,
+        "missing_model_reference": 105
       },
       "missing_roles": {
-        "external_market_reference": 165,
-        "model_reference": 165
+        "external_market_reference": 105,
+        "model_reference": 105
       }
     },
     "spreads": {
-      "evaluated": 262,
-      "fresh_exact_bet365": 262,
+      "evaluated": 28,
+      "fresh_exact_bet365": 28,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 262,
-        "missing_external_market_reference": 262,
-        "missing_model_reference": 262
+        "insufficient_independent_economic_sources": 28,
+        "missing_external_market_reference": 28,
+        "missing_model_reference": 28
       },
       "missing_roles": {
-        "external_market_reference": 262,
-        "model_reference": 262
+        "external_market_reference": 28,
+        "model_reference": 28
       }
     },
     "totals": {
-      "evaluated": 386,
-      "fresh_exact_bet365": 386,
+      "evaluated": 158,
+      "fresh_exact_bet365": 158,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 386,
-        "missing_external_market_reference": 386,
-        "missing_model_reference": 386
+        "insufficient_independent_economic_sources": 158,
+        "missing_external_market_reference": 158,
+        "missing_model_reference": 158
       },
       "missing_roles": {
-        "external_market_reference": 386,
-        "model_reference": 386
+        "external_market_reference": 158,
+        "model_reference": 158
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 813,
+        "fresh_exact_candidates_blocked": 291,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 813,
+        "fresh_exact_candidates_blocked": 291,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 813
+        "fresh_exact_candidates_blocked": 291
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 386,
+        "fresh_exact_candidates": 158,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 386,
-          "model_reference": 386
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 262,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 262,
-          "model_reference": 262
+          "external_market_reference": 158,
+          "model_reference": 158
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 165,
+        "fresh_exact_candidates": 105,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 165,
-          "model_reference": 165
+          "external_market_reference": 105,
+          "model_reference": 105
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 28,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 28,
+          "model_reference": 28
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 386,
+      "first_market_fresh_exact_candidates": 158,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 165,
-      "fresh_exact_bet365": 165,
+      "evaluated": 105,
+      "fresh_exact_bet365": 105,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 165,
-        "missing_external_market_reference": 165,
-        "missing_model_reference": 165
+        "insufficient_independent_economic_sources": 105,
+        "missing_external_market_reference": 105,
+        "missing_model_reference": 105
       },
       "missing_roles": {
-        "external_market_reference": 165,
-        "model_reference": 165
+        "external_market_reference": 105,
+        "model_reference": 105
       }
     },
     "spreads": {
-      "evaluated": 272,
-      "fresh_exact_bet365": 262,
+      "evaluated": 36,
+      "fresh_exact_bet365": 28,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 272,
-        "missing_external_market_reference": 272,
-        "missing_model_reference": 272,
-        "not_fresh_exact_bet365": 10
+        "insufficient_independent_economic_sources": 36,
+        "missing_external_market_reference": 36,
+        "missing_model_reference": 36,
+        "not_fresh_exact_bet365": 8
       },
       "missing_roles": {
-        "external_market_reference": 272,
-        "model_reference": 272
+        "external_market_reference": 36,
+        "model_reference": 36
       }
     },
     "totals": {
-      "evaluated": 440,
-      "fresh_exact_bet365": 386,
+      "evaluated": 210,
+      "fresh_exact_bet365": 158,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 440,
-        "missing_external_market_reference": 440,
-        "missing_model_reference": 440,
-        "not_fresh_exact_bet365": 54
+        "insufficient_independent_economic_sources": 210,
+        "missing_external_market_reference": 210,
+        "missing_model_reference": 210,
+        "not_fresh_exact_bet365": 52
       },
       "missing_roles": {
-        "external_market_reference": 440,
-        "model_reference": 440
+        "external_market_reference": 210,
+        "model_reference": 210
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
       "market": "h2h",
-      "pick": "Ceara SC CE U20",
+      "pick": "Adelaide City FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
       "market": "h2h",
-      "pick": "Goias EC GO U20",
+      "pick": "Avondale FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,66 +261,12 @@
       ]
     },
     {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
-      "market": "totals",
-      "pick": "Over",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
+      "market": "spreads",
+      "pick": "Adelaide City FC",
+      "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -341,12 +287,12 @@
       ]
     },
     {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
+      "market": "spreads",
+      "pick": "Avondale FC",
+      "line": -0.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -367,66 +313,118 @@
       ]
     },
     {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
+      "market": "spreads",
+      "pick": "Adelaide City FC",
+      "line": 0.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
+      "market": "spreads",
+      "pick": "Avondale FC",
+      "line": 0.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
+      "market": "spreads",
+      "pick": "Adelaide City FC",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
+      "market": "spreads",
+      "pick": "Avondale FC",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Adelaide City FC vs Avondale FC",
+      "event_id": 74827304,
+      "bet365_event_id": 74827304,
       "market": "totals",
       "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Ceara SC CE U20 vs Goias EC GO U20",
-      "event_id": 75489222,
-      "bet365_event_id": 75489222,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "San Lorenzo de Almagro Res. vs CA Sarmiento de Junin",
-      "event_id": 75133486,
-      "bet365_event_id": 75133486,
-      "market": "h2h",
-      "pick": "San Lorenzo de Almagro Res.",
-      "line": null,
+      "line": 1.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
