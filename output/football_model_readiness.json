@@ -1,90 +1,87 @@
 {
-  "generated_at": "2026-10-16T16:39:03.896065+00:00",
+  "generated_at": "2026-10-17T04:24:43.506663+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 596,
-  "exact_bet365_rows": 556,
+  "candidate_rows": 424,
+  "exact_bet365_rows": 314,
   "fresh_exact_rows_by_market": {
-    "h2h": 120,
-    "spreads": 140,
-    "totals": 296
+    "h2h": 102,
+    "spreads": 46,
+    "totals": 166
   },
   "metadata": {
-    "rows_with_sport": 596,
-    "rows_with_league": 596,
-    "rows_with_parseable_teams": 596,
+    "rows_with_sport": 424,
+    "rows_with_league": 424,
+    "rows_with_parseable_teams": 424,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 120,
-      "spreads": 160,
-      "totals": 316
+      "h2h": 102,
+      "spreads": 76,
+      "totals": 246
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 120,
-      "totals": 316
+      "h2h": 102,
+      "totals": 246
     },
-    "first_model_scope_rows": 436
+    "first_model_scope_rows": 348
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'France - Ligue 2', 'slug': 'france-ligue-2'}",
-        75
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        101
       ],
       [
-        "{'name': 'Netherlands - Eerste Divisie', 'slug': 'netherlands-eerste-divisie'}",
-        72
+        "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
+        77
       ],
       [
-        "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
-        49
+        "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+        67
       ],
       [
-        "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
-        49
+        "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
+        52
       ],
       [
-        "{'name': 'England Amateur - U21 Premier League 2', 'slug': 'england-amateur-u21-premier-league-2'}",
-        36
+        "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
+        25
       ],
       [
-        "{'name': 'Belgium - Beker van Belgie', 'slug': 'belgium-beker-van-belgie'}",
-        36
+        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
+        15
       ],
       [
-        "{'name': 'Switzerland - Schweizer Cup', 'slug': 'switzerland-schweizer-cup'}",
-        27
+        "{'name': 'Australia - Australian Championship, Group C', 'slug': 'australia-australian-championship-group-c'}",
+        15
       ],
       [
-        "{'name': 'Denmark - Superligaen', 'slug': 'denmark-superligaen'}",
-        19
+        "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
+        11
       ],
       [
-        "{'name': 'Austria - Bundesliga', 'slug': 'austria-bundesliga'}",
-        19
+        "{'name': 'Australia - A-League, Women', 'slug': 'australia-a-league-women'}",
+        9
       ],
       [
-        "{'name': 'Switzerland - Super League, Women', 'slug': 'switzerland-super-league-women'}",
-        18
+        "{'name': 'Hong Kong, China - Premier League', 'slug': 'hong-kong-china-premier-league'}",
+        9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:D1": 68,
-      "football-data.co.uk:E0": 36,
-      "football-data.co.uk:E1": 17,
-      "football-data.co.uk:N1": 49,
-      "public-data:needs-provider-specific-mapping": 34
+      "football-data.co.uk:E0": 9,
+      "football-data.co.uk:E1": 33
     }
   },
   "public_football_data_probe": {
@@ -117,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 160
+      "market_not_first_model_scope": 76
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
