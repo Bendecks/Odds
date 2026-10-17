@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T04:24:43.482551+00:00",
-  "as_of": "2026-10-17T04:24:43.420887+00:00",
+  "generated_at": "2026-10-17T15:34:12.870071+00:00",
+  "as_of": "2026-10-17T15:34:12.763356+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 424,
-  "fresh_exact_candidates": 314,
+  "total_candidates": 468,
+  "fresh_exact_candidates": 450,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 314,
-    "missing_external_market_reference": 314,
-    "missing_model_reference": 314
+    "insufficient_independent_economic_sources": 450,
+    "missing_external_market_reference": 450,
+    "missing_model_reference": 450
   },
   "missing_roles": {
-    "external_market_reference": 314,
-    "model_reference": 314
+    "external_market_reference": 450,
+    "model_reference": 450
   },
   "by_market": {
     "h2h": {
-      "evaluated": 102,
-      "fresh_exact_bet365": 102,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 102,
-        "missing_external_market_reference": 102,
-        "missing_model_reference": 102
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 102,
-        "model_reference": 102
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 46,
-      "fresh_exact_bet365": 46,
+      "evaluated": 112,
+      "fresh_exact_bet365": 112,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 46,
-        "missing_external_market_reference": 46,
-        "missing_model_reference": 46
+        "insufficient_independent_economic_sources": 112,
+        "missing_external_market_reference": 112,
+        "missing_model_reference": 112
       },
       "missing_roles": {
-        "external_market_reference": 46,
-        "model_reference": 46
+        "external_market_reference": 112,
+        "model_reference": 112
       }
     },
     "totals": {
-      "evaluated": 166,
-      "fresh_exact_bet365": 166,
+      "evaluated": 230,
+      "fresh_exact_bet365": 230,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 166,
-        "missing_external_market_reference": 166,
-        "missing_model_reference": 166
+        "insufficient_independent_economic_sources": 230,
+        "missing_external_market_reference": 230,
+        "missing_model_reference": 230
       },
       "missing_roles": {
-        "external_market_reference": 166,
-        "model_reference": 166
+        "external_market_reference": 230,
+        "model_reference": 230
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 314,
+        "fresh_exact_candidates_blocked": 450,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 314,
+        "fresh_exact_candidates_blocked": 450,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 314
+        "fresh_exact_candidates_blocked": 450
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 166,
+        "fresh_exact_candidates": 230,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 166,
-          "model_reference": 166
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "h2h",
-        "fresh_exact_candidates": 102,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 102,
-          "model_reference": 102
+          "external_market_reference": 230,
+          "model_reference": 230
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 46,
+        "fresh_exact_candidates": 112,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 46,
-          "model_reference": 46
+          "external_market_reference": 112,
+          "model_reference": 112
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "h2h",
+        "fresh_exact_candidates": 108,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 108,
+          "model_reference": 108
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 166,
+      "first_market_fresh_exact_candidates": 230,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 102,
-      "fresh_exact_bet365": 102,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 102,
-        "missing_external_market_reference": 102,
-        "missing_model_reference": 102
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 102,
-        "model_reference": 102
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
-      "evaluated": 76,
-      "fresh_exact_bet365": 46,
+      "evaluated": 116,
+      "fresh_exact_bet365": 112,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 76,
-        "missing_external_market_reference": 76,
-        "missing_model_reference": 76,
-        "not_fresh_exact_bet365": 30
+        "insufficient_independent_economic_sources": 116,
+        "missing_external_market_reference": 116,
+        "missing_model_reference": 116,
+        "not_fresh_exact_bet365": 4
       },
       "missing_roles": {
-        "external_market_reference": 76,
-        "model_reference": 76
+        "external_market_reference": 116,
+        "model_reference": 116
       }
     },
     "totals": {
-      "evaluated": 246,
-      "fresh_exact_bet365": 166,
+      "evaluated": 244,
+      "fresh_exact_bet365": 230,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 246,
-        "missing_external_market_reference": 246,
-        "missing_model_reference": 246,
-        "not_fresh_exact_bet365": 80
+        "insufficient_independent_economic_sources": 244,
+        "missing_external_market_reference": 244,
+        "missing_model_reference": 244,
+        "not_fresh_exact_bet365": 14
       },
       "missing_roles": {
-        "external_market_reference": 246,
-        "model_reference": 246
+        "external_market_reference": 244,
+        "model_reference": 244
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
       "market": "h2h",
-      "pick": "Tokyo Verdy",
+      "pick": "RC Lens",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
       "market": "h2h",
-      "pick": "FC Tokyo",
+      "pick": "RC Strasbourg Alsace",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,113 +261,9 @@
       ]
     },
     {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
-      "market": "spreads",
-      "pick": "Tokyo Verdy",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
-      "market": "spreads",
-      "pick": "FC Tokyo",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
-      "market": "spreads",
-      "pick": "Tokyo Verdy",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
-      "market": "spreads",
-      "pick": "FC Tokyo",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -391,9 +287,9 @@
       ]
     },
     {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -417,12 +313,116 @@
       ]
     },
     {
-      "event": "Tokyo Verdy vs FC Tokyo",
-      "event_id": 72149782,
-      "bet365_event_id": 72149782,
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "RC Lens vs RC Strasbourg Alsace",
+      "event_id": 72700244,
+      "bet365_event_id": 72700244,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Bodrum FK vs Bandirmaspor",
+      "event_id": 72735846,
+      "bet365_event_id": 72735846,
+      "market": "h2h",
+      "pick": "Bodrum FK",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [

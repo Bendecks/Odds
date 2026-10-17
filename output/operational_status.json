@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-10-17T04:24:43.420887+00:00",
+  "generated_at": "2026-10-17T15:34:12.763356+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
   "bottleneck": "Ingen friske eksakte kandidater har nok referencebøger.",
   "funnel": {
-    "candidate_rows": 424,
-    "fair_probability_rows": 424,
+    "candidate_rows": 468,
+    "fair_probability_rows": 468,
     "reference_events": 12,
-    "exact_bet365_rows": 314,
-    "fresh_exact_bet365_rows": 314,
+    "exact_bet365_rows": 450,
+    "fresh_exact_bet365_rows": 450,
     "reference_depth_ready_rows": 0,
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 122
+    "decision_runs_recorded": 123
   },
   "funnel_diagnostics": {
     "by_market": {
       "candidate": {
-        "totals": 246,
-        "h2h": 102,
-        "spreads": 76
+        "totals": 244,
+        "spreads": 116,
+        "h2h": 108
       },
       "exact": {
-        "totals": 166,
-        "h2h": 102,
-        "spreads": 46
+        "totals": 230,
+        "spreads": 112,
+        "h2h": 108
       },
       "fresh": {
-        "totals": 166,
-        "h2h": 102,
-        "spreads": 46
+        "totals": 230,
+        "spreads": 112,
+        "h2h": 108
       },
       "reference_ready": {},
       "production_edge_ready": {}
     },
     "freshness_by_market": {
       "h2h": {
-        "exact": 102,
-        "fresh": 102,
+        "exact": 108,
+        "fresh": 108,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "spreads": {
-        "exact": 46,
-        "fresh": 46,
+        "exact": 112,
+        "fresh": 112,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       },
       "totals": {
-        "exact": 166,
-        "fresh": 166,
+        "exact": 230,
+        "fresh": 230,
         "stale_or_invalid": 0,
         "fresh_rate": 1.0
       }
     },
     "exact_price_age_buckets": {
-      "0_20m": 314
+      "0_20m": 450
     },
     "reference_depth_rejections_by_market": {
-      "totals": 166,
-      "h2h": 102,
-      "spreads": 46
+      "totals": 230,
+      "spreads": 112,
+      "h2h": 108
     },
     "edge_distribution": {
       "buckets": {},
@@ -72,7 +72,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-10-17T04:24:39.092804+00:00",
+    "generated_at": "2026-10-17T15:34:06.198411+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -91,131 +91,103 @@
       ],
       "top_leagues": [
         [
-          "{'name': 'Hungary - NB III, Group South West', 'slug': 'hungary-nb-iii-group-south-west'}",
-          13
+          "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
+          14
         ],
         [
           "{'name': 'Thailand - Thai League 3', 'slug': 'thailand-thai-league-3'}",
-          13
+          11
         ],
         [
-          "{'name': 'Poland - IV Liga', 'slug': 'poland-iv-liga'}",
+          "{'name': 'USA - USL, Championship', 'slug': 'usa-usl-championship'}",
           10
         ],
         [
-          "{'name': 'Japan - J.League 2', 'slug': 'japan-jleague-2'}",
+          "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
           9
         ],
         [
-          "{'name': 'France - Ligue 3', 'slug': 'france-ligue-3'}",
+          "{'name': 'USA - USL, League One', 'slug': 'usa-usl-league-one'}",
           8
         ],
         [
-          "{'name': 'Italy - Primavera 2, Girone B', 'slug': 'italy-primavera-2-girone-b'}",
-          8
-        ],
-        [
-          "{'name': 'Netherlands - Tweede Divisie', 'slug': 'netherlands-tweede-divisie'}",
-          8
-        ],
-        [
-          "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
-          8
-        ],
-        [
-          "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
+          "{'name': 'Argentina - Torneo Federal A, Promotion Playoffs', 'slug': 'argentina-torneo-federal-a-promotion-playoffs'}",
           7
         ],
         [
-          "{'name': 'Croatia - Druga NL', 'slug': 'croatia-druga-nl'}",
-          7
-        ],
-        [
-          "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
-          7
-        ],
-        [
-          "{'name': 'Czechia - U19 1. Liga', 'slug': 'czechia-u19-1-liga'}",
+          "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
           6
         ],
         [
-          "{'name': 'Italy - Primavera 2, Girone A', 'slug': 'italy-primavera-2-girone-a'}",
+          "{'name': 'Hong Kong, China - 1. Division', 'slug': 'hong-kong-china-1-division'}",
           6
         ],
         [
-          "{'name': 'Japan - J-League 3', 'slug': 'japan-j-league-3'}",
+          "{'name': 'Mexico - Liga Premier Serie A', 'slug': 'mexico-liga-premier-serie-a'}",
           6
         ],
         [
-          "{'name': 'Romania - Liga III, Seria 8', 'slug': 'romania-liga-iii-seria-8'}",
+          "{'name': 'Spain - Segunda Federacion, Group III', 'slug': 'spain-segunda-federacion-group-iii'}",
           6
         ],
         [
-          "{'name': 'Sweden - Division 2, Sodra Gotaland', 'slug': 'sweden-division-2-sodra-gotaland'}",
+          "{'name': 'Spain - Segunda Federacion, Group V', 'slug': 'spain-segunda-federacion-group-v'}",
           6
         ],
         [
-          "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
+          "{'name': 'Spain Amateur - Tercera Federacion, Group 7', 'slug': 'spain-amateur-tercera-federacion-group-7'}",
+          6
+        ],
+        [
+          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
           5
         ],
         [
-          "{'name': 'Cyprus - 2nd Division', 'slug': 'cyprus-2nd-division'}",
+          "{'name': 'Belgium - Nationale 1 VV', 'slug': 'belgium-nationale-1-vv'}",
           5
         ],
         [
-          "{'name': 'Denmark - 3rd Division', 'slug': 'denmark-3rd-division'}",
+          "{'name': 'Israel - Premier League', 'slug': 'israel-premier-league'}",
           5
         ],
         [
-          "{'name': 'Finland - Ykkosliiga', 'slug': 'finland-ykkosliiga'}",
+          "{'name': 'Mexico - Liga MX, Apertura', 'slug': 'mexico-liga-mx-apertura'}",
           5
         ],
         [
-          "{'name': 'Germany - 3. Liga', 'slug': 'germany-3-liga'}",
+          "{'name': 'Mexico - Liga de Expansion MX, Apertura', 'slug': 'mexico-liga-de-expansion-mx-apertura'}",
           5
         ],
         [
-          "{'name': 'Greece - U19 Super League', 'slug': 'greece-u19-super-league'}",
+          "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
           5
         ],
         [
-          "{'name': 'Norway - 2nd Division, Group 2', 'slug': 'norway-2nd-division-group-2'}",
+          "{'name': 'Spain Amateur - Tercera Federacion, Group 5', 'slug': 'spain-amateur-tercera-federacion-group-5'}",
           5
         ],
         [
-          "{'name': 'Poland - III Liga, Group 2', 'slug': 'poland-iii-liga-group-2'}",
-          5
-        ],
-        [
-          "{'name': 'Poland - III Liga, Group 3', 'slug': 'poland-iii-liga-group-3'}",
-          5
-        ],
-        [
-          "{'name': 'Republic of Korea - K-League 2', 'slug': 'republic-of-korea-k-league-2'}",
-          5
-        ],
-        [
-          "{'name': 'Slovakia - U19 1. Liga', 'slug': 'slovakia-u19-1-liga'}",
-          5
-        ],
-        [
-          "{'name': 'Thailand - Thai League 2', 'slug': 'thailand-thai-league-2'}",
-          5
-        ],
-        [
-          "{'name': 'Albania - Kategoria e Pare', 'slug': 'albania-kategoria-e-pare'}",
+          "{'name': \"USA - National Women's Soccer League\", 'slug': \"usa-national-women's-soccer-league\"}",
           4
         ],
         [
-          "{'name': 'Bosnia & Herzegovina - Prva Liga, Federacije BiH', 'slug': 'bosnia-&-herzegovina-prva-liga-federacije-bih'}",
+          "{'name': 'Argentina - Primera C, Final', 'slug': 'argentina-primera-c-final'}",
           4
         ],
         [
-          "{'name': 'Bulgaria - Bulgarian Cup', 'slug': 'bulgaria-bulgarian-cup'}",
+          "{'name': 'Belgium - Beker van Belgie', 'slug': 'belgium-beker-van-belgie'}",
           4
         ],
         [
-          "{'name': 'Czechia - 1. Liga', 'slug': 'czechia-1-liga'}",
+          "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+          4
+        ],
+        [
+          "{'name': 'Brazil - Carioca, Serie B1', 'slug': 'brazil-carioca-serie-b1'}",
+          4
+        ],
+        [
+          "{'name': 'Czechia - CFL, Group B', 'slug': 'czechia-cfl-group-b'}",
           4
         ],
         [
@@ -223,71 +195,99 @@
           4
         ],
         [
-          "{'name': 'Hungary - NB I, Women', 'slug': 'hungary-nb-i-women'}",
+          "{'name': 'Japan - J-League 3', 'slug': 'japan-j-league-3'}",
           4
         ],
         [
-          "{'name': 'Italy - Serie B', 'slug': 'italy-serie-b'}",
+          "{'name': 'Japan - Nadeshiko League, Div. 1, Women', 'slug': 'japan-nadeshiko-league-div-1-women'}",
           4
         ],
         [
-          "{'name': 'Italy - Serie C, Group B', 'slug': 'italy-serie-c-group-b'}",
+          "{'name': 'Mexico - Liga Primera Premier, Group Stage', 'slug': 'mexico-liga-primera-premier-group-stage'}",
           4
         ],
         [
-          "{'name': 'Norway - 2nd Division, Group 1', 'slug': 'norway-2nd-division-group-1'}",
+          "{'name': 'Poland - IV Liga', 'slug': 'poland-iv-liga'}",
           4
         ],
         [
-          "{'name': 'Norway - 3rd Division, Group 1', 'slug': 'norway-3rd-division-group-1'}",
+          "{'name': 'Senegal - Ligue 1', 'slug': 'senegal-ligue-1'}",
           4
         ],
         [
-          "{'name': 'Norway - Toppserien, Women', 'slug': 'norway-toppserien-women'}",
+          "{'name': 'Spain - Primera Federacion, Group 1', 'slug': 'spain-primera-federacion-group-1'}",
           4
+        ],
+        [
+          "{'name': 'Spain - Primera Federacion, Group 2', 'slug': 'spain-primera-federacion-group-2'}",
+          4
+        ],
+        [
+          "{'name': 'Spain - Segunda Federacion, Group IV', 'slug': 'spain-segunda-federacion-group-iv'}",
+          4
+        ],
+        [
+          "{'name': 'Spain Amateur - Tercera Federacion, Group 9', 'slug': 'spain-amateur-tercera-federacion-group-9'}",
+          4
+        ],
+        [
+          "{'name': 'Turkiye Amateur - 2nd Lig, Beyaz Grup', 'slug': 'turkiye-amateur-2nd-lig-beyaz-grup'}",
+          4
+        ],
+        [
+          "{'name': 'Belgium - Nationale 1 FFA', 'slug': 'belgium-nationale-1-ffa'}",
+          3
+        ],
+        [
+          "{'name': 'Bolivia - Division Profesional', 'slug': 'bolivia-division-profesional'}",
+          3
+        ],
+        [
+          "{'name': 'Brazil - U20 Paulista, Playoffs', 'slug': 'brazil-u20-paulista-playoffs'}",
+          3
+        ],
+        [
+          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+          3
+        ],
+        [
+          "{'name': 'Czechia - CFL, Group A', 'slug': 'czechia-cfl-group-a'}",
+          3
+        ],
+        [
+          "{'name': 'France - National 1, Group A', 'slug': 'france-national-1-group-a'}",
+          3
+        ],
+        [
+          "{'name': 'France - Premiere Ligue, Women', 'slug': 'france-premiere-ligue-women'}",
+          3
+        ],
+        [
+          "{'name': 'Honduras - Liga Nacional, Apertura', 'slug': 'honduras-liga-nacional-apertura'}",
+          3
+        ],
+        [
+          "{'name': 'International Clubs - CAF Confederations Cup, Qualification', 'slug': 'international-clubs-caf-confederations-cup-qualification'}",
+          3
+        ],
+        [
+          "{'name': 'Israel - U19 Premier League', 'slug': 'israel-u19-premier-league'}",
+          3
+        ],
+        [
+          "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
+          3
+        ],
+        [
+          "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
+          3
+        ],
+        [
+          "{'name': 'Poland - Ekstraklasa', 'slug': 'poland-ekstraklasa'}",
+          3
         ],
         [
           "{'name': 'Poland - III Liga, Group 1', 'slug': 'poland-iii-liga-group-1'}",
-          4
-        ],
-        [
-          "{'name': 'Slovakia - 2. Liga', 'slug': 'slovakia-2-liga'}",
-          4
-        ],
-        [
-          "{'name': 'Slovakia - 3. Liga, West', 'slug': 'slovakia-3-liga-west'}",
-          4
-        ],
-        [
-          "{'name': 'South Africa - Premier League, Reserve', 'slug': 'south-africa-premier-league-reserve'}",
-          4
-        ],
-        [
-          "{'name': 'Sweden - Damallsvenskan, Women', 'slug': 'sweden-damallsvenskan-women'}",
-          4
-        ],
-        [
-          "{'name': 'Bangladesh - Football League', 'slug': 'bangladesh-football-league'}",
-          3
-        ],
-        [
-          "{'name': 'China - Chinese Super League', 'slug': 'china-chinese-super-league'}",
-          3
-        ],
-        [
-          "{'name': 'Czechia - 1. Liga, Women', 'slug': 'czechia-1-liga-women'}",
-          3
-        ],
-        [
-          "{'name': 'Czechia - Divize B', 'slug': 'czechia-divize-b'}",
-          3
-        ],
-        [
-          "{'name': 'Denmark - 2nd Division', 'slug': 'denmark-2nd-division'}",
-          3
-        ],
-        [
-          "{'name': 'Denmark - A Liga, Women', 'slug': 'denmark-a-liga-women'}",
           3
         ]
       ],
@@ -335,18 +335,18 @@
       ],
       "samples": [
         {
-          "id": 68046782,
-          "home": "Daegu FC",
-          "away": "Chungbuk Cheongju FC",
+          "id": 73711462,
+          "home": "Mantova 1911",
+          "away": "AS Cittadella",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Republic of Korea - K-League 2",
-            "slug": "republic-of-korea-k-league-2"
+            "name": "Italy - Primavera 2, Girone A",
+            "slug": "italy-primavera-2-girone-a"
           },
-          "date": "2026-10-17T05:00:00Z",
+          "date": "2026-10-17T13:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -361,18 +361,18 @@
           ]
         },
         {
-          "id": 68046784,
-          "home": "Seongnam Ilhwa",
-          "away": "Suwon FC",
+          "id": 29222145263,
+          "home": "GZS Tłuchowia Tłuchowo",
+          "away": "MZKS Orlęta Aleksandrów Kujawski",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Republic of Korea - K-League 2",
-            "slug": "republic-of-korea-k-league-2"
+            "name": "Poland - IV Liga",
+            "slug": "poland-iv-liga"
           },
-          "date": "2026-10-17T05:00:00Z",
+          "date": "2026-10-17T13:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -387,18 +387,18 @@
           ]
         },
         {
-          "id": 72149778,
-          "home": "JEF United Chiba",
-          "away": "Yokohama F Marinos",
+          "id": 72700564,
+          "home": "Grenoble Foot 38",
+          "away": "OGC Nice",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Japan - J.League",
-            "slug": "japan-jleague"
+            "name": "France - Seconde Ligue, Women",
+            "slug": "france-seconde-ligue-women"
           },
-          "date": "2026-10-17T05:00:00Z",
+          "date": "2026-10-17T13:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -413,18 +413,18 @@
           ]
         },
         {
-          "id": 72149782,
-          "home": "Tokyo Verdy",
-          "away": "FC Tokyo",
+          "id": 72576664,
+          "home": "RESOVIA RZESZOW",
+          "away": "KKS Lech Poznan II",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Japan - J.League",
-            "slug": "japan-jleague"
+            "name": "Poland - 1. Liga, Women",
+            "slug": "poland-1-liga-women"
           },
-          "date": "2026-10-17T05:00:00Z",
+          "date": "2026-10-17T13:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -439,18 +439,18 @@
           ]
         },
         {
-          "id": 72149792,
-          "home": "Sanfrecce Hiroshima",
-          "away": "Kyoto Sanga FC",
+          "id": 72882566,
+          "home": "Real Sporting de Gijon",
+          "away": "CD Lugo",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Japan - J.League",
-            "slug": "japan-jleague"
+            "name": "Spain - Division de Honor Juvenil - Grupo I",
+            "slug": "spain-division-de-honor-juvenil-grupo-i"
           },
-          "date": "2026-10-17T05:00:00Z",
+          "date": "2026-10-17T13:30:00Z",
           "keys": [
             "away",
             "awayId",
@@ -471,13 +471,13 @@
     "odds_calls": null,
     "odds_multi_calls": null,
     "fallback_odds_calls": null,
-    "raw_market_observations": 18911,
-    "unique_markets": 78,
+    "raw_market_observations": 23482,
+    "unique_markets": 84,
     "matched_reference_candidates": null,
     "errors": []
   },
   "quota_budget": {
-    "generated_at": "2026-10-17T04:24:38Z",
+    "generated_at": "2026-10-17T15:34:06Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",
