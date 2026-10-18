@@ -1,87 +1,92 @@
 {
-  "generated_at": "2026-10-18T04:33:00.506763+00:00",
+  "generated_at": "2026-10-18T15:52:00.753492+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 273,
-  "exact_bet365_rows": 223,
+  "candidate_rows": 651,
+  "exact_bet365_rows": 583,
   "fresh_exact_rows_by_market": {
-    "h2h": 75,
-    "spreads": 32,
-    "totals": 116
+    "h2h": 147,
+    "spreads": 110,
+    "totals": 326
   },
   "metadata": {
-    "rows_with_sport": 273,
-    "rows_with_league": 273,
-    "rows_with_parseable_teams": 273,
+    "rows_with_sport": 651,
+    "rows_with_league": 651,
+    "rows_with_parseable_teams": 651,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 75,
-      "spreads": 34,
-      "totals": 164
+      "h2h": 147,
+      "spreads": 142,
+      "totals": 362
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 75,
-      "totals": 164
+      "h2h": 147,
+      "totals": 362
     },
-    "first_model_scope_rows": 239
+    "first_model_scope_rows": 509
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Republic of Korea - K-League 1', 'slug': 'republic-of-korea-k-league-1'}",
-        75
+        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+        43
       ],
       [
-        "{'name': 'Hong Kong, China - 1. Division', 'slug': 'hong-kong-china-1-division'}",
-        45
+        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
+        41
       ],
       [
-        "{'name': 'Japan - J.League', 'slug': 'japan-jleague'}",
-        26
+        "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
+        41
       ],
       [
-        "{'name': 'Australia - Australian Championship, Group D', 'slug': 'australia-australian-championship-group-d'}",
+        "{'name': 'Spain - LaLiga 2', 'slug': 'spain-laliga-2'}",
+        32
+      ],
+      [
+        "{'name': 'Belgium - Beker van Belgie', 'slug': 'belgium-beker-van-belgie'}",
+        28
+      ],
+      [
+        "{'name': 'Algeria - Ligue 1', 'slug': 'algeria-ligue-1'}",
+        23
+      ],
+      [
+        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+        21
+      ],
+      [
+        "{'name': 'Peru - Primera Division, Clausura', 'slug': 'peru-primera-division-clausura'}",
         19
       ],
       [
-        "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
-        16
+        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        19
       ],
       [
-        "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
-        11
-      ],
-      [
-        "{'name': 'Austria - 2. Liga', 'slug': 'austria-2-liga'}",
-        11
-      ],
-      [
-        "{'name': 'Australia - A-League, Women', 'slug': 'australia-a-league-women'}",
-        9
-      ],
-      [
-        "{'name': 'Chinese Taipei - Premier League', 'slug': 'chinese-taipei-premier-league'}",
-        9
-      ],
-      [
-        "{'name': 'Hong Kong, China - Premier League', 'slug': 'hong-kong-china-premier-league'}",
-        9
+        "{'name': 'Cyprus - 1st Division', 'slug': 'cyprus-1st-division'}",
+        18
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 27,
-      "football-data.co.uk:E1": 28
+      "football-data.co.uk:CL": 7,
+      "football-data.co.uk:D1": 9,
+      "football-data.co.uk:E0": 36,
+      "football-data.co.uk:F1": 23,
+      "football-data.co.uk:I1": 61,
+      "football-data.co.uk:N1": 41,
+      "public-data:needs-provider-specific-mapping": 26
     }
   },
   "public_football_data_probe": {
@@ -114,7 +119,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 34
+      "market_not_first_model_scope": 142
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

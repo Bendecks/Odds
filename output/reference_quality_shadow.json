@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-18T04:33:00.471477+00:00",
-  "as_of": "2026-10-18T04:33:00.381682+00:00",
+  "generated_at": "2026-10-18T15:52:00.716068+00:00",
+  "as_of": "2026-10-18T15:52:00.614649+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 273,
-  "fresh_exact_candidates": 223,
+  "total_candidates": 651,
+  "fresh_exact_candidates": 583,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 223,
-    "missing_external_market_reference": 223,
-    "missing_model_reference": 223
+    "insufficient_independent_economic_sources": 583,
+    "missing_external_market_reference": 583,
+    "missing_model_reference": 583
   },
   "missing_roles": {
-    "external_market_reference": 223,
-    "model_reference": 223
+    "external_market_reference": 583,
+    "model_reference": 583
   },
   "by_market": {
     "h2h": {
-      "evaluated": 75,
-      "fresh_exact_bet365": 75,
+      "evaluated": 147,
+      "fresh_exact_bet365": 147,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 75,
-        "missing_external_market_reference": 75,
-        "missing_model_reference": 75
+        "insufficient_independent_economic_sources": 147,
+        "missing_external_market_reference": 147,
+        "missing_model_reference": 147
       },
       "missing_roles": {
-        "external_market_reference": 75,
-        "model_reference": 75
+        "external_market_reference": 147,
+        "model_reference": 147
       }
     },
     "spreads": {
-      "evaluated": 32,
-      "fresh_exact_bet365": 32,
+      "evaluated": 110,
+      "fresh_exact_bet365": 110,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 32,
-        "missing_external_market_reference": 32,
-        "missing_model_reference": 32
+        "insufficient_independent_economic_sources": 110,
+        "missing_external_market_reference": 110,
+        "missing_model_reference": 110
       },
       "missing_roles": {
-        "external_market_reference": 32,
-        "model_reference": 32
+        "external_market_reference": 110,
+        "model_reference": 110
       }
     },
     "totals": {
-      "evaluated": 116,
-      "fresh_exact_bet365": 116,
+      "evaluated": 326,
+      "fresh_exact_bet365": 326,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 116,
-        "missing_external_market_reference": 116,
-        "missing_model_reference": 116
+        "insufficient_independent_economic_sources": 326,
+        "missing_external_market_reference": 326,
+        "missing_model_reference": 326
       },
       "missing_roles": {
-        "external_market_reference": 116,
-        "model_reference": 116
+        "external_market_reference": 326,
+        "model_reference": 326
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 223,
+        "fresh_exact_candidates_blocked": 583,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 223,
+        "fresh_exact_candidates_blocked": 583,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 223
+        "fresh_exact_candidates_blocked": 583
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 116,
+        "fresh_exact_candidates": 326,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 116,
-          "model_reference": 116
+          "external_market_reference": 326,
+          "model_reference": 326
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 75,
+        "fresh_exact_candidates": 147,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 75,
-          "model_reference": 75
+          "external_market_reference": 147,
+          "model_reference": 147
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 32,
+        "fresh_exact_candidates": 110,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 32,
-          "model_reference": 32
+          "external_market_reference": 110,
+          "model_reference": 110
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 116,
+      "first_market_fresh_exact_candidates": 326,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 75,
-      "fresh_exact_bet365": 75,
+      "evaluated": 147,
+      "fresh_exact_bet365": 147,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 75,
-        "missing_external_market_reference": 75,
-        "missing_model_reference": 75
+        "insufficient_independent_economic_sources": 147,
+        "missing_external_market_reference": 147,
+        "missing_model_reference": 147
       },
       "missing_roles": {
-        "external_market_reference": 75,
-        "model_reference": 75
+        "external_market_reference": 147,
+        "model_reference": 147
       }
     },
     "spreads": {
-      "evaluated": 34,
-      "fresh_exact_bet365": 32,
+      "evaluated": 142,
+      "fresh_exact_bet365": 110,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 34,
-        "missing_external_market_reference": 34,
-        "missing_model_reference": 34,
-        "not_fresh_exact_bet365": 2
+        "insufficient_independent_economic_sources": 142,
+        "missing_external_market_reference": 142,
+        "missing_model_reference": 142,
+        "not_fresh_exact_bet365": 32
       },
       "missing_roles": {
-        "external_market_reference": 34,
-        "model_reference": 34
+        "external_market_reference": 142,
+        "model_reference": 142
       }
     },
     "totals": {
-      "evaluated": 164,
-      "fresh_exact_bet365": 116,
+      "evaluated": 362,
+      "fresh_exact_bet365": 326,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 164,
-        "missing_external_market_reference": 164,
-        "missing_model_reference": 164,
-        "not_fresh_exact_bet365": 48
+        "insufficient_independent_economic_sources": 362,
+        "missing_external_market_reference": 362,
+        "missing_model_reference": 362,
+        "not_fresh_exact_bet365": 36
       },
       "missing_roles": {
-        "external_market_reference": 164,
-        "model_reference": 164
+        "external_market_reference": 362,
+        "model_reference": 362
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
       "market": "h2h",
-      "pick": "Fagiano Okayama",
+      "pick": "Sporting Cristal",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
       "market": "h2h",
-      "pick": "Vissel Kobe",
+      "pick": "Comerciantes Unidos",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,13 +261,119 @@
       ]
     },
     {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
       "market": "spreads",
-      "pick": "Fagiano Okayama",
+      "pick": "Sporting Cristal",
+      "line": -2.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
+      "market": "spreads",
+      "pick": "Comerciantes Unidos",
+      "line": -2.5,
+      "fresh_exact_bet365": false,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "not_fresh_exact_bet365",
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
+      "market": "spreads",
+      "pick": "Sporting Cristal",
+      "line": -1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
+      "market": "spreads",
+      "pick": "Comerciantes Unidos",
+      "line": -1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
+      "market": "spreads",
+      "pick": "Sporting Cristal",
       "line": -0.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -281,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
       "market": "spreads",
-      "pick": "Vissel Kobe",
+      "pick": "Comerciantes Unidos",
       "line": -0.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -307,122 +414,19 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
-      "market": "spreads",
-      "pick": "Fagiano Okayama",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
-      "market": "spreads",
-      "pick": "Vissel Kobe",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
+      "event": "Sporting Cristal vs Comerciantes Unidos",
+      "event_id": 71936172,
+      "bet365_event_id": 71936172,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
-      "market": "totals",
-      "pick": "Under",
-      "line": 1.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Fagiano Okayama vs Vissel Kobe",
-      "event_id": 72149790,
-      "bet365_event_id": 72149790,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
