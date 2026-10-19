@@ -1,88 +1,87 @@
 {
-  "generated_at": "2026-10-19T04:39:50.265838+00:00",
+  "generated_at": "2026-10-19T18:42:42.793726+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 327,
-  "exact_bet365_rows": 257,
+  "candidate_rows": 561,
+  "exact_bet365_rows": 509,
   "fresh_exact_rows_by_market": {
-    "h2h": 105,
-    "spreads": 10,
-    "totals": 142
+    "h2h": 117,
+    "spreads": 122,
+    "totals": 270
   },
   "metadata": {
-    "rows_with_sport": 327,
-    "rows_with_league": 327,
-    "rows_with_parseable_teams": 327,
+    "rows_with_sport": 561,
+    "rows_with_league": 561,
+    "rows_with_parseable_teams": 561,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 105,
-      "spreads": 10,
-      "totals": 212
+      "h2h": 117,
+      "spreads": 142,
+      "totals": 302
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 105,
-      "totals": 212
+      "h2h": 117,
+      "totals": 302
     },
-    "first_model_scope_rows": 317
+    "first_model_scope_rows": 419
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Bahrain - First Division', 'slug': 'bahrain-first-division'}",
-        27
+        "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
+        80
       ],
       [
-        "{'name': 'Algeria - Ligue 2, Centre-East', 'slug': 'algeria-ligue-2-centre-east'}",
+        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        57
+      ],
+      [
+        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
+        41
+      ],
+      [
+        "{'name': 'England - Premier League', 'slug': 'england-premier-league'}",
+        41
+      ],
+      [
+        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+        41
+      ],
+      [
+        "{'name': 'Ireland - Premier Division', 'slug': 'ireland-premier-division'}",
+        32
+      ],
+      [
+        "{'name': 'Costa Rica - Primera Division, Apertura', 'slug': 'costa-rica-primera-division-apertura'}",
+        30
+      ],
+      [
+        "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
         25
       ],
       [
-        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+        "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
         21
       ],
       [
-        "{'name': 'Estonia - Esiliiga', 'slug': 'estonia-esiliiga'}",
-        20
-      ],
-      [
-        "{'name': 'Turkiye - 1. Lig', 'slug': 'turkiye-1-lig'}",
+        "{'name': 'Colombia - Torneo DIMAYOR, Clausura', 'slug': 'colombia-torneo-dimayor-clausura'}",
         18
-      ],
-      [
-        "{'name': 'Saudi Arabia - U21 Elite League', 'slug': 'saudi-arabia-u21-elite-league'}",
-        18
-      ],
-      [
-        "{'name': 'Latvia - Virsliga', 'slug': 'latvia-virsliga'}",
-        18
-      ],
-      [
-        "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
-        18
-      ],
-      [
-        "{'name': 'Israel - National League', 'slug': 'israel-national-league'}",
-        18
-      ],
-      [
-        "{'name': 'Cyprus - 1st Division', 'slug': 'cyprus-1st-division'}",
-        16
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:D1": 9,
-      "football-data.co.uk:E0": 36,
-      "public-data:needs-provider-specific-mapping": 15
+      "football-data.co.uk:E0": 73,
+      "football-data.co.uk:I1": 58
     }
   },
   "public_football_data_probe": {
@@ -115,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 10
+      "market_not_first_model_scope": 142
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
