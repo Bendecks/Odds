@@ -1,89 +1,87 @@
 {
-  "generated_at": "2026-10-20T04:50:15.147234+00:00",
+  "generated_at": "2026-10-20T17:03:00.481605+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 441,
-  "exact_bet365_rows": 361,
+  "candidate_rows": 344,
+  "exact_bet365_rows": 262,
   "fresh_exact_rows_by_market": {
-    "h2h": 105,
-    "spreads": 70,
-    "totals": 186
+    "h2h": 102,
+    "spreads": 24,
+    "totals": 136
   },
   "metadata": {
-    "rows_with_sport": 441,
-    "rows_with_league": 441,
-    "rows_with_parseable_teams": 441,
+    "rows_with_sport": 344,
+    "rows_with_league": 344,
+    "rows_with_parseable_teams": 344,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 105,
-      "spreads": 80,
-      "totals": 256
+      "h2h": 102,
+      "spreads": 24,
+      "totals": 218
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 105,
-      "totals": 256
+      "h2h": 102,
+      "totals": 218
     },
-    "first_model_scope_rows": 361
+    "first_model_scope_rows": 320
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International Clubs - UEFA Champions League', 'slug': 'international-clubs-uefa-champions-league'}",
-        84
-      ],
-      [
-        "{'name': 'International Youth - UEFA Youth League', 'slug': 'international-youth-uefa-youth-league'}",
-        80
-      ],
-      [
-        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
-        63
+        "{'name': 'England - FA Cup', 'slug': 'england-fa-cup'}",
+        97
       ],
       [
         "{'name': 'Argentina - Primera LPF, Reserves, Clausura', 'slug': 'argentina-primera-lpf-reserves-clausura'}",
         52
       ],
       [
-        "{'name': 'Egypt - Premier League', 'slug': 'egypt-premier-league'}",
-        34
+        "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
+        52
+      ],
+      [
+        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
+        40
+      ],
+      [
+        "{'name': 'England Amateur - Northern Premier League, Division One East', 'slug': 'england-amateur-northern-premier-league-division-one-east'}",
+        27
       ],
       [
         "{'name': 'England - Championship', 'slug': 'england-championship'}",
         19
       ],
       [
-        "{'name': 'Sweden - Superettan', 'slug': 'sweden-superettan'}",
-        17
-      ],
-      [
-        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        "{'name': 'England - League Two', 'slug': 'england-league-two'}",
         15
       ],
       [
-        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
+        "{'name': 'Scotland - Championship', 'slug': 'scotland-championship'}",
+        15
+      ],
+      [
+        "{'name': 'England Amateur - U21 Premier League Cup, Group J', 'slug': 'england-amateur-u21-premier-league-cup-group-j'}",
         9
       ],
       [
-        "{'name': 'Saudi Arabia - Division 1', 'slug': 'saudi-arabia-division-1'}",
+        "{'name': 'England Amateur - Southern League, Division One South', 'slug': 'england-amateur-southern-league-division-one-south'}",
         9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 84,
-      "football-data.co.uk:E0": 50,
-      "football-data.co.uk:E1": 19,
-      "football-data.co.uk:F1": 7
+      "football-data.co.uk:E0": 36,
+      "football-data.co.uk:E1": 34
     }
   },
   "public_football_data_probe": {
@@ -116,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 80
+      "market_not_first_model_scope": 24
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

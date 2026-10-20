@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20T04:50:15.107317+00:00",
-  "as_of": "2026-10-20T04:50:15.003174+00:00",
+  "generated_at": "2026-10-20T17:03:00.445542+00:00",
+  "as_of": "2026-10-20T17:03:00.352591+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 441,
-  "fresh_exact_candidates": 361,
+  "total_candidates": 344,
+  "fresh_exact_candidates": 262,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 361,
-    "missing_external_market_reference": 361,
-    "missing_model_reference": 361
+    "insufficient_independent_economic_sources": 262,
+    "missing_external_market_reference": 262,
+    "missing_model_reference": 262
   },
   "missing_roles": {
-    "external_market_reference": 361,
-    "model_reference": 361
+    "external_market_reference": 262,
+    "model_reference": 262
   },
   "by_market": {
     "h2h": {
-      "evaluated": 105,
-      "fresh_exact_bet365": 105,
+      "evaluated": 102,
+      "fresh_exact_bet365": 102,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 105,
-        "missing_external_market_reference": 105,
-        "missing_model_reference": 105
+        "insufficient_independent_economic_sources": 102,
+        "missing_external_market_reference": 102,
+        "missing_model_reference": 102
       },
       "missing_roles": {
-        "external_market_reference": 105,
-        "model_reference": 105
+        "external_market_reference": 102,
+        "model_reference": 102
       }
     },
     "spreads": {
-      "evaluated": 70,
-      "fresh_exact_bet365": 70,
+      "evaluated": 24,
+      "fresh_exact_bet365": 24,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 70,
-        "missing_external_market_reference": 70,
-        "missing_model_reference": 70
+        "insufficient_independent_economic_sources": 24,
+        "missing_external_market_reference": 24,
+        "missing_model_reference": 24
       },
       "missing_roles": {
-        "external_market_reference": 70,
-        "model_reference": 70
+        "external_market_reference": 24,
+        "model_reference": 24
       }
     },
     "totals": {
-      "evaluated": 186,
-      "fresh_exact_bet365": 186,
+      "evaluated": 136,
+      "fresh_exact_bet365": 136,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 186,
-        "missing_external_market_reference": 186,
-        "missing_model_reference": 186
+        "insufficient_independent_economic_sources": 136,
+        "missing_external_market_reference": 136,
+        "missing_model_reference": 136
       },
       "missing_roles": {
-        "external_market_reference": 186,
-        "model_reference": 186
+        "external_market_reference": 136,
+        "model_reference": 136
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 361,
+        "fresh_exact_candidates_blocked": 262,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 361,
+        "fresh_exact_candidates_blocked": 262,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 361
+        "fresh_exact_candidates_blocked": 262
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 186,
+        "fresh_exact_candidates": 136,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 186,
-          "model_reference": 186
+          "external_market_reference": 136,
+          "model_reference": 136
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 105,
+        "fresh_exact_candidates": 102,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 105,
-          "model_reference": 105
+          "external_market_reference": 102,
+          "model_reference": 102
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 70,
+        "fresh_exact_candidates": 24,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 70,
-          "model_reference": 70
+          "external_market_reference": 24,
+          "model_reference": 24
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,63 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 186,
+      "first_market_fresh_exact_candidates": 136,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 105,
-      "fresh_exact_bet365": 105,
+      "evaluated": 102,
+      "fresh_exact_bet365": 102,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 105,
-        "missing_external_market_reference": 105,
-        "missing_model_reference": 105
+        "insufficient_independent_economic_sources": 102,
+        "missing_external_market_reference": 102,
+        "missing_model_reference": 102
       },
       "missing_roles": {
-        "external_market_reference": 105,
-        "model_reference": 105
+        "external_market_reference": 102,
+        "model_reference": 102
       }
     },
     "spreads": {
-      "evaluated": 80,
-      "fresh_exact_bet365": 70,
+      "evaluated": 24,
+      "fresh_exact_bet365": 24,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 80,
-        "missing_external_market_reference": 80,
-        "missing_model_reference": 80,
-        "not_fresh_exact_bet365": 10
+        "insufficient_independent_economic_sources": 24,
+        "missing_external_market_reference": 24,
+        "missing_model_reference": 24
       },
       "missing_roles": {
-        "external_market_reference": 80,
-        "model_reference": 80
+        "external_market_reference": 24,
+        "model_reference": 24
       }
     },
     "totals": {
-      "evaluated": 256,
-      "fresh_exact_bet365": 186,
+      "evaluated": 218,
+      "fresh_exact_bet365": 136,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 256,
-        "missing_external_market_reference": 256,
-        "missing_model_reference": 256,
-        "not_fresh_exact_bet365": 70
+        "insufficient_independent_economic_sources": 218,
+        "missing_external_market_reference": 218,
+        "missing_model_reference": 218,
+        "not_fresh_exact_bet365": 82
       },
       "missing_roles": {
-        "external_market_reference": 256,
-        "model_reference": 256
+        "external_market_reference": 218,
+        "model_reference": 218
       }
     }
   },
   "sample_failures": [
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "h2h",
-      "pick": "FC Porto",
+      "pick": "Defensa Y Justicia Reserve",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +208,9 @@
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +234,11 @@
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "h2h",
-      "pick": "PSV Eindhoven",
+      "pick": "At Rafaela Reserve",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +260,9 @@
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +286,9 @@
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,13 +312,13 @@
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -333,19 +332,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
+      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
+      "event_id": 75133506,
+      "bet365_event_id": 75133506,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": true,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -359,69 +359,70 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
-      "market": "totals",
-      "pick": "Over",
-      "line": 4.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "FC Porto vs PSV Eindhoven",
-      "event_id": 74560564,
-      "bet365_event_id": 74560564,
-      "market": "totals",
-      "pick": "Under",
-      "line": 4.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Fenerbahce vs Slavia Prague",
-      "event_id": 74560566,
-      "bet365_event_id": 74560566,
+      "event": "Argentinos Juniors Reserve vs Rosario Central Reserve",
+      "event_id": 75133502,
+      "bet365_event_id": 75133502,
       "market": "h2h",
-      "pick": "Fenerbahce",
+      "pick": "Argentinos Juniors Reserve",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Argentinos Juniors Reserve vs Rosario Central Reserve",
+      "event_id": 75133502,
+      "bet365_event_id": 75133502,
+      "market": "h2h",
+      "pick": "Draw",
+      "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Argentinos Juniors Reserve vs Rosario Central Reserve",
+      "event_id": 75133502,
+      "bet365_event_id": 75133502,
+      "market": "h2h",
+      "pick": "Rosario Central Reserve",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
