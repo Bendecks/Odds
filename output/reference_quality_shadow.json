@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T18:42:42.751831+00:00",
-  "as_of": "2026-10-19T18:42:42.635674+00:00",
+  "generated_at": "2026-10-20T04:50:15.107317+00:00",
+  "as_of": "2026-10-20T04:50:15.003174+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 561,
-  "fresh_exact_candidates": 509,
+  "total_candidates": 441,
+  "fresh_exact_candidates": 361,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 509,
-    "missing_external_market_reference": 509,
-    "missing_model_reference": 509
+    "insufficient_independent_economic_sources": 361,
+    "missing_external_market_reference": 361,
+    "missing_model_reference": 361
   },
   "missing_roles": {
-    "external_market_reference": 509,
-    "model_reference": 509
+    "external_market_reference": 361,
+    "model_reference": 361
   },
   "by_market": {
     "h2h": {
-      "evaluated": 117,
-      "fresh_exact_bet365": 117,
+      "evaluated": 105,
+      "fresh_exact_bet365": 105,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 117,
-        "missing_external_market_reference": 117,
-        "missing_model_reference": 117
+        "insufficient_independent_economic_sources": 105,
+        "missing_external_market_reference": 105,
+        "missing_model_reference": 105
       },
       "missing_roles": {
-        "external_market_reference": 117,
-        "model_reference": 117
+        "external_market_reference": 105,
+        "model_reference": 105
       }
     },
     "spreads": {
-      "evaluated": 122,
-      "fresh_exact_bet365": 122,
+      "evaluated": 70,
+      "fresh_exact_bet365": 70,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 122,
-        "missing_external_market_reference": 122,
-        "missing_model_reference": 122
+        "insufficient_independent_economic_sources": 70,
+        "missing_external_market_reference": 70,
+        "missing_model_reference": 70
       },
       "missing_roles": {
-        "external_market_reference": 122,
-        "model_reference": 122
+        "external_market_reference": 70,
+        "model_reference": 70
       }
     },
     "totals": {
-      "evaluated": 270,
-      "fresh_exact_bet365": 270,
+      "evaluated": 186,
+      "fresh_exact_bet365": 186,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 270,
-        "missing_external_market_reference": 270,
-        "missing_model_reference": 270
+        "insufficient_independent_economic_sources": 186,
+        "missing_external_market_reference": 186,
+        "missing_model_reference": 186
       },
       "missing_roles": {
-        "external_market_reference": 270,
-        "model_reference": 270
+        "external_market_reference": 186,
+        "model_reference": 186
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 509,
+        "fresh_exact_candidates_blocked": 361,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 509,
+        "fresh_exact_candidates_blocked": 361,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 509
+        "fresh_exact_candidates_blocked": 361
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 270,
+        "fresh_exact_candidates": 186,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 270,
-          "model_reference": 270
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 122,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 122,
-          "model_reference": 122
+          "external_market_reference": 186,
+          "model_reference": 186
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 117,
+        "fresh_exact_candidates": 105,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 117,
-          "model_reference": 117
+          "external_market_reference": 105,
+          "model_reference": 105
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 70,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 70,
+          "model_reference": 70
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 270,
+      "first_market_fresh_exact_candidates": 186,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 117,
-      "fresh_exact_bet365": 117,
+      "evaluated": 105,
+      "fresh_exact_bet365": 105,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 117,
-        "missing_external_market_reference": 117,
-        "missing_model_reference": 117
+        "insufficient_independent_economic_sources": 105,
+        "missing_external_market_reference": 105,
+        "missing_model_reference": 105
       },
       "missing_roles": {
-        "external_market_reference": 117,
-        "model_reference": 117
+        "external_market_reference": 105,
+        "model_reference": 105
       }
     },
     "spreads": {
-      "evaluated": 142,
-      "fresh_exact_bet365": 122,
+      "evaluated": 80,
+      "fresh_exact_bet365": 70,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 142,
-        "missing_external_market_reference": 142,
-        "missing_model_reference": 142,
-        "not_fresh_exact_bet365": 20
+        "insufficient_independent_economic_sources": 80,
+        "missing_external_market_reference": 80,
+        "missing_model_reference": 80,
+        "not_fresh_exact_bet365": 10
       },
       "missing_roles": {
-        "external_market_reference": 142,
-        "model_reference": 142
+        "external_market_reference": 80,
+        "model_reference": 80
       }
     },
     "totals": {
-      "evaluated": 302,
-      "fresh_exact_bet365": 270,
+      "evaluated": 256,
+      "fresh_exact_bet365": 186,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 302,
-        "missing_external_market_reference": 302,
-        "missing_model_reference": 302,
-        "not_fresh_exact_bet365": 32
+        "insufficient_independent_economic_sources": 256,
+        "missing_external_market_reference": 256,
+        "missing_model_reference": 256,
+        "not_fresh_exact_bet365": 70
       },
       "missing_roles": {
-        "external_market_reference": 302,
-        "model_reference": 302
+        "external_market_reference": 256,
+        "model_reference": 256
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "h2h",
-      "pick": "Barwell FC",
+      "pick": "FC Porto",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "h2h",
-      "pick": "Nuneaton Town",
+      "pick": "PSV Eindhoven",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,9 +261,9 @@
       ]
     },
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -287,9 +287,9 @@
       ]
     },
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -313,13 +313,13 @@
       ]
     },
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
-      "fresh_exact_bet365": false,
+      "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -333,46 +333,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
-        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Barwell FC vs Nuneaton Town",
-      "event_id": 29688217266,
-      "bet365_event_id": 29688217266,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Parma Calcio vs Torino FC",
-      "event_id": 71945318,
-      "bet365_event_id": 71945318,
-      "market": "h2h",
-      "pick": "Parma Calcio",
-      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -393,12 +365,12 @@
       ]
     },
     {
-      "event": "Parma Calcio vs Torino FC",
-      "event_id": 71945318,
-      "bet365_event_id": 71945318,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
@@ -419,11 +391,37 @@
       ]
     },
     {
-      "event": "Parma Calcio vs Torino FC",
-      "event_id": 71945318,
-      "bet365_event_id": 71945318,
+      "event": "FC Porto vs PSV Eindhoven",
+      "event_id": 74560564,
+      "bet365_event_id": 74560564,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Fenerbahce vs Slavia Prague",
+      "event_id": 74560566,
+      "bet365_event_id": 74560566,
       "market": "h2h",
-      "pick": "Torino FC",
+      "pick": "Fenerbahce",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
