@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20T17:03:00.445542+00:00",
-  "as_of": "2026-10-20T17:03:00.352591+00:00",
+  "generated_at": "2026-10-21T04:45:35.897999+00:00",
+  "as_of": "2026-10-21T04:45:35.777444+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 344,
-  "fresh_exact_candidates": 262,
+  "total_candidates": 510,
+  "fresh_exact_candidates": 412,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 262,
-    "missing_external_market_reference": 262,
-    "missing_model_reference": 262
+    "insufficient_independent_economic_sources": 412,
+    "missing_external_market_reference": 412,
+    "missing_model_reference": 412
   },
   "missing_roles": {
-    "external_market_reference": 262,
-    "model_reference": 262
+    "external_market_reference": 412,
+    "model_reference": 412
   },
   "by_market": {
     "h2h": {
-      "evaluated": 102,
-      "fresh_exact_bet365": 102,
+      "evaluated": 138,
+      "fresh_exact_bet365": 138,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 102,
-        "missing_external_market_reference": 102,
-        "missing_model_reference": 102
+        "insufficient_independent_economic_sources": 138,
+        "missing_external_market_reference": 138,
+        "missing_model_reference": 138
       },
       "missing_roles": {
-        "external_market_reference": 102,
-        "model_reference": 102
+        "external_market_reference": 138,
+        "model_reference": 138
       }
     },
     "spreads": {
-      "evaluated": 24,
-      "fresh_exact_bet365": 24,
+      "evaluated": 48,
+      "fresh_exact_bet365": 48,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 24,
-        "missing_external_market_reference": 24,
-        "missing_model_reference": 24
+        "insufficient_independent_economic_sources": 48,
+        "missing_external_market_reference": 48,
+        "missing_model_reference": 48
       },
       "missing_roles": {
-        "external_market_reference": 24,
-        "model_reference": 24
+        "external_market_reference": 48,
+        "model_reference": 48
       }
     },
     "totals": {
-      "evaluated": 136,
-      "fresh_exact_bet365": 136,
+      "evaluated": 226,
+      "fresh_exact_bet365": 226,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 136,
-        "missing_external_market_reference": 136,
-        "missing_model_reference": 136
+        "insufficient_independent_economic_sources": 226,
+        "missing_external_market_reference": 226,
+        "missing_model_reference": 226
       },
       "missing_roles": {
-        "external_market_reference": 136,
-        "model_reference": 136
+        "external_market_reference": 226,
+        "model_reference": 226
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 262,
+        "fresh_exact_candidates_blocked": 412,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 262,
+        "fresh_exact_candidates_blocked": 412,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 262
+        "fresh_exact_candidates_blocked": 412
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 136,
+        "fresh_exact_candidates": 226,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 136,
-          "model_reference": 136
+          "external_market_reference": 226,
+          "model_reference": 226
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 102,
+        "fresh_exact_candidates": 138,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 102,
-          "model_reference": 102
+          "external_market_reference": 138,
+          "model_reference": 138
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 24,
+        "fresh_exact_candidates": 48,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 24,
-          "model_reference": 24
+          "external_market_reference": 48,
+          "model_reference": 48
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,63 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 136,
+      "first_market_fresh_exact_candidates": 226,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 102,
-      "fresh_exact_bet365": 102,
+      "evaluated": 138,
+      "fresh_exact_bet365": 138,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 102,
-        "missing_external_market_reference": 102,
-        "missing_model_reference": 102
+        "insufficient_independent_economic_sources": 138,
+        "missing_external_market_reference": 138,
+        "missing_model_reference": 138
       },
       "missing_roles": {
-        "external_market_reference": 102,
-        "model_reference": 102
+        "external_market_reference": 138,
+        "model_reference": 138
       }
     },
     "spreads": {
-      "evaluated": 24,
-      "fresh_exact_bet365": 24,
+      "evaluated": 60,
+      "fresh_exact_bet365": 48,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 24,
-        "missing_external_market_reference": 24,
-        "missing_model_reference": 24
+        "insufficient_independent_economic_sources": 60,
+        "missing_external_market_reference": 60,
+        "missing_model_reference": 60,
+        "not_fresh_exact_bet365": 12
       },
       "missing_roles": {
-        "external_market_reference": 24,
-        "model_reference": 24
+        "external_market_reference": 60,
+        "model_reference": 60
       }
     },
     "totals": {
-      "evaluated": 218,
-      "fresh_exact_bet365": 136,
+      "evaluated": 312,
+      "fresh_exact_bet365": 226,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 218,
-        "missing_external_market_reference": 218,
-        "missing_model_reference": 218,
-        "not_fresh_exact_bet365": 82
+        "insufficient_independent_economic_sources": 312,
+        "missing_external_market_reference": 312,
+        "missing_model_reference": 312,
+        "not_fresh_exact_bet365": 86
       },
       "missing_roles": {
-        "external_market_reference": 218,
-        "model_reference": 218
+        "external_market_reference": 312,
+        "model_reference": 312
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "h2h",
-      "pick": "Defensa Y Justicia Reserve",
+      "pick": "Bali United",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -208,9 +209,9 @@
       ]
     },
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -234,11 +235,11 @@
       ]
     },
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "h2h",
-      "pick": "At Rafaela Reserve",
+      "pick": "Garuda Yaksa",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -260,9 +261,9 @@
       ]
     },
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
@@ -286,9 +287,9 @@
       ]
     },
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "totals",
       "pick": "Under",
       "line": 2.5,
@@ -312,9 +313,9 @@
       ]
     },
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "totals",
       "pick": "Over",
       "line": 3.5,
@@ -339,9 +340,9 @@
       ]
     },
     {
-      "event": "Defensa Y Justicia Reserve vs At Rafaela Reserve",
-      "event_id": 75133506,
-      "bet365_event_id": 75133506,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
       "market": "totals",
       "pick": "Under",
       "line": 3.5,
@@ -366,13 +367,13 @@
       ]
     },
     {
-      "event": "Argentinos Juniors Reserve vs Rosario Central Reserve",
-      "event_id": 75133502,
-      "bet365_event_id": 75133502,
-      "market": "h2h",
-      "pick": "Argentinos Juniors Reserve",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
+      "market": "totals",
+      "pick": "Over",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -386,19 +387,20 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Argentinos Juniors Reserve vs Rosario Central Reserve",
-      "event_id": 75133502,
-      "bet365_event_id": 75133502,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
-      "fresh_exact_bet365": true,
+      "event": "Bali United vs Garuda Yaksa",
+      "event_id": 73577172,
+      "bet365_event_id": 73577172,
+      "market": "totals",
+      "pick": "Under",
+      "line": 4.5,
+      "fresh_exact_bet365": false,
       "shadow_ready": false,
       "roles_present": [
         "unibet_reference"
@@ -412,17 +414,18 @@
       ],
       "ignored_economic_sources": [],
       "failure_reasons": [
+        "not_fresh_exact_bet365",
         "missing_external_market_reference",
         "missing_model_reference",
         "insufficient_independent_economic_sources"
       ]
     },
     {
-      "event": "Argentinos Juniors Reserve vs Rosario Central Reserve",
-      "event_id": 75133502,
-      "bet365_event_id": 75133502,
+      "event": "Shonan Bellmare vs Iwaki FC",
+      "event_id": 72151254,
+      "bet365_event_id": 72151254,
       "market": "h2h",
-      "pick": "Rosario Central Reserve",
+      "pick": "Shonan Bellmare",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
