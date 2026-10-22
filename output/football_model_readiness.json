@@ -1,86 +1,86 @@
 {
-  "generated_at": "2026-10-22T04:44:08.595496+00:00",
+  "generated_at": "2026-10-22T17:10:07.899336+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 796,
-  "exact_bet365_rows": 686,
+  "candidate_rows": 740,
+  "exact_bet365_rows": 702,
   "fresh_exact_rows_by_market": {
-    "h2h": 168,
-    "spreads": 206,
-    "totals": 312
+    "h2h": 120,
+    "spreads": 280,
+    "totals": 302
   },
   "metadata": {
-    "rows_with_sport": 796,
-    "rows_with_league": 796,
-    "rows_with_parseable_teams": 796,
+    "rows_with_sport": 740,
+    "rows_with_league": 740,
+    "rows_with_parseable_teams": 740,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 168,
-      "spreads": 216,
-      "totals": 412
+      "h2h": 120,
+      "spreads": 284,
+      "totals": 336
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 168,
-      "totals": 412
+      "h2h": 120,
+      "totals": 336
     },
-    "first_model_scope_rows": 580
+    "first_model_scope_rows": 456
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
         "{'name': 'International Clubs - UEFA Europa League', 'slug': 'international-clubs-uefa-europa-league'}",
-        264
+        362
       ],
       [
         "{'name': 'International Clubs - UEFA Conference League', 'slug': 'international-clubs-uefa-conference-league'}",
-        160
-      ],
-      [
-        "{'name': 'Saudi Arabia - Saudi Professional League', 'slug': 'saudi-arabia-saudi-professional-league'}",
-        61
+        146
       ],
       [
         "{'name': 'Argentina - Primera LPF, Reserves, Clausura', 'slug': 'argentina-primera-lpf-reserves-clausura'}",
-        54
+        52
       ],
       [
-        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
-        28
+        "{'name': 'Ecuador - Serie B, Promotion Round', 'slug': 'ecuador-serie-b-promotion-round'}",
+        32
       ],
       [
-        "{'name': 'Jordan - Jordan 1st Division', 'slug': 'jordan-jordan-1st-division'}",
+        "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
         25
       ],
       [
-        "{'name': 'Iraq - Stars League', 'slug': 'iraq-stars-league'}",
-        25
+        "{'name': 'International Clubs - CONMEBOL Libertadores, Knockout stage', 'slug': 'international-clubs-conmebol-libertadores-knockout-stage'}",
+        23
       ],
       [
-        "{'name': 'Ethiopia - Premier League', 'slug': 'ethiopia-premier-league'}",
-        21
-      ],
-      [
-        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
+        "{'name': 'Brazil - U20 Copa do Brasil', 'slug': 'brazil-u20-copa-do-brasil'}",
         18
       ],
       [
-        "{'name': 'Azerbaijan - 1. Liga', 'slug': 'azerbaijan-1-liga'}",
-        18
+        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+        15
+      ],
+      [
+        "{'name': 'Australia - Australian Championship, Group A', 'slug': 'australia-australian-championship-group-a'}",
+        15
+      ],
+      [
+        "{'name': 'Malta - Premier League, Opening Round', 'slug': 'malta-premier-league-opening-round'}",
+        9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 48,
+      "football-data.co.uk:E0": 9,
       "football-data.co.uk:E1": 15
     }
   },
@@ -114,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 216
+      "market_not_first_model_scope": 284
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."

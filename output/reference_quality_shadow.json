@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T04:44:08.567979+00:00",
-  "as_of": "2026-10-22T04:44:08.491186+00:00",
+  "generated_at": "2026-10-22T17:10:07.852714+00:00",
+  "as_of": "2026-10-22T17:10:07.724979+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 796,
-  "fresh_exact_candidates": 686,
+  "total_candidates": 740,
+  "fresh_exact_candidates": 702,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 686,
-    "missing_external_market_reference": 686,
-    "missing_model_reference": 686
+    "insufficient_independent_economic_sources": 702,
+    "missing_external_market_reference": 702,
+    "missing_model_reference": 702
   },
   "missing_roles": {
-    "external_market_reference": 686,
-    "model_reference": 686
+    "external_market_reference": 702,
+    "model_reference": 702
   },
   "by_market": {
     "h2h": {
-      "evaluated": 168,
-      "fresh_exact_bet365": 168,
+      "evaluated": 120,
+      "fresh_exact_bet365": 120,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 168,
-        "missing_external_market_reference": 168,
-        "missing_model_reference": 168
+        "insufficient_independent_economic_sources": 120,
+        "missing_external_market_reference": 120,
+        "missing_model_reference": 120
       },
       "missing_roles": {
-        "external_market_reference": 168,
-        "model_reference": 168
+        "external_market_reference": 120,
+        "model_reference": 120
       }
     },
     "spreads": {
-      "evaluated": 206,
-      "fresh_exact_bet365": 206,
+      "evaluated": 280,
+      "fresh_exact_bet365": 280,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 206,
-        "missing_external_market_reference": 206,
-        "missing_model_reference": 206
+        "insufficient_independent_economic_sources": 280,
+        "missing_external_market_reference": 280,
+        "missing_model_reference": 280
       },
       "missing_roles": {
-        "external_market_reference": 206,
-        "model_reference": 206
+        "external_market_reference": 280,
+        "model_reference": 280
       }
     },
     "totals": {
-      "evaluated": 312,
-      "fresh_exact_bet365": 312,
+      "evaluated": 302,
+      "fresh_exact_bet365": 302,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 312,
-        "missing_external_market_reference": 312,
-        "missing_model_reference": 312
+        "insufficient_independent_economic_sources": 302,
+        "missing_external_market_reference": 302,
+        "missing_model_reference": 302
       },
       "missing_roles": {
-        "external_market_reference": 312,
-        "model_reference": 312
+        "external_market_reference": 302,
+        "model_reference": 302
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 686,
+        "fresh_exact_candidates_blocked": 702,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 686,
+        "fresh_exact_candidates_blocked": 702,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 686
+        "fresh_exact_candidates_blocked": 702
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 312,
+        "fresh_exact_candidates": 302,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 312,
-          "model_reference": 312
+          "external_market_reference": 302,
+          "model_reference": 302
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 206,
+        "fresh_exact_candidates": 280,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 206,
-          "model_reference": 206
+          "external_market_reference": 280,
+          "model_reference": 280
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 168,
+        "fresh_exact_candidates": 120,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 168,
-          "model_reference": 168
+          "external_market_reference": 120,
+          "model_reference": 120
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 312,
+      "first_market_fresh_exact_candidates": 302,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 168,
-      "fresh_exact_bet365": 168,
+      "evaluated": 120,
+      "fresh_exact_bet365": 120,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 168,
-        "missing_external_market_reference": 168,
-        "missing_model_reference": 168
+        "insufficient_independent_economic_sources": 120,
+        "missing_external_market_reference": 120,
+        "missing_model_reference": 120
       },
       "missing_roles": {
-        "external_market_reference": 168,
-        "model_reference": 168
+        "external_market_reference": 120,
+        "model_reference": 120
       }
     },
     "spreads": {
-      "evaluated": 216,
-      "fresh_exact_bet365": 206,
+      "evaluated": 284,
+      "fresh_exact_bet365": 280,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 216,
-        "missing_external_market_reference": 216,
-        "missing_model_reference": 216,
-        "not_fresh_exact_bet365": 10
+        "insufficient_independent_economic_sources": 284,
+        "missing_external_market_reference": 284,
+        "missing_model_reference": 284,
+        "not_fresh_exact_bet365": 4
       },
       "missing_roles": {
-        "external_market_reference": 216,
-        "model_reference": 216
+        "external_market_reference": 284,
+        "model_reference": 284
       }
     },
     "totals": {
-      "evaluated": 412,
-      "fresh_exact_bet365": 312,
+      "evaluated": 336,
+      "fresh_exact_bet365": 302,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 412,
-        "missing_external_market_reference": 412,
-        "missing_model_reference": 412,
-        "not_fresh_exact_bet365": 100
+        "insufficient_independent_economic_sources": 336,
+        "missing_external_market_reference": 336,
+        "missing_model_reference": 336,
+        "not_fresh_exact_bet365": 34
       },
       "missing_roles": {
-        "external_market_reference": 412,
-        "model_reference": 412
+        "external_market_reference": 336,
+        "model_reference": 336
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
       "market": "h2h",
-      "pick": "Lions FC",
+      "pick": "CA Huracan",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
       "market": "h2h",
-      "pick": "Preston Lions FC",
+      "pick": "Boca Juniors",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,113 +261,9 @@
       ]
     },
     {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
-      "market": "spreads",
-      "pick": "Lions FC",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
-      "market": "spreads",
-      "pick": "Preston Lions FC",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
-      "market": "spreads",
-      "pick": "Lions FC",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
-      "market": "spreads",
-      "pick": "Preston Lions FC",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -391,9 +287,9 @@
       ]
     },
     {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -417,12 +313,116 @@
       ]
     },
     {
-      "event": "Lions FC vs Preston Lions FC",
-      "event_id": 74827356,
-      "bet365_event_id": 74827356,
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "CA Huracan vs Boca Juniors",
+      "event_id": 75133526,
+      "bet365_event_id": 75133526,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Racing Club Avellaneda vs San Lorenzo de Almagro Res.",
+      "event_id": 75133524,
+      "bet365_event_id": 75133524,
+      "market": "h2h",
+      "pick": "Racing Club Avellaneda",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
