@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-21T17:11:31.521084+00:00",
-  "as_of": "2026-10-21T17:11:31.380871+00:00",
+  "generated_at": "2026-10-22T04:44:08.567979+00:00",
+  "as_of": "2026-10-22T04:44:08.491186+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,59 +20,59 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 760,
-  "fresh_exact_candidates": 652,
+  "total_candidates": 796,
+  "fresh_exact_candidates": 686,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 652,
-    "missing_external_market_reference": 652,
-    "missing_model_reference": 652
+    "insufficient_independent_economic_sources": 686,
+    "missing_external_market_reference": 686,
+    "missing_model_reference": 686
   },
   "missing_roles": {
-    "external_market_reference": 652,
-    "model_reference": 652
+    "external_market_reference": 686,
+    "model_reference": 686
   },
   "by_market": {
     "h2h": {
-      "evaluated": 138,
-      "fresh_exact_bet365": 138,
+      "evaluated": 168,
+      "fresh_exact_bet365": 168,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 138,
-        "missing_external_market_reference": 138,
-        "missing_model_reference": 138
+        "insufficient_independent_economic_sources": 168,
+        "missing_external_market_reference": 168,
+        "missing_model_reference": 168
       },
       "missing_roles": {
-        "external_market_reference": 138,
-        "model_reference": 138
+        "external_market_reference": 168,
+        "model_reference": 168
       }
     },
     "spreads": {
-      "evaluated": 242,
-      "fresh_exact_bet365": 242,
+      "evaluated": 206,
+      "fresh_exact_bet365": 206,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 242,
-        "missing_external_market_reference": 242,
-        "missing_model_reference": 242
+        "insufficient_independent_economic_sources": 206,
+        "missing_external_market_reference": 206,
+        "missing_model_reference": 206
       },
       "missing_roles": {
-        "external_market_reference": 242,
-        "model_reference": 242
+        "external_market_reference": 206,
+        "model_reference": 206
       }
     },
     "totals": {
-      "evaluated": 272,
-      "fresh_exact_bet365": 272,
+      "evaluated": 312,
+      "fresh_exact_bet365": 312,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 272,
-        "missing_external_market_reference": 272,
-        "missing_model_reference": 272
+        "insufficient_independent_economic_sources": 312,
+        "missing_external_market_reference": 312,
+        "missing_model_reference": 312
       },
       "missing_roles": {
-        "external_market_reference": 272,
-        "model_reference": 272
+        "external_market_reference": 312,
+        "model_reference": 312
       }
     }
   },
@@ -80,49 +80,49 @@
     "role_gap_priorities": [
       {
         "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 652,
+        "fresh_exact_candidates_blocked": 686,
         "would_unlock_if_added_alone": 0
       },
       {
         "role": "model_reference",
-        "fresh_exact_candidates_blocked": 652,
+        "fresh_exact_candidates_blocked": 686,
         "would_unlock_if_added_alone": 0
       }
     ],
     "paired_role_gaps": [
       {
         "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 652
+        "fresh_exact_candidates_blocked": 686
       }
     ],
     "market_priorities": [
       {
         "market": "totals",
-        "fresh_exact_candidates": 272,
+        "fresh_exact_candidates": 312,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 272,
-          "model_reference": 272
+          "external_market_reference": 312,
+          "model_reference": 312
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "spreads",
-        "fresh_exact_candidates": 242,
+        "fresh_exact_candidates": 206,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 242,
-          "model_reference": 242
+          "external_market_reference": 206,
+          "model_reference": 206
         },
         "largest_missing_role": "external_market_reference"
       },
       {
         "market": "h2h",
-        "fresh_exact_candidates": 138,
+        "fresh_exact_candidates": 168,
         "shadow_ready_candidates": 0,
         "missing_roles": {
-          "external_market_reference": 138,
-          "model_reference": 138
+          "external_market_reference": 168,
+          "model_reference": 168
         },
         "largest_missing_role": "external_market_reference"
       }
@@ -130,64 +130,64 @@
     "recommended_next_unlock": {
       "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
       "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 272,
+      "first_market_fresh_exact_candidates": 312,
       "single_role_unlock_possible": false,
       "production_impact": "none"
     }
   },
   "all_candidates_by_market": {
     "h2h": {
-      "evaluated": 138,
-      "fresh_exact_bet365": 138,
+      "evaluated": 168,
+      "fresh_exact_bet365": 168,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 138,
-        "missing_external_market_reference": 138,
-        "missing_model_reference": 138
+        "insufficient_independent_economic_sources": 168,
+        "missing_external_market_reference": 168,
+        "missing_model_reference": 168
       },
       "missing_roles": {
-        "external_market_reference": 138,
-        "model_reference": 138
+        "external_market_reference": 168,
+        "model_reference": 168
       }
     },
     "spreads": {
-      "evaluated": 270,
-      "fresh_exact_bet365": 242,
+      "evaluated": 216,
+      "fresh_exact_bet365": 206,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 270,
-        "missing_external_market_reference": 270,
-        "missing_model_reference": 270,
-        "not_fresh_exact_bet365": 28
+        "insufficient_independent_economic_sources": 216,
+        "missing_external_market_reference": 216,
+        "missing_model_reference": 216,
+        "not_fresh_exact_bet365": 10
       },
       "missing_roles": {
-        "external_market_reference": 270,
-        "model_reference": 270
+        "external_market_reference": 216,
+        "model_reference": 216
       }
     },
     "totals": {
-      "evaluated": 352,
-      "fresh_exact_bet365": 272,
+      "evaluated": 412,
+      "fresh_exact_bet365": 312,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 352,
-        "missing_external_market_reference": 352,
-        "missing_model_reference": 352,
-        "not_fresh_exact_bet365": 80
+        "insufficient_independent_economic_sources": 412,
+        "missing_external_market_reference": 412,
+        "missing_model_reference": 412,
+        "not_fresh_exact_bet365": 100
       },
       "missing_roles": {
-        "external_market_reference": 352,
-        "model_reference": 352
+        "external_market_reference": 412,
+        "model_reference": 412
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
       "market": "h2h",
-      "pick": "Paysandu SC PA U20",
+      "pick": "Lions FC",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,193 +209,9 @@
       ]
     },
     {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
-      "market": "h2h",
-      "pick": "Draw",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
-      "market": "h2h",
-      "pick": "America FC RN U20",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
-      "market": "totals",
-      "pick": "Over",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
-      "market": "totals",
-      "pick": "Under",
-      "line": 2.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
-      "market": "totals",
-      "pick": "Over",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Paysandu SC PA U20 vs America FC RN U20",
-      "event_id": 75489244,
-      "bet365_event_id": 75489244,
-      "market": "totals",
-      "pick": "Under",
-      "line": 3.5,
-      "fresh_exact_bet365": false,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "not_fresh_exact_bet365",
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Nautico Capibaribe PE U20 vs Operario Ferroviario EC PR U20",
-      "event_id": 75489248,
-      "bet365_event_id": 75489248,
-      "market": "h2h",
-      "pick": "Nautico Capibaribe PE U20",
-      "line": null,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Nautico Capibaribe PE U20 vs Operario Ferroviario EC PR U20",
-      "event_id": 75489248,
-      "bet365_event_id": 75489248,
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -419,12 +235,194 @@
       ]
     },
     {
-      "event": "Nautico Capibaribe PE U20 vs Operario Ferroviario EC PR U20",
-      "event_id": 75489248,
-      "bet365_event_id": 75489248,
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
       "market": "h2h",
-      "pick": "Operario Ferroviario EC PR U20",
+      "pick": "Preston Lions FC",
       "line": null,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "spreads",
+      "pick": "Lions FC",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "spreads",
+      "pick": "Preston Lions FC",
+      "line": -0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "spreads",
+      "pick": "Lions FC",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "spreads",
+      "pick": "Preston Lions FC",
+      "line": 0.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "totals",
+      "pick": "Over",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "totals",
+      "pick": "Under",
+      "line": 1.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Lions FC vs Preston Lions FC",
+      "event_id": 74827356,
+      "bet365_event_id": 74827356,
+      "market": "totals",
+      "pick": "Over",
+      "line": 2.5,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [

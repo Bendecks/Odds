@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-10-21T17:11:31.599739+00:00",
+  "generated_at": "2026-10-22T04:44:08.613854+00:00",
   "mode": "OBSERVABILITY_ONLY",
   "production_impact": "none",
   "stage": "evidence_roles_missing",
   "summary": "Der er en stor frisk Bet365-kandidatbase, men uafhængig ekstern markedsreference og modelreference mangler stadig.",
   "current_decision": "NO BET",
   "candidate_base": {
-    "candidate_rows": 760,
-    "fair_probability_rows": 760,
-    "exact_bet365_rows": 652,
-    "fresh_exact_bet365_rows": 652,
+    "candidate_rows": 796,
+    "fair_probability_rows": 796,
+    "exact_bet365_rows": 686,
+    "fresh_exact_bet365_rows": 686,
     "legacy_reference_depth_ready_rows": 0,
     "reference_quality_shadow_ready_rows": 0,
     "qualified_now_rows": 0,
-    "fresh_exact_share_of_candidates": 0.8579,
+    "fresh_exact_share_of_candidates": 0.8618,
     "shadow_ready_share_of_fresh_exact": 0.0
   },
   "main_blockers": [
     {
       "blocker": "external_market_reference",
-      "fresh_exact_candidates_blocked": 652
+      "fresh_exact_candidates_blocked": 686
     },
     {
       "blocker": "legacy_min_reference_books",
-      "fresh_exact_candidates_blocked": 652
+      "fresh_exact_candidates_blocked": 686
     },
     {
       "blocker": "model_reference",
-      "fresh_exact_candidates_blocked": 652
+      "fresh_exact_candidates_blocked": 686
     }
   ],
   "near_term_unlock": {
@@ -37,36 +37,36 @@
     ],
     "single_role_unlock_possible": false,
     "largest_market": "totals",
-    "largest_market_fresh_exact_candidates": 272,
-    "potential_candidates_if_both_roles_added": 652,
+    "largest_market_fresh_exact_candidates": 312,
+    "potential_candidates_if_both_roles_added": 686,
     "note": "Potentiale er ikke et pick-estimat; edge/EV/stake-gates gælder stadig efter evidence-unlock."
   },
   "market_priorities": [
     {
       "market": "totals",
-      "fresh_exact_candidates": 272,
+      "fresh_exact_candidates": 312,
       "shadow_ready_candidates": 0,
       "missing_roles": {
-        "external_market_reference": 272,
-        "model_reference": 272
+        "external_market_reference": 312,
+        "model_reference": 312
       }
     },
     {
       "market": "spreads",
-      "fresh_exact_candidates": 242,
+      "fresh_exact_candidates": 206,
       "shadow_ready_candidates": 0,
       "missing_roles": {
-        "external_market_reference": 242,
-        "model_reference": 242
+        "external_market_reference": 206,
+        "model_reference": 206
       }
     },
     {
       "market": "h2h",
-      "fresh_exact_candidates": 138,
+      "fresh_exact_candidates": 168,
       "shadow_ready_candidates": 0,
       "missing_roles": {
-        "external_market_reference": 138,
-        "model_reference": 138
+        "external_market_reference": 168,
+        "model_reference": 168
       }
     }
   ]

@@ -1,66 +1,66 @@
 {
-  "observations": 30751,
-  "market_families": 91,
+  "observations": 31455,
+  "market_families": 82,
   "inventory": [
     {
       "market": "Player Shots",
-      "observations": 2412,
-      "events": 11,
+      "observations": 3199,
+      "events": 14,
       "min_odds": 1.01,
       "max_odds": 21.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Correct Score",
-      "observations": 2404,
+      "observations": 2385,
       "events": 80,
-      "min_odds": 5.5,
-      "max_odds": 451.0,
+      "min_odds": 4.75,
+      "max_odds": 351.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Player Fouls",
-      "observations": 1740,
-      "events": 9,
-      "min_odds": 1.062,
-      "max_odds": 26.0,
+      "market": "Team Goalscorer",
+      "observations": 2184,
+      "events": 21,
+      "min_odds": 1.833,
+      "max_odds": 34.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Player To Be Fouled",
-      "observations": 1702,
-      "events": 9,
-      "min_odds": 1.025,
-      "max_odds": 26.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Player Cards",
-      "observations": 1674,
-      "events": 11,
-      "min_odds": 1.5,
-      "max_odds": 126.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Player Tackles",
-      "observations": 1638,
-      "events": 9,
-      "min_odds": 1.05,
-      "max_odds": 8.5,
+      "market": "Multi Scorers",
+      "observations": 2100,
+      "events": 21,
+      "min_odds": 3.25,
+      "max_odds": 501.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Player To Score or Assist",
-      "observations": 1524,
-      "events": 11,
-      "min_odds": 1.142,
-      "max_odds": 26.0,
+      "observations": 1962,
+      "events": 13,
+      "min_odds": 1.285,
+      "max_odds": 29.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Player Shots on Target",
+      "observations": 1647,
+      "events": 14,
+      "min_odds": 1.071,
+      "max_odds": 21.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Player Cards",
+      "observations": 1607,
+      "events": 10,
+      "min_odds": 2.0,
+      "max_odds": 126.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Totals",
-      "observations": 1326,
+      "observations": 1296,
       "events": 80,
       "min_odds": 1.002,
       "max_odds": 51.0,
@@ -68,55 +68,39 @@
     },
     {
       "market": "Correct Score HT",
-      "observations": 1298,
+      "observations": 1268,
       "events": 80,
-      "min_odds": 2.3,
-      "max_odds": 501.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Player Shots on Target",
-      "observations": 1224,
-      "events": 11,
-      "min_odds": 1.04,
-      "max_odds": 21.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Team Goalscorer",
-      "observations": 1190,
-      "events": 12,
-      "min_odds": 1.909,
-      "max_odds": 34.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Spread",
-      "observations": 1150,
-      "events": 79,
-      "min_odds": 1.05,
-      "max_odds": 11.0,
-      "reference_model_status": "reference-supported"
-    },
-    {
-      "market": "Multi Scorers",
-      "observations": 1142,
-      "events": 12,
-      "min_odds": 2.5,
-      "max_odds": 501.0,
+      "min_odds": 2.05,
+      "max_odds": 351.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Goal Method",
-      "observations": 974,
-      "events": 11,
-      "min_odds": 2.875,
+      "observations": 1100,
+      "events": 17,
+      "min_odds": 3.75,
       "max_odds": 251.0,
       "reference_model_status": "unmodelled"
     },
     {
+      "market": "Spread",
+      "observations": 1074,
+      "events": 80,
+      "min_odds": 1.03,
+      "max_odds": 15.0,
+      "reference_model_status": "reference-supported"
+    },
+    {
+      "market": "Anytime Goalscorer",
+      "observations": 1048,
+      "events": 21,
+      "min_odds": 1.5,
+      "max_odds": 26.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
       "market": "Totals HT",
-      "observations": 780,
+      "observations": 776,
       "events": 80,
       "min_odds": 1.01,
       "max_odds": 26.0,
@@ -124,65 +108,113 @@
     },
     {
       "market": "Half Time / Full Time",
-      "observations": 720,
-      "events": 80,
-      "min_odds": 1.181,
-      "max_odds": 151.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Anytime Goalscorer",
-      "observations": 571,
-      "events": 12,
-      "min_odds": 1.3,
-      "max_odds": 26.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Player Shots on Target Outside Box",
-      "observations": 560,
-      "events": 7,
-      "min_odds": 1.571,
-      "max_odds": 67.0,
+      "observations": 711,
+      "events": 79,
+      "min_odds": 1.444,
+      "max_odds": 51.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Player to be Booked",
-      "observations": 558,
-      "events": 11,
-      "min_odds": 1.5,
-      "max_odds": 13.0,
+      "observations": 536,
+      "events": 10,
+      "min_odds": 2.0,
+      "max_odds": 19.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Spread HT",
-      "observations": 524,
-      "events": 59,
+      "observations": 434,
+      "events": 56,
       "min_odds": 1.1,
       "max_odds": 7.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Player Headed Shots on Target",
-      "observations": 507,
-      "events": 7,
-      "min_odds": 1.571,
-      "max_odds": 67.0,
+      "market": "Player Fouls",
+      "observations": 379,
+      "events": 2,
+      "min_odds": 1.05,
+      "max_odds": 26.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Player To Be Fouled",
+      "observations": 359,
+      "events": 2,
+      "min_odds": 1.062,
+      "max_odds": 26.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Team Total Home",
+      "observations": 342,
+      "events": 31,
+      "min_odds": 1.002,
+      "max_odds": 51.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Player Tackles",
+      "observations": 327,
+      "events": 2,
+      "min_odds": 1.05,
+      "max_odds": 8.5,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "European Handicap",
+      "observations": 324,
+      "events": 27,
+      "min_odds": 1.02,
+      "max_odds": 51.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Team Total Away",
+      "observations": 320,
+      "events": 31,
+      "min_odds": 1.002,
+      "max_odds": 51.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Winning Margin",
+      "observations": 310,
+      "events": 31,
+      "min_odds": 3.4,
+      "max_odds": 351.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "European Handicap HT",
+      "observations": 309,
+      "events": 31,
+      "min_odds": 1.005,
+      "max_odds": 101.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Totals 2H",
+      "observations": 300,
+      "events": 31,
+      "min_odds": 1.01,
+      "max_odds": 26.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "ML",
       "observations": 240,
       "events": 80,
-      "min_odds": 1.03,
-      "max_odds": 41.0,
+      "min_odds": 1.071,
+      "max_odds": 21.0,
       "reference_model_status": "reference-supported"
     },
     {
       "market": "First Team To Score",
       "observations": 240,
       "events": 80,
-      "min_odds": 1.1,
+      "min_odds": 1.25,
       "max_odds": 34.0,
       "reference_model_status": "unmodelled"
     },
@@ -190,64 +222,48 @@
       "market": "ML HT",
       "observations": 240,
       "events": 80,
-      "min_odds": 1.166,
-      "max_odds": 29.0,
+      "min_odds": 1.333,
+      "max_odds": 10.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Double Chance HT",
-      "observations": 237,
-      "events": 79,
-      "min_odds": 1.002,
-      "max_odds": 4.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Team Total Home",
-      "observations": 204,
-      "events": 17,
-      "min_odds": 1.002,
-      "max_odds": 51.0,
+      "observations": 240,
+      "events": 80,
+      "min_odds": 1.03,
+      "max_odds": 3.25,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Double Chance",
-      "observations": 195,
-      "events": 65,
-      "min_odds": 1.001,
-      "max_odds": 8.5,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Totals 2H",
-      "observations": 170,
-      "events": 17,
-      "min_odds": 1.01,
-      "max_odds": 26.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Winning Margin",
-      "observations": 170,
-      "events": 17,
-      "min_odds": 3.6,
-      "max_odds": 301.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Team Total Away",
-      "observations": 166,
-      "events": 17,
+      "observations": 216,
+      "events": 72,
       "min_odds": 1.002,
-      "max_odds": 41.0,
+      "max_odds": 7.5,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "European Handicap",
-      "observations": 162,
-      "events": 13,
-      "min_odds": 1.04,
-      "max_odds": 29.0,
+      "market": "Exact 1st Half Goals",
+      "observations": 186,
+      "events": 31,
+      "min_odds": 2.5,
+      "max_odds": 67.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Exact 2nd Half Goals",
+      "observations": 186,
+      "events": 31,
+      "min_odds": 2.625,
+      "max_odds": 34.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Corners Race",
+      "observations": 168,
+      "events": 21,
+      "min_odds": 1.2,
+      "max_odds": 51.0,
       "reference_model_status": "unmodelled"
     },
     {
@@ -255,7 +271,7 @@
       "observations": 160,
       "events": 80,
       "min_odds": 1.166,
-      "max_odds": 5.0,
+      "max_odds": 4.5,
       "reference_model_status": "reference-supported"
     },
     {
@@ -267,6 +283,14 @@
       "reference_model_status": "unmodelled"
     },
     {
+      "market": "Odd/Even HT",
+      "observations": 160,
+      "events": 80,
+      "min_odds": 1.571,
+      "max_odds": 2.375,
+      "reference_model_status": "unmodelled"
+    },
+    {
       "market": "Odd/Even 2H",
       "observations": 160,
       "events": 80,
@@ -275,459 +299,363 @@
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Odd/Even HT",
-      "observations": 160,
-      "events": 80,
-      "min_odds": 1.666,
-      "max_odds": 2.2,
-      "reference_model_status": "unmodelled"
-    },
-    {
       "market": "Draw No Bet",
-      "observations": 146,
-      "events": 73,
-      "min_odds": 1.002,
-      "max_odds": 21.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "European Handicap HT",
-      "observations": 132,
-      "events": 17,
-      "min_odds": 1.006,
-      "max_odds": 101.0,
+      "observations": 152,
+      "events": 76,
+      "min_odds": 1.05,
+      "max_odds": 10.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Corners Totals",
-      "observations": 124,
-      "events": 48,
+      "observations": 152,
+      "events": 57,
       "min_odds": 1.666,
       "max_odds": 2.1,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Goalkeeper Saves",
-      "observations": 120,
-      "events": 10,
-      "min_odds": 1.05,
-      "max_odds": 11.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Exact 1st Half Goals",
-      "observations": 102,
-      "events": 17,
-      "min_odds": 2.5,
-      "max_odds": 81.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Exact 2nd Half Goals",
-      "observations": 102,
-      "events": 17,
-      "min_odds": 2.625,
-      "max_odds": 41.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Corners Race",
-      "observations": 96,
-      "events": 12,
-      "min_odds": 1.222,
-      "max_odds": 41.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Corners Totals HT",
-      "observations": 94,
-      "events": 47,
-      "min_odds": 1.725,
-      "max_odds": 2.075,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Player Passes",
-      "observations": 90,
-      "events": 2,
-      "min_odds": 1.125,
-      "max_odds": 5.5,
-      "reference_model_status": "unmodelled"
-    },
-    {
       "market": "Exact Total Goals",
-      "observations": 88,
-      "events": 11,
-      "min_odds": 3.5,
+      "observations": 152,
+      "events": 19,
+      "min_odds": 3.4,
       "max_odds": 34.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Total Corners",
-      "observations": 85,
-      "events": 17,
+      "observations": 150,
+      "events": 30,
       "min_odds": 2.4,
       "max_odds": 19.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Away Team Exact Goals",
-      "observations": 68,
-      "events": 17,
-      "min_odds": 1.833,
-      "max_odds": 15.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
       "market": "Home Team Exact Goals",
-      "observations": 68,
-      "events": 17,
-      "min_odds": 1.5,
+      "observations": 124,
+      "events": 31,
+      "min_odds": 1.833,
       "max_odds": 19.0,
       "reference_model_status": "unmodelled"
     },
     {
+      "market": "Away Team Exact Goals",
+      "observations": 124,
+      "events": 31,
+      "min_odds": 1.666,
+      "max_odds": 17.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
       "market": "Teams to Score",
-      "observations": 68,
-      "events": 17,
-      "min_odds": 1.333,
+      "observations": 124,
+      "events": 31,
+      "min_odds": 1.444,
       "max_odds": 34.0,
       "reference_model_status": "reference-supported"
     },
     {
-      "market": "Half With Most Goals",
-      "observations": 51,
-      "events": 17,
-      "min_odds": 1.909,
-      "max_odds": 4.75,
+      "market": "Corners Totals HT",
+      "observations": 114,
+      "events": 57,
+      "min_odds": 1.725,
+      "max_odds": 2.075,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Away Team Highest Scoring Half",
-      "observations": 51,
-      "events": 17,
-      "min_odds": 1.833,
-      "max_odds": 4.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Number of Goals In Match",
-      "observations": 51,
-      "events": 17,
-      "min_odds": 1.444,
-      "max_odds": 11.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Home Team Highest Scoring Half",
-      "observations": 51,
-      "events": 17,
-      "min_odds": 1.727,
-      "max_odds": 4.333,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "ML 2H",
-      "observations": 51,
-      "events": 17,
-      "min_odds": 1.444,
-      "max_odds": 7.0,
+      "observations": 93,
+      "events": 31,
+      "min_odds": 1.666,
+      "max_odds": 4.5,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Last Team To Score",
-      "observations": 51,
-      "events": 17,
+      "observations": 93,
+      "events": 31,
       "min_odds": 1.285,
       "max_odds": 34.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Both Teams To Score",
-      "observations": 34,
-      "events": 17,
-      "min_odds": 1.4,
-      "max_odds": 2.75,
-      "reference_model_status": "reference-supported"
-    },
-    {
-      "market": "Odd/Even Home",
-      "observations": 34,
-      "events": 17,
-      "min_odds": 1.533,
-      "max_odds": 2.375,
+      "market": "Number of Goals In Match",
+      "observations": 93,
+      "events": 31,
+      "min_odds": 1.666,
+      "max_odds": 7.5,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Specials",
-      "observations": 34,
-      "events": 17,
+      "market": "ML 2H",
+      "observations": 93,
+      "events": 31,
       "min_odds": 1.444,
       "max_odds": 8.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Both Teams To Score 2H",
-      "observations": 34,
-      "events": 17,
-      "min_odds": 1.222,
-      "max_odds": 4.0,
+      "market": "Half With Most Goals",
+      "observations": 93,
+      "events": 31,
+      "min_odds": 1.952,
+      "max_odds": 4.333,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Odd/Even Away",
-      "observations": 34,
-      "events": 17,
-      "min_odds": 1.615,
-      "max_odds": 2.2,
+      "market": "Home Team Highest Scoring Half",
+      "observations": 93,
+      "events": 31,
+      "min_odds": 1.666,
+      "max_odds": 4.75,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Clean Sheet Away",
-      "observations": 34,
-      "events": 17,
-      "min_odds": 1.02,
-      "max_odds": 19.0,
+      "market": "Player Headed Shots on Target",
+      "observations": 66,
+      "events": 1,
+      "min_odds": 2.1,
+      "max_odds": 67.0,
       "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Player Shots on Target Outside Box",
+      "observations": 66,
+      "events": 1,
+      "min_odds": 1.727,
+      "max_odds": 67.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Both Teams To Score",
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.444,
+      "max_odds": 2.625,
+      "reference_model_status": "reference-supported"
     },
     {
       "market": "Both Teams To Score HT",
-      "observations": 34,
-      "events": 17,
+      "observations": 62,
+      "events": 31,
       "min_odds": 1.142,
       "max_odds": 5.5,
       "reference_model_status": "unmodelled"
     },
     {
+      "market": "Specials",
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.615,
+      "max_odds": 11.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Odd/Even Home",
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.5,
+      "max_odds": 2.5,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Odd/Even Away",
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.533,
+      "max_odds": 2.375,
+      "reference_model_status": "unmodelled"
+    },
+    {
       "market": "Clean Sheet Home",
-      "observations": 34,
-      "events": 17,
-      "min_odds": 1.125,
-      "max_odds": 6.0,
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.03,
+      "max_odds": 13.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Clean Sheet Away",
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.05,
+      "max_odds": 11.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Both Teams To Score 2H",
+      "observations": 62,
+      "events": 31,
+      "min_odds": 1.222,
+      "max_odds": 4.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "First 10 Minutes (00:00 - 09:59)",
-      "observations": 32,
-      "events": 13,
+      "observations": 48,
+      "events": 21,
       "min_odds": 1.083,
       "max_odds": 8.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Corner Handicap",
-      "observations": 26,
-      "events": 10,
-      "min_odds": 1.666,
-      "max_odds": 8.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
       "market": "Corners Totals Away",
-      "observations": 24,
-      "events": 12,
+      "observations": 42,
+      "events": 21,
       "min_odds": 1.571,
       "max_odds": 2.25,
       "reference_model_status": "unmodelled"
     },
     {
+      "market": "Time of First Corner",
+      "observations": 42,
+      "events": 21,
+      "min_odds": 1.8,
+      "max_odds": 1.909,
+      "reference_model_status": "unmodelled"
+    },
+    {
       "market": "Corners Totals Home",
-      "observations": 24,
-      "events": 12,
+      "observations": 42,
+      "events": 21,
       "min_odds": 1.615,
       "max_odds": 2.2,
       "reference_model_status": "unmodelled"
     },
     {
+      "market": "First Match Corner",
+      "observations": 42,
+      "events": 21,
+      "min_odds": 1.3,
+      "max_odds": 3.4,
+      "reference_model_status": "unmodelled"
+    },
+    {
       "market": "Multicorners",
-      "observations": 24,
-      "events": 12,
+      "observations": 42,
+      "events": 21,
       "min_odds": 1.727,
       "max_odds": 2.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Last Match Corner",
-      "observations": 24,
-      "events": 12,
-      "min_odds": 1.4,
-      "max_odds": 2.75,
+      "observations": 42,
+      "events": 21,
+      "min_odds": 1.363,
+      "max_odds": 3.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Time of First Corner",
-      "observations": 24,
-      "events": 12,
+      "market": "Corner Handicap",
+      "observations": 35,
+      "events": 14,
       "min_odds": 1.8,
-      "max_odds": 1.909,
+      "max_odds": 8.5,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "First Match Corner",
-      "observations": 24,
-      "events": 12,
-      "min_odds": 1.333,
-      "max_odds": 3.25,
+      "market": "Goalkeeper Saves",
+      "observations": 33,
+      "events": 3,
+      "min_odds": 1.05,
+      "max_odds": 11.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Corners Spread",
-      "observations": 22,
-      "events": 11,
+      "observations": 32,
+      "events": 16,
       "min_odds": 1.8,
       "max_odds": 2.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Number of Cards In Match",
-      "observations": 22,
-      "events": 11,
-      "min_odds": 1.615,
-      "max_odds": 2.2,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Bookings Totals Home",
-      "observations": 22,
-      "events": 11,
-      "min_odds": 1.533,
-      "max_odds": 2.375,
-      "reference_model_status": "unmodelled"
-    },
-    {
       "market": "Bookings Totals Away",
-      "observations": 22,
-      "events": 11,
+      "observations": 20,
+      "events": 10,
       "min_odds": 1.5,
       "max_odds": 2.5,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Bookings Spread",
+      "market": "Bookings Totals Home",
       "observations": 20,
       "events": 10,
+      "min_odds": 1.5,
+      "max_odds": 2.5,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Number of Cards In Match",
+      "observations": 20,
+      "events": 10,
+      "min_odds": 1.615,
+      "max_odds": 2.2,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Bookings Spread",
+      "observations": 16,
+      "events": 8,
       "min_odds": 1.7,
       "max_odds": 2.1,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Bookings Totals",
-      "observations": 20,
-      "events": 10,
+      "observations": 12,
+      "events": 6,
       "min_odds": 1.775,
       "max_odds": 2.025,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Total Shots Away",
-      "observations": 20,
-      "events": 10,
+      "market": "Total Shots on Target",
+      "observations": 6,
+      "events": 3,
       "min_odds": 1.727,
       "max_odds": 2.0,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "Total Shots on Target",
-      "observations": 20,
-      "events": 10,
-      "min_odds": 1.666,
-      "max_odds": 2.1,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Shots on Target Away",
-      "observations": 20,
-      "events": 10,
-      "min_odds": 1.615,
-      "max_odds": 2.2,
-      "reference_model_status": "unmodelled"
-    },
-    {
       "market": "Total Shots on Target Home",
-      "observations": 20,
-      "events": 10,
+      "observations": 6,
+      "events": 3,
       "min_odds": 1.666,
       "max_odds": 2.1,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Total Shots Home",
-      "observations": 20,
-      "events": 10,
+      "observations": 6,
+      "events": 3,
+      "min_odds": 1.727,
+      "max_odds": 2.0,
+      "reference_model_status": "unmodelled"
+    },
+    {
+      "market": "Total Shots Away",
+      "observations": 6,
+      "events": 3,
       "min_odds": 1.727,
       "max_odds": 2.0,
       "reference_model_status": "unmodelled"
     },
     {
       "market": "Total Shots",
-      "observations": 20,
-      "events": 10,
-      "min_odds": 1.727,
-      "max_odds": 2.0,
+      "observations": 6,
+      "events": 3,
+      "min_odds": 1.8,
+      "max_odds": 1.909,
       "reference_model_status": "unmodelled"
     },
     {
-      "market": "To Qualify",
-      "observations": 18,
-      "events": 9,
-      "min_odds": 1.004,
-      "max_odds": 41.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Tackles Home",
-      "observations": 8,
-      "events": 4,
-      "min_odds": 1.727,
-      "max_odds": 2.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Tackles Away",
-      "observations": 8,
-      "events": 4,
-      "min_odds": 1.727,
-      "max_odds": 2.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Tackles",
-      "observations": 8,
-      "events": 4,
-      "min_odds": 1.727,
-      "max_odds": 2.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Method of Victory",
-      "observations": 4,
-      "events": 2,
-      "min_odds": 13.0,
-      "max_odds": 21.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Offsides",
-      "observations": 4,
-      "events": 2,
-      "min_odds": 1.727,
-      "max_odds": 2.0,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Offsides Away",
-      "observations": 4,
-      "events": 2,
+      "market": "Total Shots on Target Away",
+      "observations": 6,
+      "events": 3,
       "min_odds": 1.571,
       "max_odds": 2.25,
-      "reference_model_status": "unmodelled"
-    },
-    {
-      "market": "Total Offsides Home",
-      "observations": 4,
-      "events": 2,
-      "min_odds": 1.727,
-      "max_odds": 2.0,
       "reference_model_status": "unmodelled"
     }
   ]
