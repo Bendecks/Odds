@@ -1,86 +1,86 @@
 {
-  "generated_at": "2026-10-22T17:10:07.899336+00:00",
+  "generated_at": "2026-10-23T04:48:25.137583+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 740,
-  "exact_bet365_rows": 702,
+  "candidate_rows": 212,
+  "exact_bet365_rows": 142,
   "fresh_exact_rows_by_market": {
-    "h2h": 120,
-    "spreads": 280,
-    "totals": 302
+    "h2h": 66,
+    "spreads": 6,
+    "totals": 70
   },
   "metadata": {
-    "rows_with_sport": 740,
-    "rows_with_league": 740,
-    "rows_with_parseable_teams": 740,
+    "rows_with_sport": 212,
+    "rows_with_league": 212,
+    "rows_with_parseable_teams": 212,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 120,
-      "spreads": 284,
-      "totals": 336
+      "h2h": 66,
+      "spreads": 16,
+      "totals": 130
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 120,
-      "totals": 336
+      "h2h": 66,
+      "totals": 130
     },
-    "first_model_scope_rows": 456
+    "first_model_scope_rows": 196
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'International Clubs - UEFA Europa League', 'slug': 'international-clubs-uefa-europa-league'}",
-        362
+        "{'name': 'Romania - Liga III, Seria 8', 'slug': 'romania-liga-iii-seria-8'}",
+        43
       ],
       [
-        "{'name': 'International Clubs - UEFA Conference League', 'slug': 'international-clubs-uefa-conference-league'}",
-        146
-      ],
-      [
-        "{'name': 'Argentina - Primera LPF, Reserves, Clausura', 'slug': 'argentina-primera-lpf-reserves-clausura'}",
-        52
-      ],
-      [
-        "{'name': 'Ecuador - Serie B, Promotion Round', 'slug': 'ecuador-serie-b-promotion-round'}",
-        32
+        "{'name': 'Egypt - 2. Division A', 'slug': 'egypt-2-division-a'}",
+        37
       ],
       [
         "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
         25
       ],
       [
-        "{'name': 'International Clubs - CONMEBOL Libertadores, Knockout stage', 'slug': 'international-clubs-conmebol-libertadores-knockout-stage'}",
-        23
-      ],
-      [
-        "{'name': 'Brazil - U20 Copa do Brasil', 'slug': 'brazil-u20-copa-do-brasil'}",
+        "{'name': 'Ukraine - Premier League', 'slug': 'ukraine-premier-league'}",
         18
       ],
       [
-        "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
-        15
+        "{'name': 'Bulgaria - Vtora Liga', 'slug': 'bulgaria-vtora-liga'}",
+        18
       ],
       [
         "{'name': 'Australia - Australian Championship, Group A', 'slug': 'australia-australian-championship-group-a'}",
         15
       ],
       [
-        "{'name': 'Malta - Premier League, Opening Round', 'slug': 'malta-premier-league-opening-round'}",
+        "{'name': 'England Amateur - U21 Premier League 2', 'slug': 'england-amateur-u21-premier-league-2'}",
+        11
+      ],
+      [
+        "{'name': 'Ukraine - Persha Liga', 'slug': 'ukraine-persha-liga'}",
+        9
+      ],
+      [
+        "{'name': 'Armenia - Premier League', 'slug': 'armenia-premier-league'}",
+        9
+      ],
+      [
+        "{'name': 'India - Super League', 'slug': 'india-super-league'}",
         9
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:E0": 9,
+      "football-data.co.uk:E0": 38,
       "football-data.co.uk:E1": 15
     }
   },
@@ -114,7 +114,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 284
+      "market_not_first_model_scope": 16
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
