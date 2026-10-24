@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-24T04:35:40.339452+00:00",
-  "as_of": "2026-10-24T04:35:40.266610+00:00",
+  "generated_at": "2026-10-24T15:56:22.068396+00:00",
+  "as_of": "2026-10-24T15:56:21.955794+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "target_gate_version": "reference-quality-shadow-v1",
@@ -20,145 +20,41 @@
       "model_or_feed_version"
     ]
   },
-  "total_candidates": 497,
-  "fresh_exact_candidates": 409,
+  "total_candidates": 516,
+  "fresh_exact_candidates": 474,
   "shadow_ready_candidates": 0,
   "failure_reasons": {
-    "insufficient_independent_economic_sources": 409,
-    "missing_external_market_reference": 409,
-    "missing_model_reference": 409
+    "insufficient_independent_economic_sources": 474,
+    "missing_external_market_reference": 474,
+    "missing_model_reference": 474
   },
   "missing_roles": {
-    "external_market_reference": 409,
-    "model_reference": 409
+    "external_market_reference": 474,
+    "model_reference": 474
   },
   "by_market": {
     "h2h": {
-      "evaluated": 105,
-      "fresh_exact_bet365": 105,
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 105,
-        "missing_external_market_reference": 105,
-        "missing_model_reference": 105
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
       },
       "missing_roles": {
-        "external_market_reference": 105,
-        "model_reference": 105
-      }
-    },
-    "spreads": {
-      "evaluated": 84,
-      "fresh_exact_bet365": 84,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 84,
-        "missing_external_market_reference": 84,
-        "missing_model_reference": 84
-      },
-      "missing_roles": {
-        "external_market_reference": 84,
-        "model_reference": 84
-      }
-    },
-    "totals": {
-      "evaluated": 220,
-      "fresh_exact_bet365": 220,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 220,
-        "missing_external_market_reference": 220,
-        "missing_model_reference": 220
-      },
-      "missing_roles": {
-        "external_market_reference": 220,
-        "model_reference": 220
-      }
-    }
-  },
-  "unlock_priorities": {
-    "role_gap_priorities": [
-      {
-        "role": "external_market_reference",
-        "fresh_exact_candidates_blocked": 409,
-        "would_unlock_if_added_alone": 0
-      },
-      {
-        "role": "model_reference",
-        "fresh_exact_candidates_blocked": 409,
-        "would_unlock_if_added_alone": 0
-      }
-    ],
-    "paired_role_gaps": [
-      {
-        "missing_role_set": "external_market_reference + model_reference",
-        "fresh_exact_candidates_blocked": 409
-      }
-    ],
-    "market_priorities": [
-      {
-        "market": "totals",
-        "fresh_exact_candidates": 220,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 220,
-          "model_reference": 220
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "h2h",
-        "fresh_exact_candidates": 105,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 105,
-          "model_reference": 105
-        },
-        "largest_missing_role": "external_market_reference"
-      },
-      {
-        "market": "spreads",
-        "fresh_exact_candidates": 84,
-        "shadow_ready_candidates": 0,
-        "missing_roles": {
-          "external_market_reference": 84,
-          "model_reference": 84
-        },
-        "largest_missing_role": "external_market_reference"
-      }
-    ],
-    "recommended_next_unlock": {
-      "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
-      "first_market_focus": "totals",
-      "first_market_fresh_exact_candidates": 220,
-      "single_role_unlock_possible": false,
-      "production_impact": "none"
-    }
-  },
-  "all_candidates_by_market": {
-    "h2h": {
-      "evaluated": 105,
-      "fresh_exact_bet365": 105,
-      "shadow_ready": 0,
-      "failure_reasons": {
-        "insufficient_independent_economic_sources": 105,
-        "missing_external_market_reference": 105,
-        "missing_model_reference": 105
-      },
-      "missing_roles": {
-        "external_market_reference": 105,
-        "model_reference": 105
+        "external_market_reference": 108,
+        "model_reference": 108
       }
     },
     "spreads": {
       "evaluated": 116,
-      "fresh_exact_bet365": 84,
+      "fresh_exact_bet365": 116,
       "shadow_ready": 0,
       "failure_reasons": {
         "insufficient_independent_economic_sources": 116,
         "missing_external_market_reference": 116,
-        "missing_model_reference": 116,
-        "not_fresh_exact_bet365": 32
+        "missing_model_reference": 116
       },
       "missing_roles": {
         "external_market_reference": 116,
@@ -166,28 +62,132 @@
       }
     },
     "totals": {
-      "evaluated": 276,
-      "fresh_exact_bet365": 220,
+      "evaluated": 250,
+      "fresh_exact_bet365": 250,
       "shadow_ready": 0,
       "failure_reasons": {
-        "insufficient_independent_economic_sources": 276,
-        "missing_external_market_reference": 276,
-        "missing_model_reference": 276,
-        "not_fresh_exact_bet365": 56
+        "insufficient_independent_economic_sources": 250,
+        "missing_external_market_reference": 250,
+        "missing_model_reference": 250
       },
       "missing_roles": {
-        "external_market_reference": 276,
-        "model_reference": 276
+        "external_market_reference": 250,
+        "model_reference": 250
+      }
+    }
+  },
+  "unlock_priorities": {
+    "role_gap_priorities": [
+      {
+        "role": "external_market_reference",
+        "fresh_exact_candidates_blocked": 474,
+        "would_unlock_if_added_alone": 0
+      },
+      {
+        "role": "model_reference",
+        "fresh_exact_candidates_blocked": 474,
+        "would_unlock_if_added_alone": 0
+      }
+    ],
+    "paired_role_gaps": [
+      {
+        "missing_role_set": "external_market_reference + model_reference",
+        "fresh_exact_candidates_blocked": 474
+      }
+    ],
+    "market_priorities": [
+      {
+        "market": "totals",
+        "fresh_exact_candidates": 250,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 250,
+          "model_reference": 250
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "spreads",
+        "fresh_exact_candidates": 116,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 116,
+          "model_reference": 116
+        },
+        "largest_missing_role": "external_market_reference"
+      },
+      {
+        "market": "h2h",
+        "fresh_exact_candidates": 108,
+        "shadow_ready_candidates": 0,
+        "missing_roles": {
+          "external_market_reference": 108,
+          "model_reference": 108
+        },
+        "largest_missing_role": "external_market_reference"
+      }
+    ],
+    "recommended_next_unlock": {
+      "summary": "Add both an external market reference and a model reference before expecting shadow-ready candidates.",
+      "first_market_focus": "totals",
+      "first_market_fresh_exact_candidates": 250,
+      "single_role_unlock_possible": false,
+      "production_impact": "none"
+    }
+  },
+  "all_candidates_by_market": {
+    "h2h": {
+      "evaluated": 108,
+      "fresh_exact_bet365": 108,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 108,
+        "missing_external_market_reference": 108,
+        "missing_model_reference": 108
+      },
+      "missing_roles": {
+        "external_market_reference": 108,
+        "model_reference": 108
+      }
+    },
+    "spreads": {
+      "evaluated": 136,
+      "fresh_exact_bet365": 116,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 136,
+        "missing_external_market_reference": 136,
+        "missing_model_reference": 136,
+        "not_fresh_exact_bet365": 20
+      },
+      "missing_roles": {
+        "external_market_reference": 136,
+        "model_reference": 136
+      }
+    },
+    "totals": {
+      "evaluated": 272,
+      "fresh_exact_bet365": 250,
+      "shadow_ready": 0,
+      "failure_reasons": {
+        "insufficient_independent_economic_sources": 272,
+        "missing_external_market_reference": 272,
+        "missing_model_reference": 272,
+        "not_fresh_exact_bet365": 22
+      },
+      "missing_roles": {
+        "external_market_reference": 272,
+        "model_reference": 272
       }
     }
   },
   "sample_failures": [
     {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
       "market": "h2h",
-      "pick": "Bucheon FC 1995",
+      "pick": "Anorthosis Famagusta",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -209,9 +209,9 @@
       ]
     },
     {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
       "market": "h2h",
       "pick": "Draw",
       "line": null,
@@ -235,11 +235,11 @@
       ]
     },
     {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
       "market": "h2h",
-      "pick": "Gwangju FC",
+      "pick": "Omonia Aradippou",
       "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
@@ -261,113 +261,9 @@
       ]
     },
     {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
-      "market": "spreads",
-      "pick": "Bucheon FC 1995",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
-      "market": "spreads",
-      "pick": "Gwangju FC",
-      "line": -0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
-      "market": "spreads",
-      "pick": "Bucheon FC 1995",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
-      "market": "spreads",
-      "pick": "Gwangju FC",
-      "line": 0.5,
-      "fresh_exact_bet365": true,
-      "shadow_ready": false,
-      "roles_present": [
-        "unibet_reference"
-      ],
-      "missing_roles": [
-        "external_market_reference",
-        "model_reference"
-      ],
-      "independent_economic_sources": [
-        "unibet"
-      ],
-      "ignored_economic_sources": [],
-      "failure_reasons": [
-        "missing_external_market_reference",
-        "missing_model_reference",
-        "insufficient_independent_economic_sources"
-      ]
-    },
-    {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
       "market": "totals",
       "pick": "Over",
       "line": 1.5,
@@ -391,9 +287,9 @@
       ]
     },
     {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
       "market": "totals",
       "pick": "Under",
       "line": 1.5,
@@ -417,12 +313,116 @@
       ]
     },
     {
-      "event": "Bucheon FC 1995 vs Gwangju FC",
-      "event_id": 67817920,
-      "bet365_event_id": 67817920,
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
       "market": "totals",
       "pick": "Over",
       "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
+      "market": "totals",
+      "pick": "Under",
+      "line": 2.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
+      "market": "totals",
+      "pick": "Over",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "Anorthosis Famagusta vs Omonia Aradippou",
+      "event_id": 73160438,
+      "bet365_event_id": 73160438,
+      "market": "totals",
+      "pick": "Under",
+      "line": 3.5,
+      "fresh_exact_bet365": true,
+      "shadow_ready": false,
+      "roles_present": [
+        "unibet_reference"
+      ],
+      "missing_roles": [
+        "external_market_reference",
+        "model_reference"
+      ],
+      "independent_economic_sources": [
+        "unibet"
+      ],
+      "ignored_economic_sources": [],
+      "failure_reasons": [
+        "missing_external_market_reference",
+        "missing_model_reference",
+        "insufficient_independent_economic_sources"
+      ]
+    },
+    {
+      "event": "FC Zurich vs FC Luzern",
+      "event_id": 72177098,
+      "bet365_event_id": 72177098,
+      "market": "h2h",
+      "pick": "FC Zurich",
+      "line": null,
       "fresh_exact_bet365": true,
       "shadow_ready": false,
       "roles_present": [
