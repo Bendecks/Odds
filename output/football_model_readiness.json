@@ -1,90 +1,88 @@
 {
-  "generated_at": "2026-10-25T16:18:05.206873+00:00",
+  "generated_at": "2026-10-26T04:46:08.452197+00:00",
   "mode": "SHADOW_ONLY",
   "production_impact": "none",
   "model_version": "football-model-readiness-v1",
   "purpose": "Measure whether current football candidates have enough event, league and market metadata for a future Bet365-independent Dixon-Coles/Elo model reference.",
   "reference_quality_role_if_promoted": "model_reference",
-  "candidate_rows": 676,
-  "exact_bet365_rows": 642,
+  "candidate_rows": 350,
+  "exact_bet365_rows": 280,
   "fresh_exact_rows_by_market": {
-    "h2h": 138,
-    "spreads": 180,
-    "totals": 324
+    "h2h": 102,
+    "spreads": 28,
+    "totals": 150
   },
   "metadata": {
-    "rows_with_sport": 676,
-    "rows_with_league": 676,
-    "rows_with_parseable_teams": 676,
+    "rows_with_sport": 350,
+    "rows_with_league": 350,
+    "rows_with_parseable_teams": 350,
     "sport_coverage": 1.0,
     "league_coverage": 1.0,
     "team_parse_coverage": 1.0
   },
   "market_scope": {
     "candidate_markets": {
-      "h2h": 138,
-      "spreads": 190,
-      "totals": 348
+      "h2h": 102,
+      "spreads": 32,
+      "totals": 216
     },
     "first_model_markets": [
       "h2h",
       "totals"
     ],
     "coverable_rows_by_market": {
-      "h2h": 138,
-      "totals": 348
+      "h2h": 102,
+      "totals": 216
     },
-    "first_model_scope_rows": 486
+    "first_model_scope_rows": 318
   },
   "league_mapping": {
     "top_candidate_leagues": [
       [
-        "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
-        49
-      ],
-      [
-        "{'name': 'Belgium - First Division A', 'slug': 'belgium-first-division-a'}",
-        42
-      ],
-      [
-        "{'name': 'England - Premier League', 'slug': 'england-premier-league'}",
-        41
-      ],
-      [
-        "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
-        41
-      ],
-      [
-        "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-        41
-      ],
-      [
-        "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
-        38
-      ],
-      [
-        "{'name': 'Italy - Serie C, Group A', 'slug': 'italy-serie-c-group-a'}",
+        "{'name': 'Turkiye - Super Lig', 'slug': 'turkiye-super-lig'}",
         34
       ],
       [
-        "{'name': 'Greece - Super League', 'slug': 'greece-super-league'}",
+        "{'name': 'Bulgaria - Parva Liga', 'slug': 'bulgaria-parva-liga'}",
         30
       ],
       [
-        "{'name': 'Argentina - Primera C, Promotion Playoffs', 'slug': 'argentina-primera-c-promotion-playoffs'}",
-        23
+        "{'name': 'Ethiopia - Premier League', 'slug': 'ethiopia-premier-league'}",
+        28
+      ],
+      [
+        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
+        27
+      ],
+      [
+        "{'name': 'Bahrain - First Division', 'slug': 'bahrain-first-division'}",
+        27
       ],
       [
         "{'name': 'Denmark - Superligaen', 'slug': 'denmark-superligaen'}",
         19
+      ],
+      [
+        "{'name': 'International Clubs - AFC Champions League Elite, East Region', 'slug': 'international-clubs-afc-champions-league-elite-east-region'}",
+        15
+      ],
+      [
+        "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+        15
+      ],
+      [
+        "{'name': 'Singapore - Premier League', 'slug': 'singapore-premier-league'}",
+        11
+      ],
+      [
+        "{'name': 'Romania - Liga 2', 'slug': 'romania-liga-2'}",
+        11
       ]
     ],
     "public_data_hints": {
-      "football-data.co.uk:CL": 16,
-      "football-data.co.uk:D1": 49,
-      "football-data.co.uk:E0": 57,
-      "football-data.co.uk:I1": 50,
-      "public-data:needs-provider-specific-mapping": 43
+      "football-data.co.uk:CL": 15,
+      "football-data.co.uk:E0": 64,
+      "public-data:needs-provider-specific-mapping": 19
     }
   },
   "public_football_data_probe": {
@@ -117,7 +115,7 @@
   ],
   "missing_by_market": {
     "spreads": {
-      "market_not_first_model_scope": 190
+      "market_not_first_model_scope": 32
     }
   },
   "next_action": "Build a SHADOW_ONLY historical-results adapter for mapped leagues, then calibrate Dixon-Coles/Elo probabilities before allowing the model_reference role."
