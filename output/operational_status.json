@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T17:55:55.499789+00:00",
+  "generated_at": "2026-11-02T06:00:36.427816+00:00",
   "mode": "PAPER",
   "decision": "NO BET",
   "reason": "Ingen frisk verificeret Bet365-pris med eksakt event-identitet passerer reference-, edge- og EV-krav samt aktive indsatskrav.",
@@ -14,7 +14,7 @@
     "positive_edge_rows": 0,
     "ev_ready_rows": 0,
     "qualified_now_rows": 0,
-    "decision_runs_recorded": 153
+    "decision_runs_recorded": 154
   },
   "funnel_diagnostics": {
     "by_market": {
@@ -35,7 +35,7 @@
     }
   },
   "provider": {
-    "generated_at": "2026-11-01T17:55:35.707767+00:00",
+    "generated_at": "2026-11-02T06:00:16.336621+00:00",
     "available": true,
     "bet365_events_available": 500,
     "events_queried": 80,
@@ -54,6 +54,14 @@
       ],
       "top_leagues": [
         [
+          "{'name': 'England - FA Cup', 'slug': 'england-fa-cup'}",
+          38
+        ],
+        [
+          "{'name': 'England - Championship', 'slug': 'england-championship'}",
+          24
+        ],
+        [
           "{'name': 'International Clubs - UEFA Champions League', 'slug': 'international-clubs-uefa-champions-league'}",
           18
         ],
@@ -66,15 +74,23 @@
           18
         ],
         [
-          "{'name': 'England - Championship', 'slug': 'england-championship'}",
-          16
-        ],
-        [
           "{'name': 'Scotland - Challenge Cup, Playoffs', 'slug': 'scotland-challenge-cup-playoffs'}",
           16
         ],
         [
+          "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
+          12
+        ],
+        [
           "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
+          10
+        ],
+        [
+          "{'name': 'England - Premier League', 'slug': 'england-premier-league'}",
+          10
+        ],
+        [
+          "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
           10
         ],
         [
@@ -82,27 +98,27 @@
           10
         ],
         [
-          "{'name': 'England - FA Cup', 'slug': 'england-fa-cup'}",
-          9
+          "{'name': 'Spain - Copa del Rey', 'slug': 'spain-copa-del-rey'}",
+          10
         ],
         [
-          "{'name': \"USA - National Women's Soccer League\", 'slug': \"usa-national-women's-soccer-league\"}",
+          "{'name': 'China - Chinese Super League', 'slug': 'china-chinese-super-league'}",
           8
         ],
         [
-          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+          "{'name': 'International Clubs - AFC Champions League Elite, East Region', 'slug': 'international-clubs-afc-champions-league-elite-east-region'}",
           8
         ],
         [
-          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
+          "{'name': 'Uruguay - Tercera Division, Reserves', 'slug': 'uruguay-tercera-division-reserves'}",
           8
         ],
         [
-          "{'name': 'Israel - Liga Alef North', 'slug': 'israel-liga-alef-north'}",
+          "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
           7
         ],
         [
-          "{'name': 'Jamaica - Premier League', 'slug': 'jamaica-premier-league'}",
+          "{'name': 'Israel - Liga Alef North', 'slug': 'israel-liga-alef-north'}",
           7
         ],
         [
@@ -110,7 +126,19 @@
           7
         ],
         [
-          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
+          "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
+          7
+        ],
+        [
+          "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
+          6
+        ],
+        [
+          "{'name': 'Belgium - First Division A', 'slug': 'belgium-first-division-a'}",
+          6
+        ],
+        [
+          "{'name': 'Colombia - Liga DIMAYOR, Finalizacion', 'slug': 'colombia-liga-dimayor-finalizacion'}",
           6
         ],
         [
@@ -118,27 +146,23 @@
           6
         ],
         [
-          "{'name': 'International Clubs - AFC Champions League Elite, East Region', 'slug': 'international-clubs-afc-champions-league-elite-east-region'}",
+          "{'name': 'Greece - Super League', 'slug': 'greece-super-league'}",
           6
         ],
         [
-          "{'name': 'Italy - Serie A', 'slug': 'italy-serie-a'}",
+          "{'name': 'Netherlands - Eredivisie', 'slug': 'netherlands-eredivisie'}",
           6
         ],
         [
-          "{'name': 'USA - MLS', 'slug': 'usa-mls'}",
-          6
-        ],
-        [
-          "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+          "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
           5
         ],
         [
-          "{'name': 'Brazil - Carioca, Serie B2', 'slug': 'brazil-carioca-serie-b2'}",
+          "{'name': 'Austria - Bundesliga', 'slug': 'austria-bundesliga'}",
           5
         ],
         [
-          "{'name': 'Germany - Bundesliga', 'slug': 'germany-bundesliga'}",
+          "{'name': 'France - Ligue 1', 'slug': 'france-ligue-1'}",
           5
         ],
         [
@@ -146,7 +170,11 @@
           5
         ],
         [
-          "{'name': 'Portugal - Liga Portugal', 'slug': 'portugal-liga-portugal'}",
+          "{'name': 'Scotland - Championship', 'slug': 'scotland-championship'}",
+          5
+        ],
+        [
+          "{'name': 'Scotland - Premiership', 'slug': 'scotland-premiership'}",
           5
         ],
         [
@@ -154,19 +182,7 @@
           5
         ],
         [
-          "{'name': 'Argentina - Primera B', 'slug': 'argentina-primera-b'}",
-          4
-        ],
-        [
-          "{'name': 'Australia - A-League', 'slug': 'australia-a-league'}",
-          4
-        ],
-        [
-          "{'name': 'Bolivia - Division Profesional', 'slug': 'bolivia-division-profesional'}",
-          4
-        ],
-        [
-          "{'name': 'Costa Rica - Liga de Ascenso, Apertura, Group 2', 'slug': 'costa-rica-liga-de-ascenso-apertura-group-2'}",
+          "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
           4
         ],
         [
@@ -206,15 +222,11 @@
           4
         ],
         [
-          "{'name': 'Spain - LaLiga', 'slug': 'spain-laliga'}",
-          4
+          "{'name': 'Argentina - Primera B Nacional', 'slug': 'argentina-primera-b-nacional'}",
+          3
         ],
         [
-          "{'name': 'Venezuela - Segunda Division, Playoffs', 'slug': 'venezuela-segunda-division-playoffs'}",
-          4
-        ],
-        [
-          "{'name': 'Brazil - Sergipano, Serie A2, Group B', 'slug': 'brazil-sergipano-serie-a2-group-b'}",
+          "{'name': 'Brazil - Brasileiro Serie B', 'slug': 'brazil-brasileiro-serie-b'}",
           3
         ],
         [
@@ -222,35 +234,23 @@
           3
         ],
         [
-          "{'name': 'Chile - Primera Division', 'slug': 'chile-primera-division'}",
-          3
-        ],
-        [
-          "{'name': 'Colombia - Torneo DIMAYOR, Clausura, Group B', 'slug': 'colombia-torneo-dimayor-clausura-group-b'}",
-          3
-        ],
-        [
-          "{'name': 'Costa Rica - Liga de Ascenso, Apertura, Group 1', 'slug': 'costa-rica-liga-de-ascenso-apertura-group-1'}",
-          3
-        ],
-        [
-          "{'name': 'Ecuador - Serie A, Relegation Round', 'slug': 'ecuador-serie-a-relegation-round'}",
-          3
-        ],
-        [
-          "{'name': 'El Salvador - Primera Division, Apertura', 'slug': 'el-salvador-primera-division-apertura'}",
-          3
-        ],
-        [
           "{'name': 'England - League One', 'slug': 'england-league-one'}",
           3
         ],
         [
-          "{'name': 'England - Premier League', 'slug': 'england-premier-league'}",
+          "{'name': 'England Amateur - National League South', 'slug': 'england-amateur-national-league-south'}",
           3
         ],
         [
-          "{'name': 'England Amateur - National League South', 'slug': 'england-amateur-national-league-south'}",
+          "{'name': 'England Amateur - Southern League, Premier Division Central', 'slug': 'england-amateur-southern-league-premier-division-central'}",
+          3
+        ],
+        [
+          "{'name': 'North Macedonia - 1. MFL', 'slug': 'north-macedonia-1-mfl'}",
+          3
+        ],
+        [
+          "{'name': 'Poland - Ekstraklasa', 'slug': 'poland-ekstraklasa'}",
           3
         ]
       ],
@@ -289,27 +289,27 @@
         ],
         [
           "awayId",
-          497
+          494
         ],
         [
           "homeId",
-          497
+          494
         ]
       ],
       "samples": [
         {
-          "id": 29134949731,
-          "home": "K Rupel Boom FC",
-          "away": "KFC Nijlen",
+          "id": 28282562290,
+          "home": "Central Stallions",
+          "away": "Deren FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Belgium - 2nd Amateur Division VV B",
-            "slug": "belgium-2nd-amateur-division-vv-b"
+            "name": "Mongolia - Premier League",
+            "slug": "mongolia-premier-league"
           },
-          "date": "2026-11-01T13:30:00Z",
+          "date": "2026-11-02T08:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -324,18 +324,66 @@
           ]
         },
         {
-          "id": 28298529522,
-          "home": "Royale Entente Acren Lessines",
-          "away": "CS Pays Vert Ostiches Ath",
+          "id": 16207746753,
+          "home": "Chainat Hornbill",
+          "away": "Port FC",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Belgium - 2nd Amateur Division ACFF",
-            "slug": "belgium-2nd-amateur-division-acff"
+            "name": "Thailand - U21 League",
+            "slug": "thailand-u21-league"
           },
-          "date": "2026-11-01T14:00:00Z",
+          "date": "2026-11-02T08:30:00Z",
+          "keys": [
+            "away",
+            "date",
+            "home",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        },
+        {
+          "id": 15847058047,
+          "home": "Bangkok United",
+          "away": "Khonkaen United",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Thailand - U21 League",
+            "slug": "thailand-u21-league"
+          },
+          "date": "2026-11-02T09:00:00Z",
+          "keys": [
+            "away",
+            "date",
+            "home",
+            "id",
+            "league",
+            "scores",
+            "sport",
+            "status"
+          ]
+        },
+        {
+          "id": 29126671902,
+          "home": "Ayeyawady United FC U20",
+          "away": "Dagon Star United U20",
+          "sport": {
+            "name": "Football",
+            "slug": "football"
+          },
+          "league": {
+            "name": "Myanmar - National League U20",
+            "slug": "myanmar-national-league-u20"
+          },
+          "date": "2026-11-02T09:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -350,70 +398,18 @@
           ]
         },
         {
-          "id": 29984628198,
-          "home": "UE Castelldefels",
-          "away": "CE Sabadell B",
+          "id": 72550298,
+          "home": "FC Kolos Kovalivka 2",
+          "away": "FC Metalist Kharkiv",
           "sport": {
             "name": "Football",
             "slug": "football"
           },
           "league": {
-            "name": "Spain Amateur - Lliga Elit Catalana",
-            "slug": "spain-amateur-lliga-elit-catalana"
+            "name": "Ukraine - Persha Liga",
+            "slug": "ukraine-persha-liga"
           },
-          "date": "2026-11-01T15:05:00Z",
-          "keys": [
-            "away",
-            "awayId",
-            "date",
-            "home",
-            "homeId",
-            "id",
-            "league",
-            "scores",
-            "sport",
-            "status"
-          ]
-        },
-        {
-          "id": 72883734,
-          "home": "UD Montecarlo",
-          "away": "CD Oberena",
-          "sport": {
-            "name": "Football",
-            "slug": "football"
-          },
-          "league": {
-            "name": "Spain - Division de Honor Juvenil - Grupo IV",
-            "slug": "spain-division-de-honor-juvenil-grupo-iv"
-          },
-          "date": "2026-11-01T16:00:00Z",
-          "keys": [
-            "away",
-            "awayId",
-            "date",
-            "home",
-            "homeId",
-            "id",
-            "league",
-            "scores",
-            "sport",
-            "status"
-          ]
-        },
-        {
-          "id": 75863844,
-          "home": "Olympique Club de Safi",
-          "away": "Olympique Club of Khouribga",
-          "sport": {
-            "name": "Football",
-            "slug": "football"
-          },
-          "league": {
-            "name": "Morocco - Botola Pro D2",
-            "slug": "morocco-botola-pro-d2"
-          },
-          "date": "2026-11-01T17:00:00Z",
+          "date": "2026-11-02T10:00:00Z",
           "keys": [
             "away",
             "awayId",
@@ -440,616 +436,616 @@
     "errors": [
       {
         "event_ids": [
-          "75870652",
-          "73273782",
-          "73273788",
-          "73385488",
-          "73385490",
-          "73385492",
-          "76165706",
-          "74975112",
-          "75393386",
-          "75870642"
+          "28282562290",
+          "16207746753",
+          "15847058047",
+          "29126671902",
+          "72550298",
+          "76161806",
+          "13947203341",
+          "76161804",
+          "73873758",
+          "72409766"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75870652",
+        "event_id": "28282562290",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73273782",
+        "event_id": "16207746753",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73273788",
+        "event_id": "15847058047",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73385488",
+        "event_id": "29126671902",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73385490",
+        "event_id": "72550298",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73385492",
+        "event_id": "76161806",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76165706",
+        "event_id": "13947203341",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74975112",
+        "event_id": "76161804",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75393386",
+        "event_id": "73873758",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75870642",
+        "event_id": "72409766",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "75870646",
-          "67682078",
-          "76131314",
-          "72491420",
-          "72498316",
-          "73063510",
-          "73063508",
-          "75123592",
-          "75815570",
-          "72530982"
+          "72045808",
+          "72409774",
+          "73019638",
+          "72508478",
+          "72550306",
+          "73774540",
+          "73774538",
+          "73774536",
+          "73436580",
+          "74444408"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75870646",
+        "event_id": "72045808",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "67682078",
+        "event_id": "72409774",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76131314",
+        "event_id": "73019638",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72491420",
+        "event_id": "72508478",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72498316",
+        "event_id": "72550306",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73063510",
+        "event_id": "73774540",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73063508",
+        "event_id": "73774538",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75123592",
+        "event_id": "73774536",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75815570",
+        "event_id": "73436580",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72530982",
+        "event_id": "74444408",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "75815572",
-          "73204690",
-          "72530992",
-          "75123644",
-          "73265466",
-          "75123646",
-          "75911416",
-          "72225360",
-          "75123442",
-          "75123440"
+          "76161792",
+          "76114434",
+          "76195108",
+          "72120982",
+          "72120978",
+          "72120984",
+          "72304342",
+          "76176360",
+          "72466594",
+          "73206552"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75815572",
+        "event_id": "76161792",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73204690",
+        "event_id": "76114434",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72530992",
+        "event_id": "76195108",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75123644",
+        "event_id": "72120982",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73265466",
+        "event_id": "72120978",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75123646",
+        "event_id": "72120984",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75911416",
+        "event_id": "72304342",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72225360",
+        "event_id": "76176360",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75123442",
+        "event_id": "72466594",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75123440",
+        "event_id": "73206552",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "67015446",
-          "72366428",
-          "71936226",
-          "72302192",
-          "73093044",
-          "76139468",
-          "72680252",
-          "76157080",
-          "72388076",
-          "74735106"
+          "73206560",
+          "73774544",
+          "73753164",
+          "72814284",
+          "14582268273",
+          "75186190",
+          "75186188",
+          "75186192",
+          "72304348",
+          "74401666"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "67015446",
+        "event_id": "73206560",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72366428",
+        "event_id": "73774544",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "71936226",
+        "event_id": "73753164",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72302192",
+        "event_id": "72814284",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73093044",
+        "event_id": "14582268273",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76139468",
+        "event_id": "75186190",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72680252",
+        "event_id": "75186188",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76157080",
+        "event_id": "75186192",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72388076",
+        "event_id": "72304348",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74735106",
+        "event_id": "74401666",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "73581322",
-          "76163400",
-          "76086130",
-          "76055216",
-          "76165708",
-          "68823432",
-          "73357720",
-          "75449066",
-          "74303326",
-          "74079764"
+          "74172510",
+          "72477556",
+          "72045814",
+          "72045810",
+          "73019640",
+          "76161790",
+          "73835700",
+          "76176358",
+          "28475687122",
+          "30104124794"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73581322",
+        "event_id": "74172510",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76163400",
+        "event_id": "72477556",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76086130",
+        "event_id": "72045814",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76055216",
+        "event_id": "72045810",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76165708",
+        "event_id": "73019640",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "68823432",
+        "event_id": "76161790",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73357720",
+        "event_id": "73835700",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75449066",
+        "event_id": "76176358",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74303326",
+        "event_id": "28475687122",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74079764",
+        "event_id": "30104124794",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "73184942",
-          "76011914",
-          "73184944",
-          "73184946",
-          "73185454",
-          "73185458",
-          "73185460",
-          "73204130",
-          "75931808",
-          "73528710"
+          "73326478",
+          "73326480",
+          "73206562",
+          "73326482",
+          "73326484",
+          "73206564",
+          "75674348",
+          "12276816059",
+          "73221946",
+          "75879108"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73184942",
+        "event_id": "73326478",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76011914",
+        "event_id": "73326480",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73184944",
+        "event_id": "73206562",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73184946",
+        "event_id": "73326482",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73185454",
+        "event_id": "73326484",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73185458",
+        "event_id": "73206564",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73185460",
+        "event_id": "75674348",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73204130",
+        "event_id": "12276816059",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75931808",
+        "event_id": "73221946",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73528710",
+        "event_id": "75879108",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "75893216",
-          "76165800",
-          "29791292751",
-          "76125524",
-          "76125522",
-          "76125520",
-          "73068158",
-          "72036264",
-          "71945374",
-          "31174829914"
+          "73409316",
+          "71998258",
+          "73753162",
+          "13213909408",
+          "72477552",
+          "74402068",
+          "72466590",
+          "72466592",
+          "72388068",
+          "75264578"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75893216",
+        "event_id": "73409316",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76165800",
+        "event_id": "71998258",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "29791292751",
+        "event_id": "73753162",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76125524",
+        "event_id": "13213909408",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76125522",
+        "event_id": "72477552",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "76125520",
+        "event_id": "74402068",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73068158",
+        "event_id": "72466590",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72036264",
+        "event_id": "72466592",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "71945374",
+        "event_id": "72388068",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "31174829914",
+        "event_id": "75264578",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
         "event_ids": [
-          "75912708",
-          "75815574",
-          "72559194",
-          "73038634",
-          "14942047162",
-          "74695504",
-          "74695502",
-          "74695500",
-          "74695498",
-          "74695496"
+          "71936214",
+          "72962354",
+          "75679636",
+          "72936106",
+          "73835708",
+          "73019642",
+          "74401664",
+          "72409764",
+          "72278526",
+          "73835704"
         ],
         "stage": "odds_multi",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75912708",
+        "event_id": "71936214",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "75815574",
+        "event_id": "72962354",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "72559194",
+        "event_id": "75679636",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "73038634",
+        "event_id": "72936106",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "14942047162",
+        "event_id": "73835708",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74695504",
+        "event_id": "73019642",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74695502",
+        "event_id": "74401664",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74695500",
+        "event_id": "72409764",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74695498",
+        "event_id": "72278526",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
       },
       {
-        "event_id": "74695496",
+        "event_id": "73835704",
         "stage": "odds_fallback",
         "status": 403,
         "reason": "HTTPError"
@@ -1057,7 +1053,7 @@
     ]
   },
   "quota_budget": {
-    "generated_at": "2026-11-01T17:55:35Z",
+    "generated_at": "2026-11-02T06:00:15Z",
     "api": "odds-api.io",
     "role": "feed",
     "env_var": "BET365_MAX_ODDS_CALLS",
