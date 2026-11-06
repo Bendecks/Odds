@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T19:56:08.877140+00:00",
+  "generated_at": "2026-11-06T06:43:48.779305+00:00",
   "events_queried": 80,
   "observations": 0,
   "unique_markets": 0,
@@ -19,23 +19,15 @@
     ],
     "top_leagues": [
       [
-        "{'name': 'International Clubs - UEFA Conference League', 'slug': 'international-clubs-uefa-conference-league'}",
-        9
-      ],
-      [
-        "{'name': 'International Clubs - UEFA Europa League', 'slug': 'international-clubs-uefa-europa-league'}",
-        9
-      ],
-      [
-        "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
-        9
+        "{'name': 'China - China League 1', 'slug': 'china-china-league-1'}",
+        8
       ],
       [
         "{'name': 'Wales - Cymru Premier', 'slug': 'wales-cymru-premier'}",
         8
       ],
       [
-        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        "{'name': 'Israel - Liga Alef South', 'slug': 'israel-liga-alef-south'}",
         7
       ],
       [
@@ -55,11 +47,23 @@
         6
       ],
       [
+        "{'name': 'Argentina - Primera LPF, Clausura', 'slug': 'argentina-primera-lpf-clausura'}",
+        6
+      ],
+      [
+        "{'name': 'Czechia - U19 1. Liga', 'slug': 'czechia-u19-1-liga'}",
+        6
+      ],
+      [
         "{'name': 'England Amateur - U21 Premier League 2', 'slug': 'england-amateur-u21-premier-league-2'}",
         6
       ],
       [
         "{'name': 'France - Ligue 2', 'slug': 'france-ligue-2'}",
+        6
+      ],
+      [
+        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
         6
       ],
       [
@@ -95,10 +99,6 @@
         5
       ],
       [
-        "{'name': 'Denmark - 1st Division', 'slug': 'denmark-1st-division'}",
-        5
-      ],
-      [
         "{'name': 'Estonia - Premium Liiga', 'slug': 'estonia-premium-liiga'}",
         5
       ],
@@ -107,15 +107,15 @@
         5
       ],
       [
-        "{'name': 'Indonesia - Indonesia Super League', 'slug': 'indonesia-indonesia-super-league'}",
-        5
-      ],
-      [
         "{'name': 'Israel - Liga Alef North', 'slug': 'israel-liga-alef-north'}",
         5
       ],
       [
         "{'name': 'Israel - National League', 'slug': 'israel-national-league'}",
+        5
+      ],
+      [
+        "{'name': 'Mexico - Liga MX, Women, Apertura', 'slug': 'mexico-liga-mx-women-apertura'}",
         5
       ],
       [
@@ -143,6 +143,10 @@
         4
       ],
       [
+        "{'name': 'Algeria - Championship Elite Women', 'slug': 'algeria-championship-elite-women'}",
+        4
+      ],
+      [
         "{'name': 'Algeria - U20 Ligue', 'slug': 'algeria-u20-ligue'}",
         4
       ],
@@ -159,11 +163,19 @@
         4
       ],
       [
-        "{'name': 'Austria Amateur - Wiener Stadtliga', 'slug': 'austria-amateur-wiener-stadtliga'}",
+        "{'name': 'China - China League 2, Relegation Round, Gr. A', 'slug': 'china-china-league-2-relegation-round-gr-a'}",
+        4
+      ],
+      [
+        "{'name': 'China - China League 2, Relegation Round, Gr. B', 'slug': 'china-china-league-2-relegation-round-gr-b'}",
         4
       ],
       [
         "{'name': 'Czechia - FNL', 'slug': 'czechia-fnl'}",
+        4
+      ],
+      [
+        "{'name': 'Denmark - 1st Division', 'slug': 'denmark-1st-division'}",
         4
       ],
       [
@@ -172,14 +184,6 @@
       ],
       [
         "{'name': 'England - Championship', 'slug': 'england-championship'}",
-        4
-      ],
-      [
-        "{'name': 'Germany Amateur - Bundesliga, Women', 'slug': 'germany-amateur-bundesliga-women'}",
-        4
-      ],
-      [
-        "{'name': 'Israel - Liga Alef South', 'slug': 'israel-liga-alef-south'}",
         4
       ],
       [
@@ -212,10 +216,6 @@
       ],
       [
         "{'name': 'Bahrain - First Division', 'slug': 'bahrain-first-division'}",
-        3
-      ],
-      [
-        "{'name': 'Brazil - Brasileiro Serie A', 'slug': 'brazil-brasileiro-serie-a'}",
         3
       ]
     ],
@@ -254,27 +254,51 @@
       ],
       [
         "awayId",
-        499
+        488
       ],
       [
         "homeId",
-        499
+        488
       ]
     ],
     "samples": [
       {
-        "id": 74173058,
-        "home": "Sunderland AFC",
-        "away": "GNK Dinamo Zagreb",
+        "id": 12254392609,
+        "home": "Henan",
+        "away": "Shanghai Shenhua",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "International Clubs - UEFA Europa League",
-          "slug": "international-clubs-uefa-europa-league"
+          "name": "China - League One Women",
+          "slug": "china-league-one-women"
         },
-        "date": "2026-11-05T20:00:00Z",
+        "date": "2026-11-06T07:00:00Z",
+        "keys": [
+          "away",
+          "date",
+          "home",
+          "id",
+          "league",
+          "scores",
+          "sport",
+          "status"
+        ]
+      },
+      {
+        "id": 30340530858,
+        "home": "Hunters FC",
+        "away": "Deren FC",
+        "sport": {
+          "name": "Football",
+          "slug": "football"
+        },
+        "league": {
+          "name": "Mongolia - Premier League",
+          "slug": "mongolia-premier-league"
+        },
+        "date": "2026-11-06T08:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -289,18 +313,18 @@
         ]
       },
       {
-        "id": 74173306,
-        "home": "Panathinaikos Athens",
-        "away": "PFC CSKA Sofia",
+        "id": 73928164,
+        "home": "Adelaide United FC",
+        "away": "Wellington Phoenix",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "International Clubs - UEFA Conference League",
-          "slug": "international-clubs-uefa-conference-league"
+          "name": "Australia - A-League, Women",
+          "slug": "australia-a-league-women"
         },
-        "date": "2026-11-05T20:00:00Z",
+        "date": "2026-11-06T08:00:00Z",
         "keys": [
           "away",
           "awayId",
@@ -315,18 +339,18 @@
         ]
       },
       {
-        "id": 74173300,
-        "home": "FC Twente Enschede",
-        "away": "Pafos FC",
+        "id": 74827292,
+        "home": "Canberra Croatia FC",
+        "away": "Sydney United 58 FC",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "International Clubs - UEFA Conference League",
-          "slug": "international-clubs-uefa-conference-league"
+          "name": "Australia - Australian Championship, Group A",
+          "slug": "australia-australian-championship-group-a"
         },
-        "date": "2026-11-05T20:00:00Z",
+        "date": "2026-11-06T08:30:00Z",
         "keys": [
           "away",
           "awayId",
@@ -341,44 +365,18 @@
         ]
       },
       {
-        "id": 74173296,
-        "home": "FC Copenhagen",
-        "away": "FC Iberia 1999",
+        "id": 73576702,
+        "home": "Psim Yogyakarta",
+        "away": "Dewa United",
         "sport": {
           "name": "Football",
           "slug": "football"
         },
         "league": {
-          "name": "International Clubs - UEFA Conference League",
-          "slug": "international-clubs-uefa-conference-league"
+          "name": "Indonesia - Indonesia Super League",
+          "slug": "indonesia-indonesia-super-league"
         },
-        "date": "2026-11-05T20:00:00Z",
-        "keys": [
-          "away",
-          "awayId",
-          "date",
-          "home",
-          "homeId",
-          "id",
-          "league",
-          "scores",
-          "sport",
-          "status"
-        ]
-      },
-      {
-        "id": 74173044,
-        "home": "Celtic Glasgow",
-        "away": "Besiktas Istanbul",
-        "sport": {
-          "name": "Football",
-          "slug": "football"
-        },
-        "league": {
-          "name": "International Clubs - UEFA Europa League",
-          "slug": "international-clubs-uefa-europa-league"
-        },
-        "date": "2026-11-05T20:00:00Z",
+        "date": "2026-11-06T08:30:00Z",
         "keys": [
           "away",
           "awayId",
